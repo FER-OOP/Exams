@@ -1,0 +1,4 @@
+Nikola;Karabatic;22;43;28
+L;Abalo;19;40;32;
+N;Claire;26;5;3
+M;GuiGou;21;21;18

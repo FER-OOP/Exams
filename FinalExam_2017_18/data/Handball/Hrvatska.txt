@@ -1,0 +1,5 @@
+Luka;Cindric;33;33;21
+Ivan;Cupic;27;20;21
+Zlatko;Horvat;13;12;10
+Stipe;Mandalinic;23;10;8
+Manuel;Strlek;26;21;21
