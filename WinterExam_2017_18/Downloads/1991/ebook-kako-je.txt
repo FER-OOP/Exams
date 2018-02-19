@@ -1,0 +1,6 @@
+---------ebook-'91.txt---------
+author = Nije bitno
+name = Kako je poceo rat na mom otoku
+year = 1991
+url = http://reddit.com
+---------ebook-'91.txt---------

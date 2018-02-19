@@ -1,0 +1,6 @@
+---------ebook-tom-sawyer.txt---------
+author = Mark Twain
+name = The Adventures of Tom Sawyer
+year = 1876
+url = http://www.gutenberg.org/ebooks/74.epub.images
+---------ebook-tom-sawyer.txt---------
