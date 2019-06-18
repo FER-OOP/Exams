@@ -2,18 +2,19 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>hr.fer.oop</groupId>
   <artifactId>FinalExam_2018_19_Solved</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
+  <name>FinalExam_2018_19_Solved</name>
   <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
    </properties>
-   <build>
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>		
 				<configuration>
-					<source>1.10</source>
-					<target>1.10</target>
+					<release>11</release>		
 				</configuration>
 			</plugin>
 		</plugins>
