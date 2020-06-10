@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PlasmanExplorer {
 	List<Plasman> listaPlasmana=new ArrayList<Plasman>();
@@ -14,14 +12,11 @@ public class PlasmanExplorer {
 	public void printPobjednike()
 	{
 		listaPlasmana.stream()
-			.filter(x-> x.getGodina()>2000)
-			.collect(Collectors.groupingBy(Plasman::getVozac, 
-						 Collectors.minBy(Comparator.comparingInt(Plasman::getPlasman))))
-			.entrySet().stream()
-			.filter(x-> x.getValue().get().getPlasman()==1)
-			.map(x->x.getKey())
-			.sorted()
-			.forEach(System.out::println);
+						.filter(a -> a.getGodina() >= 2000 && a.getPlasman() == 1)
+						.map(a -> a.getVozac())
+						.sorted()
+						.distinct()
+						.forEach(a -> System.out.println(a));
 
 	}
 	
