@@ -1,0 +1,81 @@
+Napisite program koji za zadani direktorij "root", kolekciju ekstenzija "ext" i direktorij "skip", brise sve datoteke danih ekstenzija u rootu i svim njegovim poddirektorijima osim u onima cije ime sadrzi string "skip". Ukoliko je direktorij nakon brisanja datoteka prazan program ga treba obrisati. Na kraju izvodenja program ispisuje broj i ukupnu velicinu obrisanih datoteka kao i broj obrisanih direktorija. Ako se pojedinom direktoriju ili datoteci nije moglo pristupiti informaciju o tome(putanju) potrebno je upisati u datoteku failed_visit.log i to nakon sto je cijelo stablo procesuirano.
+
+public class Main {
+
+    public static void main(String[] args) {
+        Path root = Path.of("c:\\test");
+        Collection<String> ext = Arrays.asList(".txt", ".clj", ".java");
+        String skip = "skip";
+
+        FileVisitor<Path> visitor = new DeleteExtensions(ext,skip);
+
+        try {
+            Files.__________________(root,visitor);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        // TODO: ispis statistike i logiranje
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    }
+}
+
+public class DeleteExtensions ____________________________ {
+
+// TODO: Nadopuni
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
