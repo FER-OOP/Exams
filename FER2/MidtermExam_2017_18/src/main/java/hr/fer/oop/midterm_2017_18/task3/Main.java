@@ -17,10 +17,11 @@ public class Main {
                     Fridge fridge = (Fridge) remoteDevice;
                     fridge.setTemperature(10);
                 }
-                if(remoteDevice instanceof Bulb){
+                else if(remoteDevice instanceof Bulb){
                     Bulb bulb = (Bulb) remoteDevice;
                     bulb.setColor(Color.RED);
                 }
+                remoteDevice.endRemoteSession();
             }
         }
     }
