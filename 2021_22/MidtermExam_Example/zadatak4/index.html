@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>4. Zadatak (6 bodova)</h1>
+<p>U sustav koji prima informacije o korisnicima koji se modeliraju klasom <code>User</code>, koja sadrži atribute <code>OIB</code> (Double), <code>name</code> (String), <code>surname</code> (String), i <code>serviceType</code> koji je enumeracija (<code>ServiceType</code>) koja sadrži tri vrijednosti (<code>SUBSCRIBE</code>, <code>PREPAID</code>, <code>VIRTUAL</code>) pristižu podaci od registrirajuće forme u sljedećem obliku:</p>
+<pre class="line-numbers"><code>oib_value/name_value/surname_value/serviceType_value
+</code></pre>
+<p>gdje pod serviceType_value mogu doći vrijednosti 'A' (<code>SUBSCRIBE</code>), 'B' (<code>PREPAID</code>), ili 'C' (<code>VIRTUAL</code>).</p>
+<p>Vaš je zadatak najprije modelirati opisanu klasu <code>User</code>, tako da ima samo konstruktor koji prima vrijednosti svih zadanih argumenata koje objekt korisnika treba imati, te metode za pristupanje i modificiranje svih atributa. Zatim je potrebno implementirati klasu <code>Parser</code> koja sadrži statičnu metodu za obradu ulaznog niza znakova sljedećeg prototipa <code>public static User parseInputString (String input) throws Exception</code>. U slučaju da je ulazni niz znakova u krivom formatu (ako se po zadanom znaku razdjeljivanja &quot;/&quot; ne mogu dobiti točno četiri argumenta) potrebno je baciti iznimku <code>InvalidNumberOfArgumentsException</code>. Dodatno je potrebno, ako dođe do pogreške u parsiranju nekog od ulaznih argumenata baciti iznimku <code>ArgumentParseException</code> koja kao uzrok navodi izvornu iznimku. Obje iznimke moraju moći primiti poruku (<code>message</code>).</p>
+<p>Poruka koju sve navedene iznimke trebaju sadržavati kao opis je samo <code>&quot;Exception occured!&quot;</code>.</p>
+<p><em>Primjer korištenja</em>:</p>
+<pre class="line-numbers"><code class="language-java">parseInputString(&quot;12345678912s345/jure/juric/A&quot;);
+</code></pre>
+<p><em>Rezultat</em>:
+bačena <code>hr.fer.oop.ArgumentParseException</code> iznimka s porukom &quot;Exception occured!&quot; uzrokovana iznimkom <code>java.lang.NumberFormatException</code>.</p>
+<p>Napomena: Sve su klase javne i nalaze se u paketu: <code>hr.fer.oop</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>1. Zadatak (6 bodova)</h1>
+<p>Potrebno je dopuniti kod kojim se modeliraju klase koje se koriste u aplikaciji za kontrolu kvalitete i izračun cijene voća u voćnjaku obiteljskog gospodarstva. Trenutno postoje dvije vrste voća (<code>Fruit</code>): breskva (<code>Peach</code>) i trešnja (<code>Cherry</code>). Svako voće ima svoj latinski naziv (<code>species</code>:<code>String</code>), prosječni broj plodova po stablu (<code>numberOfFruits</code>:<code>int</code>) i trošak proizvodnje po stablu (<code>productionPrice</code>:<code>double</code>). Klasa <code>Fruit</code> se ne može instancirati.</p>
+<p>Breskvu dodatno opisuje prosječni promjer ploda (<code>peachDiameter</code>:<code>int</code>), dok trešnju karakterizira sadrže li plodovi nametnika tj. crva (<code>hasWorm</code>:<code>boolean</code>).</p>
+<p>Za voće je potrebno definirati dvije javne metode:</p>
+<ul>
+<li><code>double productionPrice(int numberOfTrees)</code></li>
+<li><code>double myMarketPrice()</code></li>
+</ul>
+<p>Metoda <code>productionPrice</code> vraća trošak proizvodnje za predani broj stabala. Vrijednost se računa množenjem broja stabala i iznosa proizvodnje po stablu te se mora računati uvijek isto bez obzira na vrstu voća.</p>
+<p>Metoda <code>myMarketPrice</code> računa tržišnu cijenu po plodu. U slučaju breskve tržišna cijena je jednaka proizvodnoj cijeni uvećanoj za 40% ako je promjer breskve u rasponu [2,8], a inače za 30%. U slučaju trešnje, tržišna cijena je jednaka proizvodnoj cijeni uvećanoj za 20% ili 50% u ovisnosti ima li trešnja crva ili ne.</p>
+<p><strong>Napomena:</strong></p>
+<ul>
+<li>Napisati gettere i settere za svaki atribut</li>
+<li>Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.zad1</code>.</li>
+</ul>
+<p><em>Primjer korištenja</em>:</p>
+<pre class="line-numbers"><code class="language-java">Cherry cherry = new Cherry(&quot;Maraska&quot;, 2000, 20, true);
+Peach peach = new Peach(&quot;Vinogradarska&quot;, 505, 50, 6);
+
+System.out.println(cherry.isHasWorm());
+
+System.out.println(cherry.productionPrice(100));
+System.out.println(peach.productionPrice(50));
+
+System.out.println(cherry.myMarketPrice());
+System.out.println(peach.myMarketPrice());
+</code></pre>
+<p><em>Očekivani ispis</em>:</p>
+<pre class="line-numbers"><code class="language-sh">true
+2000.0
+2500.0
+0.012
+0.1386138613861386
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

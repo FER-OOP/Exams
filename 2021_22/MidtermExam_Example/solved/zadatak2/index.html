@@ -1,0 +1,252 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>2. zadatak (7 bodova)</h1>
+<p>Vaš zadatak je napisati programski kod na način kako je to specificirano UML dijagramom klasa na slici.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="657px" preserveAspectRatio="none" style="width:599px;height:657px;" version="1.1" viewBox="0 0 599 657" width="599px" zoomAndPan="magnify">
+<defs>
+<filter height="300%" id="f1nqeqw0ttwcmd" width="300%" x="-1" y="-1">
+<feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+<feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+<feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+</filter>
+</defs>
+<g>
+<!--MD5=[d8c8cfd5ca149094f5b67f9f607a5ec7]
+class Token-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="125.7305" id="Token" style="stroke: #A80036; stroke-width: 1.5;" width="227" x="336" y="180"/>
+<ellipse cx="427.25" cy="196" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M427.1133,191.3481 L425.9595,196.4199 L428.2754,196.4199 Z M425.6191,189.1069 L428.6157,189.1069 L431.9609,201.5 L429.5122,201.5 L428.7485,198.437 L425.4697,198.437 L424.7227,201.5 L422.2739,201.5 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="36" x="447.75" y="200.5352">Token</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="337" x2="562" y1="212" y2="212"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="344" y="220"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="84" x="356" y="226.6348">amount: double</text>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="344" y="232.9551"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="356" y="239.5898">name: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="337" x2="562" y1="245.9102" y2="245.9102"/>
+<polygon fill="#4177AF" points="347,252.9102,343,258.9102,351,258.9102" style="stroke: #1963A0; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="201" x="356" y="260.5449">Token (amount: double, name: String)</text>
+<ellipse cx="347" cy="269.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="111" x="356" y="273.5">getAmount(): double</text>
+<ellipse cx="347" cy="282.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="180" x="356" y="286.4551">setAmount(amount: double): void</text>
+<ellipse cx="347" cy="295.7754" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="122" x="356" y="299.4102">getTokenType(): String</text>
+<!--MD5=[ff905795405ac4dba441030576b255ea]
+class Cryptocurrency-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="138.6855" id="Cryptocurrency" style="stroke: #A80036; stroke-width: 1.5;" width="349" x="7" y="366"/>
+<ellipse cx="133.75" cy="382" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M136.2231,388.1431 Q135.6421,388.4419 135.0029,388.5913 Q134.3638,388.7407 133.6582,388.7407 Q131.1514,388.7407 129.8315,387.0889 Q128.5117,385.437 128.5117,382.3159 Q128.5117,379.1865 129.8315,377.5347 Q131.1514,375.8828 133.6582,375.8828 Q134.3638,375.8828 135.0112,376.0322 Q135.6587,376.1816 136.2231,376.4805 L136.2231,379.2031 Q135.5923,378.6221 134.9988,378.3523 Q134.4053,378.0825 133.7744,378.0825 Q132.4297,378.0825 131.7449,379.1492 Q131.0601,380.2158 131.0601,382.3159 Q131.0601,384.4077 131.7449,385.4744 Q132.4297,386.541 133.7744,386.541 Q134.4053,386.541 134.9988,386.2712 Q135.5923,386.0015 136.2231,385.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="87" x="154.25" y="386.5352">Cryptocurrency</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="355" y1="398" y2="398"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="15" y="406"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="118" x="27" y="412.6348">exchangeRate: double</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="355" y1="418.9551" y2="418.9551"/>
+<ellipse cx="18" cy="429.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="323" x="27" y="433.5898">Cryptocurrency(amount: double, type: CryptocurrencyType)</text>
+<ellipse cx="18" cy="442.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="168" x="27" y="446.5449">getType(): CryptocurrencyType</text>
+<ellipse cx="18" cy="455.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="219" x="27" y="459.5">setType(type: CryptocurrencyType): void</text>
+<ellipse cx="18" cy="468.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="122" x="27" y="472.4551">getTokenType(): String</text>
+<ellipse cx="18" cy="481.7754" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="143" x="27" y="485.4102">getExchangeRate(): double</text>
+<ellipse cx="18" cy="494.7305" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="27" y="498.3652">toString(): String</text>
+<!--MD5=[094fcfd283a41a60c4c7345113501e53]
+class Exchangable-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="60.9551" id="Exchangable" style="stroke: #A80036; stroke-width: 1.5;" width="169" x="97" y="212.5"/>
+<ellipse cx="140.8" cy="228.5" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M137.2277,224.7651 L137.2277,222.6069 L144.6071,222.6069 L144.6071,224.7651 L142.1418,224.7651 L142.1418,232.8418 L144.6071,232.8418 L144.6071,235 L137.2277,235 L137.2277,232.8418 L139.6931,232.8418 L139.6931,224.7651 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="73" x="161.2" y="233.0352">Exchangable</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="98" x2="265" y1="244.5" y2="244.5"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="98" x2="265" y1="252.5" y2="252.5"/>
+<ellipse cx="108" cy="263.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="143" x="117" y="267.1348">getExchangeRate(): double</text>
+<!--MD5=[18a8c4ac08887634e778486dcb89a63b]
+class CryptocurrencyType-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="73.9102" id="CryptocurrencyType" style="stroke: #A80036; stroke-width: 1.5;" width="148" x="107.5" y="565"/>
+<ellipse cx="122.5" cy="581" fill="#EB937F" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M126.1143,587.5 L118.3945,587.5 L118.3945,575.1069 L126.1143,575.1069 L126.1143,577.2651 L120.8433,577.2651 L120.8433,579.938 L125.6162,579.938 L125.6162,582.0962 L120.8433,582.0962 L120.8433,585.3418 L126.1143,585.3418 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="116" x="136.5" y="585.5352">CryptocurrencyType</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="108.5" x2="254.5" y1="597" y2="597"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="21" x="113.5" y="611.6348">BTC</text>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="21" x="113.5" y="624.5898">ETH</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="108.5" x2="254.5" y1="630.9102" y2="630.9102"/>
+<!--MD5=[f0216dc928097f0d610cc3790af6d7ab]
+class NFT-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="86.8652" id="NFT" style="stroke: #A80036; stroke-width: 1.5;" width="189" x="391" y="392"/>
+<ellipse cx="469.75" cy="408" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M472.2231,414.1431 Q471.6421,414.4419 471.0029,414.5913 Q470.3638,414.7407 469.6582,414.7407 Q467.1514,414.7407 465.8315,413.0889 Q464.5117,411.437 464.5117,408.3159 Q464.5117,405.1865 465.8315,403.5347 Q467.1514,401.8828 469.6582,401.8828 Q470.3638,401.8828 471.0112,402.0322 Q471.6587,402.1816 472.2231,402.4805 L472.2231,405.2031 Q471.5923,404.6221 470.9988,404.3523 Q470.4053,404.0825 469.7744,404.0825 Q468.4297,404.0825 467.7449,405.1492 Q467.0601,406.2158 467.0601,408.3159 Q467.0601,410.4077 467.7449,411.4744 Q468.4297,412.541 469.7744,412.541 Q470.4053,412.541 470.9988,412.2712 Q471.5923,412.0015 472.2231,411.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="23" x="490.25" y="412.5352">NFT</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="392" x2="579" y1="424" y2="424"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="392" x2="579" y1="432" y2="432"/>
+<ellipse cx="402" cy="443" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="163" x="411" y="446.6348">NFT(amount: int, name: String)</text>
+<ellipse cx="402" cy="455.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="122" x="411" y="459.5898">getTokenType(): String</text>
+<ellipse cx="402" cy="468.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="411" y="472.5449">toString(): String</text>
+<!--MD5=[9f070bf9f108c27faa2eb76515c78fb3]
+class Wallet-->
+<rect fill="#FEFECE" filter="url(#f1nqeqw0ttwcmd)" height="112.7754" id="Wallet" style="stroke: #A80036; stroke-width: 1.5;" width="237" x="331" y="7"/>
+<ellipse cx="428.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M430.7231,29.1431 Q430.1421,29.4419 429.5029,29.5913 Q428.8638,29.7407 428.1582,29.7407 Q425.6514,29.7407 424.3315,28.0889 Q423.0117,26.437 423.0117,23.3159 Q423.0117,20.1865 424.3315,18.5347 Q425.6514,16.8828 428.1582,16.8828 Q428.8638,16.8828 429.5112,17.0322 Q430.1587,17.1816 430.7231,17.4805 L430.7231,20.2031 Q430.0923,19.6221 429.4988,19.3523 Q428.9053,19.0825 428.2744,19.0825 Q426.9297,19.0825 426.2449,20.1492 Q425.5601,21.2158 425.5601,23.3159 Q425.5601,25.4077 426.2449,26.4744 Q426.9297,27.541 428.2744,27.541 Q428.9053,27.541 429.4988,27.2712 Q430.0923,27.0015 430.7231,26.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="34" x="448.75" y="27.5352">Wallet</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="332" x2="567" y1="39" y2="39"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="332" x2="567" y1="47" y2="47"/>
+<ellipse cx="342" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="90" x="351" y="61.6348">Wallet(count: int)</text>
+<ellipse cx="342" cy="70.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="78" x="351" y="74.5898">getCount(): int</text>
+<ellipse cx="342" cy="83.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="111" x="351" y="87.5449">getTokens(): Token[]</text>
+<ellipse cx="342" cy="96.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="211" x="351" y="100.5">setToken(token: Token, index: int): void</text>
+<ellipse cx="342" cy="109.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="94" x="351" y="113.4551">printWallet(): void</text>
+<!--MD5=[1aad13753958752a5e1480967c50ba08]
+reverse link Token to Cryptocurrency-->
+<path d="M345.75,317.75 C323.47,333.58 300.02,350.25 278.03,365.88 " fill="none" id="Token&lt;-Cryptocurrency" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="341.76,312,362.12,306.11,349.87,323.41,341.76,312" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[e9e7a5d01a4aa283f9269d59708b9a2b]
+reverse link Exchangable to Cryptocurrency-->
+<path d="M181.5,294.08 C181.5,316.03 181.5,342.14 181.5,365.86 " fill="none" id="Exchangable&lt;-Cryptocurrency" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+<polygon fill="none" points="174.5,293.77,181.5,273.77,188.5,293.77,174.5,293.77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[9e36486e004cfe069ade7da3134705e1]
+link Cryptocurrency to CryptocurrencyType-->
+<path d="M181.5,505.31 C181.5,523.82 181.5,543.26 181.5,559.75 " fill="none" id="Cryptocurrency-&gt;CryptocurrencyType" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="181.5,564.77,185.5,555.77,181.5,559.77,177.5,555.77,181.5,564.77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="130.1672" y="554.1282">-type 1</text>
+<!--MD5=[1a1b8bedce2d9f43e6f83d08753418a3]
+reverse link Token to NFT-->
+<path d="M465,326.04 C469.28,348.67 473.75,372.32 477.42,391.74 " fill="none" id="Token&lt;-NFT" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="458.07,327.07,461.24,306.11,471.83,324.47,458.07,327.07" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[75f018cf2978a19a75afb0bf4e42fda6]
+link Wallet to Token-->
+<path d="M449.5,120.18 C449.5,137.46 449.5,156.7 449.5,174.69 " fill="none" id="Wallet-&gt;Token" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="449.5,179.73,453.5,170.73,449.5,174.73,445.5,170.73,449.5,179.73" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="368.0484" y="169.1491">-tokens 0..*</text>
+<!--MD5=[d1754872391001a658aa30add196e4d7]
+@startuml
+abstract Token {
+- amount: double
+- name: String
+~ Token (amount: double, name: String)
++ getAmount(): double
++ setAmount(amount: double): void
++ {abstract} getTokenType(): String
+}
+
+class Cryptocurrency extends Token implements Exchangable{
+- exchangeRate: double
++ Cryptocurrency(amount: double, type: CryptocurrencyType)
++ getType(): CryptocurrencyType
++ setType(type: CryptocurrencyType): void
++ getTokenType(): String
++ getExchangeRate(): double
++ toString(): String
+}
+
+enum CryptocurrencyType {
+BTC
+ETH 
+}
+
+Cryptocurrency - -> "-type 1" CryptocurrencyType
+
+class NFT extends Token {
++ NFT(amount: int, name: String)
++ getTokenType(): String
++ toString(): String  
+}
+
+interface Exchangable {
++ getExchangeRate(): double
+}
+
+class Wallet {
++ Wallet(count: int)
++ getCount(): int
++ getTokens(): Token[]
++ setToken(token: Token, index: int): void
++ printWallet(): void
+}
+
+Wallet - -> "-tokens 0..*" Token
+@enduml
+
+PlantUML version 1.2020.14(Sat Jun 20 16:14:34 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Klasom <code>Wallet</code> je oblikovan digitalni novčanik koji može sadržavati 0 ili više žetona (tj. <code>Token</code>-a). Maksimalan broj žetona se nalazi u argumentu konstruktora <code>count</code>. Ako je <code>count</code> izvan raspona onda se pretpostavlaj da je 1. U metodi <code>setToken</code> parametar <code>index</code> je indeks u članskoj varijabli <code>Token[]</code>. Ako je indeks izvan raspona ova metoda ništa ne radi.</p>
+<p>Apstraktna klasa <code>Token</code> predstavlja određenu kriptovalutu ili nerazmjenjivi žeton (<em>eng. non-fungible token - NFT</em>). Članskim varijablama <code>amount</code> i <code>name</code> je definiran iznos i ime <code>Token</code>-a. Apstraktnu metodu <code>getTokenType()</code> je potrebno nadjačati u izvedenim klasama na način da vraća string <code>Cryptocurrency</code> (ako se radi o kriptovaluti) ili string <code>NFT</code> (ukoliko se radi o NFT-u).</p>
+<p>Tip kriptovalute je definiran enumeracijom <code>CryptocurrencyType</code> koja može imati dvije vrijednosti <code>BTC</code> i <code>ETH</code>. Vrijednost članske varijable <code>exchangeAmount</code> u klasi <code>Cryptocurrency</code> predstavlja tečaj određene kriptovalute u EUR-ima i postavlja se u konstruktoru klase <code>Cryptocurrency</code> generiranjem slučajnog broja u intervalu:</p>
+<ul>
+<li>[40400, 40900] za tip kriptovalute <code>BTC</code>,</li>
+<li>[2900, 3000] za tip kriptovalute <code>ETH</code>.</li>
+</ul>
+<p>Ime kriptovalute je BTC ili ETH.</p>
+<p>Dohvaćanje generiranog tečaja određene kriptovalute specificirano je sučeljem <code>Exchangable</code> na način da se implementitra metoda <code>getExchangeRate()</code> u odgovarajućim klasama.</p>
+<p>Pozivom metode <code>toString()</code> u klasama <code>Cryptocurrency</code> i <code>NFT</code> se vraća tekst s ispisom iznosa i imena određene kriptovalute odnosno NFT-a. Primjer ispisa je ispod u primjeru korištenja.</p>
+<p>Metoda <code>printWallet()</code> u klasi <code>Wallet</code> ispisuje sadržaj novčanika. Ako je na nemom mjestu žeton <code>null</code> taj ispis se preskače. Za žetone tipa <code>Exchengable</code> tekst ispiše se iznos kriptovalute i njene protuvrijednosti u EUR-ima u sljdećem formatu (koristi se poziv metode <code>toString</code> za ispis sadržaja tokena nakon čega se ispisuje protuvrijendost u EUR i tip tokena):</p>
+<ul>
+<li><code>0.0230 BTC equals 934.9040 EUR, token type: Cryptocurrency</code></li>
+<li><code>17.5000 ETH equals 51117.5000 EUR, token type: Cryptocurrency</code></li>
+</ul>
+<p>Za ostale žetone metoda <code>printWallet()</code> ispisuje tekst s iznosom i imenom/tpom u sljdećem formatu (zadržaj i tip tokena):</p>
+<ul>
+<li><code>3 CryptoKitties, token type: NFT</code></li>
+<li><code>7 Doodles, token type: NFT</code></li>
+</ul>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">Wallet wallet = new Wallet(4);
+
+wallet.setToken(new Cryptocurrency(0.023, CryptocurrencyType.BTC), 0);
+wallet.setToken(new NFT(3, &quot;CryptoKitties&quot;), 1);
+wallet.setToken(new Cryptocurrency(17.5, CryptocurrencyType.ETH), 2);
+wallet.setToken(new NFT(7, &quot;Doodles&quot;), 3);
+
+wallet.printWallet();
+
+System.out.println(&quot;---&quot;);
+System.out.println(new Cryptocurrency(0.023, CryptocurrencyType.BTC));
+System.out.println(new NFT(3, &quot;CryptoKitties&quot;));
+</code></pre>
+<p>Mogući ispis:</p>
+<pre class="line-numbers"><code class="language-sh">0.0230 BTC equals 937.2500 EUR, token type: Cryptocurrency
+3 CryptoKitties, token type: NFT
+17.5000 ETH equals 51047.5000 EUR, token type: Cryptocurrency
+7 Doodles, token type: NFT
+---
+0.0230 BTC
+3 CryptoKitties
+</code></pre>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.mtexam.task2</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
