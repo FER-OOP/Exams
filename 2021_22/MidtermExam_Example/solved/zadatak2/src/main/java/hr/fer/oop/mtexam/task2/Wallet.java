@@ -22,7 +22,7 @@ class Wallet {
 			this.tokens[index] = token;
 	}
 
-	public void checkWallet() {
+	public void printWallet() {
 		double euros = 0;
 		for(Token token:tokens) {
 		    if(token == null)

@@ -7,7 +7,7 @@ public class Main {
 		wallet.setToken(new NFT(3, "CryptoKitties"), 1);
 		wallet.setToken(new Cryptocurrency(17.5, CryptocurrencyType.ETH), 2);
 		wallet.setToken(new NFT(7, "Doodles"), 3);
-		wallet.checkWallet();
+		wallet.printWallet();
 
 		System.out.println("---");
 		System.out.println(new Cryptocurrency(0.023, CryptocurrencyType.BTC));
