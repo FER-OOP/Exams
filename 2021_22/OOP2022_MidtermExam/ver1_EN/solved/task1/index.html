@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task 1 (6 points)</h1>
+<p>Your task is to write classes that represent different aircrafts (<code>Aircraft</code>). It is necessary to implement the following aircrafts: <code>CameraDrone</code> and <code>Plane</code>.</p>
+<p>Each aircraft has following immutable attributes:</p>
+<ul>
+<li>model (<code>model</code>:<code>String</code>),</li>
+<li>date of production (<code>dateProduced</code>:<code>String</code>).</li>
+</ul>
+<p><strong>Camera drone</strong> additionally has a range (<code>range</code>:<code>int</code>) expressed in km (also immutable), and carries elements (e.g. sensors) and each of them has a quality values (<code>qualities</code>:<code>int[]</code>) expressed as a percentage (100-perfectly correct; 0-incorrect). See example.</p>
+<p><strong>Plane</strong> also has a passenger capacity (<code>capacity</code>:<code>int</code>) and a list of the value of all engines (<code>motorsStatus</code>:<code>int[]</code>) expressed as a percentage (100-perfectly correct; 0-incorrect). See example.</p>
+<p>For aircraft, you must define a public method that computes the status of the aircraft: <code>public abstract Status aircraftStatus()</code>, where Status is an enumeration that can take the following values: <code>FUNCTIONAL</code>, <code>NEED_CHECK</code>, <code>OUT_OF_SERVICE</code>.</p>
+<ul>
+<li>In the case of camera drones, the status is calculated as the average value of the quality of all elements. That is, if the average is in the range &lt;70,100], the drone is functional (<code>FUNCTIONAL</code>), [50, 70] the drone needs to be checked (<code>NEED_CHECK</code>), [0,50&gt; the drone is out of service (<code>OUT_OF_SERVICE</code>).</li>
+<li>In the case of planes, if all engines have status of 100, the plane is functional (<code>FUNCTIONAL</code>), if at least 1 is below 100, a check is required (<code>NEED_CHECK</code>), and if at least 1 is below 80, the plane is out of service (<code>OUT_OF_SERVICE</code>).</li>
+</ul>
+<p>The camera drone is an unmanned aircraft and must implement the <code>Unmanned</code> interface, which has the <code>public double coverArea(Number height);</code> method. As parameter this method receives the flying height (km). As a result, the method returns the product of the range and the flying height. See example.</p>
+<p>The <code>toString</code> method must also be rearranged to match the example.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Write getters and setters for each attribute.</li>
+<li>All classes and interfaces have <em>package private</em> visibility and are in <code>hr.fer.oop.zad1</code> package.</li>
+</ul>
+<p><em>Usage example</em>:</p>
+<pre class="line-numbers"><code class="language-java">CameraDrone spanishCD = new CameraDrone(&quot;SP-121&quot;, &quot;1990-09-12&quot;, 1000, new int[]{100, 33});
+
+System.out.println(spanishCD.toString());
+System.out.println(&quot;The purpose of the drone is land photography and can cover an area of: &quot; + spanishCD.coverArea(5.0)); // flying height is 5km
+System.out.println(spanishCD.aircraftStatus());
+
+CameraDrone croatianCD = new CameraDrone(&quot;HR-200&quot;, &quot;2000-10-14&quot;, 1100, new int[]{100, 80, 90});
+
+System.out.println(croatianCD.toString());
+System.out.println(&quot;The purpose of the drone is land photography and can cover an area of: &quot; + croatianCD.coverArea(4.5)); // flying height is 4.5km
+System.out.println(croatianCD.aircraftStatus());
+
+
+Plane plane = new Plane(&quot;Airbus A 320-200&quot;, &quot;2001-03-04&quot;, 174, new int[] {100, 70, 95});
+System.out.println(plane.toString());
+System.out.println(plane.aircraftStatus());
+plane.setMotorsStatus(new int[]{100, 100, 100});
+System.out.println(plane.aircraftStatus());
+</code></pre>
+<p><em>Expected output</em>:</p>
+<pre class="line-numbers"><code class="language-sh">Aircraft model SP-121 is produced 1990-09-12 and has 2 elements.
+The purpose of the drone is land photography and can cover an area of: 5000.0
+NEED_CHECK
+Aircraft model HR-200 is produced 2000-10-14 and has 3 elements.
+The purpose of the drone is land photography and can cover an area of: 4950.0
+FUNCTIONAL
+Aircraft model Airbus A 320-200 is produced 2001-03-04 and has 3 motors and capacity of 174.
+OUT_OF_SERVICE
+FUNCTIONAL
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

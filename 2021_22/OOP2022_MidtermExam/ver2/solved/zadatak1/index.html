@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>1. Zadatak (6 bodova)</h1>
+<p>Potrebno je napisati kod kojim se modeliraju klase koje predstavljaju različite zrakoplovne kompanije (<code>Airline</code>). U sklopu ovog zadatka potrebno je implementirati sljedeći tip kompanija: državne (<code>FlagCarriers</code>) i regionalne (<code>Regional</code>).</p>
+<p>Svaka zrakoplovna kompanija ima sljedeće atribute: ime (<code>name</code>:<code>String</code>) i flotu zrakoplova (<code>fleet</code>:<code>String[]</code>).</p>
+<p>Državne kompanije dodatno opisuju prosječna popunjenost flote (<code>averageFleetOccupancy</code>:<code>int</code>) izražen u postotcima. Dok regionalne kompanije dodatno opisuje broj premium članova (<code>numberOfPremiumMembers</code>:<code>int</code>) te broj vanjskih sponzora (<code>numberOfExternalSponsors</code>: <code>int</code>). Pogledati primjer.</p>
+<p>Za zrakoplovne kompanije je potrebno definirati javnu metodu koja računa ima li dostupnih promotivnih cijena u zračnoj kompaniji:
+<strong><code>public abstract boolean availabilityOfPromotionalPrices()</code></strong></p>
+<ul>
+<li>U slučaju državnih kompanija ima (<code>true</code>) dostupnih promotivnih cijena ako je prosječna popunjenost &lt; 50, u suprotnom nema (<code>false</code>).</li>
+<li>U slučaju regionalnih kompanija promotivne cijene su dostupne (<code>true</code>) ako je broj premium članova &gt; 10 i ako ima barem jedan vanjski sponzor (&gt; 0), inače nisu (<code>false</code>).</li>
+</ul>
+<p>Dodatno, zbog trenutne covid situacije potrebno je implementirati <strong>sučelje</strong> <code>SpecialRequirements</code> koje ima sljedeće dvije metode:</p>
+<ul>
+<li>
+<p><strong><code>public String covid19Info()</code></strong></p>
+<ul>
+<li>U slučaju državne kompanije mora vratiti sljedeće: <code>&quot;Passengers are required to bring and wear medical face protective masks.&quot;</code>.</li>
+<li>U slučaju regionalne kompanije sljedeće: <code>&quot;Contact the regional COVID info number.&quot;</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>public static boolean canIFlyCovid19(Status[] statusList, int fromCountryZone, int toCountryZone)</code></strong></p>
+<ul>
+<li>Ovu metodu može pozvati bilo koji putnik kako bi provjerio može li letjeti.</li>
+<li>Metoda ima tri parametra:
+<ul>
+<li><code>statusList</code> je lista koja predstavlja putnikov status vezano za covid te ima elemente tipa enumeracije sa sljedećim vrijednostima <code>VACCINATED</code>, <code>RECOVERED</code>, <code>TESTED</code>.</li>
+<li><code>fromCountryZone</code> i <code>toCountryZone</code> mogu poprimati vrijednosti 1, 2 i 3. U 1 spadaju države s malim brojem oboljelih, u 2 sa srednjim i u 3 s velikim brojem oboljelih. Kada se leti iz jedne zone u drugu  potrebno je ispuniti uvjete navedene u nastavku.</li>
+</ul>
+</li>
+<li>Osoba će moći putovati, tj. metoda će vratiti <code>true</code> u sljedećim slučajevima:
+<ul>
+<li>ako putuje iz zone u istu zonu ili zonu s više oboljelih (npr. iz 1 u 1 ili 2 ili 3)</li>
+<li>ako putuje iz zone 2 (srednji broj oboljelih) u zonu 1 (mali broj oboljelih) mora biti ili cijepljen (<code>VACCINATED</code>) ili oporavljen (<code>RECOVERED</code>) ili testiran(<code>TESTED</code>)</li>
+<li>ako putuje iz zone 3 (veliki broj oboljelih) u zone 2 ili 1 mora biti testiran (<code>TESTED</code>) te uz to dodatno ili cijepljen (<code>VACCINATED</code>) ili prebolio (<code>RECOVERED</code>) ili dvostruko testiran (pogledati zadnji primjer)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Potrebno je također preurediti metodu <code>toString</code> kako bi odgovarala ispisu koji je prikazan u primjeru.</p>
+<p><strong>Napomena:</strong></p>
+<ul>
+<li>Napisati kontruktore te gettere i settere za svaki atribut</li>
+<li>Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.zad1</code>.</li>
+</ul>
+<p><em>Primjer korištenja</em>:</p>
+<pre class="line-numbers"><code class="language-java">FlagCarriers croatiaAirlines = new FlagCarriers(&quot;Croatia Airlines&quot;, new String[]{&quot;Airbus A 320 - 200&quot;, &quot;Airbus A 319 - 100&quot;, &quot;Dash 8-Q400&quot;}, 60);
+System.out.println(croatiaAirlines.toString());
+System.out.println(croatiaAirlines.covid19Info());
+System.out.println(&quot;PROMOTIONAL PRICES:&quot;);
+System.out.println(croatiaAirlines.availabilityOfPromotionalPrices());
+croatiaAirlines.setAverageFleetOccupancy(20);
+System.out.println(croatiaAirlines.availabilityOfPromotionalPrices());
+
+System.out.println();
+
+Regional airCanadaExpress = new Regional(&quot;Air Canada Express&quot;, new String[] {&quot;Bombardier CRJ200ER&quot;, &quot;Embraer 175&quot;}, 15, 2);
+System.out.println(airCanadaExpress.toString());
+System.out.println(airCanadaExpress.covid19Info());
+System.out.println(&quot;PROMOTIONAL PRICES:&quot;);
+System.out.println(airCanadaExpress.availabilityOfPromotionalPrices());
+airCanadaExpress.setNumberOfExternalSponsors(0);
+System.out.println(airCanadaExpress.availabilityOfPromotionalPrices());
+
+System.out.println(&quot;\nCan I fly - COVID19:&quot;);
+System.out.println(SpecialRequirements.canIFlyCovid19(new Status[]{Status.TESTED}, 1, 2));
+System.out.println(SpecialRequirements.canIFlyCovid19(new Status[]{Status.VACCINATED}, 3, 1));
+System.out.println(SpecialRequirements.canIFlyCovid19(new Status[]{Status.TESTED, Status.TESTED}, 3, 1));
+</code></pre>
+<p><em>Očekivani ispis</em>:</p>
+<pre class="line-numbers"><code class="language-sh">Airline Croatia Airlines has fleet: [Airbus A 320 - 200, Airbus A 319 - 100, Dash 8-Q400].
+Passengers are required to bring and wear medical face protective masks.
+PROMOTIONAL PRICES:
+false
+true
+
+Airline Air Canada Express has fleet: [Bombardier CRJ200ER, Embraer 175].
+Contact the regional COVID info number.
+PROMOTIONAL PRICES:
+true
+false
+
+Can I fly - COVID19:
+true
+false
+true
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

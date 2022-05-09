@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>1. Zadatak (6 bodova)</h1>
+<p>Potrebno je dopuniti kod kojim se modeliraju klase koje predstavljaju različite letjelice (<code>Aircraft</code>). U sklopu ovog zadatka potrebno je implementirati sljedeće letjelice: kamera dron (<code>CameraDrone</code>) i avion (<code>Plane</code>).</p>
+<p>Svaka letjelica ima atribute koji su nepromjenjivi:</p>
+<ul>
+<li>model (<code>model</code>:<code>String</code>),</li>
+<li>datum proizvodnje (<code>dateProduced</code>:<code>String</code>)</li>
+</ul>
+<p><strong>Kameru dron</strong> dodatno opisuju domet (<code>range</code>:<code>int</code>) izražen u km (također nepromjenjiv) te nosi na sebi elemente (npr. senzore) te svaki od njih ima stupanj kvalitete (<code>qualities</code>:<code>int[]</code>) izražen u postotcima (100-potpuno ispravan; 0-neispravan). Pogledati primjer.</p>
+<p><strong>Avion</strong> dodatno opisuje kapacitet putnika (<code>capacity</code>:<code>int</code>) te lista koja prikazuje status svih motora (<code>motorsStatus</code>:<code>int[]</code>)  izraženo u postotcima (100-potpuno ispravan; 0-neispravan). Pogledati primjer.</p>
+<p>Za letjelice je potrebno definirati javnu metodu koja računa status letjelice:<code>public abstract Status aircraftStatus()</code> gdje je Status enumeracija koja može poprimati sljedeće vrijednosti: <code>FUNCTIONAL</code>, <code>NEED_CHECK</code>, <code>OUT_OF_SERVICE</code>.</p>
+<ul>
+<li>U slučaju kamera drona status se računa kao prosječna vrijednost kvalitete svih elemenata. Tj. ako je prosjek u rasponu &lt;70,100] dron je funkcionalan (<code>FUNCTIONAL</code>), [50, 70] dron treba na provjeru (<code>NEED_CHECK</code>), ako je [0,50&gt; dron je izvan pogona (<code>OUT_OF_SERVICE</code>).</li>
+<li>U slučaju aviona, ako svi motori imaju status 100 avion je funkcionalan (<code>FUNCTIONAL</code>), ako je barem 1 ispod 100 potrebna je provjera (<code>NEED_CHECK</code>), a ako je barem 1 ispod 80 avion je izvan pogona (<code>OUT_OF_SERVICE</code>).</li>
+</ul>
+<p>Kamera dron je bespilotna letjelica i mora implementirati sučelje <code>Unmanned</code> koji ima metodu <code>public double coverArea(Number height);</code>. Navedena metoda u slučaju kamera drona pri pozivu prima visinu letenja (km). Metoda kao rezultat vraća umnožak dometa letjelice i visine letenja. Pogledati primjer.</p>
+<p>Potrebno je također preurediti metodu <code>toString</code> kako bi odgovarala ispisu koji je prikazan u primjeru.</p>
+<p><strong>Napomena:</strong></p>
+<ul>
+<li>Napisati gettere i settere za svaki atribut</li>
+<li>Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.zad1</code>.</li>
+</ul>
+<p><em>Primjer korištenja</em>:</p>
+<pre class="line-numbers"><code class="language-java">CameraDrone spanishCD = new CameraDrone(&quot;SP-121&quot;, &quot;1990-09-12&quot;, 1000, new int[]{100, 33});
+
+System.out.println(spanishCD.toString());
+System.out.println(&quot;The purpose of the drone is land photography and can cover an area of: &quot; + spanishCD.coverArea(5.0)); // flying height is 5km
+System.out.println(spanishCD.aircraftStatus());
+
+CameraDrone croatianCD = new CameraDrone(&quot;HR-200&quot;, &quot;2000-10-14&quot;, 1100, new int[]{100, 80, 90});
+
+System.out.println(croatianCD.toString());
+System.out.println(&quot;The purpose of the drone is land photography and can cover an area of: &quot; + croatianCD.coverArea(4.5)); // flying height is 4.5km
+System.out.println(croatianCD.aircraftStatus());
+
+
+Plane plane = new Plane(&quot;Airbus A 320-200&quot;, &quot;2001-03-04&quot;, 174, new int[] {100, 70, 95});
+System.out.println(plane.toString());
+System.out.println(plane.aircraftStatus());
+plane.setMotorsStatus(new int[]{100, 100, 100});
+System.out.println(plane.aircraftStatus());
+</code></pre>
+<p><em>Očekivani ispis</em>:</p>
+<pre class="line-numbers"><code class="language-sh">Aircraft model SP-121 is produced 1990-09-12 and has 2 elements.
+The purpose of the drone is land photography and can cover an area of: 5000.0
+NEED_CHECK
+Aircraft model HR-200 is produced 2000-10-14 and has 3 elements.
+The purpose of the drone is land photography and can cover an area of: 4950.0
+FUNCTIONAL
+Aircraft model Airbus A 320-200 is produced 2001-03-04 and has 3 motors and capacity of 174.
+OUT_OF_SERVICE
+FUNCTIONAL
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

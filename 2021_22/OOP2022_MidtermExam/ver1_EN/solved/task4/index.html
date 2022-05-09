@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task 4 (6 points)</h1>
+<p>Additional functionalities need to be implemented on the sensor data reception platform to ensure a unique format of their database storage. The system receives sensor data in the following format:</p>
+<pre class="line-numbers"><code>deviceId:deviceId_value, timestamp:timestamp_value, attributeA:attributeA_value, attributeB:attributeB_value ... , attributeX:attributeX_value
+</code></pre>
+<p>A specific device can send any number of attributes that represent measured values from sensors attached to it (assume that at least one attribute is present), but they must be sent in the format above so that the system can recognize them (e.g. <code>temperature: 22</code>).</p>
+<p>Your task is to implement the class <code>Parser</code> that has a static method <code>public static Reading parseInputString</code> which receives a string as an input argument. For the received string, the method checks whether it corresponds to the specified format first, and if it does, the method extracts the specified parameters and returns the <code>Reading</code> object. Assume that the timestamp format accepted by the system is: <code>MM-dd-yyyy</code>.</p>
+<p>The class <code>Reading</code> should have a constructor that receives the values of all attributes, and corrseponding getter methods for each attrribute. The constructor prototype is defined as: <code>public Reading (Integer deviceId, SensorReadingValue [] sensorReadings, LocalDate timestamp)</code>. You can use the method <code>parseDate</code> given in the template to convert a string that contains a date in the prementioned specific format to <code>LocalDate</code>. The class <code>SensorReadingValue</code> is also given in the template.</p>
+<p>If an error occurs while processing the received string, the appropriate exception must be thrown. All exceptions must implement the basic exception <code>ParseReadingException</code> that inherits the class <code>Exception</code> and cannot be instantiated:</p>
+<ol>
+<li>
+<p>if the input string is not in the specified format, or if it does not contain the minimum number of arguments separated by the string <code>&quot;, &quot;</code>, it is necessary to throw the exception <code>IncorrectReadingFormatException</code>;</p>
+</li>
+<li>
+<p>if an exception occurs while parsing any of the first two mandatory input parameters (e.g. if the string cannot be parsed as integer) it is necessary to throw the exception <code>FormatException</code>. Additionally, in this case, it is necessary to set the original exception (if it exists) as the cause of this exception. Furthermore, if an exception occurs while processing any of the sensor readings (e.g. exception occurs while instantiating an object of class <code>SensorReadingValue</code>) it is necessary to continue the processing of other readings, while the <code>null</code> value has to be appointed to the corrseponding place in the sensor readings array. Finally, it is necessary to check that there is at least one sensor reading object in the sensor readings array, and if that is not the case, throw an exception <code>ReadingsFormatException</code> which inherits the exception <code>FormatException</code>.</p>
+</li>
+</ol>
+<p>All exceptions must implement a constructor that receives the cause of an exception (the original exception) as an input argument and a constructor that does not receive any input arguments. These constructors correspond to the following constructors of the Exception class: <code>Exception (Throwable cause)</code> <code>Exception ()</code>
+Sve iznimke moraju implementirati konstruktor koji prima samo uzrok iznimke (izvornu iznimku) te konstruktor koji ne prima ulazne argumente, odnosno konstruktore koji odgovaraju sljedećim konstruktorima nadklase Exception: <code>Exception(Throwable cause)</code> <code>Exception()</code></p>
+<p><em>Usage example</em>:</p>
+<pre class="line-numbers"><code>parseInputString(&quot;deviceId:12s3, timestamp:01-02-2000, attribute:20&quot;);
+</code></pre>
+<p><em>Result</em>: Thrown <code>hr.fer.oop.FormatException</code> caused by the exception <code>java.lang.NumberFormatException</code>.</p>
+<p><strong>Note:</strong> All classes should be public and placed in the package: <code>hr.fer.oop</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

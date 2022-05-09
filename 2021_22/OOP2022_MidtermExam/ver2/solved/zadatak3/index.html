@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>3. Zadatak (6 bodova)</h1>
+<p>Klase <code>MyList&lt;E&gt;</code>, <code>MyListElement&lt;E&gt;</code>, <code>Artwork</code>, <code>Painting</code>, <code>Photography</code>, <code>ArtPhotography</code> i sučalje <code>Nameable</code> zadane su kao na UML dijagramu.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="515px" preserveAspectRatio="none" style="width:1293px;height:515px;" version="1.1" viewBox="0 0 1293 515" width="1293px" zoomAndPan="magnify">
+<defs>
+<filter height="300%" id="f1scodq0rt0p75" width="300%" x="-1" y="-1">
+<feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+<feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+<feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+<feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+</filter>
+</defs>
+<g>
+<!--MD5=[6912f155c31a3b8f22cbe431791963ca]
+class ArtPhotography-->
+<a href="java:hr.fer.oop.zad3.ArtPhotography" target="_top" title="java:hr.fer.oop.zad3.ArtPhotography" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.ArtPhotography" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.ArtPhotography" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="112.7754" id="ArtPhotography" style="stroke: #A80036; stroke-width: 1.5;" width="449" x="311" y="384"/>
+<ellipse cx="486.75" cy="400" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M489.2231,406.1431 Q488.6421,406.4419 488.0029,406.5913 Q487.3638,406.7407 486.6582,406.7407 Q484.1514,406.7407 482.8315,405.0889 Q481.5117,403.437 481.5117,400.3159 Q481.5117,397.1865 482.8315,395.5347 Q484.1514,393.8828 486.6582,393.8828 Q487.3638,393.8828 488.0112,394.0322 Q488.6587,394.1816 489.2231,394.4805 L489.2231,397.2031 Q488.5923,396.6221 487.9988,396.3523 Q487.4053,396.0825 486.7744,396.0825 Q485.4297,396.0825 484.7449,397.1492 Q484.0601,398.2158 484.0601,400.3159 Q484.0601,402.4077 484.7449,403.4744 Q485.4297,404.541 486.7744,404.541 Q487.4053,404.541 487.9988,404.2712 Q488.5923,404.0015 489.2231,403.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="89" x="507.25" y="404.5352">ArtPhotography</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="312" x2="759" y1="416" y2="416"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="319" y="424"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="61" x="331" y="430.6348">type: String</text>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="319" y="436.9551"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="331" y="443.5898">name: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="312" x2="759" y1="449.9102" y2="449.9102"/>
+<ellipse cx="322" cy="460.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="423" x="331" y="464.5449">ArtPhotography(author: String, cameraModel: String, type: String, name: String)</text>
+<ellipse cx="322" cy="473.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="331" y="477.5">getType(): String</text>
+<ellipse cx="322" cy="486.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="331" y="490.4551">getName(): String</text>
+</a>
+<!--MD5=[b7324ce2f323f0f83d14dd789ffc2879]
+class Artwork-->
+<a href="java:hr.fer.oop.zad3.Artwork" target="_top" title="java:hr.fer.oop.zad3.Artwork" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.Artwork" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.Artwork" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="86.8652" id="Artwork" style="stroke: #A80036; stroke-width: 1.5;" width="151" x="719" y="36"/>
+<ellipse cx="767.75" cy="52" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M770.2231,58.1431 Q769.6421,58.4419 769.0029,58.5913 Q768.3638,58.7407 767.6582,58.7407 Q765.1514,58.7407 763.8315,57.0889 Q762.5117,55.437 762.5117,52.3159 Q762.5117,49.1865 763.8315,47.5347 Q765.1514,45.8828 767.6582,45.8828 Q768.3638,45.8828 769.0112,46.0322 Q769.6587,46.1816 770.2231,46.4805 L770.2231,49.2031 Q769.5923,48.6221 768.9988,48.3523 Q768.4053,48.0825 767.7744,48.0825 Q766.4297,48.0825 765.7449,49.1492 Q765.0601,50.2158 765.0601,52.3159 Q765.0601,54.4077 765.7449,55.4744 Q766.4297,56.541 767.7744,56.541 Q768.4053,56.541 768.9988,56.2712 Q769.5923,56.0015 770.2231,55.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="788.25" y="56.5352">Artwork</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="720" x2="869" y1="68" y2="68"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="727" y="76"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="739" y="82.6348">author: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="720" x2="869" y1="88.9551" y2="88.9551"/>
+<ellipse cx="730" cy="99.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="125" x="739" y="103.5898">Artwork(author: String)</text>
+<ellipse cx="730" cy="112.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="101" x="739" y="116.5449">getAuthor(): String</text>
+</a>
+<!--MD5=[77bea62f38bbc09c1f2d74714c3d854d]
+class MyList_E_-->
+<a href="java:hr.fer.oop.zad3.MyList" target="_top" title="java:hr.fer.oop.zad3.MyList" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.MyList" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.MyList" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="99.8203" id="MyList_E_" style="stroke: #A80036; stroke-width: 1.5;" width="165" x="7" y="29.5"/>
+<ellipse cx="62.25" cy="45.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M64.7231,51.6431 Q64.1421,51.9419 63.5029,52.0913 Q62.8638,52.2407 62.1582,52.2407 Q59.6514,52.2407 58.3315,50.5889 Q57.0117,48.937 57.0117,45.8159 Q57.0117,42.6865 58.3315,41.0347 Q59.6514,39.3828 62.1582,39.3828 Q62.8638,39.3828 63.5112,39.5322 Q64.1587,39.6816 64.7231,39.9805 L64.7231,42.7031 Q64.0923,42.1221 63.4988,41.8523 Q62.9053,41.5825 62.2744,41.5825 Q60.9297,41.5825 60.2449,42.6492 Q59.5601,43.7158 59.5601,45.8159 Q59.5601,47.9077 60.2449,48.9744 Q60.9297,50.041 62.2744,50.041 Q62.9053,50.041 63.4988,49.7712 Q64.0923,49.5015 64.7231,48.9204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="35" x="82.75" y="50.0352">MyList</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" width="9" x="166" y="26.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="7" x="167" y="39.1016">E</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="171" y1="61.5" y2="61.5"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="171" y1="69.5" y2="69.5"/>
+<ellipse cx="18" cy="80.5" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="89" x="27" y="84.1348">addLast(o: E): int</text>
+<ellipse cx="18" cy="93.4551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="139" x="27" y="97.0898">removeAt(index: int): void</text>
+<ellipse cx="18" cy="106.4102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="124" x="27" y="110.0449">elementAt(index: int): E</text>
+<ellipse cx="18" cy="119.3652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="27" y="123">size(): int</text>
+</a>
+<!--MD5=[cfc558d5dda5e5162f9f23e3e041284c]
+class MyListElement_E_-->
+<a href="java:hr.fer.oop.zad3.MyListElement" target="_top" title="java:hr.fer.oop.zad3.MyListElement" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.MyListElement" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.MyListElement" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="138.6855" id="MyListElement_E_" style="stroke: #A80036; stroke-width: 1.5;" width="234" x="264.5" y="10"/>
+<ellipse cx="331.25" cy="26" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M333.7231,32.1431 Q333.1421,32.4419 332.5029,32.5913 Q331.8638,32.7407 331.1582,32.7407 Q328.6514,32.7407 327.3315,31.0889 Q326.0117,29.437 326.0117,26.3159 Q326.0117,23.1865 327.3315,21.5347 Q328.6514,19.8828 331.1582,19.8828 Q331.8638,19.8828 332.5112,20.0322 Q333.1587,20.1816 333.7231,20.4805 L333.7231,23.2031 Q333.0923,22.6221 332.4988,22.3523 Q331.9053,22.0825 331.2744,22.0825 Q329.9297,22.0825 329.2449,23.1492 Q328.5601,24.2158 328.5601,26.3159 Q328.5601,28.4077 329.2449,29.4744 Q329.9297,30.541 331.2744,30.541 Q331.9053,30.541 332.4988,30.2712 Q333.0923,30.0015 333.7231,29.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="81" x="351.75" y="30.5352">MyListElement</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" width="9" x="492.5" y="7"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="7" x="493.5" y="19.6016">E</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="265.5" x2="497.5" y1="42" y2="42"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="272.5" y="50"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="284.5" y="56.6348">content: E</text>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="272.5" y="62.9551"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="130" x="284.5" y="69.5898">next: MyListElement&lt;E&gt;</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="265.5" x2="497.5" y1="75.9102" y2="75.9102"/>
+<ellipse cx="275.5" cy="86.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="137" x="284.5" y="90.5449">MyListElement(content: E)</text>
+<ellipse cx="275.5" cy="99.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="80" x="284.5" y="103.5">getContent(): E</text>
+<ellipse cx="275.5" cy="112.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="149" x="284.5" y="116.4551">setContent(content: E): void</text>
+<ellipse cx="275.5" cy="125.7754" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="156" x="284.5" y="129.4102">getNext(): MyListElement&lt;E&gt;</text>
+<ellipse cx="275.5" cy="138.7305" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="208" x="284.5" y="142.3652">setNext(next: MyListElement&lt;E&gt;): void</text>
+</a>
+<!--MD5=[8e936f9b0c8a405e1c674edc8f191d2f]
+class Nameable-->
+<a href="java:hr.fer.oop.zad3.Nameable" target="_top" title="java:hr.fer.oop.zad3.Nameable" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.Nameable" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.Nameable" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="60.9551" id="Nameable" style="stroke: #A80036; stroke-width: 1.5;" width="105" x="534" y="49"/>
+<ellipse cx="555.3" cy="65" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M551.7277,61.2651 L551.7277,59.1069 L559.1071,59.1069 L559.1071,61.2651 L556.6418,61.2651 L556.6418,69.3418 L559.1071,69.3418 L559.1071,71.5 L551.7277,71.5 L551.7277,69.3418 L554.1931,69.3418 L554.1931,61.2651 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="59" x="570.7" y="69.5352">Nameable</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="535" x2="638" y1="81" y2="81"/>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="535" x2="638" y1="89" y2="89"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="540" y="103.6348">getName(): String</text>
+</a>
+<!--MD5=[ccb6b53f2b3136c820d7801ae6f29901]
+class Painting-->
+<a href="java:hr.fer.oop.zad3.Painting" target="_top" title="java:hr.fer.oop.zad3.Painting" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.Painting" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.Painting" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="112.7754" id="Painting" style="stroke: #A80036; stroke-width: 1.5;" width="321" x="551" y="210"/>
+<ellipse cx="684.75" cy="226" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M687.2231,232.1431 Q686.6421,232.4419 686.0029,232.5913 Q685.3638,232.7407 684.6582,232.7407 Q682.1514,232.7407 680.8315,231.0889 Q679.5117,229.437 679.5117,226.3159 Q679.5117,223.1865 680.8315,221.5347 Q682.1514,219.8828 684.6582,219.8828 Q685.3638,219.8828 686.0112,220.0322 Q686.6587,220.1816 687.2231,220.4805 L687.2231,223.2031 Q686.5923,222.6221 685.9988,222.3523 Q685.4053,222.0825 684.7744,222.0825 Q683.4297,222.0825 682.7449,223.1492 Q682.0601,224.2158 682.0601,226.3159 Q682.0601,228.4077 682.7449,229.4744 Q683.4297,230.541 684.7744,230.541 Q685.4053,230.541 685.9988,230.2712 Q686.5923,230.0015 687.2231,229.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="705.25" y="230.5352">Painting</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="552" x2="871" y1="242" y2="242"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="559" y="250"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="91" x="571" y="256.6348">technique: String</text>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="559" y="262.9551"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="571" y="269.5898">name: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="552" x2="871" y1="275.9102" y2="275.9102"/>
+<ellipse cx="562" cy="286.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="295" x="571" y="290.5449">Painting(author: String, technique: String, name: String)</text>
+<ellipse cx="562" cy="299.8652" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="119" x="571" y="303.5">getTechnique(): String</text>
+<ellipse cx="562" cy="312.8203" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="93" x="571" y="316.4551">getName(): String</text>
+</a>
+<!--MD5=[f5bfb68e71329580d7be6009c7100e8d]
+class Photography-->
+<a href="java:hr.fer.oop.zad3.Photography" target="_top" title="java:hr.fer.oop.zad3.Photography" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.Photography" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.Photography" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="86.8652" id="Photography" style="stroke: #A80036; stroke-width: 1.5;" width="292" x="907.5" y="223"/>
+<ellipse cx="1013.25" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M1015.7231,245.1431 Q1015.1421,245.4419 1014.5029,245.5913 Q1013.8638,245.7407 1013.1582,245.7407 Q1010.6514,245.7407 1009.3315,244.0889 Q1008.0117,242.437 1008.0117,239.3159 Q1008.0117,236.1865 1009.3315,234.5347 Q1010.6514,232.8828 1013.1582,232.8828 Q1013.8638,232.8828 1014.5112,233.0322 Q1015.1587,233.1816 1015.7231,233.4805 L1015.7231,236.2031 Q1015.0923,235.6221 1014.4988,235.3523 Q1013.9053,235.0825 1013.2744,235.0825 Q1011.9297,235.0825 1011.2449,236.1492 Q1010.5601,237.2158 1010.5601,239.3159 Q1010.5601,241.4077 1011.2449,242.4744 Q1011.9297,243.541 1013.2744,243.541 Q1013.9053,243.541 1014.4988,243.2712 Q1015.0923,243.0015 1015.7231,242.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="72" x="1033.75" y="243.5352">Photography</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="908.5" x2="1198.5" y1="255" y2="255"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="915.5" y="263"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="109" x="927.5" y="269.6348">cameraModel: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="908.5" x2="1198.5" y1="275.9551" y2="275.9551"/>
+<ellipse cx="918.5" cy="286.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="266" x="927.5" y="290.5898">Photography(author: String, cameraModel: String)</text>
+<ellipse cx="918.5" cy="299.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="136" x="927.5" y="303.5449">getCameraModel(): String</text>
+</a>
+<!--MD5=[e2e51217fc2f829b018736ded3030873]
+class DocumentaryPhotography-->
+<a href="java:hr.fer.oop.zad3.DocumentaryPhotography" target="_top" title="java:hr.fer.oop.zad3.DocumentaryPhotography" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zad3.DocumentaryPhotography" xlink:show="new" xlink:title="java:hr.fer.oop.zad3.DocumentaryPhotography" xlink:type="simple">
+<rect fill="#FEFECE" filter="url(#f1scodq0rt0p75)" height="86.8652" id="DocumentaryPhotography" style="stroke: #A80036; stroke-width: 1.5;" width="441" x="833" y="397"/>
+<ellipse cx="975.25" cy="413" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/>
+<path d="M977.7231,419.1431 Q977.1421,419.4419 976.5029,419.5913 Q975.8638,419.7407 975.1582,419.7407 Q972.6514,419.7407 971.3315,418.0889 Q970.0117,416.437 970.0117,413.3159 Q970.0117,410.1865 971.3315,408.5347 Q972.6514,406.8828 975.1582,406.8828 Q975.8638,406.8828 976.5112,407.0322 Q977.1587,407.1816 977.7231,407.4805 L977.7231,410.2031 Q977.0923,409.6221 976.4988,409.3523 Q975.9053,409.0825 975.2744,409.0825 Q973.9297,409.0825 973.2449,410.1492 Q972.5601,411.2158 972.5601,413.3159 Q972.5601,415.4077 973.2449,416.4744 Q973.9297,417.541 975.2744,417.541 Q975.9053,417.541 976.4988,417.2712 Q977.0923,417.0015 977.7231,416.4204 Z "/>
+<text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="148" x="995.75" y="417.5352">DocumentaryPhotography</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="834" x2="1273" y1="429" y2="429"/>
+<rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="841" y="437"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="71" x="853" y="443.6348">theme: String</text>
+<line style="stroke: #A80036; stroke-width: 1.5;" x1="834" x2="1273" y1="449.9551" y2="449.9551"/>
+<ellipse cx="844" cy="460.9551" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="415" x="853" y="464.5898">DocumentaryPhotography(author: String, cameraModel: String, theme: String)</text>
+<ellipse cx="844" cy="473.9102" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="853" y="477.5449">getTheme(): String</text>
+</a>
+<!--MD5=[4df1976e052bf01de7b07760abd80cbe]
+reverse link Nameable to Painting-->
+<path d="M617.85,126.9 C634.84,152.04 655.94,183.28 673.82,209.73 " fill="none" id="Nameable&lt;-Painting" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+<polygon fill="none" points="611.98,130.71,606.58,110.22,623.58,122.88,611.98,130.71" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[4e310b80bfcf02838c98664bb2c00df5]
+reverse link Nameable to ArtPhotography-->
+<path d="M561.77,128.2 C550.76,152.08 539.04,181.83 533.5,210 C522,268.45 524.62,336.9 528.78,383.74 " fill="none" id="Nameable&lt;-ArtPhotography" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/>
+<polygon fill="none" points="555.52,125.05,570.51,110.08,568.13,131.13,555.52,125.05" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[52f658ff4681cbfaa51738046ab879f9]
+reverse link Artwork to Painting-->
+<path d="M766.97,141.87 C757.12,163.81 746.09,188.4 736.47,209.84 " fill="none" id="Artwork&lt;-Painting" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="760.68,138.79,775.25,123.41,773.45,144.52,760.68,138.79" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[8bbf0917141382d06dec10ecc613cc21]
+reverse link Artwork to Photography-->
+<path d="M870.53,134.8 C909.78,162.84 956.98,196.56 993.61,222.72 " fill="none" id="Artwork&lt;-Photography" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="866.45,140.5,854.25,123.18,874.59,129.1,866.45,140.5" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[1b14a0781ba42fdd02864c605bc7d5c2]
+reverse link Photography to ArtPhotography-->
+<path d="M908.95,316.49 C902.38,318.7 895.87,320.87 889.5,323 C829.51,343.02 763.72,364.74 705.3,383.94 " fill="none" id="Photography&lt;-ArtPhotography" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="906.99,309.77,928.18,310.03,911.45,323.04,906.99,309.77" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[44983fdb7833affdce35d5df126612ce]
+reverse link Photography to DocumentaryPhotography-->
+<path d="M1053.5,330.34 C1053.5,352.47 1053.5,376.81 1053.5,396.88 " fill="none" id="Photography&lt;-DocumentaryPhotography" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="none" points="1046.5,330.02,1053.5,310.02,1060.5,330.02,1046.5,330.02" style="stroke: #A80036; stroke-width: 1.0;"/>
+<!--MD5=[eb22432734ec4487d737d4a89f94c16d]
+link MyList_E_ to MyListElement_E_-->
+<path d="M172,79.5 C199.11,79.5 229.83,79.5 259.24,79.5 " fill="none" id="MyList_E_-&gt;MyListElement_E_" style="stroke: #A80036; stroke-width: 1.0;"/>
+<polygon fill="#A80036" points="264.33,79.5,255.33,75.5,259.33,79.5,255.33,83.5,264.33,79.5" style="stroke: #A80036; stroke-width: 1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="0" x="246.25" y="73.0684"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="227.4577" y="92.9626">0,1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="38" x="218.4577" y="108.2731">-head</text>
+<!--MD5=[60c62ae50ca6b812428079c6d846806c]
+@startuml
+class ArtPhotography [[java:hr.fer.oop.zad3.ArtPhotography]] {
+	-type: String
+	-name: String
+	+ArtPhotography(author: String, cameraModel: String, type: String, name: String)
+	+getType(): String
+	+getName(): String
+}
+
+class Artwork [[java:hr.fer.oop.zad3.Artwork]] {
+	-author: String
+	+Artwork(author: String)
+	+getAuthor(): String
+}
+
+class "MyList<E>" as MyList_E_ [[java:hr.fer.oop.zad3.MyList]] {
+	+addLast(o: E): int
+	+removeAt(index: int): void
+	+elementAt(index: int): E
+	+size(): int
+}
+
+class "MyListElement<E>" as MyListElement_E_ [[java:hr.fer.oop.zad3.MyListElement]] {
+	-content: E
+	-next: MyListElement<E>
+	+MyListElement(content: E)
+	+getContent(): E
+	+setContent(content: E): void
+	+getNext(): MyListElement<E>
+	+setNext(next: MyListElement<E>): void
+}
+
+interface Nameable [[java:hr.fer.oop.zad3.Nameable]] {
+	getName(): String
+}
+class Painting [[java:hr.fer.oop.zad3.Painting]] {
+	-technique: String
+	-name: String
+	+Painting(author: String, technique: String, name: String)
+	+getTechnique(): String
+	+getName(): String
+}
+class Photography [[java:hr.fer.oop.zad3.Photography]] {
+	-cameraModel: String
+	+Photography(author: String, cameraModel: String)
+	+getCameraModel(): String
+}
+class DocumentaryPhotography [[java:hr.fer.oop.zad3.DocumentaryPhotography]] {
+	-theme: String  
+	+DocumentaryPhotography(author: String, cameraModel: String, theme: String)
+	+getTheme(): String
+}
+
+Nameable <|.. Painting
+Nameable <|.. ArtPhotography
+Artwork <|- - Painting
+Artwork <|- - Photography
+Photography <|- - ArtPhotography
+Photography <|- - DocumentaryPhotography
+MyList_E_ -> "0,1\n-head" MyListElement_E_ : "              "
+@enduml
+
+PlantUML version 1.2020.14(Sat Jun 20 16:14:34 CEST 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na <em>public</em> i nalaze se u paketu <code>hr.fer.oop.zad3</code>.</p>
+<p>Napravite javno sučelje <code>Printable</code> koja ima metodu <code>print</code>. Ta metoda ne prima argumente, ali vraća <code>String</code>.</p>
+<p>Napravite sljedeće javne klase:</p>
+<ul>
+<li>klasa <code>PaintingPrinter</code> - ona nasljeđuje klasu <code>MyList</code> i može sadržavati objekte <code>Painting</code>. Klasa implementira i sučelje <code>Printable</code>. Metoda <code>print</code> vraća <code>String</code> koji se sastoji od po jednog retka za svaki objekt koji sadrži <code>PaintingPrinter</code>. Format pogledajte u primjeru korištenja.</li>
+<li>klasa <code>NameablePrinter</code> - ona nasljeđuje klasu <code>MyList</code> i može sadržavati objekte koji su <code>Artwork</code> i <code>Nameable</code>. Klasa implementira i sučelje <code>Printable</code>. Metoda <code>print</code> vraća <code>String</code> koji se sastoji od po jednog retka za svaki objekt koji sadrži <code>NameablePrinter</code>. Format pogledajte u primjeru korištenja.</li>
+</ul>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">PaintingPrinter paintings = new PaintingPrinter();
+paintings.addLast(new Painting(&quot;Pablo Picasso&quot;, &quot;drawing&quot;, &quot;Two reading cats&quot;));
+paintings.addLast(new Painting(&quot;Edo Murtic&quot;, &quot;mosaic&quot;, &quot;Seferov family tomb&quot;));
+paintings.addLast(new Painting(&quot;Vlaho Bukovac&quot;, &quot;painting&quot;, &quot;Hrvatski narodni preporod&quot;));
+System.out.println(paintings.print());
+
+NameablePrinter&lt;ArtPhotography&gt; nameables = new NameablePrinter&lt;&gt;();
+nameables.addLast(new ArtPhotography(&quot;Damir Hoyka&quot;, &quot;Nikon&quot;, &quot;portrait&quot;, &quot;Matrina Zubcic&quot;));
+nameables.addLast(new ArtPhotography(&quot;Toso Dabac&quot;, &quot;Flexaret&quot;, &quot;people&quot;, &quot;Prosjakinja s djetetom&quot;));
+System.out.println(nameables.print());
+
+NameablePrinter&lt;Painting&gt; printer = new NameablePrinter&lt;&gt;(); // OK
+//NameablePrinter&lt;Photography&gt; printer = new NameablePrinter&lt;&gt;(); // greška kod prevođenja
+//NameablePrinter&lt;Artwork&gt; printer = new NameablePrinter&lt;&gt;(); // greška kod prevođenja
+
+
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Pablo Picasso: Two reading cats painted by using drawing
+Edo Murtic: Seferov family tomb painted by using mosaic
+Vlaho Bukovac: Hrvatski narodni preporod painted by using painting
+
+Damir Hoyka: Matrina Zubcic
+Toso Dabac: Prosjakinja s djetetom
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

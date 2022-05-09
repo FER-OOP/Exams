@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>4. Zadatak (6 bodova)</h1>
+<p>U sustavu za prihvat očitanja brojila o potrošnji električne energije koja se šalju jednom dnevno potrebno je implementirati dodatne funkcionalnosti kako bi se osigurao jedinstveni format njihove pohrane u bazi podataka. U sustav se primaju očitanja od dva različita proizvođača brojila koja šalju vrijednosti očitanja u različitim formatima. Prvi proizvođač šalje očitanje u sljedećem formatu:</p>
+<pre class="line-numbers"><code>{serialNumber : serialNumber_value, timestamp : timestamp_value, currentReading : currentReading_value}
+</code></pre>
+<p>gdje je timestamp_value u formatu <code>dd-MM-yyyy</code>, a drugi proizvođač šalje očitanja u formatu bez opisa vrijednosti:</p>
+<pre class="line-numbers"><code>serialNumber_value;timestamp_value;currentReading_value
+</code></pre>
+<p>gdje je timestamp_value u formatu <code>MM dd yyyy</code>.</p>
+<p>Vaš je zadatak implementirati klasu <code>Parser</code> koja ima statičnu metodu <code>public static Reading parseInputString</code> koja kao ulazni argument prima niz znakova. Ona za primljeni niz znakova treba provjeriti odgovara li on jednom od navedenih formata te ako je to slučaj izvući navedene parametre i vratiti objekt klase <code>Reading</code> u kojem se spremaju očitanja.</p>
+<p>Klasa <code>Reading</code> treba imati konstruktor za stvaranje objekta kojem se zadaju vrijednosti svih parametara. Prototip konstruktora je <code>public Reading(Integer serialNumber, Double readingValue, LocalDate timestamp)</code>. Za pretvaranje niza znakova koji sadrži datum u obliku niza znakova u nekom od prethodnih formata možete koristiti metode dane u predlošku (<code>parseDateForManufacturerA</code> i <code>parseDateForManufacturerB</code>). Klasa treba imati <em>gettere</em> i <em>settere</em>.</p>
+<p>Ako dođe do greške u obradi primljenog niza potrebno je baciti odgovarajuću iznimku, a pritom sve iznimke trebaju naslijediti osnovnu iznimku <code>ParseReadingException</code> koju nije moguće instancirati:</p>
+<ol>
+<li>ako ulazni niz ima neodgovarajući broj parametara (ako postoji manje ili više vrijednosti u zadanim formatima) potrebno je baciti iznimku <code>IncorrectArgumentNumberException</code>;</li>
+<li>ako dođe do iznimke u parsiranju bilo kojeg od ulaznih parametara (ako se ne može prebaciti u zadani format) potrebno je baciti iznimku <code>ReadingFormatException</code>. Dodatno je u ovom slučaju potrebno i kao uzrok iznimke postaviti izvornu iznimku (ako postoji).</li>
+</ol>
+<p>Sve iznimke moraju implementirati konstruktor koji prima samo uzrok iznimke (izvornu iznimku), konstruktor koji prima poruku i uzrok iznimke (izvornu iznimku), te konstruktor koji ne prima ulazne argumente, odnosno konstruktore koji odgovaraju sljedećim konstruktorima nadklase Exception: <code>Exception(Throwable cause)</code> <code>Exception(String message, Throwable cause)</code> <code>Exception()</code></p>
+<p>Sve klase definirajte u istom paketu: <code>hr.fer.oop</code></p>
+<p><em>Primjer korištenja</em>:</p>
+<pre class="line-numbers"><code>parseInputString(&quot;{serialNumber : 2223s, timestamp : 05-12-1992, currentReading : 284.3}&quot;);
+</code></pre>
+<p><em>Rezultat</em>: bačena <code>hr.fer.oop.ReadingFormatException</code> iznimka uzrokovana iznimkom <code>java.lang.NumberFormatException</code>.</p>
+<p>Napomena: Sve su klase javne i nalaze se u paketu: <code>hr.fer.oop</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
