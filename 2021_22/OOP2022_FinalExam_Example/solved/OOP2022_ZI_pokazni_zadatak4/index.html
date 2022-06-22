@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>4. Zadatak</h1>
+<p>Sve klase se nalaze u paketu: <code>hr.fer.oop.zi.z4</code>.</p>
+<p>Ovaj zadatak je nastvak na prethodni. U predlošku imate oznaku <code>// FIXME ...</code> gdje je navedeno da kopirate dijelove koje ste napisali u prethodnom zadatku. Ako niste riješili prethodni zadatak nećete moći GUI pokretati, ali će se Vaše rješenje moći testirati i bez toga.</p>
+<p>Kada na početku pokrenete testiranje (posao <code>grade</code>) može proći i do 60 sekundi dok ne dobijete rezultat testiranja. Kako ćete koji dio riješiti izvršavanje testiranja će biti brže.</p>
+<p>Na mjestima označenima s <code>// TODO ...</code> trebate dopuniti kod.</p>
+<p>Nastavite implementaciju klase <code>ImagesDownloader</code>. Pritiskom na gumb <em>Download</em> poziva se metoda <code>downloadFlagImages()</code> koju trebate promijeniti u odnosu na prethodni zadatak. Navedena metoda u ovom zadatku treba:</p>
+<ul>
+<li>obrisati statusnu liniju,</li>
+<li>obrisati sve elemente iz liste koristeći model,</li>
+<li>zabraniti klik na gumb <em>Download</em> dok se ne učitaju slike i</li>
+<li>pozvati metodu <code>loadFlags()</code>.</li>
+</ul>
+<p>U metodi <code>loadFlags</code> treba pokrenuti <code>DownloadWorker</code> koji predstavlja unutarnju klasu od <code>ImagesDownloader</code>-a i nasljeđuje klasu <code>SwingWorker</code>. <code>DownloadWorker</code> će u pozadinskoj dretvi puniti <code>JList imageList</code> imenima država, te mapu <code>images</code> s imenima država i slikama zastava. Države se nalaze u listi <code>countries</code>.</p>
+<p>Preuzimanje zastave za pojedinu državu obavlja se metodom <code>loadFlagForCountry(String country)</code>, koja će vratiti sliku zastave, ili <code>null</code> ako sliku nije moguće dohvatiti. Ako preuzimanje nije moguće, metoda <code>doInBackground()</code> klase <code>DownloadWorker</code> prestaje s radom i vraća string <code>&quot;Problems with network!&quot;</code> koji se ispisuje u poruci na statusnoj liniji. Ako je sve u redu preuzima se slika po slika i na kraju se vraća <code>&quot;Finished!&quot;</code>.</p>
+<p>Na statusnoj liniji (<code>txStatus</code>) se ispisuje naziv države čija slika zastave se trenutno preuzima (npr. string <code>&quot;Downloading Croatia&quot;</code>), a također se ažurira i trenutna vrijednost napredovanja (postotak u <em>progress baru</em>).</p>
+<p>Na kraju se pokazivač napredovanja ponovno postavlja na vrijednost 0 te se omogućuje klik na gumb <em>Download</em>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

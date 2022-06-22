@@ -1,0 +1,190 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Neka trgovina pohranjuje račune svojih kupaca tako da svaki račun zapisuje kao datoteku naziva <code>bill-[identifikator].csv</code>. Računi su onda pohranjeni u mape oblika <code>YYYY-MM-DD</code> prema datumu provedbe.</p>
+<p>Svaki račun (<code>Bill</code>) ima svoje atribute <code>id:String</code> i <code>articles:List&lt;Article&gt;</code>, gettere za svaki od njih, konstruktor koji prima atribut <code>id</code> te metodu <code>addArticle(Article)</code> koja dodaje artikl u listu artikala articles. Klasa <code>Article</code> sadrži atribute <code>name:String</code>, <code>basePrice:double</code>, <code>discount:double</code> i <code>int:quantity</code>, gettere za svaki od njih te konstruktor koji prima sve atribute.</p>
+<p>Opis atributa:</p>
+<ul>
+<li><code>id</code> – identifikator računa,</li>
+<li><code>articles</code> – lista artikala u računu,</li>
+<li><code>basePrice</code> – osnovna cijena,</li>
+<li><code>discount</code> – trenutni popust izražen u postotku (npr. spremljena vrijednost 0.2 je 20%),</li>
+<li><code>quantity</code> – količina kupljenih proizvoda.</li>
+</ul>
+<p>Račun je pohranjen kao datoteka, u čijem se imenu nalazi identifikator i uvijek je brojčana vrijednost, a svaki redak datoteke predstavlja jedan kupljeni artikl. Atributi artikla su pohranjeni kao zarezom odvojene vrijednosti (CSV - <em>comma separated value</em>). Primjer zapisa artikla je <code>&quot;jabuka,4.0,0,5&quot;</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="549px" preserveAspectRatio="none" style="width:523px;height:549px;background:#FFFFFF;" version="1.1" viewBox="0 0 523 549" width="523px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[4d37ff7ba0ceae5cd2f46bdb37209993]
+class Bill-->
+<a href="java:hr.fer.oop.zi.z1.Bill" target="_top" title="java:hr.fer.oop.zi.z1.Bill" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.z1.Bill" xlink:show="new" xlink:title="java:hr.fer.oop.zi.z1.Bill" xlink:type="simple">
+<g id="elem_Bill">
+<rect codeLine="1" fill="#F1F1F1" height="179.9063" id="Bill" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="290" x="116.5" y="7"/>
+<ellipse cx="247.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M249.7231,29.1431 Q249.1421,29.4419 248.5029,29.5913 Q247.8638,29.7407 247.1582,29.7407 Q244.6514,29.7407 243.3315,28.0889 Q242.0117,26.437 242.0117,23.3159 Q242.0117,20.1865 243.3315,18.5347 Q244.6514,16.8828 247.1582,16.8828 Q247.8638,16.8828 248.5112,17.0322 Q249.1587,17.1816 249.7231,17.4805 L249.7231,20.2031 Q249.0923,19.6221 248.4988,19.3523 Q247.9053,19.0825 247.2744,19.0825 Q245.9297,19.0825 245.2449,20.1492 Q244.5601,21.2158 244.5601,23.3159 Q244.5601,25.4077 245.2449,26.4744 Q245.9297,27.541 247.2744,27.541 Q247.9053,27.541 248.4988,27.2712 Q249.0923,27.0015 249.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="267.75" y="28.291">Bill</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="117.5" x2="405.5" y1="39" y2="39"/>
+<ellipse cx="127.5" cy="50" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="136.5" y="56.5352">id: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="117.5" x2="405.5" y1="63.4883" y2="63.4883"/>
+<ellipse cx="127.5" cy="74.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="136.5" y="81.0234">Bill(id: String)</text>
+<ellipse cx="127.5" cy="90.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="136.5" y="97.5117">getId(): String</text>
+<ellipse cx="127.5" cy="107.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="136.5" y="114">setId(id: String): void</text>
+<ellipse cx="127.5" cy="123.9531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="136.5" y="130.4883">getArticles(): List&lt;Article&gt;</text>
+<ellipse cx="127.5" cy="140.4414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="136.5" y="146.9766">setArticles(articles: List&lt;Article&gt;): void</text>
+<ellipse cx="127.5" cy="156.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="136.5" y="163.4648">addArticle(article: Article): void</text>
+<ellipse cx="127.5" cy="173.418" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="136.5" y="179.9531">toString(): String</text>
+</g>
+</a>
+<!--MD5=[d22815ff63be9cac9a63f8d1ea27d033]
+class Article-->
+<a href="java:hr.fer.oop.zi.z1.Article" target="_top" title="java:hr.fer.oop.zi.z1.Article" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.z1.Article" xlink:show="new" xlink:title="java:hr.fer.oop.zi.z1.Article" xlink:type="simple">
+<g id="elem_Article">
+<rect codeLine="11" fill="#F1F1F1" height="278.8359" id="Article" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="509" x="7" y="264"/>
+<ellipse cx="235.25" cy="280" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M237.7231,286.1431 Q237.1421,286.4419 236.5029,286.5913 Q235.8638,286.7407 235.1582,286.7407 Q232.6514,286.7407 231.3315,285.0889 Q230.0117,283.437 230.0117,280.3159 Q230.0117,277.1865 231.3315,275.5347 Q232.6514,273.8828 235.1582,273.8828 Q235.8638,273.8828 236.5112,274.0322 Q237.1587,274.1816 237.7231,274.4805 L237.7231,277.2031 Q237.0923,276.6221 236.4988,276.3523 Q235.9053,276.0825 235.2744,276.0825 Q233.9297,276.0825 233.2449,277.1492 Q232.5601,278.2158 232.5601,280.3159 Q232.5601,282.4077 233.2449,283.4744 Q233.9297,284.541 235.2744,284.541 Q235.9053,284.541 236.4988,284.2712 Q237.0923,284.0015 237.7231,283.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="255.75" y="285.291">Article</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="515" y1="296" y2="296"/>
+<ellipse cx="18" cy="307" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="27" y="313.5352">name: String</text>
+<ellipse cx="18" cy="323.4883" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="27" y="330.0234">basePrice: double</text>
+<ellipse cx="18" cy="339.9766" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="27" y="346.5117">discount: double</text>
+<ellipse cx="18" cy="356.4648" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="27" y="363">quantity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="515" y1="369.9531" y2="369.9531"/>
+<ellipse cx="18" cy="380.9531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="483" x="27" y="387.4883">Article(name: String, basePrice: double, discount: double, quantity: int)</text>
+<ellipse cx="18" cy="397.4414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="27" y="403.9766">getName(): String</text>
+<ellipse cx="18" cy="413.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="27" y="420.4648">setName(name: String): void</text>
+<ellipse cx="18" cy="430.418" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="27" y="436.9531">getBasePrice(): double</text>
+<ellipse cx="18" cy="446.9063" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252" x="27" y="453.4414">setBasePrice(basePrice: double): void</text>
+<ellipse cx="18" cy="463.3945" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="27" y="469.9297">getDiscount(): double</text>
+<ellipse cx="18" cy="479.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="27" y="486.418">setDiscount(discount: double): void</text>
+<ellipse cx="18" cy="496.3711" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="27" y="502.9063">getQuantity(): int</text>
+<ellipse cx="18" cy="512.8594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="27" y="519.3945">setQuantity(quantity: int): void</text>
+<ellipse cx="18" cy="529.3477" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="27" y="535.8828">toString(): String</text>
+</g>
+</a>
+<!--MD5=[2e71d32d03e90e5e2c903aef98d018a6]
+link Bill to Article-->
+<g id="link_Bill_Article">
+<path codeLine="28" d="M261.5,187.3 C261.5,209.75 261.5,234.41 261.5,258.78 " fill="none" id="Bill-to-Article" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="261.5,263.97,265.5,254.97,261.5,258.97,257.5,254.97,261.5,263.97" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="46" x="262.5" y="230.5684">articles</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="255.3266" y="253.0519">*</text>
+</g>
+<!--MD5=[52c0d71604143a3a02550301bb604f8e]
+@startuml
+class Bill [[java:hr.fer.oop.zi.z1.Bill]] {
+	+id: String
+	+Bill(id: String)
+	+getId(): String
+	+setId(id: String): void
++getArticles(): List<Article>
+	+setArticles(articles: List<Article>): void
+	+addArticle(article: Article): void
+	+toString(): String
+}
+class Article [[java:hr.fer.oop.zi.z1.Article]] {
+	+name: String
+	+basePrice: double
+	+discount: double
+	+quantity: int
+	+Article(name: String, basePrice: double, discount: double, quantity: int)
+	+getName(): String
+	+setName(name: String): void
+	+getBasePrice(): double
+	+setBasePrice(basePrice: double): void
+	+getDiscount(): double
+	+setDiscount(discount: double): void
+	+getQuantity(): int
+	+setQuantity(quantity: int): void
+	+toString(): String
+}
+
+Bill - -> "*" Article : articles
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<h1>1. Zadatak</h1>
+<p><strong>Napomena:</strong> Sve klase i sučelja nalaze se u paketu <code>hr.fer.oop.zi.z1</code>.</p>
+<p>Potrebno je dovršiti klasu <code>MyFileVisitor</code> i glavni program (klasa <code>Main</code>) tako da u glavnom prograu implementirate metodu <code>loadBills(Path path)</code> koja pročita (poziva <code>MyFileVisitor</code>) sve račune koji su pohranjene u datotekama unutar nekog direktorija i njegovih poddirektorija i vrati ih u obliku liste.</p>
+<p>Koristeći <code>FileVisitor</code> dovršiti program koji ispravno učitava račune i pripadne artikle po računima iz predane putanje. U predlošku je potrebno napisati metode <code>parseArticle</code> i <code>loadBill</code> te pomoću njih napraviti traženu funkcionalnost klase <code>MyFileVisitor</code>.</p>
+<p>Metoda <code>parseArticle</code> parsira redak datoteke prema kojoj stvara instancu klase <code>Article</code> te istu vraća kao rezultat metode. <code>loadBill</code> provjerava nad primljenom putanjom radi li se o <code>.csv</code> datoteci te u slučaju da je tako, stvara račun (<code>Bill</code>) te dodaje sve artikle iz datoteke u račun. U slučaju da se kod provjere ekstenzije datoteke ne radi o <code>.csv</code> datoteci, potrebno je vratiti <code>null</code> vrijednost. <code>id</code> svakog računa nalazi se unutar naziva datoteke, dok se pojedinosti svakog artikla nalaze u datoteci.</p>
+<p><strong>NAPOMENA:</strong> Pretpostavite da su imena datoteka i njihov sadržaj uvijek ispravni.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">new Main().run();
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">[
+  Bill {
+    id='2',
+    articles=[
+      Article{name='jabuka', basePrice=7.0, discount=0.2, quantity=1},
+      Article{name='kruška', basePrice=21.0, discount=0.0, quantity=2},
+      Article{name='banana', basePrice=5.0, discount=0.1, quantity=4}
+    ]
+  },
+  Bill {
+    id='1',
+    articles=[
+      Article{name='jabuka', basePrice=5.0, discount=0.2, quantity=4},
+      Article{name='kruška', basePrice=4.0, discount=0.0, quantity=3},
+      Article{name='banana', basePrice=15.0, discount=0.0, quantity=7}
+    ]
+  },
+  Bill {
+    id='3',
+    articles=[
+      Article{name='kruh', basePrice=5.0, discount=0.2, quantity=17},
+      Article{name='salama', basePrice=14.0, discount=0.5, quantity=3},
+      Article{name='keksi', basePrice=233.0, discount=0.0, quantity=7}
+    ]
+  }
+]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

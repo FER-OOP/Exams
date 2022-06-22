@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>3. zadatak</h1>
+<p>Sve klase se nalaze u paketu: <code>hr.fer.oop.zi.z3</code>.</p>
+<p>Dopunite klasu <code>ImagesDownloader</code> koji predstavlja Swing aplikaciju pomoću koje se mogu prikazivati slike zastave određene države. Izgled aplikacije prikazan je na slikama (razližite veličine prozora).</p>
+<p><strong>Napomena:</strong> U predložku su označena mjesta s komentarom <code>// TODO ...</code> koja treba nadopuniti.</p>
+<img src="res/Picture1.png" width="800px"/>
+<img src="res/Picture2.png" width="1024px"/>
+<p>U gornjem dijelu aplikacije nalaze se polja za korisničko ime i lozinku te gumbi <em>Login</em> i <em>Download</em>. Na lijevoj strani se nalazi objekt tipa <code>JList</code> u kojem se nalaze države za koje su preuzete slike zastava. Najveći dio aplikacije zauzima objekt tipa <code>JLabel</code> u kojem će se prikazivati slika zastave. Na dnu prozora još se nalazi i <code>JProgressBar</code> za prikaz napretka prilikom preuzimana zastava te polje za ispisivanje statusa.</p>
+<p>U metodi <code>setupLayout</code> klase <code>ImagesDownloader</code> kreirajte grafičko sučelje prikazano na slikama. Za <em>layout</em>e možete koristiti klase <code>FlowLayout</code>, <code>GridLayout</code> i <code>BoarderLayout</code>.</p>
+<p>Također je potrebno definirati ponašanje za gumb <em>Login</em>, kao i ponašanje aplikacije prilikom odabira države (u metodi <code>registerListeners</code>).</p>
+<p>Na početku, kada se aplikacija pokrene, lista država i slika zastave su prazni, gumb <em>Download</em> je onemogućen, <em>progress bar</em> u dnu prozora je postavljen na 0, dok je tekst u statusnoj traci prazan. Pritiskom na gumb <em>Login</em> provjerava se ispravan upis korisničkog imena i lozinke (metoda <code>checkUser()</code>), i ako su unesene vrijednosti ispravne, potrebno je omogućiti gumb <em>Download</em>.</p>
+<p>Gumbom <em>Download</em> pokreće se učitavanje zastava i punjenje država u <code>JList</code>. Potrebno je registrirati <em>listener</em> koji poziva metodu <code>downloadFlagImages()</code>.</p>
+<p>U metodi <code>downloadFlagImages()</code> potrebno je učitati slike pozivom metode <code>loadFlags()</code>. Ako se više put učitavaju slike da ne bi bilo duplikata najjednostavnije je da se prije učitavanja obrišu svi elementi iz modela.</p>
+<p>Kada se u <code>JList</code>-i na lijevoj strani ekrana aplikacije promijeni odabir države, potrebno je osvježiti prikaz slike te u statusnoj traci upisati naziv odabrane države. Promjena odabira detektira se objektom koji implementira <code>ListSelectionListener</code>, i pri tome se poziva metoda <code>public void valueChanged(ListSelectionEvent e)</code>. U ovom slučaju sučelje <code>ListSelectionListener</code> je implementirano unutar klase <code>ImageDownloader</code>.</p>
+<p>Uputa: objekt tipa <code>JList</code> sadrži model (u zadatku tipa <code>DefaultListModel</code>), pomoću kojeg se može manipulirati elementima koje lista prikazuje. Pogledajte popis korisnih metoda.</p>
+<p>Popis korisnih metoda:</p>
+<p><strong><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/JList.html">Class JList<E></a></strong></p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/JList.html#getSelectedValue()"><code>E getSelectedValue()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/JList.html#getModel()"><code>ListModel&lt;E&gt; getModel()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/JList.html#setSelectedIndex(int)"><code>void setSelectedIndex(int index)</code></a></li>
+</ul>
+<p><strong><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html">Class DefaultListModel<E></a></strong></p>
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#getSize()"><code>int getSize()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#clear()"><code>void clear()</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#add(int,E)"><code>void add(int index, E element)</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#addElement(E)"><code>void addElement(E element)</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#addAll(java.util.Collection)"><code>void addAll(Collection&lt;? extends E&gt; c)</code></a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.desktop/javax/swing/DefaultListModel.html#get(int)"><code>E get(int index)</code></a></li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>
