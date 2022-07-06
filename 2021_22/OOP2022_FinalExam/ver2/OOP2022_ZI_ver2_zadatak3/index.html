@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>3. Zadatak (9 bodova)</h1>
+<p>Slažete novo računalo i trenutno pokušavate kupiti najisplativiji procesor (CPU). Želite omogućiti poredanje različitih CPU-eva po kriterijima koje često koristite.</p>
+<p>Zadatak vam je implementirati klasu <code>CPURanking</code> koja sadrži statičke metode koje vraćaju implementacije sučelja <code>Comparator&lt;CPU&gt;</code> pomoću kojih se tada redaju različiti <code>CPU</code>-ovi.</p>
+<ul>
+<li><code>hasHyperthreadingFirst()</code> - Vraća komparator koji prvo reda <code>CPU</code>-ove s <code>hyperthreading</code>-om, tj. postavlja ih na ranije mjesto, a zatim one bez <code>hyperthreading</code>-a. Analogno statickoj metodi <code>nullsFirst</code> u <code>Comparator</code> sučelju.</li>
+<li><code>withinBudger(int budget)</code> - Vraća komparator koji postavlja na ranije mjesto procesore koji su unutar danog budžeta. Analongno prethodnoj metodi. Ne rangira po cijeni već samo je li cijena unutar budžeta.</li>
+<li><code>byPotentialSpeed()</code> - Vraća komparator koji prvo reda <strong>silazno</strong> po <code>clockSpeed</code>-u, zatim <strong>silazno</strong> po broju jezgri (<code>cores</code>) i na kraju po mogucnosti <code>hyperthreading</code>-a (koristite metodu <code>hasHyperthreadingFirst</code>).</li>
+<li><code>byCostEfficiency()</code> - Vraća komparator koji uspoređuje učinkovitost s obzirom na cijenu (<code>cost</code>). Učinkovitost s obzirom na cijenu se računa kao cijena podijeljena s bodovima brzine. Bodovi brzine se računaju tako da se pomnoži <code>clockSpeed</code> s brojem jezgri. Dodatno, ako procesor ima svojstvo <code>hyperthreading</code>-a bodovi brzine se uvećavaju za 20%, te nakon toga dijele cijenu.</li>
+<li><code>byAffordabilityAndEfficiency(int budget)</code> - Vraća komparator koji prvo reda one koji su unutar budgeta (<code>withinBudget</code>), zatim poreda po učinkovitosti s obzirom na cijenu (<code>byCostEfficiency</code>), zatim potencijalnoj brzini (<code>byPotentialSpeed</code>), te na kraju po imenu CPU-a.</li>
+</ul>
+<h3>Primjer</h3>
+<p>Za sljedeći kod:</p>
+<pre class="line-numbers"><code class="language-java">CPUDatabase db = new CPUDatabase();
+db.createCPU(&quot;Intel Core i5-12600K&quot;, 3.7, 10, 2500, true);
+db.createCPU(&quot;AMD Ryzen 5 5600X&quot;, 3.7, 6, 1500, false);
+db.createCPU(&quot;Intel Core i7-11700K&quot;, 3.6, 8, 3000, true);
+db.createCPU(&quot;AMD Ryzen 7 3700X&quot;, 3.6, 8, 2200, false);
+Collection&lt;CPU&gt; cpusBySpeed = 
+		db.getRanking(CPURanking.byPotentialSpeed());
+cpusBySpeed.forEach(System.out::println);
+
+System.out.println();
+
+Collection&lt;CPU&gt; cpusByCostEfficiency = 
+		db.getRanking(CPURanking.byCostEfficiency());
+cpusByCostEfficiency.forEach(System.out::println);
+
+System.out.println();
+
+Collection&lt;CPU&gt; cpusByAffordabilityAndCostEff = 
+		db.getRanking(CPURanking.byAffordabilityAndEfficiency(2400));
+cpusByAffordabilityAndCostEff.forEach(System.out::println);
+</code></pre>
+<p>Dobivamo sljedeći ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Intel Core i5-12600K: clockSpeed=3.7, cores=10, hyperthreading=true, cost=2500
+AMD Ryzen 5 5600X: clockSpeed=3.7, cores=6, hyperthreading=false, cost=1500
+Intel Core i7-11700K: clockSpeed=3.6, cores=8, hyperthreading=true, cost=3000
+AMD Ryzen 7 3700X: clockSpeed=3.6, cores=8, hyperthreading=false, cost=2200
+
+Intel Core i5-12600K: clockSpeed=3.7, cores=10, hyperthreading=true, cost=2500
+AMD Ryzen 5 5600X: clockSpeed=3.7, cores=6, hyperthreading=false, cost=1500
+AMD Ryzen 7 3700X: clockSpeed=3.6, cores=8, hyperthreading=false, cost=2200
+Intel Core i7-11700K: clockSpeed=3.6, cores=8, hyperthreading=true, cost=3000
+
+AMD Ryzen 5 5600X: clockSpeed=3.7, cores=6, hyperthreading=false, cost=1500
+AMD Ryzen 7 3700X: clockSpeed=3.6, cores=8, hyperthreading=false, cost=2200
+Intel Core i5-12600K: clockSpeed=3.7, cores=10, hyperthreading=true, cost=2500
+Intel Core i7-11700K: clockSpeed=3.6, cores=8, hyperthreading=true, cost=3000
+</code></pre>
+<h3>Napomene</h3>
+<ul>
+<li>Smijete dodavati vlastite, pomoćne metode</li>
+<li>Sve klase se nalaze upaketu <code>hr.fer.oop.zi.zad3</code></li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

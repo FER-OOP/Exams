@@ -1,0 +1,26 @@
+plugins {
+  id 'java-library'
+  id 'hr.fer.grading' version '0.12.0'
+}
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+}
+
+dependencies {
+  testImplementation fileTree(dir: 'libs', include: '*.jar')
+  testImplementation 'hr.fer.oop:edgar-assertions:0.12.0'
+  testImplementation 'hr.fer.grading:junit-grading:0.12.0'
+
+}
+
+grading {
+  solutionPrefix = "rjesenje"
+}

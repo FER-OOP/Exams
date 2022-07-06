@@ -1,0 +1,138 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Zadatak 1 (9 bodova)</h1>
+<p>Analizirate podatke o najbogatijim ljudima (i/ili obiteljima) na svijetu koristeći Forbesovu listu milijardera. Svake godine dobijete osvježenu TSV datoteku imena <code>forbes_2022_top500.tsv</code> (encoding utf8). Svaki redak sadrži po jedan zapis (<code>BillionaireDatum</code>), a atributi zapisa su pohranjeni kao TABom odvojene vrijednosti (TSV - <em>tab separated value</em>). Primjeri zapisa milijardera su <code>&quot;1\tElon Musk\t50\t219000\tUnited States&quot;</code> te <code>&quot;3\tBeate Heister &amp; Karl Albrecht Jr. &amp; family\t\t36800\tGermany&quot;</code>.
+Svaki podatak (<code>BillionaireDatum</code>) ima svoje atribute <code>rank:Integer</code>, <code>name:String</code>,<code>age:Integer</code>, <code>worth:Integer</code> i <code>country:String</code>, <em>gettere</em> za svaki od njih, konstruktor koji prima sve atribute.</p>
+<p>Opis atributa:</p>
+<ul>
+<li><code>rank</code> – pozicija na (silazno sortiranoj) listi,</li>
+<li><code>name</code> – ime osobe ili obitelji,</li>
+<li><code>age</code> – broj godina (može biti <strong>nedefiniran</strong> kao u drugom primjeru!),</li>
+<li><code>worth</code> – bogatstvo u milijunima,</li>
+<li><code>country</code> – ime zemlje prebivališta.</li>
+</ul>
+<p>U zadatku je potrebno napisati klase <code>BillionaireLoader</code> i <code>BillionaireStats</code>.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="111px" preserveAspectRatio="none" style="width:952px;height:111px;background:#FFFFFF;" version="1.1" viewBox="0 0 952 111" width="952px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[9043396dcd25e4bae6934471860a4328]
+class BillionaireLoader-->
+<g id="elem_BillionaireLoader">
+<rect codeLine="4" fill="#F1F1F1" height="64.4883" id="BillionaireLoader" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="312" x="7" y="23.5"/>
+<ellipse cx="101.25" cy="39.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M103.7231,45.6431 Q103.1421,45.9419 102.5029,46.0913 Q101.8638,46.2407 101.1582,46.2407 Q98.6514,46.2407 97.3315,44.5889 Q96.0117,42.937 96.0117,39.8159 Q96.0117,36.6865 97.3315,35.0347 Q98.6514,33.3828 101.1582,33.3828 Q101.8638,33.3828 102.5112,33.5322 Q103.1587,33.6816 103.7231,33.9805 L103.7231,36.7031 Q103.0923,36.1221 102.4988,35.8523 Q101.9053,35.5825 101.2744,35.5825 Q99.9297,35.5825 99.2449,36.6492 Q98.5601,37.7158 98.5601,39.8159 Q98.5601,41.9077 99.2449,42.9744 Q99.9297,44.041 101.2744,44.041 Q101.9053,44.041 102.4988,43.7712 Q103.0923,43.5015 103.7231,42.9204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="121.75" y="44.791">BillionaireLoader</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="318" y1="55.5" y2="55.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="318" y1="63.5" y2="63.5"/>
+<ellipse cx="18" cy="74.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="286" x="27" y="81.0352">load(path: String): List&lt;BillionaireDatum&gt;</text>
+</g>
+<!--MD5=[a1c2083d11eb374eda56f94f70afe235]
+class BillionaireStats-->
+<g id="elem_BillionaireStats">
+<rect codeLine="8" fill="#F1F1F1" height="97.4648" id="BillionaireStats" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="591" x="354.5" y="7"/>
+<ellipse cx="595.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M597.7231,29.1431 Q597.1421,29.4419 596.5029,29.5913 Q595.8638,29.7407 595.1582,29.7407 Q592.6514,29.7407 591.3315,28.0889 Q590.0117,26.437 590.0117,23.3159 Q590.0117,20.1865 591.3315,18.5347 Q592.6514,16.8828 595.1582,16.8828 Q595.8638,16.8828 596.5112,17.0322 Q597.1587,17.1816 597.7231,17.4805 L597.7231,20.2031 Q597.0923,19.6221 596.4988,19.3523 Q595.9053,19.0825 595.2744,19.0825 Q593.9297,19.0825 593.2449,20.1492 Q592.5601,21.2158 592.5601,23.3159 Q592.5601,25.4077 593.2449,26.4744 Q593.9297,27.541 595.2744,27.541 Q595.9053,27.541 596.4988,27.2712 Q597.0923,27.0015 597.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="615.75" y="28.291">BillionaireStats</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="355.5" x2="944.5" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="355.5" x2="944.5" y1="47" y2="47"/>
+<ellipse cx="365.5" cy="58" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="426" x="374.5" y="64.5352">countCountry(dst: List&lt;BillionaireDatum&gt;, country: String): int</text>
+<ellipse cx="365.5" cy="74.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="479" x="374.5" y="81.0234">countAgeRange(dst: List&lt;BillionaireDatum&gt;, lower: int, upper: int): int</text>
+<ellipse cx="365.5" cy="90.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="565" x="374.5" y="97.5117">makeHistogram(dst: List&lt;BillionaireDatum&gt;, binWidth: int): Map&lt;Integer, Integer&gt;</text>
+</g>
+<!--MD5=[4af2050c801010d3452bba1656d9dab1]
+@startuml
+' https://www.planttext.com - za pretvaranje puml-a u slike
+' https://plantuml.com/class-diagram
+
+class BillionaireLoader {
++ load(path: String): List<BillionaireDatum>
+}
+
+class BillionaireStats {
++ countCountry(dst: List<BillionaireDatum>, country: String): int
++ countAgeRange(dst: List<BillionaireDatum>, lower: int, upper: int): int
++ makeHistogram(dst: List<BillionaireDatum>, binWidth: int): Map<Integer, Integer>
+}
+
+@enduml
+
+@startuml
+
+class BillionaireLoader {
++ load(path: String): List<BillionaireDatum>
+}
+
+class BillionaireStats {
++ countCountry(dst: List<BillionaireDatum>, country: String): int
++ countAgeRange(dst: List<BillionaireDatum>, lower: int, upper: int): int
++ makeHistogram(dst: List<BillionaireDatum>, binWidth: int): Map<Integer, Integer>
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Klasa <code>BillionaireLoader</code> učitava podatkovni skup iz predane putanje te vraća listu <code>BillionaireDatum</code> objekata koji predstavljaju zapise.
+Klasa <code>BillionaireStats</code> instancira objekt na temelju predanog podatkovnog skupa koji provodi statistike. Za sve analize se koristi Stream API!
+Postoje tri glavne analize, koje trebate implementirati unutar metoda <code>countCountry</code>, <code>countAgeRange</code>i <code>histogram</code> na sljedeći način:</p>
+<ul>
+<li><code>countCountry</code>, vraća broj milijardera sa liste <code>dst</code> koji prebivaju u zemlji <code>country</code></li>
+<li><code>countAgeRange</code>, vraća broj milijardera sa liste <code>dst</code> koji imaju dob između <code>lower</code> i <code>upper</code> (uključivo).</li>
+<li><code>makeHistogram</code>, zapise između min i max vrijednosti grupira unutar pretinaca širine <code>binWidth</code> te vraća broj elemenata u svakom pretincu. Vraćeni histogram mora biti <strong>uzlazno sortirana</strong> mapa gdje je ključ bogatstvo (donja granica pretinca), a vrijednost broj elemenata u pretincu.</li>
+</ul>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">
+List&lt;BillionaireDatum&gt; dataset= BillionaireLoader.load(&quot;src/main/resources/forbes_2022_top500_mini.tsv&quot;);
+
+System.out.println(dataset.size());
+
+System.out.println(&quot;country count: &quot; + BillionaireStats.countCountry(dataset,&quot;United States&quot;));
+
+System.out.println(&quot;age range count: &quot; + BillionaireStats.countAgeRange(dataset, 27,50));
+
+for (Map.Entry&lt;Integer,Long&gt; worthBucket : BillionaireStats.makeHistogram(dataset,21000).entrySet()) {
+    System.out.print(&quot;(&quot;+ worthBucket.getKey() +&quot;, &quot;+ worthBucket.getValue()+ &quot;) &quot;);
+}
+
+</code></pre>
+<p>Očekivani ispis (na smanjenoj datoteci koju ste dobili):</p>
+<pre class="line-numbers"><code class="language-sh">
+11
+country count: 8
+age range count: 3
+(90000, 5) (111000, 3) (153000, 2) (216000, 1) 
+
+</code></pre>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.zi.zad1</code>. Svi testovi se izvode nad datotekama drugog sadržaja od onog koji ste dobili.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

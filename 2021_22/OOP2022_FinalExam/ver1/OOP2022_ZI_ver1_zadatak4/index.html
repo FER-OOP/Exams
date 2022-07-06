@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>4. Zadatak (9 bodova)</h1>
+<p>Potrebno je napraviti kalkulator koji izgleda kao na sljedećim slikama:</p>
+<p><img src="res/slika1.png" alt="slika1" /></p>
+<p><img src="res/slika2.png" alt="slika2" /></p>
+<p>Razlika izmađu slika je u veličini tj. koliko smo rastegnuli prozor.</p>
+<p>Sve je potrebno implementirati u klasi <code>Calculator</code> koja se nalazi u paketu <code>hr.fer.oop.zi.z4</code>.</p>
+<p><strong>Napomena:</strong> U predložku su označena mjesta s komentarom <code>// TODO ...</code> koja treba nadopuniti.</p>
+<p>U gornjem dijelu aplikacije nalazi ispis rezultata i ispis onoga što je uneseno (<code>JTextField</code>). U srednjem dijelu je panel s gumbima.</p>
+<p>U metodi <code>setupLayout</code> klase <code>Calculator</code> kreirajte grafičko sučelje prikazano na slikama. Za <em>layout</em>e možete koristiti klase <code>FlowLayout</code>, <code>GridLayout</code> i <code>BoarderLayout</code>.</p>
+<p>Također je potrebno definirati ponašanje za sve gumbe u metodi <code>registerListeners</code>. Kada se pritisne gumb s brojem ili decimalnom točkom pozove se metoda <code>numberPressed</code>, a kada se pristisnu operatori ili jednako onda se pozove metoda <code>operatorPressed</code>.</p>
+<p>U metodi <code>numberPressed</code> je potrebno potrebno napraviti logiku unosa broja. Ako je na početnu ispisana 0 i pritisne se točka onda se ispisuje <code>0.</code> i nakon toga se mogu pritiskati ostale znamenke koje se nadodaju na kraj. Ako je na početku 0 i pritisne se neka znamenka onda se ispis zamjenjuje s tom znamenkom npr. ako je bilo <code>0</code> i pritisnemo 5 onda se ispisuje <code>5</code>. Nakon toga možemo dodavati ostale znamenke.</p>
+<p>U metodi <code>operatorPressed</code> se obrađuju operatori i pritisak na jednako. Nakon unosa broja pritisne se operator i nakon toga se upisuje drugi broj. Tek kada se pritisne jednako onda se računa razultat i ispisuje. Nakon jednako možemo ili krenuti unositi novi broj ili možemo pritisnuti operator pa je onda taj broj prvi operand.</p>
+<p>U kalkulator se mogu unostiti i složene operacije npr. <code>5 + 4 - 1 =</code> što će prvo izračunati <code>5 + 4</code> i od tog rezultata oduzeti <code>1</code> te na kraju ispiati <code>8</code>.</p>
+<p>U klasu <code>Calculator</code> slobodno možete dodavati atribute/članske varijable i privatne metode po potrebi.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

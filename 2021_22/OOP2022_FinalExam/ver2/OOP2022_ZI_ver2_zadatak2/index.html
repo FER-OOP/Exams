@@ -1,0 +1,199 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>2. Zadatak (8 bodova)</h1>
+<p>U zadatku je potrebno nadopuniti programski kod parametriziranih klasa <code>AbstractBag</code> i <code>MapBag</code>. Obje ove klase su parametrizirane parametrom <code>T</code> kao i sučelje <code>Bag</code> kojeg implementiraju.</p>
+<p>Sučelje <code>Bag</code> predstavlja iterabilnu kolekciju elemenata koja je neuređena (pa stoga nije bitan poredak elemenata u njoj), ne smije sadržavati <code>null</code> elemente, a može sadržavati duplikate.</p>
+<p>Pri tome primijetite da za konkretnu implementaciju sučelja <code>Bag</code> ne smijemo direktno (tj. bez ikakvih izmjena koda) koristiti niti kolekciju tipa <code>Set</code> (jer ona ne smije sadržavati duplikate) niti kolekciju tipa <code>List</code> (jer je ona uređena). Podklasa <code>MapBag</code> predstavlja konkretnu implementaciju sučelja <code>Bag</code>, a za pohranu elemenata kolekcije koristi package-private atribut tipa <code>Map&lt;T, Integer&gt;</code>. U ovoj mapi vrijednost (tipa <code>Integer</code>) pod nekim ključem (tipa <code>T</code>) predstavlja broj elemenata identičnih ključu u ovoj instanci klase <code>MapBag</code>.</p>
+<p>U ovim dvjema klasama je potrebno implementirati metode koje su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati pomoćne privatne metode, ali ne smijete dodavati dodatne atribute i konstruktore. Primijetite da u klasi <code>AbstractBag</code> morate nadjačati metode <code>equals</code> i <code>hashCode</code> tako da omogućite da se mogu uspoređivati i različite implementacije sučelja <code>Bag</code>. Pri tome su dvije instance tipa <code>Bag</code> jednake kada sadrže iste elemente (nebitno kojim redoslijedom).</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="602px" preserveAspectRatio="none" style="width:207px;height:602px;background:#FFFFFF;" version="1.1" viewBox="0 0 207 602" width="207px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[47de47a8b5f06cbc5e036fae0a9149b7]
+class Iterable-->
+<g id="elem_Iterable">
+<rect codeLine="2" fill="#F1F1F1" height="64.4883" id="Iterable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="177" x="13" y="10"/>
+<ellipse cx="65.25" cy="26" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M61.6777,22.2651 L61.6777,20.1069 L69.0571,20.1069 L69.0571,22.2651 L66.5918,22.2651 L66.5918,30.3418 L69.0571,30.3418 L69.0571,32.5 L61.6777,32.5 L61.6777,30.3418 L64.1431,30.3418 L64.1431,22.2651 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="52" x="85.75" y="31.291">Iterable</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="183" y="7"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="184" y="19.6016">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="14" x2="189" y1="42" y2="42"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="14" x2="189" y1="50" y2="50"/>
+<ellipse cx="24" cy="61" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="33" y="67.5352">iterator(): Iterator&lt;T&gt;</text>
+</g>
+<!--MD5=[ce71e8b4822a13f5ea72e94958aa0250]
+class Bag-->
+<g id="elem_Bag">
+<rect codeLine="6" fill="#F1F1F1" height="113.9531" id="Bag" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="174" x="14.5" y="134"/>
+<ellipse cx="78.75" cy="150" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M75.1777,146.2651 L75.1777,144.1069 L82.5571,144.1069 L82.5571,146.2651 L80.0918,146.2651 L80.0918,154.3418 L82.5571,154.3418 L82.5571,156.5 L75.1777,156.5 L75.1777,154.3418 L77.6431,154.3418 L77.6431,146.2651 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="25" x="99.25" y="155.291">Bag</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="181.5" y="131"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="182.5" y="143.6016">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="15.5" x2="187.5" y1="166" y2="166"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="15.5" x2="187.5" y1="174" y2="174"/>
+<ellipse cx="25.5" cy="185" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="34.5" y="191.5352">add(): void</text>
+<ellipse cx="25.5" cy="201.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="34.5" y="208.0234">remove(): void</text>
+<ellipse cx="25.5" cy="217.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="34.5" y="224.5117">size(): int</text>
+<ellipse cx="25.5" cy="234.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="34.5" y="241">frequency(Object): int</text>
+</g>
+<!--MD5=[f989368ebe392328b475342d6ad9858e]
+class AbstractBag-->
+<g id="elem_AbstractBag">
+<rect codeLine="13" fill="#F1F1F1" height="80.9766" id="AbstractBag" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="189" x="7" y="308"/>
+<ellipse cx="50.35" cy="324" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M50.2133,319.3481 L49.0595,324.4199 L51.3754,324.4199 Z M48.7191,317.1069 L51.7157,317.1069 L55.0609,329.5 L52.6122,329.5 L51.8485,326.437 L48.5697,326.437 L47.8227,329.5 L45.3739,329.5 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="82" x="70.65" y="329.291">AbstractBag</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="189" y="305"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="190" y="317.6016">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="195" y1="340" y2="340"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="195" y1="348" y2="348"/>
+<ellipse cx="18" cy="359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="27" y="365.5352">equals(Object): boolean</text>
+<ellipse cx="18" cy="375.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="27" y="382.0234">hashCode(): int</text>
+</g>
+<!--MD5=[9c7b9673cb8b34c120ba006354b5b954]
+class MapBag-->
+<g id="elem_MapBag">
+<rect codeLine="18" fill="#F1F1F1" height="146.9297" id="MapBag" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="181" x="11" y="449"/>
+<ellipse cx="64.25" cy="465" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M66.7231,471.1431 Q66.1421,471.4419 65.5029,471.5913 Q64.8638,471.7407 64.1582,471.7407 Q61.6514,471.7407 60.3315,470.0889 Q59.0117,468.437 59.0117,465.3159 Q59.0117,462.1865 60.3315,460.5347 Q61.6514,458.8828 64.1582,458.8828 Q64.8638,458.8828 65.5112,459.0322 Q66.1587,459.1816 66.7231,459.4805 L66.7231,462.2031 Q66.0923,461.6221 65.4988,461.3523 Q64.9053,461.0825 64.2744,461.0825 Q62.9297,461.0825 62.2449,462.1492 Q61.5601,463.2158 61.5601,465.3159 Q61.5601,467.4077 62.2449,468.4744 Q62.9297,469.541 64.2744,469.541 Q64.9053,469.541 65.4988,469.2712 Q66.0923,469.0015 66.7231,468.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="84.75" y="470.291">MapBag</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="185" y="446"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="186" y="458.6016">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="12" x2="191" y1="481" y2="481"/>
+<polygon fill="none" points="22,488,18,494,26,494" style="stroke:#1963A0;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="31" y="498.5352">map: Map&lt;T, Integer&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="12" x2="191" y1="505.4883" y2="505.4883"/>
+<ellipse cx="22" cy="516.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="31" y="523.0234">add(): void</text>
+<ellipse cx="22" cy="532.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="31" y="539.5117">remove(): void</text>
+<ellipse cx="22" cy="549.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="31" y="556">size(): int</text>
+<ellipse cx="22" cy="565.9531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="31" y="572.4883">frequency(Object): int</text>
+<ellipse cx="22" cy="582.4414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="31" y="588.9766">iterator(): Iterator&lt;T&gt;</text>
+</g>
+<!--MD5=[cf11fe189e7e86574af561ec24429b19]
+reverse link Iterable to Bag-->
+<g id="link_Iterable_Bag">
+<path d="M101.5,94.44 C101.5,107.21 101.5,120.96 101.5,133.94 " fill="none" id="Iterable-backto-Bag" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="94.5,94.17,101.5,74.17,108.5,94.17,94.5,94.17" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[acab6bc73667b1aa4b643c1b3253996b]
+reverse link Bag to AbstractBag-->
+<g id="link_Bag_AbstractBag">
+<path d="M101.5,268.42 C101.5,281.95 101.5,295.53 101.5,307.53 " fill="none" id="Bag-backto-AbstractBag" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="94.5,268.14,101.5,248.14,108.5,268.14,94.5,268.14" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[475dce4aa0ee9df8dee368dfa992a403]
+reverse link AbstractBag to MapBag-->
+<g id="link_AbstractBag_MapBag">
+<path d="M101.5,409.65 C101.5,422.27 101.5,435.72 101.5,448.74 " fill="none" id="AbstractBag-backto-MapBag" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="94.5,409.39,101.5,389.39,108.5,409.39,94.5,409.39" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[df1b51a1be556b1f5e8b036878ecf09c]
+@startuml
+
+interface Iterable<T> {
++ iterator(): Iterator<T>
+}
+
+interface Bag<T> extends Iterable {
++ add(): void
++ remove(): void
++ size(): int
++ frequency(Object): int
+}
+
+abstract class AbstractBag<T> implements Bag {
++ equals(Object): boolean
++ hashCode(): int
+}
+
+class MapBag<T> extends AbstractBag {
+~ map: Map<T, Integer>
++ add(): void
++ remove(): void
++ size(): int
++ frequency(Object): int
++ iterator(): Iterator<T>
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Obje ove klase imaju samo podrazumijevani (default) konstruktor. Pozivanje bilo koje metode na smije &quot;uništiti&quot; kolekciju (tj. pobrisati sve elemente kolekcije ili slično).</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na <em>public</em> i nalaze se u paketu <code>hr.fer.oop.bag</code>. Pri implementaciji metoda u njima smijete koristiti dodatne pomoćne strukture podataka jer brzina izvođenja programskog koda nije bitna tj. programski kod ne mora biti optimiziran. Dodatno, nije bitna kvaliteta raspršivanja metode <code>hashCode</code>, već je bitno da ona ispravno radi.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">Bag&lt;Integer&gt; bag1 = new MapBag&lt;&gt;();
+bag1.add(13);
+bag1.add(1);
+bag1.add(17);
+bag1.add(1);
+
+Bag&lt;Integer&gt; bag2 = new MapBag&lt;&gt;();//Bag&lt;Integer&gt; bag2 = new OtherBag&lt;&gt;();
+bag2.add(1);
+bag2.add(13);
+bag2.add(17);
+bag2.add(1);
+
+System.out.println(&quot;bag1 equals bag2: &quot; + bag1.equals(bag2));
+System.out.println(&quot;bag2 equals bag1: &quot; + bag2.equals(bag1));
+        
+System.out.println(&quot;bag1 hashcode equals bag2 hashcode: &quot; + (bag1.hashCode() == bag2.hashCode()));
+        
+System.out.println(&quot;frequency of 1 in bag1: &quot; + bag1.frequency(1));
+System.out.println(&quot;frequency of 17 in bag2: &quot; + bag2.frequency(17)); 
+        
+System.out.println(&quot;size of bag1: &quot; + bag1.size());
+System.out.println(&quot;size of bag2: &quot; + bag2.size());
+
+        
+bag2.add(null); //throws an exception
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">bag1 equals bag2: true
+bag2 equals bag1: true
+bag1 hashcode equals bag2 hashcode: true
+frequency of 1 in bag1: 2
+frequency of 17 in bag2: 1
+size of bag1: 4
+size of bag2: 4
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

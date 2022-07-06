@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>1. Zadatak (9 bodova)</h1>
+<p>Radite za OECD (Organisation for Economic Co-operation and Development) i analizirate podatke o siromašnosti pojedinih zemalja po godinama. Svake godine dobijete osvježenu CSV datoteku imena <code>OECD_poverty.csv</code> (utf8 encoding). Svaki redak sadrži po jedan zapis (<code>PovertyDatum</code>), a atributi zapisa su pohranjeni kao zarezom odvojene vrijednosti (CSV - <em>comma separated value</em>). Primjer zapisa o siromaštvu je <code>&quot;USA,1900,0.2&quot;</code>.</p>
+<p>Svaki podatak (<code>PovertyDatum</code>) ima svoje atribute <code>location:String</code>, <code>year:int</code> i <code>proportion:double</code>, gettere za svaki od njih, konstruktor koji prima sve atribute.</p>
+<p>Opis atributa:</p>
+<ul>
+<li><code>location</code> – kratica zemlje na koju se zapis odnosi,</li>
+<li><code>year</code> – godina na koju se zapis odnosi,</li>
+<li><code>proportion</code> – udio siromašne populacije (kriterij dohotka).</li>
+</ul>
+<p>U zadatku je potrebno napisati klase <code>PovertyLoader</code> i <code>PovertyStats</code>.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="127px" preserveAspectRatio="none" style="width:635px;height:127px;background:#FFFFFF;" version="1.1" viewBox="0 0 635 127" width="635px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[1c3fdbe3107bc9371fd3cb925bfd5ffa]
+class PovertyLoader-->
+<g id="elem_PovertyLoader">
+<rect codeLine="4" fill="#F1F1F1" height="64.4883" id="PovertyLoader" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="294" x="7" y="32"/>
+<ellipse cx="101.25" cy="48" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M103.7231,54.1431 Q103.1421,54.4419 102.5029,54.5913 Q101.8638,54.7407 101.1582,54.7407 Q98.6514,54.7407 97.3315,53.0889 Q96.0117,51.437 96.0117,48.3159 Q96.0117,45.1865 97.3315,43.5347 Q98.6514,41.8828 101.1582,41.8828 Q101.8638,41.8828 102.5112,42.0322 Q103.1587,42.1816 103.7231,42.4805 L103.7231,45.2031 Q103.0923,44.6221 102.4988,44.3523 Q101.9053,44.0825 101.2744,44.0825 Q99.9297,44.0825 99.2449,45.1492 Q98.5601,46.2158 98.5601,48.3159 Q98.5601,50.4077 99.2449,51.4744 Q99.9297,52.541 101.2744,52.541 Q101.9053,52.541 102.4988,52.2712 Q103.0923,52.0015 103.7231,51.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="121.75" y="53.291">PovertyLoader</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="300" y1="64" y2="64"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="300" y1="72" y2="72"/>
+<ellipse cx="18" cy="83" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="27" y="89.5352">load(path: String): List&lt;PovertyDatum&gt;</text>
+</g>
+<!--MD5=[804f6651a18c20eb051c47461eb4358f]
+class PovertyStats-->
+<g id="elem_PovertyStats">
+<rect codeLine="8" fill="#F1F1F1" height="113.9531" id="PovertyStats" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="292" x="336" y="7"/>
+<ellipse cx="436.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M438.7231,29.1431 Q438.1421,29.4419 437.5029,29.5913 Q436.8638,29.7407 436.1582,29.7407 Q433.6514,29.7407 432.3315,28.0889 Q431.0117,26.437 431.0117,23.3159 Q431.0117,20.1865 432.3315,18.5347 Q433.6514,16.8828 436.1582,16.8828 Q436.8638,16.8828 437.5112,17.0322 Q438.1587,17.1816 438.7231,17.4805 L438.7231,20.2031 Q438.0923,19.6221 437.4988,19.3523 Q436.9053,19.0825 436.2744,19.0825 Q434.9297,19.0825 434.2449,20.1492 Q433.5601,21.2158 433.5601,23.3159 Q433.5601,25.4077 434.2449,26.4744 Q434.9297,27.541 436.2744,27.541 Q436.9053,27.541 437.4988,27.2712 Q438.0923,27.0015 438.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="456.75" y="28.291">PovertyStats</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="337" x2="627" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="344" y="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="356" y="56.5352">dataset: List&lt;PovertyDatum&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="337" x2="627" y1="63.4883" y2="63.4883"/>
+<ellipse cx="347" cy="74.4883" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="263" x="356" y="81.0234">topImproving(cutoff: int): List&lt;String&gt;</text>
+<ellipse cx="347" cy="90.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="266" x="356" y="97.5117">topWorsening(cutoff: int): List&lt;String&gt;</text>
+<ellipse cx="347" cy="107.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="356" y="114">theWorst(): PovertyDatum</text>
+</g>
+<!--MD5=[4129758135847622f4c242d1c5d9eb0c]
+@startuml
+' https://www.planttext.com - za pretvaranje puml-a u slike
+' https://plantuml.com/class-diagram
+
+class PovertyLoader {
++ load(path: String): List<PovertyDatum>
+}
+
+class PovertyStats {
+- dataset: List<PovertyDatum>
++ topImproving(cutoff: int): List<String>
++ topWorsening(cutoff: int): List<String>
++ theWorst(): PovertyDatum
+}
+
+@enduml
+
+@startuml
+
+class PovertyLoader {
++ load(path: String): List<PovertyDatum>
+}
+
+class PovertyStats {
+- dataset: List<PovertyDatum>
++ topImproving(cutoff: int): List<String>
++ topWorsening(cutoff: int): List<String>
++ theWorst(): PovertyDatum
+}
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Klasa <code>PovertyLoader</code> učitava podatkovni skup iz predane putanje te vraća listu <code>PovertyDatum</code> objekata koji predstavljaju zapise.
+Klasa <code>PovertyStats</code> instancira objekt na temelju predanog podatkovnog skupa koji provodi statistike. Podatkovni skup nad kojim se radi analiza se NE SMIJE moći mijenjati izvan objekta za analizu. Za sve analize se koristi Stream API!
+Postoje tri glavne analize, koje trebate implementirati unutar metoda <code>topImproving</code>, <code>topWorsening</code>i <code>theWorst</code> na sljedeći način:</p>
+<ul>
+<li><code>topImproving</code>, koja vrati silazno sortiranu listu lokacija koje imaju najveće <strong>poboljšanje</strong> u siromaštvu. Poboljšanje se računa kao razlika između dva zadnja zapisa za pojedinu lokaciju (neovisno jesu li uzastopne godine). Lista treba sadržavati najviše <code>cutoff</code> lokacija (tj. manje od toga samo ako je ukupni broj lokacija koje imaju poboljšanje manji manji od <code>cutoff</code>).</li>
+<li><code>topWorsening</code>, koja vrati silazno sortiranu listu lokacija koje imaju najveće <strong>pogoršanje</strong> u siromaštvu. Pogoršanje se računa kao razlika između dva zadnja zapisa za pojedinu lokaciju (neovisno jesu li uzastopne godine). Lista treba sadržavati najviše <code>cutoff</code> lokacija (tj. manje od toga samo ako je ukupni broj lokacija koje imaju pogoršanje manji od <code>cutoff</code>).</li>
+<li><code>theWorst</code>, koja zapis sa najgorim udjelom siromaštva u populaciji.</li>
+</ul>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;PovertyDatum&gt; dataset=PovertyLoader.load(&quot;src/main/resources/OECD_poverty_mini.csv&quot;);
+PovertyStats analyst = new PovertyStats(dataset);
+
+System.out.println(dataset.size());
+
+System.out.println(&quot;the worst instance: &quot; + analyst.theWorst());
+
+for (String country : analyst.topImproving(2)) {
+  System.out.println(&quot;improving: &quot; + country);
+}
+
+for (String country : analyst.topWorsening(4)) {
+  System.out.println(&quot;worsening: &quot; + country);
+}
+
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">
+19
+the worst instance: PovertyDatum{location='AUS', year=2012, proportion=0.14}
+improving: AUT
+improving: AUS
+worsening: BEL
+</code></pre>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na <em>package private</em> i nalaze se u paketu <code>hr.fer.oop.zi.z1</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

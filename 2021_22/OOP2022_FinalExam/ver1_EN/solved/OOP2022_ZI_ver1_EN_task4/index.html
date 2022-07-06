@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Assignment 4 (9 points)</h1>
+<p>You need to make a calculator that looks like the following pictures:</p>
+<p><img src="res/slika1.png" alt="slika1" /></p>
+<p><img src="res/slika2.png" alt="slika2" /></p>
+<p>The difference between the pictures is in the size, i.e. how much we stretched the window.</p>
+<p>Everything needs to be implemented in the <code>Calculator</code> class which is in the <code>hr.fer.oop.zi.z4</code> package.</p>
+<p><strong>Note:</strong> The template indicates the places with the comment <code>// TODO ...</code> that need to be supplemented.</p>
+<p>At the top of the application is a printout of the results and a printout of what was entered (<code>JTextField</code>). In the middle is a panel with buttons.</p>
+<p>In the <code>setupLayout</code> method of the<code>Calculator</code> class, create the graphical interface shown in the pictures. You can use the <code>FlowLayout</code>, <code>GridLayout</code> and <code>BoarderLayout</code> classes for layouts.</p>
+<p>It is also necessary to define the behavior for all buttons in the <code>registerListeners</code> method. When the number or decimal point button is pressed, the <code>numberPressed</code> method is called, and when the operators are pressed or equal, then the <code>operatorPressed</code> method is called.</p>
+<p>In the <code>numberPressed</code> method, it is necessary to create the logic of entering the number. If 0 is printed on the initial printput then 1 and a dot is pressed, then <code>0.</code> is printed, after which the other digits can be pressed and added to the end. If it is 0 at the beginning and a digit is pressed then the printout is replaced with that digit e.g. if it was <code>0</code> printed and we press 5 then <code>5</code> is printed. After that we can add other digits.</p>
+<p>The <code>operatorPressed</code> method processes operators and equal buttons. After entering the number, the operator is pressed and then another number is entered. Only when pressed equal the result is calculated and printed. After equal we can either start entering a new number or we can press the operator and then that printed number is the first operand.</p>
+<p>Complex operations can also be entered into the calculator, e.g. <code>5 + 4 - 1 =</code> which will first calculate <code>5 + 4</code> and subtract <code>1</code> from that result and finally print <code>8</code>.</p>
+<p>You are free to add fields and private methods to the <code>Calculator</code> class as needed.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

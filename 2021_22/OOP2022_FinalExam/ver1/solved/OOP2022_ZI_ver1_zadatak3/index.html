@@ -1,0 +1,235 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>3. Zadatak (9 bodova)</h1>
+<p>U vašoj tvrtci potrebna je pomoć HR-a (Human Resources) odjelu oko zapošljavanja ljudi. Vaš je zadatak rangirati ljude prijavljene za određenu poziciju, na temelju informacija iz životopisa. Na temelju njihovih iskustava i vještina dodjeljuje im se određeni broj bodova po kojem se rangiraju za određenu poziciju, gdje vještina može vrijediti više ili manje bodova.</p>
+<p>U zadatku je potrebno dovršiti klasu <code>Position</code>. Trebate implementirati prazne metode i nadodati određene kolekcije. Mjesta gdje treba nadodati kod označena su vam s <strong><code>// TODO</code></strong>. Dijagrami klasa:</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="433px" preserveAspectRatio="none" style="width:845px;height:433px;background:#FFFFFF;" version="1.1" viewBox="0 0 845 433" width="845px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[110d3e1b3848a9f83035e0cf17801c91]
+class Applicant-->
+<a href="java:hr.fer.oop.zi.zad3.Applicant" target="_top" title="java:hr.fer.oop.zi.zad3.Applicant" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.zad3.Applicant" xlink:show="new" xlink:title="java:hr.fer.oop.zi.zad3.Applicant" xlink:type="simple">
+<g id="elem_Applicant">
+<rect codeLine="2" fill="#F1F1F1" height="179.9063" id="Applicant" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="360" x="238" y="247"/>
+<ellipse cx="381.25" cy="263" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M383.7231,269.1431 Q383.1421,269.4419 382.5029,269.5913 Q381.8638,269.7407 381.1582,269.7407 Q378.6514,269.7407 377.3315,268.0889 Q376.0117,266.437 376.0117,263.3159 Q376.0117,260.1865 377.3315,258.5347 Q378.6514,256.8828 381.1582,256.8828 Q381.8638,256.8828 382.5112,257.0322 Q383.1587,257.1816 383.7231,257.4805 L383.7231,260.2031 Q383.0923,259.6221 382.4988,259.3523 Q381.9053,259.0825 381.2744,259.0825 Q379.9297,259.0825 379.2449,260.1492 Q378.5601,261.2158 378.5601,263.3159 Q378.5601,265.4077 379.2449,266.4744 Q379.9297,267.541 381.2744,267.541 Q381.9053,267.541 382.4988,267.2712 Q383.0923,267.0015 383.7231,266.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="401.75" y="268.291">Applicant</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="239" x2="597" y1="279" y2="279"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="246" y="287"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="258" y="296.5352">id: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="246" y="303.4883"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="258" y="313.0234">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="246" y="319.9766"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="289" x="258" y="329.5117">requiredSkillScores: Map&lt;String, Double&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="239" x2="597" y1="336.4648" y2="336.4648"/>
+<ellipse cx="249" cy="347.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="258" y="354">getId(): int</text>
+<ellipse cx="249" cy="363.9531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="258" y="370.4883">getName(): String</text>
+<ellipse cx="249" cy="380.4414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="334" x="258" y="386.9766">addRequiredSkillScore(String, double): Applicant</text>
+<ellipse cx="249" cy="396.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="258" y="403.4648">getRequiredSkillScore(String): double</text>
+<ellipse cx="249" cy="413.418" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="258" y="419.9531">applyFor(Position): void</text>
+</g>
+</a>
+<!--MD5=[0b4e4b4980470ea387cc45de9bd14b5b]
+class Application-->
+<a href="java:hr.fer.oop.zi.zad3.Application" target="_top" title="java:hr.fer.oop.zi.zad3.Application" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.zad3.Application" xlink:show="new" xlink:title="java:hr.fer.oop.zi.zad3.Application" xlink:type="simple">
+<g id="elem_Application">
+<rect codeLine="13" fill="#F1F1F1" height="113.9531" id="Application" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="196" x="7" y="280"/>
+<ellipse cx="61.75" cy="296" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M64.2231,302.1431 Q63.6421,302.4419 63.0029,302.5913 Q62.3638,302.7407 61.6582,302.7407 Q59.1514,302.7407 57.8315,301.0889 Q56.5117,299.437 56.5117,296.3159 Q56.5117,293.1865 57.8315,291.5347 Q59.1514,289.8828 61.6582,289.8828 Q62.3638,289.8828 63.0112,290.0322 Q63.6587,290.1816 64.2231,290.4805 L64.2231,293.2031 Q63.5923,292.6221 62.9988,292.3523 Q62.4053,292.0825 61.7744,292.0825 Q60.4297,292.0825 59.7449,293.1492 Q59.0601,294.2158 59.0601,296.3159 Q59.0601,298.4077 59.7449,299.4744 Q60.4297,300.541 61.7744,300.541 Q62.4053,300.541 62.9988,300.2712 Q63.5923,300.0015 64.2231,299.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="82.25" y="301.291">Application</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="202" y1="312" y2="312"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="320"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="27" y="329.5352">applicant: Applicant</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="336.4883"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="27" y="346.0234">score: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="202" y1="352.9766" y2="352.9766"/>
+<ellipse cx="18" cy="363.9766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="27" y="370.5117">getScore(): double</text>
+<ellipse cx="18" cy="380.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="27" y="387">getApplicant(): Applicant</text>
+</g>
+</a>
+<!--MD5=[ce8f254abc3437154f1455f1e5d84830]
+class RequiredSkill-->
+<a href="java:hr.fer.oop.zi.zad3.RequiredSkill" target="_top" title="java:hr.fer.oop.zi.zad3.RequiredSkill" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.zad3.RequiredSkill" xlink:show="new" xlink:title="java:hr.fer.oop.zi.zad3.RequiredSkill" xlink:type="simple">
+<g id="elem_RequiredSkill">
+<rect codeLine="20" fill="#F1F1F1" height="163.418" id="RequiredSkill" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="205" x="633.5" y="255.5"/>
+<ellipse cx="686.75" cy="271.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M689.2231,277.6431 Q688.6421,277.9419 688.0029,278.0913 Q687.3638,278.2407 686.6582,278.2407 Q684.1514,278.2407 682.8315,276.5889 Q681.5117,274.937 681.5117,271.8159 Q681.5117,268.6865 682.8315,267.0347 Q684.1514,265.3828 686.6582,265.3828 Q687.3638,265.3828 688.0112,265.5322 Q688.6587,265.6816 689.2231,265.9805 L689.2231,268.7031 Q688.5923,268.1221 687.9988,267.8523 Q687.4053,267.5825 686.7744,267.5825 Q685.4297,267.5825 684.7449,268.6492 Q684.0601,269.7158 684.0601,271.8159 Q684.0601,273.9077 684.7449,274.9744 Q685.4297,276.041 686.7744,276.041 Q687.4053,276.041 687.9988,275.7712 Q688.5923,275.5015 689.2231,274.9204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="707.25" y="276.791">RequiredSkill</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="634.5" x2="837.5" y1="287.5" y2="287.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="641.5" y="295.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="653.5" y="305.0352">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="641.5" y="311.9883"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="653.5" y="321.5234">minimum: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="641.5" y="328.4766"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="653.5" y="338.0117">multiplier: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="634.5" x2="837.5" y1="344.9648" y2="344.9648"/>
+<ellipse cx="644.5" cy="355.9648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="653.5" y="362.5">getMultiplier(): double</text>
+<ellipse cx="644.5" cy="372.4531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="653.5" y="378.9883">getMinimum(): double</text>
+<ellipse cx="644.5" cy="388.9414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="653.5" y="395.4766">setMinimum(double): void</text>
+<ellipse cx="644.5" cy="405.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="653.5" y="411.9648">getName(): String</text>
+</g>
+</a>
+<!--MD5=[a64a835c3d62471a77f615251fdde58a]
+class Position-->
+<a href="java:hr.fer.oop.zi.zad3.Position" target="_top" title="java:hr.fer.oop.zi.zad3.Position" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.zi.zad3.Position" xlink:show="new" xlink:title="java:hr.fer.oop.zi.zad3.Position" xlink:type="simple">
+<g id="elem_Position">
+<rect codeLine="30" fill="#F1F1F1" height="179.9063" id="Position" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="320" x="260" y="7"/>
+<ellipse cx="388.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M390.7231,29.1431 Q390.1421,29.4419 389.5029,29.5913 Q388.8638,29.7407 388.1582,29.7407 Q385.6514,29.7407 384.3315,28.0889 Q383.0117,26.437 383.0117,23.3159 Q383.0117,20.1865 384.3315,18.5347 Q385.6514,16.8828 388.1582,16.8828 Q388.8638,16.8828 389.5112,17.0322 Q390.1587,17.1816 390.7231,17.4805 L390.7231,20.2031 Q390.0923,19.6221 389.4988,19.3523 Q388.9053,19.0825 388.2744,19.0825 Q386.9297,19.0825 386.2449,20.1492 Q385.5601,21.2158 385.5601,23.3159 Q385.5601,25.4077 386.2449,26.4744 Q386.9297,27.541 388.2744,27.541 Q388.9053,27.541 389.4988,27.2712 Q390.0923,27.0015 390.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="408.75" y="28.291">Position</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="261" x2="579" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="268" y="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="280" y="56.5352">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="268" y="63.4883"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237" x="280" y="73.0234">requiredSkills: List&lt;RequiredSkill&gt;</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="268" y="79.9766"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="280" y="89.5117">applications: ...</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="261" x2="579" y1="96.4648" y2="96.4648"/>
+<ellipse cx="271" cy="107.4648" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="280" y="114">getName(): String</text>
+<ellipse cx="271" cy="123.9531" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="279" x="280" y="130.4883">addRequiredSkill(RequiredSkill): Position</text>
+<ellipse cx="271" cy="140.4414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="280" y="146.9766">summarizeApplications(): String</text>
+<ellipse cx="271" cy="156.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="280" y="163.4648">addApplication(Applicant): void</text>
+<ellipse cx="271" cy="173.418" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="294" x="280" y="179.9531">getApplications(): Collection&lt;Application&gt;</text>
+</g>
+</a>
+<!--MD5=[37b6684372fcc007463e895ead75027d]
+link Position to RequiredSkill-->
+<g id="link_Position_RequiredSkill">
+<path codeLine="41" d="M538.57,187.3 C568.28,209.68 599.98,233.55 629.08,255.47 " fill="none" id="Position-to-RequiredSkill" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="633.36,258.69,628.5945,250.0709,629.372,255.674,623.7689,256.4516,633.36,258.69" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="627.6303" y="244.7204">-requiredSkills 0..*</text>
+</g>
+<!--MD5=[ca2a103af34994d7be4eee41831bc5d7]
+link Position to Application-->
+<g id="link_Position_Application">
+<path codeLine="42" d="M299.7,187.07 C273.37,206.72 245.69,227.49 220,247 C207.43,256.55 194.14,266.74 181.23,276.69 " fill="none" id="Position-to-Application" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="177.23,279.77,186.7976,277.4331,181.1867,276.7132,181.9067,271.1023,177.23,279.77" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="68.3735" y="269.0677">-applications 0..*</text>
+</g>
+<!--MD5=[071067174e24ede7cf839d117c04227d]
+reverse link Application to Applicant-->
+<g id="link_Application_Applicant">
+<path codeLine="43" d="M216.18,337 C223.44,337 230.7,337 237.95,337 " fill="none" id="Application-backto-Applicant" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="203.12,337,209.12,341,215.12,337,209.12,333,203.12,337" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[a514a90f549d5078e91d137b9479fe87]
+@startuml
+
+class Applicant [[java:hr.fer.oop.zi.zad3.Applicant]] {
+- id: int
+- name: String
+- requiredSkillScores: Map<String, Double>
++ getId(): int
++ getName(): String
++ addRequiredSkillScore(String, double): Applicant
++ getRequiredSkillScore(String): double
++ applyFor(Position): void
+}
+
+class Application [[java:hr.fer.oop.zi.zad3.Application]] {
+- applicant: Applicant
+- score: double
++ getScore(): double
++ getApplicant(): Applicant
+}
+
+class RequiredSkill [[java:hr.fer.oop.zi.zad3.RequiredSkill]] {
+- name: String
+- minimum: double
+- multiplier: double
++ getMultiplier(): double
++ getMinimum(): double
++ setMinimum(double): void
++ getName(): String
+}
+
+class Position [[java:hr.fer.oop.zi.zad3.Position]] {
+- name: String
+- requiredSkills: List<RequiredSkill>
+- applications: ...
++ getName(): String
++ addRequiredSkill(RequiredSkill): Position
++ summarizeApplications(): String
++ addApplication(Applicant): void
++ getApplications(): Collection<Application>
+}
+
+Position - -> "-requiredSkills 0..*" RequiredSkill 
+Position - -> "-applications 0..*" Application
+Application *- Applicant
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 12:55:52 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: HR
+-->
+</g>
+</svg>
+<h3><strong>Klasa <code>Position</code></strong></h3>
+<p>Klasa <code>Position</code> opisuje otvorene pozicije na koje se ljudi mogu prijaviti. Sadrži sljedeće atribute:</p>
+<ul>
+<li><code>name</code> - Ime pozicije.</li>
+<li><code>requiredSkills</code> - Lista potrebnih vještina za poziciju.</li>
+<li><code>applications</code> - Kolekcija koju morate nadodati, a sadrži <code>Application</code> objekte <strong>silazno</strong> poredane po <code>score</code>-u, a zatim po <code>id</code>-u prijavljene osobe (ID <code>Applicant</code>-a). Tj. ako dvije prijavljene osobe imaju isti broj bodova, tada se redaju po ID-u. Klasa <code>Application</code> predstavlja prijavu osobe za poziciju, a sadrži broj bodova osobe i samu osobu (<code>Applicant</code> objekt).</li>
+</ul>
+<p>Osim što morate dodati atribut <code>applications</code>, također morate i implementirati sljedeće metode:</p>
+<ul>
+<li><code>addApplication(Applicant)</code> - Metoda koja dodaje novu prijavu za poziciju tako da izračuna broj bodova za osobu koja se prijavljuje, koju prima kao argument, i stvori novi <code>Application</code> objekt na temelju prijavnika (<code>applicant</code>) i broja bodova (<code>score</code>), koji se tada sprema u <code>applications</code> kolekciju. Kolekcija <code>applications</code> mora sadržavati prijave poredane <strong>silazno</strong> po broju bodova, a prijave s istim brojem bodova moraju biti poredane po ID-u prijaveljene osobe (<code>applicant</code>-a).</li>
+<li><code>summarizeApplications()</code> - Vraća tekst koji opisuje poredak dosada prijavljenih ljudi za poziciju. Prvo ispisuje ime pozicije, a zatim za svaku prijavu ispisuje ime osobe i broj bodova (zaokrežen na dvije decimale). Posebno, za prijave s brojem bodova <code>0</code>, ispisuje se <code>&quot;did not meet requirements&quot;</code>. Kod ispisa prijava u retcima ispod imena neke pozicije, svaka prijava se dodatno uvlači jednim <em>TAB</em> (<code>\t</code>) znakom. Za bolje objašnjenje pogledajte primjer.</li>
+<li><code>getApplications()</code> - Vraća kolekciju do sada spremljenih prijava (<code>applications</code>), poredanih silazno kako je opisano. Služi za testiranje.</li>
+</ul>
+<h4><strong>Računanje bodova (atribut <code>score</code> u <code>Application</code> klasi)</strong></h4>
+<p>Bodovi nekog prijavnika (<code>Applicant</code>) za poziciju (<code>Position</code>) se računaju pomoću potrebnih vještina (<code>RequiredSkill</code>) sadržanih u <code>requiredSkills</code> listi. Za svaku vještinu izračunava se broj bodova  tako da se množi njegovo iskustvo/dobrota u nekoj od vještina (<code>getRequiredSkillScore</code>) s <code>multiplier</code>-om vještine. Taj <code>multiplier</code> nam govori koliko nam je bitna neka vještina za određenu poziciju. Prijavnik mora imati <code>minimum</code> ili više bodova u svakoj od vještina, inače dobiva ukupno <code>0</code> bodova.</p>
+<h2><strong>Primjer</strong></h2>
+<p>Za kod u <code>Main</code>-u:</p>
+<pre class="line-numbers"><code class="language-java">runExample();
+</code></pre>
+<p>Trebate dobiti sljedeći ispis:</p>
+<pre class="line-numbers"><code class="language-bash">Senior backend developer:
+	Mirko - 130.00
+	Maja - 95.00
+	Zdravko - did not meet requirements
+
+Mid embedded developer:
+	Maja - 106.50
+	Zdravko - 45.00
+</code></pre>
+<p><strong>Napomena:</strong> Sve klase se nalaze u paketu <code>hr.fer.oop.zi.zad3</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
