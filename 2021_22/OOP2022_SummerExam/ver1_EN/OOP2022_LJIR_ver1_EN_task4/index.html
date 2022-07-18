@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task 4 (12.5 points)</h1>
+<p>You need to create a GUI application for displaying a multiple choice question as shown in the images below:</p>
+<img src="res/slika1.png" width="600px"/>
+<img src="res/slika2.png" width="1024px"/>
+<p>The difference in the images is in the application window size. Notice that by enlarging the application, only the part with the question text is enlarged, while other application components remain the same.</p>
+<p>You need to complete the implementation of the class <code>MultipleChoiceQuizFrame</code> in the package <code>hr.fer.oop.ljir.z4</code> and ensure that the application looks as shown in the images.</p>
+<p><strong>Note:</strong> The incomplete implementation of the class <code>MultipleChoiceQuizFrame</code> contains comment of the form <code>// TODO ...</code> in the places where you need to insert your code.</p>
+<p>Additional class <code>MultipleChoiceQuestion</code> is used to store information about multiple choice questions. It has a constructor, getters for data about the question, getter and setter for getting and setting an answer to the question and method <code>hasAnswer</code> which return information whether an answer to the question has been set. Class <code>MultipleChoiceQuestion</code> MUST NOT be changed.</p>
+<p>Application window consists of a separate panel for diplaying a question (inner static class <code>MultipleChoiceQuestionPanel</code>), grading button (&quot;Answer&quot;) and a status bar displaying the grading results (empty at the start).</p>
+<p>Inner static class <code>MultipleChoiceQuestionPanel</code> is used to display question data and shows queston title at the top (<code>JLabel</code>), questin text in the main part of the panel (<code>JTextArea</code>), and three buttons of type <code>JToggleButton</code> displaying possible answers. Question display panel takes a reference to a question that needs to be displayed in the constructor, setting all needed GUI components accordingly.</p>
+<p>At the start none of the buttons is pressed. You need to ensure that only one answer can be chosen at one time (only one button can be pressed).</p>
+<p>Pressing a grading button (&quot;Answer&quot;), a grading is performed for the question and appropriate message is shown in the status bar:</p>
+<ul>
+<li>&quot;Choose an answer!&quot; - none of the buttons is pressed</li>
+<li>&quot;Correct!&quot;      	  - chosen answer is correct</li>
+<li>&quot;Incorrect!&quot;    	  - chosena answer is incorrect</li>
+</ul>
+<p>You are allowed add addition member variables and methods to classes <code>MultipleChoiceQuizFrame</code> as needed.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

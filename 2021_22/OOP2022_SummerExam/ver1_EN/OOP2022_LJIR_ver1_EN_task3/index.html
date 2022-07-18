@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task 3 (12.5 points)</h1>
+<p><strong>IMORTANT:</strong></p>
+<ul>
+<li>All methods in the class <code>SequenceStats</code> should be implemented using Java Stream API.</li>
+<li>You are allowed to write additional methods, but not to add additional attributes to the class <code>Sequence</code>.</li>
+</ul>
+<p>We need to analyze the data obtained from a DNA sequencing device.</p>
+<p>Sequencing devices read fragments of DNA and write the data to text files with extension .fastq. For each fragment of DNA they read, they write 4 lines of text in the following format (the example contains data for two fragments):</p>
+<pre class="line-numbers"><code class="language-text">@16WBS:00057:00011
+GATCCTCTCTCTGCAGCACATTTCCTGGAGTATGCTAAGAGCGAGTGTCATTTCTCCAACGGGACGCAGCGGGTGCGGTTCCTGGACAGATACTTCTATAACCGGGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTTCCGGGCGGTGACCGAGCTGGGGCGGCCGTCCGCCAAGTACTGGAACAGCCAGAAGGATTTCATGGAGCAGAAGCGGGCCGAGGTGGACACGGTGTGCAGACACAACTACGGGGTTATTGAGATGTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+CCCCADCCCDCCCCDCC???DC&gt;CA@@@@CCDCCCCC&gt;?@&gt;&lt;&lt;;D&lt;&lt;&lt;C;;;1;A@=@7666,6==&lt;CDCCD?;;;;4;6;?C@AD@??&gt;DCCC???;&gt;C;;6;C0;;?DCAA&gt;/0//.--)-;6CC@&gt;?;&lt;&lt;&lt;&lt;&lt;/?CCCC7&lt;7&lt;&lt;1;B@C@@@ACB&gt;?;;CC8&gt;?ACA???@;;7;7;;;?BA@C&gt;&gt;&gt;55&lt;@;4.4?;;;*;;;C&lt;B@;;;@&lt;;;@C1;7;;;7;C@CC??&gt;A&gt;;;;;;;4B:::@&gt;C66666,606605666666066666666666-)----)-----4466
+@16WBS:00252:00043
+GATCCTCTCTCTGCAGCACATTTCCTGCTGTATACTACGGGCGAGTGTCATTTCTCCAACGGGACGCAGCGGGTGGGGTTCCTGGACAGATACTTCTATAACGGAGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTATCGGGCGGTGACCGAGCTGGGGCGGCCGGACGCCGAGCTCTGGAACAGCCAGAAGGAGTTCCTGGAGCAGAGGCGGGCCGAGGTGGACACGTACTGCAGACACAACTACGGGGTCGGTGAGAGTTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+AA&lt;?7&lt;ABACCCCCCCC?@@CE&gt;CACEEDDDECDCCCHFF&gt;DDCECBCB&lt;&lt;&lt;1&lt;&lt;&lt;7;?BBC&gt;@?@@@FCDF&gt;C@BB/;7;7;B7?@EHHDCCCADE@@@BCCACCC@DCCDEDD????CC@CCCCECCCCCCDDD:????CCCCCE?@&gt;9==&gt;:;&gt;C&gt;&gt;?CCC9CC@CACACCCCACCCCCCCC@CA@@::5:::&gt;C=&gt;?C@C???;??&gt;B@882888,82888&lt;@@=@@BBBB;;;??AABCC??;?CBBBCC7CCCACCCCB;;;6;BBCCCC@@@::5:A8828888&gt;???G
+</code></pre>
+<ul>
+<li>The first line starts with the character <code>@</code> and after it contains the name of the fragment</li>
+<li>The second line contains DNA sequence for the fragment (sequence of letters ACGT)</li>
+<li>The third line is not used (has only character <code>+</code>)</li>
+<li>The fourth line contains a sequence of characters with the same length as the DNA sequence which represent a quality scores for each DNA nucleotide in the fragment (letters in the DNA sequence)</li>
+</ul>
+<p>Your task is to complete the classes <code>Sequence</code> i <code>SequenceStats</code>.</p>
+<p>Class <code>Sequence</code> contains data for one read DNA fragmet:</p>
+<ul>
+<li>fragment name</li>
+<li>DNA sequence</li>
+<li>quality scores</li>
+</ul>
+<p>It also contains a constructor and getters for all three attributes. You need to implement two methods in the class <code>Sequence</code>.</p>
+<p>STATIC method <code>loadFromFile</code> takes a path to the data file (As a String) and returns a list of objects of type <code>Sequence</code>, read from the file. You can assume that the file exists and is well formatted, having a correct number of lines (multiple of 4). Note that when reading a fragment name, the character <code>@</code> which is at the start of the line, is NOT part of the fragment name.</p>
+<p>Method <code>avgSeqQuality</code> return a quality score for the whole fragment, which is calculated as an average quality score for all nucleotides in the fragment. Each character in the quality scores String should be converted to integer (ASCII score), and average value for all such values should be calculated. For example, for two fragments in the example above, quality scores should be 59.58 and 63.81. This numbers are rounded to two decimal places, but the values returned by the method <code>avgSeqQuality</code> should not be rounded.</p>
+<p>You also need to implement several static methods in the class <code>SequenceStats</code>, used to analyse DNA fragments:</p>
+<ul>
+<li><code>public static int totalSeqLength(List&lt;Sequence&gt; seqList)</code> - return the total length of all DNA seuqences (sum of sequence lengths)</li>
+<li><code>public static List&lt;String&gt; seqNames(Stream&lt;Sequence&gt; seqList)</code> - returns a list of fragment names, but takes a Stream of sequences as an argument</li>
+<li><code>public static double avgQuality(List&lt;Sequence&gt; seqList)</code> - returns average sequence quality score for all fragments in the list, you can calculate it as an average of values obtainied by the method <code>avgSeqQuality</code>. You can assume that the list seqList is not empty.</li>
+<li><code>public static Stream&lt;Sequence&gt; usableSequences(List&lt;Sequence&gt; seqList, double thqual)</code> - returns a STREAM of sequences which are useful for further analysis. These are the sequences whose sequence quality score (<code>avgSeqQuality</code>) is higher than a given threshold. Additionally, quality scores are not important for further analysis so you have to return a stream of new <code>Sequence</code> objects for which  quality score String is replaced with an empty String (&quot;&quot;);</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

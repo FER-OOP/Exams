@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>2. Zadatak (12,5 bodova)</h1>
+<p>Potrebno je napisati dvije klase: <code>FootballPlayer</code> i <code>PlayerComparator</code>. Sve klase trebaju biti u paketu hr.fer.oop.ljir.zad2 i imaju vidljivost postavljenu na <em>public</em>.</p>
+<h3>Klasa <code>FootballPlayer</code></h3>
+<p>Klasa <code>FootballPlayer</code> ima 6 članskih varijabli:</p>
+<ul>
+<li><code>private String name</code></li>
+<li><code>private String surname</code></li>
+<li><code>private int shootingSkill</code></li>
+<li><code>private int dribblingSkill</code></li>
+<li><code>private int passingSkill</code></li>
+<li><code>private int overallSkill</code></li>
+</ul>
+<p>Trebate napisati konstruktor koji ima 5 argumenata: name, surname, shootingSkill, dribblingSkill i passingSkill.
+Atribut overallSkill se računa kao zbroj ostala 3 skilla te se cijelobrojno dijeli s 3 ( (shootingSkill + dribblingSkill + passingSkill) / 3).
+Dodatno, potrebno je napisati i sve gettere i settere za svaki atribut.</p>
+<p>Klasu <code>FootballPlayer</code> morate pripremiti za rad s kolekcijama tako da nadjačate metode <code>equals</code> i <code>hashCode</code>.</p>
+<p>Metoda <code>equals</code> vraća da su dva igrača ista ako imaju isto ime i isto prezime.</p>
+<p>Isto tako metoda <code>hashCode</code> će vratiti isti sažetak za dva igrača koja imaju isto ime i isto prezime.</p>
+<p>Potrebno je također preurediti metodu <code>toString</code> kako bi odgovarala ispisu koji je prikazan u primjeru.</p>
+<h3>Klasa <code>PlayerComparator</code></h3>
+<p>Potrebno je napisati klasu <code>PlayerComparator</code> koja implementira sučelje <code>Comparator</code> te uspoređuje dva igrača prvo po atributu <strong>overallSkill</strong>(manji ide prvo), zatim po prezimenu (abecedno) i na kraju po imenu (abecedno).
+Ne očekuje da će se komparator pozivati s vrijednostima null.</p>
+<h2>Primjer korištenja:</h2>
+<pre class="line-numbers"><code class="language-java">FootballPlayer player1 = new FootballPlayer(&quot;Luka&quot;,&quot;Modric&quot;, 90, 80, 100);
+FootballPlayer player2 = new FootballPlayer(&quot;Ivan&quot;, &quot;Modric&quot;, 90, 80, 100);
+FootballPlayer player3 = new FootballPlayer(&quot;Stipe&quot;, &quot;Modric&quot;, 60, 60, 60);
+FootballPlayer player4 = new FootballPlayer(&quot;Luka&quot;, &quot;Modric&quot;, 30, 30, 30);
+
+System.out.println(player1);
+
+System.out.println(player1.equals(player4));
+System.out.println(player1.hashCode() == player4.hashCode());
+
+List&lt;FootballPlayer&gt; playerList = new ArrayList&lt;FootballPlayer&gt;();
+playerList.add(player1);
+playerList.add(player2);
+playerList.add(player3);
+playerList.add(player4);
+
+System.out.println(&quot;Before sorting: &quot; + playerList);
+
+PlayerComparator playerComparator = new PlayerComparator();
+Collections.sort(playerList, playerComparator);
+
+System.out.println(&quot;After sorting: &quot; + playerList);
+</code></pre>
+<h3>Rezultat:</h3>
+<pre class="line-numbers"><code class="language-text">Luka Modric - 90
+true
+true
+Before sorting: [Luka Modric - 90, Ivan Modric - 90, Stipe Modric - 60, Luka Modric - 30]
+After sorting: [Luka Modric - 30, Stipe Modric - 60, Ivan Modric - 90, Luka Modric - 90]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

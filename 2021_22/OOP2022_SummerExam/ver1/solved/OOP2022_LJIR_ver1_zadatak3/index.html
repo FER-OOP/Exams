@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Zadatak 3 (12,5 bodova)</h1>
+<p><strong>VAŽNO:</strong></p>
+<ul>
+<li>Sve metode u klasi <code>SequenceStats</code> potrebno je napisati koristeći Java Stream API;</li>
+<li>Dopušteno je pisanje pomoćnih metoda, ali nije dopušteno dodavanje atributa u klasu <code>Sequence</code>.</li>
+</ul>
+<p>Potrebno je analizirati podatke dobivene od uređaja za sekvenciranje DNA.</p>
+<p>Uređaji za sekvenciranje podatke zapisuju u tekstualne datoteke s nastavkom .fastq. Za svaki komadić DNA koji pročitaju, u datoteku zapisuju 4 retka u sljedećem formatu (u primjeru su zapisana dva zapisa):</p>
+<pre class="line-numbers"><code class="language-text">@16WBS:00057:00011
+GATCCTCTCTCTGCAGCACATTTCCTGGAGTATGCTAAGAGCGAGTGTCATTTCTCCAACGGGACGCAGCGGGTGCGGTTCCTGGACAGATACTTCTATAACCGGGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTTCCGGGCGGTGACCGAGCTGGGGCGGCCGTCCGCCAAGTACTGGAACAGCCAGAAGGATTTCATGGAGCAGAAGCGGGCCGAGGTGGACACGGTGTGCAGACACAACTACGGGGTTATTGAGATGTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+CCCCADCCCDCCCCDCC???DC&gt;CA@@@@CCDCCCCC&gt;?@&gt;&lt;&lt;;D&lt;&lt;&lt;C;;;1;A@=@7666,6==&lt;CDCCD?;;;;4;6;?C@AD@??&gt;DCCC???;&gt;C;;6;C0;;?DCAA&gt;/0//.--)-;6CC@&gt;?;&lt;&lt;&lt;&lt;&lt;/?CCCC7&lt;7&lt;&lt;1;B@C@@@ACB&gt;?;;CC8&gt;?ACA???@;;7;7;;;?BA@C&gt;&gt;&gt;55&lt;@;4.4?;;;*;;;C&lt;B@;;;@&lt;;;@C1;7;;;7;C@CC??&gt;A&gt;;;;;;;4B:::@&gt;C66666,606605666666066666666666-)----)-----4466
+@16WBS:00252:00043
+GATCCTCTCTCTGCAGCACATTTCCTGCTGTATACTACGGGCGAGTGTCATTTCTCCAACGGGACGCAGCGGGTGGGGTTCCTGGACAGATACTTCTATAACGGAGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTATCGGGCGGTGACCGAGCTGGGGCGGCCGGACGCCGAGCTCTGGAACAGCCAGAAGGAGTTCCTGGAGCAGAGGCGGGCCGAGGTGGACACGTACTGCAGACACAACTACGGGGTCGGTGAGAGTTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+AA&lt;?7&lt;ABACCCCCCCC?@@CE&gt;CACEEDDDECDCCCHFF&gt;DDCECBCB&lt;&lt;&lt;1&lt;&lt;&lt;7;?BBC&gt;@?@@@FCDF&gt;C@BB/;7;7;B7?@EHHDCCCADE@@@BCCACCC@DCCDEDD????CC@CCCCECCCCCCDDD:????CCCCCE?@&gt;9==&gt;:;&gt;C&gt;&gt;?CCC9CC@CACACCCCACCCCCCCC@CA@@::5:::&gt;C=&gt;?C@C???;??&gt;B@882888,82888&lt;@@=@@BBBB;;;??AABCC??;?CBBBCC7CCCACCCCB;;;6;BBCCCC@@@::5:A8828888&gt;???G
+</code></pre>
+<ul>
+<li>Prvi redak započinje znakom <code>@</code> i nakon toga sadrži ime pročitane sekvence</li>
+<li>Drugi redak sadrži samu sekvencu (niz slova ACGT)</li>
+<li>Treći redak se ne koristi</li>
+<li>Četvrti redak sadrži niz znakova iste duljine kao i sekvenca koji predstavljaju oznake kvalitete pročitanih nukleotida (slova u sekvenci)</li>
+</ul>
+<p>Potrebno je dopuniti klase <code>Sequence</code> i <code>SequenceStats</code>. Mjesta u kodu koja je potrebno nadopuniti označena su komentarima oblika <code>// TODO: ...</code></p>
+<p>Klasa <code>Sequence</code> sadrži podatke o jednoj pročitanoj sekvenci:</p>
+<ul>
+<li>ime sekvence</li>
+<li>sama sekvena</li>
+<li>oznake kvalitete
+Sadrži konstruktor i gettere za sva tri atributa. Klasu <code>Sequence</code> je potrebno dopuniti sa dvije metode.</li>
+</ul>
+<p>STATIČKA metoda <code>loadFromFile</code> prima putanju do datoteke sa sekvencama (kao String) i vraća listu objekata tipa <code>Sekvence</code> pročitanih iz datoteke. Možete pretpostaviti da odgovarajuća datoteka postoji i da je dobro formatirana, tj. da ima ispravan broj redaka (djeljiv s 4). Promjetite da kod čitanja imena sekvence, znak <code>@</code> koji se nalazi na početku retka ne ulazi u ime.</p>
+<p>Metoda <code>avgSeqQuality</code> vraća kvalitetu sekvence koja se računa kao prosječna kvaliteta svih pročitanih nukleotida u sekvenci. Svaki znak u Stringu koji sadrži oznake kvalitete potrebno je pretvoriti u cijeli broj (uzeti ASCII vrijednost) te izračunati prosječnu vrijednost. Npr. za dvije sekvence prikazane gore u primjeru oznake kvalitete trebale bi biti: 59.58 i 63.81. Ove vrijednosti su zaokružene na dvije decimale, ali vrijednost koju vraća metoda <code>avgSeqQuality</code> ne smije biti zaokružena.</p>
+<p>Klasu <code>SequenceStats</code> potrebno je nadopuniti s nekoliko statičkih metoda koje analiziraju pročitane sekvence. Potrebno je napisati sljedeće metode:</p>
+<ul>
+<li><code>public static int totalSeqLength(List&lt;Sequence&gt; seqList)</code> - računa ukupnu duljinu svih sekvenci (sumu duljina sekvenci)</li>
+<li><code>public static List&lt;String&gt; seqNames(Stream&lt;Sequence&gt; seqList)</code> - vraća listu imena sekvenci, ali prima tok sekvenci kao argument</li>
+<li><code>public static double avgQuality(List&lt;Sequence&gt; seqList)</code> - računa prosječnu oznaku kvalitete svih sekvenci, izračunajte ju kao prosjek vrijednosti koju za svaku sekvencu dobijete metodom <code>avgSeqQuality</code>. Možete pretpostaviti da ulazna lista nije prazna.</li>
+<li><code>public static Stream&lt;Sequence&gt; usableSequences(List&lt;Sequence&gt; seqList, double thqual)</code> - vraća tok sekvenci koje su korisne za daljnju analizu. To su sekvence čija je prosječna kvaliteta veća od zadanog praga. Dodatno, oznake kvalitete nisu važne za daljnju analizu pa je kao izlaz potrebno vratiti tok novih sekvenci kojima su oznake kvalitete zamijenjene praznim Stringom (<code>&quot;&quot;</code>).</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

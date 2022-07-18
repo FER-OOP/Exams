@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task 2 (12.5 points)</h1>
+<p>Your task is to write two classes: <code>FootballPlayer</code> and <code>PlayerComparator</code>. All classes should be in the hr.fer.oop.ljir.zad2 package and have visibility set to <em>public</em>.</p>
+<h3>Class FootballPlayer</h3>
+<p>The <code>FootballPlayer</code> class has six attributes:</p>
+<ul>
+<li><code>private String name</code></li>
+<li><code>private String surname</code></li>
+<li><code>private int shootingSkill</code></li>
+<li><code>private int dribblingSkill</code></li>
+<li><code>private int passingSkill</code></li>
+<li><code>private int overallSkill</code></li>
+</ul>
+<p>You need to write a constructor that has 5 arguments: name, surname, shootingSkill, dribblingSkill and passingSkill.
+The overallSkill attribute is calculated as the sum of the other 3 skills and is divided as an integer by 3 ((shootingSkill + dribblingSkill + passingSkill) / 3).
+Additionally, it is necessary to write all the getters and setters for each attribute.</p>
+<p>You must prepare the <code>FootballPlayer</code> class to work with collections by overriding the <code>equals</code> and <code>hashCode</code> methods.</p>
+<p>The <code>equals</code> method returns that two players are the same if they have the same first and last name.</p>
+<p>Likewise, the `hashCode' method will return the same hash for two players who have the same first and last name.</p>
+<p>You also need to rearrange the <code>toString</code> method to match the output shown in the example.</p>
+<h3>Class PlayerComparator</h3>
+<p>It is necessary to write a <code>PlayerComparator</code> class that implements the <code>Comparator</code> interface and compares two players first by the <strong>overallSkill</strong> attribute (lower goes first), then by last name (alphabetical) and finally by first name (alphabetical).
+It does not expect the comparator to be called with null values.</p>
+<h4>Usage example:</h4>
+<pre class="line-numbers"><code class="language-java">FootballPlayer player1 = new FootballPlayer(&quot;Luka&quot;,&quot;Modric&quot;, 90, 80, 100);
+FootballPlayer player2 = new FootballPlayer(&quot;Ivan&quot;, &quot;Modric&quot;, 90, 80, 100);
+FootballPlayer player3 = new FootballPlayer(&quot;Stipe&quot;, &quot;Modric&quot;, 60, 60, 60);
+FootballPlayer player4 = new FootballPlayer(&quot;Luka&quot;, &quot;Modric&quot;, 30, 30, 30);
+
+System.out.println(player1);
+
+System.out.println(player1.equals(player4));
+System.out.println(player1.hashCode() == player4.hashCode());
+
+List&lt;FootballPlayer&gt; playerList = new ArrayList&lt;FootballPlayer&gt;();
+playerList.add(player1);
+playerList.add(player2);
+playerList.add(player3);
+playerList.add(player4);
+
+System.out.println(&quot;Before sorting: &quot; + playerList);
+
+PlayerComparator playerComparator = new PlayerComparator();
+Collections.sort(playerList, playerComparator);
+
+System.out.println(&quot;After sorting: &quot; + playerList);
+</code></pre>
+<h4>Expected output:</h4>
+<pre class="line-numbers"><code class="language-text">Luka Modric - 90
+true
+true
+Before sorting: [Luka Modric - 90, Ivan Modric - 90, Stipe Modric - 60, Luka Modric - 30]
+After sorting: [Luka Modric - 30, Stipe Modric - 60, Ivan Modric - 90, Luka Modric - 90]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>4. Zadatak (12,5 bodova)</h1>
+<p>Potrebno je napraviti grafičku aplikaciju za prikaz pitanja s ponuđenim odgovorima kako je prikazano na slikama:</p>
+<p><img src="res/slika1.png" alt="slika1" /></p>
+<p><img src="res/slika2.png" alt="slika2" /></p>
+<p>Razlika između slika je u veličini tj. koliko smo rastegnuli prozor. Uočite kako se s povećanjem prozora povećava samo dio za prikaz teksta pitanja, dok ostale komponente aplikacije ostaju jednake veličine.</p>
+<p>Potrebno je dopuniti implementaciju klase <code>MultipleChoiceQuizFrame</code> koja se nalazi u paketu <code>hr.fer.oop.ljir.z4</code> i pri tome osigurati da izgled aplikacije odgovara prikazanim slikama.</p>
+<p><strong>Napomena:</strong> U predlošku su označena mjesta s komentarom <code>// TODO ...</code> na kojima trebate dodati svoj kod.</p>
+<p>Klasa <code>MultipleChoiceQuestion</code> služi za pohranu informacija o pitanjima s ponuđenim odgovorima. Ima konstruktor u kojem se postavljaju vrijednosti atributa, gettere za podatke o pitanju, getter i setter za dohvaćanje i postavljanje odabranog odgovora te metodu <code>hasAnswer</code> koja vraća informaciju je li odabran neki odgovor na pitanje. Klasu <code>MultipleChoiceQuestion</code> NIJE doušteno mijenjati.</p>
+<p>Aplikacija se sastoji od posebnog panela za prikaz pitanja (unutarnja statička klasa <code>MultipleChoiceQuestionPanel</code>), od gumba za ocjenjivanje (&quot;Answer&quot;) te od statusne trake u kojoj se prikazuju rezultati ocjenjivanja (na početku je prazna).</p>
+<p>Unutarnja statička klasa <code>MultipleChoiceQuestionPanel</code> služi za prikaz pitanja i prikazuje naslov pitanja na vrhu (<code>JLabel</code>), tekst pitanja u glavnom dijelu panela (<code>JTextArea</code>), te tri gumba tipa <code>JToggleButton</code> u kojima se prikazuju ponuđeni odgovori.
+Panelu za prikaz pitanja u konstruktoru se predaje referenca na pitanje koje je potrebno prikazati. Pri tome se parametri pitanja postavljaju u odgovarajuće komponente grafičkog sučelja.</p>
+<p>Na početku niti jedan od tri gumba s odgovorima nije pritisnut. Potrebno je osigurati da samo jedan gumb može istovremeno biti pritisnut.</p>
+<p>Pritiskom na gumb za ocjenjivanje pokreće se ocjenjivanje pitanja te se u statusnoj traci ispisuje odgovarajuća poruka:</p>
+<ul>
+<li>&quot;Choose an answer!&quot; - ako niti jedan gumb nije pritisnu</li>
+<li>&quot;Correct!&quot;      	  - ako je odabrani odgovor točan</li>
+<li>&quot;Incorrect!&quot;    	  - ako odabrani odgovor nije točan</li>
+</ul>
+<p>U klase <code>MultipleChoiceQuizFrame</code> i <code>MultipleChoiceQuestionPanel</code> slobodno možete dodavati atribute/članske varijable i privatne metode po potrebi.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
