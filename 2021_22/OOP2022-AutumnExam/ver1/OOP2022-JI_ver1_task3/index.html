@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U paketu <code>hr.fer.oop.t3.items</code> definirani su <code>Item</code>, <code>Cloth</code>, <code>Beverage</code>, <code>Food</code>, <code>Milk</code>, <code>MilkType</code> kao u primjerima s predavanja. Dodatno, definirana je i klasa <code>FreshJuice</code> kao još jedno kvarljivo piće.</p>
+<p><em>Napomena: U testnim primjerima može biti i drugih klasa izvedenih iz navedene hijerarhije.</em></p>
+<p>Klasa <code>Box</code> definirana je sljedećim kodom</p>
+<pre class="line-numbers"><code class="language-java">public class Box&lt;T&gt; {
+	protected List&lt;T&gt; content; //uočiti da je ovo protected
+	public List&lt;T&gt; boxContent() {
+		return Collections.unmodifiableList(content);
+	}
+	public Box(Collection&lt;? extends T&gt; elements) {
+		content = new ArrayList&lt;&gt;(elements);
+	}
+}
+</code></pre>
+<p>Klasa <code>Box</code> je već napisana i njen kod se ne smije mijenjati!</p>
+<p>Vaši zadaci su sljedeći:</p>
+<ol>
+<li>
+<p>Napisati klasu <code>MilkBox</code> koja predstavja kutiju u kojoj se nalaze mlijeka. Kutija s mlijekom može nastati s kontruktorom čiji je jedini argument <strong>jedno</strong> mlijeko i ono čini početni sastav kutije. Nakon toga se dodatna mlijeka dodaju metodom <code>add</code> pri čemu se mora poštovati pravilo da se u kutiji mogu nalaziti samo mlijeka istog tipa. Ako se pokuša dodati mlijeko drugačijeg tipa nego što je prvo, mlijeko se neće dodati u kutiju i metoda će vratiti <em>false</em>. Ako je mlijeko uspješno dodano metoda treba vratiti <em>true</em>.</p>
+</li>
+<li>
+<p>Napisati klasu <code>ItemsUtil</code> koja će imati sljedeće statičke metode</p>
+<ul>
+<li><code>totalVolume</code> koja se može primijeniti na kutije čiji su elementi pića (dakle,kao argument možemo poslati <code>Box&lt;Beverage&gt;</code>, <code>Box&lt;Milk&gt;</code>, <code>Box&lt;FreshJuice&gt;</code> , ..., ali ne npr. <code>Box&lt;Food&gt;</code> ili <code>Box&lt;Perishable&gt;</code>). Metoda mora vratiti ukupan volumen pića u kutiji, odnosno 0 ako je sadržaj kutije prazan.</li>
+<li><code>useBefore</code> koja se može primijeniti na kutije čiji su elementi kvarljiva ruba (dakle,kao argument možemo poslati <code>Box&lt;Food&gt;</code>, <code>Box&lt;Milk&gt;</code>, <code>Box&lt;Perishable&gt;</code> , ..., ali ne npr. <code>Box&lt;Beverage&gt;</code>). Metoda mora vratiti najraniji istek roka trajanja među elementima kutije ili <em>null</em> ako je kutija prazna.</li>
+</ul>
+</li>
+</ol>
+<p>U klasi <code>Main3</code> dano je nekoliko primjera očekivanog ponašanja programa.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

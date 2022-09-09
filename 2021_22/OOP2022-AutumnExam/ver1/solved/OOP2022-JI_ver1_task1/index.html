@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je dovršiti kod u klasi <code>DemoFrame</code> koja predstavlja formu na kojoj se pri početnom pokretanju na lijevoj strani trebaju nalaziti 4 gumba, s nazivima <em>5</em>, <em>10</em>, <em>100</em> i <em>Random up to 100</em>.</p>
+<p><img src="res/f1.png" alt="Početni ekran" /></p>
+<p>Klikom na pojedini gumb, labela na vrhu treba promijeniti naziv u <em>Generating X buttons</em>, gdje je X 5, 10, 100, ili broj u intervalu [1, 100] ovisno o tome koji gumb je kliknut. Dodatno, osim promjene labele, u centralnom dijelu treba se generirati X novih gumba, s nazivima redom od 0 do (uključivo) X-1.</p>
+<p><img src="res/f2.png" alt="Nakon klika na Random up to 100" /></p>
+<p>Klikom na neki od generiranih gumba u sredini, donja labela mijenja svoj tekst u <em>Click on number Y</em>, pri čemu je Y tekst kliknutog gumba.</p>
+<p><img src="res/f3.png" alt="Nakon lika na gumb 31" />
+<img src="res/f4.png" alt="Nakon lika na gumb 31, manji font" /></p>
+<p><em>Napomene:</em></p>
+<p>Hoće li tekst gumba <em>Random up to 100</em> biti prikazan u cijelosti ili ne, ovisi o rezoluciji ekrana, skaliranju fontova i slično, ali je evidentno da se mijenjanjem veličine prozora njihova širina i visina ne mijenjaju.</p>
+<p>Sve komponente iz nekog panela (npr. referenciranog varijablom <code>p</code>) mogu se ukloniti pozivom postupka <code>removeAll()</code>, npr. <code>p.removeAll()</code>.</p>
+<p>Prilikom dinamičkog dodavanja kontrola u panel, može se dogoditi da vizualni prikaz ne bude ispravan dok se prozor ne raširi ili smanji, što uzrokuje ponovno iscrtavanje. Navedeno ne utječe na bodovanje, a moguće je i programski izvesti pozivanjem sljedećih dviju naredbi:</p>
+<pre class="line-numbers"><code class="language-java">centerPane.revalidate();
+centerPane.repaint();
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

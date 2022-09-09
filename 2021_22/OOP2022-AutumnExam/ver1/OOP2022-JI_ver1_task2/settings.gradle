@@ -1,0 +1,9 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    mavenCentral()
+    mavenLocal()
+  }
+}
+
+rootProject.name = 'OOP2022-JI_ver1_task2'

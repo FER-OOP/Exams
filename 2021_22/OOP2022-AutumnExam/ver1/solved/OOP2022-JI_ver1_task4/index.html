@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U datotekama <code>worldcities.csv</code> i <code>worldcities20.csv</code> (smanjena verzija) nalaze se podaci o velikom broju svjetskih gradova (preuzeto sa stranice https://simplemaps.com/data/world-cities). Dane su i klase <code>City</code>, <code>CityLoader</code> sa statičkom metodom <code>load()</code> te enumeracija <code>CityType</code>.</p>
+<p>Koristeći naredbe iz <strong>Stream API-a</strong> nadopunite tri metode u <code>CityUtils.java</code> i to tako da:</p>
+<ul>
+<li>
+<p>metoda <code>countBigCitiesInACountry</code> prima već stvoreni Stream svih gradova i String koji predstavlja naziv jedne države, a vraća broj gradova s preko milijun stanovnika u toj državi. Npr. za državu &quot;Italy&quot; metoda vraća 2, a za &quot;Croatia&quot; 0.</p>
+</li>
+<li>
+<p>metoda <code>northestCityInACountry</code> prima String koji predstavlja ISO2 oznaku države (npr. &quot;HR&quot;), a vraća objekt tipa <code>City</code> u kojem se nalazi najsjeverniji grad u toj državi. Za Hrvatsku to je Čakovec.
+Napomena: za pronalaženje najsjevernijeg grada koristi se <strong>latitude</strong>, tj. zemljopisna širina (varijabla <code>lat</code> u klasi <code>City</code>).</p>
+</li>
+<li>
+<p>metoda <code>capitalCitiesStartingWithALetter</code> prima jedno slovo, tj. char tip podatka, a vraća Stream <strong>ascii imena</strong> <strong>GLAVNIH</strong> gradova koji započinju s tim slovom. Npr. za slovo &quot;Z&quot; metoda vraća stream koji sadrži samo jedan objekt, tj. String &quot;Zagreb&quot;.</p>
+</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

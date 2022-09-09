@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Sučeljem <code>DataLoader</code> i metodom <code>load</code> opisana je mogućnost učitavanja slijeda stringova iz različitih izvora. Navedeno sučelje implementiraju sljedeće klase:</p>
+<ul>
+<li><code>HardCodedLoader</code> čija implementacija metode <code>load</code> vraća fiksni, tvrdo-kodirani niz znakova</li>
+<li><code>NetworkLoader</code> čija implementacija metode <code>load</code> dohvaća HTML neke stranice, a zatim vraća niz stringova nastalih razdvajanjem učitanog HTML temeljem razmaka</li>
+<li><code>FileLoader</code> čija implementacija metode <code>load</code> vraća slijed stringova koji čine retci datoteke
+Putanje do stranice, odnosno relativna putanja datoteke ispod mape <em>src/main/resources</em> zadaje se u konstruktorima klasa <code>NetworkLoader</code> odnosno <code>FileLoader</code></li>
+</ul>
+<p>Pri čitanju podataka s različitih izvora, može doći do različitih iznimki, ali korisnik sučelja <code>DataLoader</code> ne treba biti toga svjestan, pa je zato definirana vlastita, provjeravana iznimka <code>NoDataException</code> i to je jedina iznimka koju neki konkretni <code>DataLoader</code> može i smije baciti.</p>
+<p>Klase <code>NetworkLoader</code> i <code>FileLoader</code> nisu dovršene te ih treba dovršiti na sljedeći način.</p>
+<ul>
+<li>Ako se prilikom dohvata sadržaja web-stranice dogodi iznimka (za što je predviđen <em>catch</em> blok u <code>NetworkLoaderu</code> kojeg treba dopuniti), tada tu iznimku treba omotati unutar <code>NoDataException</code> i baciti tako omotanu iznimku.</li>
+<li><code>FileLoader</code> prima relativnu putanju datoteke u odnosu na podmapu <em>src/main/resources</em> (dakle, <code>new FileLoader(&quot;data.txt&quot;)</code> treba se odnositi na <em>src/main/resources/data.txt</em>) te u svojoj implementaciji metode <code>load</code> treba provjeriti postoji li navedena putanja (ali ne treba provjeravati je li tom putanjom predstavljena datoteka ili ne). Ako putanja ne postoji, treba baciti iznimku tipa <code>NoDataException</code> s porukum <em>filename does not exist</em> (npr. <em>data.txt does not exist</em>). Ako putanja postoji pokušati učitati retke iz datoteke, a ako u tom  učitavanju dođe do iznimke, onda ta iznimka treba biti dio nove iznimke tipa <code>NoDataException</code> bez dodatnog teksta.</li>
+</ul>
+<p>Dodatno, potrebno je dovršiti klasu <code>Counter</code> s metodom <code>process</code> koja treba u mapi <code>words</code> evidentirati pojavljivanje pojedinog stringa te broj iznimki (u <code>exceptionsCount</code>) koje su se dogodile.</p>
+<p>Klasa <code>Main2</code> služi kao primjer koji se treba izvršiti bez pogreške i s planiranim ispisom navedenim u komentarima.</p>
+<p>Kao podsjetnik, još jednom sumarno vaši zadaci su:</p>
+<ol>
+<li>Dopisati potreban kod, tj. odgovarajuće konstruktore u <code>NoDataException</code></li>
+<li>Dopisati odgovarajući kod u <em>catch</em> bloku klase <code>NetworkLoader</code> kojim se postojeća iznimka omata u novu iznimku koja se baca</li>
+<li>Dovršiti kod metode <code>Load</code> u klasi <code>FileLoader</code></li>
+<li>Dovršiti metodu <code>process</code> u klasi <code>Counter</code> tako da se broji broj pojavljivanja pojedine riječi, odnosno broj uhvaćenih iznimki.</li>
+</ol>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U sklopu sustava za gospodarenje otpadom u Zagrebu potrebno je dizajnirati model dijela podataka koji se odnose na kontejnere za različite vrste otpada. Sustav se sastoji od apstraktne klase <code>Container</code> koja jedinstveno opisuje svaki spremik za otpad i dodatnih izvedenih klasa, sučelja i sl. Atributi klase <code>Container</code> su redom identifikator <code>id</code> (String), volumen spremnika u litrama <code>volume</code> (int) i trenutno zauzeće <code>OccupiedVolume</code> (int). Atributi klase su privatni i imaju odgovarajuće gettere i settere. Klasa <code>Container</code> ima konstruktor koji prima id i volume, a  <code>occupiedVolume</code> postavlja na 0 te metodu <code>toString()</code>.</p>
+<p>Vaš zadatak je nadopuniti klasu <code>Container</code> i kreirati ostale elemente modela.</p>
+<p>Napišite tijela metoda:</p>
+<ul>
+<li><code>boolean add(int addVolume)</code> - omogućava dodavanje određenog volumena otpada u spremnik, ako ima dovoljno mjesta. U tom slučaju metoda vraća true. Ako nema mjesta, metoda vraća false, a occupiedVolume spremnika se ne mijenja.</li>
+<li><code>void empty()</code> - metoda služi za &quot;pražnjenje&quot; spremnika, tj. postavlja njegov occupiedVolume na 0. Ovu metodu <strong>NIJE MOGUĆE NADJAČATI</strong> u nekoj od izvedenih klasa!</li>
+</ul>
+<p>Postoje dvije vrste spremnika, <code>StandardContainer</code> (modelira standardne kućne spremike) i <code>SpecialContainer</code> (opisuje posebne spremnike za otpad).</p>
+<p>Standardni spremnik je moguće stvoriti, a uz atribute iz klase <code>Container</code> sadrži još i atribut koji opisuje njegov tip (<code>StandardContainerType</code>), i to redom MIXED, BIO, PAPER, PLASTIC ili GLASS. Tip spremnika postavlja se u konstruktoru. Pravilo koje vrijedi od 1.10. u Zagrebu zahtijeva da se u spremnike za miješani otpad (MIXED) ubacuju isključivo vrećice određenog volumena (10, 20 ili 40 litara), osigurajte da nije moguće u MIXED spremnik ubaciti drugu količinu otpada (npr. 12 ili 56 litara) osim navedenih.</p>
+<p>Specijalni spremnik nije moguće instancirati, a sadrži dodatni atribut <code>containerMaterial</code> tipa String. Taj string opisuje materijal od kojeg je izrađen spremnik (npr. &quot;plastic&quot;, &quot;steel&quot; i sl.).</p>
+<p>Specijalni spremnik se dalje dijeli na spremnik za baterije, predstavljen klasom <code>BatteriesContainer</code> i <code>LiquidContainer</code> spremnike za tekući otpad. Konačno, <code>LiquidContainer</code> spremnici se dijele na <code>EdibleOilContainer</code> i <code>MotorOilContainer</code> spremnike.</p>
+<p>Spremnici za motorno ulje moraju biti napravljeni od nehrđajućeg čelika tj. <code>containerMaterial</code> im nužno mora biti &quot;Stainless steel&quot;, i nije ga moguće promijeniti. Pokušaj promjene materijala spremnika uzrokuje pogrešku <code>UnsupportedOperationException</code> s porukom &quot;Motor oil container material change not allowed&quot;.</p>
+<p>Spremnici za baterije <code>BatteriesContainer</code> i motorno ulje <code>MotorOilContainer</code> su posebne vrste spremnika, tzv. <code>Hazardous</code> spremnici. Osigurajte da <code>BatteriesContainer</code> i <code>MotorOilContainer</code> imaju metodu <code>public String storageInstructions()</code> koja za baterije vraća string &quot;Store in a dry place. Keep away from flamable material!&quot;, a za Motorno ulje &quot;Use sealed barrels. Keep way from flamable material!&quot;. U svim ostalim slučajevima (za neki drugi opasni otpad, možda i onaj koji trenutno nismo modelirali ali će, kad ga dodamo, biti tipa <code>Hazardous</code>) metoda treba vratiti string &quot;Keep away from flamable material!&quot;.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
