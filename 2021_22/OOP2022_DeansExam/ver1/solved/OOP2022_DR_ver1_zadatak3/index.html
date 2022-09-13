@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Zadatak 3</h1>
+<p>Potrebno je analizirati podatke dobivene od uređaja za sekvenciranje DNA.</p>
+<p>Uređaji za sekvenciranje podatke zapisuju u tekstualne datoteke s nastavkom .fastq. Za svaki komadić DNA koji pročitaju, u datoteku zapisuju 4 retka u sljedećem formatu (u primjeru su prikazani podaci za dva komadića):</p>
+<pre class="line-numbers"><code>@16WBS:00057:00011
+GATCCTCTCTCTGCAGCACATTTCCTGGAGTATGCTAAgagcgagtGTCATTTCTCCAACGGGACGCAGCGGGTGCGGTTCCTGGACAGATACTTCTATAACCGGGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTTCCGGGCGGTGACCGAGCTGGGGCGGCCGTCCGCCAAGTACTGGAACAGCCAGAAGGATTTCATGGAGCAGAAGCGGGCCGAGGTGGACACGGTGTGCAGACACAACTACGGGGTTATTGAGATGTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+CCCCADCCCDCCCCDCC???DC&gt;CA@@@@CCDCCCCC&gt;?@&gt;&lt;&lt;;D&lt;&lt;&lt;C;;;1;A@=@7666,6==&lt;CDCCD?;;;;4;6;?C@AD@??&gt;DCCC???;&gt;C;;6;C0;;?DCAA&gt;/0//.--)-;6CC@&gt;?;&lt;&lt;&lt;&lt;&lt;/?CCCC7&lt;7&lt;&lt;1;B@C@@@ACB&gt;?;;CC8&gt;?ACA???@;;7;7;;;?BA@C&gt;&gt;&gt;55&lt;@;4.4?;;;*;;;C&lt;B@;;;@&lt;;;@C1;7;;;7;C@CC??&gt;A&gt;;;;;;;4B:::@&gt;C66666,606605666666066666666666-)----)-----4466
+@16WBS:00252:00043
+GATCCTCTCTCTGCAGCACATTTCCTGCTGTATACTACGGGCGAGTGTCATTTCTCCAACGGGACGCAGCGGGTGGGGTTCCTGGACAGATACTTCTATAACGGAGAAGAGTACGTGCGCTTCGACAGCGACTGGGGCGAGTATCGGGCGGTGACCGAGCTGGGGCGGCCGGACGCCGAGCTCTGGAACAGCCAGAAGGAGTTCCTGGAGCAGAGGCGGGCCGAGGTGGACACGTACTGCAGACACAACTACGGGGTCGGTGAGAGTTTCACTGTGCAGCGGCGAGGTGACGCGAA
++
+AA&lt;?7&lt;ABACCCCCCCC?@@CE&gt;CACEEDDDECDCCCHFF&gt;DDCECBCB&lt;&lt;&lt;1&lt;&lt;&lt;7;?BBC&gt;@?@@@FCDF&gt;C@BB/;7;7;B7?@EHHDCCCADE@@@BCCACCC@DCCDEDD????CC@CCCCECCCCCCDDD:????CCCCCE?@&gt;9==&gt;:;&gt;C&gt;&gt;?CCC9CC@CACACCCCACCCCCCCC@CA@@::5:::&gt;C=&gt;?C@C???;??&gt;B@882888,82888&lt;@@=@@BBBB;;;??AABCC??;?CBBBCC7CCCACCCCB;;;6;BBCCCC@@@::5:A8828888&gt;???G
+</code></pre>
+<ul>
+<li>Prvi redak započinje znakom <code>@</code> i nakon toga sadrži ime pročitane sekvence</li>
+<li>Drugi redak sadrži samu sekvencu (niz slova ACGT)</li>
+<li>Treći redak se ne koristi</li>
+<li>Četvrti redak sadrži niz znakova iste duljine kao i sekvenca DNA. Oni predstavljaju oznake kvalitete pročitanih nukleotida (slova u sekvenci).</li>
+</ul>
+<p>Potrebno je dopuniti klase <code>Sequence</code> i <code>SequenceStats</code>.</p>
+<p>Klasa <code>Sequence</code> sadrži podatke o jednoj pročitanoj sekvenci:</p>
+<ul>
+<li>ime sekvence</li>
+<li>sama sekvenca</li>
+<li>oznake kvalitete</li>
+</ul>
+<p>Klasa također sadrži konstruktor i gettere za sva tri atributa. Klasu <code>Sequence</code> je potrebno dopuniti sa dvije metode.</p>
+<p>STATIČKA metoda <code>loadFromFile</code> prima putanju do datoteke sa sekvencama i vraća listu objekata tipa <code>Sekvence</code> pročitanih iz datoteke. Možete pretpostaviti da je datoteka dobro formatirana, tj. da ima ispravan broj redaka. Primjetite da kod čitanja imena sekvence, znak <code>@</code> koji se nalazi na početku retka ne ulazi u ime.</p>
+<p>Metoda <code>getGCContent</code> vraća udio slova G i C u sekvenci (u odnosu na ukupan broj slova). Uzmite u obzir da slova u sekvencama mogu biti velika ili mala, treba ih brojati u oba slučaja. Npr. za dvije sekvence prikazane gore u primjeru udio GC baza treba bi biti: 0.59 i 0.61. Ove vrijednosti su zaokružene na dvije decimale, ali vrijednost koju vraća metoda <code>getGCContent</code> ne smije biti zaokružena.</p>
+<p>Klasu <code>SequenceStats</code> potrebno je nadopuniti s nekoliko statičkih metoda koje  analiziraju pročitane sekvence. Potrebno je napisati sljedeće metode:</p>
+<ul>
+<li><code>public static int maxSeqLength(List&lt;Sequence&gt; seqList)</code> - vraća duljinu najdulje sekvence</li>
+<li><code>public static List&lt;String&gt; seqNames(List&lt;Sequence&gt; seqList)</code> - vraća listu imena sekvenci</li>
+<li><code>public static double avgGCContent(Stream&lt;Sequence&gt; seqList)</code> - vraća prosječan udio znakova G i C svih sekvenci, izračunajte ju kao prosječnu vrijednost vrijednosti koju za svaku sekvencu dobijete metodom <code>getGCContent</code>. Pazite, metoda prima tok sekvenci!</li>
+<li><code>public static Stream&lt;Sequence&gt; usableSequences(List&lt;Sequence&gt; seqList, double thGC)</code> - vraća tok sekvenci koje su korisne za daljnju analizu. To su sekvence čiji je udio baza GC veći od zadanog praga. Dodatno, oznake kvalitete nisu važne za daljnju analizu pa je kao izlaz potrebno vratiti listu novih sekvenci kojima su oznake kvalitete zamijenjene praznim Stringom (<code>&quot;&quot;</code>).</li>
+</ul>
+<p>VAŽNO: Sve metode u klasi <code>SequenceStats</code> potrebno je napisati koristeći Java Stream API.</p>
+<p>Dopušteno je pisanje pomoćnih metoda, ali nije dopušteno dodavanje atributa u klasu <code>Sequence</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

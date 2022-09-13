@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>2. Zadatak (12,5 bodova)</h1>
+<p>Potrebno je napisati dvije klase: <code>BasketballPlayer</code> i <code>BasketballPlayerComparator</code>. Sve klase trebaju biti u paketu hr.fer.oop.zad2 i imaju vidljivost postavljenu na <em>public</em>.</p>
+<h3>Klasa <code>BasketballPlayer</code></h3>
+<p>Klasa <code>BasketballPlayer</code> ima 6 članskih varijabli:</p>
+<ul>
+<li><code>private String name</code></li>
+<li><code>private String surname</code></li>
+<li><code>private double pointsAvg</code></li>
+<li><code>private double assistsAvg</code></li>
+<li><code>private double reboundsAvg</code></li>
+<li><code>private int position</code></li>
+</ul>
+<p>Trebate napisati konstruktor koji prima 6 argumenata (sve gore navedene atribute).</p>
+<p>Klasu <code>BasketballPlayer</code> morate pripremiti za rad s kolekcijama tako da nadjačate metode <code>equals</code> i <code>hashCode</code>.</p>
+<p>Metoda <code>equals</code> vraća da su dva igrača ista ako imaju isto ime, isto prezime i igraju istu poziciju.</p>
+<p>Isto tako metoda <code>hashCode</code> će vratiti isti sažetak za dva igrača koja imaju isto ime, isto prezime i igraju istu poziciju.</p>
+<p>otrebno je također preurediti metodu <code>toString</code> kako bi odgovarala ispisu koji je prikazan u primjeru.</p>
+<h3>Klasa <code>BasketballPlayerComparator</code></h3>
+<p>Potrebno je napisati klasu <code>BasketballPlayerComparator</code> koja implementira sučelje <code>Comparator</code> te uspoređuje dva igrača prvo po atributu <strong>position</strong>(manji ide prvo), zatim po atributima
+<code>pointsAvg</code>, <code>assistsAvg</code> i <code>reboundsAvg</code> (u svakoj usporedbi manji broj ide prije).</p>
+<h2>Primjer korištenja:</h2>
+<pre class="line-numbers"><code class="language-bash">BasketballPlayer player1 = new BasketballPlayer(&quot;Ante&quot;, &quot;Antic&quot;, 20.0, 10.0, 10.0, 3);
+BasketballPlayer player2 = new BasketballPlayer(&quot;Ante&quot;, &quot;Antic&quot;, 10.0, 20.0, 20.0, 3);
+BasketballPlayer player3 = new BasketballPlayer(&quot;Borna&quot;, &quot;Bornic&quot;, 10.0, 20.0, 20.0, 2);
+
+System.out.println(player1.equals(player2));
+System.out.println(player1.hashCode() == player2.hashCode());
+
+List&lt;BasketballPlayer&gt; playerList = new ArrayList&lt;BasketballPlayer&gt;();
+playerList.add(player1);
+playerList.add(player2);
+playerList.add(player3);
+
+System.out.println(&quot;Before sorting: &quot; + playerList);
+
+BasketballPlayerComparator comparator = new BasketballPlayerComparator();
+Collections.sort(playerList, comparator);
+
+System.out.println(&quot;After sorting: &quot; + playerList);
+</code></pre>
+<h3>Rezultat:</h3>
+<pre class="line-numbers"><code class="language-bash">true
+true
+Before sorting: [Ante Antic(3) [20.0, 10.0, 10.0], Ante Antic(3) [10.0, 20.0, 20.0], Borna Bornic(2) [10.0, 20.0, 20.0]]
+After sorting: [Borna Bornic(2) [10.0, 20.0, 20.0], Ante Antic(3) [10.0, 20.0, 20.0], Ante Antic(3) [20.0, 10.0, 10.0]]
+</code></pre>
+<p>NAPOMENA: Prilikom ispisa decimalnih brojeva, hoće li se ispisati decimalna točka ili zarez ovisi o postavkama na vašem računalu.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

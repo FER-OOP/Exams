@@ -1,0 +1,9 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    mavenCentral()
+    mavenLocal()
+  }
+}
+
+rootProject.name = 'OOP2022_DR_ver1_zadatak3'
