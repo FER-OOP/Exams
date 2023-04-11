@@ -1,7 +1,0 @@
-Ključni elementi u rješenju zadatka:
-- Ne mora svaka osoba raditi u tvornici, pa osobe i resursi nisu u istoj hijerahiji, pa jedno od toga mora biti sučelje (više manje svejedno koje)
-- Radni imaju kutiji s alatom
-- Vrste alata su 2 enumeracije (nije nužno da imaju zajedničku sučelje, ali je praktično zbog definiranja ograničenja)
-- Radnik i konkretni alat moraju biti parametrizirani po vrsti alat
-	(Radnik ima kutiju alata i ta kutija mora biti baš određena kutija alata, ograničena samo na alate specifične za tu vrstu radnika)
-- Radnik ima koefcijent koji varira ovisno o vrsti radnika, što znači da se mora raditi o metodi koja se mora nadjačati (posljedično definirana kao apstraktna), što se i radi za poljoprivrednika i majstora
