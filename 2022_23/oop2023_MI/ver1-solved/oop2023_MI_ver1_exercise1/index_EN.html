@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>The task is to implement an object model for buildings. Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>EnergyEfficiency</code> specifies the energy efficiency functionality. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Method <code>boolean investigateEnergyEfficiency()</code> which returns <code>true</code> if the building is energy efficient, <code>false</code> otherwise. The access of this type is public.</li>
+</ul>
+<p>The class <code>Building</code> specifies building. It is not possible to instantiate the objects of this class. It implements <code>EnergyEfficiency</code>.  Visibility of this element secures the public access. It has:</p>
+<ul>
+<li>Variable <code>address</code> which represents address and is of type <code>String</code>.
+<ul>
+<li>It is important to prevent the modification of the initial value at the compiler level.</li>
+<li>The element is visible to clasess from the same paket as well as from the subclass.</li>
+</ul>
+</li>
+<li>Variable <code>numberOfApartments</code> which specifies the number of apartments and is of type <code>int</code>.
+<ul>
+<li>The access is possible from the class of the same package and from the subclass</li>
+<li>It is important to prevent the modification of the initial value at the compiler level.</li>
+</ul>
+</li>
+<li>Variable <code>energyConsumption</code> which is the energy consumption and is of type <code>int</code>.
+<ul>
+<li>It is important to prevent the modification of the initial value at the compiler level.</li>
+<li>The access is possible from the class of the same package and from the subclass</li>
+</ul>
+</li>
+<li>Constructor <code>Building(String, int, int)</code> which sets the address, number of aparments and energy consumption. This element is visible from all the classes.</li>
+<li>Method <code>String getAddress()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>int getNumberOfApartments()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>int getEnergyConsumption()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>String calculateEnergyClass()</code> which returns the energy class of a building based on energy consumption.
+<ul>
+<li>The method does not have the implementation.</li>
+<li>This element has the maximum visibility.</li>
+</ul>
+</li>
+</ul>
+<p>The class <code>ResidentialBuilding</code> is a residential building. This element has the maximum visibility. It is a child of <code>Building</code>. It contains:</p>
+<ul>
+<li>Variable <code>numberOfParkingSpots</code> which models the number of parking spots and is of type <code>int</code>. Visibility of this element secures the public access.</li>
+<li>Constructor <code>ResidentialBuilding(String, int, int, int)</code> which sets the address, number of apartments, energy consumption and the number of parking spots. This element is visible from all the classes.</li>
+<li>Method <code>int getNumberOfParkingSpots()</code> which is getter. Visibility of this element secures the public access.</li>
+<li>Method <code>boolean hasFreeParkingSpots()</code> which returns <code>true</code> if the number of parking spots are greater than the number of apartments, <code>false</code> otherwise. Visibility of this element secures the public access.</li>
+<li>Method <code>String calculateEnergyClass()</code> which calculates the energy class as follows: if the energy consumption if less than 50, the class is <code>A</code>, if less than 90 the class is <code>B</code>, else the class is <code>C</code>. This element is visible from all the classes.</li>
+<li>Method <code>boolean investigateEnergyEfficiency()</code> which returns <code>true</code> if the energy class is <code>A</code>, else returns <code>false</code>. The access of this type is public.</li>
+</ul>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+
+       
+        ResidentialBuilding rBuilding = new ResidentialBuilding(&quot;Address 1&quot;, 20, 500, 30);
+
+        System.out.println(&quot;RESIDENTIAL BUILDING&quot;);
+        System.out.println(&quot;Address: &quot; + rBuilding.getAddress());
+        System.out.println(&quot;Number of apartments: &quot; + rBuilding.getNumberOfApartments());
+        System.out.println(&quot;Number of parking spots: &quot; + rBuilding.getNumberOfParkingSpots());
+        System.out.println(&quot;Energy consumption: &quot; + rBuilding.getEnergyConsumption());
+        System.out.println(&quot;Energy class: &quot; + rBuilding.calculateEnergyClass());
+        System.out.println(&quot;Is energy efficient: &quot; + rBuilding.investigateEnergyEfficiency());
+        System.out.println(&quot;Has free parking spots: &quot; + rBuilding.hasFreeParkingSpots());
+
+
+    
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">RESIDENTIAL BUILDING
+Address: Address 1
+Number of apartments: 20
+Number of parking spots: 30
+Energy consumption: 500
+Energy class: C
+Is energy efficient: false
+Has free parking spots: true
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

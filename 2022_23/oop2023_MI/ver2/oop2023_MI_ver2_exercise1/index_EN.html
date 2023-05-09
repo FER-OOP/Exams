@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>The task is to implement an object model for management of user accounts in the banking system. Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>Account</code> specifies the user account functionality. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Method <code>void performTransaction(int)</code> which executes the transaction and updates the balance. Transactions may be positive (increase of balance) and negative. The access of this type is public.</li>
+</ul>
+<p>The class <code>User</code> specifies a user account. It is not possible to instantiate the objects of this class. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Variable <code>name</code> which specifies the name and is of type <code>String</code>. The access is possible from the class of the same package and from the subclass.</li>
+<li>Variable <code>balance</code> which models the balance and is of type <code>int</code>. The access is possible from the class of the same package and from the subclass.</li>
+<li>Variable <code>password</code> which models the password and is of type <code>String</code>. The element is visible to clasess from the same paket as well as from the subclass.</li>
+<li>Constructor <code>User(String, String, int)</code> which sets the name, password and the balance. The access of this type is public.</li>
+<li>Method <code>String getName()</code> which is getter. The access of this type is public.</li>
+<li>Method <code>void setName(String)</code> which is setter. Visibility of this element secures the public access.</li>
+<li>Method <code>String getPassword()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>int getBalance()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>void setBalance(int)</code> which is setter. This element has the maximum visibility.</li>
+<li>Method <code>void changePassword(String)</code> which enables the change of password.
+<ul>
+<li>This element has the maximum visibility.</li>
+<li>The method does not have the body.</li>
+</ul>
+</li>
+</ul>
+<p>The class <code>Individual</code> models an individual (private) user entity. This element is visible from all the classes. It is a subtype of <code>User</code>. It implements <code>Account</code>.  It has:</p>
+<ul>
+<li>Variable <code>limit</code> which specifies the transaction limit, i.e. the maximum amount that can be used in a transaction (regardless of whether it is payment or payout) and is of type <code>int</code>.
+<ul>
+<li>It is important to prevent the modification of the initial value at the compiler level.</li>
+<li>This element is visible only from its own class.</li>
+</ul>
+</li>
+<li>Variable <code>address</code> which represents the address and is of type <code>String</code>. This element is visible only from its own class.</li>
+<li>Constructor <code>Individual(String, String, int, String, int)</code> which sets the name, password, balance, address and transaction limit. This element is visible from all the classes.</li>
+<li>Method <code>String getAddress()</code> which is getter. Visibility of this element secures the public access.</li>
+<li>Method <code>void setAddress(String)</code> which is setter. Visibility of this element secures the public access.</li>
+<li>Method <code>int getLimit()</code> which is getter. The access of this type is public.</li>
+<li>Method <code>void performTransaction(int)</code> which executes the transaction if there is enough balance and if the absolute amount in the transaction is less/equal to the limit. The access of this type is public.</li>
+<li>Method <code>void changePassword(String)</code> which changes the password only if the new password has at least 6 characters. This element has the maximum visibility.</li>
+</ul>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+        
+        Individual individual = new Individual(&quot;Pero Perich&quot;, &quot;password123&quot;, 5000, &quot;Address 1&quot;, 1000);
+        
+        individual.performTransaction(-2000);
+        
+        System.out.println(individual.getName() + &quot; balance: &quot; + individual.getBalance());
+        
+        individual.performTransaction(-1000);
+        
+        System.out.println(individual.getName() + &quot; balance: &quot; + individual.getBalance());
+        
+        individual.changePassword(&quot;newp&quot;);
+        
+        System.out.println(individual.getPassword());
+        
+        individual.changePassword(&quot;properpass234243234&quot;);
+        
+        System.out.println(individual.getPassword());
+    
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">Pero Perich balance: 5000
+Pero Perich balance: 4000
+password123
+properpass234243234
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

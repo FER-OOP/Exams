@@ -1,0 +1,256 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>The task is to create an object model for vehicle competition. Below one can find a UML class diagram which is used in this task and it is related to vehicles (<code>Vehicle</code>), cars (<code>Car</code>) and racing cars (<code>RacingCar</code>). Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>Duel</code> specifies methods for the duel between two entities, the interface is parametrized with two types, e.g. A and B. Visibility of this element secures the public access. It has:</p>
+<ul>
+<li>Method <code>double rateA(A)</code> which calculates and returns the rating for the A-th entitity. The access of this type is public.</li>
+<li>Method <code>double rateB(B)</code> which calculates and returns the rating for the B-th entitity. This element is visible from all the classes.</li>
+<li>Method <code>String battle(A, B)</code> which compares the ratings of two entities and returns the textual representation of the entitity which has greater rating. Returns &quot;DRAW&quot; if the ratings are equal. For comparing the method <code>Double.compare()</code> must be used. This element has the maximum visibility.</li>
+</ul>
+<p>The class <code>Competition</code> represents competition which is parametrized in a way so that A have to be either <code>Vehicle</code> or of type derived from <code>Vehicle</code> and B have to be either <code>RacingCar</code> or of type derived from <code>RacingCar</code>. It implements <code>Duel</code>.  This element is visible from all the classes. It contains:</p>
+<ul>
+<li>Method <code>double rateA(A)</code> which returns the number of the name characters. Visibility of this element secures the public access.</li>
+<li>Method <code>double rateB(B)</code> which returns the average value of the name length, nitro value and power value. Visibility of this element secures the public access.</li>
+<li>Method <code>String battle(A, B)</code> which offers the implementation according to the specification from the interface. This element has the maximum visibility.</li>
+</ul>
+<p>The class <code>RacingCarCompetition</code> models a racing car (i.e., <code>RacingCar</code>) competition (note: the class cannot be parametrized). This element is visible from all the classes. It extends the type <code>Competition</code>. It is composed of:</p>
+<ul>
+<li>Method <code>double rateA(RacingCar)</code> which returns the average value of the name length, nitro value and power value. This element is visible from all the classes.</li>
+</ul>
+<h2>UML Class diagram:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="488px" preserveAspectRatio="none" style="width:328px;height:488px;background:#FFFFFF;" version="1.1" viewBox="0 0 328 488" width="328px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[3aa0d89c6bfdcbf7f32042cedac57549]
+class Vehicle-->
+<a href="java:hr.fer.oop.Vehicle" target="_top" title="java:hr.fer.oop.Vehicle" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Vehicle" xlink:show="new" xlink:title="java:hr.fer.oop.Vehicle" xlink:type="simple">
+<g id="elem_Vehicle">
+<rect codeLine="13" fill="#F1F1F1" height="118.4375" id="Vehicle" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="162" x="83" y="7"/>
+<ellipse cx="136.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M139.5156,18.875 Q139.6719,18.6563 139.8594,18.5469 Q140.0469,18.4375 140.2656,18.4375 Q140.6406,18.4375 140.875,18.7031 Q141.1094,18.9531 141.1094,19.5625 L141.1094,21.0156 Q141.1094,21.625 140.875,21.8906 Q140.6406,22.1563 140.2656,22.1563 Q139.9219,22.1563 139.7188,21.9531 Q139.5156,21.7656 139.4063,21.25 Q139.3594,20.8906 139.1719,20.7031 Q138.8438,20.3281 138.2344,20.1094 Q137.625,19.8906 137,19.8906 Q136.2344,19.8906 135.5938,20.2188 Q134.9688,20.5469 134.4688,21.2969 Q133.9844,22.0469 133.9844,23.0781 L133.9844,24.1719 Q133.9844,25.4063 134.875,26.2344 Q135.7656,27.0469 137.3594,27.0469 Q138.2969,27.0469 138.9531,26.7969 Q139.3438,26.6406 139.7656,26.2031 Q140.0313,25.9375 140.1719,25.8594 Q140.3281,25.7813 140.5313,25.7813 Q140.8594,25.7813 141.1094,26.0469 Q141.375,26.2969 141.375,26.6406 Q141.375,26.9844 141.0313,27.3906 Q140.5313,27.9688 139.7344,28.2969 Q138.6563,28.75 137.3594,28.75 Q135.8438,28.75 134.6406,28.125 Q133.6563,27.625 132.9688,26.5625 Q132.2813,25.4844 132.2813,24.2031 L132.2813,23.0469 Q132.2813,21.7188 132.8906,20.5781 Q133.5156,19.4219 134.6094,18.8125 Q135.7031,18.1875 136.9375,18.1875 Q137.6719,18.1875 138.3125,18.3594 Q138.9688,18.5156 139.5156,18.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="157.25" y="28.7285">Vehicle</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="84" x2="244" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="91" y="50.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="103" y="57.5332">name: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="84" x2="244" y1="64.6094" y2="64.6094"/>
+<ellipse cx="94" cy="78.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="103" y="83.1426">Vehicle(name: String)</text>
+<ellipse cx="94" cy="96.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="103" y="100.752">getName(): String</text>
+<ellipse cx="94" cy="114.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="103" y="118.3613">toString(): String</text>
+</g>
+</a>
+<!--MD5=[3f0ef310aaa84a542276992c5216544d]
+class Car-->
+<a href="java:hr.fer.oop.Car" target="_top" title="java:hr.fer.oop.Car" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Car" xlink:show="new" xlink:title="java:hr.fer.oop.Car" xlink:type="simple">
+<g id="elem_Car">
+<rect codeLine="22" fill="#F1F1F1" height="118.4375" id="Car" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="211" x="58.5" y="185"/>
+<ellipse cx="148.25" cy="201" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M151.0156,196.875 Q151.1719,196.6563 151.3594,196.5469 Q151.5469,196.4375 151.7656,196.4375 Q152.1406,196.4375 152.375,196.7031 Q152.6094,196.9531 152.6094,197.5625 L152.6094,199.0156 Q152.6094,199.625 152.375,199.8906 Q152.1406,200.1563 151.7656,200.1563 Q151.4219,200.1563 151.2188,199.9531 Q151.0156,199.7656 150.9063,199.25 Q150.8594,198.8906 150.6719,198.7031 Q150.3438,198.3281 149.7344,198.1094 Q149.125,197.8906 148.5,197.8906 Q147.7344,197.8906 147.0938,198.2188 Q146.4688,198.5469 145.9688,199.2969 Q145.4844,200.0469 145.4844,201.0781 L145.4844,202.1719 Q145.4844,203.4063 146.375,204.2344 Q147.2656,205.0469 148.8594,205.0469 Q149.7969,205.0469 150.4531,204.7969 Q150.8438,204.6406 151.2656,204.2031 Q151.5313,203.9375 151.6719,203.8594 Q151.8281,203.7813 152.0313,203.7813 Q152.3594,203.7813 152.6094,204.0469 Q152.875,204.2969 152.875,204.6406 Q152.875,204.9844 152.5313,205.3906 Q152.0313,205.9688 151.2344,206.2969 Q150.1563,206.75 148.8594,206.75 Q147.3438,206.75 146.1406,206.125 Q145.1563,205.625 144.4688,204.5625 Q143.7813,203.4844 143.7813,202.2031 L143.7813,201.0469 Q143.7813,199.7188 144.3906,198.5781 Q145.0156,197.4219 146.1094,196.8125 Q147.2031,196.1875 148.4375,196.1875 Q149.1719,196.1875 149.8125,196.3594 Q150.4688,196.5156 151.0156,196.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="168.75" y="206.7285">Car</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="59.5" x2="268.5" y1="217" y2="217"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="66.5" y="228.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="78.5" y="235.5332">power: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="59.5" x2="268.5" y1="242.6094" y2="242.6094"/>
+<ellipse cx="69.5" cy="256.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="78.5" y="261.1426">Car(model: String, power: int)</text>
+<ellipse cx="69.5" cy="274.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="78.5" y="278.752">getPower(): int</text>
+<ellipse cx="69.5" cy="292.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="78.5" y="296.3613">toString(): String</text>
+</g>
+</a>
+<!--MD5=[5070976f72a68249456be052678d409a]
+class RacingCar-->
+<a href="java:hr.fer.oop.RacingCar" target="_top" title="java:hr.fer.oop.RacingCar" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.RacingCar" xlink:show="new" xlink:title="java:hr.fer.oop.RacingCar" xlink:type="simple">
+<g id="elem_RacingCar">
+<rect codeLine="16" fill="#F1F1F1" height="118.4375" id="RacingCar" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="314" x="7" y="363"/>
+<ellipse cx="126.25" cy="379" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M129.0156,374.875 Q129.1719,374.6563 129.3594,374.5469 Q129.5469,374.4375 129.7656,374.4375 Q130.1406,374.4375 130.375,374.7031 Q130.6094,374.9531 130.6094,375.5625 L130.6094,377.0156 Q130.6094,377.625 130.375,377.8906 Q130.1406,378.1563 129.7656,378.1563 Q129.4219,378.1563 129.2188,377.9531 Q129.0156,377.7656 128.9063,377.25 Q128.8594,376.8906 128.6719,376.7031 Q128.3438,376.3281 127.7344,376.1094 Q127.125,375.8906 126.5,375.8906 Q125.7344,375.8906 125.0938,376.2188 Q124.4688,376.5469 123.9688,377.2969 Q123.4844,378.0469 123.4844,379.0781 L123.4844,380.1719 Q123.4844,381.4063 124.375,382.2344 Q125.2656,383.0469 126.8594,383.0469 Q127.7969,383.0469 128.4531,382.7969 Q128.8438,382.6406 129.2656,382.2031 Q129.5313,381.9375 129.6719,381.8594 Q129.8281,381.7813 130.0313,381.7813 Q130.3594,381.7813 130.6094,382.0469 Q130.875,382.2969 130.875,382.6406 Q130.875,382.9844 130.5313,383.3906 Q130.0313,383.9688 129.2344,384.2969 Q128.1563,384.75 126.8594,384.75 Q125.3438,384.75 124.1406,384.125 Q123.1563,383.625 122.4688,382.5625 Q121.7813,381.4844 121.7813,380.2031 L121.7813,379.0469 Q121.7813,377.7188 122.3906,376.5781 Q123.0156,375.4219 124.1094,374.8125 Q125.2031,374.1875 126.4375,374.1875 Q127.1719,374.1875 127.8125,374.3594 Q128.4688,374.5156 129.0156,374.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="146.75" y="384.7285">RacingCar</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="320" y1="395" y2="395"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="406.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="27" y="413.5332">nitro: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="320" y1="420.6094" y2="420.6094"/>
+<ellipse cx="18" cy="434.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="288" x="27" y="439.1426">RacingCar(model: String, power: int, nitro: int)</text>
+<ellipse cx="18" cy="452.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="27" y="456.752">getNitro(): int</text>
+<ellipse cx="18" cy="470.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="474.3613">toString(): String</text>
+</g>
+</a>
+<!--MD5=[22dd0d5001cffe3a5a97c942353cd104]
+reverse link Vehicle to Car-->
+<g id="link_Vehicle_Car">
+<path codeLine="15" d="M164,145.53 C164,158.79 164,172.33 164,184.94 " fill="none" id="Vehicle-backto-Car" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="157,145.12,164,125.12,171,145.12,157,145.12" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[4a5e46ae9fd13f4fc48fd13bdbb628d9]
+reverse link Car to RacingCar-->
+<g id="link_Car_RacingCar">
+<path codeLine="24" d="M164,323.53 C164,336.79 164,350.33 164,362.94 " fill="none" id="Car-backto-RacingCar" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="157,323.12,164,303.12,171,323.12,157,323.12" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[a70b19102d4c1893bddcc7aefb3ab681]
+@startuml
+class Vehicle [[java:hr.fer.oop.Vehicle]] {
+	-name: String
+	+Vehicle(name: String)
+	+getName(): String
+	+toString(): String
+}
+class Car [[java:hr.fer.oop.Car]] {
+	-power: int
+	+Car(model: String, power: int)
+	+getPower(): int
+	+toString(): String
+}
+class Vehicle {
+}
+Vehicle <|- - Car
+class RacingCar [[java:hr.fer.oop.RacingCar]] {
+	-nitro: int
+	+RacingCar(model: String, power: int, nitro: int)
+	+getNitro(): int
+	+toString(): String
+}
+class Car {
+}
+Car <|- - RacingCar
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>The method in italic is abstract. The method/variable in underline is static.</strong></p>
+<h3>Visibility legend</h3>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+				
+		Vehicle vehicle = new Vehicle(&quot;vehicle1&quot;);
+		Vehicle vehicle2 = new Vehicle(&quot;vehicle2&quot;);
+		
+		Car car = new Car(&quot;car1 the best ever&quot;, 79);
+		Car car2 = new Car(&quot;car2&quot;, 80);
+		
+		RacingCar racingCar = new RacingCar(&quot;racingCarMegaLong&quot;, 80, 58);
+		RacingCar racingCar2 = new RacingCar(&quot;racingCar2&quot;, 99, 58);
+		
+		
+		Competition&lt;Vehicle, RacingCar&gt; vehicleCompetition = new Competition&lt;&gt;();
+		System.out.println(&quot;------VEHICLE COMPETITION----------&quot;);
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, vehicle, vehicleCompetition.rateA(vehicle));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, vehicleCompetition.rateB(racingCar));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(vehicle, racingCar));
+		System.out.println();
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, vehicle2, vehicleCompetition.rateA(vehicle2));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, vehicleCompetition.rateB(racingCar));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(vehicle2, racingCar));
+		System.out.println();
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, car2, vehicleCompetition.rateA(car2));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, vehicleCompetition.rateB(racingCar));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(car2, racingCar));
+		System.out.println();
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, car, vehicleCompetition.rateA(car));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar2, vehicleCompetition.rateB(racingCar2));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(car, racingCar2));
+		System.out.println();
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, vehicleCompetition.rateA(racingCar));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar2, vehicleCompetition.rateB(racingCar2));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(racingCar, racingCar2));
+		System.out.println();
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, vehicleCompetition.rateA(racingCar));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar2, vehicleCompetition.rateB(racingCar2));
+		System.out.printf(&quot;Who won? %s\n&quot;, vehicleCompetition.battle(racingCar, racingCar2));
+		System.out.println();
+		
+		RacingCarCompetition racingCarCompetition = new RacingCarCompetition();
+		System.out.println(&quot;------RACING CAR COMPETITION----------&quot;);
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, racingCarCompetition.rateA(racingCar));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar2, racingCarCompetition.rateB(racingCar2));
+		System.out.printf(&quot;Who won? %s\n&quot;, racingCarCompetition.battle(racingCar, racingCar2));
+		System.out.println();
+		
+		Competition&lt;RacingCar,RacingCar&gt; racingCarCompetitionParametrized = new Competition&lt;&gt;();
+		System.out.println(&quot;-----RACING CAR COMPETITION PARAMETRIZED--------&quot;);
+		System.out.println(&quot;COMPETITION&quot;);
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar, racingCarCompetitionParametrized.rateA(racingCar));
+		System.out.printf(&quot;%s rating: %.2f\n&quot;, racingCar2, racingCarCompetitionParametrized.rateB(racingCar2));
+		System.out.printf(&quot;Who won? %s\n&quot;, racingCarCompetitionParametrized.battle(racingCar, racingCar2));
+		
+
+		
+		
+		
+	
+		
+	
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">------VEHICLE COMPETITION----------
+vehicle1 rating: 8.00
+racingCarMegaLong-80-58 rating: 51.67
+Who won? racingCarMegaLong-80-58
+
+vehicle2 rating: 8.00
+racingCarMegaLong-80-58 rating: 51.67
+Who won? racingCarMegaLong-80-58
+
+car2-80 rating: 4.00
+racingCarMegaLong-80-58 rating: 51.67
+Who won? racingCarMegaLong-80-58
+
+car1 the best ever-79 rating: 18.00
+racingCar2-99-58 rating: 55.67
+Who won? racingCar2-99-58
+
+racingCarMegaLong-80-58 rating: 17.00
+racingCar2-99-58 rating: 55.67
+Who won? racingCar2-99-58
+
+racingCarMegaLong-80-58 rating: 17.00
+racingCar2-99-58 rating: 55.67
+Who won? racingCar2-99-58
+
+------RACING CAR COMPETITION----------
+racingCarMegaLong-80-58 rating: 51.67
+racingCar2-99-58 rating: 55.67
+Who won? racingCar2-99-58
+
+-----RACING CAR COMPETITION PARAMETRIZED--------
+COMPETITION
+racingCarMegaLong-80-58 rating: 17.00
+racingCar2-99-58 rating: 55.67
+Who won? racingCar2-99-58
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

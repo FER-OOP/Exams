@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>U zadatku je potrebno imlementirati objektni model za zgrade. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>EnergyEfficiency</code> reprezentira funkcionalnost energetske efikasnosti. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>boolean investigateEnergyEfficiency()</code> koja vraća <code>true</code> ako je zgrada energetski učinkovita, inače <code>false</code>. Pristup ovog tipa je javan.</li>
+</ul>
+<p>Razred <code>Building</code> modelira zgradu. Nije moguće instancirati primjerke ove klase. Implementira <code>EnergyEfficiency</code>.  Vidljivost ovog elementa omogućuje javni pristup. Ima:</p>
+<ul>
+<li>Varijablu <code>address</code> koja oblikuje adresu i tipa je <code>String</code>.
+<ul>
+<li>Potrebno je onemogućiti promjenu inicijalne vrijednosti i to na razini prevodioca.</li>
+<li>Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+</ul>
+</li>
+<li>Varijablu <code>numberOfApartments</code> koja reprezentira broj stanova i tipa je <code>int</code>.
+<ul>
+<li>Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+<li>Potrebno je onemogućiti promjenu inicijalne vrijednosti i to na razini prevodioca.</li>
+</ul>
+</li>
+<li>Varijablu <code>energyConsumption</code> koja je potrošnja energija i tipa je <code>int</code>.
+<ul>
+<li>Potrebno je onemogućiti promjenu inicijalne vrijednosti i to na razini prevodioca.</li>
+<li>Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+</ul>
+</li>
+<li>Konstruktor <code>Building(String, int, int)</code> koji postavlja adresu, broj stanova i potrošnju energije. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String getAddress()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>int getNumberOfApartments()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>int getEnergyConsumption()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>String calculateEnergyClass()</code> koja vraća energetski razred zgrade na temelju potrošnje energije.
+<ul>
+<li>Metoda nema svoju implementaciju.</li>
+<li>Element ima maksimalnu vidljivost.</li>
+</ul>
+</li>
+</ul>
+<p>Klasa <code>ResidentialBuilding</code> je stambena zgrada. Element ima maksimalnu vidljivost. Dijete je od <code>Building</code>. Sadrži:</p>
+<ul>
+<li>Varijablu <code>numberOfParkingSpots</code> koja reprezentira broj parkirnih mjesta i tipa je <code>int</code>. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Konstruktor <code>ResidentialBuilding(String, int, int, int)</code> koji postavlja adresu, broj stanova, potrošnju energije i broj parkirnih mjesta. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>int getNumberOfParkingSpots()</code> koja je getter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>boolean hasFreeParkingSpots()</code> koja vraća <code>true</code> ako je broj parkirnih mjesta veći od broja stanova, inače vraća <code>false</code>. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>String calculateEnergyClass()</code> koja računa energetski razred na sljedeći način: ako je potrošnja energije manja od 50, razred je <code>A</code>, ako je manja od 90, razred je <code>B</code>, inače je <code>C</code>. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>boolean investigateEnergyEfficiency()</code> koja vraća <code>true</code> ako je njezin energetski razred <code>A</code>, inače <code>false</code>. Pristup ovog tipa je javan.</li>
+</ul>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+
+       
+        ResidentialBuilding rBuilding = new ResidentialBuilding(&quot;Address 1&quot;, 20, 500, 30);
+
+        System.out.println(&quot;RESIDENTIAL BUILDING&quot;);
+        System.out.println(&quot;Address: &quot; + rBuilding.getAddress());
+        System.out.println(&quot;Number of apartments: &quot; + rBuilding.getNumberOfApartments());
+        System.out.println(&quot;Number of parking spots: &quot; + rBuilding.getNumberOfParkingSpots());
+        System.out.println(&quot;Energy consumption: &quot; + rBuilding.getEnergyConsumption());
+        System.out.println(&quot;Energy class: &quot; + rBuilding.calculateEnergyClass());
+        System.out.println(&quot;Is energy efficient: &quot; + rBuilding.investigateEnergyEfficiency());
+        System.out.println(&quot;Has free parking spots: &quot; + rBuilding.hasFreeParkingSpots());
+
+
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">RESIDENTIAL BUILDING
+Address: Address 1
+Number of apartments: 20
+Number of parking spots: 30
+Energy consumption: 500
+Energy class: C
+Is energy efficient: false
+Has free parking spots: true
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

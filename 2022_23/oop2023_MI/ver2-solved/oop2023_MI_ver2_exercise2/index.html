@@ -1,0 +1,398 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>U zadatku je potrebno implementirati objektni model za video industriju čiji se UML dijagram nalazi ispod. Kod za <code>Art</code>, <code>Person</code> i <code>Actor</code> je spreman za uporabu. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>Person</code> reprezentira osobu. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>String getName()</code> koja dohvaća ime. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>int getBirthYear()</code> koja dohvaća godinu rođenja. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>Actor</code> modelira entitet glumca.</p>
+<p>Klasa <code>Director</code> specificira entitet režisera. Pristup ovog tipa je javan. U sebi sadržava:</p>
+<ul>
+<li>Varijablu <code>name</code> koja reprezentira ime i tipa je <code>String</code>.</li>
+<li>Varijablu <code>birthYear</code> koja specificira godinu rođenju i tipa je <code>int</code>.</li>
+<li>Varijablu <code>retired</code> koja reprezentira oznaku je li režiser u mirovini i tipa je <code>boolean</code>.</li>
+<li>Konstruktor <code>Director(String, int, boolean)</code> koji postavlja ime, godinu rođenja i status je li umirovljen.</li>
+<li>Metodu <code>String toString()</code> koja vraća String oblika &quot;Director '[A]' ([B], retired: [C])&quot;, pri čemu [A], [B] i [C] slijedno označavaju ime, godinu rođenja i status umirovljenja.</li>
+<li>Metodu <code>String getName()</code> koja je getter.</li>
+<li>Metodu <code>int getBirthYear()</code> koja je getter.</li>
+<li>Metodu <code>boolean isRetired()</code> koja je getter.</li>
+</ul>
+<p>Enumeracija <code>Rating</code> reprezentira ocjene. Element ima maksimalnu vidljivost.</p>
+<p>Sučelje <code>Art</code> specificira umjetnost. Ima:</p>
+<ul>
+<li>Metodu <code>Person author()</code> koja vraća autora. Element ima maksimalnu vidljivost.</li>
+</ul>
+<p>Klasa <code>Movie</code> modelira film. Element je vidljiv iz svih klasa. Ima:</p>
+<ul>
+<li>Varijablu <code>actors</code> koja reprezentira polje glumaca i tipa je <code>Person[]</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Varijablu <code>rating</code> koja specificira ocjenu i tipa je <code>Rating</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Varijablu <code>director</code> koja specificira režiser i tipa je <code>Director</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Varijablu <code>title</code> koja specificira naslov i tipa je <code>String</code>.</li>
+<li>Konstruktor <code>Movie(String, Director, Person[], Rating)</code> koji postavlja naslov, režisera, glumce i ocjenu.</li>
+<li>Metodu <code>Person author()</code> koja vraća autora koji je zapravo režiser. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>String toString()</code> koja vraća String oblika &quot;Movie '[A]' by [B] rated [C]&quot;, pri čemu [A], [B] i [C] označavaju naslov, autora i ocjenu.</li>
+</ul>
+<p>Klasa <code>Documentary</code> predstavlja dokumentarni film. Vidljivost ovog elementa omogućuje javni pristup. Sadrži:</p>
+<ul>
+<li>Varijablu <code>forProfit</code> koja oblikuje oznaku je li dokumentarni film komercijalan i tipa je <code>boolean</code>.</li>
+<li>Konstruktor <code>Documentary(String, Director, Rating, boolean)</code> koji postavlja naslov, režisera, ocjenu i oznaku je li film komercijalan. Pretpostaviti da dokumentarac ima prazno polje glumaca veličine 0.</li>
+<li>Metodu <code>String toString()</code> koja vraća <code>String</code> oblika &quot;Documentary '[A]' by [B] rated [C] (for profit: [D])&quot;, pri čemu [A], [B], [C] i [D] slijedno označavaju naslov, tekstualnu reprezentaciju autora, ocjenu i oznaku je li film komercijalan.</li>
+<li>Metodu <code>boolean isForProfit()</code> koja je getter.</li>
+</ul>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="687px" preserveAspectRatio="none" style="width:1282px;height:687px;background:#FFFFFF;" version="1.1" viewBox="0 0 1282 687" width="1282px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[09ce52be0ee7de43c61b6e2d59bf108b]
+class Person-->
+<a href="java:hr.fer.oop.Person" target="_top" title="java:hr.fer.oop.Person" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Person" xlink:show="new" xlink:title="java:hr.fer.oop.Person" xlink:type="simple">
+<g id="elem_Person">
+<rect codeLine="28" fill="#F1F1F1" height="83.2188" id="Person" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="367" y="321.5"/>
+<ellipse cx="403.15" cy="337.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M404.1031,334.1406 L404.1031,340.7969 L405.8219,340.7969 Q406.4313,340.7969 406.6969,341.0313 Q406.9625,341.2656 406.9625,341.6563 Q406.9625,342.0313 406.6969,342.2656 Q406.4313,342.5 405.8219,342.5 L400.6813,342.5 Q400.0719,342.5 399.8063,342.2656 Q399.5406,342.0313 399.5406,341.6406 Q399.5406,341.2656 399.8063,341.0313 Q400.0719,340.7969 400.6813,340.7969 L402.4,340.7969 L402.4,334.1406 L400.6813,334.1406 Q400.0719,334.1406 399.8063,333.9063 Q399.5406,333.6719 399.5406,333.2813 Q399.5406,332.9063 399.8063,332.6719 Q400.0719,332.4375 400.6813,332.4375 L405.8219,332.4375 Q406.4313,332.4375 406.6969,332.6719 Q406.9625,332.9063 406.9625,333.2813 Q406.9625,333.6719 406.6969,333.9063 Q406.4313,334.1406 405.8219,334.1406 L404.1031,334.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="45" x="421.85" y="343.2285">Person</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="368" x2="490" y1="353.5" y2="353.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="368" x2="490" y1="361.5" y2="361.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="373" y="380.0332">getName(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="373" y="397.6426">getBirthYear(): int</text>
+</g>
+</a>
+<!--MD5=[44201db48fb57df1a9c7f5b6b15426b0]
+class Actor-->
+<a href="java:hr.fer.oop.Actor" target="_top" title="java:hr.fer.oop.Actor" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Actor" xlink:show="new" xlink:title="java:hr.fer.oop.Actor" xlink:type="simple">
+<g id="elem_Actor">
+<rect codeLine="5" fill="#F1F1F1" height="188.875" id="Actor" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="352" x="7" y="492"/>
+<ellipse cx="162.25" cy="508" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M165.0156,503.875 Q165.1719,503.6563 165.3594,503.5469 Q165.5469,503.4375 165.7656,503.4375 Q166.1406,503.4375 166.375,503.7031 Q166.6094,503.9531 166.6094,504.5625 L166.6094,506.0156 Q166.6094,506.625 166.375,506.8906 Q166.1406,507.1563 165.7656,507.1563 Q165.4219,507.1563 165.2188,506.9531 Q165.0156,506.7656 164.9063,506.25 Q164.8594,505.8906 164.6719,505.7031 Q164.3438,505.3281 163.7344,505.1094 Q163.125,504.8906 162.5,504.8906 Q161.7344,504.8906 161.0938,505.2188 Q160.4688,505.5469 159.9688,506.2969 Q159.4844,507.0469 159.4844,508.0781 L159.4844,509.1719 Q159.4844,510.4063 160.375,511.2344 Q161.2656,512.0469 162.8594,512.0469 Q163.7969,512.0469 164.4531,511.7969 Q164.8438,511.6406 165.2656,511.2031 Q165.5313,510.9375 165.6719,510.8594 Q165.8281,510.7813 166.0313,510.7813 Q166.3594,510.7813 166.6094,511.0469 Q166.875,511.2969 166.875,511.6406 Q166.875,511.9844 166.5313,512.3906 Q166.0313,512.9688 165.2344,513.2969 Q164.1563,513.75 162.8594,513.75 Q161.3438,513.75 160.1406,513.125 Q159.1563,512.625 158.4688,511.5625 Q157.7813,510.4844 157.7813,509.2031 L157.7813,508.0469 Q157.7813,506.7188 158.3906,505.5781 Q159.0156,504.4219 160.1094,503.8125 Q161.2031,503.1875 162.4375,503.1875 Q163.1719,503.1875 163.8125,503.3594 Q164.4688,503.5156 165.0156,503.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="182.75" y="513.7285">Actor</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="358" y1="524" y2="524"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="535.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="27" y="542.5332">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="552.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="27" y="560.1426">birthYear: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="570.5234"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="27" y="577.752">appearances: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="358" y1="584.8281" y2="584.8281"/>
+<ellipse cx="18" cy="599.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="326" x="27" y="603.3613">Actor(name: String, birthYear: int, appearances: int)</text>
+<ellipse cx="18" cy="616.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="620.9707">toString(): String</text>
+<ellipse cx="18" cy="634.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="27" y="638.5801">getName(): String</text>
+<ellipse cx="18" cy="651.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="27" y="656.1895">getBirthYear(): int</text>
+<ellipse cx="18" cy="669.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="27" y="673.7988">getAppearances(): int</text>
+</g>
+</a>
+<!--MD5=[57adcbfcd00175f9b7abe25398e7de0c]
+class Director-->
+<a href="java:hr.fer.oop.Director" target="_top" title="java:hr.fer.oop.Director" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Director" xlink:show="new" xlink:title="java:hr.fer.oop.Director" xlink:type="simple">
+<g id="elem_Director">
+<rect codeLine="46" fill="#F1F1F1" height="188.875" id="Director" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="363" x="394.5" y="492"/>
+<ellipse cx="546.75" cy="508" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M549.5156,503.875 Q549.6719,503.6563 549.8594,503.5469 Q550.0469,503.4375 550.2656,503.4375 Q550.6406,503.4375 550.875,503.7031 Q551.1094,503.9531 551.1094,504.5625 L551.1094,506.0156 Q551.1094,506.625 550.875,506.8906 Q550.6406,507.1563 550.2656,507.1563 Q549.9219,507.1563 549.7188,506.9531 Q549.5156,506.7656 549.4063,506.25 Q549.3594,505.8906 549.1719,505.7031 Q548.8438,505.3281 548.2344,505.1094 Q547.625,504.8906 547,504.8906 Q546.2344,504.8906 545.5938,505.2188 Q544.9688,505.5469 544.4688,506.2969 Q543.9844,507.0469 543.9844,508.0781 L543.9844,509.1719 Q543.9844,510.4063 544.875,511.2344 Q545.7656,512.0469 547.3594,512.0469 Q548.2969,512.0469 548.9531,511.7969 Q549.3438,511.6406 549.7656,511.2031 Q550.0313,510.9375 550.1719,510.8594 Q550.3281,510.7813 550.5313,510.7813 Q550.8594,510.7813 551.1094,511.0469 Q551.375,511.2969 551.375,511.6406 Q551.375,511.9844 551.0313,512.3906 Q550.5313,512.9688 549.7344,513.2969 Q548.6563,513.75 547.3594,513.75 Q545.8438,513.75 544.6406,513.125 Q543.6563,512.625 542.9688,511.5625 Q542.2813,510.4844 542.2813,509.2031 L542.2813,508.0469 Q542.2813,506.7188 542.8906,505.5781 Q543.5156,504.4219 544.6094,503.8125 Q545.7031,503.1875 546.9375,503.1875 Q547.6719,503.1875 548.3125,503.3594 Q548.9688,503.5156 549.5156,503.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="567.25" y="513.7285">Director</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="395.5" x2="756.5" y1="524" y2="524"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="402.5" y="535.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="414.5" y="542.5332">name: String</text>
+<polygon fill="none" points="405.5,550.9141,409.5,554.9141,405.5,558.9141,401.5,554.9141" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="414.5" y="560.1426">birthYear: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="402.5" y="570.5234"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="414.5" y="577.752">retired: boolean</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="395.5" x2="756.5" y1="584.8281" y2="584.8281"/>
+<ellipse cx="405.5" cy="599.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="337" x="414.5" y="603.3613">Director(name: String, birthYear: int, retired: boolean)</text>
+<ellipse cx="405.5" cy="616.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="414.5" y="620.9707">toString(): String</text>
+<ellipse cx="405.5" cy="634.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="414.5" y="638.5801">getName(): String</text>
+<ellipse cx="405.5" cy="651.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="414.5" y="656.1895">getBirthYear(): int</text>
+<ellipse cx="405.5" cy="669.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="414.5" y="673.7988">isRetired(): boolean</text>
+</g>
+</a>
+<!--MD5=[0a8a9a553ad28d76d3a1fd3918a25a86]
+class Rating-->
+<a href="java:hr.fer.oop.Rating" target="_top" title="java:hr.fer.oop.Rating" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Rating" xlink:show="new" xlink:title="java:hr.fer.oop.Rating" xlink:type="simple">
+<g id="elem_Rating">
+<rect codeLine="31" fill="#F1F1F1" height="136.0469" id="Rating" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="73" x="656.5" y="295"/>
+<ellipse cx="671.5" cy="311" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M670.3594,311.7969 L670.3594,314.2969 L674.6875,314.2969 L674.6875,313.375 Q674.6875,312.7656 674.9219,312.5 Q675.1719,312.2344 675.5469,312.2344 Q675.9219,312.2344 676.1563,312.5 Q676.3906,312.7656 676.3906,313.375 L676.3906,316 L668.3906,316 Q667.7656,316 667.5,315.7656 Q667.25,315.5313 667.25,315.1406 Q667.25,314.7656 667.5156,314.5313 Q667.7813,314.2969 668.3906,314.2969 L668.6563,314.2969 L668.6563,307.6406 L668.3906,307.6406 Q667.7656,307.6406 667.5,307.4063 Q667.25,307.1719 667.25,306.7813 Q667.25,306.4063 667.5,306.1719 Q667.7656,305.9375 668.3906,305.9375 L676.0156,305.9375 L676.0156,308.5313 Q676.0156,309.1406 675.7813,309.4063 Q675.5625,309.6563 675.1719,309.6563 Q674.7969,309.6563 674.5625,309.4063 Q674.3281,309.1406 674.3281,308.5313 L674.3281,307.6406 L670.3594,307.6406 L670.3594,310.0938 L671.8438,310.0938 Q671.8438,309.4375 671.9688,309.25 Q672.2344,308.8438 672.7031,308.8438 Q673.0781,308.8438 673.3125,309.1094 Q673.5469,309.3594 673.5469,309.9688 L673.5469,311.9375 Q673.5469,312.4844 673.4219,312.6719 Q673.1563,313.0625 672.7031,313.0625 Q672.2344,313.0625 671.9688,312.6563 Q671.8438,312.4688 671.8438,311.7969 L670.3594,311.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="685.5" y="316.7285">Rating</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="657.5" x2="728.5" y1="327" y2="327"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="662.5" y="345.5332">G</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="662.5" y="363.1426">PG</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="662.5" y="380.752">PG13</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="10" x="662.5" y="398.3613">R</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="662.5" y="415.9707">NC17</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="657.5" x2="728.5" y1="423.0469" y2="423.0469"/>
+</g>
+</a>
+<!--MD5=[abddd35b028878fc29a2da6f3af6dd91]
+class Art-->
+<a href="java:hr.fer.oop.Art" target="_top" title="java:hr.fer.oop.Art" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Art" xlink:show="new" xlink:title="java:hr.fer.oop.Art" xlink:type="simple">
+<g id="elem_Art">
+<rect codeLine="52" fill="#F1F1F1" height="48" id="Art" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="50" x="314" y="7"/>
+<ellipse cx="329" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M329.9531,19.6406 L329.9531,26.2969 L331.6719,26.2969 Q332.2813,26.2969 332.5469,26.5313 Q332.8125,26.7656 332.8125,27.1563 Q332.8125,27.5313 332.5469,27.7656 Q332.2813,28 331.6719,28 L326.5313,28 Q325.9219,28 325.6563,27.7656 Q325.3906,27.5313 325.3906,27.1406 Q325.3906,26.7656 325.6563,26.5313 Q325.9219,26.2969 326.5313,26.2969 L328.25,26.2969 L328.25,19.6406 L326.5313,19.6406 Q325.9219,19.6406 325.6563,19.4063 Q325.3906,19.1719 325.3906,18.7813 Q325.3906,18.4063 325.6563,18.1719 Q325.9219,17.9375 326.5313,17.9375 L331.6719,17.9375 Q332.2813,17.9375 332.5469,18.1719 Q332.8125,18.4063 332.8125,18.7813 Q332.8125,19.1719 332.5469,19.4063 Q332.2813,19.6406 331.6719,19.6406 L329.9531,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="18" x="343" y="28.7285">Art</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="315" x2="363" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="315" x2="363" y1="47" y2="47"/>
+</g>
+</a>
+<!--MD5=[e69084ab16b022bdbef99762ea85e9d6]
+class Movie-->
+<a href="java:hr.fer.oop.Movie" target="_top" title="java:hr.fer.oop.Movie" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Movie" xlink:show="new" xlink:title="java:hr.fer.oop.Movie" xlink:type="simple">
+<g id="elem_Movie">
+<rect codeLine="61" fill="#F1F1F1" height="100.8281" id="Movie" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="455" x="400.5" y="116"/>
+<ellipse cx="605.25" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M608.0156,127.875 Q608.1719,127.6563 608.3594,127.5469 Q608.5469,127.4375 608.7656,127.4375 Q609.1406,127.4375 609.375,127.7031 Q609.6094,127.9531 609.6094,128.5625 L609.6094,130.0156 Q609.6094,130.625 609.375,130.8906 Q609.1406,131.1563 608.7656,131.1563 Q608.4219,131.1563 608.2188,130.9531 Q608.0156,130.7656 607.9063,130.25 Q607.8594,129.8906 607.6719,129.7031 Q607.3438,129.3281 606.7344,129.1094 Q606.125,128.8906 605.5,128.8906 Q604.7344,128.8906 604.0938,129.2188 Q603.4688,129.5469 602.9688,130.2969 Q602.4844,131.0469 602.4844,132.0781 L602.4844,133.1719 Q602.4844,134.4063 603.375,135.2344 Q604.2656,136.0469 605.8594,136.0469 Q606.7969,136.0469 607.4531,135.7969 Q607.8438,135.6406 608.2656,135.2031 Q608.5313,134.9375 608.6719,134.8594 Q608.8281,134.7813 609.0313,134.7813 Q609.3594,134.7813 609.6094,135.0469 Q609.875,135.2969 609.875,135.6406 Q609.875,135.9844 609.5313,136.3906 Q609.0313,136.9688 608.2344,137.2969 Q607.1563,137.75 605.8594,137.75 Q604.3438,137.75 603.1406,137.125 Q602.1563,136.625 601.4688,135.5625 Q600.7813,134.4844 600.7813,133.2031 L600.7813,132.0469 Q600.7813,130.7188 601.3906,129.5781 Q602.0156,128.4219 603.1094,127.8125 Q604.2031,127.1875 605.4375,127.1875 Q606.1719,127.1875 606.8125,127.3594 Q607.4688,127.5156 608.0156,127.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="625.75" y="137.7285">Movie</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="401.5" x2="854.5" y1="148" y2="148"/>
+<polygon fill="none" points="411.5,157.3047,415.5,161.3047,411.5,165.3047,407.5,161.3047" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="420.5" y="166.5332">title: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="401.5" x2="854.5" y1="173.6094" y2="173.6094"/>
+<ellipse cx="411.5" cy="187.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="429" x="420.5" y="192.1426">Movie(title: String, director: Director, actors: Person[], rating: Rating)</text>
+<ellipse cx="411.5" cy="205.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="420.5" y="209.752">toString(): String</text>
+</g>
+</a>
+<!--MD5=[2cae9b4de83a8de5732622542cbbbab9]
+class Documentary-->
+<a href="java:hr.fer.oop.Documentary" target="_top" title="java:hr.fer.oop.Documentary" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Documentary" xlink:show="new" xlink:title="java:hr.fer.oop.Documentary" xlink:type="simple">
+<g id="elem_Documentary">
+<rect codeLine="55" fill="#F1F1F1" height="118.4375" id="Documentary" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="511" x="764.5" y="304"/>
+<ellipse cx="973.75" cy="320" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M976.5156,315.875 Q976.6719,315.6563 976.8594,315.5469 Q977.0469,315.4375 977.2656,315.4375 Q977.6406,315.4375 977.875,315.7031 Q978.1094,315.9531 978.1094,316.5625 L978.1094,318.0156 Q978.1094,318.625 977.875,318.8906 Q977.6406,319.1563 977.2656,319.1563 Q976.9219,319.1563 976.7188,318.9531 Q976.5156,318.7656 976.4063,318.25 Q976.3594,317.8906 976.1719,317.7031 Q975.8438,317.3281 975.2344,317.1094 Q974.625,316.8906 974,316.8906 Q973.2344,316.8906 972.5938,317.2188 Q971.9688,317.5469 971.4688,318.2969 Q970.9844,319.0469 970.9844,320.0781 L970.9844,321.1719 Q970.9844,322.4063 971.875,323.2344 Q972.7656,324.0469 974.3594,324.0469 Q975.2969,324.0469 975.9531,323.7969 Q976.3438,323.6406 976.7656,323.2031 Q977.0313,322.9375 977.1719,322.8594 Q977.3281,322.7813 977.5313,322.7813 Q977.8594,322.7813 978.1094,323.0469 Q978.375,323.2969 978.375,323.6406 Q978.375,323.9844 978.0313,324.3906 Q977.5313,324.9688 976.7344,325.2969 Q975.6563,325.75 974.3594,325.75 Q972.8438,325.75 971.6406,325.125 Q970.6563,324.625 969.9688,323.5625 Q969.2813,322.4844 969.2813,321.2031 L969.2813,320.0469 Q969.2813,318.7188 969.8906,317.5781 Q970.5156,316.4219 971.6094,315.8125 Q972.7031,315.1875 973.9375,315.1875 Q974.6719,315.1875 975.3125,315.3594 Q975.9688,315.5156 976.5156,315.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="994.25" y="325.7285">Documentary</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="765.5" x2="1274.5" y1="336" y2="336"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="772.5" y="347.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="784.5" y="354.5332">forProfit: boolean</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="765.5" x2="1274.5" y1="361.6094" y2="361.6094"/>
+<ellipse cx="775.5" cy="375.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="485" x="784.5" y="380.1426">Documentary(title: String, director: Director, rating: Rating, forProfit: boolean)</text>
+<ellipse cx="775.5" cy="393.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="784.5" y="397.752">toString(): String</text>
+<ellipse cx="775.5" cy="411.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="784.5" y="415.3613">isForProfit(): boolean</text>
+</g>
+</a>
+<!--MD5=[d0c6aa3d40dbe63df0f756ac18e30fe4]
+reverse link Person to Actor-->
+<g id="link_Person_Actor">
+<path codeLine="17" d="M368.8,418.2 C344.16,440.39 314.93,466.71 287.04,491.82 " fill="none" id="Person-backto-Actor" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="364.33,412.81,383.88,404.63,373.7,423.21,364.33,412.81" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[12b274bebc6a5e1e4fe84d42a57243ba]
+reverse link Person to Director-->
+<g id="link_Person_Director">
+<path codeLine="30" d="M467.08,421.38 C481.35,442.88 497.95,467.9 513.83,491.82 " fill="none" id="Person-backto-Director" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="461.19,425.16,455.96,404.63,472.85,417.42,461.19,425.16" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[95ca6ea11e79bedc85c0fead570e6c22]
+link Art to Person-->
+<g id="link_Art_Person">
+<path codeLine="40" d="M334.56,55.07 C328.63,90.66 320.65,160.71 337,217 C347.66,253.69 370.7,289.98 391.05,317.08 " fill="none" id="Art-to-Person" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="394.29,321.35,392.0132,311.7679,391.2581,317.3742,385.6518,316.619,394.29,321.35" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="338" y="171.9951">author()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="380.9615" y="310.6328">1</text>
+</g>
+<!--MD5=[ba7b76d2e20c6becef716b9338f4be8c]
+link Movie to Director-->
+<g id="link_Movie_Director">
+<path codeLine="48" d="M612.27,217.26 C605.52,240.63 598.23,269 594,295 C583.7,358.3 579.19,430.24 577.26,486.69 " fill="none" id="Movie-to-Director" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="577.09,491.76,581.396,482.9023,577.2613,486.7629,573.4007,482.6282,577.09,491.76" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="595" y="368.4951">director</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="569.898" y="481.087">1</text>
+</g>
+<!--MD5=[caccdf78c2ec1a6dc604b71bf7244c87]
+link Movie to Person-->
+<g id="link_Movie_Person">
+<path codeLine="49" d="M454.67,217.19 C443.65,225.62 433.85,235.47 426,247 C412.41,266.95 412.32,293.7 416.01,316.37 " fill="none" id="Movie-to-Person" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="416.91,321.44,419.2771,311.8798,416.037,316.5168,411.4,313.2767,416.91,321.44" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="427" y="261.4951">actors</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="409.4935" y="310.7377">*</text>
+</g>
+<!--MD5=[caccdf78c2ec1a6dc604b71bf7244c87]
+link Movie to Person-->
+<g id="link_Movie_Person">
+<path codeLine="51" d="M540.07,217.17 C527.28,226.25 514.8,236.28 504,247 C483.46,267.38 465.53,294.3 452.36,316.96 " fill="none" id="Movie-to-Person-1" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="449.79,321.44,457.7323,315.616,452.2738,317.1005,450.7892,311.642,449.79,321.44" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="505" y="261.4951">author()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="445.6537" y="310.7377">1</text>
+</g>
+<!--MD5=[87ac2fe6db1e5ff5166a6bb8051ce37b]
+link Movie to Rating-->
+<g id="link_Movie_Rating">
+<path codeLine="50" d="M644.57,217.08 C651.98,239.24 660.85,265.79 668.96,290.07 " fill="none" id="Movie-to-Rating" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="670.57,294.89,671.5098,285.0861,668.9846,290.148,663.9226,287.6228,670.57,294.89" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="661" y="261.4951">rating</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="660.7339" y="284.0772">1</text>
+</g>
+<!--MD5=[bfbe7b34cbbbb34a086867299d341415]
+reverse link Art to Movie-->
+<g id="link_Art_Movie">
+<path codeLine="54" d="M382.53,52.11 C419.07,68.99 472.85,93.83 520.76,115.96 " fill="none" id="Art-backto-Movie" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="379.36,58.36,364.14,43.61,385.23,45.65,379.36,58.36" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[3bebe2a472f90a68ef10043787c70a1b]
+reverse link Movie to Documentary-->
+<g id="link_Movie_Documentary">
+<path codeLine="63" d="M746.17,226.13 C795.79,250.75 853.34,279.31 902.85,303.87 " fill="none" id="Movie-backto-Documentary" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="742.74,232.24,727.93,217.08,748.96,219.7,742.74,232.24" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[53ed09af0f1fbb44c3d0141e66245b02]
+@startuml
+interface Person [[java:hr.fer.oop.Person]] {
+	getName(): String
+	getBirthYear(): int
+}
+class Actor [[java:hr.fer.oop.Actor]] {
+	-name: String
+	-birthYear: int
+	-appearances: int
+	+Actor(name: String, birthYear: int, appearances: int)
+	+toString(): String
+	+getName(): String
+	+getBirthYear(): int
+	+getAppearances(): int
+}
+interface Person {
+}
+Person <|.. Actor
+class Director [[java:hr.fer.oop.Director]] {
+	-name: String
+	#birthYear: int
+	-retired: boolean
+	+Director(name: String, birthYear: int, retired: boolean)
+	+toString(): String
+	+getName(): String
+	+getBirthYear(): int
+	+isRetired(): boolean
+}
+interface Person {
+}
+Person <|.. Director
+enum Rating [[java:hr.fer.oop.Rating]] {
+	G
+	PG
+	PG13
+	R
+	NC17
+}
+interface Art [[java:hr.fer.oop.Art]] {
+}
+Art - -> "1" Person : author()
+class Movie [[java:hr.fer.oop.Movie]] {
+	#title: String
+	+Movie(title: String, director: Director, actors: Person[], rating: Rating)
+	+toString(): String
+}
+class Director {
+}
+Movie - -> "1" Director : director
+Movie - -> "*" Person : actors
+Movie - -> "1" Rating : rating
+Movie - -> "1" Person : author()
+interface Art {
+}
+Art <|.. Movie
+class Documentary [[java:hr.fer.oop.Documentary]] {
+	-forProfit: boolean
+	+Documentary(title: String, director: Director, rating: Rating, forProfit: boolean)
+	+toString(): String
+	+isForProfit(): boolean
+}
+class Movie {
+}
+Movie <|- - Documentary
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+        Director director = new Director(&quot;Robert Zemeckis&quot;, 1952, false);
+        System.out.println(director.getName());
+        System.out.println(director.getBirthYear());
+        System.out.println(director.toString());
+
+        Person[] actors = new Person[]{new Actor(&quot;Tom Hanks&quot;, 1956, 150), new Actor(&quot;Robin Wright&quot;, 1966, 350), new Actor(&quot;Gary Sinise&quot;, 1955, 85)};
+        System.out.println(actors[0].toString());
+
+        Movie movie = new Movie(&quot;Forrest Gump&quot;, director, actors, Rating.PG13);
+        System.out.println(movie.author());
+        System.out.println(movie.toString());
+
+        Documentary documentary = new Documentary(&quot;Oceans&quot;, new Director(&quot;Jacques Perrin&quot;, 1941, true), Rating.G, false);
+        System.out.println(documentary.author());
+        System.out.println(documentary.toString());
+
+        System.out.println(&quot;director instanceof Director: &quot; + (director instanceof Director));
+        System.out.println(&quot;director instanceof Person: &quot; + (director instanceof Person));
+        System.out.println(&quot;actors[0] instanceof Actor: &quot; + (actors[0] instanceof Actor));
+        System.out.println(&quot;actors[0] instanceof Person: &quot; + (actors[0] instanceof Person));
+
+        System.out.println(&quot;movie instanceof Movie: &quot; + (movie instanceof Movie));
+        System.out.println(&quot;movie instanceof Art: &quot; + (movie instanceof Art));
+
+        System.out.println(&quot;documentary instanceof Documentary: &quot; + (documentary instanceof Documentary));
+        System.out.println(&quot;documentary instanceof Movie: &quot; + (documentary instanceof Movie));
+        System.out.println(&quot;documentary instanceof Art: &quot; + (documentary instanceof Art));
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Robert Zemeckis
+1952
+Director 'Robert Zemeckis' (1952, retired: false)
+Actor Tom Hanks
+Director 'Robert Zemeckis' (1952, retired: false)
+Movie 'Forrest Gump' by Director 'Robert Zemeckis' (1952, retired: false) rated PG13
+Director 'Jacques Perrin' (1941, retired: true)
+Documentary 'Oceans' by Director 'Jacques Perrin' (1941, retired: true) rated G (for profit: false)
+director instanceof Director: true
+director instanceof Person: true
+actors[0] instanceof Actor: true
+actors[0] instanceof Person: true
+movie instanceof Movie: true
+movie instanceof Art: true
+documentary instanceof Documentary: true
+documentary instanceof Movie: true
+documentary instanceof Art: true
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
