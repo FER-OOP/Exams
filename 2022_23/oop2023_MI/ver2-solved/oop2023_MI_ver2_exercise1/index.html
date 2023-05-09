@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Zadatak je izgraditi objektni model za upravljanje računima korisnika u bankarskom sustavu. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>Account</code> reprezentira funkcionalnost korisničkog računa. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>void performTransaction(int)</code> koja izvršava transakciju i ažurira stanje računa. Transakcije mogu biti pozitivne (povećanje stanja računa) i negativne. Pristup ovog tipa je javan.</li>
+</ul>
+<p>Razred <code>User</code> modelira korisnički račun. Nije moguće instancirati primjerke ove klase. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Varijablu <code>name</code> koja predstavlja ime i tipa je <code>String</code>. Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+<li>Varijablu <code>balance</code> koja modelira stanje računa i tipa je <code>int</code>. Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+<li>Varijablu <code>password</code> koja predstavlja lozinku i tipa je <code>String</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Konstruktor <code>User(String, String, int)</code> koji postavlja ime, lozinku i stanje računa. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>String getName()</code> koja je getter. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>void setName(String)</code> koja je setter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>String getPassword()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>int getBalance()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>void setBalance(int)</code> koja je setter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>void changePassword(String)</code> koja omogućuje promjenu lozinke.
+<ul>
+<li>Element ima maksimalnu vidljivost.</li>
+<li>Metoda nema tijelo.</li>
+</ul>
+</li>
+</ul>
+<p>Razred <code>Individual</code> reprezentira entitet individualnog (privatnog) korisnika. Element je vidljiv iz svih klasa. Podtip je od <code>User</code>. Implementira <code>Account</code>.  Ima:</p>
+<ul>
+<li>Varijablu <code>limit</code> koja predstavlja limit transakcije, tj. maksimalni iznos koji se može koristiti u transakciji (neovisno radi li se o uplati ili isplati) i tipa je <code>int</code>.
+<ul>
+<li>Potrebno je onemogućiti promjenu inicijalne vrijednosti i to na razini prevodioca.</li>
+<li>Ovaj je element vidljiv samo iz vlastite klase.</li>
+</ul>
+</li>
+<li>Varijablu <code>address</code> koja specificira adresu i tipa je <code>String</code>. Ovaj je element vidljiv samo iz vlastite klase.</li>
+<li>Konstruktor <code>Individual(String, String, int, String, int)</code> koji postavlja ime, lozinku, stanje računa, adresu i limit transakcije . Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String getAddress()</code> koja je getter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>void setAddress(String)</code> koja je setter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>int getLimit()</code> koja je getter. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>void performTransaction(int)</code> koja izvršava transakciju ako na računu ima dovoljno novaca te ako je apsolutni traženi iznos za transakciju manji/jednak limitu. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>void changePassword(String)</code> koja mijenja lozinku samo ako nova ima duljinu barem 6 znakova. Element ima maksimalnu vidljivost.</li>
+</ul>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+        
+        Individual individual = new Individual(&quot;Pero Perich&quot;, &quot;password123&quot;, 5000, &quot;Address 1&quot;, 1000);
+        
+        individual.performTransaction(-2000);
+        
+        System.out.println(individual.getName() + &quot; balance: &quot; + individual.getBalance());
+        
+        individual.performTransaction(-1000);
+        
+        System.out.println(individual.getName() + &quot; balance: &quot; + individual.getBalance());
+        
+        individual.changePassword(&quot;newp&quot;);
+        
+        System.out.println(individual.getPassword());
+        
+        individual.changePassword(&quot;properpass234243234&quot;);
+        
+        System.out.println(individual.getPassword());
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Pero Perich balance: 5000
+Pero Perich balance: 4000
+password123
+properpass234243234
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

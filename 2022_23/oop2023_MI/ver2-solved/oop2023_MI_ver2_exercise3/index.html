@@ -1,0 +1,235 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Zadatak je napraviti objektni model za procesiranje automobilskih podataka. Konkretno, u zadatku je potrebno implementirati dvije klase: <code>ParseException</code> i <code>Solution</code>.
+Format skupa podataka prikazan je u primjeru izvršavanja (vidjeti varijablu <code>String correctInput</code>): svaka linija oblika je &quot;,[A]-[B],[C]&quot;, gdje [A] označava brend automobila (predefinirane vrijednosti), [B] označava model (bilo koji String), [C] je godina (int veći od 1885). Uočiti da prva linija predstavlja zaglavlje skupa podataka te da sve linije završavaju s terminatorima \r i \n.  Cilj je u klasi <code>Solution</code> implementirati sučelje <code>CarManager</code> kako bi se parsirale sve linije teksta i obavile sve tražene funkcionalnosti. Potrebno je i napraviti neprovjeravanu iznimku <code>ParseException</code>. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Enumeracija <code>Brand</code> reprezentira marke automobila. Prepostaviti da se marke automobila (nazivi i broj marki) nikad neće mijenjati.</p>
+<p>Klasa <code>CarDescription</code> reprezentira opis automobila.</p>
+<p>Razred <code>ParseException</code> je model neprovjeravane iznimke koja se baca kada dođe do problema kod procesiranja. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Konstruktor <code>ParseException(String)</code> koji postavlja poruku iznimke. Njen sadržaj je proizvoljan i ne-null. Pristup ovog tipa je javan.</li>
+</ul>
+<p>Sučelje <code>CarManager</code> oblikuje skup metoda za procesiranje i analizu automobila. Sadrži:</p>
+<ul>
+<li>Metodu <code>int processDataset(String)</code> koja procesira ulazni skup podataka (uz pomoć <code>processLine</code> metode) koji je predan u tekstualnom formatu. Metoda se mora moći oporaviti od <code>ParseException</code>. Vraća broj uspješno procesiranih automobila. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>CarDescription processLine(String)</code> koja procesira liniju teksta iz skupa podataka te vraća instancu <code>CarDescription</code> na temelju parsiranih podataka iz predane linije teksta. Pretpostaviti da brand nije case sensitive (pomoć: koristiti equalsIgnoreCase). Obratiti pozornost na ograničenje za godinu koja mora biti u definiranom intervalu (vidi prvu rečenicu). Baca <code>ParseException</code> ako dođe do problema u procesiranju (parsiranje, vrijednost izvan raspona, linija nije prema propisanoj strukturi). Iznimci je potrebno postaviti smislenu i proizvoljnu ne-null poruku. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>double averageYear(Brand)</code> koja na temelju završene obrade iz metode <code>processDataset</code> vraća prosječnu godinu automobila za zadani brand. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>int brandCount(Brand)</code> koja baca iznimku <code>java.lang.UnsupportedOperationException</code> bez poruke. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>Solution</code> je rješenje zadatka koje je potrebno napraviti. Implementira <code>CarManager</code>.  Vidljivost ovog elementa omogućuje javni pristup.</p>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="451px" preserveAspectRatio="none" style="width:680px;height:451px;background:#FFFFFF;" version="1.1" viewBox="0 0 680 451" width="680px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[8a78b94ac034f628eee9959bc26304be]
+class Brand-->
+<a href="java:hr.fer.oop.Brand" target="_top" title="java:hr.fer.oop.Brand" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Brand" xlink:show="new" xlink:title="java:hr.fer.oop.Brand" xlink:type="simple">
+<g id="elem_Brand">
+<rect codeLine="1" fill="#F1F1F1" height="100.8281" id="Brand" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="153.5" y="344"/>
+<ellipse cx="168.5" cy="360" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M167.3594,360.7969 L167.3594,363.2969 L171.6875,363.2969 L171.6875,362.375 Q171.6875,361.7656 171.9219,361.5 Q172.1719,361.2344 172.5469,361.2344 Q172.9219,361.2344 173.1563,361.5 Q173.3906,361.7656 173.3906,362.375 L173.3906,365 L165.3906,365 Q164.7656,365 164.5,364.7656 Q164.25,364.5313 164.25,364.1406 Q164.25,363.7656 164.5156,363.5313 Q164.7813,363.2969 165.3906,363.2969 L165.6563,363.2969 L165.6563,356.6406 L165.3906,356.6406 Q164.7656,356.6406 164.5,356.4063 Q164.25,356.1719 164.25,355.7813 Q164.25,355.4063 164.5,355.1719 Q164.7656,354.9375 165.3906,354.9375 L173.0156,354.9375 L173.0156,357.5313 Q173.0156,358.1406 172.7813,358.4063 Q172.5625,358.6563 172.1719,358.6563 Q171.7969,358.6563 171.5625,358.4063 Q171.3281,358.1406 171.3281,357.5313 L171.3281,356.6406 L167.3594,356.6406 L167.3594,359.0938 L168.8438,359.0938 Q168.8438,358.4375 168.9688,358.25 Q169.2344,357.8438 169.7031,357.8438 Q170.0781,357.8438 170.3125,358.1094 Q170.5469,358.3594 170.5469,358.9688 L170.5469,360.9375 Q170.5469,361.4844 170.4219,361.6719 Q170.1563,362.0625 169.7031,362.0625 Q169.2344,362.0625 168.9688,361.6563 Q168.8438,361.4688 168.8438,360.7969 L167.3594,360.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="182.5" y="365.7285">Brand</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="154.5" x2="222.5" y1="376" y2="376"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="159.5" y="394.5332">AETHER</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="159.5" y="412.1426">NIMBLE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="159.5" y="429.752">ZENITH</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="154.5" x2="222.5" y1="436.8281" y2="436.8281"/>
+</g>
+</a>
+<!--MD5=[968c3972336de30baa0d57fa9d11207a]
+class CarDescription-->
+<a href="java:hr.fer.oop.CarDescription" target="_top" title="java:hr.fer.oop.CarDescription" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.CarDescription" xlink:show="new" xlink:title="java:hr.fer.oop.CarDescription" xlink:type="simple">
+<g id="elem_CarDescription">
+<rect codeLine="6" fill="#F1F1F1" height="259.3125" id="CarDescription" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="363" x="7" y="7"/>
+<ellipse cx="137.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M140.0156,18.875 Q140.1719,18.6563 140.3594,18.5469 Q140.5469,18.4375 140.7656,18.4375 Q141.1406,18.4375 141.375,18.7031 Q141.6094,18.9531 141.6094,19.5625 L141.6094,21.0156 Q141.6094,21.625 141.375,21.8906 Q141.1406,22.1563 140.7656,22.1563 Q140.4219,22.1563 140.2188,21.9531 Q140.0156,21.7656 139.9063,21.25 Q139.8594,20.8906 139.6719,20.7031 Q139.3438,20.3281 138.7344,20.1094 Q138.125,19.8906 137.5,19.8906 Q136.7344,19.8906 136.0938,20.2188 Q135.4688,20.5469 134.9688,21.2969 Q134.4844,22.0469 134.4844,23.0781 L134.4844,24.1719 Q134.4844,25.4063 135.375,26.2344 Q136.2656,27.0469 137.8594,27.0469 Q138.7969,27.0469 139.4531,26.7969 Q139.8438,26.6406 140.2656,26.2031 Q140.5313,25.9375 140.6719,25.8594 Q140.8281,25.7813 141.0313,25.7813 Q141.3594,25.7813 141.6094,26.0469 Q141.875,26.2969 141.875,26.6406 Q141.875,26.9844 141.5313,27.3906 Q141.0313,27.9688 140.2344,28.2969 Q139.1563,28.75 137.8594,28.75 Q136.3438,28.75 135.1406,28.125 Q134.1563,27.625 133.4688,26.5625 Q132.7813,25.4844 132.7813,24.2031 L132.7813,23.0469 Q132.7813,21.7188 133.3906,20.5781 Q134.0156,19.4219 135.1094,18.8125 Q136.2031,18.1875 137.4375,18.1875 Q138.1719,18.1875 138.8125,18.3594 Q139.4688,18.5156 140.0156,18.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="157.75" y="28.7285">CarDescription</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="369" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="50.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="27" y="57.5332">model: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="67.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="27" y="75.1426">year: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="369" y1="82.2188" y2="82.2188"/>
+<ellipse cx="18" cy="96.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="337" x="27" y="100.752">CarDescription(brand: Brand, model: String, year: int)</text>
+<ellipse cx="18" cy="114.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="118.3613">CarDescription()</text>
+<ellipse cx="18" cy="131.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="27" y="135.9707">setBrand(brand: Brand): void</text>
+<ellipse cx="18" cy="149.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="27" y="153.5801">setModel(model: String): void</text>
+<ellipse cx="18" cy="166.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="27" y="171.1895">setYear(year: int): void</text>
+<ellipse cx="18" cy="184.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="27" y="188.7988">getModel(): String</text>
+<ellipse cx="18" cy="202.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="27" y="206.4082">getYear(): int</text>
+<ellipse cx="18" cy="219.7891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="224.0176">toString(): String</text>
+<ellipse cx="18" cy="237.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="241.627">hashCode(): int</text>
+<ellipse cx="18" cy="255.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27" y="259.2363">equals(obj: Object): boolean</text>
+</g>
+</a>
+<!--MD5=[638b1e3a5367ac5a67c3eec5cbc4b6c0]
+class CarManager-->
+<a href="java:hr.fer.oop.CarManager" target="_top" title="java:hr.fer.oop.CarManager" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.CarManager" xlink:show="new" xlink:title="java:hr.fer.oop.CarManager" xlink:type="simple">
+<g id="elem_CarManager">
+<rect codeLine="22" fill="#F1F1F1" height="118.4375" id="CarManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="268" x="405.5" y="77.5"/>
+<ellipse cx="495.25" cy="93.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M496.2031,90.1406 L496.2031,96.7969 L497.9219,96.7969 Q498.5313,96.7969 498.7969,97.0313 Q499.0625,97.2656 499.0625,97.6563 Q499.0625,98.0313 498.7969,98.2656 Q498.5313,98.5 497.9219,98.5 L492.7813,98.5 Q492.1719,98.5 491.9063,98.2656 Q491.6406,98.0313 491.6406,97.6406 Q491.6406,97.2656 491.9063,97.0313 Q492.1719,96.7969 492.7813,96.7969 L494.5,96.7969 L494.5,90.1406 L492.7813,90.1406 Q492.1719,90.1406 491.9063,89.9063 Q491.6406,89.6719 491.6406,89.2813 Q491.6406,88.9063 491.9063,88.6719 Q492.1719,88.4375 492.7813,88.4375 L497.9219,88.4375 Q498.5313,88.4375 498.7969,88.6719 Q499.0625,88.9063 499.0625,89.2813 Q499.0625,89.6719 498.7969,89.9063 Q498.5313,90.1406 497.9219,90.1406 L496.2031,90.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="80" x="515.75" y="99.2285">CarManager</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="406.5" x2="672.5" y1="109.5" y2="109.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="406.5" x2="672.5" y1="117.5" y2="117.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="411.5" y="136.0332">processDataset(input: String): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="256" x="411.5" y="153.6426">processLine(line: String): CarDescription</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="411.5" y="171.252">averageYear(brand: Brand): double</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="411.5" y="188.8613">brandCount(brand: Brand): int</text>
+</g>
+</a>
+<!--MD5=[476516f9b77bfdb8998cc351282ceec0]
+link CarDescription to Brand-->
+<g id="link_CarDescription_Brand">
+<path codeLine="20" d="M145.47,266.26 C144.17,282.35 144.84,298.56 148.5,314 C150.48,322.34 153.48,330.8 156.97,338.94 " fill="none" id="CarDescription-to-Brand" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="159.2,343.96,159.2057,334.1111,157.172,339.3898,151.8933,337.356,159.2,343.96" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="149.5" y="310.4951">brand</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="147.5875" y="333.2597">1</text>
+</g>
+<!--MD5=[476516f9b77bfdb8998cc351282ceec0]
+link CarDescription to Brand-->
+<g id="link_CarDescription_Brand">
+<path codeLine="21" d="M188.5,266.25 C188.5,291.84 188.5,317.39 188.5,338.81 " fill="none" id="CarDescription-to-Brand-1" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="188.5,343.88,192.5,334.88,188.5,338.88,184.5,334.88,188.5,343.88" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="60" x="189.5" y="310.4951">getBrand()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="181.0078" y="333.1685">1</text>
+</g>
+<!--MD5=[14fa2253e3a0c4044271a329372b6933]
+@startuml
+enum Brand [[java:hr.fer.oop.Brand]] {
+	AETHER
+	NIMBLE
+	ZENITH
+}
+class CarDescription [[java:hr.fer.oop.CarDescription]] {
+	-model: String
+	-year: int
+	+CarDescription(brand: Brand, model: String, year: int)
+	+CarDescription()
+	+setBrand(brand: Brand): void
+	+setModel(model: String): void
+	+setYear(year: int): void
+	+getModel(): String
+	+getYear(): int
+	+toString(): String
+	+hashCode(): int
+	+equals(obj: Object): boolean
+}
+CarDescription - -> "1" Brand : brand
+CarDescription - -> "1" Brand : getBrand()
+interface CarManager [[java:hr.fer.oop.CarManager]] {
+	processDataset(input: String): int
+	processLine(line: String): CarDescription
+	averageYear(brand: Brand): double
+	brandCount(brand: Brand): int
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+		
+		String correctInput = &quot;,Brand-Model,Year\r\n&quot;
+				+ &quot;,Nimble-Phantom,2019\r\n&quot;
+				+ &quot;,Aether-Titan,2017\r\n&quot;
+				+ &quot;,Zenith-Omega,2016\r\n&quot;
+				+ &quot;,Nimble-Icarus,2015\r\n&quot;
+				+ &quot;,Aether-Artemis,2019\r\n&quot;
+				+ &quot;,ZENITH-Eros,2018\r\n&quot;
+				+ &quot;,Nimble-Lyra,2015\r\n&quot;
+				+ &quot;,Aether-Helios,2017\r\n&quot;
+				+ &quot;,Zenith-Sirius,2016\r\n&quot;
+				+ &quot;,Nimble-Orion,2014\r\n&quot;
+				+ &quot;,Aether-Selene,2016\r\n&quot;
+				+ &quot;,Zenith-Atlas,2019\r\n&quot;
+				+ &quot;,NIMBLE-Nova,2017\r\n&quot;
+				+ &quot;,Aether-Athena,2016\r\n&quot;
+				+ &quot;,Zenith-Hyperion,2018&quot;;
+		
+		CarManager manager = new Solution();
+		
+		manager = new Solution();
+		System.out.printf(&quot;Number of cars: %d\n&quot;, manager.processDataset(correctInput));
+		System.out.printf(&quot;Average year of ZENITH cars: %.1f\n&quot;, manager.averageYear(Brand.ZENITH));
+		System.out.printf(&quot;Average year of NIMBLE cars: %.1f\n&quot;, manager.averageYear(Brand.NIMBLE));
+		System.out.printf(&quot;Average year of AETHER cars: %.1f\n&quot;, manager.averageYear(Brand.AETHER));
+		
+		String badInput = &quot;,Brand-Model,Year\r\n&quot;
+				+ &quot;,Aether-Nimbus,-2017\r\n&quot; // bad year
+				+ &quot;,QNimble-Andromeda,2016\r\n&quot; // bad brand
+				+ &quot;,Zenith-Vega,,2015\r\n&quot; // extra comma
+				+ &quot;,Nimble-Altair,-2019\r\n&quot; // bad year
+				+ &quot;,ZenithUranus,2a016\r\n&quot; // bad brand, bad year
+				+ &quot;,Aether-Nova\r\n&quot; // missing a lot of things
+				+ &quot;,w1w11ww1w11w1\r\n&quot; // wrong
+				+ &quot;Nimble-Centaurus,2018\r\n&quot; // missing delimiter
+				+ &quot;Zenith-Nebula,2019\r\n&quot; // missing delimiter
+				+ &quot;,Aether-Orbit,2016\r\n&quot; 
+				+ &quot;,Nimble-Callisto,2017\r\n&quot; 
+				+ &quot;,Zenith-Cassiopeia,2018\r\n&quot;
+				+ &quot;,Zenith-Galaxy,2017&quot;;
+		
+
+		
+		System.out.println();
+		System.out.printf(&quot;Number of cars: %d\n&quot;, manager.processDataset(badInput));
+		System.out.printf(&quot;Average year of ZENITH cars: %.1f\n&quot;, manager.averageYear(Brand.ZENITH));
+		System.out.printf(&quot;Average year of NIMBLE cars: %.1f\n&quot;, manager.averageYear(Brand.NIMBLE));
+		System.out.printf(&quot;Average year of AETHER cars: %.1f\n&quot;, manager.averageYear(Brand.AETHER));
+		
+
+	
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Number of cars: 15
+Average year of ZENITH cars: 2017.4
+Average year of NIMBLE cars: 2016.0
+Average year of AETHER cars: 2017.0
+
+Number of cars: 4
+Average year of ZENITH cars: 2017.5
+Average year of NIMBLE cars: 2017.0
+Average year of AETHER cars: 2016.0
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

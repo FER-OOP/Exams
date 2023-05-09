@@ -1,0 +1,313 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>U zadatku je potrebno implementirati objektni model za vozila čiji se UML dijagram nalazi ispod. Opaska: kod za <code>Car</code>, <code>MotorVehicle</code> i <code>Trailer</code> je spreman za uporabu. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Enumeracija <code>FuelType</code> reprezentira vrste goriva. Vidljivost ovog elementa omogućuje javni pristup.</p>
+<p>Sučelje <code>MotorVehicle</code> reprezentira funkcionalnost vozila. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>int getHorsePower()</code> koja vraća konjske snage. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>FuelType getFuelType()</code> koja vraća tip goriva. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>String getModel()</code> koja vraća model vozila. Vidljivost ovog elementa omogućuje javni pristup.</li>
+</ul>
+<p>Razred <code>Car</code> služi kao automobil.</p>
+<p>Klasa <code>Limousine</code> je limuzina. Element je vidljiv iz svih klasa. Ima:</p>
+<ul>
+<li>Varijablu <code>passengerCapacity</code> koja reprezentira kapacitet putnika i tipa je <code>int</code>.</li>
+<li>Konstruktor <code>Limousine(String, String, int, FuelType, int, int)</code> koji postavlja proizvođača, model, godinu proizvodnje, tip goriva, broj konjskih snaga te kapacitet putnika.</li>
+<li>Metodu <code>String toString()</code> koja vraća <code>String</code> oblika &quot;[A] [B] [C] with [D] hp and with the passenger capacity of [E]&quot;, pri čemu [A], [B], [C], [D] i [E] označavaju proizvođača, model, godinu proizvodnje, broj konjskih snaga i kapacitet putnika.</li>
+</ul>
+<p>Sučelje <code>Trailer</code> predstavlja funkcionalnost prikolice. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>void attachTo(MotorVehicle)</code> koja priključuje prikolicu na vozilo. Element ima maksimalnu vidljivost.</li>
+</ul>
+<p>Razred <code>Camper</code> reprezentira entitet kamp kućice. Vidljivost ovog elementa omogućuje javni pristup. Sadrži:</p>
+<ul>
+<li>Varijablu <code>attachedTo</code> koja reprezentira vozilo na koje je priključena kamp kućica i tipa je <code>MotorVehicle</code>. Element ima privatnu vidljivost.</li>
+<li>Konstruktor <code>Camper()</code> koji inicijalizira objekt.</li>
+<li>Metodu <code>String toString()</code> koja vraća &quot;Camper not attached to any motor vehicle&quot; ako ne postoji vozilo na koje je priključena kamp kućica, inače vraća &quot;Camper attached to '[A]'&quot;, pri čemu [A] označava model vozila.</li>
+</ul>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="831px" preserveAspectRatio="none" style="width:1085px;height:831px;background:#FFFFFF;" version="1.1" viewBox="0 0 1085 831" width="1085px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[67db2f544f9fe3d326969dcd7a85dfc9]
+class FuelType-->
+<a href="java:hr.fer.oop.FuelType" target="_top" title="java:hr.fer.oop.FuelType" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.FuelType" xlink:show="new" xlink:title="java:hr.fer.oop.FuelType" xlink:type="simple">
+<g id="elem_FuelType">
+<rect codeLine="1" fill="#F1F1F1" height="100.8281" id="FuelType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="92" x="93" y="724"/>
+<ellipse cx="108" cy="740" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M106.8594,740.7969 L106.8594,743.2969 L111.1875,743.2969 L111.1875,742.375 Q111.1875,741.7656 111.4219,741.5 Q111.6719,741.2344 112.0469,741.2344 Q112.4219,741.2344 112.6563,741.5 Q112.8906,741.7656 112.8906,742.375 L112.8906,745 L104.8906,745 Q104.2656,745 104,744.7656 Q103.75,744.5313 103.75,744.1406 Q103.75,743.7656 104.0156,743.5313 Q104.2813,743.2969 104.8906,743.2969 L105.1563,743.2969 L105.1563,736.6406 L104.8906,736.6406 Q104.2656,736.6406 104,736.4063 Q103.75,736.1719 103.75,735.7813 Q103.75,735.4063 104,735.1719 Q104.2656,734.9375 104.8906,734.9375 L112.5156,734.9375 L112.5156,737.5313 Q112.5156,738.1406 112.2813,738.4063 Q112.0625,738.6563 111.6719,738.6563 Q111.2969,738.6563 111.0625,738.4063 Q110.8281,738.1406 110.8281,737.5313 L110.8281,736.6406 L106.8594,736.6406 L106.8594,739.0938 L108.3438,739.0938 Q108.3438,738.4375 108.4688,738.25 Q108.7344,737.8438 109.2031,737.8438 Q109.5781,737.8438 109.8125,738.1094 Q110.0469,738.3594 110.0469,738.9688 L110.0469,740.9375 Q110.0469,741.4844 109.9219,741.6719 Q109.6563,742.0625 109.2031,742.0625 Q108.7344,742.0625 108.4688,741.6563 Q108.3438,741.4688 108.3438,740.7969 L106.8594,740.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="122" y="745.7285">FuelType</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="94" x2="184" y1="756" y2="756"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="99" y="774.5332">GASOLINE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="99" y="792.1426">DIESEL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="99" y="809.752">GAS</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="94" x2="184" y1="816.8281" y2="816.8281"/>
+</g>
+</a>
+<!--MD5=[0605b9519cbcbbde124dc305373b896c]
+class MotorVehicle-->
+<a href="java:hr.fer.oop.MotorVehicle" target="_top" title="java:hr.fer.oop.MotorVehicle" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.MotorVehicle" xlink:show="new" xlink:title="java:hr.fer.oop.MotorVehicle" xlink:type="simple">
+<g id="elem_MotorVehicle">
+<rect codeLine="23" fill="#F1F1F1" height="83.2188" id="MotorVehicle" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="141" x="66.5" y="313"/>
+<ellipse cx="93.2" cy="329" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M94.1531,325.6406 L94.1531,332.2969 L95.8719,332.2969 Q96.4813,332.2969 96.7469,332.5313 Q97.0125,332.7656 97.0125,333.1563 Q97.0125,333.5313 96.7469,333.7656 Q96.4813,334 95.8719,334 L90.7313,334 Q90.1219,334 89.8563,333.7656 Q89.5906,333.5313 89.5906,333.1406 Q89.5906,332.7656 89.8563,332.5313 Q90.1219,332.2969 90.7313,332.2969 L92.45,332.2969 L92.45,325.6406 L90.7313,325.6406 Q90.1219,325.6406 89.8563,325.4063 Q89.5906,325.1719 89.5906,324.7813 Q89.5906,324.4063 89.8563,324.1719 Q90.1219,323.9375 90.7313,323.9375 L95.8719,323.9375 Q96.4813,323.9375 96.7469,324.1719 Q97.0125,324.4063 97.0125,324.7813 Q97.0125,325.1719 96.7469,325.4063 Q96.4813,325.6406 95.8719,325.6406 L94.1531,325.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="83" x="109.8" y="334.7285">MotorVehicle</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="67.5" x2="206.5" y1="345" y2="345"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="67.5" x2="206.5" y1="353" y2="353"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="72.5" y="371.5332">getHorsePower(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="72.5" y="389.1426">getModel(): String</text>
+</g>
+</a>
+<!--MD5=[3f0ef310aaa84a542276992c5216544d]
+class Car-->
+<a href="java:hr.fer.oop.Car" target="_top" title="java:hr.fer.oop.Car" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Car" xlink:show="new" xlink:title="java:hr.fer.oop.Car" xlink:type="simple">
+<g id="elem_Car">
+<rect codeLine="31" fill="#F1F1F1" height="188.875" id="Car" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="669" x="233.5" y="457"/>
+<ellipse cx="552.25" cy="473" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M555.0156,468.875 Q555.1719,468.6563 555.3594,468.5469 Q555.5469,468.4375 555.7656,468.4375 Q556.1406,468.4375 556.375,468.7031 Q556.6094,468.9531 556.6094,469.5625 L556.6094,471.0156 Q556.6094,471.625 556.375,471.8906 Q556.1406,472.1563 555.7656,472.1563 Q555.4219,472.1563 555.2188,471.9531 Q555.0156,471.7656 554.9063,471.25 Q554.8594,470.8906 554.6719,470.7031 Q554.3438,470.3281 553.7344,470.1094 Q553.125,469.8906 552.5,469.8906 Q551.7344,469.8906 551.0938,470.2188 Q550.4688,470.5469 549.9688,471.2969 Q549.4844,472.0469 549.4844,473.0781 L549.4844,474.1719 Q549.4844,475.4063 550.375,476.2344 Q551.2656,477.0469 552.8594,477.0469 Q553.7969,477.0469 554.4531,476.7969 Q554.8438,476.6406 555.2656,476.2031 Q555.5313,475.9375 555.6719,475.8594 Q555.8281,475.7813 556.0313,475.7813 Q556.3594,475.7813 556.6094,476.0469 Q556.875,476.2969 556.875,476.6406 Q556.875,476.9844 556.5313,477.3906 Q556.0313,477.9688 555.2344,478.2969 Q554.1563,478.75 552.8594,478.75 Q551.3438,478.75 550.1406,478.125 Q549.1563,477.625 548.4688,476.5625 Q547.7813,475.4844 547.7813,474.2031 L547.7813,473.0469 Q547.7813,471.7188 548.3906,470.5781 Q549.0156,469.4219 550.1094,468.8125 Q551.2031,468.1875 552.4375,468.1875 Q553.1719,468.1875 553.8125,468.3594 Q554.4688,468.5156 555.0156,468.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="572.75" y="478.7285">Car</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="234.5" x2="901.5" y1="489" y2="489"/>
+<polygon fill="none" points="244.5,498.3047,248.5,502.3047,244.5,506.3047,240.5,502.3047" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="253.5" y="507.5332">manufacturer: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="241.5" y="517.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="253.5" y="525.1426">model: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="241.5" y="535.5234"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="253.5" y="542.752">yearOfManufacture: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="241.5" y="553.1328"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="253.5" y="560.3613">horsePower: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="234.5" x2="901.5" y1="567.4375" y2="567.4375"/>
+<ellipse cx="244.5" cy="581.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="643" x="253.5" y="585.9707">Car(manufacturer: String, model: String, yearOfManufacture: int, fuelType: FuelType, horsePower: int)</text>
+<ellipse cx="244.5" cy="599.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="253.5" y="603.5801">getHorsePower(): int</text>
+<ellipse cx="244.5" cy="616.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="253.5" y="621.1895">getModel(): String</text>
+<ellipse cx="244.5" cy="634.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="253.5" y="638.7988">toString(): String</text>
+</g>
+</a>
+<!--MD5=[0f2eed3bb9bb7f15c4c3521507842317]
+class Limousine-->
+<a href="java:hr.fer.oop.Limousine" target="_top" title="java:hr.fer.oop.Limousine" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Limousine" xlink:show="new" xlink:title="java:hr.fer.oop.Limousine" xlink:type="simple">
+<g id="elem_Limousine">
+<rect codeLine="26" fill="#F1F1F1" height="100.8281" id="Limousine" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="858" x="220" y="724"/>
+<ellipse cx="612.75" cy="740" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M615.5156,735.875 Q615.6719,735.6563 615.8594,735.5469 Q616.0469,735.4375 616.2656,735.4375 Q616.6406,735.4375 616.875,735.7031 Q617.1094,735.9531 617.1094,736.5625 L617.1094,738.0156 Q617.1094,738.625 616.875,738.8906 Q616.6406,739.1563 616.2656,739.1563 Q615.9219,739.1563 615.7188,738.9531 Q615.5156,738.7656 615.4063,738.25 Q615.3594,737.8906 615.1719,737.7031 Q614.8438,737.3281 614.2344,737.1094 Q613.625,736.8906 613,736.8906 Q612.2344,736.8906 611.5938,737.2188 Q610.9688,737.5469 610.4688,738.2969 Q609.9844,739.0469 609.9844,740.0781 L609.9844,741.1719 Q609.9844,742.4063 610.875,743.2344 Q611.7656,744.0469 613.3594,744.0469 Q614.2969,744.0469 614.9531,743.7969 Q615.3438,743.6406 615.7656,743.2031 Q616.0313,742.9375 616.1719,742.8594 Q616.3281,742.7813 616.5313,742.7813 Q616.8594,742.7813 617.1094,743.0469 Q617.375,743.2969 617.375,743.6406 Q617.375,743.9844 617.0313,744.3906 Q616.5313,744.9688 615.7344,745.2969 Q614.6563,745.75 613.3594,745.75 Q611.8438,745.75 610.6406,745.125 Q609.6563,744.625 608.9688,743.5625 Q608.2813,742.4844 608.2813,741.2031 L608.2813,740.0469 Q608.2813,738.7188 608.8906,737.5781 Q609.5156,736.4219 610.6094,735.8125 Q611.7031,735.1875 612.9375,735.1875 Q613.6719,735.1875 614.3125,735.3594 Q614.9688,735.5156 615.5156,735.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="633.25" y="745.7285">Limousine</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="221" x2="1077" y1="756" y2="756"/>
+<polygon fill="none" points="231,765.3047,235,769.3047,231,773.3047,227,769.3047" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="240" y="774.5332">passengerCapacity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="221" x2="1077" y1="781.6094" y2="781.6094"/>
+<ellipse cx="231" cy="795.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="832" x="240" y="800.1426">Limousine(manufacturer: String, model: String, yearOfManufactue: int, fuelType: FuelType, horsePower: int, passengerCapacity: int)</text>
+<ellipse cx="231" cy="813.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="240" y="817.752">toString(): String</text>
+</g>
+</a>
+<!--MD5=[e65e6d38455b41cf3bfbebe5b46c38ff]
+class Trailer-->
+<a href="java:hr.fer.oop.Trailer" target="_top" title="java:hr.fer.oop.Trailer" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Trailer" xlink:show="new" xlink:title="java:hr.fer.oop.Trailer" xlink:type="simple">
+<g id="elem_Trailer">
+<rect codeLine="43" fill="#F1F1F1" height="65.6094" id="Trailer" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="246" x="14" y="7"/>
+<ellipse cx="112.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M113.2031,19.6406 L113.2031,26.2969 L114.9219,26.2969 Q115.5313,26.2969 115.7969,26.5313 Q116.0625,26.7656 116.0625,27.1563 Q116.0625,27.5313 115.7969,27.7656 Q115.5313,28 114.9219,28 L109.7813,28 Q109.1719,28 108.9063,27.7656 Q108.6406,27.5313 108.6406,27.1406 Q108.6406,26.7656 108.9063,26.5313 Q109.1719,26.2969 109.7813,26.2969 L111.5,26.2969 L111.5,19.6406 L109.7813,19.6406 Q109.1719,19.6406 108.9063,19.4063 Q108.6406,19.1719 108.6406,18.7813 Q108.6406,18.4063 108.9063,18.1719 Q109.1719,17.9375 109.7813,17.9375 L114.9219,17.9375 Q115.5313,17.9375 115.7969,18.1719 Q116.0625,18.4063 116.0625,18.7813 Q116.0625,19.1719 115.7969,19.4063 Q115.5313,19.6406 114.9219,19.6406 L113.2031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="41" x="132.75" y="28.7285">Trailer</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="15" x2="259" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="15" x2="259" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="234" x="20" y="65.5332">attachTo(vehicle: MotorVehicle): void</text>
+</g>
+</a>
+<!--MD5=[b6e7489d48131927402bd74788569eb6]
+class Camper-->
+<a href="java:hr.fer.oop.Camper" target="_top" title="java:hr.fer.oop.Camper" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Camper" xlink:show="new" xlink:title="java:hr.fer.oop.Camper" xlink:type="simple">
+<g id="elem_Camper">
+<rect codeLine="37" fill="#F1F1F1" height="100.8281" id="Camper" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="260" x="7" y="134"/>
+<ellipse cx="107.75" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M110.5156,145.875 Q110.6719,145.6563 110.8594,145.5469 Q111.0469,145.4375 111.2656,145.4375 Q111.6406,145.4375 111.875,145.7031 Q112.1094,145.9531 112.1094,146.5625 L112.1094,148.0156 Q112.1094,148.625 111.875,148.8906 Q111.6406,149.1563 111.2656,149.1563 Q110.9219,149.1563 110.7188,148.9531 Q110.5156,148.7656 110.4063,148.25 Q110.3594,147.8906 110.1719,147.7031 Q109.8438,147.3281 109.2344,147.1094 Q108.625,146.8906 108,146.8906 Q107.2344,146.8906 106.5938,147.2188 Q105.9688,147.5469 105.4688,148.2969 Q104.9844,149.0469 104.9844,150.0781 L104.9844,151.1719 Q104.9844,152.4063 105.875,153.2344 Q106.7656,154.0469 108.3594,154.0469 Q109.2969,154.0469 109.9531,153.7969 Q110.3438,153.6406 110.7656,153.2031 Q111.0313,152.9375 111.1719,152.8594 Q111.3281,152.7813 111.5313,152.7813 Q111.8594,152.7813 112.1094,153.0469 Q112.375,153.2969 112.375,153.6406 Q112.375,153.9844 112.0313,154.3906 Q111.5313,154.9688 110.7344,155.2969 Q109.6563,155.75 108.3594,155.75 Q106.8438,155.75 105.6406,155.125 Q104.6563,154.625 103.9688,153.5625 Q103.2813,152.4844 103.2813,151.2031 L103.2813,150.0469 Q103.2813,148.7188 103.8906,147.5781 Q104.5156,146.4219 105.6094,145.8125 Q106.7031,145.1875 107.9375,145.1875 Q108.6719,145.1875 109.3125,145.3594 Q109.9688,145.5156 110.5156,145.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="128.25" y="155.7285">Camper</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="266" y1="166" y2="166"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="266" y1="174" y2="174"/>
+<ellipse cx="18" cy="188.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="27" y="192.5332">Camper()</text>
+<ellipse cx="18" cy="205.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="234" x="27" y="210.1426">attachTo(vehicle: MotorVehicle): void</text>
+<ellipse cx="18" cy="223.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="227.752">toString(): String</text>
+</g>
+</a>
+<!--MD5=[2f4e8cb16ba08ff17190324f48711066]
+link MotorVehicle to FuelType-->
+<g id="link_MotorVehicle_FuelType">
+<path codeLine="10" d="M136.01,396.49 C135.61,414.97 135.2,437.08 135,457 C134.17,541 133.68,562.01 135,646 C135.37,669.88 136.14,696.27 136.91,718.81 " fill="none" id="MotorVehicle-to-FuelType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="137.08,723.86,140.7693,714.7282,136.9087,718.8629,132.774,715.0023,137.08,723.86" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79" x="136" y="556.9951">getFuelType()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="129.3178" y="713.1457">1</text>
+</g>
+<!--MD5=[9601dcd1e04bed1b6ab748f1415eac38]
+link Car to FuelType-->
+<g id="link_Car_FuelType">
+<path codeLine="21" d="M346.97,646.15 C298.11,669.55 247.41,696.03 202,724 C197.83,726.57 193.61,729.37 189.43,732.29 " fill="none" id="Car-to-FuelType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="185.28,735.25,194.9344,733.3026,189.3573,732.356,190.3039,726.7789,185.28,735.25" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="48" x="280" y="690.4951">fuelType</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="192.9026" y="744">1</text>
+</g>
+<!--MD5=[9601dcd1e04bed1b6ab748f1415eac38]
+link Car to FuelType-->
+<g id="link_Car_FuelType">
+<path codeLine="22" d="M431.74,646.14 C401.51,663.98 368.94,681.09 337,694 C280.02,717.03 257.55,697.69 202,724 C197.85,725.97 193.71,728.25 189.67,730.74 " fill="none" id="Car-to-FuelType-1" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="185.32,733.51,195.0595,732.0464,189.5365,730.8228,190.7601,725.2999,185.32,733.51" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79" x="372" y="690.4951">getFuelType()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="192.9487" y="723.5436">1</text>
+</g>
+<!--MD5=[8f69a3e3500e203b1eefb4bb0422fd5a]
+reverse link MotorVehicle to Car-->
+<g id="link_MotorVehicle_Car">
+<path codeLine="25" d="M225.98,395.76 C265.33,413.56 313.4,435.31 360.92,456.81 " fill="none" id="MotorVehicle-backto-Car" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="223.02,402.1,207.69,387.48,228.8,389.35,223.02,402.1" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[304a717158553bac890b31f2c2aa2251]
+reverse link Car to Limousine-->
+<g id="link_Car_Limousine">
+<path codeLine="33" d="M609.28,665.14 C616.85,685.79 624.39,706.35 630.83,723.92 " fill="none" id="Car-backto-Limousine" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="602.66,667.41,602.35,646.22,615.81,662.59,602.66,667.41" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[7bb441c282e6b930e1fddec2f6c86c86]
+link Camper to MotorVehicle-->
+<g id="link_Camper_MotorVehicle">
+<path codeLine="42" d="M137,235.45 C137,258.28 137,285.16 137,307.49 " fill="none" id="Camper-to-MotorVehicle" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="137,312.77,141,303.77,137,307.77,133,303.77,137,312.77" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="64" x="138" y="279.4951">attachedTo</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="129.4203" y="302.0396">1</text>
+</g>
+<!--MD5=[5e00a401d0128fd035cf3a268cd29dbe]
+reverse link Trailer to Camper-->
+<g id="link_Trailer_Camper">
+<path codeLine="45" d="M137,93.65 C137,106.83 137,120.93 137,133.95 " fill="none" id="Trailer-backto-Camper" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="130,93.34,137,73.34,144,93.34,130,93.34" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[ae50dace6d4b41fec2a8b757c9895503]
+@startuml
+enum FuelType [[java:hr.fer.oop.FuelType]] {
+	GASOLINE
+	DIESEL
+	GAS
+}
+interface MotorVehicle [[java:hr.fer.oop.MotorVehicle]] {
+	getHorsePower(): int
+	getModel(): String
+}
+MotorVehicle - -> "1" FuelType : getFuelType()
+class Car [[java:hr.fer.oop.Car]] {
+	#manufacturer: String
+	-model: String
+	-yearOfManufacture: int
+	-horsePower: int
+	+Car(manufacturer: String, model: String, yearOfManufacture: int, fuelType: FuelType, horsePower: int)
+	+getHorsePower(): int
+	+getModel(): String
+	+toString(): String
+}
+Car - -> "1" FuelType : fuelType
+Car - -> "1" FuelType : getFuelType()
+interface MotorVehicle {
+}
+MotorVehicle <|.. Car
+class Limousine [[java:hr.fer.oop.Limousine]] {
+	#passengerCapacity: int
+	+Limousine(manufacturer: String, model: String, yearOfManufactue: int, fuelType: FuelType, horsePower: int, passengerCapacity: int)
+	+toString(): String
+}
+class Car {
+}
+Car <|- - Limousine
+interface Trailer [[java:hr.fer.oop.Trailer]] {
+	attachTo(vehicle: MotorVehicle): void
+}
+class Camper [[java:hr.fer.oop.Camper]] {
+	+Camper()
+	+attachTo(vehicle: MotorVehicle): void
+	+toString(): String
+}
+Camper - -> "1" MotorVehicle : attachedTo
+interface Trailer {
+}
+Trailer <|.. Camper
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+        MotorVehicle car = new Car(&quot;Opel&quot;, &quot;Astra&quot;, 2007, FuelType.DIESEL, 113);
+        System.out.println(car.getHorsePower());
+        System.out.println(car.getFuelType());
+        System.out.println(car.toString());
+
+        Trailer camper = new Camper();
+        System.out.println(camper.toString());
+        camper.attachTo(car);
+        System.out.println(camper.toString());
+
+        MotorVehicle limousine = new Limousine(&quot;Lincoln&quot;, &quot;Towncar&quot;, 2003, FuelType.GASOLINE, 205, 8);
+        System.out.println(limousine.getHorsePower());
+        System.out.println(limousine.getFuelType());
+        System.out.println(limousine.toString());
+
+        System.out.println(&quot;car instanceof Car: &quot; + (car instanceof Car));
+        System.out.println(&quot;car instanceof MotorVehicle: &quot; + (car instanceof MotorVehicle));
+        System.out.println(&quot;camper instanceof Camper: &quot; + (camper instanceof Camper));
+        System.out.println(&quot;camper instanceof Trailer: &quot; + (camper instanceof Trailer));
+        System.out.println(&quot;limousine instanceof Limousine: &quot; + (limousine instanceof Limousine));
+        System.out.println(&quot;limousine instanceof Car: &quot; + (limousine instanceof Car));
+        System.out.println(&quot;limousine instanceof MotorVehicle: &quot; + (limousine instanceof MotorVehicle));
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">113
+DIESEL
+Opel Astra 2007 with 113 hp
+Camper not attached to any motor vehicle
+Camper attached to 'Astra'
+205
+GASOLINE
+Lincoln Towncar 2003 with 205 hp and with the passenger capacity of 8
+car instanceof Car: true
+car instanceof MotorVehicle: true
+camper instanceof Camper: true
+camper instanceof Trailer: true
+limousine instanceof Limousine: true
+limousine instanceof Car: true
+limousine instanceof MotorVehicle: true
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
