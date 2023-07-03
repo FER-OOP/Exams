@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>1st TASK</h2>
+<p>You need to implement a class <code>MyFileVisitor</code> which will count how many files with given extensions are there in a given diretory and all of its subdirectories. The class allso needs to find the largest such file and the total number of directories including the starting directory.</p>
+<p>Class <code>MyFileVisitor</code> needs to either implement the interface <code>FileVisitor</code> or to extend the class <code>SimpleFileVisitor</code>.</p>
+<p>Class <code>MyFileVisitor</code> should be placed in the package <code>hr.fer.oop.ZI2023</code>. The class needs to have public methods and a constructor with the following signatures:</p>
+<ul>
+<li><code>MyFileVisitor(String[extensions)</code> - a constructor that takes an array of extensions</li>
+<li><code>int getNumFiles()</code> - a method that return the number of files with the given extensions</li>
+<li><code>int getNumFolders()</code> - a method that return a total number of directories</li>
+<li><code>long getLargestFileSize()</code> - a method that returns the size of the largest file in bytes, with the given extensions</li>
+</ul>
+<h3>Example:</h3>
+<p>A following directory tree is given (file sizes are given in parentheses):</p>
+<pre class="line-numbers"><code>data
+--d2
+----d21
+      008_S8_L001_R2_001.fastq (7759)
+      009_S9_L001_R1_001.fastq (35107)
+      012_S12_L001_R1_001.fastq (29196)
+----d22
+      004_S4_L001_R1_001.fastq.gz (2713)
+      004_S4_L001_R2_001.fastq.gz (2817)
+  concentration_table.txt (13654)
+  primers_1.fasta (550)
+  primers_2.fasta (550)
+  thresholds.txt (5578)
+</code></pre>
+<p>A following java code is given (You have it the class <code>MainClass</code>)</p>
+<pre class="line-numbers"><code class="language-java">	public static void main(String[] args) {
+		String[] extensions = {&quot;.txt&quot;, &quot;.gz&quot;};
+		String dirName = &quot;resources/data&quot;;	
+		Path path = Paths.get(dirName);
+		
+		MyFileVisitor visitor = new MyFileVisitor(extensions);
+		
+		try {
+			Files.walkFileTree(path,  visitor);
+			
+			System.out.printf(&quot;Number of files: %d%n&quot;, visitor.getNumFiles());
+			System.out.printf(&quot;Number of folders: %d%n&quot;, visitor.getNumFolders());
+			System.out.printf(&quot;Largest file size: %d%n&quot;, visitor.getLargestFileSize());
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+</code></pre>
+<h3>Expected output:</h3>
+<pre class="line-numbers"><code>Number of files: 4
+Number of folders: 3
+Largest file size: 13654
+</code></pre>
+<p>The largest file should be <code>concentration_table.txt</code> found within the folder <code>data</code>. The are other larger files within the directory tree, but they have wrong extensions.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

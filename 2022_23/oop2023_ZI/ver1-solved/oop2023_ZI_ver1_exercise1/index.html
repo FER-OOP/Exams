@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>ZADATAK</h2>
+<p>Potrebno je napisati klasu <code>MyFileVisitor</code> koja će u zadanom direktoriju i svim njegovim poddirektorijima prebrojati koliko ima datoteka sa zadanim ekstenzijama, te pronaći koliko je velika najveća od njih. Također je potrebno prebrojati koliko ukupno ima direktorija, uključujući i početni direktorij.</p>
+<p>Pri tome je potrebno implementirati sučelje <code>FileVisitor</code> ili naslijediti klasu <code>SimpleFileVisitor</code>.</p>
+<p>Klasu <code>MyFileVisitor</code> potrebno je smjestiti u paket <code>hr.fer.oop.ZI2023</code> te je potrebno je implementirati javne metode i konstruktor sa zadanim potpisima:</p>
+<ul>
+<li><code>MyFileVisitor(String[] extensions)</code> - kontruktor koji prima polje ekstenzija</li>
+<li><code>int getNumFiles()</code> - metoda koja vraća broj pronađenih datoteka sa zadanim ekstenzijama</li>
+<li><code>int getNumFolders()</code> - metoda koja vraća broj pronađenih direktorija</li>
+<li><code>long getLargestFileSize()</code> - metoda koja vraća veličinu najveće pronađene datoteke u bajtovima, a koja ima zadanu ekstenziju</li>
+</ul>
+<h3>Primjer pokretanja:</h3>
+<p>Zadano je stablo direktorija s datotekama (veličine su prikazane u zagradama):</p>
+<pre class="line-numbers"><code>data
+--d2
+----d21
+      008_S8_L001_R2_001.fastq (7759)
+      009_S9_L001_R1_001.fastq (35107)
+      012_S12_L001_R1_001.fastq (29196)
+----d22
+      004_S4_L001_R1_001.fastq.gz (2713)
+      004_S4_L001_R2_001.fastq.gz (2817)
+  concentration_table.txt (13654)
+  primers_1.fasta (550)
+  primers_2.fasta (550)
+  thresholds.txt (5578)
+</code></pre>
+<p>Zadan je sljedeći kod u javi (koji vam je zadan u klasi <code>MainClass</code>)</p>
+<pre class="line-numbers"><code class="language-java">	public static void main(String[] args) {
+		String[] extensions = {&quot;.txt&quot;, &quot;.gz&quot;};
+		String dirName = &quot;resources/data&quot;;	
+		Path path = Paths.get(dirName);
+		
+		MyFileVisitor visitor = new MyFileVisitor(extensions);
+		
+		try {
+			Files.walkFileTree(path,  visitor);
+			
+			System.out.printf(&quot;Number of files: %d%n&quot;, visitor.getNumFiles());
+			System.out.printf(&quot;Number of folders: %d%n&quot;, visitor.getNumFolders());
+			System.out.printf(&quot;Largest file size: %d%n&quot;, visitor.getLargestFileSize());
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+</code></pre>
+<h3>Očekivani izlaz:</h3>
+<pre class="line-numbers"><code>Number of files: 4
+Number of folders: 3
+Largest file size: 13654
+</code></pre>
+<p>Najveća pronađena datoteka trebala bi biti <code>concentration_table.txt</code> koja se nalazi u folderu <code>data</code>. U stablu direktorija postoje i druge, još veće, datoteke, ali nemaju traženu ekstenziju.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

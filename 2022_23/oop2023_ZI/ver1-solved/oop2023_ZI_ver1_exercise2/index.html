@@ -1,0 +1,182 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati programski kod parametrizirane klase <code>Pair</code> i klase <code>SimplePairHashSet</code>.</p>
+<p>Klasa <code>Pair</code> predstavlja kolekciju od dva parametrizirana elementa A i B, na način da su u klasi definirani prvi i drugi element, ali tako da su instance klase <code>Pair</code> međusobno jednake neovisno o poretku elemenata. Dakle, <code>Pair</code> s elemetima (&quot;T&quot;,1) bi bio jednak (1,&quot;T&quot;). Također, <code>Pair</code> može sadržavati <code>null</code> elemente i duplikate.</p>
+<p>Uz metode označene u UML dijagramu primjetite da klasa <code>Pair</code> treba implementirati metode <code>equals</code> i <code>hashCode</code> imajući na umu da su instance jednake neovisno o poretku njihovih elemenata.</p>
+<p><code>SimplePairHashSet</code> predstavlja skup elemenata tipa <code>Pair</code>. Skup po definiciji ne smije pohranjivati duplikate. Vaš je zadatak da nadopunite klasu prema UML dijagramu <strong>bez korištenja postojećeg sučelja <code>Set</code> i postojećih implementacija sučelja <code>Set</code></strong> (<code>HashSet</code>, <code>TreeSet</code>, ...). Umjesto toga, trebate koristiti implementaciju sučelja <code>Map</code>, koju ćete definirati kao privatnu varijablu <code>internalMap</code>. <strong>Klasa <code>SimplePairHashSet</code> smije imati samo tu jednu varijablu</strong>. Tražene metode klase <code>SimplePairHashSet</code> trebaju imati identičnu funkcionalnost kao i istoimene metode klase <code>HashSet</code> (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashSet.html).</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju vidljivost postavljenu na
+<em>package private</em> i nalaze se u paketu <code>hr.fer.oop.pair</code>. Pri implementaciji metoda u njima smijete koristiti dodatne pomoćne strukture podataka jer brzina izvođenja programskog koda nije bitna tj. programski kod ne mora biti optimiziran. Pozivanje bilo koje metode ne smije &quot;uništiti&quot; kolekciju (tj. pobrisati sve elemente kolekcije ili slično).</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="414px" preserveAspectRatio="none" style="width:460px;height:414px;background:#FFFFFF;" version="1.1" viewBox="0 0 460 414" width="460px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[e1d7da95e00af17fdf5bf40504057cbc]
+class SimplePairHashSet-->
+<g id="elem_SimplePairHashSet">
+<rect codeLine="4" fill="#F1F1F1" height="178.375" id="SimplePairHashSet" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="274" x="7" y="229"/>
+<ellipse cx="75.25" cy="245" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M78.2188,250.6406 Q77.6406,250.9375 77,251.0781 Q76.3594,251.2344 75.6563,251.2344 Q73.1563,251.2344 71.8281,249.5938 Q70.5156,247.9375 70.5156,244.8125 Q70.5156,241.6875 71.8281,240.0313 Q73.1563,238.375 75.6563,238.375 Q76.3594,238.375 77,238.5313 Q77.6563,238.6875 78.2188,238.9844 L78.2188,241.7031 Q77.5938,241.125 77,240.8594 Q76.4063,240.5781 75.7813,240.5781 Q74.4375,240.5781 73.75,241.6563 Q73.0625,242.7188 73.0625,244.8125 Q73.0625,246.9063 73.75,247.9844 Q74.4375,249.0469 75.7813,249.0469 Q76.4063,249.0469 77,248.7813 Q77.5938,248.5 78.2188,247.9219 L78.2188,250.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="95.75" y="249.8467">SimplePairHashSet</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="280" y1="261" y2="261"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="271.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="27" y="277.9951">Map&lt;Pair, Object&gt; internalMap</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="280" y1="285.2969" y2="285.2969"/>
+<ellipse cx="18" cy="298.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="27" y="302.292">SimplePairHashSet()</text>
+<ellipse cx="18" cy="315.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="248" x="27" y="318.5889">Map&lt;Pair, Object&gt; getInternalMap()</text>
+<ellipse cx="18" cy="331.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="27" y="334.8857">boolean add(Pair)</text>
+<ellipse cx="18" cy="347.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="27" y="351.1826">int size()</text>
+<ellipse cx="18" cy="364.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="27" y="367.4795">boolean contains(Object)</text>
+<ellipse cx="18" cy="380.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="27" y="383.7764">boolean remove(Object)</text>
+<ellipse cx="18" cy="396.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="27" y="400.0732">Iterator&lt;Pair&gt; iterator()</text>
+</g>
+<!--MD5=[220f5f32351d35cc72380e3951491ed2]
+class Pair-->
+<g id="elem_Pair">
+<rect codeLine="14" fill="#F1F1F1" height="162.0781" id="Pair" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="187" x="266.5" y="7"/>
+<ellipse cx="343.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M346.2188,28.6406 Q345.6406,28.9375 345,29.0781 Q344.3594,29.2344 343.6563,29.2344 Q341.1563,29.2344 339.8281,27.5938 Q338.5156,25.9375 338.5156,22.8125 Q338.5156,19.6875 339.8281,18.0313 Q341.1563,16.375 343.6563,16.375 Q344.3594,16.375 345,16.5313 Q345.6563,16.6875 346.2188,16.9844 L346.2188,19.7031 Q345.5938,19.125 345,18.8594 Q344.4063,18.5781 343.7813,18.5781 Q342.4375,18.5781 341.75,19.6563 Q341.0625,20.7188 341.0625,22.8125 Q341.0625,24.9063 341.75,25.9844 Q342.4375,27.0469 343.7813,27.0469 Q344.4063,27.0469 345,26.7813 Q345.5938,26.5 346.2188,25.9219 L346.2188,28.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="363.75" y="27.8467">Pair</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="267.5" x2="452.5" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="274.5" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="286.5" y="55.9951">A first</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="274.5" y="65.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="286.5" y="72.292">B second</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="267.5" x2="452.5" y1="79.5938" y2="79.5938"/>
+<ellipse cx="277.5" cy="93.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="286.5" y="96.5889">Pair(A,B)</text>
+<ellipse cx="277.5" cy="109.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="286.5" y="112.8857">A getFirst()</text>
+<ellipse cx="277.5" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="286.5" y="129.1826">B getSecond()</text>
+<ellipse cx="277.5" cy="142.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="286.5" y="145.4795">boolean equals(Object)</text>
+<ellipse cx="277.5" cy="158.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="286.5" y="161.7764">int hashCode()</text>
+</g>
+<!--MD5=[47de47a8b5f06cbc5e036fae0a9149b7]
+class Iterable-->
+<g id="elem_Iterable">
+<rect codeLine="24" fill="#F1F1F1" height="64.2969" id="Iterable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="56" y="56"/>
+<ellipse cx="108.25" cy="72" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M104.1719,67.7656 L104.1719,65.6094 L111.5625,65.6094 L111.5625,67.7656 L109.0938,67.7656 L109.0938,75.8438 L111.5625,75.8438 L111.5625,78 L104.1719,78 L104.1719,75.8438 L106.6406,75.8438 L106.6406,67.7656 L104.1719,67.7656 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="52" x="128.75" y="76.8467">Iterable</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="226" y="53"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="227" y="65.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="57" x2="231" y1="88" y2="88"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="57" x2="231" y1="96" y2="96"/>
+<ellipse cx="67" cy="109.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="76" y="112.9951">iterator(): Iterator&lt;T&gt;</text>
+</g>
+<!--MD5=[4e9a162097febafda29b2059aa6d8039]
+reverse link Iterable to SimplePairHashSet-->
+<g id="link_Iterable_SimplePairHashSet">
+<path codeLine="28" d="M144,140.47 C144,166.58 144,199.03 144,228.95 " fill="none" id="Iterable-backto-SimplePairHashSet" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="137,140.22,144,120.22,151,140.22,137,140.22" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[9b23afee7881dc37f753a1aa23451693]
+@startuml
+class SimplePairHashSet {
+- Map<Pair, Object> internalMap
++ SimplePairHashSet()
++ Map<Pair, Object> getInternalMap()
++ boolean add(Pair)
++ int size()
++ boolean contains(Object)
++ boolean remove(Object)
++ Iterator<Pair> iterator()
+}
+class Pair {
+- A first
+- B second
++ Pair(A,B)
++ A getFirst()
++ B getSecond()
++ boolean equals(Object)
++ int hashCode()
+}
+
+interface Iterable<T> {
++ iterator(): Iterator<T>
+}
+
+Iterable <|.. SimplePairHashSet
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+</g>
+</svg>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">Pair&lt;String, Double&gt; pair1 = new Pair&lt;&gt;(&quot;Peter&quot;, 2.7);
+Pair&lt;Integer, String&gt; pair2 = new Pair&lt;&gt;(7, &quot;Marco&quot;);
+Pair&lt;Double, String&gt; pair3 = new Pair&lt;&gt;(2.7, &quot;Peter&quot;);
+
+System.out.println(&quot;pair1 equals pair2: &quot; + pair1.equals(pair2));
+System.out.println(&quot;pair1 equals pair3: &quot; + pair1.equals(pair3));
+
+System.out.println(&quot;pair1 hashcode equals pair2 hashcode: &quot; + (pair1.hashCode() == pair2.hashCode()));
+System.out.println(&quot;pair1 hashcode equals pair3 hashcode: &quot; + (pair1.hashCode() == pair3.hashCode()));
+
+SimplePairHashSet simplePairHashSet = new SimplePairHashSet();
+System.out.println(&quot;add pair1: &quot; + simplePairHashSet.add(pair1));
+System.out.println(&quot;add pair2: &quot; + simplePairHashSet.add(pair2));
+System.out.println(&quot;add pair3: &quot; + simplePairHashSet.add(pair3));
+
+simplePairHashSet.forEach(pair -&gt; System.out.printf(&quot;(%s, %s);&quot;, pair.getFirst(), pair.getSecond()));
+System.out.println();
+
+System.out.println(&quot;simplePairHashSet size: &quot; + simplePairHashSet.size());
+System.out.println(&quot;simplePairHashSet contains pair1: &quot; + simplePairHashSet.contains(pair1));
+System.out.println(&quot;simplePairHashSet contains pair3: &quot; + simplePairHashSet.contains(pair3));
+System.out.println(&quot;simplePairHashSet remove pair3: &quot; + simplePairHashSet.remove(pair3));
+System.out.println(&quot;simplePairHashSet remove pair3: &quot; + simplePairHashSet.remove(pair3));
+System.out.println(&quot;simplePairHashSet size: &quot; + simplePairHashSet.size());
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">pair1 equals pair2: false
+pair1 equals pair3: true
+pair1 hashcode equals pair2 hashcode: false
+pair1 hashcode equals pair3 hashcode: true
+add pair1: true
+add pair2: true
+add pair3: false
+(7, Marco);(Peter, 2.7);
+simplePairHashSet size: 2
+simplePairHashSet contains pair1: true
+simplePairHashSet contains pair3: true
+simplePairHashSet remove pair3: true
+simplePairHashSet remove pair3: false
+simplePairHashSet size: 1
+</code></pre>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

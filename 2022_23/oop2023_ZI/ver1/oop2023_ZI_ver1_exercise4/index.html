@@ -1,0 +1,105 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno nadopuniti klasu <code>Lambdas</code> na način da se dovrši implementacija 3 statička atributa prikazana na dijagramu klasa. Statički atribut <code>loadFromStream</code> je tipa <code>BiConsumer</code>, a njegova metoda <code>accept</code> služi učitavanju podataka iz CSV (engl. comma separated values) datoteke u mapu. Preostala dva statička atributa su tipa <code>BiFunction</code>, a njihove metode <code>apply</code> koriste mapu u koju su učitani podaci za izračunavanje statistike.</p>
+<p><strong>Napomene:</strong> Svaki od ova 3 statička atributa treba implementirati kao <strong>lambda izraz</strong> koristeći Java Stream API (tj. kolekcijske tokove). Pri implementaciji nije potrebno hvatati niti obrađivati iznimke. Klasa <code>Lambdas</code> se treba nalaziti u paketu <code>hr.fer.oop.stats</code>, a ona i njeni statički atributi trebaju imati vidljivost postavljenu na <em>public</em>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="117px" preserveAspectRatio="none" style="width:920px;height:117px;background:#FFFFFF;" version="1.1" viewBox="0 0 920 117" width="920px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[8369d970a6ce36dade6897222e2ae942]
+class Lambdas-->
+<g id="elem_Lambdas">
+<rect codeLine="1" fill="#F1F1F1" height="96.8906" id="Lambdas" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="899" x="7" y="7"/>
+<ellipse cx="421.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M424.2188,28.6406 Q423.6406,28.9375 423,29.0781 Q422.3594,29.2344 421.6563,29.2344 Q419.1563,29.2344 417.8281,27.5938 Q416.5156,25.9375 416.5156,22.8125 Q416.5156,19.6875 417.8281,18.0313 Q419.1563,16.375 421.6563,16.375 Q422.3594,16.375 423,16.5313 Q423.6563,16.6875 424.2188,16.9844 L424.2188,19.7031 Q423.5938,19.125 423,18.8594 Q422.4063,18.5781 421.7813,18.5781 Q420.4375,18.5781 419.75,19.6563 Q419.0625,20.7188 419.0625,22.8125 Q419.0625,24.9063 419.75,25.9844 Q420.4375,27.0469 421.7813,27.0469 Q422.4063,27.0469 423,26.7813 Q423.5938,26.5 424.2188,25.9219 L424.2188,28.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="441.75" y="27.8467">Lambdas</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="905" y1="39" y2="39"/>
+<ellipse cx="18" cy="52.6484" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="699" x="27" y="55.9951">loadFromStream : BiConsumer&lt;Stream&lt;String&gt;, Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;&gt;</text>
+<ellipse cx="18" cy="68.9453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="873" x="27" y="72.292">getValuesForYear : BiFunction&lt;Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;, Integer, Collection&lt;Entry&lt;String, Long&gt;&gt;&gt;</text>
+<ellipse cx="18" cy="85.2422" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="782" x="27" y="88.5889">getMinForCountry : BiFunction&lt;Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;, String, Entry&lt;Integer, Long&gt;&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="905" y1="95.8906" y2="95.8906"/>
+</g>
+<!--MD5=[712c83906f52f84b7b5afe04ed07f085]
+@startuml
+class "Lambdas" {
+{static}  +  loadFromStream : BiConsumer<Stream<String>, Map<String, Collection<Entry<Integer, Long>>>>
+{static}  +  getValuesForYear : BiFunction<Map<String, Collection<Entry<Integer, Long>>>, Integer, Collection<Entry<String, Long>>>
+{static}  +  getMinForCountry : BiFunction<Map<String, Collection<Entry<Integer, Long>>>, String, Entry<Integer, Long>>
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Primjer CSV datoteke u kojoj se nalaze podaci koje treba učitati je sljedeći:</p>
+<pre class="line-numbers"><code class="language-csv">Austria,2016,14263780
+Austria,2017,14936336
+Austria,2018,16530441
+Belgium,2016,12550821
+Belgium,2017,11961089
+Belgium,2018,11916735
+</code></pre>
+<p>Svaki redak ove CSV datoteke sadrži sljedeće tri vrijednosti:</p>
+<ul>
+<li><code>Country</code> – ime države na koju se odnosi vrijednost,</li>
+<li><code>Year</code> – godina na koju se odnosi vrijednost i</li>
+<li><code>Value</code> – vrijednost koja predstavlja broj mobilnih pretplatnika u toj državi te godine.</li>
+</ul>
+<p><strong>Napomene:</strong> U CSV datoteci se mogu nalaziti podaci za države i godine koji nisu prikazani u primjeru CSV datoteke, ali se ne mogu nalaziti nedostajuće vrijednosti na način da za neku godinu nedostaju podaci za neku državu.</p>
+<p>Podaci iz ove CSV datoteke se učitavaju metodom <code>accept</code> statičkog atributa <code>loadFromStream</code> koji je tipa <code>BiConsumer</code>. Ova metoda prima 2 argumenta. Argument <code>lines</code> tipa <code>Stream&lt;String&gt;</code> predstavlja kolekcijski tok linija ove CSV datoteke. Argument <code>map</code> tipa <code>Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;</code> predstavlja mapu u koje je potrebno učitati podatke iz datoteke. Ključevi u ovoj mapi su tipa <code>String</code> i predstavljaju ime države. Vrijednosti su kolekcija objekata tipa <code>Entry&lt;Integer, Long&gt;</code> (tj. par ključ-vrijednost) s ključem tipa <code>Integer</code> koji predstavlja godinu i vrijednošću tipa <code>Long</code> koja predstavlja broj mobilnih pretplatnika u toj državi te godine. <code>Entry</code> je sučelje pa objekte ovog tipa stvorite korištenjem konstruktora klase <code>java.util.AbstractMap.SimpleEntry</code> koja implementira ovo sučelje. Statički atribut <code>loadFromStream</code> implementirajte kao lambda izraz koristeći Java Stream API (tj. kolekcijske tokove) i podrazumijevanu (engl. default) metodu <code>compute</code> iz sučelja <code>java.​util.​Map</code>.</p>
+<p>Metoda <code>apply</code> statičkog atributa <code>getMinForCountry</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>map</code> tipa <code>Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;</code> je mapa s podacima koje je učitana metodom <code>accept</code> statičkog atributa <code>loadFromStream</code>. Argument <code>country</code> tipa <code>String</code> predstavlja ime države za koju je potrebno pronaći minimalan broj mobilnih pretplatnika ikad i godinu u kojoj je to bilo. Rezultat (godinu i minimalan broj pretplatnika) treba vratiti kao objekt tipa <code>Entry&lt;Integer, Long&gt;</code> s ključem tipa <code>Integer</code> koji predstavlja godinu i vrijednošću tipa <code>Long</code> koja predstavlja broj mobilnih pretplatnika. Pri implementaciji možete koristiti terminalnu operaciju <code>Optional&lt;T&gt; findFirst()</code> koja dohvaća prvi element kolekcijskog toka.</p>
+<p>Metoda <code>apply</code> statičkog atributa <code>getValuesForYear</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>map</code> tipa <code>Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt;</code> je mapa s podacima koje je učitana metodom <code>accept</code> statičkog atributa <code>loadFromStream</code>. Argument <code>year</code> tipa <code>int</code> predstavlja godinu za koju je potrebno pronaći broj mobilnih pretplatnika za svaku državu za koju postoje podaci. Rezultat je kolekcija objekata tipa <code>Entry&lt;String, Long&gt;</code> s ključem tipa <code>String</code> koji predstavlja ime države i vrijednošću tipa <code>Long</code> koja predstavlja broj mobilnih pretplatnika.</p>
+<p>Primjer korištenja klase <code>Lambdas</code> i statičkih atributa koje treba implementirati:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt; map = new HashMap&lt;&gt;();
+
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+    startDir = System.getProperty(&quot;user.dir&quot;);
+}
+
+try {
+    Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;MSUBS_small.csv&quot;);
+    Lambdas.loadFromStream.accept(Files.lines(path), map);
+    System.out.println(&quot;Loaded map: &quot; + map);
+    System.out.println(&quot;Min for Belgium: &quot; + Lambdas.getMinForCountry.apply(map, &quot;Belgium&quot;));
+    System.out.println(&quot;Values for 2017: &quot; + Lambdas.getValuesForYear.apply(map, 2017));
+ } catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+ }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-txt">Loaded map: {Austria=[2016=14263780, 2017=14936336, 2018=16530441], Belgium=[2016=12550821, 2017=11961089, 2018=11916735]}
+Min for Belgium: 2018=11916735
+Values for 2017: [Austria=14936336, Belgium=11961089]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the task, it is necessary to implement the program code of the classes <code>Triple</code> and <code>SimpleTripleTreeSet</code>.</p>
+<p>The <code>Triple</code> class represents a collection of three Strings, in such a way that the first, second and third elements are defined in the class, but so that the instances of the <code>Triple</code> class are equal to each other regardless of the order of the elements. So a <code>Triple</code> with elements (&quot;T&quot;,&quot;H&quot;,&quot;M&quot;) would be equal to (&quot;H&quot;,&quot;M&quot;,&quot;T&quot;). Also, <code>Triple</code> can contain <code>null</code> elements and duplicates.</p>
+<p>In addition to the methods marked in the UML diagram, notice that the <code>Triple</code> class should implement the <code>Comparable</code> interface. To compare which of the two instances of the <code>Triple</code> class is larger, it is necessary to sort their elements according to natural order, and then compare the smallest element of the first instance with the smallest element of the second instance. In the case of equality, the middle elements of the two instances are compared, and again in the case of equality, the largest elements are compared. You must not change the private variables <code>first</code>, <code>second</code> and <code>third</code>.</p>
+<p><code>SimpleTripleTreeSet</code> represents a set of elements of type <code>Triple</code>. For successful implementation, <code>SimpleTripleTreeSet</code> should contain a sorted set of elements according to their natural order. A set by definition must not store duplicates. Your task is to implement the class according to the UML diagram <strong>without using the existing interface <code>Set</code> and the existing implementations of the interface <code>Set</code></strong> (<code>HashSet</code>, <code>TreeSet</code>, ...). Instead you should use the existing implementation of the <code>Map</code> interface, which you will define as the private variable <code>internalMap</code>. <strong>Class <code>SimplePairHashSet</code> may only have one that one variable</strong>. The requested methods of the class <code>SimpleTripleTreeSet</code> should have identical functionality as the methods of the class <code>TreeSet</code> of the same name (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/TreeSet .html).</p>
+<p><strong>Attention:</strong> All classes and interfaces have visibility set to
+<em>package private</em> and are in the <code>hr.fer.oop.triple</code> package. When implementing methods, you may use additional auxiliary data structures because the speed of program code execution is not important, i.e. the program code does not have to be optimized. Calling any method must not &quot;destroy&quot; the collection (ie delete all elements of the collection or similar).</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="319px" preserveAspectRatio="none" style="width:542px;height:319px;background:#FFFFFF;" version="1.1" viewBox="0 0 542 319" width="542px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[83cb7b9a61729069b453c40304caf896]
+class Triple-->
+<g id="elem_Triple">
+<rect codeLine="4" fill="#F1F1F1" height="178.375" id="Triple" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="210" x="7" y="134"/>
+<ellipse cx="88.75" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M91.7188,155.6406 Q91.1406,155.9375 90.5,156.0781 Q89.8594,156.2344 89.1563,156.2344 Q86.6563,156.2344 85.3281,154.5938 Q84.0156,152.9375 84.0156,149.8125 Q84.0156,146.6875 85.3281,145.0313 Q86.6563,143.375 89.1563,143.375 Q89.8594,143.375 90.5,143.5313 Q91.1563,143.6875 91.7188,143.9844 L91.7188,146.7031 Q91.0938,146.125 90.5,145.8594 Q89.9063,145.5781 89.2813,145.5781 Q87.9375,145.5781 87.25,146.6563 Q86.5625,147.7188 86.5625,149.8125 Q86.5625,151.9063 87.25,152.9844 Q87.9375,154.0469 89.2813,154.0469 Q89.9063,154.0469 90.5,153.7813 Q91.0938,153.5 91.7188,152.9219 L91.7188,155.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="109.25" y="154.8467">Triple</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="216" y1="166" y2="166"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="176.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="27" y="182.9951">String first</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="192.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="27" y="199.292">String second</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="209.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="27" y="215.5889">String third</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="216" y1="222.8906" y2="222.8906"/>
+<ellipse cx="18" cy="236.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="27" y="239.8857">Triple(String, String, String)</text>
+<ellipse cx="18" cy="252.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="27" y="256.1826">String getFirst()</text>
+<ellipse cx="18" cy="269.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="27" y="272.4795">String getSecond()</text>
+<ellipse cx="18" cy="285.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="27" y="288.7764">String getThird()</text>
+<ellipse cx="18" cy="301.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="27" y="305.0732">int compareTo(Triple)</text>
+</g>
+<!--MD5=[e72c4f1048dfbf54a841bcb851bd596e]
+class SimpleTripleTreeSet-->
+<g id="elem_SimpleTripleTreeSet">
+<rect codeLine="14" fill="#F1F1F1" height="178.375" id="SimpleTripleTreeSet" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="283" x="252.5" y="134"/>
+<ellipse cx="320.25" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M323.2188,155.6406 Q322.6406,155.9375 322,156.0781 Q321.3594,156.2344 320.6563,156.2344 Q318.1563,156.2344 316.8281,154.5938 Q315.5156,152.9375 315.5156,149.8125 Q315.5156,146.6875 316.8281,145.0313 Q318.1563,143.375 320.6563,143.375 Q321.3594,143.375 322,143.5313 Q322.6563,143.6875 323.2188,143.9844 L323.2188,146.7031 Q322.5938,146.125 322,145.8594 Q321.4063,145.5781 320.7813,145.5781 Q319.4375,145.5781 318.75,146.6563 Q318.0625,147.7188 318.0625,149.8125 Q318.0625,151.9063 318.75,152.9844 Q319.4375,154.0469 320.7813,154.0469 Q321.4063,154.0469 322,153.7813 Q322.5938,153.5 323.2188,152.9219 L323.2188,155.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="340.75" y="154.8467">SimpleTripleTreeSet</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="253.5" x2="534.5" y1="166" y2="166"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="260.5" y="176.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="272.5" y="182.9951">Map&lt;Triple,Object&gt; internalMap</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="253.5" x2="534.5" y1="190.2969" y2="190.2969"/>
+<ellipse cx="263.5" cy="203.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="272.5" y="207.292">SimpleTripleTreeSet()</text>
+<ellipse cx="263.5" cy="220.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="272.5" y="223.5889">Map&lt;Triple,Object&gt; getInternalMap()</text>
+<ellipse cx="263.5" cy="236.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="272.5" y="239.8857">boolean add(Triple)</text>
+<ellipse cx="263.5" cy="252.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="272.5" y="256.1826">int size()</text>
+<ellipse cx="263.5" cy="269.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="272.5" y="272.4795">boolean contains(Object)</text>
+<ellipse cx="263.5" cy="285.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="272.5" y="288.7764">boolean remove(Object)</text>
+<ellipse cx="263.5" cy="301.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="272.5" y="305.0732">Iterator&lt;Triple&gt; iterator()</text>
+</g>
+<!--MD5=[47de47a8b5f06cbc5e036fae0a9149b7]
+class Iterable-->
+<g id="elem_Iterable">
+<rect codeLine="25" fill="#F1F1F1" height="64.2969" id="Iterable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="306" y="10"/>
+<ellipse cx="358.25" cy="26" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M354.1719,21.7656 L354.1719,19.6094 L361.5625,19.6094 L361.5625,21.7656 L359.0938,21.7656 L359.0938,29.8438 L361.5625,29.8438 L361.5625,32 L354.1719,32 L354.1719,29.8438 L356.6406,29.8438 L356.6406,21.7656 L354.1719,21.7656 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="52" x="378.75" y="30.8467">Iterable</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="476" y="7"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="477" y="19.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="307" x2="481" y1="42" y2="42"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="307" x2="481" y1="50" y2="50"/>
+<ellipse cx="317" cy="63.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="326" y="66.9951">iterator(): Iterator&lt;T&gt;</text>
+</g>
+<!--MD5=[7a4729d26b999f6a4650b01106c103c5]
+class Comparable-->
+<g id="elem_Comparable">
+<rect codeLine="29" fill="#F1F1F1" height="64.2969" id="Comparable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="174" x="25" y="10"/>
+<ellipse cx="61.6" cy="26" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M57.5219,21.7656 L57.5219,19.6094 L64.9125,19.6094 L64.9125,21.7656 L62.4438,21.7656 L62.4438,29.8438 L64.9125,29.8438 L64.9125,32 L57.5219,32 L57.5219,29.8438 L59.9906,29.8438 L59.9906,21.7656 L57.5219,21.7656 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="83" x="80.4" y="30.8467">Comparable</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="193" y="7"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="194" y="19.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="26" x2="198" y1="42" y2="42"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="26" x2="198" y1="50" y2="50"/>
+<ellipse cx="36" cy="63.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="45" y="66.9951">compareTo(): int&lt;T&gt;</text>
+</g>
+<!--MD5=[5034cf43a3aebce66021861d0f2f4747]
+reverse link Comparable to Triple-->
+<g id="link_Comparable_Triple">
+<path codeLine="33" d="M112,94.31 C112,106.71 112,120.32 112,133.88 " fill="none" id="Comparable-backto-Triple" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="105,94.18,112,74.18,119,94.18,105,94.18" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[bbae8c908dfddd8e2fc0b6938230e5e5]
+reverse link Iterable to SimpleTripleTreeSet-->
+<g id="link_Iterable_SimpleTripleTreeSet">
+<path codeLine="34" d="M394,94.31 C394,106.71 394,120.32 394,133.88 " fill="none" id="Iterable-backto-SimpleTripleTreeSet" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="387,94.18,394,74.18,401,94.18,387,94.18" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[680e99212f5e1c4f9ebb151f7ea7c016]
+@startuml
+class Triple {
+- String first
+- String second
+- String third
++ Triple(String, String, String)
++ String getFirst()
++ String getSecond()
++ String getThird()
++ int compareTo(Triple)
+}
+class SimpleTripleTreeSet {
+- Map<Triple,Object> internalMap
++ SimpleTripleTreeSet()
++ Map<Triple,Object> getInternalMap()
++ boolean add(Triple)
++ int size()
++ boolean contains(Object)
++ boolean remove(Object)
++ Iterator<Triple> iterator()
+}
+
+interface Iterable<T> {
++ iterator(): Iterator<T>
+}
+
+interface Comparable<T> {
++ compareTo(): int<T>
+}
+
+Comparable <|.. Triple
+Iterable <|.. SimpleTripleTreeSet
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+</g>
+</svg>
+<p>Usage example:</p>
+<pre class="line-numbers"><code class="language-java">Triple triple1 = new Triple(&quot;Peter&quot;, &quot;Peter&quot;, &quot;Nancy&quot;);
+Triple triple2 = new Triple(&quot;Marco&quot;, &quot;Jacob&quot;, &quot;Peter&quot;);
+Triple triple3 = new Triple(&quot;Peter&quot;, &quot;Jacob&quot;, &quot;Marco&quot;);
+
+System.out.println(&quot;triple1 compared larger than triple2: &quot; + (triple1.compareTo(triple2) &gt; 0));
+System.out.println(&quot;triple2 compared equal to triple3: &quot; + (triple2.compareTo(triple3) == 0));
+
+SimpleTripleTreeSet simpleTripleTreeSet = new SimpleTripleTreeSet();
+System.out.println(&quot;add triple1: &quot; + simpleTripleTreeSet.add(triple1));
+System.out.println(&quot;add triple2: &quot; + simpleTripleTreeSet.add(triple2));
+System.out.println(&quot;add triple3: &quot; + simpleTripleTreeSet.add(triple3));
+
+simpleTripleTreeSet.forEach(triple -&gt; System.out.printf(&quot;(%s, %s, %s);&quot;, triple.getFirst(), triple.getSecond(), triple.getThird()));
+System.out.println();
+
+System.out.println(&quot;simpleTripleTreeSet size: &quot; + simpleTripleTreeSet.size());
+System.out.println(&quot;simpleTripleTreeSet contains triple2: &quot; + simpleTripleTreeSet.contains(triple2));
+System.out.println(&quot;simpleTripleTreeSet contains triple3: &quot; + simpleTripleTreeSet.contains(triple3));
+System.out.println(&quot;simpleTripleTreeSet remove triple3: &quot; + simpleTripleTreeSet.remove(triple3));
+System.out.println(&quot;simpleTripleTreeSet remove triple3: &quot; + simpleTripleTreeSet.remove(triple3));
+System.out.println(&quot;simpleTripleTreeSet size: &quot; + simpleTripleTreeSet.size());
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">triple1 compared larger than triple2: true
+triple2 compared equal to triple3: true
+add triple1: true
+add triple2: true
+add triple3: false
+(Marco, Jacob, Peter);(Peter, Peter, Nancy);
+simpleTripleTreeSet size: 2
+simpleTripleTreeSet contains triple2: true
+simpleTripleTreeSet contains triple3: true
+simpleTripleTreeSet remove triple3: true
+simpleTripleTreeSet remove triple3: false
+simpleTripleTreeSet size: 1
+</code></pre>
+<p>Access modifiers in class diagrams:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

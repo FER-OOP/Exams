@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>ZADATAK</h2>
+<p>Potrebno je napisati klasu <code>MyFileVisitor</code> koja će za zadani direktorij i ime datoteke provjeriti postoji li datoteka s tim imenom u zadanom direktoriju i njegovim poddirektorijima. Ako datoteka postoji, potrebno je pročitati prvi redak datoteke (možete pretpostaviti da je tekstualna) te zapamtiti punu putanju do neposrednog direktorija u kojem se datoteka nalazi. Možete pretpostaviti da postoji najviše jedna datoteka sa zadanim imenom.</p>
+<p>Pri tome je potrebno implementirati sučelje <code>FileVisitor</code> ili naslijediti klasu <code>SimpleFileVisitor</code>.</p>
+<p>Klasu <code>MyFileVisitor</code> potrebno je smjestiti u paket <code>hr.fer.oop.ZI2023</code> te je potrebno je implementirati javne metode i konstruktor sa zadanim potpisima:</p>
+<ul>
+<li><code>MyFileVisitor(String filename)</code> - kontruktor koji prima polje ime datoteke</li>
+<li><code>String getFirstLine()</code> - metoda koja vraća prvi redak pročitan iz zadane datoteke. Prvi redak treba vratiti bez oznake prelaska u novi red.</li>
+<li><code>String getFolderName()</code> - metoda koja vraća punu putanju do direktorija u kojem se nalazi tražena datoteka.</li>
+</ul>
+<p>U slučaju da zadana datoteka ne postoji, metode <code>getFirstLine</code> i <code>getFolderName</code> trebaju baciti iznimku <code>IOException</code> s porukom &quot;File <strong>ime_zadane_datoteke</strong> does not exist!&quot;.</p>
+<p><strong>VAŽNO</strong>: Kod implementacije <code>FileVisitor-a</code> potrebno je pročitati prvi redak zadane datoteke. U tu svrhu potrebno je napraviti ulazni tok podataka na temelju objekta tipa <code>Path</code>. To OBAVEZNO učiniti metodom <code>Files.newInputStream(path)</code> koja vraća objekt tipa <code>InputStream</code>. Dobiveni ulazni tok potrebno je dodatno &quot;dekorirati&quot; za čitanje.</p>
+<h3>Primjer pokretanja:</h3>
+<p>Zadano je stablo direktorija s datotekama:</p>
+<pre class="line-numbers"><code>data
+--d2
+----d21
+      008_S8_L001_R2_001.fastq
+      009_S9_L001_R1_001.fastq
+      012_S12_L001_R1_001.fastq
+----d22
+      004_S4_L001_R1_001.fastq.gz
+      004_S4_L001_R2_001.fastq.gz
+  concentration_table.txt
+  primers_1.fasta
+  primers_2.fasta
+  thresholds.txt
+</code></pre>
+<p>Neka se vršni prikazani folder <code>data</code> nalazi na putanji  <code>D:\projekti\JAVA\OOP\2023\ZI\oop2023_ZI_exercise1\resources</code>.</p>
+<p>Zadan je sljedeći kod u javi (koji vam je zadan u klasi <code>MainClass</code>)</p>
+<pre class="line-numbers"><code class="language-java">	public static void main(String[] args) {
+		String fileName = &quot;primers_2.fasta&quot;;
+		String dirName = &quot;resources/data&quot;;	
+		Path path = Paths.get(dirName);
+		
+		MyFileVisitor visitor = new MyFileVisitor(fileName);
+		
+		try {
+			Files.walkFileTree(path,  visitor);
+			
+			System.out.printf(&quot;First line: %s%n&quot;, visitor.getFirstLine());
+			System.out.printf(&quot;File found in folder: %s%n&quot;, visitor.getFolderName());
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+</code></pre>
+<h3>Očekivani izlaz:</h3>
+<pre class="line-numbers"><code>First line: &gt;CS1A-URS_DQB
+File found in folder: D:\projekti\JAVA\OOP\2023\ZI\oop2023_ZI_ver2_exercise1_specification\resources\data
+</code></pre>
+<p><strong>NAPOMENA:</strong> Niz <code>&gt;CS1A-URS_DQB</code> predstavlja prvi redak datoteke <code>primers_2.fasta</code>, bez oznake prelaska u novi red.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
