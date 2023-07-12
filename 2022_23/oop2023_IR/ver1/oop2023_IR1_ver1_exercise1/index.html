@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>U zadatku je potrebno napraviti program koji omogućuje analizu CO2 emisija transportnog sustava koji sadrži bicikle i automobile. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>Transport</code> reprezentira operacije na prijevoznom sredstvu. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Metodu <code>String move()</code> koja pokreće prijevozno sredstvo i ispisuje tekstualnu reprezentaciju pokretanja. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>double calculateCO2(double)</code> koja računa CO2 emisije (kg) prijevoznog sredstva na temelju udaljenosti u kilometrima. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>AbstractTransport</code> modelira apstraktno prijevozno sredstvo. Implementira <code>Transport</code>.  Element ima paket-privatnu vidljivost. Nije moguće instancirati primjerke ove klase. Sadrži:</p>
+<ul>
+<li>Varijablu <code>name</code> koja oblikuje ime prijevoznog sredstva i tipa je <code>String</code>. Ovaj je element vidljiv samo iz vlastite klase.</li>
+<li>Konstruktor <code>AbstractTransport(String)</code> koji inicijalizira ime. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>String move()</code> koja vraća &quot;The [name] is moving.&quot;, gdje [name] je ime prijevoznog sredstva. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String toString()</code> koja vraća &quot;Transport [X]&quot;, gdje [X] je ime prijevoznog sredstva. Element ima maksimalnu vidljivost.</li>
+</ul>
+<p>Klasa <code>Bicycle</code> reprezentira bicikl. Vidljivost ovog elementa omogućuje javni pristup. Dijete je od <code>AbstractTransport</code>. Sadrži:</p>
+<ul>
+<li>Varijablu <code>numWheels</code> koja služi kao broj kotača na biciklu i tipa je <code>int</code>. Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+<li>Konstruktor <code>Bicycle(String, int)</code> koji postavlja ime; postavlja broj kotača ako je veći od nule. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>double calculateCO2(double)</code> koja vraća 0 jer bicikl ne proizvodi CO2 emisije. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>String toString()</code> koja vraća &quot;Transport [X] is a bicycle with [Y] wheel(s)&quot;, gdje [X] je ime i [Y] je broj kotača. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Razred <code>Car</code> predstavlja automobil. Nasljeđuje tip <code>AbstractTransport</code>. Element ima paket-privatnu vidljivost. Sadrži:</p>
+<ul>
+<li>Varijablu <code>fuelEfficiency</code> koja reprezentira parametar potrošnje goriva vozila [l/100 km] i tipa je <code>double</code>. Pristup ovog tipa je javan.</li>
+<li>Varijablu <code>CO2_EMISSIONS</code> koja je iznos CO2 (u kilogramima) emisija po litri za prosječan automobil (vrijednost: 2.3) i tipa je <code>double</code>.
+<ul>
+<li>Pristup ovog tipa je javan.</li>
+<li>Dostupna je u statičkom kontekstu svoje klase.</li>
+<li>Potrebno je onemogućiti promjenu inicijalne vrijednosti i to na razini prevodioca.</li>
+</ul>
+</li>
+<li>Konstruktor <code>Car(String, double)</code> koji postavlja ime; postavlja potrošnju goriva ako je veća od nule, inače postavlja na 10 [l/100 km]. Element je vidljiv klasama iz istog paketa.</li>
+<li>Metodu <code>double calculateCO2(double)</code> koja računa iznos CO2 (u kg) emisija automobila za udaljenost u kilometrima, ovisno o potrošnji goriva. Vraća 0 ako je udaljenost manja od 0. Pomoć s primjerom: auto koji troši 10 l/100 km će trošiti 0.1 l/km. Nadalje, ako vozi 5 km onda će potrošiti (0.1 l/km * 5 km) = 0.5 l. Posljedično, iznos emisija bit će (0.5 l * 2.3 kg/l) = 1.15 kg. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>String toString()</code> koja vraća &quot;Transport [X] is a car that spends [Y] liters per 100 kilometers&quot;, gdje [X] je ime prijevoznog sredstva i [Y] je potrošnja goriva na dva decimalna mjesta. Vidljivost ovog elementa omogućuje javni pristup.</li>
+</ul>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+        Bicycle bike = new Bicycle(&quot;Bike A&quot;, 2);
+        Car car = new Car(&quot;Car A&quot;, 7.4);
+        
+        AbstractTransport[] transportDevices = {bike, car}; 
+        
+        for(AbstractTransport device : transportDevices) {
+        	System.out.println(&quot;-----&quot;);
+        	System.out.println(device);
+        	System.out.println(device.move());
+        	System.out.printf(&quot;CO2 in kg for 10 kilometers: %.1f&quot;,device.calculateCO2(10));
+        }
+        
+        
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">-----
+Transport Bike A is a bicycle with 2 wheel(s)
+The Bike A is moving.
+CO2 in kg for 10 kilometers: 0.0-----
+Transport Car A is a car that spends 7.40 liters per 100 kilometers
+The Car A is moving.
+CO2 in kg for 10 kilometers: 1.7
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
