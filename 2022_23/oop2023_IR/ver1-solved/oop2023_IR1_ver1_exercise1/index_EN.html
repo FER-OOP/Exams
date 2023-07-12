@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>Create a Java program that analyses the CO2 emissions of the transport system with bycicles and cars. Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>Transport</code> specifies operations on transport devices. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Method <code>String move()</code> which makes the transport move end returns the textual representation of the move. The access of this type is public.</li>
+<li>Method <code>double calculateCO2(double)</code> which calculate the amount of CO2 emissions (kg) produced by the transport over a certain distance (in kilometers). This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>AbstractTransport</code> specifies an abstract transport device. It implements <code>Transport</code>.  The element has the package-private visibility. It is not possible to instantiate the objects of this class. It contains:</p>
+<ul>
+<li>Variable <code>name</code> which represents the name of the transport and is of type <code>String</code>. This element is visible only from its own class.</li>
+<li>Constructor <code>AbstractTransport(String)</code> which initializes the name. The access of this type is public.</li>
+<li>Method <code>String move()</code> which returns &quot;The [name] is moving.&quot;, where [name] is the name of the transport device. This element is visible from all the classes.</li>
+<li>Method <code>String toString()</code> which returns &quot;Transport [X]&quot;, where [X] is the name of the transportation device. This element has the maximum visibility.</li>
+</ul>
+<p>The class <code>Bicycle</code> specifies a bicycle. Visibility of this element secures the public access. It is a child of <code>AbstractTransport</code>. It contains:</p>
+<ul>
+<li>Variable <code>numWheels</code> which serves as the number of wheels on the bicycle and is of type <code>int</code>. The access is possible from the class of the same package and from the subclass.</li>
+<li>Constructor <code>Bicycle(String, int)</code> which sets the name; sets the number of the wheels if greater than zero. This element has the maximum visibility.</li>
+<li>Method <code>double calculateCO2(double)</code> which returns 0 because the bicycle does not produce CO2 emissions. This element has the maximum visibility.</li>
+<li>Method <code>String toString()</code> which returns &quot;Transport [X] is a bicycle with [Y] wheel(s)&quot;, where [X] is the name and [Y] are the number of wheels. This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>Car</code> represents a car. It extends the type <code>AbstractTransport</code>. The element has the package-private visibility. It contains:</p>
+<ul>
+<li>Variable <code>fuelEfficiency</code> which models the fuel efficiency of the car [l/100 km] and is of type <code>double</code>. The access of this type is public.</li>
+<li>Variable <code>CO2_EMISSIONS</code> which is CO2 (in kg) emissions per liter for an average car (value: 2.3) and is of type <code>double</code>.
+<ul>
+<li>The access of this type is public.</li>
+<li>It is available in a static context of its own class.</li>
+<li>It is important to prevent the modification of the initial value at the compiler level.</li>
+</ul>
+</li>
+<li>Constructor <code>Car(String, double)</code> which sets the name; sets the fuel efficiency if greater than zero, otherwise it is set to 10 [l/100 km]. The element is visible to the clases from the same package.</li>
+<li>Method <code>double calculateCO2(double)</code> which calculates the amount of CO2 emissions (kg) produced by the car over a certain distance in km, based on its fuel efficiency and the amount of fuel consumed. Help using the example: a car with the fuel consupmtion of 10 l/100 km will consume 0.1 l/km. Next, if it drives 5 km then the consumption will be (0.1 l/km * 5 km) = 0.5 l. Consequently, CO2 emissions will be (0.5 l * 2.3 kg/l) = 1.15 kg. Visibility of this element secures the public access.</li>
+<li>Method <code>String toString()</code> which returns &quot;Transport [X] is a car that spends [Y] liters per 100 kilometers&quot;, where [X] is transport name and [Y] is the fuel efficiency with two decimal places. Visibility of this element secures the public access.</li>
+</ul>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+        Bicycle bike = new Bicycle(&quot;Bike A&quot;, 2);
+        Car car = new Car(&quot;Car A&quot;, 7.4);
+        
+        AbstractTransport[] transportDevices = {bike, car}; 
+        
+        for(AbstractTransport device : transportDevices) {
+        	System.out.println(&quot;-----&quot;);
+        	System.out.println(device);
+        	System.out.println(device.move());
+        	System.out.printf(&quot;CO2 in kg for 10 kilometers: %.1f&quot;,device.calculateCO2(10));
+        }
+        
+        
+    
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">-----
+Transport Bike A is a bicycle with 2 wheel(s)
+The Bike A is moving.
+CO2 in kg for 10 kilometers: 0.0-----
+Transport Car A is a car that spends 7.40 liters per 100 kilometers
+The Car A is moving.
+CO2 in kg for 10 kilometers: 1.7
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

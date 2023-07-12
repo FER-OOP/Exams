@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>The task is to implement the reservation system for the hotel. Important: assume that the number 1 represents the first room. The methods must also work correct in the cases they are called with parameters that make no sense (e.g. negative numbers, non-existent rooms etc.). Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>ReservationSystem</code> specifies functionalities related to the reservation system. Implementations of this interface must have a public constructor which has one parameter (int) that initializes the total number of rooms. It contains:</p>
+<ul>
+<li>Method <code>boolean checkIfRoomAvailable(int)</code> which returns 'true' if the requested room number is available for booking, 'false' otherwise. The access of this type is public.</li>
+<li>Method <code>boolean bookRoom(int, int)</code> which based on the room number and number of guests parameters, the system attempts to book a room. Reservation (success) is possible only if the room is available, in which case the system also tracks the number of people who will be in the room. Succesfull booking returnes 'true', 'false' othwerise. It is not possible to book a room without at least one person. This element is visible from all the classes.</li>
+<li>Method <code>boolean cancelReservation(int)</code> which cancels the reservation based on the room number and returns the outcome: 'true' if succesful cancelation, 'false' otherwise. This element has the maximum visibility.</li>
+<li>Method <code>boolean modifyReservation(int, int)</code> which modifies the room reservation based on the room number and the desired number of persons. Returns 'true' only if there was a change in the existing reservation, 'false' otherwise. This element is visible from all the classes.</li>
+<li>Method <code>int obtainAvailableRoomsCount()</code> which returns the number of available rooms. This element is visible from all the classes.</li>
+<li>Method <code>String retrieveGuestList()</code> which returns String which contains the information on the booked rooms. Rooms are divided with ';' where as each room is according to the format &quot;Room [X]:[Y]&quot;, where [X] is the room number and [Y] are the number of people in the room. For example: &quot;Room 1:5;Room 3:1&quot; tells that the first room has 5 people whereas the third room has one person. The output must be ascending by the room number. Returns the empty String if there are no booked rooms. This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>Solution</code> represents the exercise solution that needs to be prepared (its direct superclass is the Object class). The element has the package-private visibility. It implements <code>ReservationSystem</code>.</p>
+<h2>UML Class diagram:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="174px" preserveAspectRatio="none" style="width:462px;height:174px;background:#FFFFFF;" version="1.1" viewBox="0 0 462 174" width="462px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[56e1d362d0ee219ed8de66327cf89e51]
+class ReservationSystem-->
+<a href="java:hr.fer.oop.ReservationSystem" target="_top" title="java:hr.fer.oop.ReservationSystem" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.ReservationSystem" xlink:show="new" xlink:title="java:hr.fer.oop.ReservationSystem" xlink:type="simple">
+<g id="elem_ReservationSystem">
+<rect codeLine="1" fill="#F1F1F1" height="153.6563" id="ReservationSystem" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="441" x="7" y="7"/>
+<ellipse cx="162.75" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M163.7031,19.6406 L163.7031,26.2969 L165.4219,26.2969 Q166.0313,26.2969 166.2969,26.5313 Q166.5625,26.7656 166.5625,27.1563 Q166.5625,27.5313 166.2969,27.7656 Q166.0313,28 165.4219,28 L160.2813,28 Q159.6719,28 159.4063,27.7656 Q159.1406,27.5313 159.1406,27.1406 Q159.1406,26.7656 159.4063,26.5313 Q159.6719,26.2969 160.2813,26.2969 L162,26.2969 L162,19.6406 L160.2813,19.6406 Q159.6719,19.6406 159.4063,19.4063 Q159.1406,19.1719 159.1406,18.7813 Q159.1406,18.4063 159.4063,18.1719 Q159.6719,17.9375 160.2813,17.9375 L165.4219,17.9375 Q166.0313,17.9375 166.2969,18.1719 Q166.5625,18.4063 166.5625,18.7813 Q166.5625,19.1719 166.2969,19.4063 Q166.0313,19.6406 165.4219,19.6406 L163.7031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="121" x="183.25" y="28.7285">ReservationSystem</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="447" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="447" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="311" x="13" y="65.5332">checkIfRoomAvailable(roomNumber: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="380" x="13" y="83.1426">bookRoom(roomNumber: int, numberOfGuests: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="290" x="13" y="100.752">cancelReservation(roomNumber: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="429" x="13" y="118.3613">modifyReservation(roomNumber: int, numberOfGuests: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="13" y="135.9707">obtainAvailableRoomsCount(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="153.5801">retrieveGuestList(): String</text>
+</g>
+</a>
+<!--MD5=[7ca350b1056e6a510303c8b1c74871ee]
+@startuml
+interface ReservationSystem [[java:hr.fer.oop.ReservationSystem]] {
+	checkIfRoomAvailable(roomNumber: int): boolean
+	bookRoom(roomNumber: int, numberOfGuests: int): boolean
+	cancelReservation(roomNumber: int): boolean
+	modifyReservation(roomNumber: int, numberOfGuests: int): boolean
+	obtainAvailableRoomsCount(): int
+	retrieveGuestList(): String
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>The method in italic is abstract. The method/variable in underline is static.</strong></p>
+<h3>Visibility legend</h3>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+        int totalRooms = 10;
+        ReservationSystem reservationSystem = new Solution(totalRooms);
+
+        System.out.println(&quot;Is room 1 available? &quot; + reservationSystem.checkIfRoomAvailable(1));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        boolean booked = reservationSystem.bookRoom(2, 2);
+        System.out.println(&quot;Booking in progress... result for room 2? &quot; + booked);
+
+        booked = reservationSystem.bookRoom(5, 1);
+        System.out.println(&quot;Booking in progress... result for room 5? &quot; + booked);
+
+        booked = reservationSystem.bookRoom(8, 3);
+        System.out.println(&quot;Booking in progress... result for room 8? &quot; + booked);
+
+        System.out.println(&quot;Is room 2 available? &quot; + reservationSystem.checkIfRoomAvailable(2));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        boolean modified = reservationSystem.modifyReservation(5, 2);
+        System.out.println(&quot;Modified reservation for room 5? &quot; + modified);
+
+
+        System.out.println(&quot;Is room 5 available? &quot; + reservationSystem.checkIfRoomAvailable(5));
+
+        boolean canceled = reservationSystem.cancelReservation(3);
+        System.out.println(&quot;Canceled reservation for room 3? &quot; + canceled);
+
+
+        System.out.println(&quot;Is room 3 available? &quot; + reservationSystem.checkIfRoomAvailable(3));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        booked = reservationSystem.bookRoom(7, 1);
+        System.out.println(&quot;Booking in progress... result for room 7? &quot; + booked);
+
+        System.out.println(&quot;Is room 7 available? &quot; + reservationSystem.checkIfRoomAvailable(7));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        System.out.println(&quot;Guest List:\n&quot; + reservationSystem.retrieveGuestList());
+    
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">Is room 1 available? true
+Available rooms count: 10
+Booking in progress... result for room 2? true
+Booking in progress... result for room 5? true
+Booking in progress... result for room 8? true
+Is room 2 available? false
+Available rooms count: 7
+Modified reservation for room 5? true
+Is room 5 available? false
+Canceled reservation for room 3? false
+Is room 3 available? true
+Available rooms count: 7
+Booking in progress... result for room 7? true
+Is room 7 available? false
+Available rooms count: 6
+Guest List:
+Room 2:2;Room 5:2;Room 7:1;Room 8:3
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

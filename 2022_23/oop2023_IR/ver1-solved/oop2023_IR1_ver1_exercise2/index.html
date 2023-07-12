@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Zadatak je implementirati rezervacijski sustav za hotel. Napomena: pretpostaviti da broj 1 predstavlja prvu sobu. Metode moraju raditi ispravno i u slučajevima kada se pozivaju s parametrima koji nemaju smisla (npr. negativni brojevi, nepostojeće sobe i slično). Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>ReservationSystem</code> reprezentira funkcionalnosti rezervacijskog sustava. Implementacije ovog sučelja moraju imati javni konstruktor s jednim parametrom (int) koji inicijalizira ukupan broj soba. Sadrži:</p>
+<ul>
+<li>Metodu <code>boolean checkIfRoomAvailable(int)</code> koja vraća 'true' ako je traženi broj sobe raspoloživ za rezervaciju, inače 'false'. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>boolean bookRoom(int, int)</code> koja na temelju parametara broja sobe i broja gostiju pokušava rezervirati sobu. Rezervacija sobe se obavlja (uspjeh) samo ako je soba raspoloživa, pri čemu se pamti i broj osoba koji boravi u sobi. Uspješna rezervacija vraća 'true', inaće se vraća 'false'. Nije moguće rezervirati sobu bez barem jedne osobe. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>boolean cancelReservation(int)</code> koja otkazuje rezervaciju na temelju broja sobe te se vraća ishod: 'true' ako se uspješno otkazala inače 'false'. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>boolean modifyReservation(int, int)</code> koja modificira rezervaciju sobe na temelju broja sobe i željenog novog broja osoba. Vraća 'true' samo ako se dogodila promjena u postojećoj rezervaciji, inače vraća 'false' . Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>int obtainAvailableRoomsCount()</code> koja vraća broj raspoloživih soba. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String retrieveGuestList()</code> koja vraća String koji u sebi sadrži informacije o zauzetim sobama. Pojedine sobe su razdvojene s ';' dok pojedina soba ima ispis oblika &quot;Room [X]:[Y]&quot;, pri čemu [X] je broj sobe a [Y] je broj osoba u sobi. Primjer: &quot;Room 1:5;Room 3:1&quot; govori da prva soba ima 5 ljudi dok treća soba ima 1 osobu. Ispis mora biti uzlazan po broju soba. Vraća prazan String ako nema zauzetih soba. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>Solution</code> modelira rješenje zadatka koje je potrebno napraviti (direktna nadklasa joj je klasa Object). Element ima paket-privatnu vidljivost. Implementira <code>ReservationSystem</code>.</p>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="174px" preserveAspectRatio="none" style="width:462px;height:174px;background:#FFFFFF;" version="1.1" viewBox="0 0 462 174" width="462px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[56e1d362d0ee219ed8de66327cf89e51]
+class ReservationSystem-->
+<a href="java:hr.fer.oop.ReservationSystem" target="_top" title="java:hr.fer.oop.ReservationSystem" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.ReservationSystem" xlink:show="new" xlink:title="java:hr.fer.oop.ReservationSystem" xlink:type="simple">
+<g id="elem_ReservationSystem">
+<rect codeLine="1" fill="#F1F1F1" height="153.6563" id="ReservationSystem" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="441" x="7" y="7"/>
+<ellipse cx="162.75" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M163.7031,19.6406 L163.7031,26.2969 L165.4219,26.2969 Q166.0313,26.2969 166.2969,26.5313 Q166.5625,26.7656 166.5625,27.1563 Q166.5625,27.5313 166.2969,27.7656 Q166.0313,28 165.4219,28 L160.2813,28 Q159.6719,28 159.4063,27.7656 Q159.1406,27.5313 159.1406,27.1406 Q159.1406,26.7656 159.4063,26.5313 Q159.6719,26.2969 160.2813,26.2969 L162,26.2969 L162,19.6406 L160.2813,19.6406 Q159.6719,19.6406 159.4063,19.4063 Q159.1406,19.1719 159.1406,18.7813 Q159.1406,18.4063 159.4063,18.1719 Q159.6719,17.9375 160.2813,17.9375 L165.4219,17.9375 Q166.0313,17.9375 166.2969,18.1719 Q166.5625,18.4063 166.5625,18.7813 Q166.5625,19.1719 166.2969,19.4063 Q166.0313,19.6406 165.4219,19.6406 L163.7031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="121" x="183.25" y="28.7285">ReservationSystem</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="447" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="447" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="311" x="13" y="65.5332">checkIfRoomAvailable(roomNumber: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="380" x="13" y="83.1426">bookRoom(roomNumber: int, numberOfGuests: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="290" x="13" y="100.752">cancelReservation(roomNumber: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="429" x="13" y="118.3613">modifyReservation(roomNumber: int, numberOfGuests: int): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="13" y="135.9707">obtainAvailableRoomsCount(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="13" y="153.5801">retrieveGuestList(): String</text>
+</g>
+</a>
+<!--MD5=[7ca350b1056e6a510303c8b1c74871ee]
+@startuml
+interface ReservationSystem [[java:hr.fer.oop.ReservationSystem]] {
+	checkIfRoomAvailable(roomNumber: int): boolean
+	bookRoom(roomNumber: int, numberOfGuests: int): boolean
+	cancelReservation(roomNumber: int): boolean
+	modifyReservation(roomNumber: int, numberOfGuests: int): boolean
+	obtainAvailableRoomsCount(): int
+	retrieveGuestList(): String
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+        int totalRooms = 10;
+        ReservationSystem reservationSystem = new Solution(totalRooms);
+
+        System.out.println(&quot;Is room 1 available? &quot; + reservationSystem.checkIfRoomAvailable(1));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        boolean booked = reservationSystem.bookRoom(2, 2);
+        System.out.println(&quot;Booking in progress... result for room 2? &quot; + booked);
+
+        booked = reservationSystem.bookRoom(5, 1);
+        System.out.println(&quot;Booking in progress... result for room 5? &quot; + booked);
+
+        booked = reservationSystem.bookRoom(8, 3);
+        System.out.println(&quot;Booking in progress... result for room 8? &quot; + booked);
+
+        System.out.println(&quot;Is room 2 available? &quot; + reservationSystem.checkIfRoomAvailable(2));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        boolean modified = reservationSystem.modifyReservation(5, 2);
+        System.out.println(&quot;Modified reservation for room 5? &quot; + modified);
+
+
+        System.out.println(&quot;Is room 5 available? &quot; + reservationSystem.checkIfRoomAvailable(5));
+
+        boolean canceled = reservationSystem.cancelReservation(3);
+        System.out.println(&quot;Canceled reservation for room 3? &quot; + canceled);
+
+
+        System.out.println(&quot;Is room 3 available? &quot; + reservationSystem.checkIfRoomAvailable(3));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        booked = reservationSystem.bookRoom(7, 1);
+        System.out.println(&quot;Booking in progress... result for room 7? &quot; + booked);
+
+        System.out.println(&quot;Is room 7 available? &quot; + reservationSystem.checkIfRoomAvailable(7));
+        System.out.println(&quot;Available rooms count: &quot; + reservationSystem.obtainAvailableRoomsCount());
+
+        System.out.println(&quot;Guest List:\n&quot; + reservationSystem.retrieveGuestList());
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Is room 1 available? true
+Available rooms count: 10
+Booking in progress... result for room 2? true
+Booking in progress... result for room 5? true
+Booking in progress... result for room 8? true
+Is room 2 available? false
+Available rooms count: 7
+Modified reservation for room 5? true
+Is room 5 available? false
+Canceled reservation for room 3? false
+Is room 3 available? true
+Available rooms count: 7
+Booking in progress... result for room 7? true
+Is room 7 available? false
+Available rooms count: 6
+Guest List:
+Room 2:2;Room 5:2;Room 7:1;Room 8:3
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
