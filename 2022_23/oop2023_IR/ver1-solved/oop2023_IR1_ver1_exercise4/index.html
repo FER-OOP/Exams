@@ -1,0 +1,212 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napraviti sljedeće:</p>
+<ol>
+<li>nadopuniti klasu <code>HPIProcessor</code> dovršavanjem implementacije 3 statička atributa (<code>loadFromStream</code>,<code>collectionToMap</code> i <code>getValuesForTime</code>) prikazana na dijagramu klasa i</li>
+<li>po potrebi potrebno dodati metode u klasu <code>HousePriceIndex</code>.</li>
+</ol>
+<p>Statički atribut <code>loadFromStream</code>  u klasi <code>HPIProcessor</code> je tipa <code>Function</code>, a njegova metoda <code>apply</code> služi učitavanju podataka iz HSV (engl. hash separated values) datoteke u skup tipa <code>Set&lt;HousePriceIndex&gt;</code>.  U klasi <code>HPIProcessor</code> statički atribut <code>collectionToMap</code> pretvara učitani skup u mapu tipa <code>Map&lt;String, Double&gt;</code>, a statički atribut <code>getValuesForTime</code> koristi tu mapu za izračunavanje statistike.</p>
+<p><strong>Napomene:</strong> Svaki od ova 3 statička atributa treba implementirati kao <strong>lambda izraz</strong> koristeći Java Stream API (tj. kolekcijske tokove). Pri implementaciji nije potrebno hvatati niti obrađivati iznimke. Klasa <code>HPIProcessor</code> se treba nalaziti u paketu <code>hr.fer.oop.hpi</code>, a ona i njeni statički atributi trebaju imati vidljivost postavljenu na <em>public</em>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="415px" preserveAspectRatio="none" style="width:1153px;height:415px;background:#FFFFFF;" version="1.1" viewBox="0 0 1153 415" width="1153px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[b8a4a4c0382a36168ac7e3f89796f766]
+class HPIProcessor-->
+<g id="elem_HPIProcessor">
+<rect codeLine="1" fill="#F1F1F1" height="113.1875" id="HPIProcessor" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="717" x="7" y="56"/>
+<ellipse cx="315.25" cy="72" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M318.2188,77.6406 Q317.6406,77.9375 317,78.0781 Q316.3594,78.2344 315.6563,78.2344 Q313.1563,78.2344 311.8281,76.5938 Q310.5156,74.9375 310.5156,71.8125 Q310.5156,68.6875 311.8281,67.0313 Q313.1563,65.375 315.6563,65.375 Q316.3594,65.375 317,65.5313 Q317.6563,65.6875 318.2188,65.9844 L318.2188,68.7031 Q317.5938,68.125 317,67.8594 Q316.4063,67.5781 315.7813,67.5781 Q314.4375,67.5781 313.75,68.6563 Q313.0625,69.7188 313.0625,71.8125 Q313.0625,73.9063 313.75,74.9844 Q314.4375,76.0469 315.7813,76.0469 Q316.4063,76.0469 317,75.7813 Q317.5938,75.5 318.2188,74.9219 L318.2188,77.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="335.75" y="76.8467">HPIProcessor</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="723" y1="88" y2="88"/>
+<ellipse cx="18" cy="101.6484" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="494" x="27" y="104.9951">loadFromStream : Function&lt;Stream&lt;String&gt;, Set&lt;HousePriceIndex&gt;&gt;</text>
+<ellipse cx="18" cy="117.9453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="636" x="27" y="121.292">collectionToMap : BiFunction&lt;Set&lt;HousePriceIndex&gt;, RegionType, Map&lt;String, Double&gt;&gt;</text>
+<ellipse cx="18" cy="134.2422" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="691" x="27" y="137.5889">getValuesForTime : BiFunction&lt;Map&lt;String, Double&gt;, String, Collection&lt;Entry&lt;String, Double&gt;&gt;&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="723" y1="144.8906" y2="144.8906"/>
+<ellipse cx="18" cy="158.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="27" y="161.8857">HPIProcessor()</text>
+</g>
+<!--MD5=[bf2dc7819b5cbcf428d6cc8fb84595bb]
+class HousePriceIndex-->
+<g id="elem_HousePriceIndex">
+<rect codeLine="8" fill="#F1F1F1" height="210.9688" id="HousePriceIndex" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="387" x="759" y="7"/>
+<ellipse cx="890.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M893.2188,28.6406 Q892.6406,28.9375 892,29.0781 Q891.3594,29.2344 890.6563,29.2344 Q888.1563,29.2344 886.8281,27.5938 Q885.5156,25.9375 885.5156,22.8125 Q885.5156,19.6875 886.8281,18.0313 Q888.1563,16.375 890.6563,16.375 Q891.3594,16.375 892,16.5313 Q892.6563,16.6875 893.2188,16.9844 L893.2188,19.7031 Q892.5938,19.125 892,18.8594 Q891.4063,18.5781 890.7813,18.5781 Q889.4375,18.5781 888.75,19.6563 Q888.0625,20.7188 888.0625,22.8125 Q888.0625,24.9063 888.75,25.9844 Q889.4375,27.0469 890.7813,27.0469 Q891.4063,27.0469 892,26.7813 Q892.5938,26.5 893.2188,25.9219 L893.2188,28.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="910.75" y="27.8467">HousePriceIndex</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="760" x2="1145" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="767" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="779" y="55.9951">region : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="767" y="65.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="779" y="72.292">regionType : RegionType</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="767" y="82.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="779" y="88.5889">time : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="767" y="98.5391"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="779" y="104.8857">percentage : double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="760" x2="1145" y1="112.1875" y2="112.1875"/>
+<ellipse cx="770" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="361" x="779" y="129.1826">HousePriceIndex(String, RegionType, String, double)</text>
+<ellipse cx="770" cy="142.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="779" y="145.4795">getPercentage() : double</text>
+<ellipse cx="770" cy="158.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="779" y="161.7764">getRegion() : String</text>
+<ellipse cx="770" cy="174.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="212" x="779" y="178.0732">getRegionType() : RegionType</text>
+<ellipse cx="770" cy="191.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="779" y="194.3701">getTime() : String</text>
+<ellipse cx="770" cy="207.3203" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="779" y="210.667">toString() : String</text>
+</g>
+<!--MD5=[c4a419c915b3ae2602504fa49af58ac8]
+class RegionType-->
+<g id="elem_RegionType">
+<rect codeLine="21" fill="#F1F1F1" height="113.1875" id="RegionType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="133" x="592" y="295"/>
+<ellipse cx="615.1" cy="311" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M619.2094,317 L611.4906,317 L611.4906,304.6094 L619.2094,304.6094 L619.2094,306.7656 L613.9438,306.7656 L613.9438,309.4375 L618.7094,309.4375 L618.7094,311.5938 L613.9438,311.5938 L613.9438,314.8438 L619.2094,314.8438 L619.2094,317 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="630.9" y="315.8467">RegionType</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="593" x2="724" y1="327" y2="327"/>
+<ellipse cx="603" cy="340.6484" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="69" x="612" y="343.9951">COUNTRY</text>
+<ellipse cx="603" cy="356.9453" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="107" x="612" y="360.292">LARGE_REGION</text>
+<ellipse cx="603" cy="373.2422" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="105" x="612" y="376.5889">SMALL_REGION</text>
+<ellipse cx="603" cy="389.5391" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="31" x="612" y="392.8857">CITY</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="593" x2="724" y1="400.1875" y2="400.1875"/>
+</g>
+<!--MD5=[cdf9dd18fd80c08e79034b600ff0628f]
+link HPIProcessor to RegionType-->
+<g id="link_HPIProcessor_RegionType">
+<path codeLine="28" d="M434.2,169.07 C480.43,206.46 541.22,255.63 587.85,293.35 " fill="none" id="HPIProcessor-to-RegionType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="591.75,296.51,587.2679,287.7401,587.8624,293.3657,582.2369,293.9602,591.75,296.51" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="548.5" y="261.0669">collectionToMap</text>
+</g>
+<!--MD5=[72a3be6b08f44c29eaef70bec84edc64]
+link HousePriceIndex to RegionType-->
+<g id="link_HousePriceIndex_RegionType">
+<path codeLine="29" d="M822.69,218.14 C790.58,244.03 757.36,270.8 729.28,293.44 " fill="none" id="HousePriceIndex-to-RegionType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="725.17,296.75,734.6932,294.2385,729.0702,293.6213,729.6873,287.9982,725.17,296.75" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="780.5" y="261.0669">regionType</text>
+</g>
+<!--MD5=[166d7ae1dd050c2b33592f487aecb36a]
+@startuml
+class "HPIProcessor" {
+{static}  +  loadFromStream : Function<Stream<String>, Set<HousePriceIndex>>
+{static}  +  collectionToMap : BiFunction<Set<HousePriceIndex>, RegionType, Map<String, Double>>
+{static}  +  getValuesForTime : BiFunction<Map<String, Double>, String, Collection<Entry<String, Double>>>
++  HPIProcessor()
+}
+
+class "HousePriceIndex" {
+-  region : String
+-  regionType : RegionType
+-  time : String
+-  percentage : double
++  HousePriceIndex(String, RegionType, String, double)
++  getPercentage() : double
++  getRegion() : String
++  getRegionType() : RegionType
++  getTime() : String
++  toString() : String
+}
+
+enum "RegionType" {
+{static}  +  COUNTRY
+{static}  +  LARGE_REGION
+{static}  +  SMALL_REGION
+{static}  +  CITY
+}
+
+"HPIProcessor" - -> "RegionType" : collectionToMap
+"HousePriceIndex" - -> "RegionType" : regionType
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Primjer HSV datoteke u kojoj se nalaze podaci koje treba učitati je sljedeći:</p>
+<pre class="line-numbers"><code class="language-hsv">1#Australia#Q1-2021#122.685
+1#Australia#Q2-2021#130.906
+1#Australia#Q3-2021#137.483
+1#Australia#Q4-2021#143.981
+1#Chile#Q1-2021#157.243
+1#Chile#Q2-2021#161.874
+1#Chile#Q3-2021#164.311
+1#Chile#Q4-2021#173.021
+</code></pre>
+<p>Svaki redak ove HSV datoteke sadrži sljedeće četiri vrijednosti odvojene znakom <code>#</code>:</p>
+<ul>
+<li><code>Type</code> - tip regije pri čemu broj <code>1</code> označava državu, broj <code>2</code> označava veliku regiju, broj <code>3</code> označava malu regiju, a broj <code>4</code> grad,</li>
+<li><code>Region</code> – ime regije na koju se odnosi vrijednost,</li>
+<li><code>Time</code> – vremenska oznaka (kvartal-godina) na koju se odnosi vrijednost i</li>
+<li><code>Value</code> – vrijednost koja predstavlja indeks cijena nekretnina kao postotak vrijednosti iz 2015. godine.</li>
+</ul>
+<p><strong>Napomena:</strong> U HSV datoteci se mogu nalaziti podaci za regije i vremenske oznake koje nisu prikazane u primjeru HSV datoteke.</p>
+<p>Podaci iz ove CSV datoteke se učitavaju metodom <code>apply</code> statičkog atributa <code>loadFromStream</code> koji je tipa <code>Function</code>. Ova metoda prima 1 argument <code>lines</code> tipa <code>Stream&lt;String&gt;</code> koji predstavlja kolekcijski tok linija ove HSV datoteke. Rezultat poziva ove metode je tipa <code>Set&lt;HousePriceIndex&gt;</code>, a predstavlja skup u koji je potrebno učitati podatke iz datoteke. Klasu <code>HousePriceIndex</code> nije potrebno implementirati ispočetka jer dolazi s danim kodom, a ima sljedeća četiri atributa vidljivost <em>private</em>:</p>
+<ul>
+<li><code>region</code> tipa <code>String</code>,</li>
+<li><code>regionType</code> tipa dane enumeracije <code>RegionType</code></li>
+<li><code>time</code> tipa <code>String</code> i</li>
+<li><code>velue</code> tipa <code>double</code>.</li>
+</ul>
+<p>Dana implementacija klase <code>HousePriceIndex</code> ima konstruktor koji prima vrijednosti sva četiri atributa, <em>gettere</em> za svaki od atributa te nadjačanu metodu <code>toString</code>, a <strong>ostale metode dodajte po potrebi</strong>. Pri implementaciji klase <code>HousePriceIndex</code> uzmite u obzir da <strong>ne postoje dva objekta ove klase koji imaju jednaku regiju i vremensku oznaku</strong>.</p>
+<p>Metoda <code>apply</code> statičkog atributa <code>collectionToMap</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>set</code> tipa <code>Set&lt;HousePriceIndex&gt;</code> je skup s podacima koji je učitan metodom <code>apply</code> statičkog atributa <code>loadFromStream</code>. Argument <code>regionType</code> tipa <code>RegionType</code> predstavlja tip regije od interesa. Rezultat je mapa tipa <code>Map&lt;String, Double&gt;</code> koja sadrži samo regije iz skupa <code>set</code> čiji tip regije odgovara argumentu <code>regionType</code>. Pri tome ova mapa ima ključeve tipa <code>String</code> koji predstavljaju naziv regije i vremensku oznaku povezane znakom <code>#</code> (npr. <code>Australia#Q2-2021</code>) te vrijednosti tipa <code>Double</code> (npr. <code>130.906</code>) koje predstavljaju indeks cijena nekretnina za regiju i vremensku oznaku.</p>
+<p>Metoda <code>apply</code> statičkog atributa <code>getValuesForTime</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>map</code> tipa <code>Map&lt;String, Double&gt;</code> je mapa dobivena pozivom metode <code>apply</code> statičkog atributa <code>collectionToMap</code>. Argument <code>time</code> tipa <code>String</code> predstavlja vremensku oznaku za koju je potrebno pronaći indeks cijena nekretnina za svaku regiju unutar mape <code>map</code> za koju postoje podaci. Rezultat je kolekcija objekata tipa <code>Collection&lt;Entry&lt;String, Double&gt;&gt;</code> s ključem tipa <code>String</code> koji predstavlja ime regije i vrijednošću tipa <code>Double</code> koja predstavlja indeks cijena nekretnina. Ova kolekcija mora biti <strong>uzlazno sortirana po indeksu cijena nekretnina</strong>. <code>Entry</code> je sučelje pa objekte ovog tipa stvorite korištenjem konstruktora klase <code>java.util.AbstractMap.SimpleEntry</code> koja implementira ovo sučelje.</p>
+<p>Primjer korištenja klase <code>HPIProcessor</code> i statičkih atributa koje treba implementirati:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, Collection&lt;Entry&lt;Integer, Long&gt;&gt;&gt; map = new HashMap&lt;&gt;();
+
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+    startDir = System.getProperty(&quot;user.dir&quot;);
+}
+
+try {
+    Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;HPI-small.hsv&quot;);
+    Set&lt;HousePriceIndex&gt; set = HPIProcessor.loadFromStream.apply(Files.lines(path));
+    System.out.println(set);
+    Map&lt;String, Double&gt; map = HPIProcessor.collectionToMap.apply(set, RegionType.COUNTRY);            
+    System.out.println(&quot;\n&quot; + map);
+    Collection&lt;Entry&lt;String, Double&gt;&gt; collection = HPIProcessor.getValuesForTime.apply(map, &quot;Q1-2021&quot;);
+    System.out.println(&quot;\n&quot; + collection);
+ } catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+ }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-txt">[HousePriceIndex{region=Chile, regionType=COUNTRY, time=Q2-2021, percentage=161.874}, HousePriceIndex{region=Australia, regionType=COUNTRY, time=Q3-2021, percentage=137.483}, HousePriceIndex{region=Australia, regionType=COUNTRY, time=Q4-2021, percentage=143.981}, HousePriceIndex{region=Chile, regionType=COUNTRY, time=Q1-2021, percentage=157.243}, HousePriceIndex{region=Australia, regionType=COUNTRY, time=Q1-2021, percentage=122.685}, HousePriceIndex{region=Chile, regionType=COUNTRY, time=Q3-2021, percentage=164.311}, HousePriceIndex{region=Chile, regionType=COUNTRY, time=Q4-2021, percentage=173.021}, HousePriceIndex{region=Australia, regionType=COUNTRY, time=Q2-2021, percentage=130.906}]
+
+{Australia#Q3-2021=137.483, Australia#Q2-2021=130.906, Chile#Q2-2021=161.874, Australia#Q4-2021=143.981, Australia#Q1-2021=122.685, Chile#Q1-2021=157.243, Chile#Q3-2021=164.311, Chile#Q4-2021=173.021}
+
+[Australia=122.685, Chile=157.243]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

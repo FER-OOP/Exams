@@ -1,0 +1,12 @@
+Testni primjer, ljetni rok predmeta Objektno orijentirano programiranje!
+
+Java je visokonivojski objektno orijentirani programski jezik koji se široko koristi u svijetu razvoja softvera.
+Ovaj jezik je poznat po svojoj jednostavnosti, pouzdanosti i platformskoj neovisnosti.
+Java se koristi za izradu raznovrsnih aplikacija, uključujući web aplikacije, mobilne aplikacije, igre, sustave upravljanja bazama podataka i još mnogo toga.
+
+Jedna od najvećih prednosti Jave je njezina velika zajednica razvijatelja koja je stvorila bogat ekosustav alata, okvira i biblioteka. Ovo omogućuje programerima da brzo razvijaju sofisticirane i skalabilne aplikacije. Java također podržava višenitno izvršavanje, što je ključno za izgradnju performantnih i reaktivnih sustava.
+
+Još jedna značajka Jave je njezina sigurnost. Java koristi mehanizme zaštite, poput sandboxa, koji sprječavaju izvršavanje zlonamjernog koda i čuvaju korisničke podatke. Ovo je osobito važno u kontekstu razvoja web aplikacija.
+
+Uz sve ove prednosti, Java ima bogatu dokumentaciju, veliku podršku zajednice i jezik koji je relativno lak za naučiti. Sve ove karakteristike čine Javu popularnim izborom za mnoge programere i tvrtke diljem svijeta.
+Putanja (ajnatuP) bi me trebala dovesti do ovdje.

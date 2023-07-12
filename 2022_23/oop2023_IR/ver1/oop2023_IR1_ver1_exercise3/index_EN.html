@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Implement the <code>SecretFileVisitor</code> class that will search for encrypted files within the specified directory and its subdirectories to find files that contain a secret key.
+The <code>SecretFileVisitor</code> class should implement the <code>FileVisitor&lt;Path&gt;</code> interface.
+Assume that all files are encrypted.</p>
+<p>Your task is as follows:</p>
+<ul>
+<li>Create a new Java class called <code>SecretFileVisitor</code> in the package <code>hr.fer.oop</code>.</li>
+<li>The <code>SecretFileVisitor</code> class should have the following private variables:
+<ul>
+<li><code>decryptionKey</code> (of type <code>String</code>) - the secret key.</li>
+<li><code>secretFileCount</code> (of type <code>int</code>) to count the found files that contain the secret key.</li>
+<li><code>foundFiles</code> (of type <code>List&lt;Path&gt;</code>) to store the found files that contain the secret key.</li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTE:</strong> Secret files: it is considered that those are the files in which the secret key is found after decryption! For example, for the secret key <em><strong>Ljetni rok</strong></em>, a secret file is one that contains the String <em><strong>kor intejL</strong></em> (case-sensitive).</p>
+<p>You need to implement the following <em>public</em> methods and constructor:</p>
+<ul>
+<li>
+<p>Constructor <code>SecretFileVisitor</code> that takes the secret key as a parameter and initializes all private variables.</p>
+</li>
+<li>
+<p>The <code>preVisitDirectory</code> method of the <code>FileVisitor&lt;Path&gt;</code> interface. This method will be called before entering each directory during traversal.</p>
+</li>
+<li>
+<p>The <code>visitFile</code> method of the <code>FileVisitor&lt;Path&gt;</code> interface. This method will be called when visiting each file during traversal. If the file is a regular file, decrypt its content using the <code>decryptText</code> method and check if it contains the secret key.</p>
+</li>
+<li>
+<p>The <code>visitFileFailed</code> method of the <code>FileVisitor&lt;Path&gt;</code> interface. This method will be called if there is an error while visiting a file. Print a failure message.</p>
+</li>
+<li>
+<p>The <code>postVisitDirectory</code> method of the <code>FileVisitor&lt;Path&gt;</code> interface. This method will be called after visiting each directory.</p>
+</li>
+<li>
+<p>The <code>getSecretFileCount()</code> and <code>getFoundFiles()</code> methods, which will return the number of found secret files and the list of found files, respectively.</p>
+</li>
+<li>
+<p>Implement a <em>public method</em> <code>String decryptText(Path file)</code> that will decrypt the content of a text file. The method should read the file line by line using a BufferedReader and apply the <code>decrypt</code> method to each line. All decrypted lines should be concatenated into a single text string and returned.</p>
+</li>
+<li>
+<p>Implement a <em>private method</em> <code>String decrypt(String encryptedText)</code> that will decrypt an individual line of text. The method should create a StringBuilder with the initial content of the encrypted line. Then it should reverse the order of characters in the string and return the result.</p>
+</li>
+</ul>
+<p><strong>Additional note:</strong></p>
+<ul>
+<li>Do not use the <code>File</code> class, only use <code>Path</code> and <code>java.nio</code> package.</li>
+<li>Reading lines does not include &quot;\n&quot;,</li>
+</ul>
+<p>Usage example:</p>
+<h3>Sample code:</h3>
+<pre class="line-numbers"><code class="language-java">public static void main(String[] args) {
+        String dirName = &quot;resources/data&quot;;
+        Path path = Paths.get(dirName);
+
+        SecretFileVisitor visitor = new SecretFileVisitor(&quot;kljuc&quot;);
+
+        try {
+            int secretFileCount = visitor.getSecretFileCount();
+            System.out.println(&quot;Total secret files found: &quot; + secretFileCount);
+
+            if (secretFileCount &gt; 0) {
+                System.out.println(&quot;Secret key found in file(s):&quot;);
+
+                for (Path filePath : visitor.getFoundFiles()) {
+                    System.out.println(&quot;Absolute path: &quot; + filePath.toAbsolutePath());
+                    System.out.println(&quot;----------------------------------------&quot;);
+                }
+            } else {
+                System.out.println(&quot;Secret key not found.&quot;);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+}
+</code></pre>
+<h3>Expected output:</h3>
+<pre class="line-numbers"><code class="language-sh">Total secret files found: 2
+Secret key found in file(s):
+Absolute path: C:\Users\oop2023_IR1_ver1_exercise3_specification\resources\data\oop\testMain.java
+----------------------------------------
+Absolute path: C:\Users\oop2023_IR1_ver1_exercise3_specification\src\main\resources\data\test.txt
+----------------------------------------
+</code></pre>
+<h3>Visibility legend</h3>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
