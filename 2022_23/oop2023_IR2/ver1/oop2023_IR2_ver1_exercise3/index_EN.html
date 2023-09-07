@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>It is necessary to implement the <code>FileVisitorWordCounterAndSorter</code> class, which implements the <code>FileVisitor&lt;Path&gt;</code> interface so that it visits the given directory and its subdirectories and performs the following actions:</p>
+<ul>
+<li>it counts the total number of times the word given as an argument to the constructor of the <code>FileVisitorWordCounterAndSorter</code> class is repeated in the <code>.txt</code> files of each directory. The total number of repetitions of the searched word in all <code>.txt</code> files of a certain directory is printed to the standard output in the following format:
+&lt;file_location_path&gt; = &lt;total_number_of_repeats&gt;</li>
+<li>The <code>FileVisitorWordCounterAndSorter</code> class should additionally implement the <code>public void copyToSortedFilesFolder(String sortedFilesFolderPath)</code> method, which copies all found <code>.txt</code> files after executing the <code>Files.walkFileTree</code> method to a directory whose path is given as an argument, in such a way that the content of each file remains same as in the original file, but the files need to be renamed so that their name is the corresponding sequence number of the file size, so that all files in that directory are sorted by their size. So the largest file will be called 1.txt, the second largest 2.txt, etc. Additionally, assume that this method must be called, and that it is called only once, after each call of the <code>Files.walkFileTree</code> method.</li>
+</ul>
+<p>The word to be searched is passed as an argument to the constructor of the <code>FileVisitorWordCounterAndSorter</code> class and is set as the value of the <code>searchedWord</code> private attribute. It is necessary to ensure that its value can be retrieved and changed later. If the destination directory passed as an argument to the <code>copyToSortedFilesFolder(String sortedFilesFolderPath)</code> method does not exist, it must be created.</p>
+<p>Example:</p>
+<p>If the implemented FileVisitor searches a directory that has the following structure:</p>
+<p><img src="res/folderStruct.png" alt="Folder structure" /></p>
+<p>and when creating an instance of the <code>FileVisitorWordCounterAndSorter</code> class, the constructor was given the requested word &quot;pass&quot; which appears in the files dat1.txt, dat2.txt, dat3.txt a total of 7 times, and in the file dat4.txt 0 times, standard output should look like this:</p>
+<p>/res/oopExam = 7</p>
+<p>/res/oopExam/folder1 = 0</p>
+<p>If in the same case the file sizes are in the following order (from largest to smallest): dat3.txt, dat4.txt, dat2.txt, dat1.txt, then by calling the method <code>copyToSortedFilesFolder(&quot;/res/oopIspit/&quot;)</code> in the directory <code>/res/oopIspit/</code> writes to the file 1.txt the contents of the file dat3.txt, to the file 2.txt the contents of the file dat4.txt, etc.</p>
+<p><strong>Additional note:</strong></p>
+<ul>
+<li>It is not allowed to use <code>File</code> class, but only <code>Path</code> and <code>java.nio</code> package.</li>
+<li>Reading lines does not include &quot;\n&quot;.</li>
+<li>All classes are in the `hr.fer.oop' package.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

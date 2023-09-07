@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je implementirati klasu <code>FileVisitorWordCounterAndSorter</code> koja implementira sučelje <code>FileVisitor&lt;Path&gt;</code> tako da obilazi zadani direktorij i njegove poddirektorije te izvršava sljedeće akcije:</p>
+<ul>
+<li>broji koliko puta se ukupno ponavlja riječ predana kao argument konstruktoru klase <code>FileVisitorWordCounterAndSorter</code> u datotekama tipa <code>.txt</code> svakog direktorija. Ukupan broj ponavljanja tražene riječi u svim <code>.txt</code> datotekama određenog direktorija ispisuje na standardni izlaz u sljedećem formatu:
+&lt;lokacija_datoteke&gt; = &lt;ukupni_broj_ponavljanja&gt;</li>
+<li>Klasa <code>FileVisitorWordCounterAndSorter</code> dodatno treba implementirati metodu <code>public void copyToSortedFilesFolder(String sortedFilesFolderPath)</code> kojom se sve pronađene <code>.txt</code> datoteke nakon izvršavanja metode <code>Files.walkFileTree</code> kopiraju u direktorij čija se putanja predaje kao argument, na način da sadržaj svake datoteke ostane isti kao i u izvornoj datoteci, ali je datoteke potrebno preimenovati tako da im naziv bude pripadajući redni broj veličine datoteke, tako da sve datoteke u tom direktoriju budu sortirane po njihovoj veličini. Tako će se najveća datoteka zvati 1.txt, druga najveća 2.txt, itd. Dodatno, pretpostavite da se ova metoda obavezno poziva, i to samo jednom nakon svakog poziva <code>Files.walkFileTree</code> metode.</li>
+</ul>
+<p>Riječ koja se pretražuje predaje se kao argument jedinom konstruktoru klase <code>FileVisitorWordCounterAndSorter</code> i postavlja se kao vrijednost privatnog atributa <code>searchedWord</code>. Potrebno osigurati da se njena vrijednost kasnije može dohvaćati i mijenjati. Ako odredišni direktorij predan kao argument metodi <code>copyToSortedFilesFolder(String sortedFilesFolderPath)</code> ne postoji, potrebno ga je stvoriti.</p>
+<p>Primjer korištenja:</p>
+<p>Ako se implementiranim FileVisitorom pretražuje direktorij koji ima sljedeću strukturu:</p>
+<p><img src="res/folderStruct.png" alt="Struktura direktorija koji se pretražuje" /></p>
+<p>a pri kreiranju instance klase <code>FileVisitorWordCounterAndSorter</code>, konstruktoru je predana tražena riječ &quot;prolaz&quot; koja se u datotekama dat1.txt, dat2.txt, dat3.txt pojavljuje ukupno 7 puta, a u datoteci dat4.txt 0 puta, ispis na standardni izlaz treba izgledati ovako:</p>
+<p>/res/oopIspit = 7</p>
+<p>/res/oopIspit/folder1 = 0</p>
+<p>Ako su u istom slučaju u veličine datoteka u sljedećem redoslijedu (poredano od najveće prema najmanjoj): dat3.txt, dat4.txt, dat2.txt, dat1.txt, onda se pozivanjem metode <code>copyToSortedFilesFolder(&quot;/res/oopIspit/&quot;)</code> u direktorij <code>/res/oopIspit/</code> upisuje u datoteku 1.txt sadržaj datoteke dat3.txt, u datoteku 2.txt sadržaj datoteke dat4.txt, itd.</p>
+<p><strong>Dodatna napomena:</strong></p>
+<ul>
+<li>Nije dozvoljeno korištenje klase <code>File</code>, već samo <code>Path</code> i <code>java.nio</code> paket.</li>
+<li>Čitanje redaka ne uključuje &quot;\n&quot;.</li>
+<li>Sve klase nalaze se u paketu <code>hr.fer.oop</code>.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

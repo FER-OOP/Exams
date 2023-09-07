@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>A shopping company has its stores in different towns around the world. The data of all towns is stored in a map of type `Map&lt;string, string&gt;, where the name of a city is the key and the value is the name of the country.</p>
+<p>The <code>Transaction</code>, <code>TransactionsAmounts</code> and <code>Profit</code> clases are initially defined as</p>
+<pre class="line-numbers"><code class="language-java">public record Transaction(String town, LocalDate dateOfTransaction, int amount) {}
+public record TownTransactions(String town, String country, List&lt;Integer&gt; amounts) {}
+public record Profit(String town, String country, OptionalInt profit) {}
+</code></pre>
+<p>A Transaction is a single revenue or expense in a city. Your task is to write the following two methods.</p>
+<ol>
+<li>Add a method in the class <code>TownTransactions</code> with the signature</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static List&lt;TownTransactions&gt; getTownTransactions(Map&lt;string, string&gt; townsAndCountries, List&lt;Transaction&gt; transactions)
+</code></pre>
+<p>that eturns a list in which each element of the list contains the name of the town, the name of the country, and the list of transactions in that town. For cities without transactions, this list should be empty.</p>
+<p>Example:
+Suppose that the list is filled with the following data</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Transaction&gt; transactions = new LinkedList&lt;&gt;();
+transactions.add(new Transaction(&quot;Zagreb&quot;, LocalDate.of(2023, 1, 15), 100));
+transactions.add(new Transaction(&quot;Zagreb&quot;, LocalDate.of(2023, 1, 16), 100));
+transactions.add(new Transaction(&quot;Split&quot;, LocalDate.of(2023, 1, 15), 100));
+transactions.add(new Transaction(&quot;Zadar&quot;, LocalDate.of(2023, 1, 15), -50));
+transactions.add(new Transaction(&quot;Madrid&quot;, LocalDate.of(2023, 2, 10), 300));
+transactions.add(new Transaction(&quot;London&quot;, LocalDate.of(2023, 3, 5), 150));
+transactions.add(new Transaction(&quot;Madrid&quot;, LocalDate.of(2023, 2, 11), -400));
+transactions.add(new Transaction(&quot;London&quot;, LocalDate.of(2023, 3, 6), 100));
+</code></pre>
+<p>and the map of towns is</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, String&gt; towns = new HashMap&lt;&gt;();
+towns.put(&quot;Zagreb&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Split&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Zadar&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Pula&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Sinj&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Madrid&quot;, &quot;Spain&quot;);
+towns.put(&quot;Valencia&quot;, &quot;Spain&quot;);
+towns.put(&quot;Paris&quot;, &quot;France&quot;);
+towns.put(&quot;London&quot;, &quot;United Kingdom&quot;);
+</code></pre>
+<p>When executing the following excerpt</p>
+<pre class="line-numbers"><code class="language-java"> List&lt;TownTransactions&gt; townsTransactions = TownTransactions.getTownTransactions(towns, transactions);
+ System.out.println(townsTransactions);
+</code></pre>
+<p>the output should resemble the following (note: order in this list may vary, and it is not important)</p>
+<pre class="line-numbers"><code class="language-sh">[TownTransactions[town=Valencia, country=Spain, amounts=[]]],
+TownTransactions[town=Madrid, country=Spain, amounts=[-100]],
+TownTransactions[town=London, country=United Kingdom, amounts=[150, 100]],
+TownTransactions[town=Paris, country=France, amounts=[]],
+TownTransactions[town=Zadar, country=Croatia, amounts=[-50]],
+TownTransactions[town=Zagreb, country=Croatia, amounts=[100, 100]],
+TownTransactions[town=Split, country=Croatia, amounts=[100]],
+TownTransactions[town=Sinj, country=Croatia, amounts=[]]]
+TownTransactions[town=Pula, country=Croatia, amounts=[]],
+</code></pre>
+<ol start="2">
+<li>Add the following method in the class <code>Profit</code></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;Profit&gt; sorted(Stream&lt;TownTransactions&gt; townsTransactions)
+</code></pre>
+<p>which will create a new stream based on the transaction stream per city, sorted alphabetically by country, with cities in the same country ordered by profit in descending order. Cities without profit should be at the end in each country, ordered by the name of the city.</p>
+<p>The profit can be positive or negative and is calculated based on the sum of transactions. However, <strong>for the empty list it should be <code>OptionalInt.empty()</code> and not zero</strong>.</p>
+<p><strong>Additionally, the stream must not be consumed inside this method</strong>, i.e. you are not allowed to consume stream to create a new collection, and that return a stream to that collection.</p>
+<p>Example:
+If we continue the previous example with the following excerpt</p>
+<pre class="line-numbers"><code class="language-java">Stream&lt;Profit&gt; stream = Profit.sorted(townsTransactions.stream());
+stream.forEach(System.out::println);
+</code></pre>
+<p>the output should be (The order in this case is important!):</p>
+<pre class="line-numbers"><code class="language-sh">Profit[town=Zagreb, country=Croatia, profit=OptionalInt[200]]
+Profit[town=Split, country=Croatia, profit=OptionalInt[100]]
+Profit[town=Zadar, country=Croatia, profit=OptionalInt[-50]]
+Profit[town=Pula, country=Croatia, profit=OptionalInt.empty]
+Profit[town=Sinj, country=Croatia, profit=OptionalInt.empty]
+Profit[town=Paris, country=France, profit=OptionalInt.empty]
+Profit[town=Madrid, country=Spain, profit=OptionalInt[-100]]
+Profit[town=Valencia, country=Spain, profit=OptionalInt.empty]
+Profit[town=London, country=United Kingdom, profit=OptionalInt[250]],
+</code></pre>
+<p><strong>Note:</strong> All classes and interfaces are public, and in package  <code>hr.fer.oop.shopping</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

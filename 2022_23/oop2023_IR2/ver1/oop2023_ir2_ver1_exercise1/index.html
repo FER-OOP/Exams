@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Lanac trgovina ima poslovnice u raznim gradovima u svijetu. Popis gradova sadržan je u mapi tipa <code>Map&lt;string, string&gt;</code> gdje je ključ naziv grada, a vrijednost država u kojoj se grad nalazi.</p>
+<p>Neka su zadane klase <code>Transaction</code>, <code>TransactionsAmounts</code> i <code>Profit</code> na sljedeći način</p>
+<pre class="line-numbers"><code class="language-java">public record Transaction(String town, LocalDate dateOfTransaction, int amount) {}
+public record TownTransactions(String town, String country, List&lt;Integer&gt; amounts) {}
+public record Profit(String town, String country, OptionalInt profit) {}
+</code></pre>
+<p>Transakcija predstavlja pojedinačni prihod ili trošak u nekom gradu. Potrebno je napisati dvije metode kao što je navedeno u nastavku zadatka.</p>
+<ol>
+<li>Proširiti klasu <code>TownTransactions</code> na način da se u klasu doda metoda čiji je potpis</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static List&lt;TownTransactions&gt; getTownTransactions(Map&lt;string, string&gt; townsAndCountries, List&lt;Transaction&gt; transactions)
+</code></pre>
+<p>koja će vratiti listu čiji svaki podatak sadrži naziv grada i državu kojoj grad pripada te listu transancija koje su obavljene u tom gradu. Za gradove u kojima nije bilo transakcija ova lista treba biti prazna.</p>
+<p>Primjer:
+Neka je lista popunjena sljedećim podacima:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Transaction&gt; transactions = new LinkedList&lt;&gt;();
+transactions.add(new Transaction(&quot;Zagreb&quot;, LocalDate.of(2023, 1, 15), 100));
+transactions.add(new Transaction(&quot;Zagreb&quot;, LocalDate.of(2023, 1, 16), 100));
+transactions.add(new Transaction(&quot;Split&quot;, LocalDate.of(2023, 1, 15), 100));
+transactions.add(new Transaction(&quot;Zadar&quot;, LocalDate.of(2023, 1, 15), -50));
+transactions.add(new Transaction(&quot;Madrid&quot;, LocalDate.of(2023, 2, 10), 300));
+transactions.add(new Transaction(&quot;London&quot;, LocalDate.of(2023, 3, 5), 150));
+transactions.add(new Transaction(&quot;Madrid&quot;, LocalDate.of(2023, 2, 11), -400));
+transactions.add(new Transaction(&quot;London&quot;, LocalDate.of(2023, 3, 6), 100));
+</code></pre>
+<p>a mapa sljedećim podacima</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, String&gt; towns = new HashMap&lt;&gt;();
+towns.put(&quot;Zagreb&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Split&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Zadar&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Pula&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Sinj&quot;, &quot;Croatia&quot;);
+towns.put(&quot;Madrid&quot;, &quot;Spain&quot;);
+towns.put(&quot;Valencia&quot;, &quot;Spain&quot;);
+towns.put(&quot;Paris&quot;, &quot;France&quot;);
+towns.put(&quot;London&quot;, &quot;United Kingdom&quot;);
+</code></pre>
+<p>Nakon izvršavanja naredbi</p>
+<pre class="line-numbers"><code class="language-java"> List&lt;TownTransactions&gt; townsTransactions = TownTransactions.getTownTransactions(towns, transactions);
+ System.out.println(townsTransactions);
+</code></pre>
+<p>ispis treba biti nalik sljedećem (poredak u listi nije bitan, pa ispis može varirati):</p>
+<pre class="line-numbers"><code class="language-sh">[TownTransactions[town=Valencia, country=Spain, amounts=[]]],
+TownTransactions[town=Madrid, country=Spain, amounts=[-100]],
+TownTransactions[town=London, country=United Kingdom, amounts=[150, 100]],
+TownTransactions[town=Paris, country=France, amounts=[]],
+TownTransactions[town=Zadar, country=Croatia, amounts=[-50]],
+TownTransactions[town=Zagreb, country=Croatia, amounts=[100, 100]],
+TownTransactions[town=Split, country=Croatia, amounts=[100]],
+TownTransactions[town=Sinj, country=Croatia, amounts=[]]]
+TownTransactions[town=Pula, country=Croatia, amounts=[]],
+</code></pre>
+<ol start="2">
+<li>U klasu Profit dodati metodu sljedećeg potpisa</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;Profit&gt; sorted(Stream&lt;TownTransactions&gt; townsTransactions)
+</code></pre>
+<p>koja će temeljem toka transakcija po gradovima vratiti novi tok koji vraća podatke abecedno po državama, a unutar iste države silazno po profitu pri čemu se gradovi koji nemaju evidentiran profit nalaze na kraju složeni abecedno.</p>
+<p>Profit može biti i pozitivan i negativan te se računa kao suma iznosa transakcija. <strong>Za gradove čija je lista prazna profit treba biti <code>OptionalInt.empty()</code>, a ne 0</strong>.</p>
+<p><strong>Stream ne smije biti iskorišten, unutar metode</strong>, tj. ne možete npr. napraviti novu kolekciju i onda vratiti stream od nove kolekcije, već treba koristiti metode iz kolekcijskih tokova.</p>
+<p>Primjer:
+Nastavi li se program iz prethodnog primjera sljedećim naredbama</p>
+<pre class="line-numbers"><code class="language-java">Stream&lt;Profit&gt; stream = Profit.sorted(townsTransactions.stream());
+stream.forEach(System.out::println);
+</code></pre>
+<p>ispis mora biti sljedeći (poredak je bitan):</p>
+<pre class="line-numbers"><code class="language-sh">Profit[town=Zagreb, country=Croatia, profit=OptionalInt[200]]
+Profit[town=Split, country=Croatia, profit=OptionalInt[100]]
+Profit[town=Zadar, country=Croatia, profit=OptionalInt[-50]]
+Profit[town=Pula, country=Croatia, profit=OptionalInt.empty]
+Profit[town=Sinj, country=Croatia, profit=OptionalInt.empty]
+Profit[town=Paris, country=France, profit=OptionalInt.empty]
+Profit[town=Madrid, country=Spain, profit=OptionalInt[-100]]
+Profit[town=Valencia, country=Spain, profit=OptionalInt.empty]
+Profit[town=London, country=United Kingdom, profit=OptionalInt[250]],
+</code></pre>
+<p><strong>Napomena:</strong> Sve klase i sučelja su javne i nalaze se u paketu u paketu <code>hr.fer.oop.shopping</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Zadatak je modelirati sustav Fakulteta.
+Razredi <code>Student</code> i <code>GeneralInformation</code> već su implementirani te ih trebate samo koristiti (detaljnije infomacije na dnu zadatka). <strong>Ako nije drugačije specificirano</strong>, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>, a sve metode imaju <strong>javan</strong> pristup.</p>
+<p>Sučelje <strong><code>Registrable</code></strong> modelira upravljanje objektima koji se mogu registrirati. Ovo sučelje ima javnan pristup i u sebi sadržava:</p>
+<ul>
+<li><strong><code>String getId()</code></strong>: Metoda koja bi trebala vratiti jedinstveni identifikator registriranog objekta.</li>
+<li><strong><code>String getName()</code></strong>: Metoda koja bi trebala vratiti ime registriranog objekta.</li>
+<li><strong><code>String getInfo()</code></strong>: Metoda koja bi trebala vratiti opisne informacije o registriranom objektu.</li>
+<li><strong><code>void enrollStudent(Student)</code></strong>: Metoda koja bi trebala omogućiti upisivanje studenta u registrirani objekt, kao što je kolegij. Ako upisivanje nije moguće, metoda bi trebala baciti iznimku <code>EnrollmentException</code>.</li>
+</ul>
+<p>Klasa <strong><code>Course</code></strong> modelira kolegij i nasljeđuje klasu <code>GeneralInformation</code>. Vidljivost ovog elementa omogućuje javni pristup. Sadrži:</p>
+<ul>
+<li>Varijablu <strong><code>maxStudents</code></strong> tipa <code>int</code>. Predstavlja maksimalan broj studenata koji se može upisati na taj predmet. Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</li>
+<li><strong><code>List&lt;Student&gt; enrolledStudents</code></strong>: Lista studenata koji su upisani u taj predmet. Vidljiv samo iz vlastite klase.</li>
+<li><strong><code>List&lt;Course&gt; prerequisites</code></strong>: Lista predmeta koji su preduvjeti za upisivanje u taj predmet. Vidljiv samo iz vlastite klase.</li>
+<li><strong>Konstruktor</strong> koji stvara novi objekt predmeta s danim id-jem, nazivom i maksimalnim brojem studenata - tim redoslijedom.</li>
+<li><strong><code>String getInfo()</code></strong>:
+<ul>
+<li>Metoda koja vraća String u formatu: ID: <em><strong>id</strong></em>, Name: <em><strong>name</strong></em>, Max Students: <em><strong>maxStudents</strong></em>, gdje su <em><strong>id i name</strong></em> identifikator i ime predmeta. (vidi primjer)</li>
+</ul>
+</li>
+<li><strong><code>void addPrerequisite(Course)</code></strong>:
+<ul>
+<li>omogućuje dodavanje preduvjeta za upisivanje u taj predmet.</li>
+</ul>
+</li>
+<li><strong><code>hasMetPrerequisites(Student)</code></strong>:
+<ul>
+<li>provjerava je li student ispunio preduvjete. Treba vratiti <code>true</code> ako je student <em><strong>upisan u sve preduvjete za određeni kolegij</strong></em>. Inače, treba vratiti <code>false</code>. Možete koristiti metodu <code>isEnrolledIn(Course course)</code> iz klase <code>Student</code> kako biste provjerili je li student upisan u određeni kolegij.</li>
+</ul>
+</li>
+<li><strong><code>void enrollStudent(Student)</code></strong>
+<ul>
+<li>za upisivanje studenta na predmet. Ako je predmet već pun ili student ne ispunjava preduvjete, potrebno je baciti <strong><code>EnrollmentException</code></strong>.</li>
+</ul>
+</li>
+<li>nadjačajte <strong><code>equals</code></strong> metodu kako biste uspoređivali dva objekta klase Course na temelju svojih svojstava: <code>id</code>, <code>name</code>.</li>
+<li>napišite <strong>gettere</strong> za svaku od članskih varijabli</li>
+</ul>
+<p>Razred <strong><code>EnrollmentException</code></strong> je model neprovjeravane iznimke koja se baca kada dođe do problema kod upisa studenta na kolegij. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li><strong>Konstruktor</strong> koji postavlja poruku iznimke. <strong>Njen sadržaj je proizvoljan i ne-null.</strong></li>
+</ul>
+<p><strong>Napomena:</strong>
+Testirajte svoju implementaciju koristeći dani <code>Main</code>.</p>
+<p><em><strong>Primjer korištenja:</strong></em></p>
+<pre class="line-numbers"><code class="language-java">Course oop = new Course(&quot;OOP101&quot;, &quot;Object Oriented Programming&quot;, 3);
+
+System.out.println(oop.getInfo());
+
+Student a = new Student(&quot;Student A&quot;, 11111);
+Student b = new Student(&quot;Student B&quot;, 22222);
+Student c = new Student(&quot;Student C&quot;, 33333);
+
+List&lt;Student&gt; studentsToEnroll = List.of(a, b, c);
+for (Student s : studentsToEnroll) {
+    try {
+        oop.enrollStudent(s);
+        } catch (EnrollmentException e) {
+        System.out.println(&quot;Error&quot; + &quot;: &quot; + e.getMessage());
+        }
+    }
+System.out.println(&quot;Enrolled students in &quot; + oop.getName() + &quot;: &quot; + oop.getEnrolledStudents());
+
+// Enroll student d in advancedOopCourse (should fail due to missing prerequisite)
+Student d = new Student(&quot;Student D&quot;, 44444);
+Course advancedOopCourse = new Course(&quot;AOOP201&quot;, &quot;Advanced OOP&quot;, 2);
+advancedOopCourse.addPrerequisite(oop);
+try {
+            advancedOopCourse.enrollStudent(d);
+    } catch (EnrollmentException e) {
+        System.out.println(&quot;Error: &quot; + e.getMessage());
+    }
+</code></pre>
+<p><em><strong>Očekivani ispis:</strong></em></p>
+<pre class="line-numbers"><code class="language-sh">ID: OOP101, Name: Object Oriented Programming, Max Students: 3
+Enrolled students in Object Oriented Programming: [{name='Student A', studentID=11111}, {name='Student B', studentID=22222}, {name='Student C', studentID=33333}]
+Failed to enroll student Student D
+</code></pre>
+<p><strong>Dodatno</strong>
+<em><strong>(Opis postojećih razreda)</strong></em></p>
+<p>Klasa <strong><code>Student</code></strong> predstavlja studenta. Svaki student ima svoje ime, jedinstveni identifikacijski broj (ID) i listu predmeta u koje je upisan. Ključne značajke klase <code>Student</code> uključuju i:</p>
+<ul>
+<li><code>public void enrollInCourse(Course)</code>: omogućuje upisivanje studenta u određeni predmet.</li>
+<li><code>public boolean isEnrolledIn(Course)</code>: provjerava je li student upisan u određeni predmet.</li>
+</ul>
+<p>Apstraktna Klasa <strong><code>GeneralInformation</code></strong> je temelj koji se koristi kao osnova za različite entitete, poput predmeta. Sadrži atribute i metode koji su zajednički za sve entitete. Ključne značajke uključuju:</p>
+<ul>
+<li><code>private String id:</code> Jedinstveni identifikator entiteta.</li>
+<li><code>private String name</code>: Ime entiteta.</li>
+<li><code>public String getInfo()</code>: vraća opisne informacije o entitetu.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

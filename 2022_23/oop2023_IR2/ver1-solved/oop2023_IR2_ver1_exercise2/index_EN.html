@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The task is to model the Faculty system. The classes <code>Student</code> and <code>GeneralInformation</code> are already implemented and should be used as-is (more details at the bottom of the task). Unless otherwise specified, all types should be placed in the <code>hr.fer.oop</code> package, and all methods should have public access.</p>
+<p>The interface <strong><code>Registrable</code></strong> models the management of objects that can be registered. This interface is public and contains the following:</p>
+<ul>
+<li><strong><code>String getId()</code></strong>: A method that should return the unique identifier of the registered object.</li>
+<li><strong><code>String getName()</code></strong>: A method that should return the name of the registered object.</li>
+<li><strong><code>String getInfo()</code></strong>: A method that should return descriptive information about the registered object.</li>
+<li><strong><code>void enrollStudent(Student)</code></strong>: A method that should allow enrolling a student in the registered object, such as a course. If enrollment is not possible, the method should throw an <code>EnrollmentException</code>.</li>
+</ul>
+<p>The class <strong><code>Course</code></strong> models a course and inherits from the <code>GeneralInformation</code> class. The visibility of this element allows public access. It includes:</p>
+<ul>
+<li>A variable <strong><code>maxStudents</code></strong> of type <code>int</code>, representing the maximum number of students that can be enrolled in that course. Access is possible from classes in the same package and from classes that inherit this element.</li>
+<li><strong><code>List&lt;Student&gt; enrolledStudents</code></strong>: A list of students enrolled in that course. Visible only from within the class.</li>
+<li><strong><code>List&lt;Course&gt; prerequisites</code></strong>: A list of courses that are prerequisites for enrolling in this course. Visible only from within the class.</li>
+<li>A <strong>constructor</strong> that creates a new course object with the given ID, name, and maximum number of students, in that order.</li>
+<li><strong><code>String getInfo()</code></strong>: A method that returns a String in the format: ID: <em><strong>id</strong></em>, Name: <em><strong>name</strong></em>, Max Students: <em><strong>maxStudents</strong></em>, where <em><strong>id and name</strong></em> are the identifier and name of the course. (see example)</li>
+<li><strong><code>void addPrerequisite(Course)</code></strong>: Allows adding prerequisites for enrolling in this course.</li>
+<li><strong><code>hasMetPrerequisites(Student)</code></strong>: Checks whether a student has met the prerequisites. It should return <code>true</code> if the student is enrolled in all prerequisites for a specific course; otherwise, it should return <code>false</code>. You can use the <code>isEnrolledIn(Course course)</code> method from the <code>Student</code> class to check if a student is enrolled in a specific course.</li>
+<li><strong><code>void enrollStudent(Student)</code></strong>: Enrolls a student in the course. If the course is already full or the student doesn't meet the prerequisites, an <strong><code>EnrollmentException</code></strong> should be thrown.</li>
+<li>Override the <strong><code>equals</code></strong> method to compare two <code>Course</code> objects based on their properties: <code>id</code> and <code>name</code>.</li>
+<li>write <strong>getters</strong> for each variable</li>
+</ul>
+<p>The class <strong><code>EnrollmentException</code></strong> is an unchecked exception thrown when there is a problem enrolling a student in a course. The visibility of this element allows public access. It contains:</p>
+<ul>
+<li>A constructor that sets the exception message. The content of the message is arbitrary and non-null.</li>
+</ul>
+<p><strong>Note:</strong>
+Test your implementation using the provided <code>Main</code>.</p>
+<p><em><strong>Example of usage:</strong></em></p>
+<pre class="line-numbers"><code class="language-java">Course oop = new Course(&quot;OOP101&quot;, &quot;Object Oriented Programming&quot;, 3);
+
+System.out.println(oop.getInfo());
+
+Student a = new Student(&quot;Student A&quot;, 11111);
+Student b = new Student(&quot;Student B&quot;, 22222);
+Student c = new Student(&quot;Student C&quot;, 33333);
+
+List&lt;Student&gt; studentsToEnroll = List.of(a, b, c);
+for (Student s : studentsToEnroll) {
+    try {
+        oop.enrollStudent(s);
+    } catch (EnrollmentException e) {
+        System.out.println(&quot;Error&quot; + &quot;: &quot; + e.getMessage());
+    }
+}
+System.out.println(&quot;Enrolled students in &quot; + oop.getName() + &quot;: &quot; + oop.getEnrolledStudents());
+
+// Enroll student d in advancedOopCourse (should fail due to missing prerequisite)
+Student d = new Student(&quot;Student D&quot;, 44444);
+Course advancedOopCourse = new Course(&quot;AOOP201&quot;, &quot;Advanced OOP&quot;, 2);
+advancedOopCourse.addPrerequisite(oop);
+try {
+    advancedOopCourse.enrollStudent(d);
+} catch (EnrollmentException e) {
+    System.out.println(&quot;Error: &quot; + e.getMessage());
+}
+
+</code></pre>
+<p><em><strong>Expected output:</strong></em></p>
+<pre class="line-numbers"><code class="language-sh">ID: OOP101, Name: Object Oriented Programming, Max Students: 3
+Enrolled students in Object Oriented Programming: [{name='Student A', studentID=11111}, {name='Student B', studentID=22222}, {name='Student C', studentID=33333}]
+Failed to enroll student Student D
+
+</code></pre>
+<p><strong>Additional</strong>
+<em><strong>(Description of existing classes)</strong></em></p>
+<p>The class <strong><code>Student</code></strong> represents a student. Each student has a name, a unique identification number (ID), and a list of courses they are enrolled in. Key features of the <code>Student</code> class include:</p>
+<ul>
+<li><code>public void enrollInCourse(Course)</code>: Allows enrolling a student in a specific course.</li>
+<li><code>public boolean isEnrolledIn(Course)</code>: Checks whether a student is enrolled in a specific course.</li>
+</ul>
+<p>The abstract class <strong><code>GeneralInformation</code></strong> serves as a foundation for various entities, such as courses. It contains attributes and methods common to all entities. Key features include:</p>
+<ul>
+<li><code>private String id</code>: The unique identifier of the entity.</li>
+<li><code>private String name</code>: The name of the entity.</li>
+<li><code>public String getInfo()</code>: Returns descriptive information about the entity.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>
