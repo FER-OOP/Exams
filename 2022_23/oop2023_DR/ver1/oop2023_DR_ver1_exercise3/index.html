@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je implementirati klasu <code>FileVisitorPasswordFinder</code> koja implementira sučelje <code>FileVisitor&lt;Path&gt;</code> tako da obilazi zadani direktorij i njegove poddirektorije. Klasa ima jedan <code>String</code> atribut naziva <code>resultDirectoryPath</code> čiju vrijednost postavlja konstruktorom te je kasnije nije moguće mijenjati (ali je njeno dohvaćanje potrebno omogućiti). Dodatno, klasa treba implementirati sljedeće funkcionalnosti:</p>
+<ul>
+<li>
+<p>u svakom direktoriju treba pronaći sve <code>.txt</code> datoteke koje u sebi sadrže niz znakova <code>password</code> (koji se može nalaziti i unutar drugog niza znakova, npr. <code>password:dd</code>), te ih prekopirati u odredišni direktorij (<code>resultDirectoryPath</code>). Pritom, u odredišnom direktoriju (<code>resultDirectoryPath</code>) treba za svaki direktorij koji se obilazi stvoriti jednu dodatnu <code>.txt</code> datoteku identičnog naziva kao i taj direktorij, a u koju će se upisivati samo one linije <code>.txt</code> datoteka u tom direktoriju koje sadrže riječ <code>password</code>. Ako nema takvih linija u određenom direktoriju, nije potrebno stvarati takvu datoteku;</p>
+</li>
+<li>
+<p>na standardni izlaz potrebno je ispisati ime svake datoteke u kojoj je pronađena riječ <code>password</code> i njenu veličinu u bajtovima:</p>
+</li>
+</ul>
+<p>&lt;ime_datoteke&gt; = &lt;size_in_bytes&gt;</p>
+<p>Primjer korištenja:</p>
+<p>Ako se implementiranim FileVisitorom, kojem je u konstruktoru vrijednost atributa <code>resultDirectoryPath</code> postavljena na <code>/res/oopIspit/</code> pretražuje direktorij koji ima sljedeću strukturu i datoteke veličina vidljivih na istoj slici:</p>
+<p><img src="res/folderStruct.png" alt="Struktura direktorija koji se pretražuje" /></p>
+<p>a pritom sljedeće datoteke između ostalih linija, sadrže i linije u kojima je riječ password:</p>
+<p>a.txt</p>
+<pre class="line-numbers"><code>password:bla bla
+password mi je super password
+</code></pre>
+<p>b.txt</p>
+<pre class="line-numbers"><code>password bla bla bla bla bla  
+</code></pre>
+<p>e.txt</p>
+<pre class="line-numbers"><code>password st19
+</code></pre>
+<p>potrebno je u direktoriju <code>/res/oopIspit/</code> stvoriti datoteku <code>pretrazivaniFolder.txt</code> koja će po obilasku imati sljedeći sadržaj (redoslijed linija nije važan):</p>
+<pre class="line-numbers"><code>password:bla bla
+password mi je super password
+password bla bla bla bla bla  
+</code></pre>
+<p>i datoteku <code>folder.txt</code> sadržaja:</p>
+<pre class="line-numbers"><code>password st19
+</code></pre>
+<p>Osim navedene dvije datoteke, odredišni direktorij će sadržavati i kopije datoteka a.txt, b.txt i e.txt</p>
+<p>Također, na standardnom izlazu biti će sljedeći ispis nakon obilaska:
+a.txt = 121
+b.txt = 147
+e.txt = 201</p>
+<p>uz napomenu da u ispisu može biti i cijela putanja do datoteke (provjerava se samo da linija sadrži zadnji dio, pokazan u gornjem u primjeru).</p>
+<p><strong>Dodatna napomena:</strong></p>
+<ul>
+<li>Nije dozvoljeno korištenje klase <code>File</code>, već samo <code>Path</code> i <code>java.nio</code> paket.</li>
+<li>Čitanje redaka ne uključuje &quot;\n&quot;.</li>
+<li>Sve klase nalaze se u paketu <code>hr.fer.oop</code>.</li>
+<li>Ako se radi odredišna datoteka u direktoriju koji ne postoji, potrebno ga je najprije stvoriti kako bi izbjegli java.nio.file.NoSuchFileException.</li>
+<li>Pretpostavite da neće doći do slučaja kada direktoriji ili datoteke imaju isto ime, ili istu veličinu.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

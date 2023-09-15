@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Zadatak je implementirati sustav knjižnice.</p>
+<p>Potrebno je stvoriti klase za knjige, članove knjižnice i knjižnicu te implementirati sve funkcionalnosti sustava. <strong>Ako nije drugačije specificirano</strong>, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>, a sve metode imaju <strong>javan</strong> pristup.</p>
+<p>Klasa <strong><code>Book</code></strong>:</p>
+<ul>
+<li>
+<p>Sadrži člansku varijable za naslov knjige (<code>String title</code>). Vidljiva je samo iz vlastite klase.</p>
+</li>
+<li>
+<p>Sadrži člansku varijable za autora knjige (<code>String author</code>). Vidljiva je samo iz vlastite klase.</p>
+</li>
+<li>
+<p>Sadrži člansku varijable za broj primjeraka dostupnih u knjižnici (<code>int copiesAvailable</code>). Pristup je moguć iz klasa istog paketa te iz klasa koje naslijeđuju taj element.</p>
+</li>
+<li>
+<p>Sadrži <strong>konstruktor</strong> koji stvara novi objekt knjige s danim naslovom, autorom i brojem primjeraka - tim redoslijedom.</p>
+</li>
+<li>
+<p>Treba imati <strong>gettere</strong> za svaku od članskih varijabli.</p>
+</li>
+<li>
+<p>Implementira sučelje <code>Searchable</code> te metodu <code>boolean search(String)</code> koja omogućuje pretraživanje knjiga po naslovu ili autoru u ovisnosti o upitu. Ako je predani upit sadržan u naslovu ili autoru metoda vraća <code>True</code>, inače vraća <code>False</code>.  Pretraživanje treba biti <strong>case-insensitive</strong>. Pogledati primjer korištenja.</p>
+</li>
+</ul>
+<p>Klasa <strong><code>Member</code></strong> modelira člana knjižnice. Vidljivost ovog elementa omogućuje javni pristup. Sadrži:</p>
+<ul>
+<li>
+<p>Varijable za ime člana (<code>String name</code>) i listu posuđenih knjiga (<code>List&lt;Book&gt; borrowedBooks</code>). Varijable vidljive samo iz vlastite klase.</p>
+</li>
+<li>
+<p><strong>Konstruktor</strong> koji stvara novi objekt s danim imenom člana.</p>
+</li>
+<li>
+<p><strong>Gettere</strong> za svaku od članskih varijabli.</p>
+</li>
+<li>
+<p>Metodu <code>void borrowBook(Book)</code>: Omogućuje članu posudbu knjige. Dodaje posuđenu knjigu u listu posuđenih knjiga člana. Ako nema dostupnih primjeraka knjige ili član već ima tu knjigu, metoda bi trebala baciti iznimku <code>BorrowingException</code>. Treba voditi računa i o broju dostupnih primjeraka knjiga (<code>copiesAvailable</code>) nakon posuđivanja knjige.</p>
+</li>
+<li>
+<p>Metodu <code>void returnBook(Book)</code>: Omogućuje članu vraćanje knjige. Uklanja knjigu iz liste posuđenih knjiga člana. Treba voditi računa i o broju dostupnih primjeraka knjiga (<code>copiesAvailable</code>) nakon vraćanja knjige.  Pretpostavlja se da članovi uvijek posuđuju/vraćaju po jedan primjerak pojedine knjige.</p>
+</li>
+</ul>
+<p>Klasa <strong><code>Library</code></strong> sadrži:</p>
+<ul>
+<li>
+<p>Varijable za listu svih knjiga (<code>List&lt;Book&gt; books</code>) u knjižnici i listu svih članova knjižnice (<code>List&lt;Member&gt; members</code>) vidljive samo iz vlastite klase.</p>
+</li>
+<li>
+<p><strong>Gettere</strong> za navedene varijable.</p>
+</li>
+<li>
+<p>Metodu <code>void addBook(Book book)</code> za dodavanje knjige u knjižnicu.</p>
+</li>
+<li>
+<p>Metodu <code>void addMember(Member member)</code> za dodavanje člana u knjižnicu.</p>
+</li>
+<li>
+<p>Metodu <code>List&lt;Book&gt; getAvailableBooks()</code> koja vraća listu svih dostupnih knjiga u knjižnici (knjige koje nisu posuđene od strane članova).</p>
+</li>
+</ul>
+<p>Klasa <strong><code>BorrowingException</code></strong> 	je model neprovjeravane iznimke koja se baca kada dođe do problema kod posuđivanja knjige. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Konstruktor koji postavlja poruku iznimke. Njen sadržaj je proizvoljan i ne-null.</li>
+</ul>
+<p><strong>Napomena:</strong>
+Testirajte svoju implementaciju koristeći dani <code>Main</code>.</p>
+<p><strong>Primjer korištenja:</strong></p>
+<pre class="line-numbers"><code class="language-java">		Library library = new Library();
+
+        Book book1 = new Book(&quot;The Great Gatsby&quot;, &quot;F. Scott Fitzgerald&quot;, 2);
+        Book book2 = new Book(&quot;To Kill a Mockingbird&quot;, &quot;Harper Lee&quot;, 1); 
+
+        Member member1 = new Member(&quot;Pero Peric&quot;);
+        Member member2 = new Member(&quot;Ivo Ivic&quot;);
+
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addMember(member1);
+        library.addMember(member2);
+
+        try {
+            member1.borrowBook(book1);
+            member1.borrowBook(book2);
+            member2.borrowBook(book2);
+        } catch (BorrowingException e) {
+            System.out.println(&quot;Error: &quot; + e.getMessage());
+        }
+        
+        System.out.println(&quot;Available books:&quot;);
+        List&lt;Book&gt; availableBooks = library.getAvailableBooks();
+        for (Book book : availableBooks) {
+            System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor() + &quot;, Copies available: &quot; + book.getCopiesAvailable());
+        }
+
+        // Pretraživanje knjiga
+        String searchQuery = &quot;great&quot;;
+        System.out.println(&quot;Search results for query '&quot; + searchQuery + &quot;':&quot;);
+        for (Book book : library.getAvailableBooks()) {
+            if (book.search(searchQuery)) {
+                System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor());
+            }
+        }
+
+        member1.returnBook(book2);
+
+        System.out.println(&quot;Available books after returning a book:&quot;);
+        availableBooks = library.getAvailableBooks();
+        for (Book book : availableBooks) {
+            System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor() + &quot;, Copies available: &quot; + book.getCopiesAvailable());
+        }
+</code></pre>
+<p><strong>Očekivani ispis:</strong></p>
+<pre class="line-numbers"><code class="language-sh">Error: Cannot borrow the book: To Kill a Mockingbird
+Available books:
+Title: The Great Gatsby, Author: F. Scott Fitzgerald, Copies available: 1
+Search results for query 'great':
+Title: The Great Gatsby, Author: F. Scott Fitzgerald
+Available books after returning a book:
+Title: The Great Gatsby, Author: F. Scott Fitzgerald, Copies available: 1
+Title: To Kill a Mockingbird, Author: Harper Lee, Copies available: 1
+      
+        
+        </code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

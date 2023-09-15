@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Klasom <code>DIY</code> mogu se definirati različiti setovi za sklapanje (npr. Lego setovi, elektronički setovi i slično). Svaki set ima svoj identifikator, kratki opis i popis dijelova koji su potrebni za sklapanje navedenog seta. Dijelovi koji se koriste za DIY-set su pohranjeni u mapi čiji su ključevi identifikatori pojedinog dijela, a vrijednosti broj potrebnih dijelova</p>
+<pre class="line-numbers"><code class="language-java">public record DIY(String id, String description, Map&lt;String, Integer&gt; parts) {}
+</code></pre>
+<p>Klasa <code>Offer</code> predstavlja cijenu nekog dijela od određenog dobavljača</p>
+<pre class="line-numbers"><code class="language-java">public record Offer(String manufacturerId, int price) {}
+</code></pre>
+<p>Ponude dijelova bit će zavedene u mapi tipa <code>Map&lt;String, List&lt;Offer&gt;&gt;</code> pri čemu su ponude u listi sortirane uzlazno i lista nikad nije prazna. Ako nekog dijela nema u ponudi kod nijednog dobavljača, onda taj ključ ne postoji u ovoj mapi.
+U demonstracijskom primjeru ta mapa je definirana sljedećim programskim odsječkom</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, List&lt;Offer&gt;&gt; offers = new HashMap&lt;&gt;();
+				
+List&lt;Offer&gt; list = List.of(
+        new Offer(&quot;ACME&quot;, 10),		
+        new Offer(&quot;HERO&quot;, 12),
+        new Offer(&quot;MANGO&quot;, 15));			
+offers.put(&quot;A7&quot;, list);
+
+list = List.of(
+        new Offer(&quot;MANGO&quot;, 27),		
+        new Offer(&quot;LUMEN&quot;, 28),
+        new Offer(&quot;ACME&quot;, 30));			
+offers.put(&quot;B1-14&quot;, list);
+
+list = List.of(new Offer(&quot;ACME&quot;, 20));			
+offers.put(&quot;B1-15&quot;, list);
+
+list = List.of(new Offer(&quot;HERO&quot;, 25), new Offer(&quot;ACME&quot;, 25));			
+offers.put(&quot;105&quot;, list);
+
+
+list = List.of(new Offer(&quot;ACME&quot;, 10));			
+offers.put(&quot;041&quot;, list);
+</code></pre>
+<p>Vaš zadatak je proširiti definiciju klasu <code>DIY</code> dodavanjem sljedećih dviju metoda</p>
+<ol>
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;DIY&gt; parse(Stream&lt;String&gt; definitions)
+</code></pre>
+<p>Metoda temeljem ulaznog toka stringova treba kreirati tok tipa <code>DIY</code> sortiran po sljedećim kriterijima:</p>
+<ul>
+<li>ukupni broj dijelova (silazno)</li>
+<li>identifikator (uzlazno)</li>
+</ul>
+<p>Svaki string iz ulaznog toka na početku ima identifikator seta za sklapanje i njegov opis, međusobno odvojene točka-zarezom nakon čega slijedi jedan ili više zapisa oblika <code>količina x iddijela</code> također međusobno odvojenih točka-zarezom. Stringovi nisu prazni, nisu <code>null</code> i ispravno su formatirani.</p>
+<p>Primjer:
+Za sljedeći programski odsječak</p>
+<pre class="line-numbers"><code class="language-java">List&lt;String&gt; stringDefinitions = new LinkedList&lt;&gt;();
+stringDefinitions.add(&quot;MUNJA;Set of 50 parts;45 x B1-15;5 x B1-14&quot;);
+stringDefinitions.add(&quot;123;Set with id 123 consisting of 12 parts;3 x 114;5 x 105;2 x 041;2 x 042&quot;);
+stringDefinitions.add(&quot;A-52-14;Set A-52-14 with 30 parts;5 x 114;20 x A7;5 x B1-14&quot;);
+stringDefinitions.add(&quot;STRUJA 2;Set of 50 parts;40 x B1-15;5 x B1-14;5 x A7&quot;);
+stringDefinitions.add(&quot;STRUJA 1;Set of 50 parts;40 x B5-15;5 x B1-14;5 x A7&quot;);
+stringDefinitions.add(&quot;STRUJA 3;Set of 50 parts;40 x B5-15;10 x B1-14&quot;);
+DIY.parse(stringDefinitions.stream())
+   .forEach(System.out::println);
+</code></pre>
+<p>ispis treba biti u sljedećem poretku (napomena: raspored elemenata u mapi <code>parts</code> nije bitan pa ispis na tom dijelu može varirati):</p>
+<pre class="line-numbers"><code class="language-sh">DIY[id=MUNJA, description=Set of 50 parts, parts={B1-14=5, B1-15=45}]
+DIY[id=STRUJA 1, description=Set of 50 parts, parts={B5-15=40, A7=5, B1-14=5}]
+DIY[id=STRUJA 2, description=Set of 50 parts, parts={A7=5, B1-14=5, B1-15=40}]
+DIY[id=STRUJA 3, description=Set of 50 parts, parts={B5-15=40, B1-14=10}]
+DIY[id=A-52-14, description=Set A-52-14 with 30 parts, parts={114=5, A7=20, B1-14=5}]
+DIY[id=123, description=Set with id 123 consisting of 12 parts, parts={114=3, 105=5, 041=2, 042=2}]
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public Pair&lt;Integer, OptionalInt&gt; calculatePrice(Map&lt;String, List&lt;Offer&gt;&gt; offers)
+</code></pre>
+<p>gdje je klasa Pair definirana kao</p>
+<pre class="line-numbers"><code class="language-java">public record Pair&lt;T, U&gt;(T first, U second) {}
+</code></pre>
+<p>Metoda treba vratiti donju i gornju granicu cijena kompleta temeljem podataka iz mape <code>offers</code> (prethodno oblikovane tako da su vrijednosti u listi sortirane uzlazno). Za izračun cijene treba uzeti u obzir broj komada pojedinog dijela.</p>
+<p>U slučaju da u ponudi nema svih potrebnih dijelova, tada je donja granica cijene jednaka sumi poznatih najmanjih cijena, a najveća <code>OptionalInt.empty()</code></p>
+<p>Primjer:
+Nastavi li se izvođenje programa s podacima kao što su prethodno opisani i sljedećim programskim odsječkom</p>
+<pre class="line-numbers"><code class="language-java">DIY.parse(stringDefinitions.stream())
+   .forEach(s -&gt; System.out.println(s.id() + &quot; &quot; + s.calculatePrice(pricesMap)));
+</code></pre>
+<p>ispis će biti</p>
+<pre class="line-numbers"><code class="language-sh">MUNJA Pair[first=1035, second=OptionalInt[1050]]
+STRUJA 1 Pair[first=185, second=OptionalInt.empty]
+STRUJA 2 Pair[first=985, second=OptionalInt[1025]]
+STRUJA 3 Pair[first=270, second=OptionalInt.empty]
+A-52-14 Pair[first=335, second=OptionalInt.empty]
+123 Pair[first=145, second=OptionalInt.empty]
+</code></pre>
+<p>Primijetimo da je npr. minimalna cijena za A-52-14 jednaka 20 x najmanja cijena za A7 i 5 x najmanja cijena za B1-14 (tj. 20 x 10 + 5 x 27), dok najveću cijenu nemamo, jer nitko ne nudi dio sam šifrom 114.</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja su javne i nalaze se u paketu u paketu <code>hr.fer.oop.diysets</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

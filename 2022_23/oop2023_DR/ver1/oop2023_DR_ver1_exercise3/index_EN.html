@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>It is necessary to implement the class <code>FileVisitorPasswordFinder</code> which implements the interface <code>FileVisitor&lt;Path&gt;</code> to visit given directory and its subdirectories. The class has one <code>String</code> attribute named <code>resultDirectoryPath</code> that is set within the constructor and its value cannot be changed later (but its retrieval must be enabled). Additionally, the class should implement the following functionalities:</p>
+<ul>
+<li>
+<p>in each directory you should find all <code>.txt</code> files that contain a string of characters <code>password</code> (which can also be inside another string of characters, e.g. <code>password:dd</code>), and copy them to the destination directory (<code>resultDirectoryPath</code>). At the same time, in the destination directory (<code>resultDirectoryPath</code>), for each directory that is visited, one additional <code>.txt</code> file with the same name as the visited directory should be created, and that should contain only those lines of <code>.txt</code> files in that directory containing the word <code>password</code>. If there are no such lines in a particular directory, it is not necessary to create its <code>.txt</code> file;</p>
+</li>
+<li>
+<p>the name of each file in which the word <code>password</code> is found and its size in bytes should be printed to the standard output:</p>
+</li>
+</ul>
+<p>&lt;file_name&gt; = &lt;size_in_bytes&gt;</p>
+<p>Example of use:</p>
+<p>If the implemented FileVisitor has the value of the <code>resultDirectoryPath</code> attribute set to <code>/res/oopIspit/</code> in the constructor, and it visits a directory that has the following structure and files of sizes visible in the same image:</p>
+<p><img src="res/folderStruct.png" alt="Browsing folder structure" /></p>
+<p>while the following files, among other lines, also contain the following lines with the word password:</p>
+<p>a.txt</p>
+<pre class="line-numbers"><code>password: blah blah
+my password is a great password
+</code></pre>
+<p>b.txt</p>
+<pre class="line-numbers"><code>password blah blah blah blah blah
+</code></pre>
+<p>e.txt</p>
+<pre class="line-numbers"><code>password st19
+</code></pre>
+<p>it is necessary to create a file <code>pretrazivaniFolder.txt</code> in the <code>/res/oopIspit/</code> directory, which will have the following content after executing <code>Files.walkFileTree</code> method with the created visitor and the depicted folder given as attributes (the order of the lines is not important):</p>
+<pre class="line-numbers"><code>password: blah blah
+my password is a great password
+password blah blah blah blah blah
+</code></pre>
+<p>and the file <code>folder.txt</code> with the following content:</p>
+<pre class="line-numbers"><code>password st19
+</code></pre>
+<p>In addition to the above two files, the destination directory will also contain copies of the files a.txt, b.txt and e.txt</p>
+<p>Also, the standard output will have the following lines printed out:
+a.txt = 121
+b.txt = 147
+e.txt = 201</p>
+<p>lines may differ, but end of each line should contain the output shown above.</p>
+<p><strong>Additional note:</strong></p>
+<ul>
+<li>It is not allowed to use class <code>File</code>, but only <code>Path</code> and <code>java.nio</code> package.</li>
+<li>Reading lines does not include &quot;\n&quot;.</li>
+<li>All classes are in the `hr.fer.oop' package.</li>
+<li>If a destination file is to be created in a directory that does not exist, it first must be created to avoid java.nio.file.NoSuchFileException.</li>
+<li>Assume that there will be no case when directories or files have the same name, or the same size.</li>
+</ul>
+  <script src="res/prism.js"></script>
+</body>
+</html>

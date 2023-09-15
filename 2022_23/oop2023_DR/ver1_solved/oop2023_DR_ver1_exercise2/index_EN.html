@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Task: Implement a library system.</p>
+<p>You need to create classes for books, library members, and the library itself and implement all the functionalities of the system. <strong>Unless otherwise specified</strong>, all types should be placed in the <code>hr.fer.oop package</code>, and all methods should have <strong>public</strong> access.</p>
+<p>Class <strong><code>Book</code></strong>:</p>
+<ul>
+<li>
+<p>Contains instance variables for the book's title (<code>String title</code>). It is visible only within the class.</p>
+</li>
+<li>
+<p>Contains instance variables for the book's author (<code>String author</code>). It is visible only within the class.</p>
+</li>
+<li>
+<p>Contains instance variables for the number of copies available in the library (<code>int copiesAvailable</code>). Access is possible from classes in the same package and from classes that inherit this element.</p>
+</li>
+<li>
+<p>Contains a <strong>constructor</strong> that creates a new book object with a given title, author, and number of copies - in that order.</p>
+</li>
+<li>
+<p>It should have <strong>getters</strong> for each of the instance variables.</p>
+</li>
+<li>
+<p>Implements the <code>Searchable</code> interface with a method <code>boolean search(String)</code> that allows searching for books by title or author depending on the query. If the query is found in the title or author, the method returns <code>True</code>, otherwise, it returns <code>False</code>. The search should be <strong>case-insensitive</strong>. See the example of usage.</p>
+</li>
+</ul>
+<p>Class <strong><code>Member</code></strong> models a library member. The visibility of this element allows public access. It contains:</p>
+<ul>
+<li>Variables for the member's name (<code>String name</code>) and a list of borrowed books (<code>List&lt;Book&gt; borrowedBooks</code>). Variables are only visible within the class.</li>
+</ul>
+<p>-A <strong>constructor</strong> that creates a new object with the given member name.</p>
+<ul>
+<li>
+<p><strong>Getters</strong> for each of the instance variables.</p>
+</li>
+<li>
+<p>A method <code>void borrowBook(Book)</code>: Allows a member to borrow a book. It adds the borrowed book to the member's list of borrowed books. If there are no available copies of the book or the member already has that book, the method should throw a <code>BorrowingException</code>. It should keep track of the number of available book copies (<code>copiesAvailable</code>) after borrowing a book.</p>
+</li>
+<li>
+<p>A method void <code>returnBook(Book)</code>: Allows a member to return a book. It removes the book from the member's list of borrowed books. It should keep track of the number of available book copies (<code>copiesAvailable</code>) after returning a book.  It is assumed that members always borrow/return one copy of a book.</p>
+</li>
+</ul>
+<p>Class <strong><code>Library</code></strong> contains:</p>
+<ul>
+<li>
+<p>Variables for a list of all books (<code>List&lt;Book&gt; books</code>) in the library and a list of all library members (<code>List&lt;Member&gt; members</code>) visible only within the class.</p>
+</li>
+<li>
+<p><strong>Getters</strong> for the above variables.</p>
+</li>
+<li>
+<p>A method void <code>addBook(Book book)</code> for adding a book to the library.</p>
+</li>
+<li>
+<p>A method void <code>addMember(Member member)</code> for adding a member to the library.</p>
+</li>
+<li>
+<p>A method <code>List&lt;Book&gt; getAvailableBooks()˛</code> that returns a list of all available books in the library (books that are not borrowed by members).</p>
+</li>
+</ul>
+<p>Class <strong><code>BorrowingException</code></strong> is an unchecked exception model that is thrown when there is a problem with borrowing a book. The visibility of this element allows public access. It contains:</p>
+<ul>
+<li>A constructor that sets the exception message. The content of the message is arbitrary and non-null.</li>
+</ul>
+<p><strong>Note:</strong>
+Test your implementation using the provided <code>Main</code>.</p>
+<p><em><strong>Example of usage:</strong></em></p>
+<pre class="line-numbers"><code class="language-java">		Library library = new Library();
+
+        Book book1 = new Book(&quot;The Great Gatsby&quot;, &quot;F. Scott Fitzgerald&quot;, 2);
+        Book book2 = new Book(&quot;To Kill a Mockingbird&quot;, &quot;Harper Lee&quot;, 1); 
+
+        Member member1 = new Member(&quot;Pero Peric&quot;);
+        Member member2 = new Member(&quot;Ivo Ivic&quot;);
+
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addMember(member1);
+        library.addMember(member2);
+
+        try {
+            member1.borrowBook(book1);
+            member1.borrowBook(book2);
+            member2.borrowBook(book2);
+        } catch (BorrowingException e) {
+            System.out.println(&quot;Error: &quot; + e.getMessage());
+        }
+        
+        System.out.println(&quot;Available books:&quot;);
+        List&lt;Book&gt; availableBooks = library.getAvailableBooks();
+        for (Book book : availableBooks) {
+            System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor() + &quot;, Copies available: &quot; + book.getCopiesAvailable());
+        }
+
+        // Pretraživanje knjiga
+        String searchQuery = &quot;great&quot;;
+        System.out.println(&quot;Search results for query '&quot; + searchQuery + &quot;':&quot;);
+        for (Book book : library.getAvailableBooks()) {
+            if (book.search(searchQuery)) {
+                System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor());
+            }
+        }
+
+        member1.returnBook(book2);
+
+        System.out.println(&quot;Available books after returning a book:&quot;);
+        availableBooks = library.getAvailableBooks();
+        for (Book book : availableBooks) {
+            System.out.println(&quot;Title: &quot; + book.getTitle() + &quot;, Author: &quot; + book.getAuthor() + &quot;, Copies available: &quot; + book.getCopiesAvailable());
+        }
+</code></pre>
+<p><em><strong>Expected output:</strong></em></p>
+<pre class="line-numbers"><code class="language-sh">Error: Cannot borrow the book: To Kill a Mockingbird
+Available books:
+Title: The Great Gatsby, Author: F. Scott Fitzgerald, Copies available: 1
+Search results for query 'great':
+Title: The Great Gatsby, Author: F. Scott Fitzgerald
+Available books after returning a book:
+Title: The Great Gatsby, Author: F. Scott Fitzgerald, Copies available: 1
+Title: To Kill a Mockingbird, Author: Harper Lee, Copies available: 1
+      
+        
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

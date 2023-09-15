@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The class <code>DIY</code> is used to define various do-it-yourself sets (e.g. Lego, electronic sets, etc.). Each set is defined by its identifier with a short description and its parts. The parts are stored as a map, where the keys are the identifiers of the parts and the values are the number of parts.</p>
+<pre class="line-numbers"><code class="language-java">public record DIY(String id, String description, Map&lt;String, Integer&gt; parts) {}
+</code></pre>
+<p>The class <code>Offer</code> is used to store price from a supplier.</p>
+<pre class="line-numbers"><code class="language-java">public record Offer(String manufacturerId, int price) {}
+</code></pre>
+<p>Part offers (i.e. price lists) are stored in a map of type <code>Map&lt;String, List&lt;Offer&gt;&gt;</code> where offers are  sorted in ascending order by price. The lists cannot be empty, because if a part is not offered by any supplier, then the corresponding partid is not a key of the map.</p>
+<p>In the demo example, the map is defined with the following programming excerpt.</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;String, List&lt;Offer&gt;&gt; offers = new HashMap&lt;&gt;();
+				
+List&lt;Offer&gt; list = List.of(
+        new Offer(&quot;ACME&quot;, 10),		
+        new Offer(&quot;HERO&quot;, 12),
+        new Offer(&quot;MANGO&quot;, 15));			
+offers.put(&quot;A7&quot;, list);
+
+list = List.of(
+        new Offer(&quot;MANGO&quot;, 27),		
+        new Offer(&quot;LUMEN&quot;, 28),
+        new Offer(&quot;ACME&quot;, 30));			
+offers.put(&quot;B1-14&quot;, list);
+
+list = List.of(new Offer(&quot;ACME&quot;, 20));			
+offers.put(&quot;B1-15&quot;, list);
+
+list = List.of(new Offer(&quot;HERO&quot;, 25), new Offer(&quot;ACME&quot;, 25));			
+offers.put(&quot;105&quot;, list);
+
+
+list = List.of(new Offer(&quot;ACME&quot;, 10));			
+offers.put(&quot;041&quot;, list);
+</code></pre>
+<p>Your task is to add additional two methods in the class <code>DIY</code> as described below.</p>
+<ol>
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;DIY&gt; parse(Stream&lt;String&gt; definitions)
+</code></pre>
+<p>The method should create a new stream of type <code>DIY</code> sorted by the following criteria</p>
+<ul>
+<li>total number of parts (descending)</li>
+<li>identifier (ascending)</li>
+</ul>
+<p>A string from the input stream has DIY-set identifier and description, separated by semicolon, followed by one or more parts formatted as <code>amount x partid</code> also separated using semicolons. The strings cannot be empty, null, or formatted incorrectly.</p>
+<p>Example:
+For the following programming excerpt</p>
+<pre class="line-numbers"><code class="language-java">List&lt;String&gt; stringDefinitions = new LinkedList&lt;&gt;();
+stringDefinitions.add(&quot;MUNJA;Set of 50 parts;45 x B1-15;5 x B1-14&quot;);
+stringDefinitions.add(&quot;123;Set with id 123 consisting of 12 parts;3 x 114;5 x 105;2 x 041;2 x 042&quot;);
+stringDefinitions.add(&quot;A-52-14;Set A-52-14 with 30 parts;5 x 114;20 x A7;5 x B1-14&quot;);
+stringDefinitions.add(&quot;STRUJA 2;Set of 50 parts;40 x B1-15;5 x B1-14;5 x A7&quot;);
+stringDefinitions.add(&quot;STRUJA 1;Set of 50 parts;40 x B5-15;5 x B1-14;5 x A7&quot;);
+stringDefinitions.add(&quot;STRUJA 3;Set of 50 parts;40 x B5-15;10 x B1-14&quot;);
+DIY.parse(stringDefinitions.stream())
+   .forEach(System.out::println);
+</code></pre>
+<p>The output should be in the following order.</p>
+<pre class="line-numbers"><code class="language-sh">DIY[id=MUNJA, description=Set of 50 parts, parts={B1-14=5, B1-15=45}]
+DIY[id=STRUJA 1, description=Set of 50 parts, parts={B5-15=40, A7=5, B1-14=5}]
+DIY[id=STRUJA 2, description=Set of 50 parts, parts={A7=5, B1-14=5, B1-15=40}]
+DIY[id=STRUJA 3, description=Set of 50 parts, parts={B5-15=40, B1-14=10}]
+DIY[id=A-52-14, description=Set A-52-14 with 30 parts, parts={114=5, A7=20, B1-14=5}]
+DIY[id=123, description=Set with id 123 consisting of 12 parts, parts={114=3, 105=5, 041=2, 042=2}]
+</code></pre>
+<p>Note: Order of elements in <code>parts</code> map may vary, and it is not relevant.</p>
+<ol start="2">
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public Pair&lt;Integer, OptionalInt&gt; calculatePrice(Map&lt;String, List&lt;Offer&gt;&gt; offers)
+</code></pre>
+<p>The class Pair is defined as follows.</p>
+<pre class="line-numbers"><code class="language-java">public record Pair&lt;T, U&gt;(T first, U second) {}
+</code></pre>
+<p>The method should calculate the lower and upper bounds of the DIY-set price based on the offers and number of required parts. As mentioned above, the offers are sorted by price. In case a part from the set is not available, lower bound should be calculated with the available parts, and the upper bound should be set to <code>OptionalInt.empty()</code>.</p>
+<p>Example:
+If we continue the previous example with the following statement</p>
+<pre class="line-numbers"><code class="language-java">DIY.parse(stringDefinitions.stream())
+   .forEach(s -&gt; System.out.println(s.id() + &quot; &quot; + s.calculatePrice(pricesMap)));
+</code></pre>
+<p>the output should be</p>
+<pre class="line-numbers"><code class="language-sh">MUNJA Pair[first=1035, second=OptionalInt[1050]]
+STRUJA 1 Pair[first=185, second=OptionalInt.empty]
+STRUJA 2 Pair[first=985, second=OptionalInt[1025]]
+STRUJA 3 Pair[first=270, second=OptionalInt.empty]
+A-52-14 Pair[first=335, second=OptionalInt.empty]
+123 Pair[first=145, second=OptionalInt.empty]
+</code></pre>
+<p>Note that the lower bound for A-52-14 is equal to  20 x the lowest price for A7 + 5 x the lowest price for B1-14 (i.e. 20 x 10 + 5 x 27), and the upper bound is not available because none of suppliers offers a part with id 114.</p>
+<p><strong>Note:</strong> All classes and interfaces are public and are in the package <code>hr.fer.oop.diysets</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
