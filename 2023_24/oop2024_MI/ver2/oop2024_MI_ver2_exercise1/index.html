@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Napisati program za direktora utrke koji se koristi u utrkama automobila. Kratki opis domene: utrkivanje automobilima je složen sport zbog čega postoji direktor utrke koji upravlja raznim aspketima utrke (npr. pokretanje utrke, podizanje određene zastave koja obavještava vozače o posebnim uvjetima na stazi). Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>RaceDirector</code> reprezentira funkcionalnosti direktora utrke. Vidljivost ovog elementa omogućuje javni pristup. Ima:</p>
+<ul>
+<li>Metodu <code>boolean startRace()</code> koja započinje utrku ako utrka nije u tijeku te ako je podignuta zelena zastava. Vraća je li operacija bila uspješna. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>Flag reportFlag()</code> koja vraća trenutno podignutu zastavu ili null ako nema aktivnih zastava. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>boolean stopRace()</code> koja zaustavlja utrku ako je utrka u tijeku te vraća je li operacija bila uspješna. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>Flag raiseFlag(Flag)</code> koja podiže zastavu ako je utrka u tijeku. Vraća zastavu koja je prije toga bila podignuta ili null ako nema prethodno podignute zastave. Istodobno može biti podignuta samo jedna vrsta zastave. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>RaceStatus direct()</code> koja upravlja utrkom na način da vraća NO_RACE ako utrka nije u tijeku. Inače, ovisno o tome koja je trenutno podignuta zastava, vraća: RED_FLAGGED ako je crvena zastava, IN_PROGRESS ako je zelena zastava, RESTRICTED ako je žuta zastava. Inače vraća NO_RACE. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Enumeracija <code>RaceStatus</code> specificira status utrke: nema utrke, zaustavljena uslijed crvene zastave, u tijeku, ograničena. Vidljivost ovog elementa omogućuje javni pristup.</p>
+<p>Enumeracija <code>Flag</code> reprezentira zastave: zelena, žuta i crvena. Element je vidljiv iz svih klasa.</p>
+<p>Razred <code>Paido</code> specificira direktor utrke s pretpostavljenim konstruktorom (početno stanje: nema utrke, zastava nije podignuta). OPASKA: UML ispod ne prikazuje ovu klasu ali ju je potrebno implementirati. Pristup ovog tipa je javan. Implementira <code>RaceDirector</code>.</p>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="311px" preserveAspectRatio="none" style="width:235px;height:311px;background:#FFFFFF;" version="1.1" viewBox="0 0 235 311" width="235px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[62d39f9afd3c2df27ea8998d1af63cfb]
+class RaceDirector-->
+<a href="java:hr.fer.oop.RaceDirector" target="_top" title="java:hr.fer.oop.RaceDirector" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.RaceDirector" xlink:show="new" xlink:title="java:hr.fer.oop.RaceDirector" xlink:type="simple">
+<g id="elem_RaceDirector">
+<rect codeLine="1" fill="#F1F1F1" height="100.8281" id="RaceDirector" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="18" y="7"/>
+<ellipse cx="60.45" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M61.4031,19.6406 L61.4031,26.2969 L63.1219,26.2969 Q63.7313,26.2969 63.9969,26.5313 Q64.2625,26.7656 64.2625,27.1563 Q64.2625,27.5313 63.9969,27.7656 Q63.7313,28 63.1219,28 L57.9813,28 Q57.3719,28 57.1063,27.7656 Q56.8406,27.5313 56.8406,27.1406 Q56.8406,26.7656 57.1063,26.5313 Q57.3719,26.2969 57.9813,26.2969 L59.7,26.2969 L59.7,19.6406 L57.9813,19.6406 Q57.3719,19.6406 57.1063,19.4063 Q56.8406,19.1719 56.8406,18.7813 Q56.8406,18.4063 57.1063,18.1719 Q57.3719,17.9375 57.9813,17.9375 L63.1219,17.9375 Q63.7313,17.9375 63.9969,18.1719 Q64.2625,18.4063 64.2625,18.7813 Q64.2625,19.1719 63.9969,19.4063 Q63.7313,19.6406 63.1219,19.6406 L61.4031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="83" x="80.55" y="28.7285">RaceDirector</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="19" x2="193" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="19" x2="193" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="24" y="65.5332">startRace(): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="24" y="83.1426">stopRace(): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="24" y="100.752">raiseFlag(flag: Flag): Flag</text>
+</g>
+</a>
+<!--MD5=[f031d4e33d5f3458ef7f3b0d85782377]
+class Flag-->
+<a href="java:hr.fer.oop.Flag" target="_top" title="java:hr.fer.oop.Flag" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Flag" xlink:show="new" xlink:title="java:hr.fer.oop.Flag" xlink:type="simple">
+<g id="elem_Flag">
+<rect codeLine="14" fill="#F1F1F1" height="100.8281" id="Flag" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="7" y="194.5"/>
+<ellipse cx="26.5" cy="210.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M25.3594,211.2969 L25.3594,213.7969 L29.6875,213.7969 L29.6875,212.875 Q29.6875,212.2656 29.9219,212 Q30.1719,211.7344 30.5469,211.7344 Q30.9219,211.7344 31.1563,212 Q31.3906,212.2656 31.3906,212.875 L31.3906,215.5 L23.3906,215.5 Q22.7656,215.5 22.5,215.2656 Q22.25,215.0313 22.25,214.6406 Q22.25,214.2656 22.5156,214.0313 Q22.7813,213.7969 23.3906,213.7969 L23.6563,213.7969 L23.6563,207.1406 L23.3906,207.1406 Q22.7656,207.1406 22.5,206.9063 Q22.25,206.6719 22.25,206.2813 Q22.25,205.9063 22.5,205.6719 Q22.7656,205.4375 23.3906,205.4375 L31.0156,205.4375 L31.0156,208.0313 Q31.0156,208.6406 30.7813,208.9063 Q30.5625,209.1563 30.1719,209.1563 Q29.7969,209.1563 29.5625,208.9063 Q29.3281,208.6406 29.3281,208.0313 L29.3281,207.1406 L25.3594,207.1406 L25.3594,209.5938 L26.8438,209.5938 Q26.8438,208.9375 26.9688,208.75 Q27.2344,208.3438 27.7031,208.3438 Q28.0781,208.3438 28.3125,208.6094 Q28.5469,208.8594 28.5469,209.4688 L28.5469,211.4375 Q28.5469,211.9844 28.4219,212.1719 Q28.1563,212.5625 27.7031,212.5625 Q27.2344,212.5625 26.9688,212.1563 Q26.8438,211.9688 26.8438,211.2969 L25.3594,211.2969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="41.5" y="216.2285">Flag</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="76" y1="226.5" y2="226.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="13" y="245.0332">GREEN</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="13" y="262.6426">YELLOW</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="13" y="280.252">RED</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="76" y1="287.3281" y2="287.3281"/>
+</g>
+</a>
+<!--MD5=[3afcb0acc5b868d5311f6abb7dcce22a]
+class RaceStatus-->
+<a href="java:hr.fer.oop.RaceStatus" target="_top" title="java:hr.fer.oop.RaceStatus" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.RaceStatus" xlink:show="new" xlink:title="java:hr.fer.oop.RaceStatus" xlink:type="simple">
+<g id="elem_RaceStatus">
+<rect codeLine="8" fill="#F1F1F1" height="118.4375" id="RaceStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="116" x="112" y="186"/>
+<ellipse cx="131.95" cy="202" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M130.8094,202.7969 L130.8094,205.2969 L135.1375,205.2969 L135.1375,204.375 Q135.1375,203.7656 135.3719,203.5 Q135.6219,203.2344 135.9969,203.2344 Q136.3719,203.2344 136.6063,203.5 Q136.8406,203.7656 136.8406,204.375 L136.8406,207 L128.8406,207 Q128.2156,207 127.95,206.7656 Q127.7,206.5313 127.7,206.1406 Q127.7,205.7656 127.9656,205.5313 Q128.2313,205.2969 128.8406,205.2969 L129.1063,205.2969 L129.1063,198.6406 L128.8406,198.6406 Q128.2156,198.6406 127.95,198.4063 Q127.7,198.1719 127.7,197.7813 Q127.7,197.4063 127.95,197.1719 Q128.2156,196.9375 128.8406,196.9375 L136.4656,196.9375 L136.4656,199.5313 Q136.4656,200.1406 136.2313,200.4063 Q136.0125,200.6563 135.6219,200.6563 Q135.2469,200.6563 135.0125,200.4063 Q134.7781,200.1406 134.7781,199.5313 L134.7781,198.6406 L130.8094,198.6406 L130.8094,201.0938 L132.2938,201.0938 Q132.2938,200.4375 132.4188,200.25 Q132.6844,199.8438 133.1531,199.8438 Q133.5281,199.8438 133.7625,200.1094 Q133.9969,200.3594 133.9969,200.9688 L133.9969,202.9375 Q133.9969,203.4844 133.8719,203.6719 Q133.6063,204.0625 133.1531,204.0625 Q132.6844,204.0625 132.4188,203.6563 Q132.2938,203.4688 132.2938,202.7969 L130.8094,202.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="147.05" y="207.7285">RaceStatus</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="113" x2="227" y1="218" y2="218"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="118" y="236.5332">NO_RACE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="118" y="254.1426">RED_FLAGGED</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="118" y="271.752">IN_PROGRESS</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="118" y="289.3613">RESTRICTED</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="113" x2="227" y1="296.4375" y2="296.4375"/>
+</g>
+</a>
+<!--MD5=[261a040ebeab37e0b58f47c6a7c2658d]
+link RaceDirector to Flag-->
+<g id="link_RaceDirector_Flag">
+<path codeLine="6" d="M72.7,108.42 C67.46,117.94 62.59,128.05 59,138 C53.15,154.2 49.31,172.53 46.79,189.33 " fill="none" id="RaceDirector-to-Flag" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="46.05,194.49,51.2927,186.1525,46.7631,189.5411,43.3745,185.0115,46.05,194.49" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="60" y="152.4951">reportFlag()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="39.1273" y="183.794">1</text>
+</g>
+<!--MD5=[dfd1f2921f7eaa11fd76990e82f876c9]
+link RaceDirector to RaceStatus-->
+<g id="link_RaceDirector_RaceStatus">
+<path codeLine="7" d="M123.15,108.21 C130.86,130.55 140.05,157.18 148.23,180.91 " fill="none" id="RaceDirector-to-RaceStatus" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="149.96,185.92,150.8112,176.108,148.3318,181.1925,143.2473,178.7131,149.96,185.92" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="40" x="139" y="152.4951">direct()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="140.0911" y="175.2345">1</text>
+</g>
+<!--MD5=[15d562f6fa320a6a255e1186f759ab0c]
+@startuml
+interface RaceDirector [[java:hr.fer.oop.RaceDirector]] {
+	startRace(): boolean
+	stopRace(): boolean
+	raiseFlag(flag: Flag): Flag
+}
+RaceDirector - -> "1" Flag : reportFlag()
+RaceDirector - -> "1" RaceStatus : direct()
+enum RaceStatus [[java:hr.fer.oop.RaceStatus]] {
+	NO_RACE
+	RED_FLAGGED
+	IN_PROGRESS
+	RESTRICTED
+}
+enum Flag [[java:hr.fer.oop.Flag]] {
+	GREEN
+	YELLOW
+	RED
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+    	
+    	RaceDirector rd = new Paido();
+    	
+    	System.out.println(&quot;There should not be any race at this moment: &quot;+rd.direct());
+    	System.out.println(&quot;No flags raised (null): &quot;+rd.reportFlag());
+    	System.out.println(&quot;Race was not started so we cannot finish it, returning: &quot; + rd.stopRace());
+    	
+    	System.out.println(&quot;Raising the green flag, previously should be non existent i.e. 'null': &quot;+ rd.raiseFlag(Flag.GREEN));
+    	System.out.println(&quot;Race successfully started? &quot;+ rd.startRace());
+    	
+    	System.out.println(&quot;Race have green flag raised: &quot;+rd.reportFlag());
+    	
+    	System.out.println(&quot;Race status should be IN PROGRESS: &quot;+rd.direct());
+    	
+    	System.out.println(&quot;Race successfully finished? &quot; + rd.stopRace());
+    	
+		// NOTE (opaska):
+		// main does not cover all test cases (main ne pokriva sve testne slučajeve)
+        
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">There should not be any race at this moment: NO_RACE
+No flags raised (null): null
+Race was not started so we cannot finish it, returning: false
+Raising the green flag, previously should be non existent i.e. 'null': null
+Race successfully started? true
+Race have green flag raised: GREEN
+Race status should be IN PROGRESS: IN_PROGRESS
+Race successfully finished? true
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

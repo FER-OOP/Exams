@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Napisati program koji modelira računala (prijenosno računalo i stolno računalo) te računa njihove ocjene. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Razred <code>Computer</code> reprezentira računalo. Stvaranje objekata iz ove klase nije moguće. Vidljivost ovog elementa omogućuje javni pristup. Sadrži:</p>
+<ul>
+<li>Varijablu <code>model</code> koja modelira model računala i tipa je <code>String</code>. Element je vidljiv iz svih klasa.</li>
+<li>Varijablu <code>mhz</code> koja specificira brzinu procesoru u megahercima i tipa je <code>double</code>. Element ima privatnu vidljivost.</li>
+<li>Konstruktor <code>Computer(String, double)</code> koji inicijalizira model i brzinu procesora u megahercima. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String getModel()</code> koja je getter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>void setModel(String)</code> koja je setter. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>double gigahertz()</code> koja vraća brzinu u gigahercima. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Razred <code>Laptop</code> predstavlja prijenosno računalo. Potrebno je zabraniti nasljeđivanje ove klase. Element ima maksimalnu vidljivost. Dijete je od <code>Computer</code>. U sebi sadržava:</p>
+<ul>
+<li>Varijablu <code>batteryCapacity</code> koja reprezentira kapacitet baterije i tipa je <code>int</code>. Element ima privatnu vidljivost.</li>
+<li>Konstruktor <code>Laptop(String, double, int)</code> koji inicijalizira model, brzinu procesora u megahercima i kapacitet baterije. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>int getBatteryCapacity()</code> koja je getter. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>void setBatteryCapacity(int)</code> koja je setter. Element ima maksimalnu vidljivost.</li>
+</ul>
+<p>Razred <code>Desktop</code> reprezentira stolno računalo. Potrebno je zabraniti nasljeđivanje ove klase. Podtip je od <code>Computer</code>. Element je vidljiv iz svih klasa. U sebi sadržava:</p>
+<ul>
+<li>Varijablu <code>location</code> koja predstavlja lokaciju i tipa je <code>String</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Konstruktor <code>Desktop(String, double, String)</code> koji inicijalizira model, brzinu procesora u megahercima i lokaciju. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String getLocation()</code> koja je getter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>void setLocation(String)</code> koja je setter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+</ul>
+<p>Klasa <code>Calculator</code> je kalkulator računala. Element je vidljiv iz svih klasa. Ima:</p>
+<ul>
+<li>Metodu <code>double score(Computer)</code> koja računa ocjenu računala na sljedeći način. Ako se radi o stolnom računalu, vraća prosjek između duljine znakova modela i brzine u megahercima. Ako se radi o laptopu, vraća prosjek između kapaciteta baterije i brzine u gigahercima. Važno: u bilo kojem drugom slučaju (npr. nepravilan unos) vraća 0.
+<ul>
+<li>Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Dostupna je u statičkom kontekstu svoje klase.</li>
+</ul>
+</li>
+</ul>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+		Desktop d1 = new Desktop(&quot;BANJA-PC&quot;, 2500, &quot;BANJA&quot;);
+		Desktop d2 = new Desktop(&quot;MIRA-PC&quot;, 1800, &quot;UNSKA 3&quot;);
+		
+		Laptop l1 = new Laptop(&quot;MEK&quot;, 3000, 10);
+		Laptop l2 = new Laptop(&quot;HA-PE&quot;, 1000, 8);
+		Laptop l3 = new Laptop(&quot;LEDOVO&quot;, 1400, 12);
+		
+		Computer[] computers = {d1, d2, l1, l2, l3};
+		
+		for(Computer computer : computers) {
+			System.out.printf(&quot;Computer %s (%.2f Ghz) has a score of %.2f %n&quot;, computer.getModel(), computer.gigahertz(), Calculator.score(computer));
+		}
+		
+	
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Computer BANJA-PC (2.50 Ghz) has a score of 1254.00 
+Computer MIRA-PC (1.80 Ghz) has a score of 903.50 
+Computer MEK (3.00 Ghz) has a score of 6.50 
+Computer HA-PE (1.00 Ghz) has a score of 4.50 
+Computer LEDOVO (1.40 Ghz) has a score of 6.70 
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

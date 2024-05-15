@@ -1,0 +1,184 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Napisati program koji modelira sigurnosni automobil koji se koristi u utrkama automobila. Kratki opis domene: utrkivanje automobilima je opasan sport zbog čega postoji sigurnosni automobil koji će se postaviti na stazu u slučaju kada je sigurnost sudionika ugrožena (npr. sudar, vremenske neprilike i slično). Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Sučelje <code>SafetyCar</code> reprezentira funkcionalnosti sigurnosnog automobila. Vidljivost ovog elementa omogućuje javni pristup. Ima:</p>
+<ul>
+<li>Metodu <code>boolean deploySafetyCar()</code> koja postavlja sigurnosni automobil na stazu ako se trenutno ne nalazi na stazi. Vraća je li postavljanje bilo uspješno. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>TrackConditions communicateWithRaceControl()</code> koja javlja trenutne uvjete na stazi ili vraća null ako ne zna koji su uvjeti. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>boolean withdrawSafetyCar()</code> koja uklanja sigurnosni automobil sa staze ali samo ako je trenutno na stazi te ako su uvjeti na stazi 'OK'. Vraća je li uklanjanje bilo uspješno. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>void observeTrackConditions(TrackConditions)</code> koja opaža trenutne uvjete na stazi i pamti ih ali samo ako je sigurnosni automobil postavljen na stazu. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>Advice advise()</code> koja pruža savjet odnosno vraća: NO_ADVICE (ako nije opazio trenutne uvjete na stazi), STOP_RACE (ako su na stazi olupine), GO_RACING (ako je staza OK), LIMIT_SPEED (ako je loše vrijeme). Inače vraća 'NO_ADVICE'. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Enumeracija <code>TrackConditions</code> specificira uvjete na stazi (OK, loše vrijeme, olupine na stazi). Vidljivost ovog elementa omogućuje javni pristup.</p>
+<p>Enumeracija <code>Advice</code> reprezentira savjete sigurnosnog automobila (nema savjeta, prekinuti utrku, nastaviti s utrkivanjem, ograničiti brzinu). Element je vidljiv iz svih klasa.</p>
+<p>Razred <code>Bembo</code> specificira sigurnosni automobil s javnim pretpostavljenim konstruktorom (početno stanje: nije na stazi te nema informaciju o uvjetima na stazi). OPASKA: UML ispod ne prikazuje ovu klasu ali ju je potrebno implementirati. Pristup ovog tipa je javan. Implementira <code>SafetyCar</code>.</p>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="311px" preserveAspectRatio="none" style="width:366px;height:311px;background:#FFFFFF;" version="1.1" viewBox="0 0 366 311" width="366px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[1de550f201b8177e46c082a5cb02a2d2]
+class SafetyCar-->
+<a href="java:hr.fer.oop.SafetyCar" target="_top" title="java:hr.fer.oop.SafetyCar" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.SafetyCar" xlink:show="new" xlink:title="java:hr.fer.oop.SafetyCar" xlink:type="simple">
+<g id="elem_SafetyCar">
+<rect codeLine="1" fill="#F1F1F1" height="100.8281" id="SafetyCar" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="333" x="26" y="7"/>
+<ellipse cx="156.75" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M157.7031,19.6406 L157.7031,26.2969 L159.4219,26.2969 Q160.0313,26.2969 160.2969,26.5313 Q160.5625,26.7656 160.5625,27.1563 Q160.5625,27.5313 160.2969,27.7656 Q160.0313,28 159.4219,28 L154.2813,28 Q153.6719,28 153.4063,27.7656 Q153.1406,27.5313 153.1406,27.1406 Q153.1406,26.7656 153.4063,26.5313 Q153.6719,26.2969 154.2813,26.2969 L156,26.2969 L156,19.6406 L154.2813,19.6406 Q153.6719,19.6406 153.4063,19.4063 Q153.1406,19.1719 153.1406,18.7813 Q153.1406,18.4063 153.4063,18.1719 Q153.6719,17.9375 154.2813,17.9375 L159.4219,17.9375 Q160.0313,17.9375 160.2969,18.1719 Q160.5625,18.4063 160.5625,18.7813 Q160.5625,19.1719 160.2969,19.4063 Q160.0313,19.6406 159.4219,19.6406 L157.7031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="63" x="177.25" y="28.7285">SafetyCar</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="27" x2="358" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="27" x2="358" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="32" y="65.5332">deploySafetyCar(): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="32" y="83.1426">withdrawSafetyCar(): boolean</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="321" x="32" y="100.752">observeTrackConditions(rc: TrackConditions): void</text>
+</g>
+</a>
+<!--MD5=[071bd159accde6f38aafb912f0921207]
+class TrackConditions-->
+<a href="java:hr.fer.oop.TrackConditions" target="_top" title="java:hr.fer.oop.TrackConditions" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.TrackConditions" xlink:show="new" xlink:title="java:hr.fer.oop.TrackConditions" xlink:type="simple">
+<g id="elem_TrackConditions">
+<rect codeLine="8" fill="#F1F1F1" height="100.8281" id="TrackConditions" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="145" x="7" y="194.5"/>
+<ellipse cx="26.5" cy="210.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M25.3594,211.2969 L25.3594,213.7969 L29.6875,213.7969 L29.6875,212.875 Q29.6875,212.2656 29.9219,212 Q30.1719,211.7344 30.5469,211.7344 Q30.9219,211.7344 31.1563,212 Q31.3906,212.2656 31.3906,212.875 L31.3906,215.5 L23.3906,215.5 Q22.7656,215.5 22.5,215.2656 Q22.25,215.0313 22.25,214.6406 Q22.25,214.2656 22.5156,214.0313 Q22.7813,213.7969 23.3906,213.7969 L23.6563,213.7969 L23.6563,207.1406 L23.3906,207.1406 Q22.7656,207.1406 22.5,206.9063 Q22.25,206.6719 22.25,206.2813 Q22.25,205.9063 22.5,205.6719 Q22.7656,205.4375 23.3906,205.4375 L31.0156,205.4375 L31.0156,208.0313 Q31.0156,208.6406 30.7813,208.9063 Q30.5625,209.1563 30.1719,209.1563 Q29.7969,209.1563 29.5625,208.9063 Q29.3281,208.6406 29.3281,208.0313 L29.3281,207.1406 L25.3594,207.1406 L25.3594,209.5938 L26.8438,209.5938 Q26.8438,208.9375 26.9688,208.75 Q27.2344,208.3438 27.7031,208.3438 Q28.0781,208.3438 28.3125,208.6094 Q28.5469,208.8594 28.5469,209.4688 L28.5469,211.4375 Q28.5469,211.9844 28.4219,212.1719 Q28.1563,212.5625 27.7031,212.5625 Q27.2344,212.5625 26.9688,212.1563 Q26.8438,211.9688 26.8438,211.2969 L25.3594,211.2969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="41.5" y="216.2285">TrackConditions</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="151" y1="226.5" y2="226.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="13" y="245.0332">OK</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="13" y="262.6426">BAD_WEATHER</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="13" y="280.252">DEBRIS_ON_TRACK</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="151" y1="287.3281" y2="287.3281"/>
+</g>
+</a>
+<!--MD5=[ea70e79ab3003c2ec03e78c7b3d0e1b7]
+class Advice-->
+<a href="java:hr.fer.oop.Advice" target="_top" title="java:hr.fer.oop.Advice" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Advice" xlink:show="new" xlink:title="java:hr.fer.oop.Advice" xlink:type="simple">
+<g id="elem_Advice">
+<rect codeLine="13" fill="#F1F1F1" height="118.4375" id="Advice" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="255.5" y="186"/>
+<ellipse cx="282.2" cy="202" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M281.0594,202.7969 L281.0594,205.2969 L285.3875,205.2969 L285.3875,204.375 Q285.3875,203.7656 285.6219,203.5 Q285.8719,203.2344 286.2469,203.2344 Q286.6219,203.2344 286.8563,203.5 Q287.0906,203.7656 287.0906,204.375 L287.0906,207 L279.0906,207 Q278.4656,207 278.2,206.7656 Q277.95,206.5313 277.95,206.1406 Q277.95,205.7656 278.2156,205.5313 Q278.4813,205.2969 279.0906,205.2969 L279.3563,205.2969 L279.3563,198.6406 L279.0906,198.6406 Q278.4656,198.6406 278.2,198.4063 Q277.95,198.1719 277.95,197.7813 Q277.95,197.4063 278.2,197.1719 Q278.4656,196.9375 279.0906,196.9375 L286.7156,196.9375 L286.7156,199.5313 Q286.7156,200.1406 286.4813,200.4063 Q286.2625,200.6563 285.8719,200.6563 Q285.4969,200.6563 285.2625,200.4063 Q285.0281,200.1406 285.0281,199.5313 L285.0281,198.6406 L281.0594,198.6406 L281.0594,201.0938 L282.5438,201.0938 Q282.5438,200.4375 282.6688,200.25 Q282.9344,199.8438 283.4031,199.8438 Q283.7781,199.8438 284.0125,200.1094 Q284.2469,200.3594 284.2469,200.9688 L284.2469,202.9375 Q284.2469,203.4844 284.1219,203.6719 Q283.8563,204.0625 283.4031,204.0625 Q282.9344,204.0625 282.6688,203.6563 Q282.5438,203.4688 282.5438,202.7969 L281.0594,202.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="298.8" y="207.7285">Advice</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="256.5" x2="354.5" y1="218" y2="218"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="261.5" y="236.5332">NO_ADVICE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="261.5" y="254.1426">STOP_RACE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="261.5" y="271.752">GO_RACING</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="261.5" y="289.3613">LIMIT_SPEED</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="256.5" x2="354.5" y1="296.4375" y2="296.4375"/>
+</g>
+</a>
+<!--MD5=[6bfb9b9a086dbca503be8884fa4a6826]
+link SafetyCar to TrackConditions-->
+<g id="link_SafetyCar_TrackConditions">
+<path codeLine="6" d="M100.19,108.1 C90.72,116.82 82.42,126.77 76.5,138 C68.37,153.42 66.67,171.94 67.75,189.16 " fill="none" id="SafetyCar-to-TrackConditions" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="68.17,194.45,71.4639,185.1683,67.7843,189.4649,63.4877,185.7853,68.17,194.45" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184" x="77.5" y="152.4951">communicateWithRaceControl()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="59.0845" y="183.7483">1</text>
+</g>
+<!--MD5=[2bd6f1909093ca64718b54f716ab5c1d]
+link SafetyCar to Advice-->
+<g id="link_SafetyCar_Advice">
+<path codeLine="7" d="M244.27,108.23 C252.4,117.61 260.18,127.72 266.5,138 C274.62,151.21 281.44,166.37 287,181.02 " fill="none" id="SafetyCar-to-Advice" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="288.83,185.96,289.4415,176.1301,287.0869,181.2737,281.9434,178.9191,288.83,185.96" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="275.5" y="152.4951">advise()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="279.3718" y="175.2794">1</text>
+</g>
+<!--MD5=[3d261686754835a4ad199b7fe6d5e07a]
+@startuml
+interface SafetyCar [[java:hr.fer.oop.SafetyCar]] {
+	deploySafetyCar(): boolean
+	withdrawSafetyCar(): boolean
+	observeTrackConditions(rc: TrackConditions): void
+}
+SafetyCar - -> "1" TrackConditions : communicateWithRaceControl()
+SafetyCar - -> "1" Advice : advise()
+enum TrackConditions [[java:hr.fer.oop.TrackConditions]] {
+	OK
+	BAD_WEATHER
+	DEBRIS_ON_TRACK
+}
+enum Advice [[java:hr.fer.oop.Advice]] {
+	NO_ADVICE
+	STOP_RACE
+	GO_RACING
+	LIMIT_SPEED
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+		SafetyCar sc = new Bembo();
+		
+
+		System.out.println(&quot;Advice without any info: &quot;+sc.advise());
+		
+
+		System.out.println(&quot;Safety car deployed? &quot;+sc.deploySafetyCar());
+		
+		System.out.println(&quot;Safety car deployed again? &quot;+sc.deploySafetyCar());
+		
+		System.out.println(&quot;I currently observe nothing: &quot;+sc.communicateWithRaceControl());
+		System.out.println(&quot;Thereforem I do not have an advice: &quot;+sc.advise());
+		
+		System.out.println(&quot;Observing debris on track...&quot;);
+		sc.observeTrackConditions(TrackConditions.DEBRIS_ON_TRACK);
+		System.out.println(&quot;Track conditions: &quot;+sc.communicateWithRaceControl());
+		
+	
+		
+		
+		boolean isWithdrawn = sc.withdrawSafetyCar();
+		System.out.println(&quot;Because of this, you cannot withdrew me, returing: &quot;+sc.withdrawSafetyCar());
+		
+		System.out.println(&quot;Imagine we observe OK conditions...&quot;);
+		sc.observeTrackConditions(TrackConditions.OK);
+		System.out.println(&quot;Now you can withdrew me, returing: &quot;+sc.withdrawSafetyCar());
+		System.out.println(&quot;Once withdrew, that is it, returning: &quot;+sc.withdrawSafetyCar());
+		
+		// NOTE (opaska):
+		// main does not cover all test cases (main ne pokriva sve testne slučajeve)
+        
+    
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Advice without any info: NO_ADVICE
+Safety car deployed? true
+Safety car deployed again? false
+I currently observe nothing: null
+Thereforem I do not have an advice: NO_ADVICE
+Observing debris on track...
+Track conditions: DEBRIS_ON_TRACK
+Because of this, you cannot withdrew me, returing: false
+Imagine we observe OK conditions...
+Now you can withdrew me, returing: true
+Once withdrew, that is it, returning: false
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

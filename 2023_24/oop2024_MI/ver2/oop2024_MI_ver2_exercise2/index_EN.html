@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>Write a program that models computers (laptop and desktop) and calculates their scores. Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>The class <code>Computer</code> specifies a computer. Creating objects from this class is not possible. Visibility of this element secures the public access. It contains:</p>
+<ul>
+<li>Variable <code>model</code> which specifies a computer model and is of type <code>String</code>. This element is visible from all the classes.</li>
+<li>Variable <code>mhz</code> which models a processor speed in megahertz and is of type <code>double</code>. The element has the private visibility.</li>
+<li>Constructor <code>Computer(String, double)</code> which initializers the model and processor speed in megahertz. This element is visible from all the classes.</li>
+<li>Method <code>String getModel()</code> which is getter. Visibility of this element secures the public access.</li>
+<li>Method <code>void setModel(String)</code> which is setter. The access of this type is public.</li>
+<li>Method <code>double gigahertz()</code> which returns the speed in gigahertz. This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>Laptop</code> models a laptop. It is required to prevent the inheritance of this class. This element has the maximum visibility. It is a child of <code>Computer</code>. It is composed of:</p>
+<ul>
+<li>Variable <code>batteryCapacity</code> which models the battery capacity and is of type <code>int</code>. The element has the private visibility.</li>
+<li>Constructor <code>Laptop(String, double, int)</code> which initializes the model, the processor speed in megahertz and the battery speed. This element has the maximum visibility.</li>
+<li>Method <code>int getBatteryCapacity()</code> which is getter. This element is visible from all the classes.</li>
+<li>Method <code>void setBatteryCapacity(int)</code> which is setter. This element has the maximum visibility.</li>
+</ul>
+<p>The class <code>Desktop</code> models a desktop computer. It is required to prevent the inheritance of this class. It is a subtype of <code>Computer</code>. This element is visible from all the classes. It is composed of:</p>
+<ul>
+<li>Variable <code>location</code> which models a location and is of type <code>String</code>. The element is visible to clasess from the same paket as well as from the subclass.</li>
+<li>Constructor <code>Desktop(String, double, String)</code> which initializes the model, speed and location. This element is visible from all the classes.</li>
+<li>Method <code>String getLocation()</code> which is getter. This element has the maximum visibility.</li>
+<li>Method <code>void setLocation(String)</code> which is setter. Visibility of this element secures the public access.</li>
+</ul>
+<p>The class <code>Calculator</code> is a computer calculator. This element is visible from all the classes. It has:</p>
+<ul>
+<li>Method <code>double score(Computer)</code> which calculates the score as follows. If desktop computer, returns the average of speed in megahertz and characters length of model. In case of laptop, return the average of battery capacity and processor speed in gigahertz. Important: in any other case (e.g. invalid input) returns 0.
+<ul>
+<li>Visibility of this element secures the public access.</li>
+<li>It is available in a static context of its own class.</li>
+</ul>
+</li>
+</ul>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+		Desktop d1 = new Desktop(&quot;BANJA-PC&quot;, 2500, &quot;BANJA&quot;);
+		Desktop d2 = new Desktop(&quot;MIRA-PC&quot;, 1800, &quot;UNSKA 3&quot;);
+		
+		Laptop l1 = new Laptop(&quot;MEK&quot;, 3000, 10);
+		Laptop l2 = new Laptop(&quot;HA-PE&quot;, 1000, 8);
+		Laptop l3 = new Laptop(&quot;LEDOVO&quot;, 1400, 12);
+		
+		Computer[] computers = {d1, d2, l1, l2, l3};
+		
+		for(Computer computer : computers) {
+			System.out.printf(&quot;Computer %s (%.2f Ghz) has a score of %.2f %n&quot;, computer.getModel(), computer.gigahertz(), Calculator.score(computer));
+		}
+		
+	
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">Computer BANJA-PC (2.50 Ghz) has a score of 1254.00 
+Computer MIRA-PC (1.80 Ghz) has a score of 903.50 
+Computer MEK (3.00 Ghz) has a score of 6.50 
+Computer HA-PE (1.00 Ghz) has a score of 4.50 
+Computer LEDOVO (1.40 Ghz) has a score of 6.70 
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

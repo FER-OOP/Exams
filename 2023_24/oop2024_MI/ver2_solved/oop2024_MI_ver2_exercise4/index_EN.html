@@ -1,0 +1,192 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>The task is to create an object model for meal preparation with the ultimate goal of preparing the fruit salad. Below there is an UML class diagram used in the task which is related to a meal (<code>Meal</code>) i a fruit (<code>Fruit</code>). Notice that both of them are nutritional (<code>Nutritional</code>), that is, that have the nutritional profile (proteins, carbs, fat and consequently, calories). Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>Interface <code>Preparator</code> specifies a method for preparation, the interface is parametrized with three types, e.g. A, B and C. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Method <code>C prepare(A, B)</code> which prepares the result based on the passed arguments. The access of this type is public.</li>
+</ul>
+<p>The class <code>MealPreparator</code> specifies a meal preparator which is parametrized with one type that is nutritional. Has a default constructor. It implements <code>Preparator</code>.  Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Method <code>Meal prepare(Fruit, B)</code> which prepares the meal by adding the nutritional values of passed arguments (i.e., new meal has the sum of proteins of the passed arguments, the same approach goes for carbs and fats; note: does not set the meal name). This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>FruitSaladPreparator</code> models a meal preparator, in practice a fruit salad preparator (note that it does not have the parametrization). Has the default constructor. It is a child of <code>MealPreparator</code>. This element has the maximum visibility. It is composed of:</p>
+<ul>
+<li>Method <code>Meal prepare(Fruit, Fruit)</code> which prepares the fruit salad in the following way&gt; prepares the name using format &quot;FRUIT SALAD with X and Y&quot;, where X denotes the name of the first fruit and Y is the name of the second fruit and creates the nutritional profile of the fruit salad (profile is created in a identical way as <code>MealPreparator</code> does). The access of this type is public.</li>
+</ul>
+<h2>UML Class diagram:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="594px" preserveAspectRatio="none" style="width:348px;height:594px;background:#FFFFFF;" version="1.1" viewBox="0 0 348 594" width="348px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[bb128ef4ce380baf75f7fa398629406f]
+class Nutritional-->
+<a href="java:hr.fer.oop.Nutritional" target="_top" title="java:hr.fer.oop.Nutritional" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Nutritional" xlink:show="new" xlink:title="java:hr.fer.oop.Nutritional" xlink:type="simple">
+<g id="elem_Nutritional">
+<rect codeLine="22" fill="#F1F1F1" height="118.4375" id="Nutritional" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="117" x="115.5" y="7"/>
+<ellipse cx="139.95" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M140.9031,19.6406 L140.9031,26.2969 L142.6219,26.2969 Q143.2313,26.2969 143.4969,26.5313 Q143.7625,26.7656 143.7625,27.1563 Q143.7625,27.5313 143.4969,27.7656 Q143.2313,28 142.6219,28 L137.4813,28 Q136.8719,28 136.6063,27.7656 Q136.3406,27.5313 136.3406,27.1406 Q136.3406,26.7656 136.6063,26.5313 Q136.8719,26.2969 137.4813,26.2969 L139.2,26.2969 L139.2,19.6406 L137.4813,19.6406 Q136.8719,19.6406 136.6063,19.4063 Q136.3406,19.1719 136.3406,18.7813 Q136.3406,18.4063 136.6063,18.1719 Q136.8719,17.9375 137.4813,17.9375 L142.6219,17.9375 Q143.2313,17.9375 143.4969,18.1719 Q143.7625,18.4063 143.7625,18.7813 Q143.7625,19.1719 143.4969,19.4063 Q143.2313,19.6406 142.6219,19.6406 L140.9031,19.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="64" x="156.05" y="28.7285">Nutritional</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="116.5" x2="231.5" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="116.5" x2="231.5" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="121.5" y="65.5332">getFat(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="121.5" y="83.1426">getCarbs(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="121.5" y="100.752">getProtein(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="121.5" y="118.3613">getCalories(): int</text>
+</g>
+</a>
+<!--MD5=[46a869ae9a533cd0f135276579d5ca7a]
+class Meal-->
+<a href="java:hr.fer.oop.Meal" target="_top" title="java:hr.fer.oop.Meal" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Meal" xlink:show="new" xlink:title="java:hr.fer.oop.Meal" xlink:type="simple">
+<g id="elem_Meal">
+<rect codeLine="28" fill="#F1F1F1" height="276.9219" id="Meal" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="334" x="7" y="185"/>
+<ellipse cx="154.75" cy="201" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M157.5156,196.875 Q157.6719,196.6563 157.8594,196.5469 Q158.0469,196.4375 158.2656,196.4375 Q158.6406,196.4375 158.875,196.7031 Q159.1094,196.9531 159.1094,197.5625 L159.1094,199.0156 Q159.1094,199.625 158.875,199.8906 Q158.6406,200.1563 158.2656,200.1563 Q157.9219,200.1563 157.7188,199.9531 Q157.5156,199.7656 157.4063,199.25 Q157.3594,198.8906 157.1719,198.7031 Q156.8438,198.3281 156.2344,198.1094 Q155.625,197.8906 155,197.8906 Q154.2344,197.8906 153.5938,198.2188 Q152.9688,198.5469 152.4688,199.2969 Q151.9844,200.0469 151.9844,201.0781 L151.9844,202.1719 Q151.9844,203.4063 152.875,204.2344 Q153.7656,205.0469 155.3594,205.0469 Q156.2969,205.0469 156.9531,204.7969 Q157.3438,204.6406 157.7656,204.2031 Q158.0313,203.9375 158.1719,203.8594 Q158.3281,203.7813 158.5313,203.7813 Q158.8594,203.7813 159.1094,204.0469 Q159.375,204.2969 159.375,204.6406 Q159.375,204.9844 159.0313,205.3906 Q158.5313,205.9688 157.7344,206.2969 Q156.6563,206.75 155.3594,206.75 Q153.8438,206.75 152.6406,206.125 Q151.6563,205.625 150.9688,204.5625 Q150.2813,203.4844 150.2813,202.2031 L150.2813,201.0469 Q150.2813,199.7188 150.8906,198.5781 Q151.5156,197.4219 152.6094,196.8125 Q153.7031,196.1875 154.9375,196.1875 Q155.6719,196.1875 156.3125,196.3594 Q156.9688,196.5156 157.5156,196.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="175.25" y="206.7285">Meal</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="340" y1="217" y2="217"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="228.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="27" y="235.5332">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="245.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="27" y="253.1426">protein: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="263.5234"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="27" y="270.752">carbs: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="281.1328"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="27" y="288.3613">fat: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="340" y1="295.4375" y2="295.4375"/>
+<ellipse cx="18" cy="309.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="27" y="313.9707">Meal(protein: int, carbs: int, fat: int)</text>
+<ellipse cx="18" cy="327.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="27" y="331.5801">Meal(name: String, protein: int, carbs: int, fat: int)</text>
+<ellipse cx="18" cy="344.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="27" y="349.1895">getName(): String</text>
+<ellipse cx="18" cy="362.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="366.7988">getProtein(): int</text>
+<ellipse cx="18" cy="380.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="27" y="384.4082">getCarbs(): int</text>
+<ellipse cx="18" cy="397.7891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="27" y="402.0176">getFat(): int</text>
+<ellipse cx="18" cy="415.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="419.627">toString(): String</text>
+<ellipse cx="18" cy="433.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="437.2363">hashCode(): int</text>
+<ellipse cx="18" cy="450.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27" y="454.8457">equals(obj: Object): boolean</text>
+</g>
+</a>
+<!--MD5=[385b8a2fd003af01fa07704922124a5e]
+class Fruit-->
+<a href="java:hr.fer.oop.Fruit" target="_top" title="java:hr.fer.oop.Fruit" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Fruit" xlink:show="new" xlink:title="java:hr.fer.oop.Fruit" xlink:type="simple">
+<g id="elem_Fruit">
+<rect codeLine="25" fill="#F1F1F1" height="65.6094" id="Fruit" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="333" x="7.5" y="522"/>
+<ellipse cx="155.25" cy="538" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M158.0156,533.875 Q158.1719,533.6563 158.3594,533.5469 Q158.5469,533.4375 158.7656,533.4375 Q159.1406,533.4375 159.375,533.7031 Q159.6094,533.9531 159.6094,534.5625 L159.6094,536.0156 Q159.6094,536.625 159.375,536.8906 Q159.1406,537.1563 158.7656,537.1563 Q158.4219,537.1563 158.2188,536.9531 Q158.0156,536.7656 157.9063,536.25 Q157.8594,535.8906 157.6719,535.7031 Q157.3438,535.3281 156.7344,535.1094 Q156.125,534.8906 155.5,534.8906 Q154.7344,534.8906 154.0938,535.2188 Q153.4688,535.5469 152.9688,536.2969 Q152.4844,537.0469 152.4844,538.0781 L152.4844,539.1719 Q152.4844,540.4063 153.375,541.2344 Q154.2656,542.0469 155.8594,542.0469 Q156.7969,542.0469 157.4531,541.7969 Q157.8438,541.6406 158.2656,541.2031 Q158.5313,540.9375 158.6719,540.8594 Q158.8281,540.7813 159.0313,540.7813 Q159.3594,540.7813 159.6094,541.0469 Q159.875,541.2969 159.875,541.6406 Q159.875,541.9844 159.5313,542.3906 Q159.0313,542.9688 158.2344,543.2969 Q157.1563,543.75 155.8594,543.75 Q154.3438,543.75 153.1406,543.125 Q152.1563,542.625 151.4688,541.5625 Q150.7813,540.4844 150.7813,539.2031 L150.7813,538.0469 Q150.7813,536.7188 151.3906,535.5781 Q152.0156,534.4219 153.1094,533.8125 Q154.2031,533.1875 155.4375,533.1875 Q156.1719,533.1875 156.8125,533.3594 Q157.4688,533.5156 158.0156,533.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="175.75" y="543.7285">Fruit</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8.5" x2="339.5" y1="554" y2="554"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8.5" x2="339.5" y1="562" y2="562"/>
+<ellipse cx="18.5" cy="576.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="307" x="27.5" y="580.5332">Fruit(name: String, protein: int, carbs: int, fat: int)</text>
+</g>
+</a>
+<!--MD5=[09fc6c11a7f4301b5c2e4d490abf80cd]
+reverse link Nutritional to Meal-->
+<g id="link_Nutritional_Meal">
+<path codeLine="24" d="M174,145.58 C174,158.12 174,171.4 174,184.83 " fill="none" id="Nutritional-backto-Meal" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="167,145.3,174,125.3,181,145.3,167,145.3" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[36e825b1331b6d80d171f0a2ca465ac9]
+reverse link Meal to Fruit-->
+<g id="link_Meal_Fruit">
+<path codeLine="30" d="M174,482.73 C174,497.28 174,510.75 174,521.96 " fill="none" id="Meal-backto-Fruit" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="167,482.31,174,462.31,181,482.31,167,482.31" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--MD5=[bd8a79484bf68aed072f1ef104ab3c61]
+@startuml
+interface Nutritional [[java:hr.fer.oop.Nutritional]] {
+	getFat(): int
+	getCarbs(): int
+	getProtein(): int
+	getCalories(): int
+}
+class Meal [[java:hr.fer.oop.Meal]] {
+	-name: String
+	-protein: int
+	-carbs: int
+	-fat: int
+	+Meal(protein: int, carbs: int, fat: int)
+	+Meal(name: String, protein: int, carbs: int, fat: int)
+	+getName(): String
+	+getProtein(): int
+	+getCarbs(): int
+	+getFat(): int
+	+toString(): String
+	+hashCode(): int
+	+equals(obj: Object): boolean
+}
+interface Nutritional {
+}
+Nutritional <|.. Meal
+class Fruit [[java:hr.fer.oop.Fruit]] {
+	+Fruit(name: String, protein: int, carbs: int, fat: int)
+}
+class Meal {
+}
+Meal <|- - Fruit
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>The method in italic is abstract. The method/variable in underline is static.</strong></p>
+<h3>Visibility legend</h3>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+		FruitSaladPreparator saladMaker = new FruitSaladPreparator();
+		
+		System.out.println(&quot;FRUIT INGREDIENTS:&quot;);
+		Fruit banana = new Fruit(&quot;2 bananas&quot;, 2, 54, 1);
+		System.out.println(banana);
+		Fruit passionFruit = new Fruit(&quot;passion fruit&quot;, 5, 55, 2);
+		System.out.println(passionFruit);
+		
+		Meal meal = saladMaker.prepare(banana, passionFruit);
+		
+		System.out.println(&quot;RESULTING MEAL:&quot;);
+		System.out.println(meal);
+		
+
+	
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">FRUIT INGREDIENTS:
+Meal [name=2 bananas, protein=2, carbs=54, fat=1, calories=233]
+Meal [name=passion fruit, protein=5, carbs=55, fat=2, calories=258]
+RESULTING MEAL:
+Meal [name=FRUIT SALAD with 2 bananas and passion fruit, protein=7, carbs=109, fat=3, calories=491]
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

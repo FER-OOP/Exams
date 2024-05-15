@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Kratki opis domene: osobe s invaliditetom zbog raznih prepreka na koje nailaze često nemaju osigurane jednake mogućnosti. Kako FER pomaže osobama s invaliditetom i doprinosi postizanju uključivog društva možete vidjeti na stranicama ICT-AAC (opaska: proučiti stranicu ali tek nakon ispita! http://www.ict-aac.hr/).</p>
+<p>Zadatak je napraviti objektni model za procesiranje teškoća koje imaju osobe s invaliditetom. Konkretno, u zadatku je potrebno implementirati dvije klase: <code>DisabilityException</code> i <code>Solution</code>. Format skupa podataka prikazan je u primjeru izvršavanja: svaka ispravna linija oblika je '[A] ### [B] #[C] --', gdje [A] označava ime osobe (pretpostavite da je uvijek ispravno), [B] označava teškoću (predefinirana vrijednost, pretpostaviti da teškoća može biti zapisana proizvoljnom kombinacijom malih i velikih slova, uputa: koristiti <code>equalsIgnoreCase</code> za provjere), [C] je razina oštećenja (decimalna vrijednost između 0.00% i 100.00% uključivo). Cilj je u klasi <code>Solution</code> (s praznim konstruktorom) implementirati sučelje <code>DisabilityDatasetManager</code> kako bi se parsirale sve linije teksta i obavile sve tražene funkcionalnosti. Potrebno je i napraviti provjeravanu iznimku <code>DisabilityException</code>. Pretpostaviti da će: skup podataka uvijek imati više linija, zaglavlje uvijek biti dobro napisano, imena osoba će uvijek postojati i biti ispravna (alfanumerički znakovi bez drugih znakova). Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Enumeracija <code>Disability</code> reprezentira teškoće koje mogu imati osobe s invaliditetom (vida, intelektualne, fizičke). Prepostaviti da se taksonomija teškoća neće mijenjati. Opaska: zbog sažetosti zadatka nisu navedene sve vrste teškoća..</p>
+<p>Klasa <code>DisabilityRecord</code> reprezentira zapis teškoće s atributima personName (ime osobe s teškoćom), disability (teškoća), rating (razina oštećenja od 0 do 1 što predstavlja od 0% do 100%. Interval je [0.0, 1.0], odnosno, donja i gornja granica su uključive).</p>
+<p>Razred <code>DisabilityException</code> je model provjeravane iznimke koja se baca kada dođe do problema kod procesiranja. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Konstruktor <code>DisabilityException(String)</code> koji postavlja poruku iznimke. Njen sadržaj je čitava linija teksta koja je neuspješno procesirana. Pristup ovog tipa je javan.</li>
+</ul>
+<p>Sučelje <code>DisabilityDatasetManager</code> oblikuje skup metoda za procesiranje i analizu zapisa teškoća. Sadrži:</p>
+<ul>
+<li>Metodu <code>int processDataset(String)</code> koja procesira ulazni skup podataka (uz pomoć <code>processLine</code> metode) koji je predan u tekstualnom formatu. Vraća broj neuspješno procesiranih zapisa teškoća. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>DisabilityRecord processLine(String)</code> koja procesira liniju teksta iz skupa podataka te vraća instancu <code>DisabilityRecord</code> na temelju parsiranih podataka iz predane linije teksta. Pretpostaviti da teškoća može biti zapisana proizvoljnom kombinacijom velikih i malih slova (pomoć: koristiti equalsIgnoreCase). Obratiti pozornost na raspon razine oštećenja. Baca <code>DisabilityException</code> ako dođe do problema u procesiranju (parsiranje, vrijednost izvan raspona, linija nije prema propisanoj strukturi). Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>String maxRating(Disability)</code> koja baca iznimku <code>java.lang.UnsupportedOperationException</code> bez poruke. Pristup ovog tipa je javan.</li>
+<li>Metodu <code>String share(Disability)</code> koja na temelju završene obrade iz metode <code>processDataset</code> računa zastupljenost neke teškoće u odnosu na populaciju (npr. za VISUAL: [broj zapisa s vizualnim oštećenjima]/[ukupan broj zapisa]). Povratna vrijednost je u obliku Stringa koji je formatiran na jednu decimalu, npr.: 0.4321 će imati String sadržaja <code>43.2%</code>. Ako nema podataka o navednoj teškoći ili se ne može izračunati vratiti <code>0.0%</code>. Pomoć kako escapati znak posto kod formatiranja: <code>%%</code>. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>Solution</code> je rješenje zadatka koje je potrebno napraviti. Implementira <code>DisabilityDatasetManager</code>.  Vidljivost ovog elementa omogućuje javni pristup.</p>
+<h2>UML Dijagram klasa:</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="398px" preserveAspectRatio="none" style="width:809px;height:398px;background:#FFFFFF;" version="1.1" viewBox="0 0 809 398" width="809px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--MD5=[70929eddd2ed98744d967754108a7532]
+class Disability-->
+<a href="java:hr.fer.oop.Disability" target="_top" title="java:hr.fer.oop.Disability" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Disability" xlink:show="new" xlink:title="java:hr.fer.oop.Disability" xlink:type="simple">
+<g id="elem_Disability">
+<rect codeLine="1" fill="#F1F1F1" height="100.8281" id="Disability" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="112" x="193" y="291"/>
+<ellipse cx="218.8" cy="307" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M217.6594,307.7969 L217.6594,310.2969 L221.9875,310.2969 L221.9875,309.375 Q221.9875,308.7656 222.2219,308.5 Q222.4719,308.2344 222.8469,308.2344 Q223.2219,308.2344 223.4563,308.5 Q223.6906,308.7656 223.6906,309.375 L223.6906,312 L215.6906,312 Q215.0656,312 214.8,311.7656 Q214.55,311.5313 214.55,311.1406 Q214.55,310.7656 214.8156,310.5313 Q215.0813,310.2969 215.6906,310.2969 L215.9563,310.2969 L215.9563,303.6406 L215.6906,303.6406 Q215.0656,303.6406 214.8,303.4063 Q214.55,303.1719 214.55,302.7813 Q214.55,302.4063 214.8,302.1719 Q215.0656,301.9375 215.6906,301.9375 L223.3156,301.9375 L223.3156,304.5313 Q223.3156,305.1406 223.0813,305.4063 Q222.8625,305.6563 222.4719,305.6563 Q222.0969,305.6563 221.8625,305.4063 Q221.6281,305.1406 221.6281,304.5313 L221.6281,303.6406 L217.6594,303.6406 L217.6594,306.0938 L219.1438,306.0938 Q219.1438,305.4375 219.2688,305.25 Q219.5344,304.8438 220.0031,304.8438 Q220.3781,304.8438 220.6125,305.1094 Q220.8469,305.3594 220.8469,305.9688 L220.8469,307.9375 Q220.8469,308.4844 220.7219,308.6719 Q220.4563,309.0625 220.0031,309.0625 Q219.5344,309.0625 219.2688,308.6563 Q219.1438,308.4688 219.1438,307.7969 L217.6594,307.7969 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="235.2" y="312.7285">Disability</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="194" x2="304" y1="323" y2="323"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="199" y="341.5332">VISUAL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="199" y="359.1426">INTELLECTUAL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="199" y="376.752">PHYSICAL</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="194" x2="304" y1="383.8281" y2="383.8281"/>
+</g>
+</a>
+<!--MD5=[714772f3811ce2b22068420a2fd675e2]
+class DisabilityRecord-->
+<a href="java:hr.fer.oop.DisabilityRecord" target="_top" title="java:hr.fer.oop.DisabilityRecord" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.DisabilityRecord" xlink:show="new" xlink:title="java:hr.fer.oop.DisabilityRecord" xlink:type="simple">
+<g id="elem_DisabilityRecord">
+<rect codeLine="6" fill="#F1F1F1" height="206.4844" id="DisabilityRecord" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="484" x="7" y="7"/>
+<ellipse cx="193.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M196.5156,18.875 Q196.6719,18.6563 196.8594,18.5469 Q197.0469,18.4375 197.2656,18.4375 Q197.6406,18.4375 197.875,18.7031 Q198.1094,18.9531 198.1094,19.5625 L198.1094,21.0156 Q198.1094,21.625 197.875,21.8906 Q197.6406,22.1563 197.2656,22.1563 Q196.9219,22.1563 196.7188,21.9531 Q196.5156,21.7656 196.4063,21.25 Q196.3594,20.8906 196.1719,20.7031 Q195.8438,20.3281 195.2344,20.1094 Q194.625,19.8906 194,19.8906 Q193.2344,19.8906 192.5938,20.2188 Q191.9688,20.5469 191.4688,21.2969 Q190.9844,22.0469 190.9844,23.0781 L190.9844,24.1719 Q190.9844,25.4063 191.875,26.2344 Q192.7656,27.0469 194.3594,27.0469 Q195.2969,27.0469 195.9531,26.7969 Q196.3438,26.6406 196.7656,26.2031 Q197.0313,25.9375 197.1719,25.8594 Q197.3281,25.7813 197.5313,25.7813 Q197.8594,25.7813 198.1094,26.0469 Q198.375,26.2969 198.375,26.6406 Q198.375,26.9844 198.0313,27.3906 Q197.5313,27.9688 196.7344,28.2969 Q195.6563,28.75 194.3594,28.75 Q192.8438,28.75 191.6406,28.125 Q190.6563,27.625 189.9688,26.5625 Q189.2813,25.4844 189.2813,24.2031 L189.2813,23.0469 Q189.2813,21.7188 189.8906,20.5781 Q190.5156,19.4219 191.6094,18.8125 Q192.7031,18.1875 193.9375,18.1875 Q194.6719,18.1875 195.3125,18.3594 Q195.9688,18.5156 196.5156,18.875 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="214.25" y="28.7285">DisabilityRecord</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="490" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="50.3047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="27" y="57.5332">personName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="67.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="27" y="75.1426">rating: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="490" y1="82.2188" y2="82.2188"/>
+<ellipse cx="18" cy="96.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="458" x="27" y="100.752">DisabilityRecord(personName: String, disability: Disability, rating: double)</text>
+<ellipse cx="18" cy="114.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="27" y="118.3613">getPersonName(): String</text>
+<ellipse cx="18" cy="131.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="237" x="27" y="135.9707">setDisability(disability: Disability): void</text>
+<ellipse cx="18" cy="149.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="27" y="153.5801">getRating(): double</text>
+<ellipse cx="18" cy="166.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="171.1895">toString(): String</text>
+<ellipse cx="18" cy="184.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="188.7988">hashCode(): int</text>
+<ellipse cx="18" cy="202.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="27" y="206.4082">equals(obj: Object): boolean</text>
+</g>
+</a>
+<!--MD5=[5e96fa973ed57213f8ef6f5781f00c94]
+class DisabilityDatasetManager-->
+<a href="java:hr.fer.oop.DisabilityDatasetManager" target="_top" title="java:hr.fer.oop.DisabilityDatasetManager" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.DisabilityDatasetManager" xlink:show="new" xlink:title="java:hr.fer.oop.DisabilityDatasetManager" xlink:type="simple">
+<g id="elem_DisabilityDatasetManager">
+<rect codeLine="19" fill="#F1F1F1" height="118.4375" id="DisabilityDatasetManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="276" x="526" y="51"/>
+<ellipse cx="578.75" cy="67" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M579.7031,63.6406 L579.7031,70.2969 L581.4219,70.2969 Q582.0313,70.2969 582.2969,70.5313 Q582.5625,70.7656 582.5625,71.1563 Q582.5625,71.5313 582.2969,71.7656 Q582.0313,72 581.4219,72 L576.2813,72 Q575.6719,72 575.4063,71.7656 Q575.1406,71.5313 575.1406,71.1406 Q575.1406,70.7656 575.4063,70.5313 Q575.6719,70.2969 576.2813,70.2969 L578,70.2969 L578,63.6406 L576.2813,63.6406 Q575.6719,63.6406 575.4063,63.4063 Q575.1406,63.1719 575.1406,62.7813 Q575.1406,62.4063 575.4063,62.1719 Q575.6719,61.9375 576.2813,61.9375 L581.4219,61.9375 Q582.0313,61.9375 582.2969,62.1719 Q582.5625,62.4063 582.5625,62.7813 Q582.5625,63.1719 582.2969,63.4063 Q582.0313,63.6406 581.4219,63.6406 L579.7031,63.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="162" x="599.25" y="72.7285">DisabilityDatasetManager</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="527" x2="801" y1="83" y2="83"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="527" x2="801" y1="91" y2="91"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="532" y="109.5332">processDataset(input: String): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="264" x="532" y="127.1426">processLine(line: String): DisabilityRecord</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239" x="532" y="144.752">maxRating(disability: Disability): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="532" y="162.3613">share(disability: Disability): String</text>
+</g>
+</a>
+<!--MD5=[92fe625e9501b1f3373078b15d78b8e3]
+link DisabilityRecord to Disability-->
+<g id="link_DisabilityRecord_Disability">
+<path codeLine="17" d="M198.78,213.14 C195.82,229.1 195.59,245.45 200,261 C202.42,269.55 206.06,278.09 210.27,286.23 " fill="none" id="DisabilityRecord-to-Disability" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="212.67,290.71,211.9459,280.8878,210.3089,286.3026,204.8941,284.6656,212.67,290.71" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="51" x="201" y="257.4951">disability</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="200.0689" y="279.9746">1</text>
+</g>
+<!--MD5=[92fe625e9501b1f3373078b15d78b8e3]
+link DisabilityRecord to Disability-->
+<g id="link_DisabilityRecord_Disability">
+<path codeLine="18" d="M257.28,213.07 C257.76,229.11 257.78,245.5 257,261 C256.6,269.03 255.97,277.5 255.23,285.8 " fill="none" id="DisabilityRecord-to-Disability-1" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="254.76,290.94,259.5651,282.3428,255.2165,285.9609,251.5985,281.6124,254.76,290.94" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="79" x="258" y="257.4951">getDisability()</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="248.0778" y="280.2369">1</text>
+</g>
+<!--MD5=[8c315f1f8fac48bd992652e8987ed745]
+@startuml
+enum Disability [[java:hr.fer.oop.Disability]] {
+	VISUAL
+	INTELLECTUAL
+	PHYSICAL
+}
+class DisabilityRecord [[java:hr.fer.oop.DisabilityRecord]] {
+	-personName: String
+	-rating: double
+	+DisabilityRecord(personName: String, disability: Disability, rating: double)
+	+getPersonName(): String
+	+setDisability(disability: Disability): void
+	+getRating(): double
+	+toString(): String
+	+hashCode(): int
+	+equals(obj: Object): boolean
+}
+DisabilityRecord - -> "1" Disability : disability
+DisabilityRecord - -> "1" Disability : getDisability()
+interface DisabilityDatasetManager [[java:hr.fer.oop.DisabilityDatasetManager]] {
+	processDataset(input: String): int
+	processLine(line: String): DisabilityRecord
+	maxRating(disability: Disability): String
+	share(disability: Disability): String
+}
+
+@enduml
+
+PlantUML version 1.2022.12(Sun Oct 23 20:12:26 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+-->
+</g>
+</svg>
+<p><strong>Ako je metoda napisana kosim slovima znači da je apstraktna. Ako je metoda/varijabla podcrtana znači da je statička.</strong></p>
+<h3>Tablica vidljivosti</h3>
+<p><img src="res/vidljivost.png" alt="Tablica vidljivosti" /></p>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+		
+		System.out.println(&quot;Please note the dataset is artificial, i.e., does not represent the real population.&quot;);
+
+		String dataset = String.join(&quot;\n&quot;, 
+				&quot;Person_name ### Disability #% --&quot;,
+				&quot;Pero ### VISUAL #33.45 --&quot;, 
+				&quot;Marijeta ### Visual #10.22 --&quot;, 
+				&quot;Ana ### intellectual #15.78 --&quot;, 
+				&quot;Marko ### PHYSICAL #20.55 --&quot;,
+				&quot;Jasmina ### intellectual #5.67fgdgh56zzh --&quot;, // wrong
+				&quot;Sasha ### VISUAL #12.89 --&quot;, 
+				&quot;Luka ### HEARING #8.75&quot;, // wrong
+				&quot;Petra ### &quot;, // wrong
+				&quot;Ivan ### PHYSICAL 18.92 --&quot;, // wrong
+				&quot;Marta ### VISUAL #28.14&quot;, // wrong
+				&quot;Elena ------&gt; HEARING #14.67 --&quot;, // wrong
+				&quot;Nikola ### INTTTTTTTELEKETET #9.81 --&quot;, // wrong
+				&quot;Davor ### pHySiCAL #30.20 --&quot;, 
+				&quot;Katarina ### viSUAL #3.99 --&quot;);
+
+		DisabilityDatasetManager manager = new Solution();
+		int no = manager.processDataset(dataset);
+		System.out.printf(&quot;Number of failed lines: %d \n&quot;, no);
+
+		System.out.println(&quot;Share for physical disability: &quot; + manager.share(Disability.PHYSICAL));
+		System.out.println(&quot;Share for intellectual disability: &quot; + manager.share(Disability.INTELLECTUAL));
+		System.out.println(&quot;Share for visual disability: &quot; + manager.share(Disability.VISUAL));
+
+		// uncomment this to throw an exception:
+		// manager.maxRating(Disability.INTELLECTUAL);
+
+	
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Please note the dataset is artificial, i.e., does not represent the real population.
+Number of failed lines: 7 
+Share for physical disability: 28.6%
+Share for intellectual disability: 14.3%
+Share for visual disability: 57.1%
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

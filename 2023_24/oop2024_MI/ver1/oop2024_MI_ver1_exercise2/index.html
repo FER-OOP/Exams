@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Opis zadatka</h2>
+<p>Napisati program koji modelira životinje (psa i mačku) te računa njihove ocjene. Ako nije drugačije specificirano, sve tipove je potrebno smjestiti u paket <code>hr.fer.oop</code>.</p>
+<p>Razred <code>Animal</code> reprezentira životinju. Stvaranje objekata iz ove klase nije moguće. Vidljivost ovog elementa omogućuje javni pristup. U sebi sadržava:</p>
+<ul>
+<li>Varijablu <code>age</code> koja specificira godine i tipa je <code>int</code>. Pristup je moguć iz klasa istog paketa.</li>
+<li>Varijablu <code>id</code> koja modelira jedinstveni identifikator i tipa je <code>String</code>.
+<ul>
+<li>Element je vidljiv iz svih klasa.</li>
+<li>Element mora biti označen kao finalan.</li>
+</ul>
+</li>
+<li>Konstruktor <code>Animal(String, int)</code> koji inicijalizira jedinstveni identifikator i godine životinje (pretpostaviti da će unosi uvijek biti ispravni). Pristup ovog tipa je javan.</li>
+<li>Metodu <code>int getAge()</code> koja je getter. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>void setAge(int)</code> koja je setter. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>int score()</code> koja vraća zbroj godina i duljine znakova jedinstvenog identifikatora.
+<ul>
+<li>Potrebno je zabraniti  nadjačavanje.</li>
+<li>Element je vidljiv iz svih klasa.</li>
+</ul>
+</li>
+<li>Metodu <code>String getId()</code> koja je getter. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Razred <code>Cat</code> je mačka. Element ima maksimalnu vidljivost. Podtip je od <code>Animal</code>. Klasu nije moguće naslijediti. Ima:</p>
+<ul>
+<li>Varijablu <code>purrSound</code> koja specificira kako se glasa mačka i tipa je <code>String</code>. Element ima privatnu vidljivost.</li>
+<li>Konstruktor <code>Cat(String, int, String)</code> koji inicijalizira jedinstveni identifikator, godine i glasanje mačke. Element ima maksimalnu vidljivost.</li>
+<li>Metodu <code>String getPurrSound()</code> koja je getter. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>void setPurrSound(String)</code> koja je setter. Element je vidljiv iz svih klasa.</li>
+</ul>
+<p>Klasa <code>Dog</code> je pas. Element ima maksimalnu vidljivost. Klasu nije moguće naslijediti. Nasljeđuje tip <code>Animal</code>. Sadrži:</p>
+<ul>
+<li>Varijablu <code>barkSound</code> koja specificira kako laje pas i tipa je <code>String</code>. Element je vidljiv klasama iz istog paketa te klasama koje naslijeđuju taj element.</li>
+<li>Konstruktor <code>Dog(String, int, String)</code> koji inicijalizira jedinstveni identifikator, godine i lajanje psa. Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Metodu <code>String getBarkSound()</code> koja je getter. Element je vidljiv iz svih klasa.</li>
+<li>Metodu <code>void setBarkSound(String)</code> koja je setter. Pristup ovog tipa je javan.</li>
+</ul>
+<p>Klasa <code>Calculator</code> je kalkulator životinja. Element ima maksimalnu vidljivost. Ima:</p>
+<ul>
+<li>Metodu <code>double score(Animal)</code> koja računa ocjenu životinje na sljedeći način. Ako se radi o psu, vraća prosjek između godine psa i duljine znakova njegovog lajanja. Ako se radi o mački, vraća prosjek između duljine znakova jedinstvenog identifikatora i duljine znakova glasanja mačke. Važno: u bilo kojem drugom slučaju (npr. nepravilan unos) vraća 0.
+<ul>
+<li>Vidljivost ovog elementa omogućuje javni pristup.</li>
+<li>Dostupna je u statičkom kontekstu svoje klase.</li>
+</ul>
+</li>
+</ul>
+<h2>Primjer izvršavanja:</h2>
+<pre class="line-numbers"><code class="language-java">
+		Dog dog1 = new Dog(&quot;Cathy&quot;, 4, &quot;vau-vau-vau-vau&quot;);
+		Dog dog2 = new Dog(&quot;Mary&quot;, 8, &quot;VAU-VAUUU&quot;);
+		
+		Cat cat1 = new Cat(&quot;Kimi&quot;, 2, &quot;mijau-mijau&quot;);
+		Cat cat2 = new Cat(&quot;Niki&quot;, 3, &quot;mijauu&quot;);
+		Cat cat3 = new Cat(&quot;Mika&quot;, 1, &quot;mijauuuuuuuuuuu&quot;);
+		
+		Animal[] animals = {dog1, dog2, cat1, cat2, cat3};
+		
+		for(Animal animal : animals) {
+			System.out.printf(&quot;Animal %s has an animal score of %d and calculator score of %.2f %n&quot;, animal.getId(), animal.score(), Calculator.score(animal));
+		}
+		
+	
+	
+</code></pre>
+<h2>Očekivani izlaz:</h2>
+<pre class="line-numbers"><code class="language-sh">Animal Cathy has an animal score of 9 and calculator score of 9.50 
+Animal Mary has an animal score of 12 and calculator score of 8.50 
+Animal Kimi has an animal score of 6 and calculator score of 7.50 
+Animal Niki has an animal score of 7 and calculator score of 5.00 
+Animal Mika has an animal score of 5 and calculator score of 9.50 
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

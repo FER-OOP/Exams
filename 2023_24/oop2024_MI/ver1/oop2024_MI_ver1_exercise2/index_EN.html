@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h2>Task Description</h2>
+<p>Write a program that models animals (dogs and cats) and calculates their scores. Unless stated otherwise, all the types are required to place in the package <code>hr.fer.oop</code>.</p>
+<p>The class <code>Animal</code> specifies an animal. Creating objects from this class is not possible. Visibility of this element secures the public access. It is composed of:</p>
+<ul>
+<li>Variable <code>age</code> which models the age and is of type <code>int</code>. The access is possible from the class of the same package.</li>
+<li>Variable <code>id</code> which specifies a unique identifier and is of type <code>String</code>.
+<ul>
+<li>This element is visible from all the classes.</li>
+<li>The element needs to be marked as final.</li>
+</ul>
+</li>
+<li>Constructor <code>Animal(String, int)</code> which initializes the unique identifier and age of an animal (assume the inputs will always be valid). The access of this type is public.</li>
+<li>Method <code>int getAge()</code> which is getter. This element is visible from all the classes.</li>
+<li>Method <code>void setAge(int)</code> which is setter. This element has the maximum visibility.</li>
+<li>Method <code>int score()</code> which returns the sum of age and character length of unique identifier.
+<ul>
+<li>It is necessary to prohibit overriding.</li>
+<li>This element is visible from all the classes.</li>
+</ul>
+</li>
+<li>Method <code>String getId()</code> which is getter. This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>Cat</code> is a cat. This element has the maximum visibility. It is a subtype of <code>Animal</code>. The class cannot be subclassed. It has:</p>
+<ul>
+<li>Variable <code>purrSound</code> which specifies how the car purrs and is of type <code>String</code>. The element has the private visibility.</li>
+<li>Constructor <code>Cat(String, int, String)</code> which initializes the unique identifier, age and cat barking. This element has the maximum visibility.</li>
+<li>Method <code>String getPurrSound()</code> which is getter. Visibility of this element secures the public access.</li>
+<li>Method <code>void setPurrSound(String)</code> which is setter. This element is visible from all the classes.</li>
+</ul>
+<p>The class <code>Dog</code> is a dog. This element has the maximum visibility. The class cannot be subclassed. It extends the type <code>Animal</code>. It contains:</p>
+<ul>
+<li>Variable <code>barkSound</code> which specifies how the dog barks and is of type <code>String</code>. The element is visible to clasess from the same paket as well as from the subclass.</li>
+<li>Constructor <code>Dog(String, int, String)</code> which initializes the unique identifier, age and dog barking. Visibility of this element secures the public access.</li>
+<li>Method <code>String getBarkSound()</code> which is getter. This element is visible from all the classes.</li>
+<li>Method <code>void setBarkSound(String)</code> which is setter. The access of this type is public.</li>
+</ul>
+<p>The class <code>Calculator</code> is an animal calculator. This element has the maximum visibility. It has:</p>
+<ul>
+<li>Method <code>double score(Animal)</code> which calculates the animal score as follows. In case of a dog, returns the average between the age and character length of the barking. In case of a cat, returns the average between the character length of unique identifier and the character length of cat's purr sound. Important: in any other case (e.g. invalid input) returns 0 drugom slučaju vraća 0.
+<ul>
+<li>Visibility of this element secures the public access.</li>
+<li>It is available in a static context of its own class.</li>
+</ul>
+</li>
+</ul>
+<h2>Sample code:</h2>
+<pre class="line-numbers"><code class="language-java">
+		Dog dog1 = new Dog(&quot;Cathy&quot;, 4, &quot;vau-vau-vau-vau&quot;);
+		Dog dog2 = new Dog(&quot;Mary&quot;, 8, &quot;VAU-VAUUU&quot;);
+		
+		Cat cat1 = new Cat(&quot;Kimi&quot;, 2, &quot;mijau-mijau&quot;);
+		Cat cat2 = new Cat(&quot;Niki&quot;, 3, &quot;mijauu&quot;);
+		Cat cat3 = new Cat(&quot;Mika&quot;, 1, &quot;mijauuuuuuuuuuu&quot;);
+		
+		Animal[] animals = {dog1, dog2, cat1, cat2, cat3};
+		
+		for(Animal animal : animals) {
+			System.out.printf(&quot;Animal %s has an animal score of %d and calculator score of %.2f %n&quot;, animal.getId(), animal.score(), Calculator.score(animal));
+		}
+		
+	
+	
+</code></pre>
+<h2>Expected output:</h2>
+<pre class="line-numbers"><code class="language-sh">Animal Cathy has an animal score of 9 and calculator score of 9.50 
+Animal Mary has an animal score of 12 and calculator score of 8.50 
+Animal Kimi has an animal score of 6 and calculator score of 7.50 
+Animal Niki has an animal score of 7 and calculator score of 5.00 
+Animal Mika has an animal score of 5 and calculator score of 9.50 
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
