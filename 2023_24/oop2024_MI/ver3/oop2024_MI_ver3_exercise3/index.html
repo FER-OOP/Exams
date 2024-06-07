@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je napisati klase koje opisuju bioinformatičke podatke. Podaci se sastoje od sekvenci DNA, RNA i proteina. DNA, RNA i proteini su dugački slijedovi manjih molekula. DNA i RNA se sastoje od nukleotida, a proteini od aminokiselina. Nukleotidi i aminokiseline se označavaju po jednim slovom, tako da se sekvence DNA, RNA i proteina mogu pohraniti kao <code>String</code>.</p>
+<p>Prilikom translacije sekvenci RNA u proteinske sekvence, po tri nukleotida se pretvaraju u jednu aminokiselinu. Takav niz od tri nukleotida naziva se kodon. Pri tome se mogu dogoditi dvije „iznimne situacije“. Prva situacija je kada duljina niza RNA nije djeljiva s 3. Druga situacija je kad niz RNA sadrži neispravne znakove (koji nisu ACGT i ne predstavljaju nukleotide). U oba slučaja niz RNA nije moguće ispravno pretvoriti u protein.</p>
+<p>Potrebno je kreirati skup klasa koje opisuju te dvije situacije.</p>
+<p>Kreirati apstraktnu klasu <code>SequenceException</code>, koja će predstavljati općenitu iznimku koja se dogodila prilikom analize bioinformatičkih podataka. Klasa <code>SequenceException</code> treba biti neprovjeravana.</p>
+<p>Kreirati klasu <code>SequenceLengthException</code>, koja nasljeđuje <code>SequenceException</code> i koja će signalizirati da je sekvenca RNA neispravne duljine.</p>
+<p>Kreirati klasu <code>CodonException</code>, koja nasljeđuje <code>SequenceException</code> i koja će signalizirati neispravan kodon. Klasa <code>CodonException</code> mora imati metodu <code>public String getCodon()</code> koja omogućuje dohvat neispravnog kodona koji je uzrokovao iznimku.</p>
+<p>Potrebno je napisati klasu <code>Translate</code> sa jednom statičkom metodom <code>public String translate(String RNAseq)</code> koja će za zadanu sekvencu RNA (kao <code>String</code>) vratiti odgovarajući niz aminokiselina tj. protein (također kao <code>String</code>). Pri tome možete pojedini niz od tri RNA nukleotida (tzv. kodon) pretvoriti u jednu aminokiselinu statičkom metodom <code>public static String getAAForCodon(String codon)</code> klase <code>SequenceOperations</code>. Ta metoda vam je na raspolaganju i ne morate ju pisati. Metoda <code>getAAForCodon</code> će vratiti <code>null</code> ako je zadani kodon neispravan.</p>
+<p>Metoda <code>translate</code> mora izazvati odgovarajuću (ranije definiranu) iznimku prilikom izvođenja. Pri tome je neispravnu duljinu slijeda RNA potrebno ispitati prije ispitivanja pojedinih kodona.</p>
+<p><strong>Napomena:</strong> Sve klase imaju vidljivost postavljenu na <em>public</em> i nalaze se u paketu <code>hr.fer.oop.genomeseq</code>.</p>
+<p>Primjer izvođenja:</p>
+<pre class="line-numbers"><code class="language-java">String seq1 = &quot;ACGTGTACG&quot;;				// len 9
+String seq2 = &quot;ACGXGTACG&quot;;				// Incorrect nucleotide X
+String seq3 = &quot;ACGTGTAGTACGTGTGTGAACA&quot;; 	// len 22
+String seq4 = &quot;ACGXGTAGTACGTGTGTGAACA&quot;; 	// len 22 and incorrect nucleotide X
+
+String seq = seq1;    // We can choose a test sequence here
+
+try {
+String prot1 = Translate.translate(seq);
+	System.out.println(prot1);
+}
+catch (SequenceLengthException e) {
+	System.out.println(&quot;Incorrect sequence length&quot;);
+}
+catch (CodonException e) {
+	String codon = e.getCodon();
+	System.out.println(&quot;Incorrect codon: &quot; + codon);
+}
+catch (SequenceException e) {
+	System.out.println(&quot;Should not happen!&quot;);
+}
+</code></pre>
+<p>Rezultat (seq1):</p>
+<pre class="line-numbers"><code>TCT
+</code></pre>
+<p>Rezultat (seq2):</p>
+<pre class="line-numbers"><code>Incorrect codon: XGT
+</code></pre>
+<p>Rezultat (seq3):</p>
+<pre class="line-numbers"><code>Incorrect sequence length
+</code></pre>
+<p>Rezultat (seq4):</p>
+<pre class="line-numbers"><code>Incorrect sequence length
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

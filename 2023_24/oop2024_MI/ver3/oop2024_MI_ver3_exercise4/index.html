@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je napisati klase koje opisuju bioinformatičke podatke. Podaci se sastoje od sekvenci DNA, RNA i proteina. DNA, RNA i proteini su dugački slijedovi manjih molekula. DNA i RNA se sastoje od nukleotida, a proteini od aminokiselina. Nukleotidi i aminokiseline se označavaju po jednim slovom, tako da se sekvence DNA, RNA i proteina mogu pohraniti kao <code>String</code>.</p>
+<p>Osnovni razred <code>Sequence</code> opisuje općenitu sekvencu. Primjerke ovog razreda nije moguće stvoriti. Razred <code>Sequence</code> ima dva atributa tipa <code>String</code>, kojima nije moguće pristupati iz drugih razreda:</p>
+<ul>
+<li>name : naziv sekvence</li>
+<li>seq : sam slijed sekvence</li>
+</ul>
+<p>Atribute nije moguće mijenjati nakon postavljanja kroz konstruktor:</p>
+<ul>
+<li><code>public Sequence(String name, String sequence)</code></li>
+</ul>
+<p>Za navedene atribute napisati i getter-e.</p>
+<p>Napravite dva dodatna razreda koji nasljeđuju <code>Sequence</code>, <code>DNASequence</code> i <code>RNASequence</code>. Ti razredi nemaju dodatne atribute, definiraju metodu <code>toString</code> koja ispisuje odgovarajući tekst i naziv sekvence.</p>
+<p>(Vidi primjer - drugačije nego u prvom zadatku, ispisuje se samo vrsta sekvence i naziv, bez slijeda).</p>
+<p>Potrebno je implementirati parametriziranu klasu <code>MySeqList&lt;??????????&gt;</code> (<strong>parametrizaciju trebate sami dobro odrediti</strong>) u koju će se pohranjivati više sekvenci. Klasa <code>MySeqList</code> smije pohranjivati samo sekvence (klasa <code>Sequence</code> i nasljeđene klase). Da bi vam pomogli s tim, dana vam je već implementirana klasa <code>MyList&lt;T&gt;</code> sa sljedeći metodama:</p>
+<ul>
+<li><code>public MyList()</code> – konstruktor</li>
+<li><code>public int size()</code> – vraća veličinu liste</li>
+<li><code>public void add(T element)</code> – dodaje element na početak liste</li>
+<li><code>public T get(int index)</code> – vraća element na zadanoj poziciji (null ako takav element ne postoji)</li>
+</ul>
+<p>U klasi <code>MySeqList</code> potrebno je implementirati dodatnu metodu:</p>
+<ul>
+<li><code>public void addall(MySeqList&lt;??????????&gt; anotherlist)</code> – dodaje sve elemente iz liste <code>anotherlist</code>, jedan po jedan, pomoću metode get.</li>
+</ul>
+<p><strong>Sami morate točno odrediti parametrizaciju klase MySeqList i metode addall</strong>.</p>
+<p><strong>Napomena:</strong> Sve klase imaju vidljivost postavljenu na <em>public</em> i nalaze se u paketu <code>hr.fer.oop.genomeseq</code>.</p>
+<p>Primjer izvođenja:</p>
+<pre class="line-numbers"><code class="language-java">DNASequence s1 = new DNASequence(&quot;seq1&quot;, &quot;ACGTGCTGA&quot;);
+DNASequence s2 = new DNASequence(&quot;seq2&quot;, &quot;AGGGTGGA&quot;);
+
+RNASequence s3 = new RNASequence(&quot;seq3&quot;, &quot;GGTTGTGTCCTGCGCTA&quot;);
+RNASequence s4 = new RNASequence(&quot;seq4&quot;, &quot;GAGAT&quot;);
+
+MySeqList&lt;Sequence&gt; l1 = new MySeqList&lt;&gt;();	
+MySeqList&lt;DNASequence&gt; l2 = new MySeqList&lt;&gt;();
+MySeqList&lt;RNASequence&gt; l3 = new MySeqList&lt;&gt;();
+
+l2.add(s1);
+l2.add(s2);
+l3.add(s3);
+l3.add(s4);
+
+l1.addall(l2);
+l1.addall(l3);
+
+for (int i=0; i&lt;l1.size(); i++) {
+	Sequence s = l1.get(i);
+	System.out.println(s);
+}
+</code></pre>
+<p>Rezultat:</p>
+<pre class="line-numbers"><code class="language-sh">RNA sequence: seq3
+RNA sequence: seq4
+DNA sequence: seq1
+DNA sequence: seq2
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

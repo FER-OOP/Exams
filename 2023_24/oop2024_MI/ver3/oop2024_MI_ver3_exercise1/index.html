@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je napisati klase koje opisuju bioinformatičke podatke. Podaci se sastoje od sekvenci DNA, RNA i proteina. DNA, RNA i proteini su dugački slijedovi manjih molekula. DNA i RNA se sastoje od nukleotida, a proteini od aminokiselina. Nukleotidi i aminokiseline se označavaju po jednim slovom, tako da se sekvence DNA, RNA i proteina mogu pohraniti kao <code>String</code>.</p>
+<p>Osnovni razred <code>Sequence</code> opisuje općenitu sekvencu. Primjerke ovog razreda nije moguće stvoriti. Razred <code>Sequence</code> ima dva atributa tipa <code>String</code>, kojima nije moguće pristupati iz drugih razreda:</p>
+<ul>
+<li>name: naziv sekvence</li>
+<li>seq: slijed sekvence</li>
+</ul>
+<p>Atribute nije moguće mijenjati nakon postavljanja kroz konstruktor:</p>
+<ul>
+<li><code>public Sequence(String name, String sequence)</code></li>
+</ul>
+<p>Za navedene atribute napisati i getter-e.</p>
+<p>Svaka sekvenca također ima tip, za koji je potrebno definirati enumeraciju <code>SequenceType</code> sa tri vrijednosti (DNA, RNA, PROTEIN). U klasi <code>Sequence</code> definirati postojanje metode <code>getSeqType()</code>, koja će vratiti tip sekvence, a koja će biti implementirana u izvedenim klasama.
+Klasa <code>Sequence</code> također nadjačava metodu <code>toString()</code> klase Object tako da kombinira naziv i slijed sekvence u jedan <code>String</code> odvojene sa <code>&quot;: &quot;</code>. Npr. za naziv <code>&quot;seq1&quot;</code> i slijed <code>&quot;ACGTGT&quot;</code>, treba vratiti <code>&quot;seq1: ACGTGT&quot;</code>.</p>
+<p>Pri tome, ako je duljina slijeda sekvence manja ili jednaka konstanti <code>MAX_CHARS_TO_PRINT</code>, onda ga treba koristiti cijelog, a ako je duljina slijeda veća, onda koristiti samo <code>MAX_CHARS_TO_PRINT</code> znakova, nakon kojih dodati tri točke (…) . U tu svrhu potrebno je u klasi <code>Sequence</code> definirati konstantu <code>MAX_CHARS_TO_PRINT</code> kojoj na početku vrijednost postaviti na 50, ali ju je naknadno moguće promijeniti.</p>
+<p>Nakon toga potrebno je na temelju klase <code>Sequence</code> definirati dodatne klase koje opisuju različite vrste sekvenci, i primjerke kojih je moguće stvoriti:</p>
+<ul>
+<li>Klasa <code>NucleotideSequence</code> je sekvenca koja opisuje sekvence DNA. Nema dodatne atribute.</li>
+<li>Klasa <code>ProteinSequence</code> opisuje proteinske sekvence. Ima dodatni privatni atribut <code>function</code> (tipa <code>String</code>), definira konstruktor <code>public ProteinSequence(String name, String sequence, String function)</code>.</li>
+</ul>
+<p>Za sve tri dodatne klase potrebno je nadjačati metodu <code>getSeqType</code> tako da vraća odgovarajući tip sekvence i metodu <code>toString</code> kako je vidljivo iz primjera.</p>
+<p><strong>Napomena:</strong> Sve klase imaju vidljivost postavljenu na  <em>public</em>  i nalaze se u paketu <code>hr.fer.oop.genomeseq</code>.</p>
+<p>Primjer izvođenja:</p>
+<pre class="line-numbers"><code class="language-java">Sequence s1 = new NucleotideSequence(&quot;NuclSeq1&quot;, &quot;ACGTACGT&quot;);
+Sequence s2 = new ProteinSequence(&quot;ProtSeq1&quot;, &quot;MAAVPTAAAMMCGTACSAASSSSSSCSAAAMMCGTACSAASPRS&quot;, &quot;Predicted protein 1&quot;);
+		
+System.out.println(&quot;Sequence 1: \n&quot; + s1);
+System.out.println(&quot;Sequence 2: \n&quot; + s2);
+	
+Sequence.MAX_CHARS_TO_PRINT = 20;
+		
+System.out.println(&quot;\n&quot;);
+System.out.println(&quot;Sequence 2: \n&quot; + s2);
+</code></pre>
+<p>Rezultat ispisa:</p>
+<pre class="line-numbers"><code class="language-sh">Sequence 1: 
+(Nulceotide sequence)
+NuclSeq1: ACGTACGT
+Sequence 2: 
+(Protein sequence) Predicted protein 1
+ProtSeq1: MAAVPTAAAMMCGTACSAASSSSSSCSAAAMMCGTACSAASPRS
+
+
+Sequence 1: 
+(Nulceotide sequence)
+NuclSeq1: ACGTACGT
+Sequence 2: 
+(Protein sequence) Predicted protein 1
+ProtSeq1: MAAVPTAAAMMCGTACSAAS...
+Sequence 3: 
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
