@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h4>Task Description</h4>
+<p>You are tasked with helping to manage the qualifications for the <strong>STEM Games</strong> competition held at FER. In the qualifications, each student receives points from two categories: engineering and mathematics.</p>
+<p>It is necessary to write two classes: <code>Student</code> and <code>STEMGames</code>. All classes should be in <code>hr.fer.oop.ZI2024.zad3</code> package and have visibility set to <em>public</em>.</p>
+<p>The <code>Student</code> class should have the following <strong>private member variables</strong> and <strong>public methods</strong> with these signatures:</p>
+<ul>
+<li><code>name</code> : <code>String</code> - student name</li>
+<li><code>pointsEng</code> : <code>int</code> - points in engineering</li>
+<li><code>pointsMath</code> : <code>int</code> - points in mathematics</li>
+<li><code>Student(String name, int pointsEng, intpointsMath)</code> - constructor that receives attributes student name <code>name</code>, number of achieved points from engineering category <code>pointsEng</code>, and the number of achieved points from the mathematics category <code>pointsMath</code></li>
+<li><code>String getName()</code> - method that returns the name of the student</li>
+<li><code>int getPointsEng()</code> - a method that returns the number of achieved engineering points</li>
+<li><code>int getPointsMath()</code> - a method that returns the number of math points achieved</li>
+<li><code>int getTotalPoints()</code> - a method that returns total points as the sum of achieved points in engineering and mathematics</li>
+</ul>
+<p>If you want, you can add and implement additional methods, attributes, and constructors.</p>
+<p>In class <code>STEMGames</code> you need to implement following public methods:</p>
+<ul>
+<li><code>void addStudent(String name, int pointsEng, int pointsMath)</code> - a method adding a new student to STEMGames object</li>
+<li><code>List&lt;Student&gt; getStudents()</code> - a method returning a list of students</li>
+<li><code>int getHighestScoreInEng()</code> - a method returning the highest score in engineering</li>
+<li><code>int getHighestScoreInMath()</code> - a method returning the highest score in mathematics</li>
+<li><code>int getHighestScoreInTotal()</code> - a method returning the highest total score</li>
+<li><code>Map&lt;String, List&lt;String&gt;&gt; getTopStudents()</code> - a method returning a map with three entries. Keys have values <code>eng</code>, <code>math</code> and <code>total</code>, while values are lists of student names for students with a highscore according to a criteria specified by the key.</li>
+</ul>
+<p><strong>Example run:</strong></p>
+<pre class="line-numbers"><code>STEMGames stemGames = new STEMGames();
+
+stemGames.addStudent(&quot;Ana Horvat&quot;, 98, 94);
+stemGames.addStudent(&quot;Marko Pehar&quot;, 78, 77);
+stemGames.addStudent(&quot;Ivan Kralj&quot;, 94, 90);
+stemGames.addStudent(&quot;Lucija Rukavina&quot;, 69, 83);
+stemGames.addStudent(&quot;Petar Medak&quot;, 92, 75);
+stemGames.addStudent(&quot;Maja Posavec&quot;, 84, 86);
+stemGames.addStudent(&quot;Jure Herceg&quot;, 80, 87);
+stemGames.addStudent(&quot;Martina Car&quot;, 95, 97);
+stemGames.addStudent(&quot;Luka Horvat&quot;, 88, 90);
+stemGames.addStudent(&quot;Karla Salamun&quot;, 73, 79);
+stemGames.addStudent(&quot;Nina Kolar&quot;, 79, 82);
+stemGames.addStudent(&quot;Tomislav Trnski&quot;, 90, 89);
+stemGames.addStudent(&quot;Marta Novosel&quot;, 77, 81);
+stemGames.addStudent(&quot;Zvonimir Knez&quot;, 91, 92);
+stemGames.addStudent(&quot;Ivana Krolo&quot;, 79, 94);
+stemGames.addStudent(&quot;Filip Mlinar&quot;, 86, 92);
+
+int highesteng = stemGames.getHighestScoreInEng();
+int highestmath = stemGames.getHighestScoreInMath();
+int highesttotal = stemGames.getHighestScoreInTotal();
+
+System.out.println(&quot;Highest score in engineering: &quot; + highesteng);
+System.out.println(&quot;Highest score in mathematics: &quot; + highestmath);
+System.out.println(&quot;Highest total score : &quot; + highesttotal);
+
+Map&lt;String, List&lt;String&gt;&gt; topstudents = stemGames.getTopStudents();
+
+for (String k : topstudents.keySet()) {
+	List&lt;String&gt; v = topstudents.get(k);
+	System.out.println(k + &quot;: &quot; + v);
+}
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>Highest score in engineering: 98
+Highest score in mathematics: 97
+Highest total score : 192
+total: [Ana Horvat, Martina Car]
+math: [Martina Car]
+eng: [Ana Horvat]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h4>Task Description</h4>
+<p>You are tasked with helping to manage the qualifications for the <strong>STEM Games</strong> competition held at FER. In the qualifications, each student receives points from two categories: engineering and mathematics.</p>
+<p>It is necessary to write two classes: <code>Student</code> and <code>STEMGames</code>. All classes should be in <code>hr.fer.oop.ZI2024.zad3</code> package and have visibility set to <em>public</em>.</p>
+<p>Class <code>Student</code> should have following private variables:</p>
+<ul>
+<li><code>name</code> : <code>String</code> - student name</li>
+<li><code>pointsEng</code> : <code>int</code> - points achieved in engineering</li>
+<li><code>pointsMath</code> : <code>int</code> - points achieved in mathematics</li>
+</ul>
+<p>In the `Student' class, it is necessary to implement public methods and a constructor with these signatures:</p>
+<ul>
+<li><code>Student(String name, int pointsEng, int pointsMath)</code> - constructor that receives attributes student name <code>name</code>, number of achieved points from engineering category <code>pointsEng</code>, and the number of achieved points from the mathematics category <code>pointsMath</code></li>
+<li><code>String getName()</code> - method that returns the name of the student</li>
+<li><code>int getPointsEng()</code> - a method that returns the number of engineering points achieved</li>
+<li><code>int getPointsMath()</code> - a method that returns the number of mathematics points achieved</li>
+<li><code>int getTotalPoints()</code> - a method that returns total points as the sum of achieved points in engineering and mathematics</li>
+</ul>
+<p>If you want, you can add and implement additional methods, attributes, and constructors.</p>
+<p>In class <code>STEMGames</code> you need to implement following public methods:</p>
+<ul>
+<li><code>void addStudent(String name, int pointsEng, int pointsMath)</code> - a method adding a new student to STEMGames object</li>
+<li><code>List&lt;Student&gt; getStudents()</code> - a method returning a list of added students</li>
+<li><code>int getTopEngStudentCount(int threshold)</code> - a method returning the number of students with score in Engineering above or equal to the given threshold</li>
+<li><code>int getTopMathStudentCount(int threshold)</code> - a method returning the number of students with score in Mathematics above or equal to the given threshold</li>
+<li><code>int getTopTotalStudentCount(int threshold)</code> - a method returning the number of students with total score above or equal to the given threshold</li>
+<li><code>Map&lt;String, List&lt;String&gt;&gt; getTopStudents()</code> - a method returning a map with three entries. Keys have values <code>eng</code>, <code>math</code> and <code>total</code>, while values are lists of student names for students with a specific score above or equal to given threshold. A threshold for engineering and mathematics is 95, while threshold for total points is 190.</li>
+</ul>
+<p><strong>Example run:</strong></p>
+<pre class="line-numbers"><code>STEMGames stemGames = new STEMGames();
+
+stemGames.addStudent(&quot;Jana Kralj&quot;, 93, 98);
+stemGames.addStudent(&quot;Ivan Pehar&quot;, 94, 90);
+stemGames.addStudent(&quot;Marko Horvat&quot;, 71, 77);
+stemGames.addStudent(&quot;Petar Medak&quot;, 92, 75);
+stemGames.addStudent(&quot;Lucija Rukavina&quot;, 69, 73);
+stemGames.addStudent(&quot;Jure Posavec&quot;, 90, 87);
+stemGames.addStudent(&quot;Maja Herceg&quot;, 87, 86);
+stemGames.addStudent(&quot;Luka Car&quot;, 85, 90);
+stemGames.addStudent(&quot;Karla Horvat&quot;, 95, 96);
+stemGames.addStudent(&quot;Martina Salamun&quot;, 69, 82);
+stemGames.addStudent(&quot;Tomislav Kolar&quot;, 73, 79);
+stemGames.addStudent(&quot;Nina Trnski&quot;, 77, 89);
+stemGames.addStudent(&quot;Zvonimir Novosel&quot;, 90, 89);
+stemGames.addStudent(&quot;Marta Knez&quot;, 91, 92);
+stemGames.addStudent(&quot;Filip Krolo&quot;, 86, 92);
+stemGames.addStudent(&quot;Ivana Mlinar&quot;, 99, 74);
+
+int topEngCount = stemGames.getTopEngStudentCount(95);
+int topMathCount = stemGames.getTopMathStudentCount(95);
+int topTotalCount = stemGames.getTopTotalStudentCount(190);
+
+System.out.println(&quot;Number of students with 95 or more in engineering: &quot; + topEngCount);
+System.out.println(&quot;Number of students with 95 or more in mathematics: &quot; + topMathCount);
+System.out.println(&quot;Number of students with 190 or more in total score : &quot; + topTotalCount);
+
+Map&lt;String, List&lt;String&gt;&gt; topStudents = stemGames.getTopStudents();
+
+for (String k : topStudents.keySet()) {
+	List&lt;String&gt; v = topStudents.get(k);
+	System.out.println(k + &quot;: &quot; + v);
+}
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>Number of students with 95 or more in engineering: 2
+Number of students with 95 or more in mathematics: 2
+Number of students with 190 or more in total score : 2
+total: [Jana Kralj, Karla Horvat]
+math: [Jana Kralj, Karla Horvat]
+eng: [Karla Horvat, Ivana Mlinar]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

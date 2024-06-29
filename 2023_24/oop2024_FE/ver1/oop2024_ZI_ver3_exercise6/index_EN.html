@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this task you are modeling classes, interfaces, and enumerations for vehicles management (<code>Vehicle</code>).</p>
+<p>There are three types of vehicles: <code>Car</code>, <code>Truck</code>, and <code>Motorcycle</code> and no other types of vehicles could be created.</p>
+<p>Every vehicle has  <code>model</code>(<code>String</code>), <code>power</code> (<code>int</code>) and  <code>regularPrice</code>(<code>double</code>). Define getters and setters for all of these attributes.</p>
+<p>An uniqueness of cars is that they have emission standard  (<code>euroStd:string</code>). Trucks has max load (<code>maxLoad:int</code>), and motorcycles have their type (<code>type:MotorcycleType</code>) which could be one of the followings: <code>Chopper</code>, <code>Sport</code>, <code>Racing</code> or <code>OffRoad</code>.</p>
+<p>Class <code>Vehicle</code> should have the method</p>
+<pre class="line-numbers"><code>public double getPrice(boolean isVIP)
+</code></pre>
+<p>that either returns regular price (for non-VIP customers) or discounted price for VIP customers. The discount varies based on the vehicle type. Discount for motorcycles is 15%, for cars 10%, and for trucks 5%.</p>
+<p>Cars, and motorcycles can be rented (i.e. <code>Rentable</code>). There may be other rentable things beside cars, and motorcycles. <code>Rentable</code> should define the following method</p>
+<pre class="line-numbers"><code>public double getRentingPricePerDay()
+</code></pre>
+<p>For cars and motorcycles, renting price per day is 0.1% of their prices for VIP customers.</p>
+<p>Upon finishing tasks elaborated above, finish the method <code>rentPrice</code> in the class  <code>PriceCalculator</code>. The method should return renting price per day for all rentable vehicles for the collection.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

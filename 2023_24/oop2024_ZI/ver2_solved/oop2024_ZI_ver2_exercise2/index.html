@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klasu <code>ChessPlayer</code> koja će sadržavati podatke o šahistima. Za svakog šahista pohranjuju se sljedeći atributi:</p>
+<ul>
+<li>firstname : ime</li>
+<li>lastname : prezime</li>
+<li>country : država – države su pobrojane u enumeraciji <code>Country</code> koja je već implementirana</li>
+<li>rating – ELO rating šahista (cijeli broj)</li>
+<li>birthyear – godina rođenja (cijeli broj)</li>
+</ul>
+<p>Atributi trebaju biti privatni i za svaki je potrebno napraviti getter. Vodite računa da imena gettera trebaju biti ispravna, npr. getter za atribut <code>firstname</code> treba biti <code>getFirstname()</code>.</p>
+<p>Potrebno je definirati i konstruktor koji će kreirati novi objekt na temelju zadanih vrijednosti atributa:</p>
+<pre class="line-numbers"><code class="language-java">public ChessPlayer(String firstname, String lastname, Country country, int rating, int birthyear)
+</code></pre>
+<p>Nadjačati metodu toString() na sljedeći način:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;(%s) %s %s %d: %d&quot;, country, firstname, lastname, birthyear, rating);
+}
+</code></pre>
+<p>Implementirati dodatne metode koje su potrebne da bi se klasa <code>ChessPlayer</code> mogla ispravno koristiti u Javinim kolekcijama (ArrayList, HashSet, TreeSet). Pri tome voditi računa da su dva šahista jednaka ako su im jednaki ime, prezime i rating (Ne mogu postojati dva šahista s istim imenom, prezimenom i ratingom. Međutim mogu postojati dva šahista koji imaju isto ime i prezime, ali onda ne mogu imati isti rating).
+Definirati prirodni komparator koji će šahiste sortirati prvo po prezimenu (od manjeg prema većem), zatim po imenu (od manjeg prema većem) i na kraju po ratingu (od većeg prema manjem).</p>
+<p>Definirati javne, statičke i konačne varijable koje će predstavljati vanjske komparatore po pojedinim atributima:</p>
+<ul>
+<li><code>BY_LASTNAME</code> - komparator po prezimenu, od manjeg prema većem</li>
+<li><code>BY_FIRSTNAME</code> – komparator po imenu, od manjeg prema većem</li>
+<li><code>BY_RATING</code> – komparator po ratingu, od manjeg prema većem (obrnuto od prirodnog komparatora)</li>
+</ul>
+<p><strong>VAŽNO:</strong> Dan vam je razred <code>ChessPlayerData</code> koji sadrži nekoliko metoda za kreiranje liste objekata tipa <code>ChessPlayer</code> koje možete koristiti za testiranje. Pri tome se redoslijed učitanih podataka nasumično određuje svaki put, pa redoslijed ispisa može u nekim slučajevima biti različit od onog u primjeru. Testovi za ocjenjivanje uzimaju to u obzir.</p>
+<p><strong>VAŽNO:</strong> Kod definicije komparatora, vodite da trebaju ispravno raditi za hrvatske znakove. Komaprator za Stringove za hrvatski jezik možete dobiti s:</p>
+<pre class="line-numbers"><code>Collator.getInstance(Locale.forLanguageTag(&quot;hr&quot;))
+</code></pre>
+<p><strong>Napomena:</strong> Klasa <code>ChessPlayer</code> treba biti javna i treba ju smjestiti u paket <code>hr.fer.oop.ZI2024.zad2</code>.</p>
+<p><strong>Primjer izvođenja:</strong></p>
+<pre class="line-numbers"><code class="language-java">List&lt;ChessPlayer&gt; lplayers = ChessPlayerData.loadChessPlayersSmall();
+ChessPlayer testplayer1 = new ChessPlayer(&quot;Goran&quot;, &quot;Višnjić&quot;, Country.CROATIA, 1500, 1972);
+ChessPlayer testplayer2 = new ChessPlayer(&quot;Goran&quot;, &quot;Višnjić&quot;, Country.CROATIA, 1700, 1972);
+
+System.out.println(&quot;\nPLAYERS (ListTest):&quot;);
+System.out.println(lplayers.contains(testplayer1) ? &quot;true&quot; : &quot;false&quot;);
+System.out.println(lplayers.contains(testplayer2) ? &quot;true&quot; : &quot;false&quot;);
+
+System.out.println(&quot;\nPLAYERS (HashSetTest):&quot;);
+Set&lt;ChessPlayer&gt; splayers1 = new HashSet&lt;&gt;(lplayers);
+System.out.println(splayers1.contains(testplayer1) ? &quot;true&quot; : &quot;false&quot;);
+System.out.println(splayers1.contains(testplayer2) ? &quot;true&quot; : &quot;false&quot;);
+
+System.out.println(&quot;\nPLAYERS (TreeSetTest):&quot;);
+Set&lt;ChessPlayer&gt; splayers2 = new TreeSet&lt;&gt;(lplayers);
+for (ChessPlayer player : splayers2) {
+	System.out.println(player);
+}
+</code></pre>
+<p><strong>Očekivani ispis:</strong></p>
+<pre class="line-numbers"><code>PLAYERS (ListTest):
+true
+false
+
+PLAYERS (HashSetTest):
+true
+false
+
+PLAYERS (TreeSetTest):
+(NORWAY) Magnus Carlsen 1990: 2830
+(CROATIA) Ivan Ćupić 1986: 1700
+(CROATIA) Ivan Ćupić 1986: 1500
+(USA) Brandon Lee 1973: 1997
+(CROATIA) Ante Šarić 1984: 2509
+(CROATIA) Ivan Šarić 1990: 2690
+(CROATIA) Goran Višnjić 1972: 1600
+(CROATIA) Goran Višnjić 1972: 1500
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

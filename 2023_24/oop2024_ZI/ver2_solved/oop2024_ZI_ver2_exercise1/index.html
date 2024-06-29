@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Opis zadatka</h1>
+<p>U stablu direktorija nalaze se datoteke koje sadrže podatke o artiklima. Potrebno je obići stablo direktorija te sakupiti informacije o svim artiklima iz datoteka koje se nalaze u zadanom direktoriju i svim njegovim poddirektorijima. Pri tome je potrebno gledati samo datoteke sa ekstenzijom <code>.txt</code>.</p>
+<p>U tu svrhu potrebno je napisati klasu <code>Item</code> (koja opisuje jedan artikl) i klasu <code>MyFileVisitor</code> (koja služi za obilazak stable direktorija).</p>
+<p>Klasa <code>Item</code> ima sljedeće attribute i metode (atributi su privatni, a metode javne):</p>
+<ul>
+<li>name : <code>String</code> - naziv artikla</li>
+<li>quantity : <code>integer</code> - količina</li>
+<li>price: <code>double</code> - jedinična cijena</li>
+<li><code>Item(String name, int quantity, double price)</code> - konstruktor</li>
+<li><code>String getName()</code> - metoda koja vraća naziv artikla</li>
+<li><code>int getQuantity()</code> - metoda koja vraća količinu artikala</li>
+<li><code>double getPrice()</code> - metoda koja vraća cijenu jednog artikla</li>
+<li><code>double getTotalPrice()</code> - metoda koja vraća ukupnu cijenu artikala koja je jednaka umnošku količine artikala i jedinične cijene artikla</li>
+</ul>
+<p>Svaki redak datoteke sa podacima o artiklima sadrži podatke o jednom artiklu odvojene znakom ‘#’ formatirane na sljedeći način:
+<code>name#quantity#price</code>.</p>
+<p><strong>Primjer ispravne datoteke:</strong></p>
+<pre class="line-numbers"><code>Apple#1#10
+Bananas#10#3.97
+</code></pre>
+<p>Klasa <code>MyFileVisitor</code> u zadanom direktoriju i svim njegovim poddirektorijima čita sadržaj tekstualnih datoteka.</p>
+<p>Klasa <code>MyFileVisitor</code> mora implementirati sljedeće javne metode:</p>
+<ul>
+<li><code>List&lt;Item&gt; getItems()</code> - metoda koja vraća listu svih pronađenih artikala</li>
+<li><code>double getTotalPrice()</code> - metoda koja vraća ukupnu cijenu pronađenih artikala</li>
+<li><code>int getTotalQuantity()</code> - metoda koja vraća ukupan broj (<code>quantity</code>) svih učitanih artikala</li>
+</ul>
+<p>Klasa <code>MyFileVisitor</code> mora implementirati sučelje <code>FileVisitor</code>, te ju je potrebno smjestiti u paket <code>hr.fer.oop.ZI2024.zad1</code>.</p>
+<p><strong>Važno:</strong></p>
+<ul>
+<li>Za rad s datotekama obavezno koristiti klasu <code>java.nio.file.Path</code> !</li>
+<li>Neke datoteke ne sadrže zapise o artiklima, a neki zapisi mogu biti pogrešno formatirani. Takve datoteke kao i pogrešno formatirane zapise potrebno je ignorirati (ne učitavaju se) ! Npr. u jednoj od zadanih datoteka nalazi se samo text &quot;error&quot; koji ne možete pretvoriti u ispravan zapis o artiklu pa tu datoteku trebate ignorirati.</li>
+<li>Dana vam je klasa <code>Main</code> sa kodom iz primjera.</li>
+</ul>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) startDir = System.getProperty(&quot;user.dir&quot;);
+
+Path startPath = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;data&quot;);
+MyFileVisitor visitor = new MyFileVisitor();
+
+try {        	
+	Files.walkFileTree(startPath, visitor);
+
+	visitor.getItems().forEach(
+		item -&gt; System.out.printf(&quot;%s,%d,%.2f\n&quot;, item.getName(), item.getQuantity(), item.getPrice())
+	);
+   System.out.println(&quot;Total price: &quot; + visitor.getTotalPrice());
+   System.out.println(&quot;Total quantity: &quot; + visitor.getTotalQuantity());
+
+} catch (IOException e) {
+	e.printStackTrace();
+}
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>Cherry,10,19,99
+Peach,5,6,95
+Mango,3,17,99
+Papaya,3,15,99
+Orange,1,5,50
+Banana,10,8,90
+Total price: 431.09
+Total quantity: 32
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

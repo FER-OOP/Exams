@@ -1,0 +1,17 @@
+package hr.fer.oop.ZI2024.zad2;
+
+public enum Country {
+	NORWAY,
+	USA,
+	RUSSIA,
+	UZBEKISTAN,
+	INDIA,
+	CHINA,
+	NEDERLANDS,
+	FRANCE,
+	AZERBAIJAN,
+	IRAN,
+	POLAND,
+	VIETNAM,
+	CROATIA
+}

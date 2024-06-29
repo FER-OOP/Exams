@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to implement a class <code>ChessPlayer</code> for storing information on chess players. Each chess players has the following attributes:</p>
+<ul>
+<li>firstname : first name</li>
+<li>lastname : last name</li>
+<li>country : country of origin – countries are stored in enumeration <code>Country</code> which is already implemented</li>
+<li>rating – ELO rating (integer)</li>
+<li>birthyear – year of birth (integer)</li>
+</ul>
+<p>All attributes should be private and for each of them you have to implement a getter. Be precise with getter names, e.g. a getter for the attribute <code>firstname</code> should be named <code>getFirstname()</code>.</p>
+<p>You also need to define a constructor which will create a new <code>ChessPlayer</code> object based on attribute values:</p>
+<pre class="line-numbers"><code class="language-java">public ChessPlayer(String firstname, String lastname, Country country, int rating, int birthYear)
+</code></pre>
+<p>Override method <code>toString()</code> as follows:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;(%s) %s %s %d: %d&quot;, country, firstname, lastname, birthYear, rating);
+}
+</code></pre>
+<p>If you already solved exercise 2, you can reuse class <code>ChessPlayer</code> from there, or you can write it from scratch.</p>
+<p>Implement four additional static methods that work with data streams (either take a stream as an argument or return a stream as a result).
+The methods work with stream of <code>ChessPlayer</code> objects.</p>
+<ol>
+<li>A method that take a list of chess players and a rating threshold, and returns a stream with players with rating above the threshold sorted by year of birth from higher to lower.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;ChessPlayer&gt; getGoodChessPlayers(List&lt;ChessPlayer&gt; lplayers, int ratingthreshold)
+</code></pre>
+<ol start="2">
+<li>A method that takes a stream of players and a country and return the average rating of all players from that country, or 0 if the list contains no players from a given country.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static double getAvgRating(Stream&lt;ChessPlayer&gt; cpstream, Country country
+</code></pre>
+<ol start="3">
+<li>A method that takes a stream of players and a <code>Predicate</code> object and returns a <code>String</code> containing all players that satisfy the predicate. The result should have the following format: <code>&quot;lastname1, firstname1; lastname2, firstname2; ...&quot;</code></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static String getFilteredPlayers(Stream&lt;ChessPlayer&gt; cpstream, Predicate&lt;ChessPlayer&gt; filter)
+</code></pre>
+<ol start="4">
+<li>A method that takes a stream of players and returns a map in which key is the <code>Country</code> object, a the value is the maximum rating for players from that country. Countries without any players should not be in the map.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Map&lt;Country, Integer&gt; getMaxRatingForCountry(Stream&lt;ChessPlayer&gt; cpstream)
+</code></pre>
+<p><strong>ADVICE:</strong> Do not try to implement 4th method (<code>getMaxRatingForCountry</code>) using <code>groupingBy</code> over stream <code>cpstream</code>. Instead, create a new map, update its contents based on da in <code>cpstream</code> and return it as the result.</p>
+<p><strong>IMPORTANT:</strong> Class <code>ChessPlayerData</code> is already implemented and can be used. It contains several methods for creating a list of <code>ChessPlayer</code> objects that can be used for testing. The class randomizes the order of the data, so the output order can sometimes be different than in the example. Grading tests will take that into account.</p>
+<p><strong>IMPORTANT:</strong> Class<code>ChessPlayer</code> should be public and placed in the package <code>hr.fer.oop.ZI2024.zad4</code>.</p>
+<p><strong>EXAMPLE:</strong></p>
+<pre class="line-numbers"><code class="language-java">List&lt;ChessPlayer&gt; players = ChessPlayerData.loadChessPlayersTop();
+
+Stream&lt;ChessPlayer&gt; cpstream = getGoodChessPlayers(players, 2770);
+System.out.println(&quot;Chess players with rating over 2770:&quot;);
+cpstream.forEach(cp -&gt; System.out.println(cp));
+
+double avgratingusa =  getAvgRating(players.stream(), Country.USA);
+double avgratinggermany =  getAvgRating(players.stream(), Country.GERMANY);
+
+System.out.printf(&quot;\nAverage rating in USA: %.2f&quot;, avgratingusa);
+System.out.printf(&quot;\nAverage rating in Germany: %.2f&quot;, avgratinggermany);
+
+String filteredplayers = getFilteredPlayers(players.stream(), cp -&gt; cp.country == Country.CHINA);
+System.out.println(&quot;\n\nPlayers from China: &quot; + filteredplayers);
+
+System.out.println(&quot;\nCountry map:&quot;);
+Map&lt;Country, Integer&gt; cplayers = getMaxRatingForCountry(players.stream());
+cplayers.forEach((k,v) -&gt; System.out.println(k + &quot;: &quot; + v));
+</code></pre>
+<p><strong>EXPECTED OUTPUT:</strong></p>
+<pre class="line-numbers"><code>Chess players with rating over 2770:
+(USA) Fabiano Caruana 1992: 2805
+(NORWAY) Magnus Carlsen 1990: 2830
+(USA) Hikaru Nakamura 1987: 2794
+
+Average rating in USA: 2776.00
+Average rating in Germany: 0.00
+
+Players from China: Wei, Yi; Ding, Liren
+
+Country map:
+FRANCE: 2737
+AZERBAIJAN: 2734
+IRAN: 2733
+INDIA: 2763
+VIETNAM: 2731
+NORWAY: 2830
+CHINA: 2762
+NEDERLANDS: 2745
+RUSSIA: 2770
+USA: 2805
+POLAND: 2733
+UZBEKISTAN: 2766
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

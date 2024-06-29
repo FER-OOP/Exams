@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Task description</h1>
+<p>A directory tree contains file with information about items. You need to traverse the folder tree and collect information on all records from all the files in the directory tree. Consider only the files with the extension &quot;.txt&quot;.</p>
+<p>You need to implement class <code>Item</code> (containing information on a single item) and class <code>MyFileVisitor</code> (for directory tree traversal).</p>
+<p>Class <code>Item</code> has the following attributes and methods (attributes are private, and methods public):</p>
+<ul>
+<li>name : <code>String</code> - item name</li>
+<li>quantity : <code>integer</code> - item quantity</li>
+<li>price: <code>double</code> - unit price</li>
+<li><code>Item(String name, int quantity, double price)</code> - constructor</li>
+<li><code>String getName()</code> - method returning item name</li>
+<li><code>int getQuantity()</code> - method returning item quantity</li>
+<li><code>double getPrice()</code> - method returning item unit price</li>
+<li><code>double getTotalPrice()</code> - method returning total item price calculated by multiplying quantity and unit price</li>
+</ul>
+<p>Each line of a text file with data contains data about a single item, separated by semi-colon ('#'), formatted as:
+<code>name#quantity#price</code>.</p>
+<p><strong>Correctly formatted file example:</strong></p>
+<pre class="line-numbers"><code>Apple#1#10
+Bananas#10#3.97
+</code></pre>
+<p>Class <code>MyFileVisitor</code> reads textual files in a directory tree.</p>
+<p>Class <code>MyFileVisitor</code> has the following public methods:</p>
+<ul>
+<li><code>List&lt;Item&gt; getItems()</code> - method returning a list of all read items</li>
+<li><code>double getTotalPrice()</code> - method returning a sum of total price of all read items</li>
+<li><code>int getTotalQuantity()</code> - method returning total <code>quantity</code> of all items
+Class <code>MyFileVisitor</code> should be implemented using interface <code>FileVisitor</code>.</li>
+</ul>
+<p>Classes <code>MyFileVisitor</code> and <code>Item</code> should be placed in package <code>hr.fer.oop.ZI2024.zad1</code>.</p>
+<p><strong>Important:</strong></p>
+<ul>
+<li>For working with files you must use class <code>java.nio.file.Path</code> !</li>
+<li>Some files do not contain <code>Item</code> records, and some records may be formatted incorrectly. Such files as well as incorrectly formatted records should be ignored (not loaded) !</li>
+<li>A <code>Main</code> class with the code from the example is already provided.</li>
+</ul>
+<p><strong>Example run:</strong></p>
+<pre class="line-numbers"><code class="language-java">String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) startDir = System.getProperty(&quot;user.dir&quot;);
+
+Path startPath = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;data&quot;);
+MyFileVisitor visitor = new MyFileVisitor();
+
+try {        	
+	Files.walkFileTree(startPath, visitor);
+
+	visitor.getItems().forEach(
+		item -&gt; System.out.printf(&quot;%s,%d,%.2f\n&quot;, item.getName(), item.getQuantity(), item.getPrice())
+	);
+   System.out.println(&quot;Total price: &quot; + visitor.getTotalPrice());
+   System.out.println(&quot;Total quantity: &quot; + visitor.getTotalQuantity());
+
+} catch (IOException e) {
+	e.printStackTrace();
+}
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>Cherry,10,19,99
+Peach,5,6,95
+Mango,3,17,99
+Papaya,3,15,99
+Orange,1,5,50
+Banana,10,8,90
+Total price: 431.09
+Total quantity: 32
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<h1>Opis zadatka</h1>
+<p>Imate zadatak pomoći u vođenju kvalifikacija za natjecanje <strong>STEM Games</strong> koje se provodi na FER-u. U kvalifikacijama svaki student dobiva bodove iz dvije kategorije: inženjerstvo ( <em>engineering</em> ) i matematika ( <em>math</em> ).</p>
+<p>Potrebno je napisati dvije klase: <code>Student</code> i <code>STEMGames</code>. Sve klase trebaju biti u paketu <code>hr.fer.oop.ZI2024.zad3</code> i imaju vidljivost postavljenu na  <em>public</em> .</p>
+<p>Klasa <code>Student</code> treba imate sljedeće privatne varijable:</p>
+<ul>
+<li><code>name</code> : <code>String</code> . ime i prezime studenta</li>
+<li><code>pointsEng</code> : <code>int</code> - bodovi iz inženjerstva</li>
+<li><code>pointsMath</code> : <code>int</code> - bodovi iz matematike</li>
+</ul>
+<p>U klasi <code>Student</code> potrebno je implementirati javne metode i konstruktor sa zadanim potpisima:</p>
+<ul>
+<li><code>Student(String name, int pointsEng, int pointsMath)</code> - konstruktor koji prima ime i prezime studenta <code>name</code>, broj ostvarenih bodova iz kategorije inženjerstva <code>pointsEng</code>, i broj ostvarenih bodova iz kategorije matematika <code>pointsMath</code></li>
+<li><code>String getName()</code> - metoda koja vraća ime i prezime studenta (<code>name</code>))</li>
+<li><code>int getPointsEng()</code> - metoda koja vraća broj ostvarenih bodova iz inženjerstvaa</li>
+<li><code>int getPointsMath()</code> - metoda koja vraća broj ostvarenih bodova iz matematikee</li>
+<li><code>int getTotalPoints()</code> - metoda koja vraća ukupne bodove kao zbroj ostvarenih bodova iz inženjerstva i matematikee</li>
+</ul>
+<p>Ako želite, možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p>U klasi <code>STEMGames</code> potrebno je implementirati javne metode sa zadanim potpisima:</p>
+<ul>
+<li><code>void addStudent(String name, int pointsEng, int pointsMath)</code> - metoda koja dodaje novi zapis sa studentom u objekt STEMGames</li>
+<li><code>List&lt;Student&gt; getStudents()</code> - metoda koja vraća listu studenta</li>
+<li><code>int getTopEngStudentCount(int threshold)</code> - metoda koja vraća broj studenata s bodovima iz inženjerstva jednakima ili većima od zadanog praga (<code>threshold</code>)</li>
+<li><code>int getTopMathStudentCount(int threshold)</code> - metoda koja vraća broj studenata s bodovima iz matematike jednakima ili većima od zadanog praga (<code>threshold</code>)</li>
+<li><code>int getTopTotalStudentCount(int threshold)</code> - metoda koja vraća broj studenata s ukupnim bodovima jednakima ili većima od zadanog praga (<code>threshold</code>)</li>
+<li><code>Map&lt;String, List&lt;String&gt;&gt; getTopStudents()</code> - metoda koja vraća mapu s tri zapisa. Ključevi imaju vrijednosti <code>eng</code>, <code>math</code> i <code>total</code>,  a vrijednosti su liste imena studenata s odgovarajućim ostvarenim bodovima jednakima ili većima od zadanog praga. Prag za bodove iz inženjerstva i matematike je 95, a prag za ukupne bodove je 190.</li>
+</ul>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code>STEMGames stemGames = new STEMGames();
+
+stemGames.addStudent(&quot;Jana Kralj&quot;, 93, 98);
+stemGames.addStudent(&quot;Ivan Pehar&quot;, 94, 90);
+stemGames.addStudent(&quot;Marko Horvat&quot;, 71, 77);
+stemGames.addStudent(&quot;Petar Medak&quot;, 92, 75);
+stemGames.addStudent(&quot;Lucija Rukavina&quot;, 69, 73);
+stemGames.addStudent(&quot;Jure Posavec&quot;, 90, 87);
+stemGames.addStudent(&quot;Maja Herceg&quot;, 87, 86);
+stemGames.addStudent(&quot;Luka Car&quot;, 85, 90);
+stemGames.addStudent(&quot;Karla Horvat&quot;, 95, 96);
+stemGames.addStudent(&quot;Martina Salamun&quot;, 69, 82);
+stemGames.addStudent(&quot;Tomislav Kolar&quot;, 73, 79);
+stemGames.addStudent(&quot;Nina Trnski&quot;, 77, 89);
+stemGames.addStudent(&quot;Zvonimir Novosel&quot;, 90, 89);
+stemGames.addStudent(&quot;Marta Knez&quot;, 91, 92);
+stemGames.addStudent(&quot;Filip Krolo&quot;, 86, 92);
+stemGames.addStudent(&quot;Ivana Mlinar&quot;, 99, 74);
+
+int topEngCount = stemGames.getTopEngStudentCount(95);
+int topMathCount = stemGames.getTopMathStudentCount(95);
+int topTotalCount = stemGames.getTopTotalStudentCount(190);
+
+System.out.println(&quot;Number of students with 95 or more in engineering: &quot; + topEngCount);
+System.out.println(&quot;Number of students with 95 or more in mathematics: &quot; + topMathCount);
+System.out.println(&quot;Number of students with 190 or more in total score : &quot; + topTotalCount);
+
+Map&lt;String, List&lt;String&gt;&gt; topStudents = stemGames.getTopStudents();
+
+for (String k : topStudents.keySet()) {
+	List&lt;String&gt; v = topStudents.get(k);
+	System.out.println(k + &quot;: &quot; + v);
+}
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>Number of students with 95 or more in engineering: 2
+Number of students with 95 or more in mathematics: 2
+Number of students with 190 or more in total score : 2
+total: [Jana Kralj, Karla Horvat]
+math: [Jana Kralj, Karla Horvat]
+eng: [Karla Horvat, Ivana Mlinar]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

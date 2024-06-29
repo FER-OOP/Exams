@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je modelirati klase i sučelja u paketu koje se koriste u aplikaciji za upravljanje vozilima (tip <code>Vehicle</code>).</p>
+<p>Postoje tri vrste vozila:</p>
+<ul>
+<li>automobil (<code>Car</code>)</li>
+<li>kamion (<code>Truck</code>)</li>
+<li>motocikl (<code>Motorcycle</code>)</li>
+</ul>
+<p>i ne može postojati vozilo koji nije jedno od navedena tri.</p>
+<p>Svaka vrsta vozila ima definiran naziv modela (<code>model:String</code>), snagu (<code>power:int</code>) i cijenu (<code>regularPrice:double</code>). Za svaki od atributa treba definirati <em>gettere</em> i <em>settere</em>.</p>
+<p>Automobili dodatno imaju oznaku eurostandarda (<code>euroStd:string</code>), kamioni imaju definiranu nosivost (<code>maxLoad:int</code>), a motocikli oznaku tipa (<code>type:MotorcycleType</code>) koja mora biti jedna od sljedećih: <code>Chopper</code>, <code>Sport</code>, <code>Racing</code> i <code>OffRoad</code>.</p>
+<p>Za vozila je potrebno napraviti metodu</p>
+<pre class="line-numbers"><code>public double getPrice(boolean isVIP)
+</code></pre>
+<p>koja za korisnike koji nisu VIP vraća regularnu (tj. definiranu) cijenu vozila, a za VIP korisnike vraća regularnu cijenu umanjenu za određeni postotak ovisno o tipu vozila tako da je popust na motocikle 15%, na automobile 10%, a na kamione 5%.</p>
+<p>Automobili i motocikli spadaju u stvari koje se mogu iznajmiti <code>Rentable</code>. Za stvari koje se iznajmljuju (a to ne moraju nužno biti samo automobili i motocikli, već i npr. alati i nešto drugo što trenutno nije predmet zadatka) se definira metoda</p>
+<pre class="line-numbers"><code>public double getRentingPricePerDay()
+</code></pre>
+<p>U slučaju automobila i motocikla cijena najma je 0,1% njihove cijene za VIP korisnike.</p>
+<p>Nakon oblikovanja klasa, sučelja i enumeracija prema gornjim zahtjevima potrebno je dovršiti metodu <code>rentPrice</code> u klasi <code>PriceCalculator</code> koja će vratiti cijenu svih vozila koja se mogu iznajmiti, a nalaze se u enumeraciji vozila zadanoj kao argument metode.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

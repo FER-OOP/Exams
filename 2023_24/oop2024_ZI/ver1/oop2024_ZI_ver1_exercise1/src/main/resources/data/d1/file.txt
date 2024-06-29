@@ -1,0 +1,2 @@
+Apple;1;10
+Orange;1;20
