@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignement, it is necessary to extend the <code>Lambdas</code> class by completing the implementation of 3 static attributes shown in the code snippet below. The static attribute <code>loadFromStream</code> is of type <code>BiConsumer</code>, and its <code>accept</code> method is used to load data from a CSV (comma-separated values) file into a map. The remaining two static attributes are of type <code>BiFunction</code>, and their <code>apply</code> methods use the map loaded with data to calculate statistics.</p>
+<p><strong>NOTES: Each of these 3 static attributes should be implemented as a <strong>lambda expression</strong> using the Java Stream API. When implementing, it is not necessary to catch or handle exceptions (e.g., incorrect year input or invalid country name). The <code>Lambdas</code> class should be located in the <code>hr.fer.oop</code> package, and it and its static attributes should have visibility set to <code>public</code>.</strong></p>
+<pre class="line-numbers"><code class="language-java">public static BiConsumer&lt;Stream&lt;String&gt;, Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt; loadFromStream = (lines, map) -&gt; {}; //TODO
+
+
+public static BiFunction&lt;Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;, String, Triple&lt;String, Integer, Long&gt;&gt; getMinForIncomingCountry = (map, incomingCountry) -&gt; null; //TODO
+            
+
+public static BiFunction&lt;Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;, Integer, Collection&lt;Triple&lt;String, String, Long&gt;&gt;&gt; getValuesForYear = (map, year) -&gt; null; //TODO
+</code></pre>
+<p>In the above code snippet, the <code>Pair</code> and <code>Triple</code> classes are used and do not need to be implemented as they are given. They represent an ordered pair and an ordered triple of element, respectively. These classes are implemented as <code>Record</code> with attributes called <code>first</code> and <code>second</code> (for both classes) and <code>third</code> (for the triple). As a <code>Record</code>, these classes have a correctly implemented constructor that takes the values of all attributes, getters that are named after the attributes (without the get prefix), and the <code>equals</code>, <code>hashCode</code>, and <code>toString</code> methods.</p>
+<p>An example of a CSV file containing data to be loaded is as follows:</p>
+<pre class="line-numbers"><code class="language-csv">Australia;Austria;2019;44
+Australia;Austria;2020;80
+Australia;Poland;2019;471
+Australia;Poland;2020;724
+Austria;Poland;2019;154
+Austria;Poland;2020;124
+</code></pre>
+<p>Each row of this CSV file contains the following 4 values:</p>
+<ul>
+<li><code>IncomingCountry</code> – the name of the incoming country to which the value applies,</li>
+<li><code>OutgoingCountry</code> – the name of the outgoing country to which the value applies,</li>
+<li><code>Year</code> – the year to which the value applies, and</li>
+<li><code>Value</code> – the value representing the number of citizens of the outgoing country <code>OutgoingCountry</code> who obtained citizenship of the incoming country <code>IncomingCountry</code> that year.</li>
+</ul>
+<p><strong>Notes:</strong> The CSV file may contain data for countries and years not shown in the example CSV file, but it cannot contain missing values in such a way that data for a country is missing for a certain year.</p>
+<h2>Static attribute <code>loadFromStream</code></h2>
+<p>The data from the specified CSV file is loaded by the <code>accept</code> method of the static attribute <code>loadFromStream</code>, which is of type <code>BiConsumer</code>. This method takes 2 arguments. The <code>lines</code> argument of type <code>Stream&lt;String&gt;</code> represents a collection stream of lines from this CSV file. The <code>map</code> argument of type <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> represents the map into which the data from the file should be loaded. The keys in this map are of type <code>Pair&lt;String, String&gt;</code> and represent pairs of country names, where the first element of the pair represents the incoming country (<code>IncomingCountry</code>), and the second element represents the outgoing country (<code>OutgoingCountry</code>). The values in this map are collections of objects of type <code>Pair&lt;Integer, Long&gt;</code>, where the first element of the pair (of type <code>Integer</code>) represents the year, and the second element of the pair (of type <code>Long</code>) represents the number of citizens of the outgoing country <code>OutgoingCountry</code> who obtained citizenship of the incoming country <code>IncomingCountry</code> that year. The static attribute <code>loadFromStream</code> should be implemented as a lambda expression using the Java Stream API and the default method <code>compute</code> from the <code>java.util.Map</code> interface.</p>
+<h2>Static attribute <code>getMinForIncomingCountry</code></h2>
+<p>The <code>apply</code> method of the static attribute <code>getMinForIncomingCountry</code>, which is of type <code>BiFunction</code>, takes two arguments. The <code>map</code> argument of type <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> is the input map with data loaded by the <code>accept</code> method of the static attribute <code>loadFromStream</code>. The <code>incomingCountry</code> argument of type <code>String</code> represents the name of the incoming country for which it is necessary to find the <strong>minimum number of citizens</strong> from any other country who have ever obtained citizenship of that country. The result (outgoing country, year, and <strong>minimum number of citizens</strong>) should be returned as a triple of type <code>Triple&lt;String, Integer, Long&gt;</code>. When implementing, you can use the terminal operation <code>Optional&lt;T&gt; findFirst()</code> to retrieve the first element of a collection stream.</p>
+<h2>Static attribute <code>getValuesForYear</code></h2>
+<p>The <code>apply</code> method of the static attribute <code>getValuesForYear</code>, which is of type <code>BiFunction</code>, takes two arguments. The <code>map</code> argument of type <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> is the input map with data loaded by the <code>accept</code> method of the static attribute <code>loadFromStream</code>. The <code>year</code> argument of type <code>int</code> represents the year for which it is necessary to find all triples of type <code>Triple&lt;String, String, Long&gt;</code> for which there is data, where the values within the triple represent the incoming country (<code>IncomingCountry</code>), outgoing country (<code>OutgoingCountry</code>), and the number of citizens of the outgoing country who obtained citizenship of the incoming country that year. The result is a collection of the specified triples of type <code>Collection&lt;Triple&lt;String, String, Long&gt;&gt;&gt;</code>. When implementing, you can use the terminal operation <code>Optional&lt;T&gt; findFirst()</code> to retrieve the first element of a collection stream.</p>
+<p>An example of using the <code>Lambdas</code> class and the static attributes to be implemented:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;Pair&lt;String,String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt; map = new HashMap&lt;&gt;();
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+  startDir = System.getProperty(&quot;user.dir&quot;);
+}
+try {
+  Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;ACQNAT_small.csv&quot;);
+  Lambdas.loadFromStream.accept(Files.lines(path), map);
+  System.out.println(&quot;Loaded map: &quot; + map);
+  System.out.println(&quot;\nMin Incoming for Australia: &quot; + Lambdas.getMinForIncomingCountry.apply(map, &quot;Australia&quot;));
+  System.out.println(&quot;\nValues for 2020: &quot; + Lambdas.getValuesForYear.apply(map, 2020));
+  } catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+  }
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-txt">Loaded map: {Pair[first=Australia, second=Poland]=[Pair[first=2019, second=471], Pair[first=2020, second=724]], Pair[first=Austria, second=Poland]=[Pair[first=2019, second=154], Pair[first=2020, second=124]], Pair[first=Australia, second=Austria]=[Pair[first=2019, second=44], Pair[first=2020, second=80]]}
+
+Min Incoming for Australia: Triple[first=Austria, second=2019, third=44]
+
+Values for 2020: [Triple[first=Australia, second=Poland, third=724], Triple[first=Austria, second=Poland, third=124], Triple[first=Australia, second=Austria, third=80]]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

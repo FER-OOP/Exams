@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignment, it is necessary to create a class <code>TMWriter</code> that directly extends the abstract class <code>Writer</code>. The class <code>TMWriter</code> is used as a <strong>decorator for another class</strong> that extends the <code>Writer</code> class, converting Croatian diacritics into corresponding digraphs as proposed by Croatian linguist Tomislav Maretić (TM) in the 19th century. If Maretić's proposal had been accepted at the time, texts in the Croatian language could easily be entered on foreign keyboards (English, German, French, etc.).</p>
+<p>The list of diacritics and the digraphs they should be replaced with:</p>
+<ul>
+<li>&quot;č&quot; -&gt; &quot;cx&quot;</li>
+<li>&quot;Č&quot; -&gt; &quot;Cx&quot;</li>
+<li>&quot;ć&quot; -&gt; &quot;cy&quot;</li>
+<li>&quot;Ć&quot; -&gt; &quot;Cy&quot;</li>
+<li>&quot;dž&quot; -&gt; &quot;dx&quot;</li>
+<li>&quot;Dž&quot; -&gt; &quot;Dx&quot;</li>
+<li>&quot;đ&quot; -&gt; &quot;dy&quot;</li>
+<li>&quot;Đ&quot; -&gt; &quot;Dy&quot;</li>
+<li>&quot;nj&quot; -&gt; &quot;ny&quot;</li>
+<li>&quot;Nj&quot; -&gt; &quot;Ny&quot;</li>
+<li>&quot;lj&quot; -&gt; &quot;ly&quot;</li>
+<li>&quot;Lj&quot; -&gt; &quot;Ly&quot;</li>
+<li>&quot;š&quot; -&gt; &quot;sx&quot;</li>
+<li>&quot;Š&quot; -&gt; &quot;Sx&quot;</li>
+<li>&quot;ž&quot; -&gt; &quot;zx&quot;</li>
+<li>&quot;Ž&quot; -&gt; &quot;Zx&quot;</li>
+</ul>
+<p><strong>NOTE: The class <code>TMWriter</code> must not be final, i.e., it must be inheritable for correct scoring of the solution.</strong></p>
+<p>An example of using this class is shown in the following snippet of the given <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">//print original
+System.out.println(&quot;Original:&quot;);
+System.out.println(LOWER_CASE_EXAMPLE);
+System.out.println(UPPER_CASE_EXAMPLE);
+
+//writer
+StringWriter sWriter = new StringWriter(); //to simplify, we will read the text from a string rather than from a file
+TMWriter tmWriter = new TMWriter(sWriter); //TMWriter decorates the StringWriter
+BufferedWriter bWriter = new BufferedWriter(tmWriter);
+bWriter.write(LOWER_CASE_EXAMPLE);
+bWriter.newLine();
+bWriter.write(UPPER_CASE_EXAMPLE);
+bWriter.flush();
+
+//print tm style
+System.out.println(&quot;TM Style:&quot;);
+System.out.println(sWriter.toString());
+</code></pre>
+<p>The correct output of the given <code>main</code> method in the <code>Main</code> class should be:</p>
+<pre class="line-numbers"><code class="language-sh">Original:
+Franc Hlapić smješta ključ od gvožđa uz džbunje.
+franc hlapiĆ smjeŠta kLjuČ od gvoŽĐa uz DžbuNje.
+TM Style:
+Franc Hlapicy smjesxta klyucx od gvozxdya uz dxbunye.
+franc hlapiCy smjeSxta kLyuCx od gvoZxDya uz DxbuNye.
+</code></pre>
+<p><strong>NOTE: All classes and interfaces have visibility set to <code>public</code> and are in the package <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

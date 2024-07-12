@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the assignment, an abstract class <code>Creature</code>, a concrete (non-abstract) class <code>Human</code>, and a class <code>Main</code> are given. The goal is to write concrete classes <code>Bee</code>, <code>Unicorn</code>, and <code>Dragon</code>, as well as the types <code>FlyingCreature</code> and <code>MagicalCreature</code> for which it is necessary to decide whether they should be interfaces or classes. Additionally, it is necessary to establish a class hierarchy and implement appropriate interfaces in the classes. All concrete classes (<code>Human</code>, <code>Bee</code>, <code>Unicorn</code>, and <code>Dragon</code>) have the class <code>Creature</code> as a superclass, but not necessarily as their direct superclass.</p>
+<p><strong>NOTE: Classes <code>Creature</code> and <code>Human</code> must not be changed for correct scoring of the solution.</strong></p>
+<p>Objects of type <code>Creature</code> possess energy (<code>energy</code>) of type <code>int</code> which is set when the object is created, can be decreased by performing appropriate actions, and increased by 10 by resting, i.e., calling the method <code>void rest()</code>. The current energy state can be retrieved by calling the getter <code>int getEnergy()</code>, but there is no <em>setter</em> for setting it.</p>
+<p>Objects of type <code>Unicorn</code> and <code>Dragon</code> are magical creatures and therefore also of type <code>MagicalCreature</code>. Objects of type <code>MagicalCreature</code> possess power (<code>power</code>) of type <code>int</code> which is set when the object is created, can be decreased by performing magic, i.e., calling the method <code>void performMagic()</code>, and increased by 10 by resting, i.e., calling the method <code>void rest()</code>. The current power state can be retrieved by calling the getter <code>int getPower()</code>. Analogous to energy (<code>energy</code>), <strong>there must not be a setter for power (<code>power</code>)</strong>.</p>
+<p>Every object of type <code>Bee</code> or <code>Dragon</code> is a flying creature of type <code>FlyingCreature</code>. Flying creatures spend energy by flying, i.e., calling the method <code>void fly()</code>.</p>
+<p>Concrete classes have a single constructor, and an example of their invocation is shown in the snippet of the given <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">Unicorn unicorn = new Unicorn(&quot;Sparkle&quot;, 100, 50); //name, energy, power
+Dragon dragon = new Dragon(&quot;Smaug&quot;, 150, 70); //name, energy, power
+Bee bee = new Bee(&quot;Buzzy&quot;, 30); //name, energy
+Human human = new Human(&quot;Alice&quot;, 90); //name, energy
+</code></pre>
+<p>The following general methods can be called on any object of these 7 types (<code>Human</code>, <code>Bee</code>, <code>Unicorn</code>, <code>Dragon</code>, <code>Creature</code>, <code>FlyingCreature</code>, and <code>MagicalCreature</code>):</p>
+<ul>
+<li><code>String getName()</code> - returns the name which is set in the constructor</li>
+<li><code>int getEnergy()</code> - returns the current energy state</li>
+<li><code>void rest()</code> - increases energy for objects of type <code>Creature</code> and additionally power for objects of type <code>MagicalCreature</code> as previously mentioned</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Human</code>:</p>
+<ul>
+<li><code>void walk()</code> - decreases energy by 2</li>
+<li><code>void work()</code> - decreases energy by 4</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Bee</code>:</p>
+<ul>
+<li><code>void collectHoney()</code> - decreases energy by 2</li>
+<li><code>void fly()</code> - decreases energy by 5</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Unicorn</code>:</p>
+<ul>
+<li><code>int getPower()</code> - returns the current power state</li>
+<li><code>void performMagic()</code> - decreases energy by 2 and power by 4</li>
+<li><code>void gallop()</code> - decreases energy by 3</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Dragon</code>:</p>
+<ul>
+<li><code>int getPower()</code> - returns the current power state</li>
+<li><code>void performMagic()</code> - decreases energy by 1 and power by 3</li>
+<li><code>void fly()</code> - decreases energy by 5</li>
+</ul>
+<p>The correct output of the given <code>main</code> method in the <code>Main</code> class should be:</p>
+<pre class="line-numbers"><code class="language-sh">    Alice has 90 energy upon creation
+    Alice has 88 energy after walking
+    Alice has 84 energy after working
+    Alice has 94 energy after resting
+
+    Buzzy has 30 energy upon creation
+    Buzzy has 28 energy after collecting honey
+    Buzzy has 23 energy after flying
+    Buzzy has 33 energy after resting
+
+    Sparkle has 100 energy and 50 power upon creation
+    Sparkle has 97 energy and 50 power after galloping
+    Sparkle has 95 energy and 46 power after performing magic
+    Sparkle has 105 energy and 56 power after resting
+
+    Smaug has 150 energy and 70 power upon creation
+    Smaug has 145 energy and 70 power after flying
+    Smaug has 144 energy and 67 power after performing magic
+    Smaug has 154 energy and 77 power after resting
+</code></pre>
+<p><strong>NOTE: All classes and interfaces have visibility set to <code>public</code> and are in the package <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

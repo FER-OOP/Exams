@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignment, it is necessary to supplement the program code of the class <code>Item</code> and write the class <code>SpecialLinkedList</code>.</p>
+<p>The class <code>Item</code> with attributes <code>name</code>, <code>value</code>, and <code>category</code> models a physical item where none of these 3 attributes are unique. This class implements the interface <code>Comparable&lt;Item&gt;</code>. In this class, it is necessary to implement the methods <code>hashCode</code>, <code>equals</code>, and <code>compareTo</code>. The natural ordering of instances of this class is alphabetical by name (i.e., the value of the <code>name</code> attribute). If two physical items have the same name, it does not matter which one comes before the other in the natural ordering.</p>
+<p>The parameterized class <code>SpecialLinkedList&lt;E extends Comparable&lt;E&gt;&gt;</code> inherits the class <code>java.util.LinkedList&lt;E&gt;</code> and implements the given interface <code>SpecialCollection&lt;E&gt;</code>. Unlike the interface <code>java.util.List</code>, the interface <code>SpecialCollection</code> models lists that <strong>must not contain <code>null</code> elements or duplicates</strong>. When adding a null element, the methods of this class should throw an exception of type <code>java.lang.NullPointerException</code>, and when adding an element that is already in the collection, an exception of type <code>java.lang.IllegalArgumentException</code>. Therefore, in the class <code>SpecialLinkedList</code>, it is necessary to override only those methods from its superclass <code>LinkedList</code> where it is necessary to trigger the appropriate exception due to adding a <code>null</code> element or a duplicate. Additionally, in the class <code>SpecialLinkedList</code>, it is necessary to implement the <code>getSorted</code> method from the <code>SpecialCollection</code> interface, which returns a new object of type <code>SpecialCollection</code> that contains all elements from the original collection, but sorted in natural order.</p>
+<p><strong>NOTE: Ignore the fact that it is possible to add elements to the list by calling the methods <code>add(E e)</code> and <code>set(E e)</code> on an object of type <code>ListIterator</code>. You do not need to trigger exceptions when adding a <code>null</code> element and duplicates in this way.</strong></p>
+<p>An example of using this class is shown in the following snippet of the given <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">SpecialCollection&lt;Item&gt; itemCollection = new SpecialLinkedList&lt;&gt;();
+
+Item item1 = new Item(&quot;Sword&quot;, 300, &quot;Weapon&quot;);
+Item item2 = new Item(&quot;Shield&quot;, 150, &quot;Armor&quot;);
+Item item3 = new Item(&quot;Potion&quot;, 50, &quot;Consumable&quot;);
+Item item4 = new Item(&quot;Helmet&quot;, 100, &quot;Armor&quot;);
+Item item5 = new Item(&quot;Sword&quot;, 300, &quot;Weapon&quot;); // Duplicate
+Item item6 = null; // Null-value
+
+itemCollection.add(item1);
+itemCollection.add(item2);
+itemCollection.add(item3);
+itemCollection.add(item4);
+//itemCollection.add(item5); // Should throw an IllegalArgumentException
+//itemCollection.add(item6); // Should throw a NullPointerException
+
+System.out.println(&quot;\nAll items:&quot;);
+System.out.println(itemCollection);        
+
+System.out.println(&quot;\nRemoving item 'Shield':&quot;);
+itemCollection.remove(item2);
+System.out.println(itemCollection);
+        
+System.out.println(&quot;\nAll items sorted:&quot;);
+System.out.println(itemCollection.getSorted()); 
+</code></pre>
+<p>The correct output of the given <code>main</code> method in the <code>Main</code> class should be:</p>
+<pre class="line-numbers"><code class="language-sh">    All items:
+    [Item{name=Sword, value=300, category=Weapon}, Item{name=Shield, value=150, category=Armor}, Item{name=Potion, value=50, category=Consumable}, Item{name=Helmet, value=100, category=Armor}]
+
+    Removing item 'Shield':
+    [Item{name=Sword, value=300, category=Weapon}, Item{name=Potion, value=50, category=Consumable}, Item{name=Helmet, value=100, category=Armor}]
+
+    All items sorted:
+    [Item{name=Helmet, value=100, category=Armor}, Item{name=Potion, value=50, category=Consumable}, Item{name=Sword, value=300, category=Weapon}]
+</code></pre>
+<p><strong>NOTE: All classes and interfaces have visibility set to <code>public</code> and are in the package <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

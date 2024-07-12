@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je dana apstraktna klasa <code>Creature</code>, konkretna (neaspstraktna) klasa <code>Human</code> i klasa <code>Main</code>, a potrebno je napisati konkretne klase <code>Bee</code>, <code>Unicorn</code> i <code>Dragon</code> te tipove <code>FlyingCreature</code> i <code>MagicalCreature</code> za koje je potrebno odlučiti trebaju li biti sučelja ili klase. Osim toga, potrebno je uspostaviti hijerarhiju klasa i implementirati odgovarajuća sučelja u klasama. Sve konkretne klase (<code>Human</code>, <code>Bee</code>, <code>Unicorn</code> i <code>Dragon</code>) imaju klasu <code>Creature</code> kao nadklasu, ali ne nužno kao svoju direktnu nadklasu.</p>
+<p><strong>NAPOMENA: Klase <code>Creature</code> i <code>Human</code> nije dozvoljeno mijenjati radi ispravnog bodovanja rješenja.</strong></p>
+<p>Objekti tipa <code>Creature</code> posjeduju energiju (<code>energy</code>) tipa <code>int</code> koja se postavlja prilikom stvaranja objekta, može se smanjiti izvođenjem odgovarajućih radnji te povećati za 10 odmaranjem tj. pozivanjem metoda <code>void rest()</code>. Trenutno stanje energije se može dohvatiti pozivom <em>gettera</em>  <code>int getEnergy()</code>, ali ne postoji <em>setter</em> za njeno postavljanje.</p>
+<p>Objekti tipa <code>Unicorn</code> i <code>Dragon</code> predstavljaju magična stvorenja te su stoga ujedno i tipa <code>MagicalCreature</code>. Objekti tipa <code>MagicalCreature</code> posjeduju moć (<code>power</code>) tipa <code>int</code> koja se postavlja prilikom stvaranja objekta, može se smanjiti izvođenjem magije tj. pozivanjem metode <code>void performMagic()</code> te povećati za 10 odmaranjem tj. pozivanjem metode <code>void rest()</code>. Trenutno stanje moći se može dohvatiti pozivom <em>gettera</em> <code>int getPower()</code>. Analogno energiji (<code>energy</code>), <strong>ne smije postojati <em>setter</em> za moć (<code>power</code>)</strong>.</p>
+<p>Svaki objekt tipa <code>Bee</code> ili <code>Dragon</code> je leteće stvorenje tipa <code>FlyingCreature</code>. Leteća stvorenja letenjem tj. pozivanjem metode <code>void fly()</code> troše energiju.</p>
+<p>Konkretne klase imaju po jedan konstruktor, a primjer njihova pozivanja je prikazan na isječku dane metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">Unicorn unicorn = new Unicorn(&quot;Sparkle&quot;, 100, 50); //ime, energija, moć
+Dragon dragon = new Dragon(&quot;Smaug&quot;, 150, 70); //ime, energija, moć
+Bee bee = new Bee(&quot;Buzzy&quot;, 30); //ime, energija
+Human human = new Human(&quot;Alice&quot;, 90); //ime, energija
+</code></pre>
+<p>Nad svakim objektom bilo kojeg od ovih 7 tipova (<code>Human</code>, <code>Bee</code>, <code>Unicorn</code>, <code>Dragon</code>, <code>Creature</code>, <code>FlyingCreature</code> i <code>MagicalCreature</code>) se mogu pozvati sljedeće općenite metode:</p>
+<ul>
+<li><code>String getName()</code> - vraća ime koje se postavlja u konstruktoru</li>
+<li><code>int getEnergy()</code> - vraća trenutno stanje energije</li>
+<li><code>void rest()</code> - povećava energiju za objekte tipa <code>Creature</code> te dodatno moć za objekte tipa <code>MagicalCreature</code> kako je prethodno navedeno</li>
+</ul>
+<p>Nad objektima tipa <code>Human</code> se mogu pozivati i sljedeće specifične metode:</p>
+<ul>
+<li><code>void walk()</code> - smanjuje energiju za 2</li>
+<li><code>void work()</code> - smanjuje energiju za 4</li>
+</ul>
+<p>Nad objektima tipa <code>Bee</code> se mogu pozivati i sljedeće specifične metode:</p>
+<ul>
+<li><code>void collectHoney()</code> - smanjuje energiju za 2</li>
+<li><code>void fly()</code> - smanjuje energiju za 5</li>
+</ul>
+<p>Nad objektima tipa <code>Unicorn</code> se mogu pozivati i sljedeće specifične metode:</p>
+<ul>
+<li><code>int getPower()</code> - vraća trenutno stanje moći</li>
+<li><code>void performMagic()</code> - smanjuje energiju za 2 i moć za 4</li>
+<li><code>void gallop()</code> - smanjuje energiju za 3</li>
+</ul>
+<p>Nad objektima tipa <code>Dragon</code> se mogu pozivati i sljedeće specifične metode:</p>
+<ul>
+<li><code>int getPower()</code> - vraća trenutno stanje moći</li>
+<li><code>void performMagic()</code> - smanjuje energiju za 1 i moć za 3</li>
+<li><code>void fly()</code> - smanjuje energiju za 5</li>
+</ul>
+<p>Ispravan rezultat izvođenja dane metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-sh">    Alice has 90 energy upon creation
+    Alice has 88 energy after walking
+    Alice has 84 energy after working
+    Alice has 94 energy after resting
+
+    Buzzy has 30 energy upon creation
+    Buzzy has 28 energy after collecting honey
+    Buzzy has 23 energy after flying
+    Buzzy has 33 energy after resting
+
+    Sparkle has 100 energy and 50 power upon creation
+    Sparkle has 97 energy and 50 power after galloping
+    Sparkle has 95 energy and 46 power after performing magic
+    Sparkle has 105 energy and 56 power after resting
+
+    Smaug has 150 energy and 70 power upon creation
+    Smaug has 145 energy and 70 power after flying
+    Smaug has 144 energy and 67 power after performing magic
+    Smaug has 154 energy and 77 power after resting
+</code></pre>
+<p><strong>NAPOMENA: Sve klase i sučelja imaju vidljivost postavljenu na
+<code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno nadopuniti klasu <code>Lambdas</code> na način da se dovrši implementacija 3 statička atributa prikazana u isječku programskog koda ispod. Statički atribut <code>loadFromStream</code> je tipa <code>BiConsumer</code>, a njegova metoda <code>accept</code> služi učitavanju podataka iz CSV (engl. comma separated values) datoteke u mapu. Preostala dva statička atributa su tipa <code>BiFunction</code>, a njihove metode <code>apply</code> koriste mapu u koju su učitani podaci za izračunavanje statistike.</p>
+<p><strong>NAPOMENE: Svaki od ova 3 statička atributa treba implementirati kao <strong>lambda izraz</strong> koristeći Java Stream API (tj. kolekcijske tokove). Pri implementaciji nije potrebno hvatati niti obrađivati iznimke (npr. unos krive godine ili neispravnog imena države). Klasa <code>Lambdas</code> se treba nalaziti u paketu <code>hr.fer.oop</code>, a ona i njeni statički atributi trebaju imati vidljivost postavljenu na <code>public</code>.</strong></p>
+<pre class="line-numbers"><code class="language-java">public static BiConsumer&lt;Stream&lt;String&gt;, Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt; loadFromStream = (lines, map) -&gt; {}; //TODO
+
+
+public static BiFunction&lt;Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;, String, Triple&lt;String, Integer, Long&gt;&gt; getMinForIncomingCountry = (map, incomingCountry) -&gt; null; //TODO
+            
+
+public static BiFunction&lt;Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;, Integer, Collection&lt;Triple&lt;String, String, Long&gt;&gt;&gt; getValuesForYear = (map, year) -&gt; null; //TODO
+</code></pre>
+<p>U gornjem isječku koda se koriste klase <code>Pair</code> i <code>Triple</code> koje ne treba implementirati jer su dane, a predstavljaju uređeni par i uređenu trojku elemenata. Ove klase su implementirane kao <code>Record</code> s atributima koji se zovu <code>first</code> i <code>second</code> (za obje klase) te <code>third</code> (samo za trojku). Kako su <code>Record</code>, ove klase imaju ispravno implementiran konstruktor koji prima vrijednosti svih atributa, <em>gettere</em> koji se zovu kao atributi (bez prefiksa get) te metode <code>equals</code>, <code>hashCode</code> i <code>toString</code>.</p>
+<p>Primjer CSV datoteke u kojoj se nalaze podaci koje treba učitati je sljedeći:</p>
+<pre class="line-numbers"><code class="language-csv">Australia;Austria;2019;44
+Australia;Austria;2020;80
+Australia;Poland;2019;471
+Australia;Poland;2020;724
+Austria;Poland;2019;154
+Austria;Poland;2020;124
+</code></pre>
+<p>Svaki redak ove CSV datoteke sadrži sljedeće 4 vrijednosti:</p>
+<ul>
+<li><code>IncomingCountry</code> – ime ulazne države na koju se odnosi vrijednost,</li>
+<li><code>OutgoingCountry</code> – ime izlazne države na koju se odnosi vrijednost,</li>
+<li><code>Year</code> – godina na koju se odnosi vrijednost i</li>
+<li><code>Value</code> – vrijednost koja predstavlja broj državljana izlazne države <code>OutgoingCountry</code> koji je te godine dobio državljanstvo ulazne države <code>IncomingCountry</code>.</li>
+</ul>
+<p><strong>Napomene:</strong> U CSV datoteci se mogu nalaziti podaci za države i godine koji nisu prikazani u primjeru CSV datoteke, ali se ne mogu nalaziti nedostajuće vrijednosti na način da za neku godinu nedostaju podaci za neku državu.</p>
+<h2>Statički atribut <code>loadFromStream</code></h2>
+<p>Podaci iz navedene CSV datoteke se učitavaju metodom <code>accept</code> statičkog atributa <code>loadFromStream</code> koji je tipa <code>BiConsumer</code>. Ova metoda prima 2 argumenta. Argument <code>lines</code> tipa <code>Stream&lt;String&gt;</code> predstavlja kolekcijski tok linija ove CSV datoteke. Argument <code>map</code> tipa <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> predstavlja mapu u koje je potrebno učitati podatke iz datoteke. Ključevi u ovoj mapi su tipa <code>Pair&lt;String, String&gt;</code> te predstavljaju par imena država, gdje prvi element para predstavlja ulaznu državu (<code>IncomingCountry</code>), a drugi element para predstavlja izlaznu državu (<code>OutgoingCountry</code>). Vrijednosti u ovoj mapi su kolekcija objekata tipa <code>Pair&lt;Integer, Long&gt;</code>, gdje prvi element para (tipa <code>Integer</code>) predstavlja godinu, a drugi element para (tipa <code>Long</code>) predstavlja broj državljana izlazne države <code>OutgoingCountry</code> koji je te godine dobio državljanstvo ulazne države <code>IncomingCountry</code>. Statički atribut <code>loadFromStream</code> implementirajte kao lambda izraz koristeći Java Stream API (tj. kolekcijske tokove) i podrazumijevanu (engl. default) metodu <code>compute</code> iz sučelja <code>java.​util.​Map</code>.</p>
+<h2>Statički atribut <code>getMinForIncomingCountry</code></h2>
+<p>Metoda <code>apply</code> statičkog atributa <code>getMinForIncomingCountry</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>map</code> tipa <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> je ulazna mapa s podacima koje je učitana metodom <code>accept</code> statičkog atributa <code>loadFromStream</code>. Argument <code>incomingCountry</code> tipa <code>String</code> predstavlja ime ulazne države za koju je potrebno pronaći <strong>minimalan broj državljana</strong> bilo koje druge države koji je dobio državljanstvo te države ikad. Rezultat (izlaznu državu, godinu i <strong>minimalan broj državljana</strong>) treba vratiti kao trojku tipa <code>Triple&lt;String, Integer, Long&gt;</code>. Pri implementaciji možete koristiti terminalnu operaciju <code>Optional&lt;T&gt; findFirst()</code> koja dohvaća prvi element kolekcijskog toka.</p>
+<h2>Statički atribut <code>getValuesForYear</code></h2>
+<p>Metoda <code>apply</code> statičkog atributa <code>getValuesForYear</code> koji je tipa <code>BiFunction</code> prima dva argumenta. Argument <code>map</code> tipa <code>Map&lt;Pair&lt;String, String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt;&gt;</code> je ulazna mapa s podacima koje je učitana metodom <code>accept</code> statičkog atributa <code>loadFromStream</code>. Argument <code>year</code> tipa <code>int</code> predstavlja godinu za koju je potrebno pronaći sve trojke tipa <code>Triple&lt;String, String, Long&gt;&gt;</code> za koje postoje podaci, gdje vrijednosti unutar trojke redom predstavljaju ulaznu državu (<code>IncomingCountry</code>), izlaznu državu (<code>OutgoingCountry</code>) i broj državljana izlazne države koji je te godine dobio državljanstvo ulazne države. Rezultat je kolekcija navedenih trojki tipa <code>Collection&lt;Triple&lt;String, String, Long&gt;&gt;&gt;</code>. Pri implementaciji možete koristiti terminalnu operaciju <code>Optional&lt;T&gt; findFirst()</code> koja dohvaća prvi element kolekcijskog toka.</p>
+<p>Primjer korištenja klase <code>Lambdas</code> i statičkih atributa koje treba implementirati:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;Pair&lt;String,String&gt;, Collection&lt;Pair&lt;Integer, Long&gt;&gt;&gt; map = new HashMap&lt;&gt;();
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+  startDir = System.getProperty(&quot;user.dir&quot;);
+}
+try {
+  Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;ACQNAT_small.csv&quot;);
+  Lambdas.loadFromStream.accept(Files.lines(path), map);
+  System.out.println(&quot;Loaded map: &quot; + map);
+  System.out.println(&quot;\nMin Incoming for Australia: &quot; + Lambdas.getMinForIncomingCountry.apply(map, &quot;Australia&quot;));
+  System.out.println(&quot;\nValues for 2020: &quot; + Lambdas.getValuesForYear.apply(map, 2020));
+  } catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+  }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-txt">Loaded map: {Pair[first=Australia, second=Poland]=[Pair[first=2019, second=471], Pair[first=2020, second=724]], Pair[first=Austria, second=Poland]=[Pair[first=2019, second=154], Pair[first=2020, second=124]], Pair[first=Australia, second=Austria]=[Pair[first=2019, second=44], Pair[first=2020, second=80]]}
+
+Min Incoming for Australia: Triple[first=Austria, second=2019, third=44]
+
+Values for 2020: [Triple[first=Australia, second=Poland, third=724], Triple[first=Austria, second=Poland, third=124], Triple[first=Australia, second=Austria, third=80]]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
