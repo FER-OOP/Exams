@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U stablu direktorija nalaze se datoteke različitih imena i ekstenzija. Vaš zadatak je napisati klasu <code>FileRemoveSimulator</code>, tako da omogućite sljedeće funkcionalnosti:</p>
+<ul>
+<li>korisnik može zadati listu <em>ekstenzija</em> koje želi obrisati</li>
+<li>korisnik dodatno zadaje i listu <em>naziva</em> (cijelo ime, zajedno s ekstenzijom) datoteka koje <em>NE</em> želi obrisati</li>
+</ul>
+<p>Ove dvije liste zadaju se kao argumenti konstruktora klase <code>FileRemoveSimulator</code>.</p>
+<p>Dodatno, klasa mora implementirati dvije metode:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;String&gt; getFilesMarkedForRemoval() //metoda koja vraća listu naziva svih datoteka koje treba obrisati
+List&lt;String&gt; getExcludedFiles() //metoda koja vraća listu naziva svih pronađenih datoteka koje imaju odgovarajuću ekstenziju, ali su navedene u &quot;skip&quot; listi.
+</code></pre>
+<p>npr. pretpostavite da imate sljedeće stablo direktorija i datoteka:</p>
+<pre class="line-numbers"><code class="language-sh">dir1:
+ - file1.txt
+ - file2.jpg
+ - file3.jpg
+ - file4.zip
+ - dir2:
+   - file5.txt
+</code></pre>
+<p>Ako lista ekstenzija sadrži &quot;.txt&quot; i &quot;.jpg&quot;, a lista naziva datoteka koje treba preskočiti &quot;file5.txt&quot; i &quot;file8.jpg&quot; onda metoda <code>getFilesMarkedForRemoval()</code> treba vratiti listu:</p>
+<pre class="line-numbers"><code class="language-sh">	&quot;file1.txt&quot;, &quot;file2.jpg&quot;, &quot;file3.jpg&quot;
+</code></pre>
+<p>a metoda <code>getExcludedFiles()</code> vraća:</p>
+<pre class="line-numbers"><code class="language-sh">	&quot;file5.txt&quot;
+</code></pre>
+<p><strong>Napomena:</strong> Klasa <code>FileRemoveSimulator</code> mora implementirati sučelje <code>FileVisitor</code> te je potrebno smjestiti je u paket <code>hr.fer.oop.jir2024.zad1</code>.</p>
+<p><strong>Napomena:</strong> Za rad s datotekama obavezno koristite klasu <code>java.nio.file.Path!</code></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

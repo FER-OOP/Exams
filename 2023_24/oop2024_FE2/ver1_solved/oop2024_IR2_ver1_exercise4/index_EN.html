@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p><strong>Note:</strong> If you implemented the <code>University</code> class in the 2nd task, you can use it here as well. Just write the code that is additionally required.</p>
+<p>You need to write a <code>University</code> class that describes an university. Each university has the following attributes:</p>
+<p><code>name</code> - the name of the university</p>
+<p><code>country</code> - the name of the country where the university is located</p>
+<p><code>founded</code> - year of establishment (integer number)</p>
+<p><code>therank</code> - the current rank of the university on the Times Higher Education World University Rankings list (integer number)</p>
+<p><code>arwurank</code> - the current ranking of the university according to the Academic Ranking of World Universities, the so-called &quot;Shanghai list&quot; (integer)</p>
+<p>All attributes are private and for each one it is necessary to create a <code>getter</code> method. The getter names should be correct, eg the getter for the name attribute should be <code>getName()</code>.</p>
+<p>It is necessary to define a <strong>constructor</strong> that will create a new object of <code>University</code> type based on all the attributes, as listed above, and override the <code>toString()</code> method as follows:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;%s (%s, %d) THE: %d ARWU: %d&quot;, name, country, founded, therank, arwurank);
+}
+</code></pre>
+<p>Implement the methods required for the <code>University</code> class to be used correctly in Java collections (<code>ArrayList</code>, <code>LinkedList</code>, <code>HashSet</code>, <code>TreeSet</code>).</p>
+<p>Bare in mind that two universities are equal if they have the same name, the name of the country in which university is located, and the year of foundation.</p>
+<p>Define a natural comparator that will order universities first by name (from A to Z), then by country name (from A to Z) and finally by year of establishment (newer universities first, then older ones).</p>
+<p>Define public, static and final variables that will represent additional comparators for individual attributes:</p>
+<p><strong>BY_NAME</strong> - comparator by name, from smallest to largest (A to Z)</p>
+<p><strong>BY_COUNTRY</strong> – comparator by country name (A to Z)</p>
+<p><strong>BY_THE</strong> – comparator by the Times Higher Education World University Rankings list, from smallest to largest</p>
+<p><strong>BY_ARWU</strong> – comparator by Academic Ranking of World Universities list, from smallest to largest</p>
+<p><strong>Note:</strong> The class `University' should be public and should be placed in the package hr.fer.oop.jir2024.zad4.</p>
+<p>Example:</p>
+<pre class="line-numbers"><code class="language-java">		List&lt;University&gt; unisList = UniversityData.load();
+		University uni1 = new University(&quot;UNIZG&quot;, &quot;Croatia&quot;, 1669, 1001, 401);
+		University uni2 = new University(&quot;OPENUNI&quot;, &quot;AUS&quot;, 1969, 101 ,701);
+
+		System.out.println(&quot;(List):&quot;);
+		System.out.println(unisList.contains(uni1) ? &quot;true&quot; : &quot;false&quot;);	//T
+		System.out.println(unisList.contains(uni2) ? &quot;true&quot; : &quot;false&quot;);	//F
+
+		System.out.println(&quot;\n(HashSet):&quot;);
+		Set&lt;University&gt; unisSet1 = new HashSet&lt;&gt;(unisList);
+		System.out.println(unisSet1.contains(uni1) ? &quot;true&quot; : &quot;false&quot;); //T
+		System.out.println(unisSet1.contains(uni2) ? &quot;true&quot; : &quot;false&quot;); //F
+
+		System.out.println(&quot;\n(TreeSet):&quot;);
+		Set&lt;University&gt; unisSet2 = new TreeSet&lt;&gt;(unisList);
+		for (University uni : unisSet2) {
+			System.out.println(uni);
+		}	
+</code></pre>
+<p>Expected result:</p>
+<pre class="line-numbers"><code class="language-sh">(List):
+true
+false
+
+(HashSet):
+true
+false
+
+(TreeSet):
+ETH (Switzerland, 1855) THE: 11 ARWU: 21
+MIT (USA, 1861) THE: 3 ARWU: 1
+OPENUNI (UK, 1969) THE: 101 ARWU: 601
+UNIAT (Greece, 2023) THE: 999 ARWU: 999
+UNIAT (Greece, 1210) THE: 93 ARWU: 801
+UNIAt (Greece, 1211) THE: 93 ARWU: 801
+UNIHW (USA, 1861) THE: 3 ARWU: 1
+UNIRI (Croatia, 1973) THE: 1501 ARWU: 999
+UNIZG (Croatia, 1669) THE: 1001 ARWU: 401
+```sh</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

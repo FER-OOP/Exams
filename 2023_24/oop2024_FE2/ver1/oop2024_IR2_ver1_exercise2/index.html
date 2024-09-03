@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p><strong>Napomena:</strong> Ako ste implementirali klasu <code>University</code> u 4. zadatku, možete je iskoristiti i ovdje. Samo dopišite stvari koje se dodatno traže.</p>
+<p>Potrebno je napisati klasu <code>University</code> koja opisuje jedno svjetsko sveučilište. Svako sveučilište ima sljedeće atribute:</p>
+<p><code>name</code> - naziv sveučilišta</p>
+<p><code>country</code> - država u kojoj se sveučilište nalazi</p>
+<p><code>founded</code> - godina osnivanja (cijeli broj)</p>
+<p><code>therank</code> - trenutni rang sveučilišta na Times Higher Education World University Rankings listi (cijeli broj)</p>
+<p><code>arwurank</code> - trenutni rang sveučilišta prema Academic Ranking of World Universities, tzv. &quot;Šangajskoj listi&quot; (cijeli broj)</p>
+<p>Svi atributi su privatni i za svaki je potrebno napraviti <code>getter</code> metodu. Vodite računa da imena gettera trebaju biti ispravna, npr. getter za atribut name treba biti <code>getName()</code>.</p>
+<p>Potrebno je definirati <strong>konstruktor</strong> koji će kreirati novi objekt tipa <code>University</code> na temelju svih atributa, kao što su navedeni iznad, te nadjačati metodu toString() na sljedeći način:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;%s (%s, %d) THE: %d ARWU: %d&quot;, name, country, founded, therank, arwurank);
+}
+</code></pre>
+<p>Napisati dodatne statičke metode koje rade s tokovima podataka (ili primaju tok podataka kao argument ili vraćaju tok podataka kao rezultat, ili koriste tokove unutar metode).</p>
+<ol>
+<li>Metoda prima listu sveučilišta, a vraća naziv najstarijeg sveučilišta iz liste. Ako je takvih sveučilišta više, treba vratiti sve nazive, odvojene zarezom i razmakom. Npr. &quot;UNIZG, OPENUNI&quot;.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static String getOldestUniversityName(List&lt;University&gt; list)
+</code></pre>
+<ol start="2">
+<li>Metoda prima listu sveučilišta i raspon ranga (pretpostavite da je prvi broj uvijek manji od drugog) i vraća tok koji sadrži nazive država (bez duplikata) iz kojih dolaze sveučilišta
+čiji ARWU rang se nalazi u navedenom rasponu (uključivo). Tok treba biti poredan abecedno, od A do Z.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; getCountries(List&lt;University&gt; list, int startRank, int endRank)
+</code></pre>
+<ol start="3">
+<li>Metoda prima tok podataka sa sveučilištima i naziv države, a vraća naziv sveučilišta koje je najbolje rangirano u toj državi, i to na sljedeći način: prvo se gleda THE rank,
+a ako je jednak onda se gleda bolji ARWU rank. Pretpostavite da stream nije prazan i da neće biti više sveučilišta s ista oba ranka. Nemojte zaboraviti da je sveučilište s nižim rangom bolje!</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static String getBestForCountry(Stream&lt;University&gt; stream, String countryName)
+</code></pre>
+<ol start="4">
+<li>Metoda prima tok podataka sa sveučilištima, a vraća mapu u kojoj je ARWU ključ, a vrijednost je naziv sveučilišta koje ima taj ranking. Ako više sveučilišta ima isti ranking,
+trebaju biti odvojeni zarezom i razmakom, npr. &quot;UNIZG, OPENUNI&quot;.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Map&lt;Integer, String&gt; getARWUMap(Stream&lt;University&gt; stream)
+</code></pre>
+<ol start="5">
+<li>Metoda prima tok podataka sa sveučilištima i zemlju, a vraća srednju vrijednost THE ranga svih sveučilišta iz te zemlje. Ako nema ni jednog sveučilišta u toj zemlji, vraća -1.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static double getAvgTHEforCountry(Stream&lt;University&gt; stream, String countryName)
+</code></pre>
+<p>Odsječak koda za testiranje:</p>
+<pre class="line-numbers"><code class="language-java">		List&lt;University&gt; list = UniversityData.load();
+
+		//1
+		System.out.println(&quot;getOldestUniversityName :&quot;);
+		System.out.println(University.getOldestUniversityName(list));
+		
+		//2
+		System.out.println(&quot;\ngetCountries :&quot;);
+		University.getCountries(list,1,500).forEach(u -&gt; System.out.println(u));
+				
+		//3
+		System.out.println(&quot;\ngetBestForCountry :&quot;);
+		System.out.println(University.getBestForCountry(list.stream(), &quot;Croatia&quot;));
+		
+		//4
+		System.out.println(&quot;\ngetARWUMap :&quot;);
+		University.getARWUMap(list.stream()).entrySet().forEach(e -&gt; System.out.println(e.getKey() + &quot; -&gt; &quot; + e.getValue()));
+		
+		//5
+		System.out.println(&quot;\ngetAvgTHEforCountry :&quot;);
+		System.out.println(University.getAvgTHEforCountry(list.stream(), &quot;USA&quot;));
+		System.out.println(University.getAvgTHEforCountry(list.stream(), &quot;Narnia&quot;));
+</code></pre>
+<p>Rezultat:</p>
+<pre class="line-numbers"><code class="language-sh">getOldestUniversityName :
+Bologna, UNIBologna
+
+getCountries :
+Croatia
+Italy
+Switzerland
+USA
+
+getBestForCountry :
+UNIZG
+
+getARWUMap :
+801 -&gt; UNIAT
+401 -&gt; UNIZG
+1 -&gt; Harvard
+3 -&gt; MIT
+21 -&gt; ETH
+201 -&gt; Bologna, UNIBologna
+601 -&gt; OPENUNI
+1001 -&gt; UNIRI
+
+getAvgTHEforCountry :
+3.5
+-1.0
+</code></pre>
+<p><strong>Napomena:</strong> Klasa University treba biti javna i treba ju smjestiti u paket hr.fer.oop.jir2024.zad2.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

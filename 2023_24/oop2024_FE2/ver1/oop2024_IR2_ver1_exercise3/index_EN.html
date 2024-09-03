@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je modelirati sustav za upravljanje pošiljkama u dostavnoj službi. Svaka pošiljka naziva se <code>Item</code> i ima težinu u gramima - <code>weight</code>(int) i dimenzije - <code>dimensions</code> (int),
+tj. sumu širine, duljine i visine, u cm. Također pošiljke imaju pošiljatelja - <code>sender</code> i primatelja - <code>receiver</code>.
+Pojednostavljeno, modeliramo ih kao obične nizove znakova, tj. <code>String</code>.</p>
+<p>Your task is to model a system for managing shipments in the delivery service. Each shipment item is called an <code>Item</code> and has a weight in grams - <code>weight</code>(int) and dimensions - <code>dimensions</code> (int),
+i.e. the sum of width, length and height, in cm. Shipments also have a sender - <code>sender</code> and a receiver - <code>receiver</code>. For simplicity, we model them as ordinary <code>String</code> variables.</p>
+<p>All attributes are <strong>private</strong> and have corresponding <strong>getters</strong>.</p>
+<p>All values ​​are set in the constructor, and only the recipient can be changed later!</p>
+<p><code>Item</code> has a<code>toString</code> method:</p>
+<pre class="line-numbers"><code class="language-java">	public String toString() {
+		return String.format(&quot;Item from: %s, to: %s, weight: %d, dim: %d&quot;, sender, receiver, weight, dimensions);
+	}
+</code></pre>
+<p>It is not possible to create an object of type <code>Item</code>.</p>
+<p>Specific types of Items are letters - <code>Letter</code> and packages - <code>Package</code>.</p>
+<p>Letters are specific in that their weight cannot exceed 500 grams. Attempting to create a letter heavier than 500 grams causes a <strong>checked</strong> <code>WeightLimitExceededException</code> exception with the message
+&quot;Weight limit exceeded!&quot;.</p>
+<p>Packages have a status - <code>Status</code>, which can be <strong>DRAFT, IN_TRANSIT, DELIVERED</strong> or <strong>CANCELED</strong>. Letters do not have the status.</p>
+<p>It is not possible to create Package objects, but only specific types of packages, which are small - <code>SmallPackage</code> and large package - <code>LargePackage</code>.</p>
+<p>The small package has the cash on delivery option - <code>cashOnDelivery</code> (<code>boolean</code>), and the large package has the type of box it is in - <code>PackagingType</code>, which can be <strong>CARBOARD</strong> or <strong>WOODEN</strong>.</p>
+<p>Letters and large packages can be tracked - <code>Trackable</code>. All tracked shipments have a tracking number - <code>trackingNumber</code> (<code>int</code>) and a getter and setter for it, as well as a <code>getTrackingInformation()</code> method.
+The <code>trackingNumber</code> variable is not set through an argument to the constructor, but is automatically initialized to -1, and if the shipment is tracked, the value can be set later through the appropriate setter.</p>
+<p>The method <code>getTrackingInformation()</code> should return the message <strong>&quot;Tracking number: &quot; + trackingNumber</strong> if the tracking number is set, and if it is not set, the message <strong>&quot;Tracking information not available&quot;</strong>.</p>
+<p><strong>IMPORTANT: The method MUST NOT be defined (but only available) in the Letter and LargePackage classes</strong>.</p>
+<p><strong>IMPORTANT:</strong> All types should be <code>public</code> and placed in package hr.fer.oop.jir2024.zad3.</p>
+<p>Use the following code snippet to test the system:</p>
+<pre class="line-numbers"><code class="language-java">		SmallPackage sp1 = new SmallPackage(1500, 680, &quot;sender1&quot;, &quot;receiver1&quot;, Status.DRAFT, true);
+		System.out.println(sp1); //Item from: sender1...
+		
+		LargePackage lp1 = new LargePackage(1500, 680, &quot;sender2&quot;, &quot;receiver2&quot;, Status.DRAFT, PackagingType.CARBOARD);
+		System.out.println(lp1); // Item from: sender2...
+				
+		Letter l1 = null;
+		try {
+			
+			l1 = new Letter(450, 200, &quot;sender3&quot;, &quot;receiver3&quot;);
+			System.out.println(l1); // Item from: sender3...
+		
+		} catch (WeightLimitExceededException e) {
+			System.out.println(e.getMessage());
+		}
+
+		Letter l2 = null;
+		try {
+			
+			l2 = new Letter(550, 220, &quot;sender4&quot;, &quot;receiver1&quot;);
+			System.out.println(l2);
+		
+		} catch (WeightLimitExceededException e) {
+			System.out.println(e.getMessage()); // Weight limit exceeded!
+		}
+
+		System.out.println(lp1 instanceof Trackable); // true
+		System.out.println(l1 instanceof Trackable); // true
+		System.out.println(sp1 instanceof Trackable); // false
+		
+		System.out.println(lp1.getTrackingInformation()); // Tracking information not available
+		lp1.setTrackingNumber(123);
+		System.out.println(lp1.getTrackingInformation()); // Tracking number: 123
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">Item from: sender1, to: receiver1, weight: 1500, dim: 680
+Item from: sender2, to: receiver2, weight: 1500, dim: 680
+Item from: sender3, to: receiver3, weight: 450, dim: 200
+Weight limit exceeded!
+true
+true
+false
+Tracking information not available
+Tracking number: 123
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

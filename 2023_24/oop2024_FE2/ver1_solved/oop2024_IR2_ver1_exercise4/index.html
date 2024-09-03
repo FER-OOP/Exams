@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p><strong>Napomena:</strong> Ako ste implementirali klasu <code>University</code> u 2. zadatku, možete je iskoristiti i ovdje. Samo dopišite kod koji se dodatno traži.</p>
+<p>Potrebno je napisati klasu <code>University</code> koja opisuje jedno svjetsko sveučilište. Svako sveučilište ima sljedeće atribute:</p>
+<p><code>name</code> - naziv sveučilišta</p>
+<p><code>country</code> - naziv države u kojoj se sveučilište nalazi</p>
+<p><code>founded</code> - godina osnivanja (cijeli broj)</p>
+<p><code>therank</code> - trenutni rang sveučilišta na Times Higher Education World University Rankings listi (cijeli broj)</p>
+<p><code>arwurank</code> - trenutni rang sveučilišta prema Academic Ranking of World Universities, tzv. &quot;Šangajskoj listi&quot; (cijeli broj)</p>
+<p>Svi atributi su privatni i za svaki je potrebno napraviti <code>getter</code> metodu. Vodite računa da imena gettera trebaju biti ispravna, npr. getter za atribut name treba biti <code>getName()</code>.</p>
+<p>Potrebno je definirati <strong>konstruktor</strong> koji će kreirati novi objekt tipa <code>University</code> na temelju svih atributa, kao što su navedeni iznad, te nadjačati metodu toString() na sljedeći način:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;%s (%s, %d) THE: %d ARWU: %d&quot;, name, country, founded, therank, arwurank);
+}
+</code></pre>
+<p>Implementirajte metode koje su potrebne da bi se klasa <code>University</code> mogla ispravno koristiti u Javinim kolekcijama (<code>ArrayList</code>, <code>LinkedList</code>, <code>HashSet</code>, <code>TreeSet</code>).</p>
+<p>Pri tome vodite računa da su dva sveučilišta jednaka ako su im jednaki naziv, naziv države u kojoj se nalaze te godina osnutka.</p>
+<p>Definirajte prirodni komparator koji će sveučilišta poredati prvo po nazivu (od A do Z), zatim po nazivu države (od A do Z) i na kraju po godini osnutka (prvo novija sveučilišta, onda starija).</p>
+<p>Definirati javne, statičke i konačne varijable koje će predstavljati dodatne komparatore po pojedinim atributima:</p>
+<p><strong>BY_NAME</strong> - komparator po nazivu, od manjeg prema većem (A do Z)</p>
+<p><strong>BY_COUNTRY</strong> – komparator po nazivu države (A do Z)</p>
+<p><strong>BY_THE</strong> – komparator po Times Higher Education World University Rankings listi, od manjeg prema većem</p>
+<p><strong>BY_ARWU</strong> – komparator po Academic Ranking of World Universities listi, od manjeg prema većem</p>
+<p><strong>Napomena:</strong> Klasa <code>University</code> treba biti javna i treba ju smjestiti u paket hr.fer.oop.jir2024.zad4.</p>
+<p>Primjer izvođenja:</p>
+<pre class="line-numbers"><code class="language-java">		List&lt;University&gt; unisList = UniversityData.load();
+		University uni1 = new University(&quot;UNIZG&quot;, &quot;Croatia&quot;, 1669, 1001, 401);
+		University uni2 = new University(&quot;OPENUNI&quot;, &quot;AUS&quot;, 1969, 101 ,701);
+
+		System.out.println(&quot;(List):&quot;);
+		System.out.println(unisList.contains(uni1) ? &quot;true&quot; : &quot;false&quot;);	//T
+		System.out.println(unisList.contains(uni2) ? &quot;true&quot; : &quot;false&quot;);	//F
+
+		System.out.println(&quot;\n(HashSet):&quot;);
+		Set&lt;University&gt; unisSet1 = new HashSet&lt;&gt;(unisList);
+		System.out.println(unisSet1.contains(uni1) ? &quot;true&quot; : &quot;false&quot;); //T
+		System.out.println(unisSet1.contains(uni2) ? &quot;true&quot; : &quot;false&quot;); //F
+
+		System.out.println(&quot;\n(TreeSet):&quot;);
+		Set&lt;University&gt; unisSet2 = new TreeSet&lt;&gt;(unisList);
+		for (University uni : unisSet2) {
+			System.out.println(uni);
+		}	
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">(List):
+true
+false
+
+(HashSet):
+true
+false
+
+(TreeSet):
+ETH (Switzerland, 1855) THE: 11 ARWU: 21
+MIT (USA, 1861) THE: 3 ARWU: 1
+OPENUNI (UK, 1969) THE: 101 ARWU: 601
+UNIAT (Greece, 2023) THE: 999 ARWU: 999
+UNIAT (Greece, 1210) THE: 93 ARWU: 801
+UNIAt (Greece, 1211) THE: 93 ARWU: 801
+UNIHW (USA, 1861) THE: 3 ARWU: 1
+UNIRI (Croatia, 1973) THE: 1501 ARWU: 999
+UNIZG (Croatia, 1669) THE: 1001 ARWU: 401
+```sh</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

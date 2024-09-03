@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je modelirati sustav za upravljanje pošiljkama u dostavnoj službi. Svaka pošiljka naziva se <code>Item</code> i ima težinu u gramima - <code>weight</code>(int) i dimenzije - <code>dimensions</code> (int),
+tj. sumu širine, duljine i visine, u cm. Također pošiljke imaju pošiljatelja - <code>sender</code> i primatelja - <code>receiver</code>.
+Pojednostavljeno, modeliramo ih kao obične nizove znakova, tj. <code>String</code>.</p>
+<p>Svi atributi su <strong>privatni</strong> i imaju odgovarajuće <strong>gettere</strong>.</p>
+<p>Sve vrijednosti postavljaju se u konstruktoru, a samo primatelja je moguće i naknadno promijeniti!</p>
+<p><code>Item</code> ima i sljedeću <code>toString</code> metodu:</p>
+<pre class="line-numbers"><code class="language-java">	public String toString() {
+		return String.format(&quot;Item from: %s, to: %s, weight: %d, dim: %d&quot;, sender, receiver, weight, dimensions);
+	}
+</code></pre>
+<p>Nije moguće stvoriti objekt tipa <code>Item</code>.</p>
+<p>Specifične vrste pošiljaka su pisma - <code>Letter</code> i paketi - <code>Package</code>.</p>
+<p>Pisma su specifična po tome što im težina ne smije prijeći 500 grama. Pokušaj stvaranja pisma težeg od 500 grama uzrokuje <strong>provjeravanu</strong> iznimku <code>WeightLimitExceededException</code> s porukom
+&quot;Weight limit exceeded!&quot;.</p>
+<p>Paketi imaju status - <code>Status</code>, koji može biti <strong>DRAFT, IN_TRANSIT, DELIVERED</strong> ili <strong>CANCELED</strong>. Pisma nemaju status.</p>
+<p>Nije moguće stvoriti pakete, nego samo specifične vrste paketa, a to su mali - <code>SmallPackage</code>  i veliki paket - <code>LargePackage</code>.</p>
+<p>Mali paket ima opciju plaćanja pouzećem - <code>cashOnDelivery</code> (<code>boolean</code>), a veliki ima tip kutije u kojoj se nalazi - <code>PackagingType</code>, koja može biti <strong>CARBOARD</strong> ili <strong>WOODEN</strong>.</p>
+<p>Pisma i veliki paketi mogu biti praćeni - <code>Trackable</code>. Sve praćene pošiljke imaju broj za praćenje - <code>trackingNumber</code> (<code>int</code>) te getter i setter za njega, kao i metodu <code>getTrackingInformation()</code>.
+Varijable <code>trackingNumber</code> se ne postavlja kroz argument konstruktoru nego se automatski inicijalizira na -1, a ako se pošiljka prati, vrijednost se može postaviti naknadno kroz odgovarajući setter.</p>
+<p>Metoda <code>getTrackingInformation()</code> treba u slučaju da je broj za praćenje postavljen vratiti poruku <strong>&quot;Tracking number: &quot; + trackingNumber</strong>, a ako nije postavljen, poruku <strong>&quot;Tracking information not available&quot;</strong>.</p>
+<p><strong>VAŽNO: Metoda se NE SMIJE nalaziti (nego samo treba biti dostupna) u klasama Letter i LargePackage</strong>.</p>
+<p><strong>VAŽNO:</strong> Svi tipovi trebaju biti <code>public</code> i smješteni u paket hr.fer.oop.jir2024.zad3.</p>
+<p>Za testiranje sustava koristite sljedeći odsjećak koda:</p>
+<pre class="line-numbers"><code class="language-java">		SmallPackage sp1 = new SmallPackage(1500, 680, &quot;sender1&quot;, &quot;receiver1&quot;, Status.DRAFT, true);
+		System.out.println(sp1); //Item from: sender1...
+		
+		LargePackage lp1 = new LargePackage(1500, 680, &quot;sender2&quot;, &quot;receiver2&quot;, Status.DRAFT, PackagingType.CARBOARD);
+		System.out.println(lp1); // Item from: sender2...
+				
+		Letter l1 = null;
+		try {
+			
+			l1 = new Letter(450, 200, &quot;sender3&quot;, &quot;receiver3&quot;);
+			System.out.println(l1); // Item from: sender3...
+		
+		} catch (WeightLimitExceededException e) {
+			System.out.println(e.getMessage());
+		}
+
+		Letter l2 = null;
+		try {
+			
+			l2 = new Letter(550, 220, &quot;sender4&quot;, &quot;receiver1&quot;);
+			System.out.println(l2);
+		
+		} catch (WeightLimitExceededException e) {
+			System.out.println(e.getMessage()); // Weight limit exceeded!
+		}
+
+		System.out.println(lp1 instanceof Trackable); // true
+		System.out.println(l1 instanceof Trackable); // true
+		System.out.println(sp1 instanceof Trackable); // false
+		
+		System.out.println(lp1.getTrackingInformation()); // Tracking information not available
+		lp1.setTrackingNumber(123);
+		System.out.println(lp1.getTrackingInformation()); // Tracking number: 123
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Item from: sender1, to: receiver1, weight: 1500, dim: 680
+Item from: sender2, to: receiver2, weight: 1500, dim: 680
+Item from: sender3, to: receiver3, weight: 450, dim: 200
+Weight limit exceeded!
+true
+true
+false
+Tracking information not available
+Tracking number: 123
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

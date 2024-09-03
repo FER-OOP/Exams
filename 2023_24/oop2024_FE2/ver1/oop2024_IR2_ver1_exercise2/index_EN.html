@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p><strong>Note:</strong> If you implemented the <code>University</code> class in the 4th task, you can use it here as well. Just write the code that is additionally required.</p>
+<p>You need to write a <code>University</code> class that describes an university. Each university has the following attributes:</p>
+<p><code>name</code> - the name of the university</p>
+<p><code>country</code> - the country where the university is located</p>
+<p><code>founded</code> - year of establishment (integer number)</p>
+<p><code>therank</code> - the current rank of the university on the Times Higher Education World University Rankings list (integer number)</p>
+<p><code>arwurank</code> - the current ranking of the university according to the Academic Ranking of World Universities, the so-called &quot;Shanghai list&quot; (integer)</p>
+<p>All attributes are private and for each one it is necessary to create a <code>getter</code> method. The getter names should be correct, eg the getter for the name attribute should be <code>getName()</code>.</p>
+<p>It is necessary to define a <strong>constructor</strong> that will create a new object of <code>University</code> type based on all the attributes, as listed above, and override the <code>toString()</code> method as follows:</p>
+<pre class="line-numbers"><code class="language-java">public String toString() {
+	return String.format(&quot;%s (%s, %d) THE: %d ARWU: %d&quot;, name, country, founded, therank, arwurank);
+}
+</code></pre>
+<p>Write additional static methods that work with <strong>data streams</strong> (either receive a data stream as an argument or return a data stream as a result, or use streams in the method).</p>
+<p>The method receives a list of universities, and returns the name of the oldest university from the list.
+If there are several such universities, all names should be returned, separated by a comma and a space. For example &quot;UNIZG, OPENUNI&quot;.</p>
+<pre class="line-numbers"><code class="language-java">public static String getOldestUniversityName(List&lt;University&gt; list)
+</code></pre>
+<ol start="2">
+<li>The method takes a list of universities and a rank range (assume the first number is always smaller than the second one) and returns a stream containing the state names (no duplicates) that the universities come from
+whose ARWU rank is in the specified range (inclusive). The stream should be arranged alphabetically, from A to Z.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; getCountries(List&lt;University&gt; list, int startRank, int endRank)
+</code></pre>
+<ol start="3">
+<li>The method receives a stream of data with universities and the name of the country, and returns the name of the university that is ranked best in that country, as follows: first, THE rank is looked at,
+and if it is equal, then a better ARWU rank is considered. Assume that the stream is not empty and that there will be no more universities with the same both ranks. Don't forget that a lower ranked university is better!</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static String getBestForCountry(Stream&lt;University&gt; stream, String countryName)
+</code></pre>
+<ol start="4">
+<li>The method receives a stream with universities, and returns a map in which ARWU is the key, and the value is the name of the university that has that ranking. If several universities have the same ranking,
+they should be separated by a comma and a space, eg &quot;UNIZG, OPENUNI&quot;.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static Map&lt;Integer, String&gt; getARWUMap(Stream&lt;University&gt; stream)
+</code></pre>
+<ol start="5">
+<li>The method receives a stream of data with universities and a country name, and returns the mean value of the THE rank of all universities from that country. If there are no universities in that country, it returns -1.</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">public static double getAvgTHEforCountry(Stream&lt;University&gt; stream, String countryName)
+</code></pre>
+<p>Test code:</p>
+<pre class="line-numbers"><code class="language-java">		List&lt;University&gt; list = UniversityData.load();
+
+		//1
+		System.out.println(&quot;getOldestUniversityName :&quot;);
+		System.out.println(University.getOldestUniversityName(list));
+		
+		//2
+		System.out.println(&quot;\ngetCountries :&quot;);
+		University.getCountries(list,1,500).forEach(u -&gt; System.out.println(u));
+				
+		//3
+		System.out.println(&quot;\ngetBestForCountry :&quot;);
+		System.out.println(University.getBestForCountry(list.stream(), &quot;Croatia&quot;));
+		
+		//4
+		System.out.println(&quot;\ngetARWUMap :&quot;);
+		University.getARWUMap(list.stream()).entrySet().forEach(e -&gt; System.out.println(e.getKey() + &quot; -&gt; &quot; + e.getValue()));
+		
+		//5
+		System.out.println(&quot;\ngetAvgTHEforCountry :&quot;);
+		System.out.println(University.getAvgTHEforCountry(list.stream(), &quot;USA&quot;));
+		System.out.println(University.getAvgTHEforCountry(list.stream(), &quot;Narnia&quot;));
+</code></pre>
+<p>Result:</p>
+<pre class="line-numbers"><code class="language-sh">getOldestUniversityName :
+Bologna, UNIBologna
+
+getCountries :
+Croatia
+Italy
+Switzerland
+USA
+
+getBestForCountry :
+UNIZG
+
+getARWUMap :
+801 -&gt; UNIAT
+401 -&gt; UNIZG
+1 -&gt; Harvard
+3 -&gt; MIT
+21 -&gt; ETH
+201 -&gt; Bologna, UNIBologna
+601 -&gt; OPENUNI
+1001 -&gt; UNIRI
+
+getAvgTHEforCountry :
+3.5
+-1.0
+</code></pre>
+<p><strong>Note:</strong> The <code>University</code> class should be public and should be placed in the package hr.fer.oop.jir2024.zad2.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
