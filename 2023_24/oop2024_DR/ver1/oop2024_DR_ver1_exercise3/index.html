@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Mapa <code>players</code> tipa <code>Map&lt;String, Map&lt;String, Integer&gt;&gt;</code> sastoji se od naziva igrača uparenih s njihovim sposobnostima, tj. mapa naziva vještina i vrijednosti pridruženoj pojedinoj vještini. Primjer podataka nalazi se u metodi <code>DataLoader.loadPlayers</code> te je prikazan na dnu ovog teksta.</p>
+<p>Vaš zadatak je dovršiti dvije metode u klasi <code>Task</code></p>
+<ol>
+<li>Metoda</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">Stream&lt;PlayerInfo&gt; skilfulPlayers(Map&lt;String, Map&lt;String, Integer&gt;&gt; players, Set&lt;String&gt; requiredSkills, int minSkillValue)
+</code></pre>
+<p>mora vratiti kolekcijski tog igrača koji su svim traženim vještinama <code>requiredSkills</code> imaju vrijednost <code>minSkillValue</code> ili veću.</p>
+<p><code>PlayerInfo</code> je definiran s</p>
+<pre class="line-numbers"><code class="language-java">public record PlayerInfo(String name, int noOfSkillsDefined) {}
+</code></pre>
+<p>Primjer:
+Ako je <code>requiredSkills</code> jednak <code>[Positioning, Marking, Jumping, Strength]</code> a <code>minSkillValue</code> 12 tada će za igrače iz primjera metoda <code>skilfulPlayers(players, skills, 12)</code> vratiti kolekcijski tok sa sljedećim podacima: (John Stone, 5) i (Mark Strong, 5). Poredak u toku nije bitan.</p>
+<ol start="2">
+<li>Metoda</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">Stream&lt;PlayerInfo&gt; bySkillAndName(Stream&lt;PlayerInfo&gt; players)
+</code></pre>
+<p>mora (bez konzumiranja toka) izmijeniti tok tako da vraća igrače sortirane silazno po broju definiranih vještina, a ako je broj vještina isti, onda se koristi sortiranje po nazivu igrača.</p>
+<pre class="line-numbers"><code class="language-java">public static Map&lt;String, Map&lt;String, Integer&gt;&gt; loadPlayers() {
+	Map&lt;String, Map&lt;String, Integer&gt;&gt; players = new HashMap&lt;&gt;();
+	
+	Map&lt;String, Integer&gt; skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 12);
+	skills.put(&quot;Marking&quot;, 15);
+	skills.put(&quot;Tackling&quot;, 20);
+	skills.put(&quot;Positioning&quot;, 19);
+	skills.put(&quot;Strength&quot;, 20);
+	players.put(&quot;John Stone&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 1);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 5);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Strength&quot;, 1);
+	players.put(&quot;Brian Light&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 17);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 16);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Strength&quot;, 20);
+	players.put(&quot;Mark Strong&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 5);
+	skills.put(&quot;Tackling&quot;, 8);
+	skills.put(&quot;Positioning&quot;, 15);
+	skills.put(&quot;Strength&quot;, 13);
+	players.put(&quot;Jean Jumpo&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 8);
+	skills.put(&quot;Positioning&quot;, 7);
+	skills.put(&quot;Strength&quot;, 4);
+	skills.put(&quot;Shooting&quot;, 20);
+	skills.put(&quot;Speed&quot;, 20);
+	players.put(&quot;Sunday Fox&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 20);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Shooting&quot;, 20);
+	skills.put(&quot;Speed&quot;, 20);
+	players.put(&quot;Speedy Gonzales&quot;, skills);
+		
+	return players;	
+}
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

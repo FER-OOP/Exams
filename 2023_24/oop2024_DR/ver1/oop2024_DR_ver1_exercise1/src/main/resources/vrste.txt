@@ -1,0 +1,5509 @@
+Abutilon theophrasti Medik.
+Abies alba Mill.
+Acalypha australis L.
+Acalypha virginica L.
+Acalypha rhomboidea Raf.
+Acanthus balcanicus Heywood et I. Richardson
+Acanthus mollis L.
+Acanthus spinosissimus Pers.
+Acer campestre L.
+Acer monspessulanum L.
+Acer negundo L.
+Acer obtusatum Willd.
+Acer opalus Mill.
+Acer platanoides L.
+Acer pseudoplatanus L.
+Acer saccharinum L.
+Acer tataricum L.
+Aceras anthropophorum (L.) W. T. Aiton
+Achillea abrotanoides (Vis.) Vis.
+Achillea ageratum L.
+Achillea aspleniifolia Vent.
+Achillea clavennae L.
+Achillea coarctata Poir.
+Achillea collina (Wirtg.) Heimerl
+Achillea crithmifolia Waldst. et Kit.
+Achillea distans Willd.
+Achillea distans Willd. ssp. distans
+Achillea distans Willd. ssp. tanacetifolia (Fiori) Janch.
+Achillea ligustica All.
+Achillea millefolium L.
+Achillea millefolium L. ssp. millefolium
+Achillea nobilis L.
+Achillea nobilis L. ssp. neilreichii (A. Kern.) Velen.
+Achillea nobilis L. ssp. nobilis
+Achillea odorata L.
+Achillea pannonica Scheele
+Achillea pratensis Saukel et Länger
+Achillea ptarmica L.
+Achillea setacea Waldst. et Kit.
+Achillea tomentosa L.
+Achillea virescens (Fenzl) Heimerl
+Achnatherum calamagrostis (L.) P. Beauv.
+Acinos alpinus (L.) Moench
+Acinos alpinus (L.) Moench ssp. alpinus
+Acinos arvensis (Lam.) Dandy
+Acinos arvensis (Lam.) Dandy ssp. arvensis
+Acinos arvensis (Lam.) Dandy ssp. villosus (Gand.) Soják
+Aconitum angustifolium Rchb.
+Aconitum anthora L.
+Aconitum lycoctonum L.
+Aconitum lycoctonum L. ssp. lycoctonum
+Aconitum lycoctonum L. ssp. neapolitanum (Ten.) Nyman
+Aconitum lycoctonum L. ssp. vulparia (Rchb.) Nyman
+Aconitum napellus L.
+Aconitum napellus L. ssp. fissurae (Nyár.) W. Seitz
+Aconitum napellus L. ssp. superbum (R. M. Fritsch) W. Seitz
+Aconitum napellus L. ssp. tauricum (Wulfen) Gáyer
+Aconitum toxicum Rchb.
+Aconitum variegatum L.
+Aconitum variegatum L. ssp. nasutum (Rchb.) Götz
+Aconitum variegatum L. ssp. paniculatum (Arcang.) Greuter et Bourdet
+Aconitum variegatum L. ssp. variegatum
+Acorus calamus L.
+Actaea spicata L.
+Adenophora liliifolia (L.) A. DC.
+Adenostyles alliariae (Gouan) A. Kern.
+Adenostyles alliariae (Gouan) A. Kern. ssp. alliariae
+Adenostyles alpina (L.) Bluff et Fingerh.
+Adenostyles alpina (L.) Bluff et Fingerh. ssp. alpina
+Adiantum capillus-veneris L.
+Adonis aestivalis L.
+Adonis aestivalis L. ssp. aestivalis
+Adonis aestivalis L. ssp. provincialis C. Steinb.
+Adonis annua L.
+Adonis annua L. ssp. annua
+Adonis annua L. ssp. cupaniana (Guss.) C. Steinb.
+Adonis flammea Jacq.
+Adonis flammea Jacq. ssp. cortiana C. H. Steinb.
+Adonis flammea Jacq. ssp. flammea
+Adonis microcarpa DC.
+Adonis microcarpa DC. ssp. microcarpa
+Adonis vernalis L.
+Adoxa moschatellina L.
+Aegilops cylindrica Host
+Aegilops geniculata Roth
+Aegilops lorentii Hochst.
+Aegilops neglecta Bertol.
+Aegilops triuncialis L.
+Aegilops uniaristata Vis.
+Aegopodium podagraria L.
+Aeluropus littoralis (Gouan) Parl.
+Aesculus hippocastanum L.
+Aetheorhiza bulbosa (L.) Cass.
+Aetheorhiza bulbosa (L.) Cass. ssp. bulbosa
+Aethionema saxatile (L.) W. T. Aiton
+Aethionema saxatile (L.) W. T. Aiton ssp. saxatile
+Aethionema saxatile (L.) W. T. Aiton ssp. scopulorum (Ronniger) I. A. Anderson, A. Carlström, Franzén, Karlen et H. Nybom
+Aethusa cynapium L.
+Aethusa cynapium L. ssp. agrestis (Wallr.) Dostál
+Aethusa cynapium L. ssp. cynapium
+Agave americana L.
+Ageratum houstonianum Mill.
+Agrimonia eupatoria L.
+Agrimonia eupatoria L. ssp. eupatoria
+Agrimonia procera Wallr.
+Agropyron cristatum (L.) Gaertn.
+Agropyron cristatum (L.) Gaertn. ssp. pectinatum (M. Bieb.) Tzvelev
+Agrostemma githago L.
+Agrostis alpina Scop.
+Agrostis canina L.
+Agrostis capillaris L.
+Agrostis castellana Boiss. et Reut.
+Agrostis gigantea Roth
+Agrostis parlatorei Breistr.
+Agrostis rupestris All.
+Agrostis stolonifera L.
+Ailanthus altissima (Mill.) Swingle
+Aira caryophyllea L.
+Aira elegantissima Schur
+Aira praecox L.
+Ajuga chamaepitys (L.) Schreb.
+Ajuga chamaepitys (L.) Schreb. ssp. chamaepitys
+Ajuga chamaepitys (L.) Schreb. ssp. chia (Schreb.) Arcang.
+Ajuga genevensis L.
+Ajuga iva (L.) Schreb.
+Ajuga pyramidalis L.
+Ajuga reptans L.
+Alcea biennis Winterl
+Alcea rosea L.
+Alcea setosa (Boiss.) Alef.
+Alchemilla acutiloba Opiz
+Alchemilla exigua Paulin
+Alchemilla fallax Buser
+Alchemilla flabellata Buser
+Alchemilla glabra Neygenf.
+Alchemilla glaucescens Wallr.
+Alchemilla heterophylla Rothm.
+Alchemilla illyrica Rothm.
+Alchemilla obtusa Buser
+Alchemilla plicatula Gand.
+Alchemilla reniformis Buser
+Alchemilla subcrenata Buser
+Alchemilla xanthochlora Rothm.
+Aldrovanda vesiculosa L.
+Alisma gramineum Lej.
+Alisma lanceolatum With.
+Alisma plantago-aquatica L.
+Alkanna tinctoria Tausch
+Alkanna tinctoria Tausch ssp. tinctoria
+Alliaria petiolata (M. Bieb.) Cavara et Grande
+Allium amethystinum Tausch
+Allium ampeloprasum L.
+Allium angulosum L.
+Allium atropurpureum Waldst. et Kit.
+Allium atroviolaceum Boiss.
+Allium carinatum L.
+Allium chamaemoly L.
+Allium cirrhosum Vand.
+Allium commutatum Guss.
+Allium croaticum Bogdanović, Brullo, Mitić et Salmeri
+Allium dentiferum Webb et Berthel.
+Allium ericetorum Thore
+Allium flavum L.
+Allium flavum L. ssp. flavum
+Allium guttatum Steven
+Allium guttatum Steven ssp. dalmaticum (A. Kern. ex Janch.) Stearn
+Allium guttatum Steven ssp. sardoum (Moris) Stearn
+Allium horvatii Lovrić
+Allium incensiodorum Radić
+Allium lusitanicum Lam.
+Allium moschatum L.
+Allium neapolitanum Cirillo
+Allium nigrum L.
+Allium oleraceum L.
+Allium pallens L.
+Allium pallens L. ssp. pallens
+Allium pallens L. ssp. tenuiflorum (Ten.) Stearn
+Allium paniculatum L.
+Allium paniculatum L. ssp. fuscum (Waldst. et Kit.) Arcang.
+Allium paniculatum L. ssp. paniculatum
+Allium paniculatum L. ssp. villosulum (Halácsy) Stearn
+Allium pseudotelmatum M. Duchoslav et M. Jandová
+Allium pulchellum G. Don
+Allium roseum L.
+Allium rotundum L.
+Allium schoenoprasum L.
+Allium schoenoprasum L. ssp. schoenoprasum
+Allium scorodoprasum L.
+Allium sphaerocephalon L.
+Allium sphaerocephalon L. ssp. arvense (Guss.) Arcang.
+Allium sphaerocephalon L. ssp. sphaerocephalon
+Allium suaveolens Jacq.
+Allium subhirsutum L.
+Allium telmatum Bogdanović, Brullo, Giusso et Salmeri
+Allium ursinum L.
+Allium ursinum L. ssp. ucrainicum Kleopow et Oxner
+Allium ursinum L. ssp. ursinum
+Allium victorialis L.
+Allium vineale L.
+Alnus glutinosa (L.) Gaertn.
+Alnus incana (L.) Moench
+Alnus rohlenae Vít, Douda et Mandák
+Alnus viridis (Chaix) DC.
+Alnus viridis (Chaix) DC. ssp. viridis
+Alopecurus aequalis Sobol.
+Alopecurus bulbosus Gouan
+Alopecurus creticus Trin.
+Alopecurus geniculatus L.
+Alopecurus myosuroides Huds.
+Alopecurus pratensis L.
+Alopecurus rendlei Eig
+Alternanthera caracasana Kunth
+Althaea cannabina L.
+Althaea hirsuta L.
+Althaea officinalis L.
+Alyssoides utriculata (L.) Medik.
+Alyssum alyssoides (L.) L.
+Alyssum austrodalmaticum Trinajstić
+Alyssum desertorum Stapf
+Alyssum hirsutum M. Bieb.
+Alyssum montanum L.
+Alyssum montanum L. ssp. gmelinii (Jord.) Em. Schmid
+Alyssum montanum L. ssp. montanum
+Alyssum montanum L. ssp. pagense (Baumgartner) Hayek
+Alyssum montanum L. ssp. pluscanescens (Raim. ex Baumgartner) Trpin
+Alyssum murale Waldst. et Kit.
+Alyssum ovirense A. Kern.
+Alyssum repens Baumg.
+Alyssum repens Baumg. ssp. repens
+Alyssum repens Baumg. ssp. transsilvanicum (Schur) Nyman
+Alyssum simplex Rudolphi
+Alyssum strigosum Banks et Solander
+Alyssum tortuosum Willd.
+Alyssum wierzbickii Heuff.
+Amaranthus albus L.
+Amaranthus blitoides S. Watson
+Amaranthus caudatus L.
+Amaranthus crispus (Lesp. et Thévenau) J. M. Coult. et S. Watson
+Amaranthus cruentus L.
+Amaranthus deflexus L.
+Amaranthus emarginatus Moq. ex Uline et W. L. Bray
+Amaranthus emarginatus Moq. ex Uline et W. L. Bray ssp. pseudogracilis (Thell.) Hügin
+Amaranthus graecizans L.
+Amaranthus graecizans L. ssp. silvestris (Vill.) Brenan
+Amaranthus hybridus L.
+Amaranthus hypochondriacus L.
+Amaranthus lividus L.
+Amaranthus powellii S. Watson
+Amaranthus retroflexus L.
+Amaranthus tuberculatus (Moq.) J. D. Sauer
+Amaranthus viridis L.
+Ambrosia artemisiifolia L.
+Ambrosia coronopifolia Torr. et A. Gray
+Ambrosia maritima L.
+Amelanchier ovalis Medik.
+Ammi majus L.
+Ammi visnaga (L.) Lam.
+Ammoides pusilla (Brot.) Breistr.
+Ammophila arenaria (L.) Link
+Ammophila arenaria (L.) Link ssp. arundinacea (Host) H. Lindb.
+Amorpha fruticosa L.
+Ampelodesmos mauritanica (Poir.) T. Durand et Schinz
+Anacamptis pyramidalis (L.) Rich.
+Anacyclus clavatus (Desf.) Pers.
+Anacyclus radiatus Loisel.
+Anagallis arvensis L.
+Anagallis coerulea Schreb.
+Anagyris foetida L.
+Anchusa arvensis (L.) M. Bieb.
+Anchusa hybrida Ten.
+Anchusa italica Retz.
+Anchusa officinalis L.
+Anchusella cretica (Mill.) Bigazzi, E. Nardi et Salvi
+Andrachne telephioides L.
+Andromeda polifolia L.
+Andropogon distachyos L.
+Androsace lactea L.
+Androsace maxima L.
+Androsace villosa L.
+Anemone apennina L.
+Anemone baldensis L.
+Anemone coronaria L.
+Anemone hortensis L.
+Anemone hortensis L. ssp. hortensis
+Anemone narcissifolia L.
+Anemone narcissifolia L. ssp. narcissifolia
+Anemone nemorosa L.
+Anemone pavonina Lam.
+Anemone ranunculoides L.
+Anemone sylvestris L.
+Anemone trifolia L.
+Anemone trifolia L. ssp. trifolia
+Anethum graveolens L.
+Angelica archangelica L.
+Angelica archangelica L. ssp. archangelica
+Angelica palustris (Besser) Hoffm.
+Angelica sylvestris L.
+Anogramma leptophylla (L.) Link
+Anredera cordifolia (Ten.) Steenis
+Antennaria carpatica (Wahlenb.) Bluff et Fingerh.
+Antennaria dioica (L.) Gaertn.
+Anthemis altissima L.
+Anthemis arvensis L.
+Anthemis austriaca Jacq.
+Anthemis chia L.
+Anthemis cotula L.
+Anthemis dalmatica Scheele
+Anthemis ruthenica M. Bieb.
+Anthemis segetalis Ten.
+Anthemis tinctoria L.
+Anthemis tomentosa L.
+Anthemis tomentosa L. ssp. tomentosa
+Anthemis triumfetti DC. (L.)
+Anthericum liliago L.
+Anthericum ramosum L.
+Anthoxanthum alpinum Á. Löve et D. Löve
+Anthoxanthum aristatum Boiss.
+Anthoxanthum odoratum L.
+Anthoxanthum ovatum Lag.
+Anthriscus caucalis M. Bieb.
+Anthriscus cerefolium (L.) Hoffm.
+Anthriscus fumarioides (Waldst. et Kit.) Spreng.
+Anthriscus nemorosus (M. Bieb.) Spreng.
+Anthriscus nitidus (Wahlenb.) Hazsl.
+Anthriscus sylvestris (L.) Hoffm.
+Anthyllis aurea Host
+Anthyllis aurea Host ssp. velebitica Degen
+Anthyllis barba-jovis L.
+Anthyllis hermanniae L.
+Anthyllis montana L.
+Anthyllis montana L. ssp. atropurpurea (Vuk.) Pignatti
+Anthyllis montana L. ssp. jacquinii (A. Kern.) Hayek
+Anthyllis vulneraria L.
+Anthyllis vulneraria L. ssp. alpestris (Schult) Asch. et Graebn.
+Anthyllis vulneraria L. ssp. carpatica (Pant.) Nyman
+Anthyllis vulneraria L. ssp. polyphylla (DC.) Nyman
+Anthyllis vulneraria L. ssp. praepropera (A. Kern.) Bornm.
+Anthyllis vulneraria L. ssp. pulchella (Vis.) Bornm.
+Anthyllis vulneraria L. ssp. vulneraria
+Anthyllis vulneraria L. ssp. weldeniana (Rchb.) Cullen
+Antirrhinum latifolium Mill.
+Antirrhinum majus L.
+Apera interrupta (L.) P. Beauv.
+Apera spica-venti (L.) P. Beauv.
+Aphanes arvensis L.
+Aphanes microcarpa (Boiss. et Reut.) Rothm.
+Apios americana Med.
+Apium graveolens L.
+Apium nodiflorum (L.) Lag.
+Apium repens (Jacq.) Lag.
+Aposeris foetida (L.) Less.
+Aquilegia dinarica Beck
+Aquilegia grata Zimmeter
+Aquilegia kitaibelii Schott
+Aquilegia nigricans Baumg.
+Aquilegia nigricans Baumg. ssp. nigricans
+Aquilegia vulgaris L.
+Aquilegia vulgaris L. ssp. vulgaris
+Arabidopsis thaliana (L.) Heynh.
+Arabis allionii DC.
+Arabis alpina L.
+Arabis alpina L. ssp. alpina
+Arabis alpina L. ssp. caucasica (Willd.) Briq.
+Arabis brassica (Leers) Rauschert
+Arabis ciliata Clairv.
+Arabis collina Ten.
+Arabis glabra (L.) Bernhardt
+Arabis hirsuta (L.) Scop.
+Arabis hornungiana Schur
+Arabis nova Vill.
+Arabis planisiliqua (Pers.) Rchb.
+Arabis procurrens Waldst. et Kit.
+Arabis sagittata (Bertol.) DC.
+Arabis scopoliana Boiss.
+Arabis turrita L.
+Arabis verna (L.) R. Br.
+Araujia sericifera Brot.
+Arbutus andrachne L.
+Arbutus unedo L.
+Arceuthobium oxycedri (DC.) M. Bieb.
+Arctium lappa L.
+Arctium minus (Hill) Bernh.
+Arctium nemorosum Lej.
+Arctium tomentosum Mill.
+Arctostaphylos alpinus (L.) Spreng.
+Arctostaphylos uva-ursi (L.) Spreng.
+Aremonia agrimonoides (L.) DC.
+Aremonia agrimonoides (L.) DC. ssp. agrimonioides
+Arenaria ciliata L.
+Arenaria gracilis Waldst. et Kit.
+Arenaria leptoclados (Rchb.) Guss.
+Arenaria leptoclados (Rchb.) Guss. ssp. leptoclados
+Arenaria orbicularis Vis.
+Arenaria serpyllifolia L.
+Argyrolobium biebersteinii P. W. Ball
+Argyrolobium zanonii (Turra) P. W. Ball
+Arisarum vulgare O. Targ. Tozz.
+Aristolochia clematitis L.
+Aristolochia croatica Horvatić
+Aristolochia lutea Desf.
+Aristolochia pallida Willd.
+Aristolochia rotunda L.
+Armeria canescens (Host) Boiss.
+Armeria canescens (Host) Boiss. ssp. canescens
+Armeria canescens (Host) Boiss. ssp. dalmatica (Beck) Trinajstić
+Armoracia macrocarpa (Willd.) Baumg.
+Armoracia rusticana P. Gaertn. , B. Mey. et Scherb.
+Arnica montana L.
+Arnoseris minima (L.) Schweigg. et Körte
+Arrhenatherum elatius (L.) J. Presl et C. Presl
+Artemisia abrotanum L.
+Artemisia absinthium L.
+Artemisia alba Turra
+Artemisia annua L.
+Artemisia arborescens (Vaill.) L.
+Artemisia austriaca Jacq.
+Artemisia caerulescens L.
+Artemisia campestris L.
+Artemisia campestris L. ssp. campestris
+Artemisia maritima L.
+Artemisia pontica L.
+Artemisia santonicum L.
+Artemisia scoparia Waldst. et Kit.
+Artemisia vallesiaca All.
+Artemisia verlotiorum Lamotte
+Artemisia vulgaris L.
+Arthrocnemum fruticosum (L.) Moq.
+Arthrocnemum macrostachyum (Moric.) K. Koch
+Arthrocnemum perenne (Miller) Moss
+Arum cylindraceum Gasp.
+Arum italicum Mill.
+Arum maculatum L.
+Arum nigrum Schott
+Arum orientale M. Bieb.
+Arum orientale M. Bieb. ssp. longispathum (Rchb.) Engl.
+Arum orientale M. Bieb. ssp. orientale
+Aruncus dioicus (Walter) Fernald
+Arundo donax L.
+Arundo micrantha Lam.
+Arundo plinii Turra
+Asarum europaeum L.
+Asarum europaeum L. ssp. caucasicum (Duch.) Soó
+Asarum europaeum L. ssp. europaeum
+Asarum europaeum L. ssp. italicum Kukkonen et Uotila
+Asclepias syriaca L.
+Asparagus acutifolius L.
+Asparagus densiflorus (Kunth) Jessop
+Asparagus maritimus (L.) Mill.
+Asparagus officinalis L.
+Asparagus tenuifolius Lam.
+Asperugo procumbens L.
+Asperula aristata L. f.
+Asperula aristata L. f. ssp. aristata
+Asperula aristata L. f. ssp. condensata (Boiss.) Ehrend. et Krendl
+Asperula aristata L. f. ssp. oreophila (Briq.) Hayek
+Asperula aristata L. f. ssp. scabra (J. Presl et C. Presl) Nyman
+Asperula arvensis L.
+Asperula beckiana Degen
+Asperula borbasiana (Korica) Korica
+Asperula cynanchica L.
+Asperula hercegovina Degen
+Asperula laevigata L.
+Asperula neilreichii Beck
+Asperula purpurea (L.) Ehrend.
+Asperula purpurea (L.) Ehrend. ssp. apiculata (Sibth. et Sm.) Ehrend.
+Asperula purpurea (L.) Ehrend. ssp. purpurea
+Asperula scutellaris Vis.
+Asperula staliana Vis.
+Asperula staliana Vis. ssp. arenaria Korica
+Asperula staliana Vis. ssp. issaea Korica
+Asperula staliana Vis. ssp. staliana
+Asperula taurina L.
+Asperula taurina L. ssp. leucanthera (G. Beck) Hayek
+Asperula taurina L. ssp. taurina
+Asperula tenella Degen
+Asperula tinctoria L.
+Asperula visianii Korica
+Asperula wettsteinii Adamović
+Asperula woloszczakii Korica
+Asphodeline liburnica (Scop.) Rchb.
+Asphodeline lutea (L.) Rchb.
+Asphodeline taurica (Pall.) Endl.
+Asphodelus aestivus Brot.
+Asphodelus albus Mill.
+Asphodelus albus Mill. ssp. albus
+Asphodelus albus Mill. ssp. villarsii (Verl. ex Jord.) I. Richardson et Smythies
+Asphodelus fistulosus L.
+Asphodelus ramosus L.
+Asplenium adiantum-nigrum L.
+Asplenium ceterach L.
+Asplenium ceterach L. ssp. bivalens (D. E. Meyer) Greuter et Burdet
+Asplenium ceterach L. ssp. ceterach
+Asplenium cuneifolium Viv.
+Asplenium fissum Kit. ex Willd.
+Asplenium hybridum (Milde) Bange
+Asplenium lepidum C. Presl
+Asplenium onopteris L.
+Asplenium petrarchae (Guérin) DC.
+Asplenium ruta-muraria L.
+Asplenium sagittatum (DC.) Bange
+Asplenium scolopendrium L.
+Asplenium septentrionale (L.) Hoffm.
+Asplenium trichomanes L.
+Asplenium trichomanes L. ssp. hastatum (M. S. Christ.) S. Jess.
+Asplenium trichomanes L. ssp. inexpectans Lovis
+Asplenium trichomanes L. ssp. pachyrachis (Christ) Lovis et Reuchstein
+Asplenium trichomanes L. ssp. quadrivalens D. E. Meyer emend. Lovis
+Asplenium trichomanes L. ssp. trichomanes
+Asplenium viride Huds.
+Aster alpinus L.
+Aster amellus L.
+Aster bellidiastrum (L.) Scop.
+Aster lanceolatus Willd.
+Aster linosyris (L.) Bernh.
+Aster novi-belgii L.
+Aster sedifolius L.
+Aster sedifolius L. ssp. illyricus (Murb.) Merxm.
+Aster sedifolius L. ssp. sedifolius
+Aster squamatus (Spreng.) Hieron.
+Aster tradescantii L.
+Aster tripolium L.
+Aster tripolium L. ssp. pannonicus (Jacq.) Soó
+Aster tripolium L. ssp. tripolium
+Asteriscus aquaticus (L.) Less.
+Asterolinon linum-stellatum (L.) Duby
+Astragalus alpinus L.
+Astragalus asper Jacq.
+Astragalus austriacus Jacq.
+Astragalus cicer L.
+Astragalus croaticus Alegro, Bogdanović, Brullo et Giusso
+Astragalus depressus L.
+Astragalus depressus L. ssp. depressus
+Astragalus glacialis Lovrić
+Astragalus glycyphyllos L.
+Astragalus hamosus L.
+Astragalus hypoglottis L.
+Astragalus leontinus Wulfen
+Astragalus monspessulanus L.
+Astragalus monspessulanus L. ssp. illyricus (Bernh.) Chater
+Astragalus monspessulanus L. ssp. monspessulanus
+Astragalus muelleri Steud. et Hochst.
+Astragalus onobrychis L.
+Astragalus penduliflorus Lam.
+Astragalus sempervirens Lam.
+Astragalus sesameus L.
+Astragalus vesicarius L.
+Astragalus vesicarius L. ssp. carniolicus (A. Kern.) Chater
+Astrantia carniolica Jacq.
+Astrantia major L.
+Astrantia major L. ssp. carinthiaca Arcang.
+Astrantia major L. ssp. major
+Astrodaucus orientalis (L.) Drude
+Asyneuma canescens (Waldst. et Kit.) Griseb. et Schenk
+Asyneuma canescens (Waldst. et Kit.) Griseb. et Schenk ssp. canescens
+Asyneuma limonifolium (L.) Janch.
+Asyneuma limonifolium (L.) Janch. ssp. limonifolium
+Athamanta aurea (Vis.) Neilr.
+Athamanta cretensis L.
+Athamanta turbith (L.) Brot.
+Athamanta turbith (L.) Brot. ssp. haynaldii (Borbás et R. Uechtr.) Tutin
+Athamanta turbith (L.) Brot. ssp. turbith
+Athyrium distentifolium Opiz
+Athyrium filix-femina (L.) Roth
+Atriplex halimus L.
+Atriplex hortensis L.
+Atriplex littoralis L.
+Atriplex nitens Schkuhr.
+Atriplex oblongifolia Waldst. et Kit.
+Atriplex patula L.
+Atriplex prostrata DC.
+Atriplex rosea L.
+Atriplex tatarica L.
+Atropa bella-donna L.
+Aubrieta columnae Guss.
+Aubrieta columnae Guss. ssp. croatica (Schott , Nyman et Kotschy) Mattf.
+Aurinia leucadea (Guss.) K. Koch
+Aurinia leucadea (Guss.) K. Koch ssp. leucadea
+Aurinia leucadea (Guss.) K. Koch ssp. media (Host) Plazibat
+Aurinia leucadea (Guss.) K. Koch ssp. scopulorum (Ginzb.) Plazibat
+Aurinia petraea (Ard.) Schur
+Aurinia petraea (Ard.) Schur ssp. microcarpa (Vis.) Plazibat
+Aurinia saxatilis (L.) Desv.
+Aurinia saxatilis (L.) Desv. ssp. orientalis (Ard.) T. R. Dudley
+Aurinia saxatilis (L.) Desv. ssp. saxatilis
+Aurinia sinuata (L.) Griseb.
+Avellinia michelii (Savi) Parl.
+Avena barbata Link
+Avena nuda L.
+Avena sativa L.
+Avena sterilis L.
+Avena sterilis L. ssp. ludoviciana (Durieu) Gillet et Magne
+Avena sterilis L. ssp. sterilis
+Avena strigosa Schreb.
+Avenochloa versicolor (Vill.) Holub
+Avenula pratensis (L.) Dumort.
+Avenula pubescens (Huds.) Dumort.
+Azolla filiculoides Lam.
+Baldellia ranunculoides (L.) Parl.
+Ballota acetabulosa (L.) Benth.
+Ballota nigra L.
+Ballota nigra L. ssp. foetida (Vis.) Hayek
+Ballota nigra L. ssp. nigra
+Ballota nigra L. ssp. uncinata (Fiori et Bég.) Patzak
+Ballota nigra L. ssp. velutina (Posp.) Patzak
+Ballota rupestris (Biv.) Vis.
+Barbarea bracteosa Guss.
+Barbarea stricta Andrz.
+Barbarea verna (Mill.) Asch.
+Barbarea vulgaris W. T. Aiton
+Barlia robertiana (Loisel.) Greuter
+Bartsia alpina L.
+Bassia laniflora (S. G. Gmel.) A. J. Scott
+Bassia prostrata (L.) Beck
+Bassia scoparia (L.) A. J. Scott
+Beckmannia eruciformis (L.) Host
+Bellardia trixago (L.) All.
+Bellardiochloa violacea (Bellardi) Chiov.
+Bellevalia dubia (Guss.) Schult. et Schult. f.
+Bellevalia dubia (Guss.) Schult. et Schult. f. ssp. boissieri (Freyn) Feinbrun
+Bellevalia romana (L.) Sweet
+Bellis annua L.
+Bellis annua L. ssp. annua
+Bellis perennis L.
+Bellis sylvestris Cirillo
+Berberis croatica Horvat
+Berberis vulgaris L.
+Bergenia crassifolia (L.) R. M. Fritsch
+Berteroa incana (L.) DC.
+Berteroa mutabilis (Vent.) DC.
+Berteroa obliqua (Sm.) DC.
+Berula erecta (Huds.) Coville
+Beta trigyna Waldst. et Kit.
+Beta vulgaris L.
+Beta vulgaris L. ssp. maritima (L.) Arcang.
+Beta vulgaris L. ssp. vulgaris
+Betonica alopecuros L.
+Betonica hirsuta L.
+Betonica officinalis L.
+Betonica officinalis L. ssp. officinalis
+Betonica officinalis L. ssp. serotina (Host) Murb.
+Betula pendula Roth
+Betula pubescens Ehrh.
+Biarum tenuifolium (L.) Schott
+Bidens bipinnata L.
+Bidens cernuus L.
+Bidens frondosa L.
+Bidens subalternans DC.
+Bidens tripartitus L.
+Bifora radians M. Bieb.
+Bifora testiculata (L.) Roth
+Biscutella cichoriifolia Loisel.
+Biscutella didyma L.
+Biscutella laevigata L.
+Biscutella laevigata L. ssp. angustifolia (Mach.-Laur.) Heywood
+Biscutella laevigata L. ssp. gracilis Mach.-Laur.
+Biscutella laevigata L. ssp. illyrica Mach.-Laur.
+Biscutella laevigata L. ssp. kerneri Mach.-Laur.
+Biscutella laevigata L. ssp. laevigata
+Biscutella laevigata L. ssp. lucida (Balbis ex DC.) Mach.-Laur.
+Biserrula pelecinus L.
+Biserrula pelecinus L. ssp. dalmatica Trinajstić
+Bituminaria bituminosa (L.) C. H. Stirt.
+Bituminaria plumosa (Rchb.) Bogdanović, C. Brullo, Brullo, Ljubičić et Giusso
+Blackstonia perfoliata (L.) Huds.
+Blackstonia perfoliata (L.) Huds. ssp. perfoliata
+Blackstonia perfoliata (L.) Huds. ssp. serotina (Rchb.) Vollm.
+Blechnum spicant (L.) Roth
+Blitum virgatum L.
+Blysmus compressus (L.) Link
+Bolboschoenus yagara (Ohwi) A. E. Kozhevn.
+Bombycilaena erecta (L.) Smoljan.
+Borago officinalis L.
+Botrychium lunaria (L.) Sw.
+Botrychium matricariifolium W. D. J. Koch
+Brachiaria eruciformis (Sibth. et Sm.) Griseb.
+Brachypodium distachyon (L.) P. Beauv.
+Brachypodium phoenicoides (L.) Roem. et Schult.
+Brachypodium pinnatum (L.) P. Beauv.
+Brachypodium pinnatum (L.) P. Beauv. ssp. pinnatum
+Brachypodium pinnatum (L.) P. Beauv. ssp. rupestre (Host) Schübl.et M. Martens
+Brachypodium retusum (Pers.) P. Beauv.
+Brachypodium sylvaticum (Huds.) P. Beauv.
+Brassica botteri Vis.
+Brassica cazzae Ginzb. et Teyber
+Brassica cretica Lam.
+Brassica elongata Ehrh.
+Brassica elongata Ehrh. ssp. elongata
+Brassica elongata Ehrh. ssp. integrifolia (Boiss.) Breistr.
+Brassica incana Ten.
+Brassica mollis Vis.
+Brassica napus L.
+Brassica napus L. ssp. oleifera (DC.) Janch.
+Brassica napus ssp. rapifera J. Metzg.
+Brassica nigra (L.) W. D. J. Koch
+Brassica oleracea L.
+Brassica oleracea L. ssp. acephala (DC.) O. Schwarz
+Brassica rapa L.
+Brassica rapa L. ssp. rapa
+Brassica rapa L. ssp. sylvestris (L.) Janch.
+Brassica rupestris Raf.
+Briza maxima L.
+Briza media L.
+Briza minor L.
+Bromus arvensis L.
+Bromus benekenii (Lange) Trimen
+Bromus commutatus Schrad.
+Bromus diandrus Roth
+Bromus erectus Huds.
+Bromus erectus Huds. ssp. condensatus (Hack.) Asch. et Graebn.
+Bromus erectus Huds. ssp. erectus
+Bromus erectus Huds. ssp. stenophyllus (Link) Asch. et Graebn.
+Bromus erectus Huds. ssp. transilvanicus (Steud.) Asch.et Graebn.
+Bromus fasciculatus C. Presl
+Bromus hordeaceus L.
+Bromus hordeaceus L. ssp. hordeaceus
+Bromus hordeaceus L. ssp. molliformis (Billot) Maire et Weiller
+Bromus hordeaceus L. ssp. pseudothominei (P. M. Sm.) H. Scholz
+Bromus inermis Leyss.
+Bromus intermedius Guss.
+Bromus japonicus Thunb.
+Bromus lanceolatus Roth
+Bromus madritensis L.
+Bromus pannonicus Kumm. et Sendtn.
+Bromus racemosus L.
+Bromus ramosus Huds.
+Bromus rigidus Roth
+Bromus scoparius L.
+Bromus secalinus L.
+Bromus squarrosus L.
+Bromus sterilis L.
+Bromus tectorum L.
+Broussonetia papyrifera (L.) Vent.
+Bryonia alba L.
+Bryonia dioica Jacq.
+Bryonia dioica Jacq. ssp. dioica (Jacq.) Tutin
+Buddleja davidii Franch.
+Bufonia paniculata Dubois
+Bunias erucago L.
+Bunias orientalis L.
+Bunium alpinum Waldst. et Kit.
+Bunium alpinum Waldst. et Kit. ssp. alpinum
+Bunium alpinum Waldst. et Kit. ssp. montanum (W. D. J. Koch) P. W. Ball
+Bunium bulbocastanum L.
+Bunium ferulaceum Sm.
+Bunium pachypodum P. W. Ball
+Buphthalmum salicifolium L.
+Bupleurum affine Sadler
+Bupleurum apiculatum Friv.
+Bupleurum asperuloides Heldr.
+Bupleurum baldense Turra
+Bupleurum falcatum L.
+Bupleurum falcatum L. ssp. cernuum (Ten.) Arcang.
+Bupleurum falcatum L. ssp. dilatatum Schur
+Bupleurum falcatum L. ssp. falcatum
+Bupleurum fontanesii Guss. ex Caruel
+Bupleurum gerardi All.
+Bupleurum glumaceum Sm.
+Bupleurum karglii Vis.
+Bupleurum lancifolium Hornem.
+Bupleurum longifolium L.
+Bupleurum longifolium L. ssp. longifolium
+Bupleurum pachnospermum Pančić
+Bupleurum petraeum L.
+Bupleurum praealtum L.
+Bupleurum ranunculoides L.
+Bupleurum ranunculoides L. ssp. gramineum (Vill.) Hayek
+Bupleurum rotundifolium L.
+Bupleurum semicompositum L.
+Bupleurum subovatum Spreng.
+Bupleurum tenuissimum L.
+Bupleurum tenuissimum L. ssp. tenuissimum
+Bupleurum veronense Turra
+Butomus umbellatus L.
+Cachrys ferulacea (L.) Calestani
+Cakile maritima Scop.
+Cakile maritima Scop. ssp. aegyptiaca (Willd.) Nyman
+Calamagrostis arundinacea (L.) Roth
+Calamagrostis canescens (Weber) Roth
+Calamagrostis epigejos (L.) Roth
+Calamagrostis pseudophragmites (Haller f.) Koeler
+Calamagrostis varia (Schrad.) Host
+Calamagrostis villosa (Chaix) J. F. Gmel.
+Calamintha ascendens Jord.
+Calamintha einseleana F. W. Schultz
+Calamintha glandulosa (Req.) Benth.
+Calamintha grandiflora (L.) Moench
+Calamintha nepetoides Jord.
+Calamintha subnuda (Waldst. et Kit.) Host
+Calamintha sylvatica Bromf.
+Caldesia parnassifolia (L.) Parl.
+Calendula arvensis (Vaill.) L.
+Calendula officinalis L.
+Calepina irregularis (Asso) Thell.
+Calicotome infesta (C. Presl) Guss.
+Calicotome infesta (C. Presl) Guss. ssp. infesta
+Calicotome spinosa (L.) Link
+Calicotome villosa (Poir.) Link
+Calla palustris L.
+Callitriche brutia Petagna
+Callitriche cophocarpa Sendtn.
+Callitriche hamulata W. D. J. Koch
+Callitriche hermaphroditica L.
+Callitriche obtusangula Le Gall
+Callitriche palustris L.
+Callitriche platycarpa Kütz.
+Callitriche stagnalis Scop.
+Callitriche truncata Guss.
+Callitriche truncata Guss. ssp. truncata
+Calluna vulgaris (L.) Hull
+Caltha palustris L.
+Calystegia sepium (L.) R. Br.
+Calystegia silvatica (Kit.) Griseb.
+Calystegia soldanella (L.) Roem. et Schult.
+Camelina alyssum (Mill.) Thell.
+Camelina microcarpa Andrz. ex DC.
+Camelina sativa (L.) Crantz
+Campanula austroadriatica D. Lakušić et Kovačić
+Campanula bononiensis L.
+Campanula carnica Mert. et W. D. J. Koch
+Campanula carnica Mert. et W. D. J. Koch ssp. carnica
+Campanula cervicaria L.
+Campanula cespitosa Scop.
+Campanula cochleariifolia Lam.
+Campanula cremnophila Bogdanović, Rešetnik, M. Jeričević, N. Jeričević et Brullo
+Campanula erinus L.
+Campanula fenestrellata Feer
+Campanula fenestrellata Feer ssp. fenestrellata
+Campanula fenestrellata Feer ssp. istriaca (Feer) Damboldt
+Campanula foliosa Ten.
+Campanula glomerata L.
+Campanula glomerata L. ssp. cervicarioides (Schult.) Arcang.
+Campanula glomerata L. ssp. elliptica (Schult.) Kirschl.
+Campanula glomerata L. ssp. farinosa (Andrz.) Kirschl.
+Campanula glomerata L. ssp. glomerata
+Campanula glomerata L. ssp. hispida (Witasek) Hayek
+Campanula glomerata L. ssp. serotina (Wettst.) O. Schwarz
+Campanula hercegovina Degen et Fiala
+Campanula justiniana Witasek
+Campanula latifolia L.
+Campanula lingulata Waldst. et Kit.
+Campanula marchesettii Witasek
+Campanula moravica (Spitzn.) Kovanda
+Campanula moravica (Spitzn.) Kovanda ssp. moravica
+Campanula moravica (Spitzn.) Kovanda ssp. xylorrhiza (O. Schwartz) Kovanda
+Campanula patula L.
+Campanula patula L. ssp. patula
+Campanula persicifolia L.
+Campanula persicifolia L. ssp. persicifolia
+Campanula portenschlagiana Schult.
+Campanula poscharskyana Degen
+Campanula pyramidalis L.
+Campanula rapunculoides L.
+Campanula rapunculoides L. ssp. rapunculoides
+Campanula rapunculus L.
+Campanula rotundifolia L.
+Campanula scheuchzeri Vill.
+Campanula sibirica L.
+Campanula sibirica L. ssp. divergentiformis (Jáv.) Domin
+Campanula sibirica L. ssp. sibirica
+Campanula spicata L.
+Campanula teutana Bogdanović et Brullo
+Campanula thyrsoides L.
+Campanula thyrsoides L. ssp. carniolica (Sünd.) Podlech
+Campanula thyrsoides L. ssp. thyrsoides
+Campanula tommasiniana C. Koch
+Campanula trachelium L.
+Campanula trachelium L. ssp. trachelium
+Campanula velebitica Borbás
+Campanula waldsteiniana Roem. et Schult.
+Campanula witasekiana Vierh.
+Camphorosma annua Pall.
+Camphorosma monspeliaca L.
+Camphorosma monspeliaca L. ssp. monspeliaca
+Campsis radicans (L.) Seem.
+Cannabis sativa L.
+Capparis orientalis Veill.
+Capsella bursa-pastoris (L.) Medik.
+Capsella rubella Reut.
+Cardamine adriatica Jar. Kučera, Lihová et Marhold
+Cardamine amara L.
+Cardamine amara L. ssp. amara
+Cardamine bulbifera (L.) Crantz
+Cardamine carnosa Waldst. et Kit.
+Cardamine chelidonia L.
+Cardamine enneaphyllos (L.) Crantz
+Cardamine fialae Fritsch
+Cardamine flexuosa With.
+Cardamine glauca DC.
+Cardamine graeca L.
+Cardamine hirsuta L.
+Cardamine impatiens L.
+Cardamine impatiens L. ssp. impatiens
+Cardamine kitaibelii Bech.
+Cardamine maritima DC.
+Cardamine occulta Hornem.
+Cardamine parviflora L.
+Cardamine pentaphyllos (L.) Crantz
+Cardamine pratensis L.
+Cardamine pratensis L. ssp. dentata (Schult.) Čelak.
+Cardamine pratensis L. ssp. pratensis
+Cardamine resedifolia L.
+Cardamine trifolia L.
+Cardamine waldsteinii Dyer
+Cardaminopsis arenosa (L.) Hayek
+Cardaminopsis arenosa (L.) Hayek ssp. arenosa
+Cardaminopsis arenosa (L.) Hayek ssp. borbasii (Zapał.) Pawł.
+Cardaminopsis croatica (Schott, Nyman et Kotschy) Jáv.
+Cardaminopsis halleri (L.) Hayek
+Cardaminopsis halleri (L.) Hayek ssp. halleri
+Cardaria draba (L.) Desv.
+Cardaria draba (L.) Desv. ssp. draba
+Carduus acanthoides L.
+Carduus acicularis Bertol.
+Carduus argemone Pourr. ex Lam.
+Carduus argemone Pourr. ex Lam. ssp. obtusisquamosus Franco
+Carduus candicans Waldst. et Kit.
+Carduus carduelis (L.) Gren.
+Carduus carlinifolius Lam.
+Carduus chrysacanthus Ten.
+Carduus collinus Waldst. et Kit.
+Carduus collinus Waldst. et Kit. ssp. collinus
+Carduus collinus Waldst. et Kit. ssp. cylindricus (Borbás) Soó
+Carduus crispus L.
+Carduus crispus L. ssp. crispus
+Carduus defloratus (L.) ssp. glaucus (Rchb. f.) Nyman
+Carduus defloratus L.
+Carduus defloratus L. ssp. defloratus
+Carduus hamulosus Ehrh.
+Carduus hamulosus Ehrh. ssp. hamulosus
+Carduus macrocephalus Desf.
+Carduus macrocephalus Desf. ssp. macrocephalus
+Carduus micropterus (Borbás) Teyber
+Carduus micropterus (Borbás) Teyber ssp. micropterus
+Carduus nutans L.
+Carduus nutans L. ssp. nutans
+Carduus nutans L. ssp. platylepis (Rchb. et Saut.) Nyman
+Carduus personata (L.) Jacq.
+Carduus personata (L.) Jacq. ssp. personata
+Carduus pycnocephalus L.
+Carduus pycnocephalus L. ssp. pycnocephalus
+Carex acuta L.
+Carex acutiformis Ehrh.
+Carex alba Scop.
+Carex appropinquata Schumach.
+Carex arenaria L.
+Carex atrata L.
+Carex bohemica Schreb.
+Carex brachystachys Schrank
+Carex brizoides L.
+Carex buekii Wimm.
+Carex capillaris L.
+Carex caryophyllea Latourr.
+Carex cespitosa L.
+Carex curta Gooden.
+Carex davalliana Sm.
+Carex demissa Hornem.
+Carex depauperata With.
+Carex diandra Schrank
+Carex digitata L.
+Carex dioica L.
+Carex distachya Desf.
+Carex distans L.
+Carex disticha Huds.
+Carex divisa Huds.
+Carex divulsa Stokes
+Carex divulsa Stokes ssp. divulsa
+Carex divulsa Stokes ssp. leersii (Kneuck.) W. Koch
+Carex echinata Murray
+Carex elata All.
+Carex elata All. ssp. elata
+Carex elongata L.
+Carex ericetorum Pollich
+Carex extensa Gooden.
+Carex ferruginea Scop.
+Carex firma Host
+Carex flacca Schreb.
+Carex flacca Schreb. ssp. flacca
+Carex flacca Schreb. ssp. serrulata (Spreng.) Greuter
+Carex flava L.
+Carex frigida All.
+Carex fritschii Waisb.
+Carex halleriana Asso
+Carex hirta L.
+Carex hordeistichos Vill.
+Carex hostiana DC.
+Carex humilis Leyss.
+Carex illegitima Ces.
+Carex kitaibeliana Bech.
+Carex lasiocarpa Ehrh.
+Carex lepidocarpa Tausch
+Carex limosa L.
+Carex liparocarpos Gaudin
+Carex melanostachya Willd.
+Carex michelii Host
+Carex montana L.
+Carex mucronata All.
+Carex muricata L.
+Carex nigra (L.) Reichard
+Carex ornithopoda Willd.
+Carex otrubae Podp.
+Carex ovalis Gooden.
+Carex pallescens L.
+Carex panicea L.
+Carex paniculata L.
+Carex pauciflora Lightf.
+Carex pendula Huds.
+Carex phyllostachys C. A. Mey.
+Carex pilosa Scop.
+Carex pilulifera L.
+Carex praecox Schreb.
+Carex pseudocyperus L.
+Carex pulicaris L.
+Carex punctata Gaudin
+Carex randalpina B. Walln.
+Carex remota L.
+Carex riparia Curtis
+Carex rostrata Stokes
+Carex rupestris All.
+Carex sempervirens Vill.
+Carex serotina Mérat
+Carex serotina Mérat ssp. serotina
+Carex spicata Huds.
+Carex stenophylla Wahlenb.
+Carex strigosa Huds.
+Carex supina Wahlenb.
+Carex sylvatica Huds.
+Carex tomentosa L.
+Carex umbrosa Host
+Carex vesicaria L.
+Carex vulpina L.
+Carex vulpinoidea Michx.
+Carlina acanthifolia All.
+Carlina acanthifolia All. ssp. acanthifolia
+Carlina acaulis L.
+Carlina acaulis L. ssp. acaulis
+Carlina acaulis L. ssp. simplex (Wettst. et Kit.) Nyman
+Carlina corymbosa L.
+Carlina corymbosa L. ssp. corymbosa
+Carlina corymbosa L. ssp. graeca (Boiss.) Nyman
+Carlina fiumensis Simonk.
+Carlina flavispina Simonk.
+Carlina frigida Boiss. et Heldr.
+Carlina lanata L.
+Carlina vulgaris L.
+Carlina vulgaris L. ssp. intermedia (Schur) Hayek
+Carlina vulgaris L. ssp. longifolia Nyman
+Carlina vulgaris L. ssp. vulgaris
+Carpesium abrotanoides L.
+Carpesium cernuum L.
+Carpinus betulus L.
+Carpinus orientalis Mill.
+Carpobrotus acinaciformis (L.) L. Bolus
+Carpobrotus edulis (L.) N. E. Br. in Phillips
+Carthamus lanatus L.
+Carthamus lanatus L. ssp. lanatus
+Carthamus tinctorius L.
+Carum carvi L.
+Carum verticillatum (L.) Koch
+Castanea sativa Mill.
+Catabrosa aquatica (L.) P. Beauv.
+Catalpa bignonioides Walter
+Catalpa ovata G. Don
+Caucalis platycarpos L.
+Celtis australis L.
+Celtis occidentalis L.
+Celtis tournefortii Lam.
+Cenchrus longispinus (Kneuck.) Fernald
+Centaurea alpina L.
+Centaurea arachnoidea Viv.
+Centaurea arachnoidea Viv. ssp. adonidifolia F. Conti, Moraldo et Ricceri
+Centaurea banatica Hayek
+Centaurea biokovensis Teyber
+Centaurea brachtii Rchb. f.
+Centaurea bracteata Scop.
+Centaurea calcitrapa L.
+Centaurea calocephala Willd.
+Centaurea ceratophylla Ten.
+Centaurea ceratophylla Ten. ssp. danielae F. Conti, Moraldo et Ricceri
+Centaurea crithmifolia Vis.
+Centaurea cuspidata Vis.
+Centaurea cyanus L.
+Centaurea dalmatica A. Kern.
+Centaurea dalmatica A. Kern. ssp. dalmatica
+Centaurea dalmatica A. Kern. ssp. lubenicensis Trinajstić et Zi. Pavletić
+Centaurea deusta Ten.
+Centaurea deusta Ten. ssp. concolor (DC.) Hayek
+Centaurea deusta Ten. ssp. deusta
+Centaurea dichroantha A. Kern.
+Centaurea friderici Vis.
+Centaurea friderici Vis. ssp. friderici
+Centaurea friderici Vis. ssp. jabukensis (Ginzb. et Teyber) Greuter
+Centaurea fritschii Hayek
+Centaurea glaberrima Tausch
+Centaurea glaberrima Tausch ssp. divergens (Vis.) Hayek
+Centaurea glaberrima Tausch ssp. glaberrima
+Centaurea haynaldii Hayek
+Centaurea haynaldii Hayek ssp. haynaldii
+Centaurea incompta Vis.
+Centaurea jacea L.
+Centaurea lovricii Bogdanović, Boršić, Ljubičić, Brullo et Giusso
+Centaurea macroptilon Borbás
+Centaurea macroptilon Borbás ssp. macroptilon
+Centaurea melitensis L.
+Centaurea micranthos S. G. Gmel.
+Centaurea mollis Waldst. et Kit.
+Centaurea montana L.
+Centaurea nicolai Bald.
+Centaurea nigra L.
+Centaurea nigra L. ssp. nigra
+Centaurea nigrescens Willd.
+Centaurea nigrescens Willd. ssp. nigrescens
+Centaurea nigrescens Willd. ssp. transalpina (DC.) Nyman
+Centaurea pannonica (Heuff.) Simonk.
+Centaurea pannonica (Heuff.) Simonk. ssp. pannonica
+Centaurea phrygia L.
+Centaurea pseudophrygia C. A. Mey. ex Rupr.
+Centaurea radichii Plazibat
+Centaurea ragusina L.
+Centaurea ragusina L. ssp. lungensis (Ginzb.) Hayek
+Centaurea ragusina L. ssp. ragusina
+Centaurea rhenana Boreau
+Centaurea rhenana Boreau ssp. rhenana
+Centaurea rupestris L.
+Centaurea rupestris L. ssp. rupestris
+Centaurea salonitana Vis.
+Centaurea salonitana Vis. ssp. salonitana
+Centaurea scabiosa L.
+Centaurea solstitialis L.
+Centaurea solstitialis L. ssp. solstitialis
+Centaurea spinosociliata Seenus
+Centaurea spinosociliata Seenus ssp. cristata (Bertol.) Dostál
+Centaurea spinosociliata Seenus ssp. spinosociliata
+Centaurea spinosociliata Seenus ssp. tommasinii (A. Kern.) Dostál
+Centaurea stenolepis A. Kern.
+Centaurea stenolepis A. Kern. ssp. joannis Kárpáti
+Centaurea stenolepis A. Kern. ssp. stenolepis
+Centaurea triumfettii All.
+Centaurea triumfettii All. ssp. adscendens (Bartl.) Dostál
+Centaurea triumfettii All. ssp. stricta (Waldst. et Kit.) Dostál
+Centaurea triumfettii All. ssp. triumfettii
+Centaurea tuberosa Vis.
+Centaurea uniflora Turra
+Centaurea uniflora Turra ssp. nervosa (Willd.) Bonnier et Layens
+Centaurea visianiana Plazibat
+Centaurea weldeniana Rchb.
+Centaurium erythraea Rafn
+Centaurium erythraea Rafn ssp. erythraea
+Centaurium erythraea Rafn ssp. rhodense (Boiss. et Reut.) Melderis
+Centaurium maritimum (L.) R. M. Fritsch
+Centaurium pulchellum (Sw.) Druce
+Centaurium spicatum (L.) R. M. Fritsch
+Centaurium tenuiflorum (Hoffmanns. et Link) Fritsch ssp. acutiflorum (Schott) Zeltner
+Centaurium tenuiflorum (Hoffmanns. et Link) R. M. Fritsch
+Centaurium tenuiflorum (Hoffmanns. et Link) R. M. Fritsch ssp. tenuiflorum
+Centranthus calcitrapae (L.) Dufr.
+Centranthus ruber (L.) DC.
+Centunculus minimus L.
+Cephalanthera damasonium (Mill.) Druce
+Cephalanthera longifolia (L.) R. M. Fritsch
+Cephalanthera rubra (L.) Rich.
+Cephalaria leucantha (L.) Roem. et Schult.
+Cephalaria transsylvanica (L.) Roem. et Schult.
+Cerastium arvense L.
+Cerastium arvense L. ssp. arvense
+Cerastium arvense L. ssp. molle (Vill.) Arcangeli
+Cerastium arvense L. ssp. rigidum (Vitm.) Hegi
+Cerastium arvense L. ssp. strictum Gaudin
+Cerastium biebersteinii DC.
+Cerastium brachypetalum Pers.
+Cerastium brachypetalum Pers. ssp. brachypetalum
+Cerastium brachypetalum Pers. ssp. roeseri (Bois. et Heldr.) Nyman
+Cerastium brachypetalum Pers. ssp. tenoreanum (Ser.) Soó
+Cerastium cerastoides (L.) Britton
+Cerastium decalvans Schloss. et Vuk.
+Cerastium decalvans Schloss. et Vuk. ssp. decalvans
+Cerastium decalvans Schloss. et Vuk. ssp. histrio (Correns) Greuter et Burdet
+Cerastium diffusum Pers.
+Cerastium dinaricum G. Beck et Szyszył.
+Cerastium dubium (Bastard) Guépin
+Cerastium fontanum Baumg.
+Cerastium fontanum Baumg. ssp. vulgare (Hartm.) Greuter et Burdet
+Cerastium glomeratum Thuill.
+Cerastium grandiflorum Waldst. et Kit.
+Cerastium ligusticum Viv.
+Cerastium ligusticum Viv. ssp. ligusticum
+Cerastium ligusticum Viv. ssp. trichogynum (Möschl) P. D. Sell. et Whitehead
+Cerastium pumilum Curtis
+Cerastium pumilum Curtis ssp. glutinosum (Fr.) Jalas
+Cerastium pumilum Curtis ssp. pumilum
+Cerastium semidecandrum L.
+Cerastium sylvaticum Waldst. et Kit.
+Cerastium uniflorum Clairv.
+Ceratocephala falcata (L.) Cramer
+Ceratocephala testiculata (Crantz) Roth
+Ceratonia siliqua L.
+Ceratophyllum demersum L.
+Ceratophyllum submersum L.
+Ceratostigma plumbaginoides Bunge
+Cercis siliquastrum L.
+Cercis siliquastrum L. ssp. siliquastrum
+Cerinthe glabra Mill.
+Cerinthe glabra Mill. ssp. glabra
+Cerinthe glabra Mill. ssp. smithiae (A. Kern.) Domac
+Cerinthe glabra Mill. ssp. velebitica Degen et Lengyel
+Cerinthe major L.
+Cerinthe major L. ssp. major
+Cerinthe minor L.
+Cerinthe minor L. ssp. auriculata (Ten.) Domac
+Cerinthe minor L. ssp. minor
+Cerinthe retorta Sm.
+Cerinthe tristis Teyber
+Chaenorhinum minus (L.) Lange
+Chaenorhinum minus (L.) Lange ssp. litorale (Willd.) Hayek
+Chaenorhinum minus (L.) Lange ssp. minus
+Chaerophyllum aromaticum L.
+Chaerophyllum aureum L.
+Chaerophyllum bulbosum L.
+Chaerophyllum bulbosum L. ssp. bulbosum
+Chaerophyllum coloratum L.
+Chaerophyllum hirsutum L.
+Chaerophyllum temulum L.
+Chaerophyllum villarsii Koch
+Chaetopogon fasciculatus (Link) Hayek
+Chamaecytisus albus (Hacq.) Rothm.
+Chamaecytisus albus (Hacq.) Rothm. ssp. albus
+Chamaecytisus austriacus (L.) Link
+Chamaecytisus elongatus (Waldst. et Kit.) Link
+Chamaecytisus falcatus (Waldst. et Kit.) Holub
+Chamaecytisus hirsutus (L.) Link
+Chamaecytisus leiocarpus (A. Kern.) Rothm.
+Chamaecytisus polytrichus (M. Bieb.) Rothm.
+Chamaecytisus purpureus (Scop.) Link
+Chamaecytisus ratisbonensis (Schaeff.) Rothm.
+Chamaecytisus spinescens (C. Presl) Rothm.
+Chamaecytisus spinescens (C. Presl) Rothm. ssp. ala-venti Radić
+Chamaecytisus supinus (L.) Link
+Chamaecytisus triflorus (Lam.) Skalická
+Chamaespartium sagittale (L.) Gibbs
+Chamomilla recutita (L.) Rauschert
+Chamomilla suaveolens (Pursh) Rydb.
+Cheilanthes acrostica (Balbis) Tod.
+Cheilanthes persica (Bory) Mett. ex Kuhn
+Chelidonium majus L.
+Chenopodium album L.
+Chenopodium ambrosioides L.
+Chenopodium aristatum L.
+Chenopodium bonus-henricus L.
+Chenopodium botrys L.
+Chenopodium capitatum (L.) Ambrosi
+Chenopodium chenopodioides (L.) Aellen
+Chenopodium ficifolium Sm.
+Chenopodium foliosum Asch.
+Chenopodium giganteum D. Don
+Chenopodium glaucum L.
+Chenopodium hybridum L.
+Chenopodium multifidum L.
+Chenopodium murale L.
+Chenopodium opulifolium W. D. J. Koch et Ziz
+Chenopodium polyspermum L.
+Chenopodium probstii Aellen
+Chenopodium rubrum L.
+Chenopodium schraderianum Schultes in Roemer et Schultes
+Chenopodium strictum Roth
+Chenopodium suecicum Murr
+Chenopodium urbicum L.
+Chenopodium vulvaria L.
+Chimaphila umbellata (L.) W. P. C. Barton
+Chondrilla juncea L.
+Chorispora tenella (Pall.) DC.
+Chouardia lakusicii (Šilić) Speta
+Chouardia litardierei (Breistr.) Speta
+Chrozophora tinctoria (L.) A. Juss.
+Chrysanthemum coronarium L.
+Chrysanthemum segetum L.
+Chrysopogon gryllus (L.) Trin.
+Chrysosplenium alternifolium L.
+Chrysosplenium oppositifolium L.
+Cicendia filiformis (L.) Delarbre
+Cicer arietinum L.
+Cicerbita alpina (L.) Wallr.
+Cichorium endivia L.
+Cichorium endivia L. ssp. divaricatum (Schousb.) P. D. Sell
+Cichorium intybus L.
+Cicuta virosa L.
+Circaea alpina L.
+Circaea lutetiana L.
+Cirsium acaulon (L.) Scop.
+Cirsium arvense (L.) Scop.
+Cirsium brachycephalum Jur.
+Cirsium candelabrum Griseb.
+Cirsium canum (L.) All.
+Cirsium creticum (Lam.) d'Urv.
+Cirsium eriophorum (L.) Scop.
+Cirsium eriophorum (L.) Scop. ssp. eriophorum
+Cirsium erisithales (Jacq.) Scop.
+Cirsium freyerianum Koch
+Cirsium greimleri Bureš
+Cirsium heterophyllum (L.) Hill
+Cirsium hypoleucum DC.
+Cirsium montanum (Waldst. et Kit. ex Willd.) Spreng.
+Cirsium oleraceum (L.) Scop.
+Cirsium palustre (L.) Scop.
+Cirsium pannonicum (L. f.) Link
+Cirsium rivulare (Jacq.) All.
+Cirsium tuberosum (L.) All.
+Cirsium vulgare (Savi) Ten.
+Cistus incanus L.
+Cistus incanus L. ssp. corsicus (Loisel.) Heywood
+Cistus incanus L. ssp. creticus (L.) Heywood
+Cistus incanus L. ssp. incanus
+Cistus monspeliensis L.
+Cistus salviifolius L.
+Citrus aurantium L.
+Cladium mariscus (L.) Pohl
+Cleistogenes serotina (L.) Keng
+Clematis alpina (L.) Mill.
+Clematis alpina (L.) Miller ssp. alpina
+Clematis flammula L.
+Clematis integrifolia L.
+Clematis recta L.
+Clematis vitalba L.
+Clematis viticella L.
+Clinopodium alpinum (L.) Kuntze
+Clinopodium alpinum (L.) Merino ssp. dinaricum (Šilić) Iamonico et Bogdanović
+Clinopodium majoranifolium (Mill.) Iamonico et Bogdanović
+Clinopodium vulgare L.
+Clinopodium vulgare L. ssp. arundanum (Boiss.) Nyman
+Clinopodium vulgare L. ssp. villosa (De Noé) Bothmer
+Clinopodium vulgare L. ssp. vulgare
+Clypeola jonthlaspi L.
+Cneorum tricoccon L.
+Cnicus benedictus L.
+Cnidium silaifolium (Jacq.) Simonk.
+Cnidium silaifolium (Jacq.) Simonk. ssp. silaifolium
+Coeloglossum viride (L.) Hartm.
+Colchicum arenarium Waldst. et Kit.
+Colchicum autumnale L.
+Colchicum bivonae Guss.
+Colchicum cupanii Guss.
+Colchicum doerfleri Halácsy
+Colchicum hungaricum Janka
+Colchicum kochii Parl.
+Colchicum neapolitanum (Ten.) Ten.
+Colchicum visianii Parl.
+Colocasia esculenta (L.) Schott
+Colutea arborescens L.
+Colutea arborescens L. ssp. arborescens
+Colutea arborescens L. ssp. gallica Browicz
+Colutea orientalis Mill.
+Commelina communis L.
+Conioselinum tataricum Hoffm.
+Conium maculatum L.
+Conringia austriaca (Jacq.) Sweet
+Conringia orientalis (L.) Dumort.
+Consolida ajacis (L.) Schur
+Consolida brevicornis (Vis.) Soó
+Consolida incana (E. D. Clarke) Munz
+Consolida orientalis (Gay) Schrödinger
+Consolida regalis Gray
+Consolida regalis S. F. Gray ssp. paniculata (Host) Soó
+Consolida regalis S. F. Gray ssp. regalis
+Consolida uechtriziana (Huth) Soó
+Convallaria majalis L.
+Convolvulus althaeoides L.
+Convolvulus althaeoides L. ssp. tenuissimus (Sm.) Batt.
+Convolvulus arvensis L.
+Convolvulus cantabrica L.
+Convolvulus cneorum L.
+Convolvulus lineatus L.
+Convolvulus sabatius Viv.
+Convolvulus sabatius Viv. ssp. mauritanicus (Boiss.) Murb.
+Convolvulus tricolor L.
+Conyza bonariensis (L.) Cronquist
+Conyza canadensis (L.) Cronquist
+Conyza sumatrensis (Retz.) E. Walker
+Corallorhiza trifida Châtel.
+Coreopsis grandiflora Sweet
+Coreopsis lanceolata L.
+Coriandrum sativum L.
+Coridothymus capitatus (L.) Rchb. f.
+Coris monspeliensis L.
+Corispermum canescens Schult
+Corispermum nitidum Schult.
+Cornus hungarica Kárpáti
+Cornus mas L.
+Cornus sanguinea L.
+Cornus sanguinea L. ssp. australis (C. A. Mey.) Jáv.
+Cornus sanguinea L. ssp. sanguinea
+Coronilla coronata L.
+Coronilla emerus L.
+Coronilla emerus L. ssp. emeroides Boiss. et Spruner
+Coronilla emerus L. ssp. emerus
+Coronilla juncea L.
+Coronilla scorpioides (L.) W. D. J. Koch
+Coronilla vaginalis Lam.
+Coronilla valentina L.
+Coronilla valentina L. ssp. glauca (L.) Batt.
+Coronilla valentina L. ssp. valentina
+Coronilla varia L.
+Coronopus didymus (L.) Sm.
+Coronopus squamatus (Forssk.) Asch.
+Corrigiola litoralis L.
+Corrigiola litoralis L. ssp. litoralis
+Cortusa matthioli L.
+Corydalis acaulis (Wulfen) Pers.
+Corydalis bulbosa (L.) DC.
+Corydalis bulbosa (L.) DC. ssp. blanda (Schott) Charter
+Corydalis bulbosa (L.) DC. ssp. bulbosa
+Corydalis bulbosa (L.) DC. ssp. marschalliana (Pallas) Charter
+Corydalis intermedia (L.) Mérat
+Corydalis ochroleuca W. D. J. Koch
+Corydalis pumila (Host) Rchb.
+Corydalis solida (L.) Clairv.
+Corydalis solida (L.) Swartz ssp. oligantha (Trinajstić) Greuter et Burdet
+Corydalis solida (L.) Swartz ssp. solida
+Corylus avellana L.
+Corynephorus canescens (L.) P. Beauv.
+Corynephorus divaricatus (Pourr.) Breistr.
+Cosmos bipinnatus Cav.
+Cotinus coggygria Scop.
+Cotoneaster horizontalis Decne.
+Cotoneaster integerrimus Medik.
+Cotoneaster nebrodensis (Guss.) K. Koch
+Crambe hispanica L.
+Crambe maritima L.
+Crataegus calycina Peterm.
+Crataegus calycina Peterm. ssp. curvisepala (Lindman) Franco
+Crataegus laciniata Ucria
+Crataegus laciniata Ucria ssp. laciniata
+Crataegus laevigata (Poir.) DC.
+Crataegus monogyna Jacq.
+Crataegus monogyna Jacq. ssp. azarella (Griseb.) Franco
+Crataegus monogyna Jacq. ssp. monogyna
+Crataegus nigra Waldst. et Kit.
+Crataegus pentagyna Willd.
+Crepis alpestris (Jacq.) Tausch
+Crepis aurea (L.) Cass.
+Crepis aurea (L.) Cass. ssp. aurea
+Crepis aurea (L.) Cass. ssp. glabrescens (Caruel) Arcang.
+Crepis biennis L.
+Crepis bocconei P. D. Sell
+Crepis bursifolia L.
+Crepis capillaris (L.) Wallr.
+Crepis chondrilloides Jacq.
+Crepis conyzifolia (Gouan) A. Kern.
+Crepis dioscoridis L.
+Crepis foetida L.
+Crepis foetida L. ssp. foetida
+Crepis foetida L. ssp. rhoeadifolia (M. Bieb.) Čelak.
+Crepis jacquinii Tausch
+Crepis jacquinii Tausch ssp. kerneri (Rech. f.) Merxm.
+Crepis mollis (Jacq.) Asch.
+Crepis neglecta L.
+Crepis neglecta L. ssp. neglecta
+Crepis nicaeensis Pers.
+Crepis paludosa (L.) Moench
+Crepis pannonica (Jacq.) K. Koch
+Crepis pantocsekii (Vis.) Latzel
+Crepis praemorsa (L.) Tausch ssp. dinarica (Beck) P. D. Sell
+Crepis praemorsa (L.) Tausch ssp. praemorsa
+Crepis praemorsa (L.) Walther
+Crepis pulchra L.
+Crepis pyrenaica (L.) Greuter
+Crepis rubra L.
+Crepis sancta (L.) Bornm.
+Crepis sancta (L.) Bornm. ssp. nemausensis (P. Fourn.) Babc.
+Crepis setosa Haller f.
+Crepis succisifolia (All.) Tausch
+Crepis tectorum L.
+Crepis tectorum L. ssp. tectorum
+Crepis vesicaria L.
+Crepis vesicaria L. ssp. taraxacifolia (Thuill.) Thell.
+Crepis vesicaria L. ssp. vesicaria
+Crepis zacintha (L.) Loisel.
+Cressa cretica L.
+Crithmum maritimum L.
+Crocus biflorus Mill.
+Crocus biflorus Mill. ssp. weldenii (Hoppe et Fürnr.) K. Richt.
+Crocus dalmaticus Vis.
+Crocus heuffelianus Herb.
+Crocus malyi Vis.
+Crocus purpureus Weston
+Crocus thomasii Ten.
+Crocus tommasinianus Herb.
+Crocus variegatus Hoppe et Hornsch.
+Crocus vernus (L.) Hill
+Crucianella angustifolia L.
+Crucianella latifolia L.
+Cruciata balcanica Ehrend.
+Cruciata glabra (L.) Ehrend.
+Cruciata laevipes Opiz
+Cruciata pedemontana (Bellardi) Ehrend.
+Crupina crupinastrum (Moris) Vis.
+Crupina vulgaris Cass.
+Crypsis aculeata (L.) Aiton
+Crypsis alopecuroides (Piller et Mitterp.) Schrad.
+Crypsis schoenoides (L.) Lam.
+Cucubalus baccifer L.
+Cuscuta approximata Bab.
+Cuscuta approximata Bab. ssp. approximata
+Cuscuta australis R. Br.
+Cuscuta australis R. Br. ssp. cesatiana (Bertol.) O. Schwarz
+Cuscuta australis R. Br. ssp. tinei (Insenga) Feinbrun
+Cuscuta campestris Yunck.
+Cuscuta coryli Engelm.
+Cuscuta epithymum (L.) L.
+Cuscuta epithymum (L.) L. ssp. epithymum
+Cuscuta epithymum (L.) L. ssp. kotschyi (Des Moul.) Arcang.
+Cuscuta europaea L.
+Cuscuta lupuliformis Krock.
+Cuscuta monogyna Vahl
+Cuscuta palaestina Boiss.
+Cuscuta planiflora Ten.
+Cuscuta suaveolens Ser.
+Cutandia maritima (L.) Benth.
+Cyclamen hederifolium Aiton
+Cyclamen purpurascens Mill.
+Cyclamen repandum Sibth. et Sm.
+Cyclospermum leptophyllum (Pers.) Britton et P. Wilson
+Cylindropuntia imbricata (Haw.) F. M. Knuth
+Cymbalaria microcalyx (Boiss.) Wettst.
+Cymbalaria muralis P. Gaertn., B. Mey. et Scherb.
+Cymbalaria muralis P. Gaertn., B. Mey. et Scherb. ssp. muralis
+Cymbalaria muralis P. Gaertn., B. Mey. et Scherb. ssp. visianii D. A. Webb
+Cymodocea nodosa (Ucria) Asch.
+Cynanchum acutum L.
+Cynara cardunculus L.
+Cynara scolymus L.
+Cynodon dactylon (L.) Pers.
+Cynoglossum cheirifolium L.
+Cynoglossum columnae Ten.
+Cynoglossum creticum Mill.
+Cynoglossum germanicum Jacq.
+Cynoglossum hungaricum Simonk.
+Cynoglossum montanum L.
+Cynoglossum officinale L.
+Cynoglossum velebiticum K. Malý
+Cynoglottis barrelieri (All.) Vural et Kit Tan
+Cynoglottis barrelieri (All.) Vural et Kit Tan ssp. barrelieri
+Cynosurus cristatus L.
+Cynosurus echinatus L.
+Cyperus brevifolius (Rottb.) Hassk.
+Cyperus capitatus Vand.
+Cyperus difformis L.
+Cyperus esculentus L.
+Cyperus flavescens L.
+Cyperus fuscus L.
+Cyperus glaber L.
+Cyperus glomeratus L.
+Cyperus longus L.
+Cyperus michelianus (L.) Link
+Cyperus michelianus (L.) Link ssp. michelianus
+Cyperus pannonicus Jacq.
+Cyperus rotundus L.
+Cyperus serotinus Rottb.
+Cyperus squarrosus L.
+Cypripedium calceolus L.
+Cyrtomium falcatum (L. f.) C. Presl
+Cystopteris alpina (Lam.) Desv.
+Cystopteris dickieana R. Sim
+Cystopteris fragilis (L.) Bernh.
+Cystopteris montana (Lam.) Desv.
+Cytinus hypocistis (L.) L.
+Cytinus hypocistis (L.) L. ssp. clusii Nyman
+Cytinus hypocistis (L.) L. ssp. hypocystis
+Cytisus decumbens (Durande) Spach
+Cytisus procumbens (Willd.) Spreng.
+Cytisus pseudoprocumbens Markgr.
+Cytisus scoparius (L.) Link
+Cytisus scoparius (L.) Link ssp. scoparius
+Cytisus villosus Pourr.
+Dactylis glomerata L.
+Dactylis glomerata L. ssp. aschersoniana (Graebn.) Thell.
+Dactylis glomerata L. ssp. glomerata
+Dactylis glomerata L. ssp. hispanica (Roth) Nyman
+Dactylis glomerata L. ssp. marina (Borrill) Greuter
+Dactylorhiza cordigera (Fr.) Soó
+Dactylorhiza fuchsii (Druce) Soó
+Dactylorhiza fuchsii (Druce) Soó ssp. fuchsii
+Dactylorhiza fuchsii (Druce) Soó ssp. transsilvanica (Schur) S. E. Fröhner
+Dactylorhiza incarnata (L.) Soó
+Dactylorhiza incarnata (L.) Soó ssp. cruenta (O. F. Müll.) P. D. Sell
+Dactylorhiza incarnata (L.) Soó ssp. incarnata
+Dactylorhiza incarnata (L.) Soó ssp. ochroleuca (Wüstnei ex Boll) P. F. Hunt et Summerh.
+Dactylorhiza maculata (L.) Soó
+Dactylorhiza majalis (Rchb.) P. F. Hunt et Summerh.
+Dactylorhiza romana (Sebast.) Soó
+Dactylorhiza saccifera (Brongn.) Soó
+Dactylorhiza sambucina (L.) Soó
+Dactylorhiza sambucina (L.) Soó ssp. sambucina
+Dactylorhiza traunsteineri (Saut. ex Rchb.) Soó
+Dalmatocytisus dalmaticus (Vis.) Trinajstić
+Damasonium polyspermum Cosson
+Danae racemosa (L.) Moench
+Danthonia alpina Vest
+Danthonia decumbens (L.) DC.
+Danthoniastrum compactum (Boiss. et Heldr.) Holub
+Daphne alpina L.
+Daphne blagayana Freyer
+Daphne cneorum L.
+Daphne laureola L.
+Daphne mezereum L.
+Dasypyrum villosum (L.) P. Candargy
+Datura innoxia Mill.
+Datura stramonium L.
+Datura wrightii Regel
+Daucus carota L.
+Daucus carota L. ssp. carota
+Daucus carota L. ssp. commutatus (Paol.) Thell.
+Daucus carota L. ssp. drepanensis (Lojac.) Heywood
+Daucus carota L. ssp. hispanicus (Gouan) Thell.
+Daucus carota L. ssp. hispidus (Ball) Heywood
+Daucus carota L. ssp. major (Vis.) Arcang.
+Daucus carota L. ssp. maritimus (Lam.) Batt.
+Daucus carota L. ssp. maximus (Desf.) Ball
+Daucus dentatus Bertol.
+Degenia velebitica (Degen) Hayek
+Delphinium elatum L.
+Delphinium elatum L. ssp. elatum
+Delphinium fissum Waldst. et Kit.
+Delphinium fissum Waldst. et Kit. ssp. fissum
+Delphinium halteratum Sm.
+Delphinium halteratum Sm. in Sibth. et Sm. ssp. halteratum
+Delphinium peregrinum L.
+Delphinium pictum Willd.
+Delphinium staphisagria L.
+Deschampsia cespitosa (L.) P. Beauv.
+Deschampsia cespitosa (L.) P. Beauv. ssp. cespitosa
+Deschampsia flexuosa (L.) Trin.
+Deschampsia media (Gouan) Roem. et Schult.
+Descurainia sophia (L.) Webb ex Prantl
+Desmazeria marina (L.) Druce
+Desmazeria pauciflora Merino
+Desmazeria rigida (L.) Tutin
+Dianthus armeria L.
+Dianthus armeria L. ssp. armeria
+Dianthus armeria L. ssp. armeriastrum (Wolfner) Velen
+Dianthus barbatus L.
+Dianthus carthusianorum L.
+Dianthus carthusianorum L. ssp. carthusianorum
+Dianthus carthusianorum L. ssp. latifolius (Griesb. et Schenk.) Hegi
+Dianthus carthusianorum L. ssp. sanguineus (Vis.) Hegi
+Dianthus ciliatus Guss.
+Dianthus ciliatus Guss. ssp. ciliatus
+Dianthus ciliatus Guss. ssp. dalmaticus (Čelak.) Hayek
+Dianthus collinus Waldst. et Kit.
+Dianthus collinus Waldst. et Kit. ssp. collinus
+Dianthus deltoides L.
+Dianthus ferrugineus Mill.
+Dianthus ferrugineus Mill. ssp. ferrugineus
+Dianthus ferrugineus Mill. ssp. liburnicus (Bartl.) Tutin
+Dianthus giganteiformis Borbás
+Dianthus giganteiformis Borbás ssp. pontederae (A. Kerner) Soó
+Dianthus giganteus d'Urv.
+Dianthus giganteus d'Urv. ssp. croaticus (Borbás) Tutin
+Dianthus integer Vis.
+Dianthus integer Vis. ssp. integer
+Dianthus monspessulanus L.
+Dianthus monspessulanus L. ssp. monspessulanus
+Dianthus multinervis Vis.
+Dianthus petraeus Waldst. et Kit.
+Dianthus petraeus Waldst. et Kit. ssp. petraeus
+Dianthus plumarius L.
+Dianthus serotinus Waldst. et Kit.
+Dianthus sternbergii Capelli
+Dianthus superbus L.
+Dianthus sylvestris Wulfen in Jacq.
+Dianthus sylvestris Wulfen in Jacq. ssp. longicaulis (Ten.) Greuter et Burdet
+Dianthus sylvestris Wulfen in Jacq. ssp. nodosus (Tausch) Hayek
+Dianthus sylvestris Wulfen in Jacq. ssp. sylvestris
+Dianthus sylvestris Wulfen in Jacq. ssp. tergestinus (Rchb.) Hayek
+Dianthus velebiticus Borbás
+Dianthus viridescens Clementi
+Dichanthium ischaemum (L.) Roberty
+Dichondra micrantha Urb.
+Dichrocephala integrifolia (L. f.) Kuntze
+Dictamnus albus L.
+Digitalis ferruginea L.
+Digitalis grandiflora Mill.
+Digitalis laevigata Waldst. et Kit.
+Digitalis lanata Ehrh.
+Digitalis lutea L.
+Digitalis purpurea L.
+Digitaria ciliaris (Retz.) Koeler
+Digitaria ischaemum (Schreb.) Muhl.
+Digitaria sanguinalis (L.) Scop.
+Diospyros lotus L.
+Diphasiastrum complanatum (L.) Holub
+Diphasiastrum complanatum (L.) Holub ssp. complanatum
+Diplotaxis erucoides (L.) DC.
+Diplotaxis muralis (L.) DC.
+Diplotaxis tenuifolia (L.) DC.
+Diplotaxis viminea (L.) DC.
+Dipsacus fullonum L.
+Dipsacus laciniatus L.
+Dipsacus pilosus L.
+Dipsacus sativus (L.) Honck.
+Dittrichia graveolens (L.) Greuter
+Dittrichia viscosa (L.) Greuter
+Dittrichia viscosa (L.) Greuter ssp. viscosa
+Doronicum austriacum Jacq.
+Doronicum columnae Ten.
+Doronicum hungaricum Rchb. f.
+Doronicum orientale Hoffm.
+Dorycnium germanicum (Gremli) Rikli
+Dorycnium herbaceum Vill.
+Dorycnium hirsutum (L.) Ser.
+Dorycnium pentaphyllum Scop.
+Dorycnium rectum (L.) Ser.
+Draba aizoides L.
+Draba aspera Bertol.
+Draba lasiocarpa Rochel
+Draba muralis L.
+Dracocephalum ruyschiana L.
+Dracunculus vulgaris Schott
+Drosera anglica Huds.
+Drosera intermedia Hayne
+Drosera rotundifolia L.
+Dryas octopetala L.
+Dryopteris affinis (Lowe) Fraser-Jenk.
+Dryopteris affinis (Lowe) Fraser-Jenk. ssp. borreri (Newman) Fraser-Jenk.
+Dryopteris affinis (Lowe) Fraser-Jenk. ssp. cambrensis Fraser-Jenk.
+Dryopteris carthusiana (Vill.) H. P. Fuchs
+Dryopteris cristata (L.) A. Gray
+Dryopteris dilatata (Hoffm.) A. Gray
+Dryopteris expansa (C. Presl) Fraser-Jenk. et Jermy
+Dryopteris filix-mas (L.) Schott
+Dryopteris pallida (Bory) Maire et Petitm.
+Dryopteris remota (Döll) Druce
+Dryopteris submontana (Fraser-Jenk. et Jermy) Fraser-Jenk.
+Dryopteris villarii (Bellardi) Schinz et Thell.
+Drypis spinosa L.
+Drypis spinosa L. ssp. jacquiniana Murb.
+Drypis spinosa L. ssp. spinosa
+Duchesnea indica (Andrews) Focke
+Ecballium elaterium (L.) A. Rich.
+Echinaria capitata (L.) Desf.
+Echinochloa colonum (L.) Link
+Echinochloa crus-galli (L.) P. Beauv.
+Echinocystis lobata (Michx.) Torr. et A. Gray
+Echinophora spinosa L.
+Echinops bannaticus Schrad.
+Echinops exaltatus Schrad.
+Echinops microcephalus Sm.
+Echinops ritro L.
+Echinops ritro L. ssp. ritro
+Echinops ritro L. ssp. ruthenicus (M. Bieb.) Nyman
+Echinops sphaerocephalus L.
+Echinops sphaerocephalus L. ssp. albidus (Boiss. et Spruner) Kožuharov
+Echinops sphaerocephalus L. ssp. sphaerocephalus
+Echinops spinosissimus Turra
+Echinops spinosissimus Turra ssp. neumayeri (Vis.) Kožuharov
+Echium italicum L.
+Echium italicum L. ssp. biebersteinii (Lacaita) Greuter et Burdet
+Echium italicum L. ssp. italicum
+Echium maculatum L.
+Echium parviflorum Moench
+Echium plantagineum L.
+Echium vulgare L.
+Echium vulgare L. ssp. pustulatum (Sm.) Em. Schmid et Gams
+Echium vulgare L. ssp. vulgare
+Eclipta prostrata (L.) L.
+Edraianthus dalmaticus (A. DC.) A. DC.
+Edraianthus dinaricus (A. Kern.) Wettst.
+Edraianthus graminifolius (L.) A. DC.
+Edraianthus graminifolius (L.) A. DC. ssp. graminifolius
+Edraianthus pumilio (Schult.) A. DC.
+Edraianthus serpyllifolius (Vis.) A. DC.
+Edraianthus tenuifolius (Waldst. et Kit.) A. DC.
+Egeria densa Planch.
+Elaeagnus angustifolia L.
+Elatine alsinastrum L.
+Elatine hexandra (Lapierre) DC.
+Elatine hydropiper L.
+Elatine triandra Schkuhr
+Eleocharis acicularis (L.) Roem. et Schult.
+Eleocharis austriaca Hayek
+Eleocharis carniolica W. D. J. Koch
+Eleocharis ovata (Roth) Roem. et Schult.
+Eleocharis palustris (L.) R. Br.
+Eleocharis parvula (Roem. et Schult.) Link ex Bluff, Nees et Schauer
+Eleocharis quinqueflora (Hartmann) O. Schwarz
+Eleocharis uniglumis (Link) Schult.
+Eleusine indica (L.) Gaertn.
+Eleusine tristachya (Lam.) Lam.
+Elodea canadensis Michx.
+Elodea nuttallii (Planch.) H. St. John
+Elsholtzia ciliata (Thunb.) Hyl.
+Elsholtzia stauntonii Benth.
+Elymus caninus (L.) L.
+Elymus elongatus (Host) Runemark
+Elymus farctus (Viv.) Runemark ex Melderis
+Elymus hispidus (Opiz) Melderis
+Elymus pungens (Pers.) Melderis
+Elymus pycnanthus (Godr.) Melderis
+Elymus repens (L.) Gould
+Empetrum nigrum L.
+Empetrum nigrum L. ssp. nigrum
+Ephedra distachya L.
+Ephedra distachya L. ssp. distachya
+Ephedra fragilis Desf.
+Ephedra fragilis Desf. ssp. campylopoda (C. A. Mayer) Asch. et Graeb.
+Ephedra major Host
+Ephedra major Host ssp. major
+Ephedra major Host ssp. procera (Fischer et C. A. Mayer) Markgraf
+Epilobium alpestre (Jacq.) Krock.
+Epilobium alsinifolium Vill.
+Epilobium angustifolium L.
+Epilobium ciliatum Raf.
+Epilobium collinum C. C. Gmel.
+Epilobium dodonaei Vill.
+Epilobium hirsutum L.
+Epilobium lanceolatum Sebast. et Mauri
+Epilobium montanum L.
+Epilobium obscurum Schreb.
+Epilobium palustre L.
+Epilobium parviflorum Schreb.
+Epilobium roseum Schreb.
+Epilobium tetragonum L.
+Epilobium tetragonum L. ssp. lamyi (F. W. Schultz) Nyman
+Epilobium tetragonum L. ssp. tetragonum
+Epilobium tetragonum L. ssp. tournefortii (Michalet) H. Lév.
+Epimedium alpinum L.
+Epipactis atrorubens (Hoffm.) Besser
+Epipactis greuteri H. Baumann et Künkele
+Epipactis helleborine (L.) Crantz
+Epipactis helleborine (L.) Crantz ssp. helleborine
+Epipactis helleborine (L.) Crantz ssp. latina W. Rossi et Klein
+Epipactis helleborine (L.) Crantz ssp. pontica (Taubenh.) H. Sund.
+Epipactis leptochila (Godfery) Godfery
+Epipactis leptochila (Godfery) Godfery ssp. dinarica S. Hertel et Riech.
+Epipactis leptochila (Godfery) Godfery ssp. leptochila
+Epipactis leptochila (Godfery) Godfery ssp. neglecta Kümpel
+Epipactis meridionalis H. Baumann et R. Lorenz
+Epipactis microphylla (Ehrh.) Sw.
+Epipactis muelleri Godfery
+Epipactis nordeniorum Robatsch
+Epipactis palustris (L.) Crantz
+Epipactis peitzii H. Neumann et Wucherpf.
+Epipactis pseudopurpurata Mered'a
+Epipactis purpurata Sm.
+Epipactis rivularis Kranjčev et Čičmir
+Epipactis tallosii A. Molnár et Robatsch
+Epipogium aphyllum Sw.
+Equisetum arvense L.
+Equisetum fluviatile L.
+Equisetum hyemale L.
+Equisetum palustre L.
+Equisetum pratense Ehrh.
+Equisetum ramosissimum Desf.
+Equisetum sylvaticum L.
+Equisetum telmateia Ehrh.
+Equisetum variegatum F. Weber et D. Mohr
+Eragrostis cilianensis (All.) Janch.
+Eragrostis minor Host
+Eragrostis pilosa (L.) P. Beauv.
+Eranthis hyemalis (L.) Salisb.
+Erechtites hieraciifolius (L.) DC.
+Erica arborea L.
+Erica herbacea L.
+Erica manipuliflora Salisb.
+Erica multiflora L.
+Erigeron acris L.
+Erigeron acris L. ssp. acris
+Erigeron acris L. ssp. droebachiensis (O. F. Müll.) Arcang.
+Erigeron annuus (L.) Desf.
+Erigeron annuus (L.) Pers. ssp. annuus
+Erigeron annuus (L.) Pers. ssp. septentrionalis (Fernald et Wiegand) Wagenitz
+Erigeron annuus (L.) Pers. ssp. strigosus (Mühlenb. ex Willd.) Wagenitz
+Erigeron glabratus Bluff et Fingerh.
+Erigeron karvinskianus DC.
+Eriobotrya japonica (Thunb.) Lindl.
+Eriophorum angustifolium Honck.
+Eriophorum gracile Roth
+Eriophorum latifolium Hoppe
+Eriophorum vaginatum L.
+Erodium acaule (L.) Bech. et Thell.
+Erodium chium (L.) Willd.
+Erodium ciconium (L.) Ľ Hér.
+Erodium cicutarium (L.) Ľ Hér.
+Erodium cicutarium (L.) Ľ Hér. ssp. cicutarium
+Erodium malacoides (L.) Ľ Hér.
+Erodium moschatum (L.) Ľ Hér.
+Erophila verna (L.) Chevall.
+Erophila verna (L.) Chevall. ssp. praecox (Steven) Walters
+Erophila verna (L.) Chevall. ssp. spathulata (Láng) Walters
+Erophila verna (L.) Chevall. ssp. verna
+Eruca vesicaria (L.) Cav.
+Eruca vesicaria (L.) Cav. ssp. sativa (Mill.) Thell.
+Erucastrum gallicum (Willd.) O. E. Schulz
+Erucastrum nasturtiifolium (Poir.) O. E. Schulz
+Eryngium alpinum L.
+Eryngium amethystinum L.
+Eryngium campestre L.
+Eryngium creticum Lam.
+Eryngium maritimum L.
+Eryngium planum L.
+Erysimum carniolicum Dolliner
+Erysimum cheiranthoides L.
+Erysimum cheiranthoides L. ssp. cheiranthoides
+Erysimum cheiri (L.) Crantz
+Erysimum crassistylum C. Presl
+Erysimum crepidifolium Rchb.
+Erysimum croaticum Polatschek
+Erysimum cuspidatum (M. Bieb.) DC.
+Erysimum diffusum Ehrh.
+Erysimum linariifolium Tausch
+Erysimum odoratum Ehrh.
+Erysimum raineri Polatschek
+Erysimum repandum L.
+Erysimum sylvestre (Crantz) Scop.
+Erysimum sylvestre (Crantz) Scop. ssp. sylvestre
+Erysimum virgatum Roth
+Erysimum vitekii Polatschek
+Erythronium dens-canis L.
+Euclidium syriacum (L.) W. T. Aiton
+Euonymus europaeus L.
+Euonymus latifolius (L.) Mill.
+Euonymus verrucosus Scop.
+Eupatorium adenophorum Spreng.
+Eupatorium cannabinum L.
+Eupatorium cannabinum L. ssp. cannabinum
+Euphorbia adriatica Stojilkovič, Záveská et Frajman
+Euphorbia agraria M. Bieb.
+Euphorbia aleppica L.
+Euphorbia amygdaloides L.
+Euphorbia angulata Jacq.
+Euphorbia barrelieri Savi
+Euphorbia barrelieri Savi ssp. barrelieri
+Euphorbia barrelieri Savi ssp. hercegovina (Beck) Kuzmanov
+Euphorbia capitulata Rchb.
+Euphorbia carniolica Jacq.
+Euphorbia chamaesyce L.
+Euphorbia chamaesyce L. ssp. chamaesyce
+Euphorbia chamaesyce L. ssp. massiliensis (DC.) Thell.
+Euphorbia characias L.
+Euphorbia characias L. ssp. wulfenii (Hoppe ex W. D. J. Koch) Radcl.-Sm.
+Euphorbia cyparissias L.
+Euphorbia dendroides L.
+Euphorbia dulcis L.
+Euphorbia epithymoides L.
+Euphorbia esula L.
+Euphorbia exigua L.
+Euphorbia falcata L.
+Euphorbia fragifera Jan
+Euphorbia helioscopia L.
+Euphorbia hirsuta L.
+Euphorbia humifusa Willd.
+Euphorbia lathyris L.
+Euphorbia lucida Waldst. et Kit.
+Euphorbia maculata L.
+Euphorbia marginata Pursh
+Euphorbia myrsinites L.
+Euphorbia nicaeensis All.
+Euphorbia nutans Lag.
+Euphorbia palustris L.
+Euphorbia paralias L.
+Euphorbia peplis L.
+Euphorbia peploides Gouan
+Euphorbia peplus L.
+Euphorbia pinea L.
+Euphorbia platyphyllos L.
+Euphorbia platyphyllos L. ssp. literata (Jacq.) Holub
+Euphorbia platyphyllos L. ssp. platyphyllos
+Euphorbia prostrata Aiton
+Euphorbia rigida M. Bieb.
+Euphorbia salicifolia Host
+Euphorbia segetalis L.
+Euphorbia seguieriana Neck.
+Euphorbia serrulata Thuill.
+Euphorbia spinosa L.
+Euphorbia sulcata Lens ex Loisel
+Euphorbia taurinensis All.
+Euphorbia terracina L.
+Euphorbia triflora Schott, Nyman et Kotschy
+Euphorbia triflora Schott, Nyman et Kotschy ssp. triflora
+Euphorbia verrucosa L.
+Euphorbia villosa Waldst. et Kit. ex Willd.
+Euphorbia virgata Waldst. et Kit.
+Euphrasia dinarica (Beck) Murb.
+Euphrasia frigida Pugsley
+Euphrasia hirtella Reut.
+Euphrasia illyrica Wettst.
+Euphrasia kerneri Wettst.
+Euphrasia liburnica Wettst.
+Euphrasia marchesettii Wettst.
+Euphrasia micrantha Rchb.
+Euphrasia minima DC.
+Euphrasia nemorosa (Pers.) Wallr.
+Euphrasia pectinata Ten.
+Euphrasia rostkoviana Hayne
+Euphrasia rostkoviana Hayne ssp. campestris (Jord.) P. Fourn.
+Euphrasia rostkoviana Hayne ssp. montana (Jord.) Wettst.
+Euphrasia rostkoviana Hayne ssp. rostkoviana
+Euphrasia salisburgensis Funck
+Euphrasia simonkaiana Jáv.
+Euphrasia stricta Wolff ex J. F. Lehm.
+Euphrasia tricuspidata L.
+Evax pygmaea (L.) Brot.
+Evax pygmaea (L.) Brot. ssp. pygmaea
+Fagopyrum esculentum Moench
+Fagopyrum tataricum (L.) Gaertn.
+Fagus sylvatica L.
+Falcaria vulgaris Bernh.
+Fallopia baldschuanica (Regel) Holub
+Fallopia convolvulus (L.) Á. Löve
+Fallopia dumetorum (L.) Holub
+Ferula communis L.
+Ferula communis L. ssp. communis
+Ferula communis L. ssp. glauca (L.) Rouy et Camus
+Ferula heuffelii Heuff.
+Ferulago campestris (Besser) Grecescu
+Ferulago sylvatica (Besser) Rchb.
+Festuca alpina Suter
+Festuca altissima All.
+Festuca amethystina L.
+Festuca arundinacea Schreb.
+Festuca arundinacea Schreb. ssp. arundinacea
+Festuca arundinacea Schreb. ssp. fenas (Lag.) Arcang.
+Festuca bosniaca Kumm. et Sendtn.
+Festuca circummediterranea Patzke
+Festuca dalmatica (Hack.) K. Richt.
+Festuca drymeja Mert. Koch
+Festuca gigantea (L.) Vill.
+Festuca halleri All.
+Festuca hercegovinica Markgr.-Dann.
+Festuca heterophylla Lam.
+Festuca illyrica Markgr.-Dann.
+Festuca lapidosa (Hack.) Markgr.-Dann.
+Festuca nigrescens Lam.
+Festuca nitida Kit.
+Festuca ovina L.
+Festuca panciciana (Hack.) K. Richt.
+Festuca paniculata (L.) Schinz et Thell.
+Festuca pratensis Huds.
+Festuca pseudovina Hack. ex Wiesb.
+Festuca pulchella Schrad.
+Festuca quadriflora Honck.
+Festuca rubra L.
+Festuca rupicola Heuff.
+Festuca rupicola Heuff. ssp. rupicola
+Festuca spectabilis Jan
+Festuca spectabilis Jan ssp. affinis (Boiss. et Heldr. ex Hack.) Hack.
+Festuca stenantha (Hack.) K. Richt.
+Festuca stricta Host
+Festuca tenuifolia Sibth.
+Festuca trachyphylla (Hack.) Krajina
+Festuca trichophylla (Gaudin) K. Richt.
+Festuca vaginata Willd.
+Festuca valesiaca Gaudin
+Festuca varia Haenke
+Festuca violacea Gaudin
+Festuca xanthina Roem. et Schult.
+Fibigia clypeata (L.) Medik.
+Ficus carica L.
+Filaginella uliginosa (L.) Opiz
+Filaginella uliginosa (L.) Opiz ssp. uliginosa
+Filago eriocephala Guss.
+Filago lutescens Jord.
+Filago lutescens Jord. ssp. lutescens
+Filago pyramidata L.
+Filago vulgaris Lam.
+Filipendula ulmaria (L.) Maxim.
+Filipendula ulmaria (L.) Maxim. ssp. denudata (J. et C. Presl) Hayek
+Filipendula ulmaria (L.) Maxim. ssp. ulmaria
+Filipendula vulgaris Moench
+Fimbristylis annua (All.) Roem. et Schult.
+Fimbristylis bisumbellata (Forssk.) Bubani
+Foeniculum vulgare Mill.
+Foeniculum vulgare Mill. ssp. piperitum (Ucria) Coutinho
+Foeniculum vulgare Mill. ssp. vulgare
+Forsythia suspensa (Thunb.) Vahl
+Fragaria moschata Weston
+Fragaria vesca L.
+Fragaria viridis Duchesne ssp. campestris (Steven) Pawl.
+Fragaria viridis Duchesne ssp. viridis
+Fragaria viridis Weston
+Frangula alnus Mill.
+Frangula rupestris (Scop.) Schur
+Frankenia pulverulenta L.
+Frankenia pulverulenta L. ssp. pulverulenta
+Fraxinus americana L.
+Fraxinus angustifolia Vahl
+Fraxinus angustifolia Vahl ssp. oxycarpa (Willd.) Franco et Rocha Afonso
+Fraxinus excelsior L.
+Fraxinus ornus L.
+Fraxinus pennsylvanica Marshall
+Fritillaria graeca Boiss. et Spruner
+Fritillaria graeca Boiss. et Spruner ssp. thessala (Boiss.) Rix
+Fritillaria meleagris L.
+Fritillaria meleagris L. ssp. meleagris
+Fritillaria messanensis Raf.
+Fritillaria messanensis Raf. ssp. gracilis (Ebel) Rix
+Fritillaria messanensis Raf. ssp. neglecta (Parl.) Nyman
+Fritillaria montana Hoppe ex W. D. J. Koch
+Fumana arabica (L.) Spach
+Fumana ericifolia Wallr.
+Fumana laevipes (L.) Spach
+Fumana laevis (Cav.) Pau
+Fumana procumbens (Dunal) Gren. et Godr.
+Fumana scoparia Pomel
+Fumana thymifolia (L.) Webb
+Fumaria agraria Lag.
+Fumaria bastardii Boreau
+Fumaria bicolor Nicotra
+Fumaria capreolata L.
+Fumaria densiflora DC.
+Fumaria flabellata Gasp.
+Fumaria gaillardotii Boiss.
+Fumaria judaica Boiss.
+Fumaria judaica Boiss. ssp. insignis (Pugsley) Lidén
+Fumaria judaica Boiss. ssp. judaica
+Fumaria kralikii Jordan
+Fumaria officinalis L.
+Fumaria officinalis L. ssp. officinalis
+Fumaria officinalis L. ssp. wirtgenii (W. D. J. Koch) Arcang.
+Fumaria parviflora Lam.
+Fumaria petteri Rchb.
+Fumaria petteri Rchb. ssp. petteri
+Fumaria petteri Rchb. ssp. thuretii (Boiss.) Pugsley
+Fumaria ragusina (Pugsley) Pugsley
+Fumaria rostellata Knaf
+Fumaria vaillantii Loisel. in Desv.
+Gagea fragifera (Vill.) Ehr. Bayer et G. López
+Gagea lutea (L.) Ker Gawl.
+Gagea minima (L.) Ker Gawl.
+Gagea peduncularis (C. Presl) Pascher
+Gagea pratensis (Pers.) Dumort.
+Gagea pusilla (F. W. Schmidt) Sweet
+Gagea spathacea (Hayne) Salisb.
+Gagea villosa (M. Bieb.) Sweet
+Galanthus nivalis L.
+Galanthus nivalis L. ssp. nivalis
+Galanthus reginae-olgae Orph.
+Galanthus reginae-olgae Orph. ssp. vernalis Kamari
+Galega officinalis L.
+Galeopsis angustifolia Hoffm.
+Galeopsis bifida Boenn.
+Galeopsis ladanum L.
+Galeopsis pubescens Besser
+Galeopsis segetum Neck.
+Galeopsis speciosa Mill.
+Galeopsis tetrahit L.
+Galinsoga ciliata (Raf.) S. F. Blake
+Galinsoga parviflora Cav.
+Galium album Mill.
+Galium album Mill. ssp. album
+Galium anisophyllon Vill.
+Galium aparine L.
+Galium aristatum L.
+Galium austriacum Jacq.
+Galium boreale L.
+Galium corrudifolium Vill.
+Galium debile Desv.
+Galium divaricatum Lam.
+Galium elongatum C. Presl
+Galium firmum Tausch
+Galium glaucum L.
+Galium laevigatum L.
+Galium lucidum All.
+Galium megalospermum All.
+Galium mollugo L.
+Galium murale (L.) All.
+Galium odoratum (L.) Scop.
+Galium palustre L.
+Galium parisiense L.
+Galium pseudoaristatum Schur
+Galium pumilum Murray
+Galium rivale (Sibth. et Sm.) Griseb.
+Galium rotundifolium L.
+Galium rubioides L.
+Galium rubrum L.
+Galium saxatile L.
+Galium schultesii Vest
+Galium setaceum Lam.
+Galium setaceum Lam. ssp. setaceum
+Galium spurium L.
+Galium sylvaticum L.
+Galium tenuissimum M. Bieb.
+Galium tricornutum Dandy
+Galium uliginosum L.
+Galium verrucosum Huds.
+Galium verticillatum Danthoine
+Galium verum L.
+Galium verum L. ssp. verum
+Gastridium ventricosum (Gouan) Schinz et Thell.
+Gaudinia fragilis (L.) P. Beauv.
+Genista depressa M. Bieb.
+Genista germanica L.
+Genista holopetala (W. D. J. Koch) Bald.
+Genista januensis Viv.
+Genista monspessulana (L.) L. A. S. Johnson
+Genista pilosa L.
+Genista pulchella Vis.
+Genista pulchella Vis. ssp. pulchella
+Genista radiata (L.) Scop.
+Genista sericea Wulfen
+Genista sericea Wulfen ssp. rigida (Pamp.) Feoli Chiapella et F. Conti
+Genista sericea Wulfen ssp. sericea
+Genista sylvestris Scop.
+Genista sylvestris Scop. ssp. dalmatica (Bartl.) H. Lindb.
+Genista sylvestris Scop. ssp. sylvestris
+Genista tinctoria L.
+Genista tinctoria L. ssp. littoralis (Corb.) Rothm.
+Genista tinctoria L. ssp. tinctoria
+Gentiana acaulis L.
+Gentiana asclepiadea L.
+Gentiana clusii E. P. Perrier et Songeon
+Gentiana cruciata L.
+Gentiana dinarica Beck
+Gentiana lutea L.
+Gentiana lutea L. ssp. symphyandra (Murb.) Hayek
+Gentiana nivalis L.
+Gentiana pneumonanthe L.
+Gentiana punctata L.
+Gentiana tergestina Beck
+Gentiana utriculosa L.
+Gentiana verna L.
+Gentianella anisodonta (Borbás) Á. Löve et D. Löve
+Gentianella ciliata (L.) Borkh.
+Gentianella crispata (Vis.) Holub
+Gentianella germanica (Willd.) E. F. Warb.
+Gentianella nana (Wulfen) N. M. Pritch.
+Gentianella pilosa (Wettst.) Holub
+Geranium bohemicum L.
+Geranium cinereum Cav.
+Geranium cinereum Cav. ssp. subcaulescens (Ľ Hér. ex DC.) Hayek
+Geranium columbinum L.
+Geranium dalmaticum (Beck) Rech. f.
+Geranium dissectum L.
+Geranium divaricatum Ehrh.
+Geranium lucidum L.
+Geranium macrorrhizum L.
+Geranium molle L.
+Geranium molle L. ssp. brutium (Gasparr.) Graebn.
+Geranium molle L. ssp. molle
+Geranium nodosum L.
+Geranium palustre L.
+Geranium phaeum L.
+Geranium pratense L.
+Geranium purpureum Vill.
+Geranium pusillum Burm. f.
+Geranium pyrenaicum Burm. f.
+Geranium robertianum L.
+Geranium rotundifolium L.
+Geranium sanguineum L.
+Geranium sylvaticum L.
+Geranium sylvaticum L. ssp. sylvaticum
+Geranium tuberosum L.
+Geranium tuberosum L. ssp. tuberosum
+Geum coccineum Sibth. et Sm.
+Geum montanum L.
+Geum rivale L.
+Geum urbanum L.
+Gladiolus communis L.
+Gladiolus illyricus W. D. J. Koch
+Gladiolus imbricatus L.
+Gladiolus italicus Mill.
+Gladiolus palustris Gaudin
+Glaucium corniculatum (L.) Rudolph
+Glaucium flavum Crantz
+Glaux maritima L.
+Glechoma hederacea L.
+Glechoma hirsuta Waldst. et Kit.
+Gleditsia triacanthos L.
+Globularia alypum L.
+Globularia cordifolia L.
+Globularia cordifolia L. ssp. bellidifolia (Ten.) Wettst.
+Globularia cordifolia L. ssp. cordifolia
+Globularia nudicaulis L.
+Globularia punctata Lapeyr.
+Globularia vulgaris L.
+Glyceria declinata Bréb.
+Glyceria fluitans (L.) R. Br.
+Glyceria maxima (Hartm.) Holmb.
+Glyceria nemoralis (R. Uechtr.) R. Uechtr. et Körn.
+Glyceria plicata (Fr.) Fr.
+Glycyrrhiza echinata L.
+Glycyrrhiza glabra L.
+Gomphocarpus fruticosus (L.) W. T. Aiton
+Goniolimon dalmaticum (C. Presl) Rchb. f.
+Goniolimon tataricum (L.) Boiss. ssp. croaticum Buzurović et Bogdanović
+Goodyera repens (L.) R. Br.
+Grafia golaka (Hacq.) Rchb.
+Gratiola officinalis L.
+Groenlandia densa (L.) Fourr.
+Guizotia abyssinica (L. f.) Cass.
+Gymnadenia conopsea (L.) R. Br.
+Gymnadenia conopsea (L.) R. Br. ssp. conopsea
+Gymnadenia conopsea (L.) R. Br. ssp. densiflora (Wahlenb.) K. Richt.
+Gymnadenia odoratissima (L.) Rich.
+Gymnocarpium dryopteris (L.) Newman
+Gymnocarpium robertianum (Hoffm.) Newman
+Gypsophila fastigiata L.
+Gypsophila muralis L.
+Gypsophila repens L.
+Hacquetia epipactis (Scop.) DC.
+Hainardia cylindrica (Willd.) Greuter
+Halimione portulacoides (L.) Aellen
+Haplophyllum buxbaumii (Poir.) G. Don
+Haplophyllum patavinum (L.) G. Don
+Hedera helix L.
+Hedera helix L. ssp. helix
+Hedera hibernica (G. Kirchn.) Carri`ere
+Hedypnois cretica (L.) Dum. Cours.
+Hedysarum coronarium L.
+Hedysarum hedysaroides (L.) Schinz et Thell.
+Hedysarum hedysaroides (L.) Schinz et Thell. ssp. exaltatum (A. Kern.) Žertová
+Hedysarum hedysaroides (L.) Schinz et Thell. ssp. hedysaroides
+Hedysarum spinosissimum L.
+Hedysarum spinosissimum L. ssp. capitatum (Rouy) Asch. et Graebn.
+Helianthemum canum (L.) Baumg.
+Helianthemum canum (L.) Baumg. ssp. balcanicus (Janch.) Blečić
+Helianthemum canum (L.) Baumg. ssp. canum
+Helianthemum jonium Lacaita et Grosser ex Fiori et Bég.
+Helianthemum lavandulifolium Mill.
+Helianthemum nummularium (L.) Mill.
+Helianthemum nummularium (L.) Mill. ssp. glabrum (W. D. J. Koch) Wilczek
+Helianthemum nummularium (L.) Mill. ssp. grandiflorum (Scop.) Schinz et Thell.
+Helianthemum nummularium (L.) Mill. ssp. nummularium
+Helianthemum nummularium (L.) Mill. ssp. obscurum (Čelak.) Holub
+Helianthemum oelandicum (L.) DC.
+Helianthemum oelandicum (L.) DC. ssp. alpestre (Jacq.) Breistr.
+Helianthemum oelandicum (L.) DC. ssp. italicum (L.) Font Quer et Rothm.
+Helianthemum oelandicum (L.) DC. ssp. rupifragum (A. Kern.) Breistr.
+Helianthemum salicifolium (L.) Mill.
+Helianthus annuus L.
+Helianthus pauciflorus Nutt.
+Helianthus tuberosus L.
+Helichrysum arenarium (L.) Moench
+Helichrysum italicum (Roth) G. Don
+Helichrysum italicum (Roth) G. Don ssp. italicum
+Helichrysum italicum (Roth) G. Don ssp. microphyllum (Willd.) Nyman
+Helichrysum litoreum Guss.
+Helichrysum stoechas (L.) Moench
+Helictotrichon convolutum (C. Presl) Henrard
+Helictotrichon sempervirens (Vill.) Pilg.
+Heliopsis helianthoides (L.) Sweet
+Heliosperma alpestre (Jacq.) Griseb.
+Heliosperma chromodontum (Boiss. et Reuter) Jur.
+Heliosperma insulare Trinajstić
+Heliosperma malyi (H. Neumayer) Degen
+Heliosperma pusillum (Waldst. et Kit.) Rchb.
+Heliosperma pusillum (Waldst. et Kit.) Rchb. ssp. pusillum
+Heliosperma retzdorffianum K. Malý
+Heliosperma tommasinii (Vis.) Rchb.
+Heliosperma veselskyi Janka
+Heliotropium europaeum L.
+Heliotropium supinum L.
+Helleborus atrorubens Waldst. et Kit.
+Helleborus croaticus Martinis
+Helleborus dumetorum Willd.
+Helleborus foetidus L.
+Helleborus hercegovinus Martinis
+Helleborus multifidus Vis.
+Helleborus multifidus Vis. ssp. intermedius (Host) Martinis
+Helleborus multifidus Vis. ssp. istriacus (Schiffn.) Merxm. et Podlech
+Helleborus multifidus Vis. ssp. multifidus
+Helleborus niger L.
+Helleborus niger L. ssp. macranthus (Freyn) Schiffn.
+Helleborus niger L. ssp. niger
+Helleborus odorus Waldst. et Kit. ex Willd. ssp. odorus
+Helleborus odorus Willd.
+Helleborus odorus Willd. ssp. laxus (Host) Merxm. et Podlech
+Helleborus orientalis Lam.
+Helleborus purpurascens Waldst. et Kit.
+Helleborus viridis L.
+Helleborus viridis L. ssp. viridis
+Hemerocallis lilioasphodelus L.
+Hepatica nobilis Schreb.
+Heracleum mantegazzianum Sommier et Levier
+Heracleum sphondylium L.
+Heracleum sphondylium L. ssp. orsinii (Guss.) H. Neumayer
+Heracleum sphondylium L. ssp. pyrenaicum (Lam.) Bonnier et Layens
+Heracleum sphondylium L. ssp. sibiricum (L.) Simonk.
+Heracleum sphondylium L. ssp. sphondylium
+Heracleum sphondylium L. ssp. ternatum (Velen.) Brummitt
+Herminium monorchis (L.) R. Br.
+Hermodactylus tuberosus (L.) Mill.
+Herniaria glabra L.
+Herniaria glabra L. ssp. glabra
+Herniaria glabra L. ssp. nebrodensis Nyman
+Herniaria glabra L. ssp. rotundifolia (Vis.) Trpin
+Herniaria hirsuta L.
+Herniaria hirsuta L. ssp. hirsuta
+Herniaria incana Lam.
+Hesperis dinarica Beck
+Hesperis laciniata All.
+Hesperis laciniata All. ssp. laciniata
+Hesperis matronalis L.
+Hesperis matronalis L. ssp. candida (Schulzer, Kanitz et Knapp) Thell.
+Hesperis matronalis L. ssp. cladotricha (Borbás) Hayek
+Hesperis matronalis L. ssp. matronalis
+Hesperis sylvestris Crantz
+Hesperis sylvestris Crantz ssp. sylvestris
+Heteropogon contortus (L.) Roem. et Schult.
+Hibiscus syriacus L.
+Hibiscus trionum L.
+Hieracium alpinum L.
+Hieracium ammobium P. D. Sell et C. West
+Hieracium amphithales K. Malý et Zahn
+Hieracium amplexicaule L.
+Hieracium argillaceum Jord.
+Hieracium aridum Freyn
+Hieracium arpadianum Zahn
+Hieracium aurantiacum L.
+Hieracium aurantiacum L. ssp. aurantiacum
+Hieracium aurantiacum L. ssp. carpathicola Nägeli et Peter
+Hieracium auratum Fr.
+Hieracium austriacum Brittinger
+Hieracium barbatum Tausch
+Hieracium bifidum Hornem.
+Hieracium brachycaule Vuk.
+Hieracium brachyphyllum Vuk.
+Hieracium brevilanosum Degen et Zahn
+Hieracium bupleurifolium Tausch
+Hieracium bupleuroides C. C. Gmel.
+Hieracium caesium (Fr.) Fr.
+Hieracium caespitosum Dumort.
+Hieracium caespitosum Dumort. ssp. brevipilum (Nägeli et Peter) P. D. Sell
+Hieracium calcareum Hornem.
+Hieracium calophyllum R. Uechtr.
+Hieracium crinitum Sibth. et Sm.
+Hieracium cymosum L.
+Hieracium cymosum L. ssp. cymosum
+Hieracium cymosum L. ssp. laxiflorum (Vuk.) Nägeli et Peter
+Hieracium cymosum L. ssp. sabinum (Sebast. et Mauri) Nägeli et Peter
+Hieracium cymosum L. ssp. samoboricum Nägeli et Peter
+Hieracium cymosum L. ssp. xanthophyllum (Vuk.) Nägeli et Peter
+Hieracium dentatum Hoppe
+Hieracium diaphanoides Lindeb.
+Hieracium divisum Jord.
+Hieracium djimilense Boiss. et Balansa
+Hieracium dollineri Neilr.
+Hieracium echioides Lumn.
+Hieracium echioides Lumn. ssp. echioides
+Hieracium falcatiforme Degen et Zahn
+Hieracium falcatum Arv.-Touv.
+Hieracium flagellare Willd.
+Hieracium flagellare Willd. ssp. flagellare
+Hieracium flexuosum Waldst. et Kit. ex Willd.
+Hieracium ganderi Hausm. ex Fr.
+Hieracium glabratiforme Murr
+Hieracium glabratum Willd.
+Hieracium glaucinum Jord.
+Hieracium glaucum All.
+Hieracium grandidens Dahlst.
+Hieracium guentheri-beckii Zahn
+Hieracium guglerianum Zahn
+Hieracium gymnocephalum Pant.
+Hieracium heterogynum (Froel.) Gutermann
+Hieracium hoppeanum Schult.
+Hieracium hoppeanum Schult. ssp. leucocephalum (Vuk.) Nägeli et Peter
+Hieracium hoppeanum Schult. ssp. pilisquamum Nägeli et Peter
+Hieracium hoppeanum Schult. ssp. testimoniale Nägeli et Peter
+Hieracium hoppeanum Schult. ssp. troicum Zahn
+Hieracium humile Jacq.
+Hieracium italicum Fr.
+Hieracium janchenii Zahn
+Hieracium lachenalii Suter
+Hieracium lactucella Wallr.
+Hieracium lactucella Wallr. ssp. lactucella
+Hieracium lactucella Wallr. ssp. magnauricula (Nägeli et Peter) P. D. Sell
+Hieracium laevigatum Willd.
+Hieracium lanceolatum Vill.
+Hieracium lasiophyllum Koch
+Hieracium latifolium Froel. ex Link
+Hieracium leucopelmatum Nägeli et Peter
+Hieracium macrodon Nägeli et Peter
+Hieracium malovanicum Degen et Zahn
+Hieracium mirificissimum Rohlena et Zahn
+Hieracium murorum L.
+Hieracium neilreichii Beck
+Hieracium obrovacense Degen et Zahn
+Hieracium oxyodon Fr.
+Hieracium pallescens Waldst. et Kit.
+Hieracium pannosum Boiss.
+Hieracium pavichii Heuff.
+Hieracium pelliculatum Zahn
+Hieracium perfoliatum Froel.
+Hieracium petraeum Hoppe ex Bluff et Fingerh.
+Hieracium pichleri A. Kern.
+Hieracium piliferum Hoppe
+Hieracium pilosella L.
+Hieracium pilosella L. ssp. melanops Peter
+Hieracium pilosella L. ssp. micradenium Nägeli et Peter
+Hieracium pilosella L. ssp. pilosella
+Hieracium pilosella L. ssp. trichoscapum Nägeli et Peter
+Hieracium pilosella L. ssp. zagrabiense Nägeli et Peter
+Hieracium piloselloides Vill.
+Hieracium piloselloides Vill. ssp. megalomastix (Nägeli et Peter) P. D. Sell
+Hieracium piloselloides Vill. ssp. piloselloides
+Hieracium pilosum Froel.
+Hieracium platyphyllum (Arv.-Touv.) Arv.-Touv.
+Hieracium porrifolium L.
+Hieracium pospichalii Zahn
+Hieracium praealtum Vill. ex Gochnat
+Hieracium praealtum Vill. ex Gochnat ssp. bauhinii (Besser) Petunn.
+Hieracium praealtum Vill. ex Gochnat ssp. praealtum
+Hieracium praealtum Vill. ex Gochnat ssp. thaumasium (Peter) P. D. Sell
+Hieracium praecox Sch. Bip.
+Hieracium praecurrens Vuk.
+Hieracium pseudostupposum Zahn
+Hieracium pseudotommasinii Rohlena et Zahn
+Hieracium racemosum Willd.
+Hieracium retyezatense Degen et Zahn
+Hieracium rotundatum Kit. ex Schult.
+Hieracium sabaudum L.
+Hieracium scheppigianum Freyn
+Hieracium schmidtii Tausch
+Hieracium scorzonerifolium Vill.
+Hieracium semisilvaticum (Zahn) P. D. Sell et C. West
+Hieracium sphaerocephalum Froel.
+Hieracium sphaerophyllum Vuk.
+Hieracium subbifidiforme (Zahn) P. D. Sell et C. West
+Hieracium subexpallens (Zahn) P. D. Sell et C. West
+Hieracium tommasinii Rchb. f.
+Hieracium trebevicianum K. Malý
+Hieracium umbellatum L.
+Hieracium umbellatum L. ssp. brevifolioides Zahn
+Hieracium umbrosum Jord.
+Hieracium vagum Jord.
+Hieracium velebiticum Degen et Zahn
+Hieracium villosum Jacq.
+Hieracium virosum Pall.
+Hieracium visianii (F. W. Schultz et Sch. Bip.) Schinz et Thell.
+Hieracium waldsteinii Tausch
+Hieracium wiesbaurianum Uechtr. ex Baen.
+Hierochloe australis (Schrad.) Roem. et Schult.
+Himantoglossum adriaticum H. Baumann
+Hippocrepis biflora Spreng.
+Hippocrepis ciliata Willd.
+Hippocrepis comosa L.
+Hippocrepis glauca Ten.
+Hippocrepis multisiliquosa L.
+Hippocrepis unisiliquosa L.
+Hippophae rhamnoides L.
+Hippuris vulgaris L.
+Hirschfeldia incana (L.) Lagr.-Foss.
+Holcus lanatus L.
+Holcus mollis L.
+Holosteum umbellatum L.
+Holosteum umbellatum L. ssp. umbellatum
+Homogyne alpina (L.) Cass.
+Homogyne discolor (Jacq.) Cass.
+Homogyne sylvestris Cass.
+Hordelymus europaeus (L.) Harz
+Hordeum bulbosum L.
+Hordeum distichon L.
+Hordeum hystrix Roth
+Hordeum marinum Huds.
+Hordeum murinum L.
+Hordeum murinum L. ssp. leporinum (Link) Arcang.
+Hordeum murinum L. ssp. murinum
+Hordeum secalinum Schreb.
+Hordeum vulgare L.
+Horminum pyrenaicum L.
+Hornungia petraea (L.) Rchb.
+Hottonia palustris L.
+Huetia cynapioides (Guss.) P. W. Ball
+Huetia cynapioides (Guss.) P. W. Ball ssp. cynapioides
+Humulus lupulus L.
+Humulus scandens (Lour.) Merr.
+Huperzia selago (L.) Schrank et Mart.
+Hyacinthella dalmatica Chouard
+Hyacinthella leucophaea (C. Koch) Schur
+Hydrocharis morsus-ranae L.
+Hydrocotyle vulgaris L.
+Hymenocarpos circinnatus (L.) Savi
+Hymenolobus procumbens (L.) Nutt.
+Hymenophyllum tunbrigense (L.) Sm.
+Hyoscyamus albus L.
+Hyoscyamus niger L.
+Hyoseris radiata L.
+Hyoseris radiata L. ssp. radiata
+Hyoseris scabra L.
+Hyparrhenia hirta (L.) Stapf
+Hypecoum pendulum L.
+Hypericum androsaemum L.
+Hypericum barbatum Jacq.
+Hypericum elegans Willd.
+Hypericum hirsutum L.
+Hypericum humifusum L.
+Hypericum maculatum Crantz
+Hypericum maculatum Crantz. ssp. maculatum
+Hypericum maculatum Crantz. ssp. obtusiusculum (Tourlet) Hayek
+Hypericum montanum L.
+Hypericum perfoliatum L.
+Hypericum perforatum L.
+Hypericum perforatum L. ssp. perforatum
+Hypericum perforatum L. ssp. veronense (Schrank) H. Lindb.
+Hypericum pulchrum L.
+Hypericum richeri Vill.
+Hypericum richeri Vill. ssp. grisebachii (Boiss.) Nyman
+Hypericum richeri Vill. ssp. richeri
+Hypericum spruneri Boiss.
+Hypericum tetrapterum Fr.
+Hypericum triquetrifolium Turra
+Hypericum umbellatum A. Kern.
+Hypochaeris achyrophorus L.
+Hypochaeris cretensis (L.) Bory et Chaub.
+Hypochaeris glabra L.
+Hypochaeris maculata L.
+Hypochaeris radicata L.
+Hyssopus officinalis L.
+Hyssopus officinalis L. ssp. aristatus (Godr.) Nyman
+Iberis amara L.
+Iberis amara L. ssp. amara
+Iberis linifolia L.
+Iberis linifolia L. ssp. linifolia
+Iberis pinnata L.
+Iberis pruitii Tineo
+Iberis saxatilis L.
+Iberis saxatilis L. ssp. saxatilis
+Iberis sempervirens L.
+Iberis umbellata L.
+Ilex aquifolium L.
+Impatiens balfourii Hook. f.
+Impatiens balsamina L.
+Impatiens glandulifera Royle
+Impatiens noli-tangere L.
+Impatiens parviflora DC.
+Imperata cylindrica (L.) Raeusch.
+Inula bifrons L.
+Inula britannica L.
+Inula conyza DC.
+Inula crithmoides L.
+Inula ensifolia L.
+Inula germanica L.
+Inula helenium L.
+Inula hirta L.
+Inula montana L.
+Inula oculus-christi L.
+Inula salicina L.
+Inula salicina L. ssp. aspera (Poir.) Hayek
+Inula salicina L. ssp. salicina
+Inula spiraeifolia L.
+Inula verbascifolia (Willd.) Hausskn.
+Ipomoea coccinea L.
+Ipomoea hederacea Jacq.
+Ipomoea trichocarpa Elliott
+Iris adriatica Trinajstić ex Mitić
+Iris croatica Horvat et M. D. Horvat
+Iris foetidissima L.
+Iris germanica L.
+Iris graminea L.
+Iris illyrica Tomm.
+Iris pseudacorus L.
+Iris pseudopallida Trinajstić
+Iris pumila L.
+Iris reichenbachii Heuff.
+Iris sibirica L.
+Iris sibirica L. ssp. erirrhiza (Posp.) Wraber
+Iris sibirica L. ssp. sibirica
+Iris variegata L.
+Isatis tinctoria L.
+Isatis tinctoria L. ssp. canescens (DC.) Malag.
+Isatis tinctoria L. ssp. tinctoria
+Isopyrum thalictroides L.
+Iva xanthiifolia Nutt.
+Jasione montana L.
+Jasione montana L. ssp. montana
+Jovibarba globifera (L.) J. Parn.
+Jovibarba globifera (L.) J. Parn. ssp. hirta (L.) J. Parn.
+Juncus acutiflorus Ehrh. ex Hoffm.
+Juncus acutus L.
+Juncus acutus L. ssp. acutus
+Juncus alpinoarticulatus Chaix
+Juncus alpinoarticulatus Chaix ssp. alpinoarticulatus
+Juncus anceps Laharpe
+Juncus articulatus L.
+Juncus atratus Krock.
+Juncus bufonius L.
+Juncus bulbosus L.
+Juncus capitatus Weigel
+Juncus compressus Jacq.
+Juncus conglomeratus L.
+Juncus effusus L.
+Juncus filiformis L.
+Juncus fontanesii J. Gay ex Laharpe
+Juncus fontanesii J. Gay ex Laharpe ssp. fontanesii
+Juncus gerardi Loisel.
+Juncus gerardi Loisel. ssp. gerardi
+Juncus hybridus Brot.
+Juncus inflexus L.
+Juncus littoralis C. A. Mey.
+Juncus maritimus Lam.
+Juncus pygmaeus Rich. in Thuill.
+Juncus ranarius Songeon et E. P. Perrier
+Juncus squarrosus L.
+Juncus subnodulosus Schrank
+Juncus tenageia Ehrh. ex L. f.
+Juncus tenuis Willd.
+Juncus thomasii Ten.
+Juncus trifidus L.
+Juncus trifidus L. ssp. monanthos (Jacq.) Asch. et Graebn.
+Juncus trifidus L. ssp. trifidus
+Juniperus communis L.
+Juniperus communis L. ssp. communis
+Juniperus communis L. ssp. nana Syme
+Juniperus oxycedrus L.
+Juniperus oxycedrus L. ssp. macrocarpa (Sm.) Ball
+Juniperus oxycedrus L. ssp. oxycedrus
+Juniperus phoenicea L.
+Juniperus sabina L.
+Jurinea mollis (L.) Rchb.
+Jurinea mollis (L.) Rchb. ssp. mollis
+Jurinea mollis (L.) Rchb. ssp. moschata (DC.) Nyman
+Kernera saxatilis (L.) Rchb. in Mössler ssp. saxatilis
+Kernera saxatilis (L.) Sweet
+Kickxia cirrhosa (L.) R. M. Fritsch
+Kickxia commutata (Bernh. ex Rchb.) Fritsch ssp. commutata
+Kickxia commutata (Bernh. ex Rchb.) Fritsch ssp. graeca (Bory et Chaub.) R. Fern.
+Kickxia commutata (Rchb.) R. M. Fritsch
+Kickxia elatine (L.) Dumort.
+Kickxia elatine (L.) Dumort. ssp. crinita (Mabille) Greuter
+Kickxia elatine (L.) Dumort. ssp. elatine
+Kickxia lanigera (Desf.) Hand.-Mazz.
+Kickxia spuria (L.) Dumort.
+Kickxia spuria (L.) Dumort. ssp. integrifolia (Brot.) R. Fern.
+Kickxia spuria (L.) Dumort. ssp. spuria
+Kitaibela vitifolia Willd.
+Knautia arvensis (L.) Coult.
+Knautia arvensis (L.) Coult. ssp. arvensis
+Knautia arvensis (L.) Coult. ssp. pannonica (Heuff.) O. Schwarz
+Knautia clementii (Beck) Ehrend.
+Knautia dalmatica Beck
+Knautia dinarica (Murb.) Borbás
+Knautia dinarica (Murb.) Borbás ssp. dinarica
+Knautia dipsacifolia Kreutzer
+Knautia drymeia Heuff.
+Knautia drymeia Heuff. ssp. drymeia
+Knautia drymeia Heuff. ssp. intermedia (Pernh. et Wettst.) Ehrend.
+Knautia ehrendorferi Rešetnik, Frajman et Schönsw.
+Knautia illyrica Beck
+Knautia integrifolia (L.) Bertol.
+Knautia longifolia (Waldst. et Kit.) W. D. J. Koch
+Knautia maxima (Opiz) Ortmann
+Knautia pectinata Ehrend.
+Knautia purpurea (Vill.) Borbás
+Knautia ressmannii (Pacher) Briq.
+Knautia sarajevensis (Beck) Szabó
+Knautia travnicensis (Beck) Szabó
+Knautia velebitica Szabó
+Knautia visianii Szabó
+Kobresia myosuroides (Vill.) Fiori
+Koeleria australis A. Kern.
+Koeleria callieri (Domin) Ujhelyi
+Koeleria crassipes Lange
+Koeleria eriostachya Pančić
+Koeleria glauca (Schrad.) DC.
+Koeleria insubrica Brullo, Giusso et Miniss.
+Koeleria macrantha (Ledeb.) Schult.
+Koeleria pyramidata (Lam.) P. Beauv.
+Koeleria splendens C. Presl
+Koeleria subcaudata (Asch. et Graebn.) Ujhelyi
+Koelreuteria paniculata Laxm.
+Laburnum alpinum (Mill.) Bercht. et J. Presl
+Laburnum anagyroides Medik.
+Laburnum anagyroides Medik. ssp. alschingeri (Vis.) Hayek
+Lactuca aurea (Vis. ex Pančić) Stebbins
+Lactuca perennis L.
+Lactuca quercina L.
+Lactuca quercina L. ssp. quercina
+Lactuca ramosissima (All.) Bonnier
+Lactuca ramosissima (All.) Bonnier ssp. chondrilliflora (Boreau) Bonnier
+Lactuca saligna L.
+Lactuca sativa L.
+Lactuca serriola L.
+Lactuca viminea (L.) J. Presl et C. Presl
+Lactuca viminea (L.) J. Presl et C. Presl ssp. viminea
+Lactuca virosa L.
+Lagurus ovatus L.
+Lamarckia aurea (L.) Moench
+Lamium album L.
+Lamium amplexicaule L.
+Lamium bifidum Cirillo
+Lamium bifidum Cirillo ssp. bifidum
+Lamium confertum Fr.
+Lamium galeobdolon (L.) Crantz
+Lamium galeobdolon (L.) Crantz ssp. flavidum (F. Herm.) Á. Löve et D. Löve
+Lamium galeobdolon (L.) Crantz ssp. galeobdolon
+Lamium galeobdolon (L.) Crantz ssp. montanum (Pers.) Hayek
+Lamium garganicum L.
+Lamium garganicum L. ssp. garganicum
+Lamium garganicum L. ssp. laevigatum Arcang.
+Lamium hybridum Vill.
+Lamium maculatum (L.) L.
+Lamium molucellifolium (Schumach.) Fr.
+Lamium orvala L.
+Lamium purpureum L.
+Lappula patula (Lehm.) Gürke
+Lappula squarrosa (Retz.) Dumort.
+Lappula squarrosa (Retz.) Dumort. ssp. heteracantha (Ledeb.) Gürke
+Lapsana communis L.
+Lapsana communis L. ssp. adenophora (Boiss.) Rech. f.
+Lapsana communis L. ssp. communis
+Lapsana communis L. ssp. intermedia (M. Bieb.) Hayek
+Laser trilobum (L.) Borkh.
+Laserpitium archangelica Wulfen
+Laserpitium krapfii Crantz
+Laserpitium krapfii Crantz ssp. gaudinii (Moretti) Thell.
+Laserpitium krapfii Crantz ssp. krapfii
+Laserpitium latifolium L.
+Laserpitium peucedanoides L.
+Laserpitium prutenicum L.
+Laserpitium prutenicum L. ssp. prutenicum
+Laserpitium siler L.
+Laserpitium siler L. ssp. garganicum (Ten.) Arcang.
+Laserpitium siler L. ssp. siler
+Lathraea squamaria L.
+Lathyrus alpestris (Waldst. et Kit.) Čelak.
+Lathyrus alpestris (Waldst. et Kit.) Čelak. ssp. alpestris
+Lathyrus alpestris (Waldst. et Kit.) Čelak. ssp. friedrichsthalii (Griseb.) K. Malý
+Lathyrus angulatus L.
+Lathyrus annuus L.
+Lathyrus aphaca L.
+Lathyrus bauhinii P. A. Genty
+Lathyrus cicera L.
+Lathyrus clymenum L.
+Lathyrus digitatus (M. Bieb.) Fiori
+Lathyrus hirsutus L.
+Lathyrus inconspicuus L.
+Lathyrus laevigatus (Waldst. et Kit.) Gren.
+Lathyrus laevigatus ssp. occidentalis (Fisch. et C. A. Mey.) Breistr.
+Lathyrus latifolius L.
+Lathyrus laxiflorus (Desf.) Kuntze
+Lathyrus laxiflorus (Desf.) Kuntze ssp. laxiflorus
+Lathyrus linifolius (Reichard) Bässler
+Lathyrus niger (L.) Bernh.
+Lathyrus niger (L.) Bernhardt ssp. niger
+Lathyrus nissolia L.
+Lathyrus ochraceus Kittel
+Lathyrus ochrus (L.) DC.
+Lathyrus odoratus L.
+Lathyrus palustris L.
+Lathyrus pannonicus (Jacq.) Garcke
+Lathyrus pannonicus (Jacq.) Garcke ssp. collinus (J. Ortmann) Soó
+Lathyrus pannonicus (Jacq.) Garcke ssp. pannonicus
+Lathyrus pannonicus (Jacq.) Garcke ssp. varius (Hill) P. W. Ball
+Lathyrus pratensis L.
+Lathyrus sativus L.
+Lathyrus saxatilis (Vent.) Vis.
+Lathyrus setifolius L.
+Lathyrus sphaericus Retz.
+Lathyrus sylvestris L.
+Lathyrus sylvestris L. ssp. angustifolius (Medik.) Rothm.
+Lathyrus sylvestris L. ssp. platyphyllos (Retz.) Vollm.
+Lathyrus sylvestris L. ssp. sylvestris
+Lathyrus tuberosus L.
+Lathyrus venetus (Mill.) Wohlf.
+Lathyrus vernus (L.) Bernh.
+Lathyrus vernus (L.) Bernhardt ssp. vernus
+Laurus nobilis L.
+Lavandula angustifolia Mill.
+Lavandula latifolia Medik.
+Lavatera arborea L.
+Lavatera cretica L.
+Lavatera thuringiaca L.
+Lavatera thuringiaca L. ssp. ambigua (DC.) Nyman
+Lavatera thuringiaca L. ssp. thuringiaca
+Leersia oryzoides (L.) Sw.
+Legousia falcata (Ten.) Janch.
+Legousia hybrida (L.) Delarbre
+Legousia speculum-veneris (L.) Chaix
+Lembotropis nigricans (L.) Griseb.
+Lembotropis nigricans (L.) Griseb. ssp. australis (Wohlf.) Holub
+Lembotropis nigricans (L.) Griseb. ssp. nigricans
+Lemna gibba L.
+Lemna minor L.
+Lemna minuta Kunth
+Lemna trisulca L.
+Lens culinaris Medik.
+Lens ervoides (Brign.) Grande
+Lens nigricans (M. Bieb.) Godr.
+Leontodon autumnalis L.
+Leontodon cichoraceus (Ten.) Sanguin.
+Leontodon crispus Vill.
+Leontodon crispus Vill. ssp. asperrimus (Willd.) Finchet P. D. Sell
+Leontodon crispus Vill. ssp. crispus
+Leontodon crispus Vill. ssp. rossianus (Degen et Lengyel) Hayek
+Leontodon hispidus L.
+Leontodon hispidus L. ssp. danubialis (Jacq.) Simonk.
+Leontodon hispidus L. ssp. hispidus
+Leontodon incanus (L.) Schrank
+Leontodon incanus (L.) Schrank ssp. incanus
+Leontodon taraxacoides (Vill.) Mérat
+Leontodon taraxacoides (Vill.) Mérat ssp. taraxacoides
+Leontodon tuberosus L.
+Leontopodium alpinum Cass.
+Leontopodium alpinum Cass. ssp. alpinum
+Leontopodium alpinum Cass. ssp. krasense Derganc
+Leonurus cardiaca L.
+Leonurus marrubiastrum L.
+Lepidium campestre (L.) W. T. Aiton
+Lepidium densiflorum Schrad.
+Lepidium graminifolium L.
+Lepidium graminifolium L. ssp. graminifolium
+Lepidium graminifolium L. ssp. suffruticosum (L.) P. Monts.
+Lepidium heterophyllum Benth.
+Lepidium latifolium L.
+Lepidium perfoliatum L.
+Lepidium ruderale L.
+Lepidium sativum L.
+Lepidium virginicum L.
+Leucanthemella serotina (L.) Tzvelev
+Leucanthemum adustum (Koch) Gremli
+Leucanthemum atratum (Jacq.) DC.
+Leucanthemum atratum (Jacq.) DC. ssp. platylepis (Borbás) Heywood
+Leucanthemum chloroticum A. Kern. et Murb.
+Leucanthemum heterophyllum DC.
+Leucanthemum illyricum (Horvatić) Vogt et Greuter
+Leucanthemum ircutianum DC.
+Leucanthemum visianii (Gjurašin) Vogt et Greuter
+Leucanthemum vulgare Lam.
+Leucojum aestivum L.
+Leucojum vernum L.
+Levisticum officinale W. D. J. Koch
+Ligularia sibirica (L.) Cass.
+Ligusticum lucidum Mill.
+Ligusticum lucidum Mill. ssp. lucidum
+Ligusticum mutellina (L.) Crantz
+Ligusticum mutellinoides (Crantz) Vill.
+Ligustrum vulgare L.
+Lilium bulbiferum L.
+Lilium candidum L.
+Lilium carniolicum Bernh. ex Koch
+Lilium carniolicum Bernh. ex Koch ssp. bosniacum (Beck) Asch. et Graebn.
+Lilium carniolicum Bernh. ex Koch ssp. carniolicum
+Lilium martagon L.
+Lilium martagon L. ssp. cattaniae (Vis.) Degen
+Lilium martagon L. ssp. martagon
+Limodorum abortivum (L.) Sw.
+Limonium bellidifolium (Gouan) Dumort.
+Limonium cancellatum (Bernh. ex Bertol.) Kuntze
+Limonium dictyophorum (Tausch) Degen
+Limonium narbonense Mill.
+Limonium pomoense Bogdanović et Brullo
+Limonium subanfractum Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. brusnicense Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. vestitum
+Limonium virgatum (Willd.) Fourr.
+Limosella aquatica L.
+Linaria alpina (L.) Mill.
+Linaria angustissima (Loisel.) Borbás
+Linaria arvensis (L.) Desf.
+Linaria chalepensis (L.) Mill.
+Linaria genistifolia (L.) Mill.
+Linaria genistifolia (L.) Mill. ssp. dalmatica (L.) Maire et Petitm.
+Linaria genistifolia (L.) Mill. ssp. genistifolia
+Linaria incarnata (Vent.) Spreng.
+Linaria micrantha (Cav.) Hoffmanns. et Link
+Linaria microsepala A. Kern.
+Linaria pelisseriana (L.) Mill.
+Linaria peloponnesiaca Boiss. et Heldr.
+Linaria purpurea (L.) Mill.
+Linaria repens (L.) Mill.
+Linaria simplex (Willd.) DC.
+Linaria triphylla (L.) Mill.
+Linaria vulgaris Mill.
+Lindernia dubia (L.) Pennell
+Lindernia procumbens (Krock.) Philcox
+Linum alpinum Jacq.
+Linum alpinum Jacq. ssp. julicum (Hayek) Hegi
+Linum austriacum L.
+Linum bienne Mill.
+Linum capitatum Schult.
+Linum catharticum L.
+Linum elegans Boiss.
+Linum flavum L.
+Linum hirsutum L.
+Linum hologynum Rchb.
+Linum maritimum L.
+Linum narbonense L.
+Linum nodiflorum L.
+Linum perenne L.
+Linum strictum L.
+Linum strictum L. ssp. corymbulosum (Rchb.) Riony
+Linum strictum L. ssp. spicatum (Pers.) Nyman
+Linum strictum L. ssp. strictum
+Linum tenuifolium L.
+Linum trigynum L.
+Linum usitatissimum L.
+Linum viscosum L.
+Liparis loeselii (L.) Rich.
+Lippia triphylla (Ľ Hér.) Kuntze
+Listera cordata (L.) R. Br.
+Listera ovata (L.) R. Br.
+Lithospermum arvense L.
+Lithospermum incrassatum Guss.
+Lithospermum officinale L.
+Lithospermum purpurocaeruleum L.
+Lithospermum tenuiflorum L. f.
+Littorella uniflora (L.) Asch.
+Lloydia serotina (L.) Rchb.
+Lobularia maritima (L.) Desv.
+Logfia arvensis (L.) Holub
+Logfia gallica (L.) Coss. et Germ.
+Logfia minima (Sm.) Dumort.
+Loiseleuria procumbens (L.) Desv.
+Lolium multiflorum Lam.
+Lolium perenne L.
+Lolium remotum Schrank
+Lolium rigidum Gaudin
+Lolium rigidum Gaudin ssp. lepturoides (Boiss.) Sennen et Mauricio
+Lolium rigidum Gaudin ssp. rigidum
+Lolium subulatum Vis.
+Lolium temulentum L.
+Lomelosia argentea (L.) Greuter et Burdet
+Lomelosia brachiata (Sm.) Greuter et Burdet
+Lomelosia divaricata (Jacq.) Greuter et Burdet
+Lomelosia graminifolia (L.) Greuter et Burdet
+Lonicera alpigena L.
+Lonicera alpigena L. ssp. alpigena
+Lonicera borbasiana (Kuntze) Degen
+Lonicera caerulea L.
+Lonicera caerulea L. ssp. caerulea
+Lonicera caprifolium L.
+Lonicera etrusca Santi
+Lonicera glutinosa Vis.
+Lonicera implexa Aiton
+Lonicera japonica Thunb.
+Lonicera nigra L.
+Lonicera periclymenum L.
+Lonicera xylosteum L.
+Lophochloa cristata (L.) Hyl.
+Loranthus europaeus Jacq.
+Lotus aegaeus (Griseb.) Boiss.
+Lotus alpinus (DC.) Ramond
+Lotus angustissimus L.
+Lotus borbasii Ujhelyi
+Lotus corniculatus L.
+Lotus corniculatus L. ssp. corniculatus
+Lotus corniculatus L. ssp. hirsutus Rothm.
+Lotus creticus L.
+Lotus cytisoides L.
+Lotus drepanocarpus Durieu
+Lotus edulis L.
+Lotus glaber Mill.
+Lotus hispidus DC.
+Lotus ornithopodioides L.
+Lotus parviflorus Desf.
+Lotus preslii Ten.
+Lotus tetragonolobus L.
+Lotus uliginosus Schkuhr
+Ludwigia palustris (L.) Elliott
+Ludwigia peploides (Kunth) P. H. Raven
+Lunaria annua L.
+Lunaria annua L. ssp. annua
+Lunaria annua L. ssp. pachyrhiza (Borbás) Hayek
+Lunaria rediviva L.
+Lupinus albus L.
+Lupinus albus L. ssp. albus
+Lupinus albus L. ssp. graecus (Boiss. et Spruner) Franco et P. Silva
+Lupinus angustifolius L.
+Lupinus angustifolius L. ssp. reticulatus (Desv.) Arcang.
+Lupinus micranthus Guss.
+Lupinus polyphyllus Lindl.
+Luronium natans (L.) Rafin.
+Luzula alpinopilosa (Chaix) Breistr.
+Luzula alpinopilosa (Chaix) Breistr. ssp. alpinopilosa
+Luzula campestris (L.) DC.
+Luzula divulgata Kirschner
+Luzula divulgatiformis Bačič et Jogan
+Luzula forsteri (Sm.) DC.
+Luzula luzulina (Vill.) Racib.
+Luzula luzuloides (Lam.) Dandy et Wilmott
+Luzula luzuloides (Lam.) Dandy et Wilmott ssp. luzuloides
+Luzula luzuloides (Lam.) Dandy et Wilmott ssp. rubella (Hoppe. ex Mert. et W. D. J. Koch) Holub
+Luzula multiflora (Ehrh.) Lej.
+Luzula multiflora (Retz.) Lej. ssp. congesta (Thuill.) Hyl.
+Luzula multiflora (Retz.) Lej. ssp. multiflora
+Luzula nivea (Nathh.) DC.
+Luzula pilosa (L.) Willd.
+Luzula sylvatica (Huds.) Gaudin
+Luzula sylvatica (Huds.) Gaudin ssp. croatica Beyer
+Luzula sylvatica (Huds.) Gaudin ssp. sieberi (Tausch) K. Richt.
+Luzula sylvatica (Huds.) Gaudin ssp. sylvatica
+Lychnis coronaria (L.) Desr. in Lam.
+Lychnis flos-cuculi L.
+Lychnis flos-cuculi L. ssp. flos-cuculi
+Lychnis viscaria L.
+Lychnis viscaria L. ssp. viscaria
+Lycium barbarum L.
+Lycium europaeum L.
+Lycium intricatum Boiss.
+Lycopodiella inundata (L.) Holub
+Lycopodium annotinum L.
+Lycopodium clavatum L.
+Lycopus europaeus L.
+Lycopus exaltatus L. f.
+Lysimachia atropurpurea L.
+Lysimachia nemorum L.
+Lysimachia nummularia L.
+Lysimachia punctata L.
+Lysimachia vulgaris L.
+Lythrum hyssopifolia L.
+Lythrum portula ( L.) D. A. Webb
+Lythrum salicaria L.
+Lythrum tribracteatum Spreng.
+Lythrum virgatum L.
+Maclura pomifera (Raf.) C. K. Schneid.
+Mahonia aquifolium (Pursh.) Nutt.
+Maianthemum bifolium (L.) F. W. Schmidt
+Malaxis monophyllos (L.) Sw.
+Malcolmia chia (L.) DC.
+Malcolmia flexuosa (Sm.) Sm.
+Malcolmia maritima (L.) W. T. Aiton
+Malcolmia orsiniana (Ten.) Ten.
+Malcolmia orsiniana (Ten.) Ten. ssp. angulifolia (Boiss. et Orph.) Stork
+Malus dasyphylla Borkh.
+Malus sylvestris (L.) Mill.
+Malva alcea L.
+Malva moschata L.
+Malva neglecta Wallr.
+Malva nicaeensis All.
+Malva parviflora L.
+Malva pusilla Sm.
+Malva sylvestris L.
+Malva verticillata L.
+Mandragora officinarum L.
+Mantisalca salmantica (L.) Briq. et Cavill.
+Maresia nana (DC.) Batt.
+Marrubium incanum Desr.
+Marrubium peregrinum L.
+Marrubium vulgare L.
+Marsilea quadrifolia L.
+Matricaria perforata Mérat
+Matricaria trichophylla (Boiss.) Boiss.
+Matteuccia struthiopteris (L.) Tod.
+Matthiola fruticulosa (L.) Maire
+Matthiola fruticulosa (L.) Maire ssp. fruticulosa
+Matthiola incana (L.) W. T. Aiton
+Matthiola incana (L.) W. T. Aiton ssp. incana
+Matthiola sinuata (L.) W. T. Aiton
+Matthiola tricuspidata (L.) W. T. Aiton
+Medicago arabica (L.) Huds.
+Medicago carstiensis Wulfen
+Medicago ciliaris (L.) All.
+Medicago coronata (L.) Bartal.
+Medicago disciformis DC.
+Medicago doliata Carmign.
+Medicago falcata L.
+Medicago falcata L. ssp. glandulosa (Koch) Greuter et Burdet
+Medicago glutinosa M. Bieb.
+Medicago littoralis Loisel.
+Medicago lupulina L.
+Medicago marina L.
+Medicago medicaginoides (Retz.) E. Small
+Medicago minima (L.) Bartal.
+Medicago monspeliaca (L.) Trautv.
+Medicago murex Willd.
+Medicago orbicularis (L.) Bartal.
+Medicago pironae Vis.
+Medicago polymorpha L.
+Medicago praecox DC.
+Medicago prostrata Jacq.
+Medicago prostrata Jacq. ssp. prostrata
+Medicago rigidula (L.) All.
+Medicago sativa L.
+Medicago sativa L. ssp. sativa
+Medicago scutellata (L.) Mill.
+Medicago tenoreana Ser.
+Medicago truncatula Gaertn.
+Medicago tuberculata (Retz.) Willd.
+Melampyrum arvense L.
+Melampyrum barbatum Waldst. et Kit. ssp. carstiense Ronniger
+Melampyrum barbatum Willd.
+Melampyrum bihariense A. Kern.
+Melampyrum cristatum L.
+Melampyrum fimbriatum Vandas
+Melampyrum nemorosum L.
+Melampyrum pratense L.
+Melampyrum sylvaticum L.
+Melampyrum velebiticum Borbás
+Melia azedarach L.
+Melica altissima L.
+Melica bauchinii All.
+Melica ciliata L.
+Melica ciliata L. ssp. ciliata
+Melica ciliata L. ssp. magnolii (Gren. et Godr.) K. Richt.
+Melica minuta L.
+Melica nutans L.
+Melica picta K. Koch
+Melica transsilvanica Schur
+Melica uniflora Retz.
+Melilotus albus Medik.
+Melilotus altissimus Thuill.
+Melilotus dentatus (Walldst. et Kit.) Pers.
+Melilotus elegans Ser.
+Melilotus indicus (L.) All.
+Melilotus italicus (L.) Lam.
+Melilotus messanensis (L.) All.
+Melilotus neapolitanus Ten.
+Melilotus officinalis (L.) Lam.
+Melilotus segetalis (Brot.) Ser.
+Melilotus sulcatus Desf.
+Melissa officinalis L.
+Melissa officinalis L. ssp. altissima (Sm.) Arcang.
+Melissa officinalis L. ssp. officinalis
+Melittis melissophyllum L.
+Melittis melissophyllum L. ssp. albida (Guss.) P. W. Ball
+Melittis melissophyllum L. ssp. carpatica (Klokov) P. W. Ball
+Mentha aquatica L.
+Mentha arvensis L.
+Mentha longifolia (L.) L.
+Mentha microphylla K. Koch
+Mentha pulegium L.
+Mentha spicata L.
+Mentha suaveolens Ehrh.
+Menyanthes trifoliata L.
+Mercurialis annua L.
+Mercurialis ovata Sternb. et Hoppe
+Mercurialis perennis L.
+Mesembryanthemum cordifolium L. f.
+Mesembryanthemum crystallinum L.
+Mesembryanthemum nodiflorum L.
+Mespilus germanica L.
+Meum athamanticum Jacq.
+Micromeria croatica (Pers.) Schott
+Micromeria dalmatica Benth.
+Micromeria fruticulosa (Bertol.) Šilić
+Micromeria graeca (L.) Benth.
+Micromeria juliana (L.) Benth. ex Rchb.
+Micromeria kerneri Murb.
+Micromeria microphylla (d'Urv.) Benth.
+Micromeria pseudocroatica Šilić
+Micromeria thymifolia (Scop.) Fritsch
+Milium effusum L.
+Milium vernale M. Bieb.
+Mimulus guttatus DC.
+Mimulus luteus L.
+Minuartia capillacea (All.) Graebn.
+Minuartia fastigiata (Sm.) Rchb.
+Minuartia glaucina Dvořáková
+Minuartia globulosa (Labill.) Schinz et Thell.
+Minuartia graminifolia (Ard.) Jáv.
+Minuartia graminifolia (Ard.) Jav. ssp. clandestina (Port.) Mattf.
+Minuartia hybrida (Vill.) Schischk.
+Minuartia hybrida (Vill.) Schischkin ssp. hybrida
+Minuartia laricifolia Schinz. et Thell.
+Minuartia mediterranea (Link.) K. Malý
+Minuartia recurva (All.) Schinz et Thell.
+Minuartia recurva (All.) Schinz. et Thell. ssp. recurva
+Minuartia rubra (Scop.) McNeill
+Minuartia sedoides (L.) Hiern
+Minuartia setacea (Thuill.) Hayek
+Minuartia verna (L.) Hiern
+Minuartia verna (L.) Hiern ssp. attica (Boiss. et Spruner) Graebn.
+Minuartia verna (L.) Hiern ssp. collina (Neilr.) Domin
+Minuartia verna (L.) Hiern ssp. insularis Trinajstić et Zi. Pavletić
+Minuartia verna (L.) Hiern ssp. verna
+Minuartia viscosa (Schreb.) Schinz et Thell.
+Mirabilis jalapa L.
+Misopates orontium (L.) Raf.
+Moehringia bavarica (L.) Gren.
+Moehringia ciliata (Scop.) Dalla Torre in Hartinger
+Moehringia muscosa L.
+Moehringia pentandra J. Gay
+Moehringia tommasinii Marches.
+Moehringia trinervia (L.) Clairv.
+Moehringia trinervia (L.) Clairv. ssp. trinervia
+Moenchia erecta (L.) P. Gaertn., B. Mey. et Scherb.
+Moenchia erecta (L.) P. Gaertner, B. Mey. et Schreib. ssp. erecta
+Moenchia mantica (L.) Bartl.
+Moenchia mantica (L.) Bartl. ssp. mantica
+Molinia caerulea (L.) Moench
+Molinia caerulea (L.) Moench ssp. arundinacea (Schrank) H. K. G. Paul
+Molinia caerulea (L.) Moench ssp. caerulea
+Molopospermum peloponnesiacum (L.) W. D. J. Koch
+Moltkia petraea (Tratt.) Griseb.
+Moneses uniflora (L.) A. Gray
+Monotropa hypopitys L.
+Montia fontana L.
+Montia fontana L. ssp. amporitana Sennen
+Montia fontana L. ssp. chondrosperma (Fenzl) Walters
+Montia fontana L. ssp. fontana
+Montia fontana L. ssp. variabilis Walters
+Moricandia arvensis (L.) DC.
+Morus alba L.
+Muscari botryoides (L.) Mill.
+Muscari commutatum Guss.
+Muscari comosum (L.) Mill.
+Muscari kerneri Marches.
+Muscari neglectum Guss. ex Ten.
+Muscari neglectum Guss. ex Ten. ssp. neglectum
+Muscari neglectum Guss. ex Ten. ssp. speciosum (Marches.) Garbari
+Muscari parviflorum Desf.
+Muscari tenuiflorum Tausch
+Myagrum perfoliatum L.
+Mycelis muralis (L.) Dumort.
+Myosotis alpestris F. W. Schmidt
+Myosotis arvensis (L.) Hill
+Myosotis decumbens Host
+Myosotis decumbens Host ssp. decumbens
+Myosotis decumbens Host ssp. variabilis (Angelis) Grau
+Myosotis discolor Pers.
+Myosotis discolor Pers. ssp. discolor
+Myosotis incrassata Guss.
+Myosotis laxa Lehm.
+Myosotis laxa Lehm. ssp. cespitosa (Schultz) Nordh.
+Myosotis michaelae Stepankova
+Myosotis nemorosa Besser
+Myosotis ramosissima Rochel
+Myosotis ramosissima Rochel ssp. ramosissima
+Myosotis scorpioides L.
+Myosotis sicula Guss.
+Myosotis sparsiflora Pohl
+Myosotis speluncicola (Boiss.) Rouy
+Myosotis stricta Roem. et Schult.
+Myosotis suaveolens Willd.
+Myosotis sylvatica Hoffm.
+Myosotis sylvatica Hoffm. ssp. cyanea (Hayek) Vestergr.
+Myosotis sylvatica Hoffm. ssp. subarvensis Grau
+Myosotis sylvatica Hoffm. ssp. sylvatica
+Myosoton aquaticum (L.) Moench
+Myosurus minimus L.
+Myricaria germanica (L.) Desv.
+Myriolepis ferrulacea (L.) Lledó, Erben et M. B. Crespo
+Myriophyllum alterniflorum DC.
+Myriophyllum spicatum L.
+Myriophyllum verticillatum L.
+Myrrhis odorata (L.) Scop.
+Myrrhoides nodosa (L.) Cannon
+Myrtus communis L.
+Myrtus communis L. ssp. communis
+Myrtus communis L. ssp. tarentina (L.) Arcang.
+Najas graminea Delile
+Najas marina L.
+Najas minor All.
+Narcissus papyraceus Ker Gawl.
+Narcissus papyraceus Ker Gawl. ssp. papyraceus
+Narcissus poeticus L.
+Narcissus polyanthus Loisel.
+Narcissus pseudonarcissus L. ssp. pseudonarcissus
+Narcissus radiiflorus Salisb.
+Narcissus serotinus L.
+Narcissus tazetta L.
+Narcissus tazetta L. ssp. italicus (Ker Gawl.) Baker
+Nardus stricta L.
+Nasturtium officinale W. T. Aiton
+Neatostema apulum (L.) I. M. Johnst.
+Neotinea maculata (Desf.) Stearn
+Neottia nidus-avis (L.) Rich.
+Nepeta cataria L.
+Nepeta pannonica L.
+Nepeta pannonica L. ssp. albiflora (Boiss.) Gams
+Neslia paniculata (L.) Desv.
+Neslia paniculata (L.) Desv. ssp. paniculata
+Neslia paniculata (L.) Desv. ssp. thracica (Velen.) Bornm.
+Nicandra physalodes (L.) Gaertn.
+Nicotiana alata Link et Otto
+Nicotiana glauca Graham
+Nicotiana rustica L.
+Nicotiana tabacum L.
+Nigella arvensis L.
+Nigella arvensis L. ssp. arvensis
+Nigella damascena L.
+Nigritella nigra (L.) Rchb.
+Nigritella nigra L. Rchb. f. ssp. nigra
+Nigritella rhellicani Teppner et Klein
+Nonea echioides (L.) Roem. et Schult.
+Nonea lutea (Desr.) DC.
+Nonea pulla DC.
+Notholaena marantae (L.) Desv.
+Nuphar lutea (L.) Sm.
+Nuphar pumila (Timm) DC.
+Nymphaea alba L.
+Nymphoides peltata (S. G. Gmel.) Kuntze
+Ocimum basilicum L.
+Odontites luteus (L.) Clairv.
+Odontites vernus (Bellardi) Dumort.
+Odontites vulgaris Moench
+Oenanthe aquatica (L.) Poir.
+Oenanthe banatica Heuff.
+Oenanthe fistulosa L.
+Oenanthe lachenalii C. C. Gmel.
+Oenanthe peucedanifolia Pollich
+Oenanthe pimpinelloides L.
+Oenanthe silaifolia M. Bieb.
+Oenothera biennis L.
+Oenothera erythrosepala Borbás
+Oenothera lindheimeri (Engelm. et A. Gray) W. L. Wagner et Hoch
+Oenothera muricata L.
+Oenothera suaveolens Desf. ex Pers.
+Olea europaea L.
+Olea europaea L. var. sylvestris Brot.
+Omalotheca norvegica (Gunn.) Sch. Bip. et F. W. Schultz
+Omalotheca supina (L.) DC.
+Omalotheca sylvatica (L.) Sch. Bip. et F. W. Schultz
+Omphalodes scorpioides (Haenke) Schrank
+Omphalodes verna Moench
+Onobrychis aequidentata (Sm.) d'Urv.
+Onobrychis alba (Waldst. et Kit.) Desv.
+Onobrychis alba (Waldst. et Kit.) Desv. ssp. alba
+Onobrychis alba (Waldst. et Kit.) Desv. ssp. calcarea (Vandas) P. W. Ball
+Onobrychis arenaria (Kit.) DC.
+Onobrychis arenaria (Kit.) DC. ssp. arenaria
+Onobrychis arenaria (Kit.) DC. ssp. miniata (Steven) P. W. Ball
+Onobrychis arenaria (Kit.) DC. ssp. tommasinii (Jord.) Asch. et Graebn.
+Onobrychis caput-galli Lam.
+Onobrychis montana DC.
+Onobrychis montana DC. ssp. montana
+Onobrychis montana DC. ssp. scardica (Griseb.) P. W. Ball
+Onobrychis oxyodonta Boiss.
+Onobrychis viciifolia Scop.
+Ononis antiquorum (L.) Arcang.
+Ononis arvensis L.
+Ononis leiosperma Boiss.
+Ononis minutissima L.
+Ononis mitissima L.
+Ononis natrix L.
+Ononis natrix L. ssp. natrix
+Ononis ornithopodioides L.
+Ononis pusilla L.
+Ononis reclinata L.
+Ononis repens L.
+Ononis repens L. ssp. procurrens (Wallr.) Asch.et P. Graebn.
+Ononis repens L. ssp. repens
+Ononis spinosa L.
+Ononis spinosa L. ssp. austriaca (Beck) Gams
+Ononis spinosa L. ssp. spinosa
+Ononis spinosa L. ssp. spinosiformis (Simonk.) Greuteret Burdet
+Ononis viscosa L.
+Ononis viscosa L. ssp. breviflora (DC.) Nyman
+Ononis viscosa L. ssp. viscosa
+Onopordum acanthium L.
+Onopordum acanthium L. ssp. acanthium
+Onopordum illyricum L.
+Onopordum illyricum L. ssp. cardunculus (Boiss.) Arenes
+Onopordum illyricum L. ssp. horridum (Viv.) Franco
+Onopordum illyricum L. ssp. illyricum
+Onosma arenaria Waldst. et Kit.
+Onosma arenaria Waldst. et Kit. ssp. arenaria
+Onosma echioides (L.) L.
+Onosma echioides (L.) L. ssp. dalmatica (Scheele) Peruzzi et N. G. Passal.
+Onosma javorkae Simonk.
+Onosma pseudoarenaria Schur
+Onosma pseudoarenaria Schur ssp. fallax (Borbás) Rauschert
+Onosma pseudoarenaria Schur ssp. tridentina (Wettst.) Braun-Blanq.
+Onosma stellulata Waldst. et Kit.
+Onosma visianii Clementi
+Ophioglossum azoricum C. Presl
+Ophioglossum lusitanicum L.
+Ophioglossum vulgatum L.
+Ophiopogon japonicus (Thunb.) Ker Gawl.
+Ophrys aegirtica P. Delforge
+Ophrys amanensis (Nelson ex Renz) P. Delforge
+Ophrys annae Devillers-Tersch. et Devillers
+Ophrys apifera Huds.
+Ophrys arachnitiformis Gren. et Phil.
+Ophrys archipelagi Gölz et H. R. Reinhard
+Ophrys argentaria Devillers-Tersch. et Devillers
+Ophrys bertolonii Moretti
+Ophrys bertoloniiformis O. Danesch et E. Danesch
+Ophrys biscutella O. Danesch et E. Danesch
+Ophrys bombyliflora Link
+Ophrys brutia P. Delforge
+Ophrys cilentana Devillers-Tersch. et Devillers
+Ophrys classica Devillers-Tersch. et Devillers
+Ophrys dinarica Kranjčev et P. Delforge
+Ophrys fuciflora (F. W. Schmidt) Moench
+Ophrys fuciflora (F. W. Schmidt) Moench ssp. fuciflora
+Ophrys fuciflora (F. W. Schmidt) Moench ssp. maxima (H. Fleischm.) Soó
+Ophrys fusca Link
+Ophrys fusca Link ssp. fusca
+Ophrys fusca Link ssp. iricolor (Desf.) K. Richt.
+Ophrys gracilis (Büel et E. Danesch) Englmaier
+Ophrys herae M. Hirth et H. Spaeth
+Ophrys hespera Devillers-Tersch. et Devillers
+Ophrys illyrica S. Hertel et K. Hertel
+Ophrys incantata Devillers et Devillers-Tersch.
+Ophrys insectifera L.
+Ophrys kvarneri Perko et Kerschb.
+Ophrys lacaitae Lojac.
+Ophrys liburnica Devillers et Devillers-Tersch.
+Ophrys linearis (Moggr.) P. Delforge , Devillers et Devillers-Tersch.
+Ophrys lunulata Parl.
+Ophrys lupercalis Devillers-Tersch. et Devillers
+Ophrys lutea Cav.
+Ophrys lutea Cav. ssp. lutea
+Ophrys lutea Cav. ssp. minor (Tod.) O. Danesch et E. Danesch
+Ophrys marmorata G. Foelsche et W. Foelsche
+Ophrys medea Devillers et Devillers-Tersch.
+Ophrys melena (Renz) Paulus et Gack
+Ophrys montenegrina (H. Baumann et Künkele) Devillers-Tersch. et Devillers
+Ophrys numida Devillers-Tersch. et Devillers
+Ophrys pharia Devillers et Devillers-Tersch.
+Ophrys phryganae Devillers-Tersch. et Devillers
+Ophrys rhodostephane Devillers et Devillers-Tersch.
+Ophrys scolopax Cav.
+Ophrys scolopax Cav. ssp. cornuta (Steven) E. G. Camus
+Ophrys scolopax Cav. ssp. scolopax
+Ophrys serotina Rolli ex Paulus
+Ophrys speculum Link
+Ophrys sphegodes Mill.
+Ophrys sphegodes Mill. ssp. atrata (Rchb. f.) A. Bol`os
+Ophrys sphegodes Mill. ssp. litigiosa (E. G. Camus) Bech.
+Ophrys sphegodes Mill. ssp. mammosa (Desf.) Soó ex E. Nelson
+Ophrys sphegodes Mill. ssp. praecox Corrias
+Ophrys sphegodes Mill. ssp. sphegodes
+Ophrys sphegodes Mill. ssp. tommasinii (Vis.) Soó
+Ophrys tenthredinifera Willd.
+Ophrys tenthredinifera Willd. ssp. tenthredinifera
+Ophrys tetraloniae W. P. Teschner
+Ophrys untchjii (M. Schulze) P. Delforge
+Oplismenus undulatifolius (Ard.) Roem. et Schult.
+Opopanax chironium (L.) W. D. J. Koch
+Opuntia anahuacensis Griffiths
+Opuntia ficus-indica (L.) Mill.
+Opuntia vulgaris Miller
+Orchis coriophora L.
+Orchis coriophora L. ssp. coriophora
+Orchis coriophora L. ssp. fragrans (Pollini) K. Richt.
+Orchis italica Poir.
+Orchis lactea Poir.
+Orchis laxiflora Lam.
+Orchis laxiflora Lam. ssp. elegans (Heuff.) Soó
+Orchis laxiflora Lam. ssp. laxiflora
+Orchis laxiflora Lam. ssp. palustris (Jacq.) Bonnieret Layens
+Orchis mascula (L.) L.
+Orchis mascula (L.) L. ssp. mascula
+Orchis mascula (L.) L. ssp. signifera (Vest) Soó
+Orchis militaris L.
+Orchis morio L.
+Orchis morio L. ssp. albanica (Gölz et H. R. Reinhard) Buttler
+Orchis morio L. ssp. morio
+Orchis morio L. ssp. picta (Loisel.) K. Richt.
+Orchis pallens L.
+Orchis papilionacea L.
+Orchis provincialis Balb. ex Lam. et DC.
+Orchis provincialis Balb. ex Lam. et DC. ssp. provincialis
+Orchis provincialis Balb. ssp. pauciflora (Ten.) Camus
+Orchis purpurea Huds.
+Orchis quadripunctata Cirillo ex Ten.
+Orchis simia Lam.
+Orchis spitzelii Saut. ex W. D. J. Koch
+Orchis spitzelii Saut. ex W. D. J. Koch ssp. sendtneri (Rchb. f.) Hellm.
+Orchis tridentata Scop.
+Orchis tridentata Scop. ssp. commutata (Tod.) Nyman
+Orchis tridentata Scop. ssp. tridentata
+Orchis ustulata L.
+Oreopteris limbosperma (Bellardi ex All.) Holub
+Origanum heracleoticum L.
+Origanum majorana L.
+Origanum vulgare L.
+Origanum vulgare L. ssp. prismaticum (Godr.) Briq.
+Origanum vulgare L. ssp. vulgare
+Orlaya daucorlaya Murb.
+Orlaya grandiflora (L.) Hoffm.
+Orlaya kochii Heywood
+Ornithogalum arabicum L.
+Ornithogalum boucheanum (Kunth) Asch.
+Ornithogalum collinum Guss.
+Ornithogalum comosum L.
+Ornithogalum dalmaticum Speta
+Ornithogalum exscapum Ten.
+Ornithogalum gussonei Ten.
+Ornithogalum kochii Parl.
+Ornithogalum montanum Cirillo
+Ornithogalum narbonense L.
+Ornithogalum nutans L.
+Ornithogalum pyramidale L.
+Ornithogalum pyrenaicum L.
+Ornithogalum refractum Kit. ex Schltr.
+Ornithogalum sibthorpii Greuter
+Ornithogalum sphaerocarpum A. Kern.
+Ornithogalum televrinum Speta
+Ornithogalum umbellatum L.
+Ornithogalum umbellatum L. ssp. divergens (Boreau) Asch.et Graebn.
+Ornithogalum umbellatum L. ssp. umbellatum
+Ornithogalum visianicum Tomm.
+Ornithopus compressus L.
+Ornithopus perpusillus L.
+Ornithopus pinnatus (Mill.) Druce
+Orobanche alba Willd.
+Orobanche alsatica Kirschl.
+Orobanche amethystea Thuill.
+Orobanche arenaria Borkh.
+Orobanche artemisiae-campestris Gaudin
+Orobanche borbasiana Beck
+Orobanche caryophyllacea Sm.
+Orobanche cernua Loefl.
+Orobanche coerulescens Stephan
+Orobanche crenata Forssk.
+Orobanche elatior Sutton
+Orobanche flava F. W. Schultz
+Orobanche foetida Poir.
+Orobanche gracilis Sm.
+Orobanche grisebachii Reut.
+Orobanche hederae Duby
+Orobanche laserpitii-sileris Jord.
+Orobanche lavandulacea Rchb.
+Orobanche lutea Baumg.
+Orobanche maior L.
+Orobanche minor Sm.
+Orobanche mutelii F. W. Schultz
+Orobanche nana Noë
+Orobanche oxyloba (Reut.) Beck
+Orobanche picridis F. W. Schultz
+Orobanche pseudorosmarina A. Pujadas et Munoz Garm.
+Orobanche pubescens d'Urv.
+Orobanche purpurea Jacq.
+Orobanche ramosa L.
+Orobanche reticulata Wallr.
+Orobanche rosmarina Beck
+Orobanche salviae F. W. Schultz ex W. D. J. Koch
+Orobanche sanguinea C. Presl
+Orobanche teucrii Holandre
+Orthilia secunda (L.) House
+Osmunda regalis L.
+Ostrya carpinifolia Scop.
+Osyris alba L.
+Otanthus maritimus (L.) Hoffmanns. et Link
+Oxalis acetosella L.
+Oxalis corniculata L.
+Oxalis dillenii Jacq.
+Oxalis fontana Bunge
+Oxalis latifolia Kunth
+Oxalis pes-caprae L.
+Oxyria digyna (L.) Hill
+Oxytropis campestris (L.) DC.
+Oxytropis campestris (L.) DC. ssp. campestris
+Oxytropis campestris (L.) DC. ssp. tyroliensis (R. M. Fritsch) Leins et Merxm.
+Oxytropis dinarica (Murb.) Wettst.
+Oxytropis dinarica (Murb.) Wettst. ssp. velebitica Chrtek et Chrtková
+Oxytropis halleri Bunge ex W. D. J. Koch ssp. halleri
+Oxytropis halleri W. D. J. Koch
+Oxytropis jacquinii Bunge
+Oxytropis lapponica (Wahlenb.) J. Gay
+Oxytropis neglecta Ten.
+Oxytropis pilosa (L.) DC.
+Oxytropis purpurea (Bald.) Markgr.
+Paederota lutea Scop.
+Paeonia mascula (L.) Mill.
+Paeonia mascula (L.) Miller ssp. mascula
+Paeonia mascula (L.) Miller ssp. russoi (Biv.) Cullen et Heywood
+Paeonia officinalis L.
+Paliurus spina-christi Mill.
+Pallenis spinosa (L.) Cass.
+Pallenis spinosa (L.) Cass. ssp. spinosa
+Pancratium maritimum L.
+Panicum capillare L.
+Panicum dichotomiflorum Michx.
+Panicum riparium H. Scholz
+Papaver alpinum L.
+Papaver apulum Ten.
+Papaver argemone L.
+Papaver dubium L.
+Papaver dubium L. ssp. dubium
+Papaver dubium L. ssp. lecoquii (Lamotte) Syme
+Papaver hybridum L.
+Papaver kerneri Hayek
+Papaver nigrotinctum Fedde
+Papaver rhoeas L.
+Papaver somniferum L.
+Papaver strigosum (Boenn.) Schur
+Parapholis filiformis (Roth) C. E. Hubb.
+Parapholis incurva (L.) C. E. Hubb.
+Parapholis marginata Runemark
+Parapholis strigosa (Dumort.) C. E. Hubb.
+Parentucellia latifolia (L.) Caruel
+Parentucellia viscosa (L.) Caruel
+Parietaria judaica L.
+Parietaria lusitanica L.
+Parietaria lusitanica L. ssp. lusitanica
+Parietaria officinalis L.
+Paris quadrifolia L.
+Parnassia palustris L.
+Parnassia palustris L. ssp. palustris
+Paronychia kapela (Hacq.) A. Kern.
+Paronychia kapela (Hacq.) A. Kerner ssp. kapela
+Parthenocissus quinquefolia (L.) Planchon
+Parthenocissus tricuspidata (Siebold et Zucc.) Planch.
+Parvotrisetum myrianthum (Bertol.) Chrtek
+Paspalum dilatatum Poir.
+Paspalum paspalodes (Michx.) Scribn.
+Pastinaca sativa L.
+Pastinaca sativa L. ssp. sativa
+Pastinaca sativa L. ssp. urens (Godr.) Čelak.
+Paulownia tomentosa (Thunb.) Siebold et Zucc.
+Pedicularis acaulis Scop.
+Pedicularis brachyodonta Schloss. et Vuk.
+Pedicularis comosa L.
+Pedicularis comosa L. ssp. comosa
+Pedicularis foliosa L.
+Pedicularis friderici-augusti Tomm.
+Pedicularis hacquetii Graf
+Pedicularis hoermanniana K. Malý
+Pedicularis palustris L.
+Pedicularis rosea Wulfen
+Pedicularis rostratocapitata Crantz
+Pedicularis sylvatica L.
+Pedicularis verticillata L.
+Peltaria alliacea Jacq.
+Pennisetum villosum R. Br. ex Fresen.
+Periploca graeca L.
+Petasites albus (L.) Gaertn.
+Petasites hybridus (L.) P. Gaertn., B. Mey. et Schreb.
+Petasites hybridus (L.) P. Gaertn., B. Mey. et Schreb. ssp. hybridus
+Petasites kablikianus Bercht.
+Petasites paradoxus (Retz.) Baumg.
+Petrocallis pyrenaica (L.) W. T. Aiton
+Petrorhagia glumacea (Chaub. et Bory) P. W. Ball et Heywood
+Petrorhagia obcordata (Margot et Reut.) Greuter et Burdet
+Petrorhagia prolifera (L.) P. W. Ball et Heywood
+Petrorhagia saxifraga (L.) Link
+Petrorhagia velutina (Guss.) P. W. Ball et Heywood
+Petroselinum crispum (Mill.) A. W. Hill
+Petroselinum segetum (L.) Koch
+Petteria ramentacea (Sieber) C. Presl
+Petunia hybrida Vilm.
+Peucedanum aegopodioides (Boiss.) Vandas
+Peucedanum alsaticum L.
+Peucedanum arenarium Waldst. et Kit.
+Peucedanum arenarium Waldst. et Kit. ssp. arenarium
+Peucedanum arenarium Waldst. et Kit. ssp. neumayeri (Vis.) Stoj. et Stef.
+Peucedanum austriacum (Jacq.) W. D. J. Koch
+Peucedanum carvifolia Vill.
+Peucedanum cervaria (L.) Lapeyr.
+Peucedanum coriaceum Rchb.
+Peucedanum latifolium (M. Bieb.) DC.
+Peucedanum longifolium Waldst. et Kit.
+Peucedanum minutifolium (Janka) Velen.
+Peucedanum officinale L.
+Peucedanum officinale L. ssp. officinale
+Peucedanum oreoselinum (L.) Moench
+Peucedanum ostruthium (L.) W. D. J. Koch
+Peucedanum palustre (L.) Moench
+Peucedanum schottii DC.
+Peucedanum venetum (Spreng.) W. D. J. Koch
+Peucedanum verticillare (L.) Mert. ex W. D. J. Koch
+Phacelia tanacetifolia Benth.
+Phagnalon graecum Boiss. et Heldr.
+Phagnalon rupestre (L.) DC.
+Phalaris aquatica L.
+Phalaris arundinacea L.
+Phalaris brachystachys Link
+Phalaris canariensis L.
+Phalaris coerulescens Desf.
+Phalaris minor Retz.
+Phalaris paradoxa L.
+Phegopteris connectilis (Michx.) Watt
+Phillyrea angustifolia L.
+Phillyrea latifolia L.
+Phillyrea media L.
+Phleum alpinum L.
+Phleum arenarium L.
+Phleum echinatum Host
+Phleum hirsutum Honck.
+Phleum paniculatum Huds.
+Phleum phleoides (L.) H. Karst.
+Phleum pratense L.
+Phleum pratense L. ssp. bertolonii (DC.) Bornm.
+Phleum pratense L. ssp. pratense
+Phleum subulatum (Savi) Asch. et Graebn.
+Phlomis fruticosa L.
+Phlomis herba-venti L.
+Phlomis herba-venti L. ssp. herba-venti
+Phlomis herba-venti L. ssp. pungens (Willd.) Maire ex DeFillips
+Phlomis samia L.
+Phlomis tuberosa L.
+Pholiurus pannonicus (Host) Trin.
+Phragmites australis (Cav.) Steud.
+Physalis alkekengi L.
+Physalis angulata L.
+Physalis heterophylla Nees
+Physocarpus opulifolius (L.) Maxim.
+Physoplexis comosa (L.) Schur
+Physospermum cornubiense (L.) DC.
+Physospermum verticillatum (Waldst. et Kit.) Vis.
+Phyteuma betonicifolium Vill.
+Phyteuma nigrum F. W. Schmidt
+Phyteuma orbiculare L.
+Phyteuma ovatum Honck.
+Phyteuma pseudorbiculare Pant.
+Phyteuma scheuchzeri All.
+Phyteuma scheuchzeri All. ssp. columnae (Gaudin) Bech.
+Phyteuma scheuchzeri All. ssp. scheuchzeri
+Phyteuma sieberi Spreng.
+Phyteuma spicatum L.
+Phyteuma spicatum L. ssp. coeruleum (Gremli) Rich. Schulz
+Phyteuma spicatum L. ssp. spicatum
+Phyteuma zahlbruckneri Vest
+Phytolacca americana L.
+Picea abies (L.) H. Karst.
+Picea abies (L.) H. Karst. ssp. abies
+Picnomon acarna (L.) Cass.
+Picris echioides L.
+Picris hieracioides L.
+Picris hieracioides L. ssp. hieracioides
+Picris hieracioides L. ssp. spinulosa (Guss.) Arcang.
+Picris hispidissima (Bartl.) W. D. J. Koch
+Picris pauciflora Willd.
+Picris scaberrima Ten.
+Pilea microphylla (L.) Liebm.
+Pilularia globulifera L.
+Pilularia minuta Durieu
+Pimpinella anisum L.
+Pimpinella major (L.) Huds.
+Pimpinella peregrina L.
+Pimpinella saxifraga L.
+Pimpinella tragium Vill.
+Pimpinella tragium Vill. ssp. lithophila (Schischk.) Tutin
+Pimpinella tragium Vill. ssp. polyclada (Boiss. et Heldr.) Tutin
+Pinguicula alpina L.
+Pinguicula balcanica Casper
+Pinguicula balcanica Casper ssp. balcanica
+Pinguicula vulgaris L.
+Pinus brutia Ten.
+Pinus halepensis Mill.
+Pinus mugo Turra
+Pinus nigra J. F. Arnold
+Pinus nigra J. F. Arnold ssp. dalmatica (Vis.) Franco
+Pinus nigra J. F. Arnold ssp. nigra
+Pinus pinea L.
+Pinus strobus L.
+Pinus sylvestris L.
+Pinus sylvestris L. ssp. sylvestris
+Piptatherum miliaceum (L.) Coss.
+Piptatherum miliaceum (L.) Coss. ssp. miliaceum
+Piptatherum miliaceum (L.) Coss. ssp. thomasii (Duby) Freitag
+Piptatherum virescens (Trin.) Boiss.
+Pistacia lentiscus L.
+Pistacia terebinthus L.
+Pistia stratiotes L.
+Pisum sativum L.
+Pisum sativum L. ssp. elatius (M. Bieb.) Asch. et Graebn.
+Pisum sativum L. ssp. sativum
+Pittosporum tobira (Thunb.) W. T. Aiton
+Plantago afra L.
+Plantago altissima L.
+Plantago argentea Chaix
+Plantago atrata Hoppe
+Plantago atrata Hoppe ssp. atrata
+Plantago atrata Hoppe ssp. graeca (Halácsy) Holub
+Plantago bellardii All.
+Plantago cornuti Gouan
+Plantago coronopus L.
+Plantago coronopus L. ssp. commutata (Guss.) Pilg.
+Plantago coronopus L. ssp. weldenii (Rchb.) Arcang.
+Plantago crassifolia Forssk.
+Plantago holosteum Scop.
+Plantago indica L.
+Plantago lagopus L.
+Plantago lanceolata L.
+Plantago macrorhiza Poir.
+Plantago major L.
+Plantago major L. ssp. intermedia (Gilib.) Lange
+Plantago major L. ssp. major
+Plantago major L. ssp. winteri (Wirtg.) W. Ludw.
+Plantago maritima L.
+Plantago maritima L. ssp. serpentina (All.) Arcang.
+Plantago media L.
+Plantago media L. ssp. media
+Plantago media L. ssp. pindica (Hausskn.) Greuter et Burdet
+Plantago media L. ssp. stepposa (Kuprian.) Soó
+Plantago schwarzenbergiana Schur
+Plantago sempervirens Crantz
+Plantago serraria L.
+Plantago subulata L.
+Plantago tenuiflora Waldst. et Kit.
+Platanthera bifolia (L.) Rich.
+Platanthera chlorantha (Custer) Rchb.
+Platanthera muelleri A. Baum & H. Baum
+Pleurospermum austriacum (L.) Hoffm.
+Plumbago europaea L.
+Poa alpina L.
+Poa angustifolia L.
+Poa annua L.
+Poa badensis Willd.
+Poa bulbosa L.
+Poa cenisia All.
+Poa chaixii Vill.
+Poa compressa L.
+Poa glauca Vahl
+Poa hybrida Gaudin
+Poa infirma Kunth
+Poa jubata A. Kern.
+Poa media Schur
+Poa minor Gaudin
+Poa nemoralis L.
+Poa palustris L.
+Poa perconcinna J. R. Edm.
+Poa pratensis L.
+Poa pumila Host
+Poa remota Forselles
+Poa trivialis L.
+Poa trivialis L. ssp. sylvicola (Guss.) H. Lindb.
+Poa trivialis L. ssp. trivialis
+Polemonium caeruleum L.
+Polycarpon tetraphyllum (L.) L.
+Polycarpon tetraphyllum (L.) L. ssp. alsinifolium (Biv.) Ball
+Polycarpon tetraphyllum (L.) L. ssp. diphyllum (Cav.) O. Bol`oset Font Quer
+Polycarpon tetraphyllum (L.) L. ssp. tetraphyllum
+Polycnemum arvense L.
+Polycnemum majus A. Braun
+Polycnemum verrucosum Láng
+Polygala alpestris Rchb.
+Polygala alpestris Rchb. ssp. croatica (Chodat) Hayek
+Polygala amara L.
+Polygala amara L. ssp. amara
+Polygala amarella Crantz
+Polygala chamaebuxus L.
+Polygala comosa Schkuhr
+Polygala major Jacq.
+Polygala monspeliaca L.
+Polygala nicaeensis Risso ex W. D. J. Koch
+Polygala nicaeensis Risso ex W. D. J. Koch ssp. carniolica (A. Kern.) Graebn.
+Polygala nicaeensis Risso ex W. D. J. Koch ssp. mediterranea Chodat
+Polygala nicaeensis Risso ex W. D. J. Koch ssp. nicaeensis
+Polygala vulgaris L.
+Polygala vulgaris L. ssp. oxyptera (Rchb.) Schübl. et G. Martens
+Polygala vulgaris L. ssp. vulgaris
+Polygonatum latifolium Desf.
+Polygonatum multiflorum (L.) All.
+Polygonatum odoratum (Mill.) Druce
+Polygonatum verticillatum (L.) All.
+Polygonum alpinum All.
+Polygonum amphibium L.
+Polygonum arenarium Waldst. et Kit.
+Polygonum arenastrum Boreau
+Polygonum aviculare L.
+Polygonum bellardii All.
+Polygonum bistorta L.
+Polygonum hydropiper L.
+Polygonum lapathifolium L.
+Polygonum lapathifolium L. ssp. brittingeri (Opiz) Jav.
+Polygonum lapathifolium L. ssp. incanum (F. W. Schmidt) Schubl.et Mart.
+Polygonum lapathifolium L. ssp. lapathifolium
+Polygonum longipes Halácsy et Charrel
+Polygonum maritimum L.
+Polygonum minus Hudson
+Polygonum mite Schrank
+Polygonum orientale L.
+Polygonum patulum M. Bieb.
+Polygonum persicaria L.
+Polygonum rurivagum Boreau
+Polygonum salicifolium Brouss. ex Willd.
+Polygonum viviparum L.
+Polypodium cambricum L.
+Polypodium interjectum Shivas
+Polypodium vulgare L.
+Polypogon maritimus Willd.
+Polypogon monspeliensis (L.) Desf.
+Polypogon viridis (Gouan) Breistr.
+Polystichum aculeatum (L.) Roth
+Polystichum braunii (Spenn.) Fée
+Polystichum lonchitis (L.) Roth
+Polystichum setiferum (Forssk.) Woyn.
+Populus alba L.
+Populus nigra L.
+Populus tremula L.
+Portenschlagiella ramosissima (Spreng.) Tutin
+Portulaca grandiflora Hook.
+Portulaca oleracea L.
+Portulaca oleracea L. ssp. granulatostellulata (Poelln.) Danin et H. G. Baker
+Portulaca oleracea L. ssp. nitida Danin et H. G. Baker
+Portulaca oleracea L. ssp. sativa (Haw.) Schübl. et G. Martens
+Posidonia oceanica (L.) Delile
+Potamogeton alpinus Balb.
+Potamogeton berchtoldii Fieber
+Potamogeton coloratus Hornem.
+Potamogeton compressus L.
+Potamogeton crispus L.
+Potamogeton filiformis Pers.
+Potamogeton gramineus L.
+Potamogeton lucens L.
+Potamogeton natans L.
+Potamogeton nodosus Poir.
+Potamogeton pectinatus L.
+Potamogeton perfoliatus L.
+Potamogeton polygonifolius Pourr.
+Potamogeton pusillus L.
+Potamogeton trichoides Cham. et Schltdl.
+Potentilla alba L.
+Potentilla anglica Laichard.
+Potentilla anserina L.
+Potentilla anserina L. ssp. anserina
+Potentilla argentea L.
+Potentilla astracanica Jacq.
+Potentilla aurea L.
+Potentilla aurea L. ssp. aurea
+Potentilla australis Krašan
+Potentilla carniolica A. Kern.
+Potentilla caulescens L.
+Potentilla cinerea Vill.
+Potentilla clusiana Jacq.
+Potentilla collina Wibel
+Potentilla crantzii (Crantz) R. M. Fritsch
+Potentilla detommasii Ten.
+Potentilla erecta (L.) Raeusch.
+Potentilla heptaphylla L.
+Potentilla hirta L.
+Potentilla inclinata Vill.
+Potentilla micrantha DC.
+Potentilla nitida L.
+Potentilla palustris (L.) Scop.
+Potentilla patula Waldst. et Kit.
+Potentilla pusilla Host
+Potentilla recta L.
+Potentilla reptans L.
+Potentilla rupestris L.
+Potentilla sterilis (L.) Garcke
+Potentilla supina L.
+Potentilla tabernaemontani Asch.
+Prangos trifida (Mill.) Herrnst. & Heyn
+Prasium majus L.
+Prenanthes purpurea L.
+Primula auricula L.
+Primula auricula L. ssp. auricula
+Primula auricula L. ssp. bauhini (Beck) Lüdi
+Primula clusiana Tausch
+Primula elatior (L.) L.
+Primula elatior (L.) L. ssp. elatior
+Primula elatior ssp. intricata (Gren. et Godr.) Widmer
+Primula farinosa L.
+Primula halleri J. F. Gmel.
+Primula kitaibeliana Schott
+Primula veris L.
+Primula veris L. ssp. columnae (Ten.) Lüdi
+Primula veris L. ssp. veris
+Primula vulgaris Huds.
+Primula wulfeniana Schott
+Pritzelago alpina (L.) Kuntze
+Pritzelago alpina (L.) Kuntze ssp. brevicaulis (Hoppe) Greuter et Burdet
+Prunella grandiflora (L.) Scholler
+Prunella grandiflora (L.) Scholler ssp. grandiflora
+Prunella laciniata (L.) L.
+Prunella vulgaris L.
+Prunus armeniaca L.
+Prunus avium (L.) L.
+Prunus cerasifera Ehrh.
+Prunus cerasus L.
+Prunus cocomilia Ten.
+Prunus domestica L.
+Prunus domestica L. ssp. domestica
+Prunus domestica L. ssp. insititia (L.) Bonnier et Layens
+Prunus dulcis (Mill.) D. A. Webb
+Prunus fruticosa Pall.
+Prunus mahaleb L.
+Prunus padus L.
+Prunus padus L. ssp. padus
+Prunus prostrata Labill.
+Prunus serotina Ehrh.
+Prunus spinosa L.
+Prunus tenella Batsch
+Prunus webbii (Spach) Vierh.
+Pseudofumaria lutea (L.) Borkh.
+Pseudognaphalium luteoalbum (L.) Hilliard et B. L. Burtt
+Pseudolysimachion barrelieri (Schott ex Roem. et Schult.) Holub
+Pseudolysimachion barrelieri (Schott ex Roem. et Schult.) Holub ssp. barrelieri
+Pseudolysimachion barrelieri (Schott ex Roem. et Schult.) Holub ssp. nitens M. A. Fisch.
+Pseudolysimachion longifolium (L.) Opiz
+Pseudolysimachion orchideum (Crantz) Wraber
+Pseudolysimachion spicatum (L.) Opiz
+Pseudolysimachion spicatum (L.) Opiz ssp. lanisepalum Trávníček
+Pseudolysimachion spurium (L.) Rauschert
+Pseudorchis albida (L.) Á. Löve et D. Löve
+Pseudorlaya pumila (L.) Grande
+Pseudostellaria europaea Schaeftl.
+Psilurus incurvus (Gouan) Schinz et Thell.
+Pteridium aquilinum (L.) Kuhn
+Pteridium aquilinum (L.) Kuhn ssp. aquilinum
+Pterocephalus plumosus (L.) DC.
+Ptilostemon stellatus (L.) Greuter
+Ptilostemon strictus (Ten.) Greuter
+Ptychotis saxifraga (L.) Loret et Barrandon
+Puccinellia distans (Jacq.) Parl.
+Puccinellia distans (L.) Parl. ssp. distans
+Puccinellia distans (L.) Parl. ssp. limosa (Schur) Soó et Jáv.
+Puccinellia fasciculata (Torr.) E. P. Bicknell
+Puccinellia festuciformis (Host) Parl.
+Puccinellia festuciformis (Host) Parl. ssp. festuciformis
+Puccinellia teyberi Hayek
+Pueraria montana (Lour.) Merr.
+Pulicaria dysenterica (L.) Bernh.
+Pulicaria odora (L.) Rchb.
+Pulicaria vulgaris Gaertn.
+Pulmonaria angustifolia L.
+Pulmonaria mollis Hornem.
+Pulmonaria montana Lej.
+Pulmonaria obscura Dumort.
+Pulmonaria officinalis L.
+Pulmonaria stiriaca A. Kern.
+Pulmonaria visianii Degen et Lengyel
+Pulsatilla alba Rchb.
+Pulsatilla alpina (L.) Delarbre
+Pulsatilla apiifolia (Scop.) Schult.
+Pulsatilla grandis Wender.
+Pulsatilla montana (Hoppe) Rchb.
+Pulsatilla montana (Hoppe) Rchb. ssp. montana
+Pulsatilla pratensis (L.) Mill.
+Pulsatilla pratensis (L.) Miller ssp. nigricans (Störck) Zam.
+Pulsatilla pratensis (L.) Miller ssp. pratensis
+Pulsatilla veležensis (G. Beck) Aichele et Schwegler
+Pulsatilla vernalis (L.) Mill.
+Punica granatum L.
+Putoria calabrica (L. f.) DC.
+Pyracantha coccinea M. Roem.
+Pyrola chlorantha Sw.
+Pyrola media Sw.
+Pyrola minor L.
+Pyrola rotundifolia L.
+Pyrus amygdaliformis Vill.
+Pyrus nivalis Jacq.
+Pyrus pyraster (L.) Burgsd.
+Quercus cerris L.
+Quercus coccifera L.
+Quercus crenata Lam.
+Quercus dalechampii Ten.
+Quercus frainetto Ten.
+Quercus ilex L.
+Quercus petraea (Matt.) Liebl.
+Quercus pubescens Willd.
+Quercus pubescens Willd. ssp. crispata (Steven) Greuter et Burdet
+Quercus pubescens Willd. ssp. pubescens
+Quercus robur L.
+Quercus robur L. ssp. brutia (Ten.) O. Schwartz
+Quercus robur L. ssp. pedunculiflora (K. Koch) Menitsky
+Quercus robur L. ssp. robur
+Quercus rubra L.
+Quercus trojana Webb
+Quercus virgiliana (Ten.) Ten.
+Radiola linoides Roth
+Ranunculus aconitifolius L.
+Ranunculus acris L.
+Ranunculus acris L. ssp. acris
+Ranunculus alpestris L.
+Ranunculus aquatilis L.
+Ranunculus arvensis L.
+Ranunculus auricomus L.
+Ranunculus bulbosus L.
+Ranunculus bulbosus L. ssp. aleae (Willk.) Rouy et Foucaud
+Ranunculus bulbosus L. ssp. bulbosus
+Ranunculus carinthiacus Hoppe
+Ranunculus cassubicifolius W. Koch
+Ranunculus cassubicus L.
+Ranunculus chius DC.
+Ranunculus circinatus Sibth.
+Ranunculus concinnatus Schott
+Ranunculus crenatus Waldst. et Kit.
+Ranunculus croaticus Schott
+Ranunculus fallax (Wimm. et Grab.) Sloboda
+Ranunculus ficaria L.
+Ranunculus ficaria L. ssp. bulbilifer Lambinon
+Ranunculus ficaria L. ssp. calthifolius (Rchb.) Arcang.
+Ranunculus ficaria L. ssp. ficariiformis Rouy et Foucaud
+Ranunculus flammula L.
+Ranunculus flammula L. ssp. flammula
+Ranunculus fluitans Lam.
+Ranunculus fontanus C. Presl
+Ranunculus garganicus Ten.
+Ranunculus gracilis E. D. Clarke
+Ranunculus hederaceus L.
+Ranunculus hybridus Biria
+Ranunculus illyricus L.
+Ranunculus istriacus Hörandl et Gutermann
+Ranunculus lanuginosus L.
+Ranunculus lateriflorus DC.
+Ranunculus lingua L.
+Ranunculus marginatus d'Urv.
+Ranunculus millefoliatus Vahl
+Ranunculus montanus Willd.
+Ranunculus muricatus L.
+Ranunculus neapolitanus Ten.
+Ranunculus nemorosus DC.
+Ranunculus notabilis Hörandl & Gutermann
+Ranunculus ophioglossifolius Vill.
+Ranunculus oreophilus M. Bieb.
+Ranunculus paludosus Poir.
+Ranunculus parviflorus L.
+Ranunculus pedatus Waldst. et Kit.
+Ranunculus peltatus Schrank
+Ranunculus platanifolius L.
+Ranunculus polyanthemos L.
+Ranunculus psilostachys Griseb.
+Ranunculus repens L.
+Ranunculus rionii Lagger
+Ranunculus sardous Crantz
+Ranunculus sartorianus Boiss. et Heldr. in Boiss.
+Ranunculus sceleratus L.
+Ranunculus strigulosus Schur
+Ranunculus thora L.
+Ranunculus traunfellneri Hoppe
+Ranunculus trichophyllus Chaix
+Ranunculus trichophyllus Chaix in Vill. ssp. trichophyllus
+Ranunculus tripartitus DC.
+Ranunculus velutinus Ten.
+Raphanus raphanistrum L.
+Raphanus raphanistrum L. ssp. landra (Moretti ex DC.) Bonnier et Layens
+Raphanus raphanistrum L. ssp. raphanistrum
+Rapistrum perenne (L.) All.
+Rapistrum rugosum (L.) All.
+Rapistrum rugosum (L.) All. ssp. orientale (L.) Arcang.
+Rapistrum rugosum (L.) All. ssp. rugosum
+Reichardia picroides (L.) Roth
+Reseda alba L.
+Reseda inodora Rchb.
+Reseda lutea L.
+Reseda luteola L.
+Reseda phyteuma L.
+Resetnikia triquetra (DC.) Španiel, Al-Shehbaz, D. A. German et Marhold
+Reynoutria japonica Houtt.
+Reynoutria sachalinensis (F. Schmidt) Nakai
+Rhagadiolus edulis Gaertn.
+Rhagadiolus stellatus (L.) Gaertn.
+Rhamnus alaternus L.
+Rhamnus alpina L.
+Rhamnus alpina L. ssp. fallax (Boiss.) Maire et Petitm.
+Rhamnus cathartica L.
+Rhamnus intermedia Steud. et Hochst.
+Rhamnus orbiculata Bornm.
+Rhamnus prunifolia Sm.
+Rhamnus pumila Turra
+Rhamnus saxatilis Jacq.
+Rhamnus saxatilis Jacq. ssp. saxatilis
+Rhamnus saxatilis Jacq. ssp. tinctoria Nyman
+Rhinanthus alectorolophus (Scop.) Pollich
+Rhinanthus alpinus Baumg.
+Rhinanthus angustifolius C. C. Gmel.
+Rhinanthus angustifolius C. C. Gmel. ssp. angustifolius
+Rhinanthus angustifolius C. C. Gmel. ssp. grandiflorus (Wallr.) D. A. Webb
+Rhinanthus aristatus Čelak.
+Rhinanthus asperulus (Murb.) Soó
+Rhinanthus burnatii (Chabert) Soó
+Rhinanthus carinthiacus Widder
+Rhinanthus freynii (Sterneck) Fiori
+Rhinanthus mediterraneus (Sterneck) Adamović
+Rhinanthus minor L.
+Rhinanthus ovifugus Chabert
+Rhinanthus rumelicus Velen.
+Rhodiola rosea L.
+Rhododendron ferrugineum L.
+Rhododendron hirsutum L.
+Rhodothamnus chamaecistus (L.) Rchb.
+Rhus coriaria L.
+Rhus typhina L.
+Rhynchospora alba (L.) Vahl
+Rhynchospora fusca (L.) W. T. Aiton
+Ribes alpinum L.
+Ribes multiflorum Roem. et Schult.
+Ribes petraeum Wulfen
+Ribes rubrum L.
+Ribes spicatum E. Robson
+Ribes uva-crispa L.
+Ricinus communis L.
+Ridolfia segetum (Guss.) Moris
+Robinia pseudoacacia L.
+Roemeria hybrida (L.) DC.
+Romulea bulbocodium (L.) Sebast. et Mauri
+Romulea columnae Sebast. et Mauri
+Rorippa amphibia (L.) Besser
+Rorippa austriaca (Crantz) Besser
+Rorippa islandica (Oeder) Borbás
+Rorippa islandica (Oeder) Borbás ssp. islandica
+Rorippa lippizensis (Wulfen) Rchb.
+Rorippa palustris (L.) Besser
+Rorippa pyrenaica (All.) Rchb.
+Rorippa sylvestris (L.) Besser
+Rosa abietina Christ.
+Rosa agrestis Savi
+Rosa andegavensis Bastard
+Rosa arvensis Huds.
+Rosa caesia Sm.
+Rosa canina L.
+Rosa caryophyllacea Besser
+Rosa corymbifera Borkh.
+Rosa deseglisei Boreau
+Rosa elliptica Tausch
+Rosa foetida Herrm.
+Rosa gallica L.
+Rosa glauca Pourr.
+Rosa glutinosa Sibth. et Sm.
+Rosa jundzillii Besser
+Rosa majalis Herrm.
+Rosa micrantha Borrer ex Sm.
+Rosa mollis Sm.
+Rosa montana Chaix
+Rosa nitidula Besser
+Rosa obtusifolia Desv.
+Rosa orientalis Ser.
+Rosa pendulina L.
+Rosa pimpinellifolia L.
+Rosa rubiginosa L.
+Rosa scabriuscula Sm.
+Rosa sempervirens L.
+Rosa sherardii Davies
+Rosa sicula Tratt.
+Rosa subcanina (Christ) Vuk.
+Rosa subcollina (Christ) Vuk.
+Rosa tomentosa Sm.
+Rosa villosa L.
+Rosa vosagiaca Desp.
+Rosa zalana Wiesb.
+Rosmarinus officinalis L.
+Rubia peregrina L.
+Rubia tinctorium L.
+Rubus bifrons Tratt.
+Rubus caesius L.
+Rubus candicans Weihe ex Rchb.
+Rubus canescens DC.
+Rubus carpinetorum Freyn
+Rubus chloocladus W. C. R. Watson
+Rubus chlorothyrsos Focke
+Rubus clusii Borbás
+Rubus discolor Weihe et Ness
+Rubus glandulosus Bellardi
+Rubus gremlii Focke
+Rubus heteromorphus Ripart ex Genev.
+Rubus hirtus Waldst. et Kit.
+Rubus idaeus L.
+Rubus koehleri Weihe
+Rubus macrophyllus Weihe et Nees
+Rubus maureri Király, Trávn. et Žíla
+Rubus menkei Weihe
+Rubus nessensis Hall
+Rubus pilocarpus Gremli
+Rubus plicatus Weihe et Nees
+Rubus radula Weihe
+Rubus rudis Weihe
+Rubus saxatilis L.
+Rubus scaber Weihe
+Rubus schleicheri Tratt.
+Rubus serpens Lej. et Courtois
+Rubus slavonicus Király, Trávn. et Žíla
+Rubus sulcatus Vest
+Rubus thyrsiflorus Weihe
+Rubus tomentellus Genev.
+Rubus trachypus Boulay et Gillot
+Rubus ulmifolius Schott
+Rubus villicaulis Weihe
+Rubus vulgaris Weihe et Nees
+Rudbeckia laciniata L.
+Rumex acetosa L.
+Rumex acetosa L. ssp. acetosa
+Rumex acetosella L.
+Rumex acetosella L. ssp. acetosella
+Rumex acetosella L. ssp. angiocarpus (Murb.) Murb.
+Rumex alpestris Jacq.
+Rumex alpinus L.
+Rumex aquaticus L.
+Rumex bucephalophorus L.
+Rumex conglomeratus Murray
+Rumex crispus L.
+Rumex crispus L. ssp. crispus
+Rumex cristatus DC.
+Rumex hydrolapathum Huds.
+Rumex longifolius DC.
+Rumex maritimus L.
+Rumex nebroides Campd.
+Rumex obtusifolius L.
+Rumex obtusifolius L. ssp. obtusifolius
+Rumex obtusifolius L. ssp. sylvestris Čelak.
+Rumex palustris Sm.
+Rumex patientia L.
+Rumex patientia L. ssp. patientia
+Rumex pulcher L.
+Rumex pulcher L. ssp. pulcher
+Rumex pulcher L. ssp. woodsii (De Not.) Arcang.
+Rumex sanguineus L.
+Rumex scutatus L.
+Rumex thyrsiflorus Fingerh.
+Rumex tuberosus L.
+Rumex tuberosus L. ssp. tuberosus
+Ruppia cirrhosa (Petagna) Grande
+Ruppia maritima L.
+Ruscus aculeatus L.
+Ruscus hypoglossum L.
+Ruscus hypophyllum L.
+Ruta angustifolia Pers.
+Ruta chalepensis L.
+Ruta graveolens L.
+Saccharum ravennae (L.) Murray
+Saccharum strictum (Host) Spreng.
+Sagina apetala Ard.
+Sagina apetala Ard. ssp. apetala
+Sagina apetala Ard. ssp. erecta (Hornem) F. Hermann
+Sagina maritima Don
+Sagina procumbens L.
+Sagina procumbens L. ssp. procumbens
+Sagina saginoides (L.) H. Karst.
+Sagina saginoides (L.) Karsten ssp. saginoides
+Sagina subulata (Sw.) C. Presl
+Sagittaria sagittifolia L.
+Salicornia perennans Willd.
+Salicornia perennans Willd. ssp. perennans
+Salicornia procumbens Sm.
+Salicornia procumbens Sm. ssp. procumbens
+Salix alba L.
+Salix alba L. ssp. alba
+Salix alba L. ssp. coerulea (Sm.) Rech. f.
+Salix alpina Scop.
+Salix appendiculata Vill.
+Salix aurita L.
+Salix caprea L.
+Salix cinerea L.
+Salix daphnoides Vill.
+Salix eleagnos Scop.
+Salix eleagnos Scop. ssp. angustifolia (Cariot et St.-Lag.) Rech. f.
+Salix eleagnos Scop. ssp. eleagnos
+Salix glabra Scop.
+Salix hastata L.
+Salix herbacea L.
+Salix myrsinifolia Salisb.
+Salix pentandra L.
+Salix purpurea L.
+Salix purpurea L. ssp. lambertiana (Sm.) Rech. f.
+Salix purpurea L. ssp. purpurea
+Salix repens L.
+Salix retusa L.
+Salix rosmarinifolia L.
+Salix serpillifolia Scop.
+Salix triandra L.
+Salix triandra L. ssp. discolor (Wimm. et Grab.) Arcang.
+Salix triandra L. ssp. triandra
+Salix viminalis L.
+Salix waldsteiniana Willd.
+Salpichroa origanifolia (Lam.) Baill.
+Salsola kali L.
+Salsola kali L. ssp. kali
+Salsola kali L. ssp. ruthenica (Iljin) Soó in Soó et Jav.
+Salsola kali L. ssp. tragus (L.) Nyman
+Salsola soda L.
+Salvia aethiopis L.
+Salvia amplexicaulis Lam.
+Salvia argentea L.
+Salvia austriaca Jacq.
+Salvia bertolonii Vis.
+Salvia brachyodon Vandas
+Salvia fruticosa Mill.
+Salvia glutinosa L.
+Salvia greggii A. Gray
+Salvia hispanica L.
+Salvia nemorosa L.
+Salvia officinalis L.
+Salvia peloponnesiaca Boiss. et Heldr.
+Salvia pratensis L.
+Salvia saccardiana (Pamp.) Del Carr. et Garbari
+Salvia sclarea L.
+Salvia tomentosa Mill.
+Salvia verbenaca L.
+Salvia verticillata L.
+Salvia viridis L.
+Salvinia natans (L.) All.
+Sambucus ebulus L.
+Sambucus nigra L.
+Sambucus racemosa L.
+Samolus valerandi L.
+Sanguisorba minor Scop.
+Sanguisorba minor Scop. ssp. minor
+Sanguisorba minor Scop. ssp. muricata Briq.
+Sanguisorba officinalis L.
+Sanicula europaea L.
+Santolina chamaecyparissus L.
+Santolina chamaecyparissus L. ssp. insularis (Gennari ex Fiori) Yeo
+Saponaria bellidifolia Sm.
+Saponaria officinalis L.
+Sarcopoterium spinosum (L.) Spach
+Satureja cuneifolia Ten.
+Satureja hortensis L.
+Satureja montana L.
+Satureja montana L. ssp. montana
+Satureja montana L. ssp. variegata (Host) P. W. Ball
+Satureja subspicata Bartl. ex Vis.
+Satureja subspicata Bartl. ex Vis. ssp. liburnica Šilić
+Satureja subspicata Bartl. ex Vis. ssp. subspicata
+Satureja visianii Šilić
+Saussurea discolor (Willd.) DC.
+Saxifraga adscendens L.
+Saxifraga aizoides L.
+Saxifraga androsacea L.
+Saxifraga aspera L.
+Saxifraga blavii (Engl.) Beck
+Saxifraga bulbifera L.
+Saxifraga caesia L.
+Saxifraga coryophylla Griseb.
+Saxifraga crustata Vest
+Saxifraga cuneifolia L.
+Saxifraga cuneifolia L. ssp. robusta D. A. Webb
+Saxifraga exarata Vill.
+Saxifraga exarata Vill. ssp. moschata (Wulfen) Cavill.
+Saxifraga glabella Bertol.
+Saxifraga granulata L.
+Saxifraga hederacea L.
+Saxifraga marginata Sternb.
+Saxifraga oppositifolia L.
+Saxifraga paniculata Mill.
+Saxifraga pedemontana All.
+Saxifraga petraea L.
+Saxifraga rotundifolia L.
+Saxifraga rotundifolia L. ssp. rotundifolia
+Saxifraga sedoides L.
+Saxifraga sedoides L. ssp. prenja (Beck) Hayek
+Saxifraga squarrosa Sieber
+Saxifraga stellaris L.
+Saxifraga tridactylites L.
+Scabiosa canescens Waldst. et Kit.
+Scabiosa cinerea Lam.
+Scabiosa columbaria L.
+Scabiosa columbaria L. ssp. columbaria
+Scabiosa delminiana Abadžić
+Scabiosa hladnikiana Host
+Scabiosa lucida Vill.
+Scabiosa lucida Vill. ssp. lucida
+Scabiosa lucida Vill. ssp. stricta (Waldst. et Kit.) Jasiewicz
+Scabiosa ochroleuca L.
+Scabiosa silenifolia Waldst. et Kit.
+Scabiosa triandra L.
+Scaligeria cretica (Mill.) Boiss.
+Scandix australis L.
+Scandix australis L. ssp. australis
+Scandix australis L. ssp. grandiflora (L.) Thell.
+Scandix pecten-veneris L.
+Scandix pecten-veneris L. ssp. macrorhyncha (C. A. Mey.) Rony et Camus
+Scandix pecten-veneris L. ssp. pecten-veneris
+Scheuchzeria palustris L.
+Schoenus nigricans L.
+Scilla autumnalis L.
+Scilla bifolia L.
+Scilla elisae (Speta) Valdés
+Scilla hyacinthoides L.
+Scirpus cernuus Vahl
+Scirpus cespitosus L.
+Scirpus cespitosus L. ssp. cespitosus
+Scirpus glaucus Sm.
+Scirpus holoschoenus L.
+Scirpus lacustris L.
+Scirpus lacustris L. ssp. lacustris
+Scirpus lacustris L. ssp. tabernaemontani (C. C. Gmel.) Syme
+Scirpus litoralis Schrad.
+Scirpus maritimus L.
+Scirpus maritimus L. ssp. maritimus
+Scirpus mucronatus L.
+Scirpus pendulus Muhl.
+Scirpus planiculmis F. W. Schmidt
+Scirpus radicans Schkuhr
+Scirpus setaceus L.
+Scirpus supinus L.
+Scirpus sylvaticus L.
+Scirpus triqueter L.
+Scleranthus annuus L.
+Scleranthus annuus L. ssp. collinus Smejkal
+Scleranthus perennis L.
+Scleranthus perennis L. ssp. perennis
+Scleranthus polycarpos L.
+Scleranthus uncinatus Schur
+Sclerochloa dura (L.) P. Beauv.
+Scolymus hispanicus L.
+Scopolia carniolica Jacq.
+Scorpiurus muricatus L.
+Scorzonera austriaca Willd.
+Scorzonera austriaca Willd. ssp. austriaca
+Scorzonera austriaca Willd. ssp. bupleurifolia (Pouzolz) Bonnier
+Scorzonera cana (C. A. Mey.) O. Hoffm.
+Scorzonera hirsuta L.
+Scorzonera hispanica L.
+Scorzonera humilis L.
+Scorzonera laciniata L.
+Scorzonera parviflora Jacq.
+Scorzonera purpurea L.
+Scorzonera purpurea L. ssp. rosea (Waldst. et Kit.) Nyman
+Scorzonera villosa Scop.
+Scorzonera villosa Scop. ssp. villosa
+Scrophularia bosniaca Beck
+Scrophularia canina L.
+Scrophularia canina L. ssp. bicolor (Sibth. et Sm.) Greuter
+Scrophularia canina L. ssp. canina
+Scrophularia canina L. ssp. hoppii (W. D. J. Koch) P. Fourn.
+Scrophularia heterophylla Willd.
+Scrophularia heterophylla Willd. ssp. laciniata (Waldst. et Kit.) Maire et Petitm.
+Scrophularia nodosa L.
+Scrophularia peregrina L.
+Scrophularia scopolii Hoppe
+Scrophularia umbrosa Dumort.
+Scrophularia vernalis L.
+Scutellaria albida L.
+Scutellaria albida L. ssp. albida
+Scutellaria alpina L.
+Scutellaria altissima L.
+Scutellaria columnae All.
+Scutellaria columnae All. ssp. columnae
+Scutellaria galericulata L.
+Scutellaria hastifolia L.
+Scutellaria orientalis L.
+Secale cereale L.
+Secale montanum Guss.
+Secale sylvestre Host
+Securigera cretica (L.) Lassen
+Securigera elegans (Pančić) Lassen
+Securigera securidaca (L.) Degen et Dörfl.
+Sedum acre L.
+Sedum album L.
+Sedum alpestre Vill.
+Sedum annuum L.
+Sedum atratum L.
+Sedum atratum L. ssp. atratum
+Sedum atratum L. ssp. carinthiacum (Pacher) D. A. Webb.
+Sedum caespitosum (Cav.) DC.
+Sedum cepaea L.
+Sedum dasyphyllum L.
+Sedum grisebachii Boiss. et Heldr.
+Sedum grisebachii Boiss. et Heldr. ssp. flexuosum (Wettst.) Greuter et Burdet
+Sedum hirsutum All.
+Sedum hispanicum L.
+Sedum litoreum Guss.
+Sedum magellense Ten.
+Sedum magellense Ten. ssp. olympicum (Boiss.) Greuter et Burdet
+Sedum montanum E. P. Perrier et Songeon
+Sedum ochroleucum Chaix
+Sedum rubens L.
+Sedum rupestre L.
+Sedum sarmentosum Bunge
+Sedum sediforme (Jacq.) Pau
+Sedum sexangulare L.
+Sedum stellatum L.
+Sedum telephium L.
+Sedum telephium L. ssp. maximum (L.) Krock.
+Sedum tenuifolium (Sibth. et Sm.) Strobl
+Sedum villosum L.
+Selaginella denticulata (L.) Spring
+Selaginella helvetica (L.) Spring
+Selaginella selaginoides (L.) Schrank et Mart.
+Selinum carvifolia (L.) L.
+Sempervivum dolomiticum Facchini
+Sempervivum marmoreum Griseb.
+Sempervivum montanum L.
+Sempervivum tectorum L.
+Senecio abrotanifolius L.
+Senecio abrotanifolius L. ssp. abrotanifolius
+Senecio angulatus L. f.
+Senecio aquaticus Hill
+Senecio bicolor (Willd.) Tod.
+Senecio bicolor (Willd.) Tod. ssp. cineraria (DC.) Chater
+Senecio cacaliaster Lam.
+Senecio caroli-maly Horvatić
+Senecio doria L.
+Senecio doria L. ssp. doria
+Senecio doria L. ssp. umbrosus (Waldst. et Kit.) Soó
+Senecio doronicum (L.) L.
+Senecio doronicum (L.) L. ssp. doronicum
+Senecio erraticus Bertol.
+Senecio erraticus Bertol. ssp. barbareifolius (Wimm. et Graebn.) Beger
+Senecio erraticus Bertol. ssp. erraticus
+Senecio erucifolius L.
+Senecio erucifolius L. ssp. erucifolius
+Senecio erucifolius L. ssp. tenuifolius Schübl.et G. Martens
+Senecio germanicus Wallr.
+Senecio germanicus Wallr. ssp. germanicus
+Senecio germanicus Wallr. ssp. glabratus Herborg
+Senecio inaequidens DC.
+Senecio incanus L.
+Senecio jacobaea L.
+Senecio jacobaea L. ssp. jacobaea
+Senecio leucanthemifolius Poir.
+Senecio lycopifolius Desf. ex Poir.
+Senecio mikanioides Otto ex Walp.
+Senecio ovatus (P. Gaertn., B. Mey. et Scherb.) Willd.
+Senecio ovatus (P. Gaertn., B. Mey. et Scherb.) Willd. ssp. ovatus
+Senecio paludosus L.
+Senecio papposus (Rchb.) Less.
+Senecio papposus (Rchb.) Less. ssp. kitaibelii (Jáv.) Cufod.
+Senecio papposus (Rchb.) Less. ssp. papposus
+Senecio sarracenicus L.
+Senecio scopolii Hoppe et Hornsch. ex Bluff et Fingerh.
+Senecio squalidus L.
+Senecio subalpinus Koch
+Senecio sylvaticus L.
+Senecio thapsoides DC.
+Senecio thapsoides DC. ssp. visianianus (Vis.) Vandas
+Senecio vernalis Waldst. et Kit.
+Senecio viscosus L.
+Senecio vulgaris L.
+Senna obtusifolia (L.) H. S. Irwin et Barneby
+Serapias cordigera L.
+Serapias ionica (E. Nelson) H. Baumann et Künkele
+Serapias istriaca Perko
+Serapias lingua L.
+Serapias neglecta De Not.
+Serapias parviflora Parl.
+Serapias todaroi Tineo
+Serapias vomeracea (Burm. f.) Briq.
+Serapias vomeracea (Burm. f.) Briq. ssp. laxiflora (Soó) Gölz et H. R. Reinhard
+Serapias vomeracea (Burm. f.) Briq. ssp. vomeracea
+Serratula lycopifolia (Vill.) A. Kern.
+Serratula radiata (Waldst. et Kit.) M. Bieb.
+Serratula radiata (Waldst. et Kit.) M. Bieb. ssp. cetinjensis (Rohlena) Hayek
+Serratula radiata (Waldst. et Kit.) M. Bieb. ssp. radiata
+Serratula tinctoria L.
+Seseli annuum L.
+Seseli annuum L. ssp. annuum
+Seseli elatum L.
+Seseli elatum L. ssp. gouanii P. W. Ball
+Seseli elatum L. ssp. osseum (Crantz) P. W. Ball
+Seseli globiferum Vis.
+Seseli gracile Waldst. et Kit.
+Seseli hippomarathrum Jacq.
+Seseli hippomarathrum Jacq.ssp. hippomarathrum
+Seseli libanotis (L.) W. D. J. Koch
+Seseli libanotis (L.) W. D. J. Koch ssp. libanotis
+Seseli malyi A. Kern.
+Seseli montanum L.
+Seseli montanum L. ssp. tommasinii (Rchb. f.) Arcang.
+Seseli pallasii Besser
+Seseli peucedanoides (M. Bieb.) Koso-Pol.
+Seseli rigidum Waldst. et Kit.
+Seseli tomentosum Vis.
+Seseli tortuosum L.
+Sesleria albicans Kit. et Schult.
+Sesleria argentea (Savi) Savi
+Sesleria autumnalis (Scop.) F. W. Schultz
+Sesleria caerulea (L.) Ard.
+Sesleria coerulans Friv.
+Sesleria robusta Schott, Nyman et Kotschy
+Sesleria sadlerana Janka
+Sesleria sphaerocephala Ard.
+Sesleria tenuifolia Schrad.
+Sesleria tenuifolia Schrad. ssp. kalnikensis (Jav.) Deyl
+Sesleria tenuifolia Schrad. ssp. tenuifolia
+Setaria adhaerens (Forssk.) Chiov.
+Setaria faberi R. A. W. Herrm.
+Setaria geniculata (Lam.) P. Beauv.
+Setaria gussonei Kerguélen
+Setaria italica (L.) P. Beauv.
+Setaria pumila (Poir.) Roem. et Schult.
+Setaria verticillata (L.) P. Beauv.
+Setaria viridis (L.) P. Beauv.
+Sherardia arvensis L.
+Sibbaldia procumbens L.
+Sibiraea altaiensis (Laxm.) C. K. Schneid.
+Sibiraea altaiensis (Laxm.) C. K. Schneid. ssp. croatica (Degen) Degen
+Sicyos angulatus L.
+Sida rhombifolia L.
+Sideritis hyssopifolia L.
+Sideritis hyssopifolia L. ssp. hyssopifolia
+Sideritis montana L.
+Sideritis montana L. ssp. montana
+Sideritis romana L.
+Sideritis romana L. ssp. purpurea (Talbot ex Benth.) Heywood
+Silaum silaus (L.) Schinz et Thell.
+Silene acaulis (L.) Jacq.
+Silene acaulis (L.) Jacq. ssp. acaulis
+Silene armeria L.
+Silene bellidifolia Jacq.
+Silene catholica (L.) W. T. Aiton
+Silene cerastoides L.
+Silene conica L.
+Silene cretica L.
+Silene dichotoma Ehrh.
+Silene dichotoma Ehrh. ssp. racemosa (Otth) Graebn.
+Silene dichotoma Ehrh.ssp. dichotoma
+Silene dioica (L.) Clairv.
+Silene flavescens Waldst. et Kit.
+Silene gallica L.
+Silene gallinyi Rchb.
+Silene hayekiana Hand.-Mazz. et Janch.
+Silene heuffelii Soó
+Silene italica (L.) Pers.
+Silene italica (L.) Pers. ssp. italica
+Silene italica (L.) Pers. ssp. nemoralis (Waldst. et Kit.) Nyman
+Silene latifolia Poir.
+Silene latifolia Poir. ssp. alba (Mill.) Greuter et Bourdet
+Silene latifolia Poir. ssp. latifolia
+Silene linicola C. C. Gmel.
+Silene multicaulis Guss.
+Silene multicaulis Guss. ssp. multicaulis
+Silene noctiflora L.
+Silene nocturna L.
+Silene nocturna L. ssp. nocturna
+Silene nutans L.
+Silene nutans L. ssp. livida (Will.) Jeanmond et Bocquet
+Silene nutans L. ssp. nutans
+Silene otites (L.) Wibel
+Silene otites (L.) Wibel ssp. otites
+Silene paradoxa L.
+Silene reichenbachii Vis.
+Silene remotiflora Vis.
+Silene rubella L.
+Silene rubella L. ssp. rubella
+Silene rupestris L.
+Silene saxifraga L.
+Silene sedoides Poir.
+Silene sendtneri Boiss.
+Silene subconica Friv.
+Silene vallesia L.
+Silene vallesia L. ssp. graminea (Rchb.) Nyman
+Silene velebitica (Degen) Wrigley
+Silene viridiflora L.
+Silene vulgaris (Moench) Garcke
+Silene vulgaris (Moench) Garcke ssp. angustifolia Hayek
+Silene vulgaris (Moench) Garcke ssp. bosniaca (G. Beck) Janch.
+Silene vulgaris (Moench) Garcke ssp. commutata (Guss.) Hayek
+Silene vulgaris (Moench) Garcke ssp. prostrata (Gaudin) Schinz et Thell.
+Silene vulgaris (Moench) Garcke ssp. vulgaris
+Silene waldsteinii Griseb.
+Silybum marianum (L.) Gaertn.
+Sinapis alba L.
+Sinapis alba L. ssp. alba
+Sinapis arvensis L.
+Sison amomum L.
+Sisymbrium altissimum L.
+Sisymbrium austriacum Jacq.
+Sisymbrium austriacum Jacq. ssp. austriacum
+Sisymbrium irio L.
+Sisymbrium loeselii L.
+Sisymbrium officinale (L.) Scop.
+Sisymbrium orientale L.
+Sisymbrium polyceratium L.
+Sisymbrium strictissimum L.
+Sisyrinchium bermudiana L.
+Sisyrinchium montanum Greene
+Sium latifolium L.
+Sium sisarum L.
+Sixalix atropurpurea (L.) Greuter et Burdet
+Sixalix atropurpurea (L.) Greuter et Burdet ssp. maritima (L.) Greuter et Burdet
+Smilax aspera L.
+Smyrnium olusatrum L.
+Smyrnium perfoliatum L.
+Smyrnium rotundifolium Mill.
+Solanum carolinense L.
+Solanum chenopodioides Lam.
+Solanum dulcamara L.
+Solanum elaeagnifolium Cav.
+Solanum lycopersicum L.
+Solanum melongena L.
+Solanum nigrum L.
+Solanum nigrum L. ssp. nigrum
+Solanum nigrum L. ssp. schultesii (Opiz) Wessely
+Solanum pseudocapsicum L.
+Solanum rostratum Dunal
+Solanum sisymbrifolium Lam.
+Solanum sodomeum L.
+Solanum tuberosum L.
+Solanum villosum Mill.
+Solanum villosum Mill. ssp. alatum (Moench) Dostál
+Solanum villosum Mill. ssp. villosum
+Soldanella alpina L.
+Solidago canadensis L.
+Solidago gigantea Aiton
+Solidago virgaurea L.
+Solidago virgaurea L. ssp. minuta (L.) Arcang.
+Solidago virgaurea L. ssp. virgaurea
+Sonchus arvensis L.
+Sonchus asper (L.) Hill
+Sonchus asper (L.) Hill ssp. asper
+Sonchus asper (L.) Hill ssp. glaucescens (Jord.) Ball
+Sonchus maritimus L.
+Sonchus maritimus L. ssp. maritimus
+Sonchus oleraceus L.
+Sonchus palustris L.
+Sonchus tenerrimus L.
+Sonchus uliginosus (M. Bieb.) Nyman
+Sophora japonica L.
+Sorbus aria (L.) Crantz
+Sorbus aria (L.) Crantz ssp. aria
+Sorbus aria (L.) Crantz ssp. lanifera (Borbás) Kárpáti
+Sorbus aucuparia L.
+Sorbus aucuparia L. ssp. aucuparia
+Sorbus austriaca (Beck) Prain
+Sorbus austriaca (Beck) Prain ssp. austriaca
+Sorbus austriaca (Beck) Prain ssp. croatica Kárpáti
+Sorbus borbasii Jáv.
+Sorbus chamaemespilus (L.) Crantz
+Sorbus domestica L.
+Sorbus graeca (Lodd. ex Spach) S. Schauer
+Sorbus istriaca Kárpáti
+Sorbus mayeri Mikoláš
+Sorbus pannonica Kárpáti
+Sorbus slavnicensis Kárpáti
+Sorbus torminalis (L.) Crantz
+Sorbus velebitica Kárpáti
+Sorghum bicolor (L.) Moench
+Sorghum halepense (L.) Pers.
+Sorghum sudanense (Piper) Stapf
+Sparganium angustifolium Michx.
+Sparganium emersum Rehmann
+Sparganium erectum L.
+Sparganium erectum L. ssp. erectum
+Sparganium erectum L. ssp. microcarpum (Neuman) Domin
+Sparganium erectum L. ssp. neglectum (Beeby) Schinz et Thell.
+Sparganium erectum L. ssp. oocarpum (Čelak.) Domin
+Sparganium minimum Wallr.
+Spartina maritima (Curtis) Fernald
+Spartina versicolor E. Fabre
+Spartium junceum L.
+Spergula arvensis L.
+Spergula arvensis L. ssp. arvensis
+Spergula pentandra L.
+Spergularia bocconei (Scheele) Asch. et Graebn.
+Spergularia maritima (All.) Chiov.
+Spergularia maritima (All.) Chiov. ssp. maritima
+Spergularia rubra (L.) J. Presl et C. Presl
+Spergularia salina J. Presl et C. Presl
+Spiraea cana Waldst. et Kit.
+Spiraea hypericifolia L.
+Spiraea hypericifolia L. ssp. obovata (Willd.) H. Huber
+Spiraea media Schmidt
+Spiraea salicifolia L.
+Spiranthes aestivalis (Poir.) Rich.
+Spiranthes spiralis (L.) Chevall.
+Spirodela polyrhiza (L.) Schleid.
+Sporobolus neglectus Nash
+Sporobolus pungens (Schreb.) Kunth
+Sporobolus vaginiflorus (A. Gray) A. W. Wood
+Stachys alpina L.
+Stachys alpina L. ssp. alpina
+Stachys alpina L. ssp. dinarica Murb.
+Stachys angustifolia M. Bieb.
+Stachys annua (L.) L.
+Stachys annua (L.) L. ssp. annua
+Stachys arenaria Vahl
+Stachys arvensis (L.) L.
+Stachys byzantina K. Koch
+Stachys cretica L.
+Stachys cretica L. ssp. cassia (Boiss.) Rech. f.
+Stachys cretica L. ssp. salviifolia (Ten.) Rech. f.
+Stachys germanica L.
+Stachys germanica L. ssp. germanica
+Stachys maritima Gouan
+Stachys menthifolia Vis.
+Stachys obliqua Waldst. et Kit.
+Stachys palustris L.
+Stachys recta L.
+Stachys recta L. ssp. baldaccii (K. Malý) Hayek
+Stachys recta L. ssp. labiosa (Bertol.) Briq.
+Stachys recta L. ssp. recta
+Stachys spinulosa Sm.
+Stachys subcrenata Vis.
+Stachys sylvatica L.
+Stachys thirkei K. Koch
+Stachys tymphaea Hausskn.
+Staehelina dubia L.
+Staphylea pinnata L.
+Stellaria alsine Grimm
+Stellaria graminea L.
+Stellaria holostea L.
+Stellaria media (L.) Vill.
+Stellaria neglecta (Lej.) Weihe
+Stellaria nemorum L.
+Stellaria nemorum L. ssp. glochidiosperma Murb.
+Stellaria nemorum L. ssp. nemorum
+Stellaria pallida (Dumort.) Piré
+Stellaria palustris Hoffm.
+Stellaria ruderalis M. Lepší, P. Lepší, K. Zdeněk et P. Koutecký
+Sternbergia colchiciflora Waldst. et Kit.
+Sternbergia lutea (L.) Ker Gawl. ex Spreng.
+Sternbergia lutea (L.) Ker Gawl. ex Spreng. ssp. lutea
+Stipa bromoides (L.) Dörfl.
+Stipa capensis Thunb.
+Stipa capillata L.
+Stipa joannis Čelak.
+Stipa pennata L.
+Stipa pennata L. ssp. eriocaulis (Borbás) Martinovský et Skalický
+Stipa pulcherrima K. Koch
+Stratiotes aloides L.
+Streptopus amplexifolius (L.) DC.
+Styrax officinalis L.
+Suaeda maritima (L.) Dumort.
+Suaeda maritima (L.) Dumort. ssp. maritima
+Suaeda maritima (L.) Dumort. ssp. salsa (L.) Soó in Soó et Jav.
+Suaeda vera J. F. Gmel.
+Succisa pratensis Moench
+Succisella inflexa (Kluk) Beck
+Succisella petteri (Jos. Kern. et Murb.) Beck
+Swertia perennis L.
+Symphoricarpos albus ( L.) S. F. Blake
+Symphytum bulbosum K. F. Schimp.
+Symphytum officinale L.
+Symphytum officinale L. ssp. bohemicum (F. W. Schmidt) Čelak.
+Symphytum officinale L. ssp. officinale
+Symphytum officinale L. ssp. uliginosum (A. Kern.) Nyman
+Symphytum tuberosum L.
+Symphytum tuberosum L. ssp. angustifolium (A. Kern.) Nyman
+Syrenia cana (Piller et Mitterp.) Neilr.
+Tagetes minuta L.
+Tagetes patula L.
+Tamarix africana Poir.
+Tamarix dalmatica B. R. Baum
+Tamarix gallica L.
+Tamus communis L.
+Tanacetum cinerariifolium (Trevis.) Sch. Bip.
+Tanacetum corymbosum (L.) Sch. Bip.
+Tanacetum corymbosum (L.) Sch. Bip. ssp. clusii (Fisch. ex Rchb.) Heywood
+Tanacetum corymbosum (L.) Sch. Bip. ssp. corymbosum
+Tanacetum macrophyllum (Waldst. et Kit.) Sch. Bip.
+Tanacetum parthenium (L.) Sch. Bip.
+Tanacetum vulgare L.
+Taraxacum arachnoideum Kirschner et Štěpánek
+Taraxacum austriacum Soest
+Taraxacum brachyglossum (Dahlst.) Raunk.
+Taraxacum carinthiacum Soest
+Taraxacum croceicarpum Soest
+Taraxacum debrayi Hagend. et Zevenb.
+Taraxacum decipiens Raunk.
+Taraxacum edessicoides Uhlemann
+Taraxacum hoppeanum Griseb.
+Taraxacum illyricum Kirschner et Štěpánek
+Taraxacum laevigatum auct. croat.
+Taraxacum magnopyramidophorum Soest
+Taraxacum megalorrhizon (Forssk.) Hand.-Mazz.
+Taraxacum minimum (Guss.) N. Terracc.
+Taraxacum officinale F. H. Wigg.
+Taraxacum oxyrhinum Sahlin
+Taraxacum palustre (Lyons) Symons
+Taraxacum parnassicum Dahlst.
+Taraxacum pindicola (Bald.) Hand.-Mazz.
+Taraxacum rufocarpum Soest
+Taraxacum serotinum (Waldst. et Kit.) Fisch.
+Taraxacum starmuehleri Uhlemann
+Taraxacum taraxacoides (Hoppe) Willk.
+Taraxacum tenuifolium (Hoppe et Hornsch.) W. D. J. Koch
+Taraxacum veglianum Uhlemann
+Taxus baccata L.
+Teesdalia nudicaulis (L.) W. T. Aiton
+Telekia speciosa (Schreb.) Baumg.
+Tephroseris capitata (Wahlenb.) Griseb. et Schenk
+Tephroseris crispa (Jacq.) Rchb.
+Tephroseris helenitis (L.) B. Nord.
+Tephroseris helenitis (L.) B. Nord. ssp. helenitis
+Tephroseris helenitis (L.) B. Nord. ssp. salisburgensis (Cufod.) B. Nord.
+Tephroseris integrifolia (L.) Holub
+Tephroseris integrifolia (L.) Holub ssp. aurantiaca (Willd.) B. Nord.
+Tephroseris integrifolia (L.) Holub ssp. integrifolia
+Tephroseris tenuifolia (Gaudin) Holub
+Tetragonia tetragonoides (Pall.) Kuntze
+Tetragonolobus maritimus (L.) Roth
+Teucrium arduinii L.
+Teucrium aureum Schreb.
+Teucrium botrys L.
+Teucrium chamaedrys L.
+Teucrium chamaedrys L. ssp. chamaedrys
+Teucrium flavum L.
+Teucrium flavum L. ssp. flavum
+Teucrium flavum L. ssp. glaucum (Jord. et Fourr.) Ronniger
+Teucrium fruticans L.
+Teucrium marum L.
+Teucrium montanum L.
+Teucrium polium L.
+Teucrium polium L. ssp. capitatum (L.) Arcang.
+Teucrium polium L. ssp. vincentinum (Rouy) D. Wood
+Teucrium scordioides Schreb.
+Teucrium scordium L.
+Teucrium scordium L. ssp. scordium
+Teucrium scorodonia L.
+Thalictrum aquilegiifolium L.
+Thalictrum flavum L.
+Thalictrum foetidum L.
+Thalictrum lucidum L.
+Thalictrum minus L.
+Thalictrum minus L. ssp. minus
+Thalictrum minus L. ssp. olympicum (Boiss et Heldr.) Strid
+Thalictrum simplex L.
+Thalictrum simplex L. ssp. galioides (DC.) Korsh.
+Thalictrum simplex L. ssp. simplex
+Theligonum cynocrambe L.
+Thelypteris palustris Schott
+Thesium alpinum L.
+Thesium arvense Horv.
+Thesium bavarum Schrk.
+Thesium divaricatum Mert. et W. D. J. Koch
+Thesium dollineri Murb.
+Thesium dollineri Murb. ssp. simplex (Velen.) Stoj. et Stef.
+Thesium humile Vahl
+Thesium linophyllon L.
+Thesium parnassi A. DC.
+Thesium pyrenaicum Pourr.
+Thesium pyrenaicum Pourr. ssp. grandiflorum (A. DC.) Hendrych
+Thesium rostratum Mert. et W. D. J. Koch
+Thladiantha dubia Bunge
+Thlaspi alliaceum L.
+Thlaspi alpestre Jacq.
+Thlaspi arvense L.
+Thlaspi dinaricum Degen et Janch.
+Thlaspi goesingense Halácsy
+Thlaspi montanum L.
+Thlaspi perfoliatum L.
+Thlaspi praecox Wulfen
+Thlaspi praecox Wulfen ssp. praecox
+Thymelaea hirsuta (L.) Endl.
+Thymelaea passerina (L.) Coss. et Germ.
+Thymus bracteosus Vis. ex Benth.
+Thymus carstiensis (Velen.) Ronniger
+Thymus hirsutus M. Bieb.
+Thymus longicaulis C. Presl
+Thymus longicaulis C. Presl ssp. longicaulis
+Thymus odoratissimus Mill.
+Thymus oenipontanus Heinr. Braun
+Thymus praecox Opiz
+Thymus praecox Opiz ssp. polytrichus (A. Kern. ex Borbás) Jalas
+Thymus pulegioides L.
+Thymus pulegioides L. ssp. carniolicus (Borbás) P. Schmidt
+Thymus pulegioides L. ssp. chamaedrys (Fr.) Guşul.
+Thymus pulegioides L. ssp. effusus (Host) Ronniger
+Thymus pulegioides L. ssp. montanus (Benth.) Ronniger
+Thymus serpyllum L.
+Thymus serpyllum L. ssp. serpyllum
+Thymus striatus Vahl
+Thymus vulgaris L. ssp. vulgaris
+Tilia cordata Mill.
+Tilia platyphyllos Scop.
+Tilia platyphyllos Scop. ssp. cordifolia (Besser) C. K. Schneid.
+Tilia platyphyllos Scop. ssp. platyphyllos
+Tilia platyphyllos Scop. ssp. pseudorubra C. K. Schneid.
+Tilia tomentosa Moench
+Tofieldia calyculata (L.) Wahlenb.
+Tordylium apulum L.
+Tordylium maximum L.
+Tordylium officinale L.
+Torilis arvensis (Huds.) Link
+Torilis arvensis (Huds.) Link ssp. arvensis
+Torilis arvensis (Huds.) Link ssp. elongata (Hoffmanns. et Link) Cannon
+Torilis arvensis (Huds.) Link ssp. neglecta (Spreng.) Thell.
+Torilis arvensis (Huds.) Link ssp. purpurea (Ten.) Hayek
+Torilis japonica (Houtt.) DC.
+Torilis leptophylla (L.) Rchb. f.
+Torilis nodosa (L.) Gaertn.
+Torilis ucrainica Spreng.
+Trachycarpus fortunei (Hook.) H. Wendl.
+Tradescantia fluminensis Vell.
+Tragopogon balcanicus Velen.
+Tragopogon dubius Scop.
+Tragopogon hybridus L.
+Tragopogon porrifolius L.
+Tragopogon porrifolius L. ssp. porrifolius
+Tragopogon pratensis L.
+Tragopogon pratensis L. ssp. orientalis (L.) Čelak.
+Tragopogon pratensis L. ssp. pratensis
+Tragopogon tommasinii Sch. Bip.
+Tragus racemosus (L.) All.
+Trapa natans L.
+Traunsteinera globosa (L.) Rchb.
+Tribulus terrestris L.
+Trifolium alpestre L.
+Trifolium alpinum L.
+Trifolium angustifolium L.
+Trifolium arvense L.
+Trifolium arvense L. ssp. arvense
+Trifolium arvense L. ssp. gracile (Thuill.) Nyman
+Trifolium aureum Pollich
+Trifolium badium Schreb.
+Trifolium bocconei Savi
+Trifolium campestre Schreb.
+Trifolium cherleri L.
+Trifolium cinctum DC.
+Trifolium constantinopolitanum Ser.
+Trifolium dalmaticum Vis.
+Trifolium diffusum Ehrh.
+Trifolium dubium Sibth.
+Trifolium echinatum M. Bieb.
+Trifolium filiforme L.
+Trifolium fragiferum L.
+Trifolium fragiferum L. ssp. bonannii (C. Presl) Soják
+Trifolium fragiferum L. ssp. fragiferum
+Trifolium glomeratum L.
+Trifolium hybridum L.
+Trifolium hybridum L. ssp. elegans (Savi) Asch. et Graebn.
+Trifolium hybridum L. ssp. hybridum
+Trifolium incarnatum L.
+Trifolium incarnatum L. ssp. incarnatum
+Trifolium incarnatum L. ssp. molinerii (Hornem.) Syme
+Trifolium infamia-ponertii Greuter
+Trifolium lappaceum L.
+Trifolium leucanthum M. Bieb.
+Trifolium lucanicum Guss.
+Trifolium medium L.
+Trifolium medium L. ssp. medium
+Trifolium michelianum Savi
+Trifolium montanum L.
+Trifolium mutabile Port.
+Trifolium nigrescens Viv.
+Trifolium nigrescens Viv. ssp. nigrescens
+Trifolium noricum Wulfen
+Trifolium ochroleucon Huds.
+Trifolium ornithopodioides L.
+Trifolium pallidum Waldst. et Kit.
+Trifolium pannonicum Jacq.
+Trifolium pannonicum Jacq. ssp. pannonicum
+Trifolium patens Schreb.
+Trifolium patulum Tausch
+Trifolium physodes M. Bieb.
+Trifolium pignantii Fauché et Chaub.
+Trifolium pratense L.
+Trifolium pratense L. ssp. maritimum (Zabel) Rothm.
+Trifolium pratense L. ssp. nivale (Koch) Arcang.
+Trifolium pratense L. ssp. pratense
+Trifolium purpureum Loisel.
+Trifolium repens L.
+Trifolium repens L. ssp. prostratum Nyman
+Trifolium repens L. ssp. repens
+Trifolium resupinatum L.
+Trifolium retusum L.
+Trifolium rubens L.
+Trifolium scabrum L.
+Trifolium sebastiani Savi
+Trifolium setiferum Boiss.
+Trifolium spumosum L.
+Trifolium squamosum L.
+Trifolium squarrosum L.
+Trifolium stellatum L.
+Trifolium striatum L.
+Trifolium striatum L. ssp. tenuiflorum (Ten.) Arcang.
+Trifolium strictum L.
+Trifolium subterraneum L.
+Trifolium subterraneum L. ssp. oxaloides Nyman
+Trifolium subterraneum L. ssp. yanninicum Katzn. et F. Morley
+Trifolium suffocatum L.
+Trifolium tenuifolium Ten.
+Trifolium tomentosum L.
+Trifolium uniflorum L.
+Trifolium velebiticum Degen
+Trifolium vesiculosum Savi
+Triglochin barrelieri Loisel.
+Triglochin maritima L.
+Triglochin palustris L.
+Trigonella caerulea (L.) Ser.
+Trigonella cretica (L.) Boiss.
+Trigonella esculenta Willd.
+Trigonella foenum-graecum L.
+Trigonella gladiata M. Bieb.
+Trigonella monspeliaca L.
+Trigonella procumbens (Besser) Rchb.
+Trinia glauca (L.) Dumort.
+Trinia glauca (L.) Dumort. ssp. carniolica (Janch.) H. Wolff
+Trinia glauca (L.) Dumort. ssp. glauca
+Tripodion tetraphyllum (L.) Fourr.
+Trisetum aureum Ten.
+Trisetum flavescens (L.) P. Beauv.
+Trisetum paniceum (Lam.) Pers.
+Triticum aestivum L.
+Triticum dicoccon (Schrank) Schübl.
+Triticum durum Desf.
+Triticum monococcum L.
+Triticum polonicum L.
+Triticum spelta L.
+Triticum turgidum L.
+Trollius europaeus L.
+Tropaeolum majus L.
+Tuberaria guttata (L.) Fourr.
+Tuberaria praecox (Boiss. et Reut.) Grosser
+Tulipa grisebachiana Pant.
+Tulipa praecox Ten.
+Tulipa sylvestris L.
+Tulipa sylvestris L. ssp. australis (Link) Pamp.
+Tulipa sylvestris L. ssp. sylvestris
+Turgenia latifolia (L.) Hoffm.
+Tussilago farfara L.
+Typha angustifolia L.
+Typha domingensis (Pers.) Steud.
+Typha latifolia L.
+Typha laxmannii Lepech.
+Typha minima Hoppe
+Typha shuttleworthii W. D. J. Koch et Sond.
+Tyrimnus leucographus (L.) Cass.
+Ulmus canescens Melville
+Ulmus glabra Huds.
+Ulmus laevis Pall.
+Ulmus minor Mill.
+Ulmus pinnato-ramosa Dieck ex Koehne
+Ulmus procera Salisb.
+Umbilicus chloranthus Boiss.
+Umbilicus horizontalis (Guss.) DC.
+Umbilicus parviflorus (Desf.) DC.
+Umbilicus rupestris (Salisb.) Dandy
+Urginea maritima (L.) Baker
+Urospermum dalechampii (L.) F. W. Schmidt
+Urospermum picroides (L.) F. W. Schmidt
+Urtica dioica L.
+Urtica galeopsifolia Wierzb. ex Opiz
+Urtica kioviensis Rogow.
+Urtica membranacea Poir.
+Urtica pilulifera L.
+Urtica urens L.
+Utricularia australis R. Br.
+Utricularia minor L.
+Utricularia vulgaris L.
+Vaccaria hispanica (Mill.) Rauschert
+Vaccinium myrtillus L.
+Vaccinium uliginosum L.
+Vaccinium vitis-idaea L.
+Valantia hispida L.
+Valantia muralis L.
+Valeriana dioica L.
+Valeriana elongata Jacq.
+Valeriana montana L.
+Valeriana officinalis L.
+Valeriana officinalis L. ssp. collina (Wallr.) Nyman
+Valeriana officinalis L. ssp. nemorensis (B. Turk) F. Martini et Soldano
+Valeriana officinalis L. ssp. sambucifolia (Mikan f.) Čelak.
+Valeriana saxatilis L.
+Valeriana tripteris L.
+Valeriana tuberosa L.
+Valerianella carinata Loisel.
+Valerianella coronata (L.) DC.
+Valerianella dentata (L.) Pollich
+Valerianella discoidea (L.) Loisel.
+Valerianella echinata (L.) DC.
+Valerianella eriocarpa Desv.
+Valerianella locusta (L.) Laterr.
+Valerianella pumila (L.) DC.
+Valerianella rimosa Bastard
+Valerianella vesicaria (L.) Moench
+Vallisneria spiralis L.
+Velezia rigida L.
+Ventenata dubia (Leers) Coss.
+Veratrum album L.
+Veratrum lobelianum Bernh.
+Veratrum nigrum L.
+Verbascum blattaria L.
+Verbascum chaixii Vill.
+Verbascum chaixii Vill. ssp. austriacum (Roem. et Schult.) Hayek
+Verbascum chaixii Vill. ssp. chaixii
+Verbascum densiflorum Bertol.
+Verbascum lanatum Schrad.
+Verbascum lychnitis L.
+Verbascum macrurum Ten.
+Verbascum nigrum L.
+Verbascum niveum Ten.
+Verbascum niveum Ten. ssp. visianium (Rchb.) Murb.
+Verbascum orientale (L.) All.
+Verbascum phlomoides L.
+Verbascum phoeniceum L.
+Verbascum pulverulentum Vill.
+Verbascum repandum Willd.
+Verbascum samniticum Ten.
+Verbascum sinuatum L.
+Verbascum speciosum Schrad.
+Verbascum thapsus L.
+Verbascum undulatum Lam.
+Verbena officinalis L.
+Verbena peruviana (L.) Britton
+Verbena supina L.
+Veronica acinifolia L.
+Veronica agrestis L.
+Veronica alpina L.
+Veronica anagallis-aquatica L.
+Veronica anagallis-aquatica L. ssp. anagallis-aquatica
+Veronica anagalloides Guss.
+Veronica aphylla L.
+Veronica arvensis L.
+Veronica austriaca L.
+Veronica austriaca L. ssp. austriaca
+Veronica austriaca L. ssp. jacquinii (Baumg.) Watzl
+Veronica beccabunga L.
+Veronica catenata Pennell
+Veronica chamaedrys L.
+Veronica cymbalaria Bodard
+Veronica dalmatica Padilla-García, Rojas-Andrés, López-González et M.M.Mart.Ort.
+Veronica dillenii Crantz
+Veronica hederifolia L.
+Veronica montana L.
+Veronica officinalis L.
+Veronica opaca Fr.
+Veronica orbiculata A. Kern.
+Veronica orsiniana Ten.
+Veronica peregrina L.
+Veronica persica Poir.
+Veronica polita Fr.
+Veronica praecox All.
+Veronica prostrata L.
+Veronica saturejoides Vis.
+Veronica saturejoides Vis. ssp. saturejoides
+Veronica scardica Griseb.
+Veronica scutellata L.
+Veronica serpyllifolia L.
+Veronica serpyllifolia L. ssp. humifusa (Dicks.) Syme
+Veronica sublobata M. A. Fisch.
+Veronica teucrium L.
+Veronica teucrium L. ssp. crinita (Kit.) Velen.
+Veronica teucrium L. ssp. pseudochamaedrys (Jacq.) Nyman
+Veronica triloba (Opiz) Opiz
+Veronica triphyllos L.
+Veronica urticifolia Jacq.
+Veronica verna L.
+Veronica vindobonensis (M. A. Fisch.) M. A. Fisch.
+Viburnum lantana L.
+Viburnum opulus L.
+Viburnum tinus L.
+Viburnum tinus L. ssp. tinus
+Vicia altissima Desf.
+Vicia angustifolia L.
+Vicia angustifolia L. ssp. angustifolia
+Vicia angustifolia L. ssp. segetalis (Thuill.) Corb.
+Vicia articulata Hornem.
+Vicia benghalensis L.
+Vicia biennis L.
+Vicia bithynica (L.) L.
+Vicia cassubica L.
+Vicia cracca L.
+Vicia cracca L. ssp. cracca
+Vicia cracca L. ssp. incana (Gouan) Rouy
+Vicia dalmatica A. Kern.
+Vicia dumetorum L.
+Vicia ervilia (L.) Willd.
+Vicia faba L.
+Vicia grandiflora Scop.
+Vicia hirsuta (L.) Gray
+Vicia hybrida L.
+Vicia lathyroides L.
+Vicia leucantha Biv.
+Vicia loiseleurii (M. Bieb.) Litv.
+Vicia lutea L.
+Vicia lutea L. ssp. lutea
+Vicia lutea L. ssp. vestita (Boiss.) Rouy
+Vicia melanops Sibth. et Sm.
+Vicia narbonensis L.
+Vicia ochroleuca Ten.
+Vicia ochroleuca Ten. ssp. dinara (K. Malý) Rohlena
+Vicia onobrychioides L.
+Vicia oroboides Wulfen
+Vicia pannonica Crantz
+Vicia pannonica Crantz ssp. pannonica
+Vicia pannonica Crantz ssp. striata (M. Bieb.) Nyman
+Vicia parviflora Cav.
+Vicia peregrina L.
+Vicia pisiformis L.
+Vicia pubescens (DC.) Link
+Vicia sativa L.
+Vicia sativa L. ssp. amphicarpa (Dorthes) Asch.
+Vicia sativa L. ssp. cordata (Hoppe) Batt.
+Vicia sativa L. ssp. macrocarpa (Moris) Arcang.
+Vicia sativa L. ssp. sativa
+Vicia sepium L.
+Vicia serratifolia Jacq.
+Vicia sylvatica L.
+Vicia tenuifolia Roth
+Vicia tenuissima (M. Bieb.) Schinz et Thell.
+Vicia tetrasperma (L.) Schreb.
+Vicia villosa Roth
+Vicia villosa Roth ssp. ambigua (Guss.) Kerguélen
+Vicia villosa Roth ssp. varia (Host) Corb.
+Vicia villosa Roth ssp. villosa
+Vinca herbacea Waldst. et Kit.
+Vinca major L.
+Vinca minor L.
+Vincetoxicum fuscatum (Hornem.) Rchb. f.
+Vincetoxicum hirundinaria Medik.
+Vincetoxicum hirundinaria Medik. ssp. adriaticum (Beck) Markgr.
+Vincetoxicum hirundinaria Medik. ssp. contiguum (W. D. J. Koch) Markgr.
+Vincetoxicum hirundinaria Medik. ssp. hirundinaria
+Vincetoxicum huteri Vis. et Asch.
+Viola alba Besser
+Viola alba Besser ssp. dehnhardtii (Ten.) W. Becker
+Viola alba Besser ssp. scotophylla (Jord.) Nyman
+Viola ambigua Waldst. et Kit.
+Viola arvensis Murray
+Viola biflora L.
+Viola canina L.
+Viola canina L. ssp. canina
+Viola canina L. ssp. montana (L.) Hartm.
+Viola collina Besser
+Viola dinarica Trinajstić
+Viola elatior Fr.
+Viola elegantula Schott
+Viola hirta L.
+Viola kitaibeliana Schult.
+Viola mirabilis L.
+Viola odorata L.
+Viola palustris L.
+Viola palustris L. ssp. palustris
+Viola pumila Chaix
+Viola reichenbachiana Jord. ex Boreau
+Viola riviniana Rchb.
+Viola rupestris F. W. Schmidt
+Viola suavis M. Bieb.
+Viola suavis M. Bieb. ssp. adriatica (Freyn) Haesler
+Viola suavis M. Bieb. ssp. austrodalmatica Mered'a et Hodálová
+Viola tricolor L.
+Viola tricolor L. ssp. subalpina Gaudin
+Viola uliginosa Besser
+Viscum album L.
+Viscum album L. ssp. abietis (Wiesb.) Janch.
+Viscum album L. ssp. album
+Viscum album L. ssp. austriacum (Wiesb.) Vollm.
+Vitex agnus-castus L.
+Vitis vinifera L.
+Vitis vinifera L. ssp. sylvestris (C. C. Gmel.) Hegi
+Vitis vinifera L. ssp. vinifera
+Vulpia bromoides (L.) Gray
+Vulpia ciliata Dumort.
+Vulpia fasciculata (Forssk.) R. M. Fritsch
+Vulpia ligustica (All.) Link
+Vulpia myuros (L.) C. C. Gmel.
+Vulpia unilateralis (L.) Stace
+Waldsteinia geoides Willd.
+Weigela florida (Bigelow) A. DC.
+Willemetia stipitata (Jacq.) Dalla Torre
+Willemetia stipitata (Jacq.) Dalla Torre ssp. stipitata
+Wisteria sinensis (Sims) Sweet
+Wolffia arrhiza (L.) Wimm.
+Woodsia ilvensis (L.) R. Br.
+Xanthium albinum (Widder) H. Scholz
+Xanthium albinum (Widder) H. Scholz ssp. albinum
+Xanthium spinosum L.
+Xanthium strumarium L.
+Xanthium strumarium L. ssp. italicum (Moretti) D. Löve
+Xanthium strumarium L. ssp. strumarium
+Xeranthemum annuum L.
+Xeranthemum cylindraceum Sm.
+Xeranthemum inapertum (L.) Mill.
+Yucca filamentosa L.
+Yucca gloriosa L.
+Zannichellia palustris L.
+Zannichellia palustris ssp. polycarpa (Nolte) Richter
+Zannichellia pedunculata Rchb.
+Zea mays L.
+Ziziphus jujuba (L.) Mill.
+Zostera marina L.
+Zostera noltii Hornem.

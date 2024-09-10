@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Classes Pair and Main should not be modified.</p>
+<p>Your task is to create a class LettersAndNumber (that extends Pair) in order that main program is successfully compiled and gives expected output.</p>
+<p>The content of the sets should be printed sorted by the word (i.e. letter in the task), and then by the number assigned to the word.</p>
+<p>Hint: As instances of LettersAndNumber are pairs of (string, number), use the method doubleValue from class Number to get numerical value assigned to a string.</p>
+<pre class="line-numbers"><code class="language-java">public class Pair&lt;T, U&gt; {
+	private T first;
+	private U second;
+	
+	public Pair(T first, U second) {
+		this.first = first;
+		this.second = second;
+	}
+
+	public T getFirst() {
+		return first;
+	}
+
+	public void setFirst(T first) {
+		this.first = first;
+	}
+
+	public U getSecond() {
+		return second;
+	}
+
+	public void setSecond(U second) {
+		this.second = second;
+	}
+}
+</code></pre>
+<pre class="line-numbers"><code class="language-java">public class Main {
+
+	public static void main(String[] args) {
+		Set&lt;LettersAndNumber&lt;Integer&gt;&gt; setI = new TreeSet&lt;&gt;();
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;C&quot;, 5));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;C&quot;, 2));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;A&quot;, 1));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 4));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 6));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;B&quot;, 7));
+		setI.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 4));
+		
+		for(Pair&lt;String, Integer&gt; p : setI) {
+			System.out.println(p);
+		}
+		
+		//the previous loop should print
+		//		A-1
+		//		B-7
+		//		C-2
+		//		C-5
+		//		D-4
+		//		D-6
+		
+		Set&lt;LettersAndNumber&lt;Double&gt;&gt; setD = new TreeSet&lt;&gt;();
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;C&quot;, 5.5));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;C&quot;, 2.0));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;A&quot;, 1.25));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 4.0));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 6.0));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;B&quot;, 7.75));
+		setD.add(new LettersAndNumber&lt;&gt;(&quot;D&quot;, 4.0));
+		
+		System.out.println();
+		
+		for(Pair&lt;String, Double&gt; p : setD) {
+			System.out.println(p);
+		}
+		
+		//the previous loop should print
+		//		A-1.25
+		//		B-7.75
+		//		C-2.0
+		//		C-5.5
+		//		D-4.0
+		//		D-6.0
+	}
+}
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

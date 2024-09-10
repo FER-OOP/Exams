@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je modelirati klase i sučelja u paketu koje se koriste u aplikaciji za upravljanje opremom za igranje (tip <code>Equipment</code>).</p>
+<p>Postoje tri vrste opreme za igre:</p>
+<ul>
+<li>fliper (<code>Pinball</code>)</li>
+<li>teren za mini golf (<code>MiniGolf</code>)</li>
+<li>biljarski stol (<code>Billiard</code>)</li>
+</ul>
+<p>te u ovom zadatku ne može postojati oprema koja nije jedna od navedene tri.</p>
+<p>Svaka oprema ima svoj naziv (<code>name:String</code>) i cijenu (<code>regularPrice:double</code>).</p>
+<p>Fliper dodatno imaju naziv proizvođača (<code>manufacturer:string</code>) i žanr (<code>genre:string</code>), mini golf tereni imaju broj rupa (<code>holes:int</code>), a biljaski stolovi imaju tip (<code>type:MotorcycleType</code>) koji mora biti jedan od sljedećih: <code>Standard</code>, <code>Snooker</code>, <code>Carom</code> te oznako jesu li na žetone ili ne (<code>coinOperated:boolean</code>)</p>
+<p>Za opremu je potrebno napraviti metodu</p>
+<pre class="line-numbers"><code>public double getPrice(boolean isVIP)
+</code></pre>
+<p>koja za korisnike koji nisu VIP vraća regularnu (tj. definiranu) cijenu opreme, a za VIP korisnike vraća regularnu cijenu umanjenu za određeni postotak ovisno o tipu opreme tako da je popust na biljarske stolove 15%, na flipere 10%, a na terene za mini golf 5%.</p>
+<p>Fliperi i biljarski stolovi spadaju u stvari koje se mogu iznajmiti <code>Rentable</code>. Za stvari koje se iznajmljuju (a to ne moraju nužno biti samo fliperi i biljarski stolovi, već i npr. strujni agregati koji ne spadaju u opremu za igranje, ali trenutno nisu predmet zadatka) se definira metoda</p>
+<pre class="line-numbers"><code>public double getRentingPricePerDay()
+</code></pre>
+<p>U slučaju flipera i biljarskih stolova cijena najma je 0,1% njihove cijene za VIP korisnike.</p>
+<p>Za svaki od atributa treba definirati <em>gettere</em> i <em>settere</em>, pri čemu se <em>getter</em> za boolean varijable treba prefiksirati s <code>is</code> umjesto s <code>get</code>.</p>
+<p>Nakon oblikovanja klasa, sučelja i enumeracija prema gornjim zahtjevima potrebno je dovršiti metodu <code>rentPrice</code> u klasi <code>PriceCalculator</code> koja će vratiti cijenu opreme za igranje koja se mogu iznajmiti, a nalaze se u enumeraciji opreme zadanoj kao argument metode.</p>
+<p>Napomena: Za navedene klase ne pisati konstruktore.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

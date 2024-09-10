@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this task you are modeling classes, interfaces, and enumerations for games equipment management (<code>Equipment</code>).</p>
+<p>There are three types of equipment: <code>Pinball</code>, <code>MiniGolf</code>, and <code>Billiard</code> and no other types of equipment could be created.</p>
+<p>Every equipment has  <code>name</code>(<code>String</code>), and <code>regularPrice</code>(<code>double</code>).</p>
+<p>An uniqueness of pinballs is that they have manufacturer and genre  (<code>manufacturer:string</code>, <code>genre:string</code>).
+Minigolf has number of holes (<code>holes:int</code>), and billiard have their type (<code>type:BilliardType</code>) which could be one of the followings: <code>Standard</code>, <code>Snooker</code>, or <code>Carom</code>, and flag if they are coin operated or not (coinOperated:boolean)</p>
+<p>Class <code>Equipment</code> should have the method</p>
+<pre class="line-numbers"><code>public double getPrice(boolean isVIP)
+</code></pre>
+<p>that either returns regular price (for non-VIP customers) or discounted price for VIP customers. The discount varies based on the equipment type. Discount for billiards is 15%, for pinballs 10%, and for minigolfs 5%.</p>
+<p>Pinballs, and billiards can be rented (i.e. <code>Rentable</code>). There may be other rentable things beside pinballs, and billiards. <code>Rentable</code> should define the following method</p>
+<pre class="line-numbers"><code>public double getRentingPricePerDay()
+</code></pre>
+<p>For pinballs and billiards, renting price per day is 0.1% of their prices for VIP customers.</p>
+<p>Define getters and setters for all of these attributes. Note: Getter for boolean variable should be prefixed with <code>is</code> instead of <code>get</code>.</p>
+<p>Upon finishing tasks elaborated above, finish the method <code>rentPrice</code> in the class  <code>PriceCalculator</code>. The method should return renting price per day for all rentable equipment in the collection.</p>
+<p>Note: do not write constructors for the classes.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Dio popisa biljnih vrsta Hrvatske nalazi se u datoteci vrste.txt. Svaki redak datoteke sadrži latinsko ime vrste koje se sastoji od naziva roda, naziva vrste, imena autora vrste i opcionalno naziva podvrste. Ono što je predmet interesa u ovom zadatku su naziv roda i naziv vrste koje su prve dvije riječi u svakom retku.
+Npr. u retcima</p>
+<pre class="line-numbers"><code class="language-txt">Limonium bellidifolium (Gouan) Dumort.
+Limonium cancellatum (Bernh. ex Bertol.) Kuntze
+Limonium dictyophorum (Tausch) Degen
+Limonium narbonense Mill.
+Limonium pomoense Bogdanović et Brullo
+Limonium subanfractum Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. brusnicense Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. vestitum
+Limonium virgatum (Willd.) Fourr.
+</code></pre>
+<p>zanima nas da su vrste <em>bellidifolium</em>, <em>cancellatum</em>, <em>dictyophorum</em>, <em>narbonense</em>, <em>pomoense</em>, <em>subanfractum</em>, <em>vestitum</em> i <em>virgatum</em> vrste roda <em>Limonium</em>.</p>
+<p>Vaš zadatak je dovršiti metodu <code>loadTaxa</code> u klasi <code>DataLoader</code> koja će iz tekstualne datoteke s vrstama čiji je ulazni tok zadan kao argument metode pročitati nazive vrsta i rodova i vratiti ih u obliku mape, gdje su ključevi nazivi rodova, a vrijednosti skupovi vrsta tog roda. Iteriranje po mapi mora vraćati nazive rodova abecednim redom, a iteriranje po vrstama nekog roda mora vratiti vrste tog roda abecednim redom.</p>
+<p>Tekst u datoteci je zapisan po UTF-8 i možete pretpostaviti da datoteka nikad nije prazna i da su redovi valjano formatirani.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

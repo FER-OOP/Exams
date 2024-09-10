@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>An excerpt from Croatian vascular flora is stored in file <code>vrste.txt</code>. Every line contains Latin name which consist of genus name, species name, authors' names and optionally subspecies name.
+Currently we are interested only in genus and species name which are the first two words in each line.</p>
+<p>An example</p>
+<pre class="line-numbers"><code class="language-txt">Limonium bellidifolium (Gouan) Dumort.
+Limonium cancellatum (Bernh. ex Bertol.) Kuntze
+Limonium dictyophorum (Tausch) Degen
+Limonium narbonense Mill.
+Limonium pomoense Bogdanović et Brullo
+Limonium subanfractum Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. brusnicense Trinajstić
+Limonium vestitum (C. E. Salmon) C. E. Salmon ssp. vestitum
+Limonium virgatum (Willd.) Fourr.
+</code></pre>
+<p>With this we can see that genus <em>Limonium</em> has the following species <em>bellidifolium</em>, <em>cancellatum</em>, <em>dictyophorum</em>, <em>narbonense</em>, <em>pomoense</em>, <em>subanfractum</em>, <em>vestitum</em>, and <em>virgatum</em> .</p>
+<p>Your task is to finish the method <code>loadTaxa</code> in the class <code>DataLoader</code>. The method should read the text file (its stream is the method's argument) and extracts genus and species names and returns a map that contains genera names as keys. Each key (i.e. genus) is paired with set of species names.</p>
+<p>When iterating both map and set of species names it should be in alphabetical order.</p>
+<p>Text is encoded using UTF-8, and you may assume that file is not empty, and all lines are correctly formatted.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

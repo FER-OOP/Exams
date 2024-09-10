@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The map <code>players</code> of type <code>Map&lt;String, Map&lt;String, Integer&gt;&gt;</code> consists of player names paired with their abilities (i.e. abilities are map of skills names paired with skills values). An example of data is given in the  method <code>DataLoader.loadPlayers</code> and displayed at the end of this text.</p>
+<p>You tasks are to finish two methods in class <code>Task</code></p>
+<ol>
+<li>The method</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">Stream&lt;PlayerInfo&gt; skilfulPlayers(Map&lt;String, Map&lt;String, Integer&gt;&gt; players, Set&lt;String&gt; requiredSkills, int minSkillValue)
+</code></pre>
+<p>should return a stream of players with skill value greater or equal to <code>minSkillValue</code> in all required skills.</p>
+<p><code>PlayerInfo</code> is defined as</p>
+<pre class="line-numbers"><code class="language-java">public record PlayerInfo(String name, int noOfSkillsDefined) {}
+</code></pre>
+<p>An example:
+if requiredSkills are <code>[Positioning, Marking, Jumping, Strength]</code> and minSkillValue is 12 then for the players in the example <code>skilfulPlayers(players, skills, 12)</code> should return a stream that contains (John Stone, 5) and (Mark Strong, 5) in any order.</p>
+<ol start="2">
+<li>The method</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">Stream&lt;PlayerInfo&gt; bySkillAndName(Stream&lt;PlayerInfo&gt; players)
+</code></pre>
+<p>should return a stream in which players should be sorted first by skills count (in descending order), and then by name (if the skills count are the same).</p>
+<pre class="line-numbers"><code class="language-java">public static Map&lt;String, Map&lt;String, Integer&gt;&gt; loadPlayers() {
+	Map&lt;String, Map&lt;String, Integer&gt;&gt; players = new HashMap&lt;&gt;();
+	
+	Map&lt;String, Integer&gt; skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 12);
+	skills.put(&quot;Marking&quot;, 15);
+	skills.put(&quot;Tackling&quot;, 20);
+	skills.put(&quot;Positioning&quot;, 19);
+	skills.put(&quot;Strength&quot;, 20);
+	players.put(&quot;John Stone&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 1);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 5);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Strength&quot;, 1);
+	players.put(&quot;Brian Light&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 17);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 16);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Strength&quot;, 20);
+	players.put(&quot;Mark Strong&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 5);
+	skills.put(&quot;Tackling&quot;, 8);
+	skills.put(&quot;Positioning&quot;, 15);
+	skills.put(&quot;Strength&quot;, 13);
+	players.put(&quot;Jean Jumpo&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 8);
+	skills.put(&quot;Positioning&quot;, 7);
+	skills.put(&quot;Strength&quot;, 4);
+	skills.put(&quot;Shooting&quot;, 20);
+	skills.put(&quot;Speed&quot;, 20);
+	players.put(&quot;Sunday Fox&quot;, skills);
+	
+	skills = new HashMap&lt;&gt;();
+	skills.put(&quot;Jumping&quot;, 20);
+	skills.put(&quot;Marking&quot;, 20);
+	skills.put(&quot;Tackling&quot;, 20);
+	skills.put(&quot;Positioning&quot;, 20);
+	skills.put(&quot;Shooting&quot;, 20);
+	skills.put(&quot;Speed&quot;, 20);
+	players.put(&quot;Speedy Gonzales&quot;, skills);
+		
+	return players;	
+}
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
