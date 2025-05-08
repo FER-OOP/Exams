@@ -1,0 +1,271 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The task models classes that represent space. The UML class diagram shows this model.</p>
+<p>In all classes, it is necessary to implement the methods as shown in the class diagram. You are free to add and implement additional methods, attributes, and constructors.</p>
+<p><strong>Note:</strong> All classes and interfaces have public visibility and are in the <code>hr.fer.oop</code> package.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="721px" preserveAspectRatio="none" style="width:1427px;height:721px;background:#FFFFFF;" version="1.1" viewBox="0 0 1427 721" width="1427px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Space-->
+<g id="elem_Space">
+<rect codeLine="1" fill="#F1F1F1" height="97.4648" id="Space" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="151" x="901" y="7"/>
+<ellipse cx="952.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M948.6777,19.2651 L948.6777,17.1069 L956.0571,17.1069 L956.0571,19.2651 L953.5918,19.2651 L953.5918,27.3418 L956.0571,27.3418 L956.0571,29.5 L948.6777,29.5 L948.6777,27.3418 L951.1431,27.3418 L951.1431,19.2651 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="40" x="972.75" y="28.291">Space</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="902" x2="1051" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="902" x2="1051" y1="47" y2="47"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="907" y="64.5352">getArea(): double</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="907" y="81.0234">getLocation(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="907" y="97.5117">getName(): String</text>
+</g>
+<!--class WaterAvailable-->
+<g id="elem_WaterAvailable">
+<rect codeLine="7" fill="#F1F1F1" height="48" id="WaterAvailable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="133" x="681" y="214.93"/>
+<ellipse cx="696" cy="230.93" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M692.4277,227.1951 L692.4277,225.0369 L699.8071,225.0369 L699.8071,227.1951 L697.3418,227.1951 L697.3418,235.2718 L699.8071,235.2718 L699.8071,237.43 L692.4277,237.43 L692.4277,235.2718 L694.8931,235.2718 L694.8931,227.1951 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="101" x="710" y="236.221">WaterAvailable</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="682" x2="813" y1="246.93" y2="246.93"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="682" x2="813" y1="254.93" y2="254.93"/>
+</g>
+<!--class AbstractSpace-->
+<g id="elem_AbstractSpace">
+<rect codeLine="12" fill="#F1F1F1" height="146.9297" id="AbstractSpace" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="255" x="849" y="165.46"/>
+<ellipse cx="923.75" cy="181.46" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M923.6133,176.8081 L922.4595,181.8799 L924.7754,181.8799 Z M922.1191,174.5669 L925.1157,174.5669 L928.4609,186.96 L926.0122,186.96 L925.2485,183.897 L921.9697,183.897 L921.2227,186.96 L918.7739,186.96 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="97" x="944.25" y="186.751">AbstractSpace</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="850" x2="1103" y1="197.46" y2="197.46"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="857" y="208.2041"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="869" y="214.9952">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="857" y="224.6924"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="869" y="231.4834">location: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="850" x2="1103" y1="238.4366" y2="238.4366"/>
+<ellipse cx="860" cy="252.1807" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="869" y="255.9717">AbstractSpace(name: String)</text>
+<ellipse cx="860" cy="268.669" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="869" y="272.46">getLocation(): String</text>
+<polygon fill="#FFFF44" points="860,280.1573,864,284.1573,860,288.1573,856,284.1573" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="869" y="288.9483">setLocation(location: String): void</text>
+<ellipse cx="860" cy="301.6455" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="869" y="305.4366">getName(): String</text>
+</g>
+<!--class Classroom-->
+<g id="elem_Classroom">
+<rect codeLine="22" fill="#F1F1F1" height="146.9297" id="Classroom" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="454" x="251.5" y="373.39"/>
+<ellipse cx="437.75" cy="389.39" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M440.2231,395.5331 Q439.6421,395.8319 439.0029,395.9813 Q438.3638,396.1307 437.6582,396.1307 Q435.1514,396.1307 433.8315,394.4789 Q432.5117,392.827 432.5117,389.7059 Q432.5117,386.5765 433.8315,384.9247 Q435.1514,383.2728 437.6582,383.2728 Q438.3638,383.2728 439.0112,383.4222 Q439.6587,383.5716 440.2231,383.8705 L440.2231,386.5931 Q439.5923,386.0121 438.9988,385.7423 Q438.4053,385.4725 437.7744,385.4725 Q436.4297,385.4725 435.7449,386.5392 Q435.0601,387.6058 435.0601,389.7059 Q435.0601,391.7977 435.7449,392.8644 Q436.4297,393.931 437.7744,393.931 Q438.4053,393.931 438.9988,393.6612 Q439.5923,393.3915 440.2231,392.8104 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="458.25" y="394.681">Classroom</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="252.5" x2="704.5" y1="405.39" y2="405.39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="259.5" y="416.1341"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="271.5" y="422.9252">numberOfStudents: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="259.5" y="432.6224"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="271.5" y="439.4134">area: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="252.5" x2="704.5" y1="446.3666" y2="446.3666"/>
+<ellipse cx="262.5" cy="460.1107" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="428" x="271.5" y="463.9017">Classroom(name: String, area: double, numberOfStudents: int)</text>
+<ellipse cx="262.5" cy="476.599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="271.5" y="480.39">getArea(): double</text>
+<ellipse cx="262.5" cy="493.0873" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="271.5" y="496.8783">getNumberOfStudents(): int</text>
+<ellipse cx="262.5" cy="509.5755" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="271.5" y="513.3666">toString(): String</text>
+</g>
+<!--class ClassroomWithWater-->
+<g id="elem_ClassroomWithWater">
+<rect codeLine="32" fill="#F1F1F1" height="80.9766" id="ClassroomWithWater" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="523" x="7" y="625.33"/>
+<ellipse cx="193.25" cy="641.33" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M195.7231,647.4731 Q195.1421,647.7719 194.5029,647.9213 Q193.8638,648.0707 193.1582,648.0707 Q190.6514,648.0707 189.3315,646.4189 Q188.0117,644.767 188.0117,641.6459 Q188.0117,638.5165 189.3315,636.8647 Q190.6514,635.2128 193.1582,635.2128 Q193.8638,635.2128 194.5112,635.3622 Q195.1587,635.5116 195.7231,635.8105 L195.7231,638.5331 Q195.0923,637.9521 194.4988,637.6823 Q193.9053,637.4125 193.2744,637.4125 Q191.9297,637.4125 191.2449,638.4792 Q190.5601,639.5458 190.5601,641.6459 Q190.5601,643.7377 191.2449,644.8044 Q191.9297,645.871 193.2744,645.871 Q193.9053,645.871 194.4988,645.6012 Q195.0923,645.3315 195.7231,644.7504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="213.75" y="646.621">ClassroomWithWater</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="529" y1="657.33" y2="657.33"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="529" y1="665.33" y2="665.33"/>
+<ellipse cx="18" cy="679.0741" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="497" x="27" y="682.8652">ClassroomWithWater(name: String, area: double, numberOfStudents: int)</text>
+<ellipse cx="18" cy="695.5624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="27" y="699.3534">toString(): String</text>
+</g>
+<!--class ToiletType-->
+<g id="elem_ToiletType">
+<rect codeLine="39" fill="#F1F1F1" height="97.4648" id="ToiletType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="104" x="875.5" y="617.32"/>
+<ellipse cx="890.5" cy="633.32" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M894.1143,639.82 L886.3945,639.82 L886.3945,627.4269 L894.1143,627.4269 L894.1143,629.5851 L888.8433,629.5851 L888.8433,632.258 L893.6162,632.258 L893.6162,634.4162 L888.8433,634.4162 L888.8433,637.6618 L894.1143,637.6618 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="904.5" y="638.611">ToiletType</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="876.5" x2="978.5" y1="649.32" y2="649.32"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="881.5" y="666.8552">MALE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="881.5" y="683.3434">FEMALE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="881.5" y="699.8317">UNISEX</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="876.5" x2="978.5" y1="706.7848" y2="706.7848"/>
+</g>
+<!--class Toilet-->
+<g id="elem_Toilet">
+<rect codeLine="45" fill="#F1F1F1" height="130.4414" id="Toilet" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="373" x="741" y="381.63"/>
+<ellipse cx="903.75" cy="397.63" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M906.2231,403.7731 Q905.6421,404.0719 905.0029,404.2213 Q904.3638,404.3707 903.6582,404.3707 Q901.1514,404.3707 899.8315,402.7189 Q898.5117,401.067 898.5117,397.9459 Q898.5117,394.8165 899.8315,393.1647 Q901.1514,391.5128 903.6582,391.5128 Q904.3638,391.5128 905.0112,391.6622 Q905.6587,391.8116 906.2231,392.1105 L906.2231,394.8331 Q905.5923,394.2521 904.9988,393.9823 Q904.4053,393.7125 903.7744,393.7125 Q902.4297,393.7125 901.7449,394.7792 Q901.0601,395.8458 901.0601,397.9459 Q901.0601,400.0377 901.7449,401.1044 Q902.4297,402.171 903.7744,402.171 Q904.4053,402.171 904.9988,401.9012 Q905.5923,401.6315 906.2231,401.0504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="924.25" y="402.921">Toilet</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="742" x2="1113" y1="413.63" y2="413.63"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="749" y="424.3741"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="761" y="431.1652">area: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="742" x2="1113" y1="438.1183" y2="438.1183"/>
+<ellipse cx="752" cy="451.8624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="347" x="761" y="455.6534">Toilet(name: String, area: double, type: ToiletType)</text>
+<ellipse cx="752" cy="468.3507" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="761" y="472.1417">getArea(): double</text>
+<ellipse cx="752" cy="484.839" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="761" y="488.63">getType(): ToiletType</text>
+<ellipse cx="752" cy="501.3273" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="761" y="505.1183">toString(): String</text>
+</g>
+<!--class Floor-->
+<g id="elem_Floor">
+<rect codeLine="56" fill="#F1F1F1" height="130.4414" id="Floor" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="271" x="1149" y="381.63"/>
+<ellipse cx="1262.25" cy="397.63" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1264.7231,403.7731 Q1264.1421,404.0719 1263.5029,404.2213 Q1262.8638,404.3707 1262.1582,404.3707 Q1259.6514,404.3707 1258.3315,402.7189 Q1257.0117,401.067 1257.0117,397.9459 Q1257.0117,394.8165 1258.3315,393.1647 Q1259.6514,391.5128 1262.1582,391.5128 Q1262.8638,391.5128 1263.5112,391.6622 Q1264.1587,391.8116 1264.7231,392.1105 L1264.7231,394.8331 Q1264.0923,394.2521 1263.4988,393.9823 Q1262.9053,393.7125 1262.2744,393.7125 Q1260.9297,393.7125 1260.2449,394.7792 Q1259.5601,395.8458 1259.5601,397.9459 Q1259.5601,400.0377 1260.2449,401.1044 Q1260.9297,402.171 1262.2744,402.171 Q1262.9053,402.171 1263.4988,401.9012 Q1264.0923,401.6315 1264.7231,401.0504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="1282.75" y="402.921">Floor</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1150" x2="1419" y1="413.63" y2="413.63"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1150" x2="1419" y1="421.63" y2="421.63"/>
+<ellipse cx="1160" cy="435.3741" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="1169" y="439.1652">Floor(name: String, location: String)</text>
+<ellipse cx="1160" cy="451.8624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="1169" y="455.6534">getArea(): double</text>
+<ellipse cx="1160" cy="468.3507" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="1169" y="472.1417">addSpace(space: Space): boolean</text>
+<ellipse cx="1160" cy="484.839" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="1169" y="488.63">getSpaces(): Space[]</text>
+<ellipse cx="1160" cy="501.3273" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="1169" y="505.1183">toString(): String</text>
+</g>
+<!--reverse link Space to WaterAvailable-->
+<g id="link_Space_WaterAvailable">
+<path codeLine="9" d="M893.28,117.6 C872.87,132.95 851.22,149.59 831.5,165.46 C811.69,181.4 789.98,200.17 773.59,214.61 " fill="none" id="Space-backto-WaterAvailable" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="889.03,112.05,909.24,105.68,897.41,123.26,889.03,112.05" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Space to AbstractSpace-->
+<g id="link_Space_AbstractSpace">
+<path codeLine="20" d="M976.5,126.16 C976.5,138.88 976.5,152.2 976.5,165.03 " fill="none" id="Space-backto-AbstractSpace" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="969.5,126.32,976.5,106.32,983.5,126.32,969.5,126.32" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link AbstractSpace to Classroom-->
+<g id="link_AbstractSpace_Classroom">
+<path codeLine="30" d="M829.29,313.16 C773.04,337.55 726.32,356.09 682,372.96 " fill="none" id="AbstractSpace-backto-Classroom" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="826.23,306.86,847.36,305.26,831.84,319.69,826.23,306.86" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Classroom to ClassroomWithWater-->
+<g id="link_Classroom_ClassroomWithWater">
+<path codeLine="36" d="M393.08,536.11 C363.2,566.97 331.13,600.11 307.01,625.03 " fill="none" id="Classroom-backto-ClassroomWithWater" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="388,531.3,406.94,521.79,398.06,541.03,388,531.3" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link WaterAvailable to ClassroomWithWater-->
+<g id="link_WaterAvailable_ClassroomWithWater">
+<path codeLine="37" d="M659.7,249.87 C526.99,266.9 285.26,306.47 233.5,373.39 C176.52,447.05 218.73,564.06 247.55,624.99 " fill="none" id="WaterAvailable-backto-ClassroomWithWater" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="658.58,242.95,679.3,247.42,660.32,256.84,658.58,242.95" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Toilet to ToiletType-->
+<g id="link_Toilet_ToiletType">
+<path codeLine="52" d="M927.5,512.36 C927.5,543.85 927.5,581.29 927.5,611.18 " fill="none" id="Toilet-to-ToiletType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="927.5,615.93,931.5,606.93,927.5,610.93,923.5,606.93,927.5,615.93" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="928.5" y="563.8884">type</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="918.8875" y="606.4399">1</text>
+</g>
+<!--reverse link AbstractSpace to Toilet-->
+<g id="link_AbstractSpace_Toilet">
+<path codeLine="53" d="M954.19,333.67 C950.36,349.77 946.46,366.17 942.86,381.28 " fill="none" id="AbstractSpace-backto-Toilet" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="947.37,332.13,958.81,314.29,960.99,335.37,947.37,332.13" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link WaterAvailable to Toilet-->
+<g id="link_WaterAvailable_Toilet">
+<path codeLine="54" d="M781.78,279.15 C807.03,308.03 841.91,347.94 871.22,381.47 " fill="none" id="WaterAvailable-backto-Toilet" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="776.69,283.95,768.79,264.29,787.23,274.74,776.69,283.95" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Floor to Space-->
+<g id="link_Floor_Space">
+<path codeLine="63" d="M1256.18,381.26 C1227.79,321.15 1179.97,231.2 1121.5,165.46 C1102.93,144.59 1079.8,125.11 1057.51,108.58 " fill="none" id="Floor-to-Space" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="1053.69,105.77,1058.5586,114.3314,1057.7138,108.7379,1063.3073,107.8932,1053.69,105.77" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="1221.82" y="243.9984">spaces</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="1056.2753" y="125.0812">*</text>
+</g>
+<!--reverse link AbstractSpace to Floor-->
+<g id="link_AbstractSpace_Floor">
+<path codeLine="64" d="M1103.38,324.76 C1131.63,343.64 1161.13,363.37 1187.92,381.28 " fill="none" id="AbstractSpace-backto-Floor" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1099.52,330.6,1086.78,313.66,1107.3,318.96,1099.52,330.6" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[dLJBQiCm43n7No7IIrB7WLvDAPYIG25D3qv9eUGWsqegSAnWAO7IvjyhhLG_PBc7NcHvThGxiokRbP9MUv9Hd9pq-eL61ohZYfB9DC8vFwS51MZ5Co8PBpMSo8gL1u3Nv4XRq1KXLcVS4hMBBuGLH6LHgQ_85Bd_3aCdYX0YgP0LoIJE2Y84ZkrhhIiiLQscU5XOHGqKTCvCslofYWwuk14jt4sgU1VESdEwP_RNpdpUbOkGyV2eruhpez5_FgQqUjadyfpJKee8grufdAXkDxqEwaCT0pFSfismDvbrwOuFj3jy7OVoWUIcGiTPj_imi5fNpzsMoGyOfxOPzE7_6V7gQZhQrLJNGiwjW-5uQ8YgmdZ3MK7bvlC4D-mvNYtGQBampzVrKx9uqrVQs3LScAGpCHFvqwLK9Q9MEV-aCDQWZckmOGzrmqeAmmSylXkttKHGqJT6G_AsoOQitsN1kPaex1nxlGzbuEgHF3TVez1hP7upYf1oNb1IMik0mfs4tVjkoB4H1OPln_QV5M78BNnkWOz-0000]-->
+</g>
+</svg>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<p>The <code>Space</code> interface represents a room, and <code>WaterAvailable</code> represents a room that has access to water.</p>
+<p>The <code>AbstractSpace</code> class represents a generic space, i.e. it contains things that are used by all derived classes.</p>
+<p>The <code>Classroom</code> class represents a classroom that has an additional definition of how many people can fit in the classroom. It is necessary to override the <code>toString</code> method.</p>
+<p>The <code>ClassroomWithWater</code> class is a classroom that has access to water. It is necessary to override the <code>toString</code> method.</p>
+<p>The <code>Toilet</code> class represents a toilet and should have the type of toilet defined in the <code>ToiletType</code> enum. <code>ToiletType</code> has 3 types: male, female, and unisex. In the <code>Toilet</code> class, it is necessary to override the <code>toString</code> method.</p>
+<p>The <code>Floor</code> class represents a floor. It can contain other spaces. A floor can have a maximum of 10 spaces. The <code>addSpace</code> method adds a space to a floor. If the addition is successful then it returns <code>true</code> and sets the location of the room to be equal to the location of the floor. It is not possible to add a floor to the floor. The <code>getArea</code> method returns the area which is the sum of all the areas of the rooms on the floor. The <code>getSpaces</code> method returns an array with all the spaces on the floor. You must override the <code>toString</code> method.</p>
+<p><strong>Note:</strong> For all <code>toString</code> methods, you can see in the usage example what they return and in what format.</p>
+<p>Example of usage:</p>
+<pre class="line-numbers"><code class="language-java">Floor floor0 = new Floor(&quot;Ground&quot;, &quot;level 0&quot;);
+floor0.addSpace(new Classroom(&quot;PClab 1&quot;, 60.0, 30));
+floor0.addSpace(new Toilet(&quot;Toilet 1&quot;, 10.0, ToiletType.MALE));
+floor0.addSpace(new Toilet(&quot;Toilet 2&quot;, 20.0, ToiletType.FEMALE));
+
+Floor floor1 = new Floor(&quot;First floor&quot;, &quot;level 1&quot;);
+floor1.addSpace(new ClassroomWithWater(&quot;PClab 2&quot;, 60.0, 30));
+floor1.addSpace(new Toilet(&quot;Toi†let 3&quot;, 25, ToiletType.UNISEX));
+
+System.out.println(floor0);
+for(Space space : floor0.getSpaces()) {
+  System.out.println(&quot; &quot; + space);
+}
+System.out.println(&quot;---&quot;);
+System.out.println(floor1);
+for(Space space : floor1.getSpaces()) {
+  System.out.println(&quot; &quot; + space);
+}
+
+System.out.println(&quot;---&quot;);
+Floor floor2 = new Floor(&quot;Second floor&quot;, &quot;level 2&quot;);
+System.out.println(&quot;Adding floor: &quot; + floor2.addSpace(floor0));
+for(int i = 0; i &lt; 12; i++) {
+  Classroom lab = new Classroom(&quot;PClab &quot; + (i + 1), 10.0, 5);
+    System.out.println(floor2.addSpace(lab));
+  }
+}
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">Floor [name=Ground, location=level 0, area=90.0]
+ Classroom [name=PClab 1, location=level 0, area=60.0, numberOfStudents=30]
+ Toilet [name=Toilet 1, location=level 0, area=10.0, type=MALE]
+ Toilet [name=Toilet 2, location=level 0, area=20.0, type=FEMALE]
+---
+Floor [name=First floor, location=level 1, area=85.0]
+ ClassroomWithWater [name=PClab 2, location=level 1, area=60.0, numberOfStudents=30]
+ Toilet [name=Toi†let 3, location=level 1, area=25.0, type=UNISEX]
+---
+Adding floor: false
+true
+true
+true
+true
+true
+true
+true
+true
+true
+true
+false
+false
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

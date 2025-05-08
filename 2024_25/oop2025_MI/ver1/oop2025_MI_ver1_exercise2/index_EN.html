@@ -1,0 +1,263 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the task, it is necessary to convert a series of text lines in the form of an array of <code>Strings</code> into the list <code>MyList</code>, in which there are <code>Product</code> products.</p>
+<p><code>MyList</code> class is given, which is similar to the list we did on the recapitulation. It works with objects (class <code>Object</code>) which should be parameterized with generics. When doing so, you may receive a translation warning like this:</p>
+<pre class="line-numbers"><code class="language-sh">Compile errors/warnings:
+hr.fer.oop.MyList:15: warning: [unchecked] unchecked cast
+</code></pre>
+<p>You can ignore this or you can add the following code before that line and that warning should disappear.</p>
+<pre class="line-numbers"><code class="language-java">@SuppressWarnings(&quot;unchecked&quot;)
+</code></pre>
+<p>The classes that need to be created are shown in the UML class diagram. In all classes, it is necessary to implement attributes (member variables), constructors and methods as shown in the diagram. You are free to add and implement additional methods, attributes and constructors.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="599px" preserveAspectRatio="none" style="width:1271px;height:599px;background:#FFFFFF;" version="1.1" viewBox="0 0 1271 599" width="1271px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Price-->
+<g id="elem_Price">
+<rect codeLine="1" fill="#F1F1F1" height="130.4414" id="Price" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="358" x="15.5" y="250.93"/>
+<ellipse cx="173.75" cy="266.93" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M176.2231,273.0731 Q175.6421,273.3719 175.0029,273.5213 Q174.3638,273.6707 173.6582,273.6707 Q171.1514,273.6707 169.8315,272.0189 Q168.5117,270.367 168.5117,267.2459 Q168.5117,264.1165 169.8315,262.4647 Q171.1514,260.8128 173.6582,260.8128 Q174.3638,260.8128 175.0112,260.9622 Q175.6587,261.1116 176.2231,261.4105 L176.2231,264.1331 Q175.5923,263.5521 174.9988,263.2823 Q174.4053,263.0125 173.7744,263.0125 Q172.4297,263.0125 171.7449,264.0792 Q171.0601,265.1458 171.0601,267.2459 Q171.0601,269.3377 171.7449,270.4044 Q172.4297,271.471 173.7744,271.471 Q174.4053,271.471 174.9988,271.2012 Q175.5923,270.9315 176.2231,270.3504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="194.25" y="272.221">Price</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="16.5" x2="372.5" y1="282.93" y2="282.93"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="23.5" y="293.6741"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="35.5" y="300.4652">amountInHundredths: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="23.5" y="310.1624"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="35.5" y="316.9534">currency: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="16.5" x2="372.5" y1="323.9066" y2="323.9066"/>
+<ellipse cx="26.5" cy="337.6507" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="332" x="35.5" y="341.4417">Price(amountInHundredths: int, currency: String)</text>
+<ellipse cx="26.5" cy="354.139" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="35.5" y="357.93">getAmountInHundredths(): int</text>
+<ellipse cx="26.5" cy="370.6273" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="35.5" y="374.4183">getCurrency(): String</text>
+</g>
+<!--class Product-->
+<g id="elem_Product">
+<rect codeLine="9" fill="#F1F1F1" height="146.9297" id="Product" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="375" x="7" y="7"/>
+<ellipse cx="163.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M166.2231,29.1431 Q165.6421,29.4419 165.0029,29.5913 Q164.3638,29.7407 163.6582,29.7407 Q161.1514,29.7407 159.8315,28.0889 Q158.5117,26.437 158.5117,23.3159 Q158.5117,20.1865 159.8315,18.5347 Q161.1514,16.8828 163.6582,16.8828 Q164.3638,16.8828 165.0112,17.0322 Q165.6587,17.1816 166.2231,17.4805 L166.2231,20.2031 Q165.5923,19.6221 164.9988,19.3523 Q164.4053,19.0825 163.7744,19.0825 Q162.4297,19.0825 161.7449,20.1492 Q161.0601,21.2158 161.0601,23.3159 Q161.0601,25.4077 161.7449,26.4744 Q162.4297,27.541 163.7744,27.541 Q164.4053,27.541 164.9988,27.2712 Q165.5923,27.0015 166.2231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="184.25" y="28.291">Product</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="381" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="27" y="56.5352">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="66.2324"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="27" y="73.0234">category: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="381" y1="79.9766" y2="79.9766"/>
+<ellipse cx="18" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="349" x="27" y="97.5117">Product(name: String, category: String, price: Price)</text>
+<ellipse cx="18" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="27" y="114">getName(): String</text>
+<ellipse cx="18" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="27" y="130.4883">getCategory(): String</text>
+<ellipse cx="18" cy="143.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="27" y="146.9766">getPrice(): Price</text>
+</g>
+<!--class ProductParseException-->
+<g id="elem_ProductParseException">
+<rect codeLine="19" fill="#F1F1F1" height="80.9766" id="ProductParseException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="303" x="577" y="39.98"/>
+<ellipse cx="645.25" cy="55.98" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M647.7231,62.1231 Q647.1421,62.4219 646.5029,62.5713 Q645.8638,62.7207 645.1582,62.7207 Q642.6514,62.7207 641.3315,61.0689 Q640.0117,59.417 640.0117,56.2959 Q640.0117,53.1665 641.3315,51.5147 Q642.6514,49.8628 645.1582,49.8628 Q645.8638,49.8628 646.5112,50.0122 Q647.1587,50.1616 647.7231,50.4605 L647.7231,53.1831 Q647.0923,52.6021 646.4988,52.3323 Q645.9053,52.0625 645.2744,52.0625 Q643.9297,52.0625 643.2449,53.1292 Q642.5601,54.1958 642.5601,56.2959 Q642.5601,58.3877 643.2449,59.4544 Q643.9297,60.521 645.2744,60.521 Q645.9053,60.521 646.4988,60.2512 Q647.0923,59.9815 647.7231,59.4004 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="665.75" y="61.271">ProductParseException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="578" x2="879" y1="71.98" y2="71.98"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="578" x2="879" y1="79.98" y2="79.98"/>
+<ellipse cx="588" cy="93.7241" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="597" y="97.5152">ProductParseException()</text>
+<ellipse cx="588" cy="110.2124" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="277" x="597" y="114.0034">ProductParseException(message: String)</text>
+</g>
+<!--class ProductParseCollectorException-->
+<g id="elem_ProductParseCollectorException">
+<rect codeLine="24" fill="#F1F1F1" height="130.4414" id="ProductParseCollectorException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="365" x="432" y="250.71"/>
+<ellipse cx="500.25" cy="266.71" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M502.7231,272.8531 Q502.1421,273.1519 501.5029,273.3013 Q500.8638,273.4507 500.1582,273.4507 Q497.6514,273.4507 496.3315,271.7989 Q495.0117,270.147 495.0117,267.0259 Q495.0117,263.8965 496.3315,262.2447 Q497.6514,260.5928 500.1582,260.5928 Q500.8638,260.5928 501.5112,260.7422 Q502.1587,260.8916 502.7231,261.1905 L502.7231,263.9131 Q502.0923,263.3321 501.4988,263.0623 Q500.9053,262.7925 500.2744,262.7925 Q498.9297,262.7925 498.2449,263.8592 Q497.5601,264.9258 497.5601,267.0259 Q497.5601,269.1177 498.2449,270.1844 Q498.9297,271.251 500.2744,271.251 Q500.9053,271.251 501.4988,270.9812 Q502.0923,270.7115 502.7231,270.1304 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="520.75" y="272.001">ProductParseCollectorException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="433" x2="796" y1="282.71" y2="282.71"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="440" y="293.4541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="284" x="452" y="300.2452">reasons: MyList&lt;ProductParseException&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="433" x2="796" y1="307.1983" y2="307.1983"/>
+<ellipse cx="443" cy="320.9424" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="230" x="452" y="324.7334">ProductParseCollectorException()</text>
+<ellipse cx="443" cy="337.4307" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="339" x="452" y="341.2217">ProductParseCollectorException(message: String)</text>
+<ellipse cx="443" cy="353.919" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="336" x="452" y="357.71">addReason(reason: ProductParseException): void</text>
+<ellipse cx="443" cy="370.4073" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="319" x="452" y="374.1983">getReasons(): MyList&lt;ProductParseException&gt;</text>
+</g>
+<!--class ProductParseRowException-->
+<g id="elem_ProductParseRowException">
+<rect codeLine="33" fill="#F1F1F1" height="130.4414" id="ProductParseRowException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="392" x="831.5" y="250.71"/>
+<ellipse cx="929.75" cy="266.71" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M932.2231,272.8531 Q931.6421,273.1519 931.0029,273.3013 Q930.3638,273.4507 929.6582,273.4507 Q927.1514,273.4507 925.8315,271.7989 Q924.5117,270.147 924.5117,267.0259 Q924.5117,263.8965 925.8315,262.2447 Q927.1514,260.5928 929.6582,260.5928 Q930.3638,260.5928 931.0112,260.7422 Q931.6587,260.8916 932.2231,261.1905 L932.2231,263.9131 Q931.5923,263.3321 930.9988,263.0623 Q930.4053,262.7925 929.7744,262.7925 Q928.4297,262.7925 927.7449,263.8592 Q927.0601,264.9258 927.0601,267.0259 Q927.0601,269.1177 927.7449,270.1844 Q928.4297,271.251 929.7744,271.251 Q930.4053,271.251 930.9988,270.9812 Q931.5923,270.7115 932.2231,270.1304 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="950.25" y="272.001">ProductParseRowException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="832.5" x2="1222.5" y1="282.71" y2="282.71"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="839.5" y="293.4541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="851.5" y="300.2452">row: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="832.5" x2="1222.5" y1="307.1983" y2="307.1983"/>
+<ellipse cx="842.5" cy="320.9424" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249" x="851.5" y="324.7334">ProductParseRowException(row: int)</text>
+<ellipse cx="842.5" cy="337.4307" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="366" x="851.5" y="341.2217">ProductParseRowException(row: int, message: String)</text>
+<ellipse cx="842.5" cy="353.919" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="851.5" y="357.71">getRow(): int</text>
+<ellipse cx="842.5" cy="370.4073" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="851.5" y="374.1983">getMessage(): String</text>
+</g>
+<!--class ProductParseCellException-->
+<g id="elem_ProductParseCellException">
+<rect codeLine="42" fill="#F1F1F1" height="130.4414" id="ProductParseCellException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="474" x="790.5" y="461.93"/>
+<ellipse cx="931.25" cy="477.93" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M933.7231,484.0731 Q933.1421,484.3719 932.5029,484.5213 Q931.8638,484.6707 931.1582,484.6707 Q928.6514,484.6707 927.3315,483.0189 Q926.0117,481.367 926.0117,478.2459 Q926.0117,475.1165 927.3315,473.4647 Q928.6514,471.8128 931.1582,471.8128 Q931.8638,471.8128 932.5112,471.9622 Q933.1587,472.1116 933.7231,472.4105 L933.7231,475.1331 Q933.0923,474.5521 932.4988,474.2823 Q931.9053,474.0125 931.2744,474.0125 Q929.9297,474.0125 929.2449,475.0792 Q928.5601,476.1458 928.5601,478.2459 Q928.5601,480.3377 929.2449,481.4044 Q929.9297,482.471 931.2744,482.471 Q931.9053,482.471 932.4988,482.2012 Q933.0923,481.9315 933.7231,481.3504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="951.75" y="483.221">ProductParseCellException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="791.5" x2="1263.5" y1="493.93" y2="493.93"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="798.5" y="504.6741"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="810.5" y="511.4652">column: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="791.5" x2="1263.5" y1="518.4183" y2="518.4183"/>
+<ellipse cx="801.5" cy="532.1624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="448" x="810.5" y="535.9534">ProductParseCellException(row: int, column: int, message: String)</text>
+<ellipse cx="801.5" cy="548.6507" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="331" x="810.5" y="552.4417">ProductParseCellException(row: int, column: int)</text>
+<ellipse cx="801.5" cy="565.139" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="810.5" y="568.93">getColumn(): int</text>
+<ellipse cx="801.5" cy="581.6273" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="810.5" y="585.4183">getMessage(): String</text>
+</g>
+<!--class ProductTableParser-->
+<g id="elem_ProductTableParser">
+<rect codeLine="51" fill="#F1F1F1" height="80.9766" id="ProductTableParser" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="243" x="915" y="39.98"/>
+<ellipse cx="965.25" cy="55.98" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M967.7231,62.1231 Q967.1421,62.4219 966.5029,62.5713 Q965.8638,62.7207 965.1582,62.7207 Q962.6514,62.7207 961.3315,61.0689 Q960.0117,59.417 960.0117,56.2959 Q960.0117,53.1665 961.3315,51.5147 Q962.6514,49.8628 965.1582,49.8628 Q965.8638,49.8628 966.5112,50.0122 Q967.1587,50.1616 967.7231,50.4605 L967.7231,53.1831 Q967.0923,52.6021 966.4988,52.3323 Q965.9053,52.0625 965.2744,52.0625 Q963.9297,52.0625 963.2449,53.1292 Q962.5601,54.1958 962.5601,56.2959 Q962.5601,58.3877 963.2449,59.4544 Q963.9297,60.521 965.2744,60.521 Q965.9053,60.521 966.4988,60.2512 Q967.0923,59.9815 967.7231,59.4004 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="985.75" y="61.271">ProductTableParser</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="916" x2="1157" y1="71.98" y2="71.98"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="916" x2="1157" y1="79.98" y2="79.98"/>
+<ellipse cx="926" cy="93.7241" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="935" y="97.5152">parseTable(lines: String[]): void</text>
+<ellipse cx="926" cy="110.2124" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="935" y="114.0034">getProducts(): MyList&lt;Product&gt;</text>
+</g>
+<!--link Product to Price-->
+<g id="link_Product_Price">
+<path codeLine="17" d="M194.5,154.37 C194.5,183.23 194.5,216.27 194.5,244.84 " fill="none" id="Product-to-Price" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="194.5,249.73,198.5,240.73,194.5,244.73,190.5,240.73,194.5,249.73" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="197.5" y="190.0853"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="31" x="207.5" y="197.4984">price</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="186.0125" y="240.0022">1</text>
+</g>
+<!--reverse link ProductParseException to ProductParseCollectorException-->
+<g id="link_ProductParseException_ProductParseCollectorException">
+<path codeLine="31" d="M699.68,140.49 C683.29,174.06 662.74,216.13 645.94,250.54 " fill="none" id="ProductParseException-backto-ProductParseCollectorException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="693.3,137.59,708.37,122.69,705.88,143.74,693.3,137.59" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ProductParseException to ProductParseRowException-->
+<g id="link_ProductParseException_ProductParseRowException">
+<path codeLine="40" d="M796.32,134.42 C840.35,168.8 898.02,213.83 944.75,250.32 " fill="none" id="ProductParseException-backto-ProductParseRowException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="792.21,140.09,780.75,122.26,800.83,129.06,792.21,140.09" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ProductParseRowException to ProductParseCellException-->
+<g id="link_ProductParseRowException_ProductParseCellException">
+<path codeLine="49" d="M1027.5,402.66 C1027.5,422.33 1027.5,442.92 1027.5,461.52 " fill="none" id="ProductParseRowException-backto-ProductParseCellException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1020.5,402.92,1027.5,382.92,1034.5,402.92,1020.5,402.92" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[bLFHIiCm57rUloBigMNBWwzb36G82ax6z4ryYEcb5j9a9AbpwFxTD4qrQJFTtaBkEJddddj36L4ARMH50Nqc4qngqN1znsyRNaWez9lAKSMrgT16Ik3qaAD7BIjU9fEPfQKdA7CqP6I6KeA-7k7Jp8cqvPLZjPTEwPWarFaKHKErTSf93RzUC2KQIY53UnQT-aZZQW2SertRHjw5u3m-68fde3FcYDuzGcsXYo5pBnYtlKsCbsXwDNNnvWXRfK4p6o8Lt7nGsEbAyBQrMRIIPYShDIX5IlZD-HZJM0d6W6eXVJ64i0IY13T3Mn_kAwKNKOtbG7pysCXV138oEfcHejXQ0sdd8u_dOj9z5rNX4kyOTc_-DlqpYq7AYo-C_mad5k5Mx8VXYNs_kwU0QO_9pW7DKIIajcMn3xx9kaC5l-JCNdtTwA80Oy52OYfOK_DOem7MQy9ZH3kwy0qNmihUN9H3CBBns7tfGHPFv9M1HKdxAtVjqLwchEAWUi7dbt0v7JsodMOVlm40]-->
+</g>
+</svg>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>The <code>Price</code> class represents the price of a product and consists of <code>currency</code> which represents the currency and <code>amountInHundredths</code> which represents the value. The value is an integer that represents hundreds of parts of a currency. For example, <code>4.35 EUR</code> is written as the value <code>435</code> in <code>amountInHundredths</code> and <code>EUR</code> in <code>currency</code>. Objects of this class are immutable, i.e. there are no <code>set</code> methods and after the object is created, its member variables cannot be changed.</p>
+<p>The <code>Product</code> class represents a product. A product consists of a name, a category and a price. Objects of this class are immutable, i.e. there are no <code>set</code> methods and after the object is created, its member variables cannot be changed.</p>
+<p>It is necessary to create a hierarchy of exceptions as given in the diagram. The <code>ProductParseException</code> class is unchecked exception. It represents all exceptions that can occur when converting rows into products (parsing procedure). The <code>ProductParseCollectorException</code> class collects all exceptions in a list. The <code>addReason</code> method adds a reason, and the <code>getReasons</code> method returns a list of reasons. The <code>ProductParseRowException</code> class represents an exception that represents an error when processing a single row, and the <code>ProductParseCellException</code> class represents a single cell exception. What the <code>getMessage</code> method should return in the <code>ProductParseException</code>, <code>ProductParseRowException</code> and <code>ProductParseCellException</code> classes is visible in example code.</p>
+<p>The <code>ProductTableParser</code> class is used for parsing rows and has two methods:</p>
+<ul>
+<li><code>parseTable</code> - starts parsing and if everything is fine it ends normally. If there is a problem in parsing, it collects all exceptions and throws <code>ProductParseCollectorException</code> in which all exceptions are collected. The order of the columns is always the same: product name, category and price. If there are more columns than necessary the others are ignored. The price format is a number with a decimal point, one space and currency.</li>
+<li><code>getProducts</code> - returns a list of products that were successfully parsed by the last call to the <code>parseTable</code> method, i.e. parsed lines without exceptions</li>
+</ul>
+<p><strong>Note:</strong> all classes are in the <code>hr.fer.oop</code> package and are public.</p>
+<p>Usage example:</p>
+<pre class="line-numbers"><code class="language-java">public static void main(String[] args) {
+  System.out.println(new ProductParseException(&quot;some error&quot;).getMessage());
+
+  System.out.println(new ProductParseRowException(7, &quot;wrong number of columns&quot;).getMessage());
+  System.out.println(new ProductParseRowException(8).getMessage());
+
+  System.out.println(new ProductParseCellException(9, 3, &quot;can not parse price&quot;).getMessage());
+  System.out.println(new ProductParseCellException(10, 4).getMessage());
+
+  System.out.println(&quot;---&quot;);
+
+  String[] lines = {
+      &quot;+---------+----------+----------+&quot;,
+      &quot;: coffee  : drink    : 2.4 EUR  :&quot;,
+      &quot;+---------+----------+----------+&quot;,
+      &quot;: phone   : electronics&quot;,
+      &quot;+---------+----------+----------+&quot;,
+      &quot;: car    : vehicle : 30000 :&quot;,
+      &quot;+---------+----------+----------+&quot;,
+      &quot;: bike   : vehicle : 2000EUR :&quot;,
+      &quot;+----------+----------+----------+&quot;,
+      &quot;: computer : electronics : 1K EUR :&quot;,
+      &quot;: milk    : drink    : 2 USD  : some comment&quot;,
+      &quot;+---------+----------+----------+&quot;
+  };
+
+  ProductTableParser parser = new ProductTableParser();
+  try {
+    parser.parseTable(lines);
+  } catch (ProductParseCollectorException e) {
+    System.out.println(&quot;Parse exceptions:&quot;);
+    MyList&lt;ProductParseException&gt; reasons = e.getReasons();
+    for (int i = 0; i &lt; reasons.size(); i++) {
+      ProductParseException reason = reasons.elementAt(i);
+      System.out.println(reason.getMessage());
+    }
+  }
+
+  System.out.println(&quot;---\nParsed products&quot;);
+  MyList&lt;Product&gt; products = parser.getProducts();
+  for (int i = 0; i &lt; products.size(); i++) {
+    Product p = products.elementAt(i);
+    printProduct(p);
+  }
+
+}
+
+private static void printProduct(Product p) {
+  System.out.print(&quot;Product[name: &quot; + p.getName());
+  System.out.print(&quot;, category: &quot; + p.getCategory());
+  System.out.println(&quot;, price: &quot; + (p.getPrice().getAmountInHundredths()/100.0) + &quot; &quot; + p.getPrice().getCurrency() + &quot;]&quot;);
+}
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">some error
+wrong number of columns in row 7
+exception in row 8
+can not parse price in row 9 and column 3
+exception in row 10 and column 4
+---
+Parse exceptions:
+Invalid number of columns in row 4
+Invalid price format (number of parts) in row 6 and column 3
+Invalid price format (number of parts) in row 8 and column 3
+Invalid price format in row 10 and column 3
+---
+Parsed products
+Product[name: coffee, category: drink, price: 2.4 EUR]
+Product[name: milk, category: drink, price: 2.0 USD]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

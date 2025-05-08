@@ -1,0 +1,236 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku treba napraviti pretvaranje polja redaka (linije) u listu studentskih rezultata (to je postupak parsiranja). U primjeru korištenja je prikazan format koji ima zaglavlje i retke koji se sastoje od minimalno 5 kolona.</p>
+<p>Dana je klasa <code>MyList</code> iz zadataka za vježbu. Nju trebate koristiti kao listu.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute (članske varijable) i konstruktore.</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju javnu vidljivost i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="642px" preserveAspectRatio="none" style="width:1482px;height:642px;background:#FFFFFF;" version="1.1" viewBox="0 0 1482 642" width="1482px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class ParseResultException-->
+<g id="elem_ParseResultException">
+<rect codeLine="1" fill="#F1F1F1" height="80.9766" id="ParseResultException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="292" x="290" y="81.19"/>
+<ellipse cx="358.25" cy="97.19" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M360.7231,103.3331 Q360.1421,103.6319 359.5029,103.7813 Q358.8638,103.9307 358.1582,103.9307 Q355.6514,103.9307 354.3315,102.2789 Q353.0117,100.627 353.0117,97.5059 Q353.0117,94.3765 354.3315,92.7247 Q355.6514,91.0728 358.1582,91.0728 Q358.8638,91.0728 359.5112,91.2222 Q360.1587,91.3716 360.7231,91.6705 L360.7231,94.3931 Q360.0923,93.8121 359.4988,93.5423 Q358.9053,93.2725 358.2744,93.2725 Q356.9297,93.2725 356.2449,94.3392 Q355.5601,95.4058 355.5601,97.5059 Q355.5601,99.5977 356.2449,100.6644 Q356.9297,101.731 358.2744,101.731 Q358.9053,101.731 359.4988,101.4612 Q360.0923,101.1915 360.7231,100.6104 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="378.75" y="102.481">ParseResultException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="291" x2="581" y1="113.19" y2="113.19"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="291" x2="581" y1="121.19" y2="121.19"/>
+<ellipse cx="301" cy="134.9341" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="310" y="138.7252">ParseResultException()</text>
+<ellipse cx="301" cy="151.4224" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="266" x="310" y="155.2134">ParseResultException(message: String)</text>
+</g>
+<!--class ParseResultCollectorException-->
+<g id="elem_ParseResultCollectorException">
+<rect codeLine="6" fill="#F1F1F1" height="130.4414" id="ParseResultCollectorException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="452" x="7" y="313.37"/>
+<ellipse cx="124.25" cy="329.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M126.7231,335.5131 Q126.1421,335.8119 125.5029,335.9613 Q124.8638,336.1107 124.1582,336.1107 Q121.6514,336.1107 120.3315,334.4589 Q119.0117,332.807 119.0117,329.6859 Q119.0117,326.5565 120.3315,324.9047 Q121.6514,323.2528 124.1582,323.2528 Q124.8638,323.2528 125.5112,323.4022 Q126.1587,323.5516 126.7231,323.8505 L126.7231,326.5731 Q126.0923,325.9921 125.4988,325.7223 Q124.9053,325.4525 124.2744,325.4525 Q122.9297,325.4525 122.2449,326.5192 Q121.5601,327.5858 121.5601,329.6859 Q121.5601,331.7777 122.2449,332.8444 Q122.9297,333.911 124.2744,333.911 Q124.9053,333.911 125.4988,333.6412 Q126.0923,333.3715 126.7231,332.7904 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="144.75" y="334.661">ParseResultCollectorException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="458" y1="345.37" y2="345.37"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="356.1141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="27" y="362.9052">reasons: MyList&lt;ParseResultException&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="458" y1="369.8583" y2="369.8583"/>
+<ellipse cx="18" cy="383.6024" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="27" y="387.3934">ParseResultCollectorException()</text>
+<ellipse cx="18" cy="400.0907" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="328" x="27" y="403.8817">ParseResultCollectorException(message: String)</text>
+<ellipse cx="18" cy="416.579" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="426" x="27" y="420.37">addReason(parseResultException: ParseResultException): void</text>
+<ellipse cx="18" cy="433.0673" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="27" y="436.8583">getReasons(): MyList&lt;ParseResultException&gt;</text>
+</g>
+<!--class ParseResultRowException-->
+<g id="elem_ParseResultRowException">
+<rect codeLine="15" fill="#F1F1F1" height="130.4414" id="ParseResultRowException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="381" x="494.5" y="313.37"/>
+<ellipse cx="592.75" cy="329.37" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M595.2231,335.5131 Q594.6421,335.8119 594.0029,335.9613 Q593.3638,336.1107 592.6582,336.1107 Q590.1514,336.1107 588.8315,334.4589 Q587.5117,332.807 587.5117,329.6859 Q587.5117,326.5565 588.8315,324.9047 Q590.1514,323.2528 592.6582,323.2528 Q593.3638,323.2528 594.0112,323.4022 Q594.6587,323.5516 595.2231,323.8505 L595.2231,326.5731 Q594.5923,325.9921 593.9988,325.7223 Q593.4053,325.4525 592.7744,325.4525 Q591.4297,325.4525 590.7449,326.5192 Q590.0601,327.5858 590.0601,329.6859 Q590.0601,331.7777 590.7449,332.8444 Q591.4297,333.911 592.7744,333.911 Q593.4053,333.911 593.9988,333.6412 Q594.5923,333.3715 595.2231,332.7904 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="613.25" y="334.661">ParseResultRowException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="495.5" x2="874.5" y1="345.37" y2="345.37"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="502.5" y="356.1141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="514.5" y="362.9052">row: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="495.5" x2="874.5" y1="369.8583" y2="369.8583"/>
+<ellipse cx="505.5" cy="383.6024" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="514.5" y="387.3934">ParseResultRowException(row: int)</text>
+<ellipse cx="505.5" cy="400.0907" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="355" x="514.5" y="403.8817">ParseResultRowException(row: int, message: String)</text>
+<ellipse cx="505.5" cy="416.579" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="514.5" y="420.37">getRow(): int</text>
+<ellipse cx="505.5" cy="433.0673" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="514.5" y="436.8583">getMessage(): String</text>
+</g>
+<!--class ParseResultCellException-->
+<g id="elem_ParseResultCellException">
+<rect codeLine="24" fill="#F1F1F1" height="130.4414" id="ParseResultCellException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="463" x="453.5" y="504.81"/>
+<ellipse cx="594.25" cy="520.81" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M596.7231,526.9531 Q596.1421,527.2519 595.5029,527.4013 Q594.8638,527.5507 594.1582,527.5507 Q591.6514,527.5507 590.3315,525.8989 Q589.0117,524.247 589.0117,521.1259 Q589.0117,517.9965 590.3315,516.3447 Q591.6514,514.6928 594.1582,514.6928 Q594.8638,514.6928 595.5112,514.8422 Q596.1587,514.9916 596.7231,515.2905 L596.7231,518.0131 Q596.0923,517.4321 595.4988,517.1623 Q594.9053,516.8925 594.2744,516.8925 Q592.9297,516.8925 592.2449,517.9592 Q591.5601,519.0258 591.5601,521.1259 Q591.5601,523.2177 592.2449,524.2844 Q592.9297,525.351 594.2744,525.351 Q594.9053,525.351 595.4988,525.0812 Q596.0923,524.8115 596.7231,524.2304 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="614.75" y="526.101">ParseResultCellException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="454.5" x2="915.5" y1="536.81" y2="536.81"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="461.5" y="547.5541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="473.5" y="554.3452">column: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="454.5" x2="915.5" y1="561.2983" y2="561.2983"/>
+<ellipse cx="464.5" cy="575.0424" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="320" x="473.5" y="578.8334">ParseResultCellException(row: int, column: int)</text>
+<ellipse cx="464.5" cy="591.5307" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="437" x="473.5" y="595.3217">ParseResultCellException(row: int, column: int, message: String)</text>
+<ellipse cx="464.5" cy="608.019" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="473.5" y="611.81">getColumn(): int</text>
+<ellipse cx="464.5" cy="624.5073" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="473.5" y="628.2983">getMessage(): String</text>
+</g>
+<!--class StudentCourseStatus-->
+<g id="elem_StudentCourseStatus">
+<rect codeLine="33" fill="#F1F1F1" height="80.9766" id="StudentCourseStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="176" x="1018" y="338.59"/>
+<ellipse cx="1033" cy="354.59" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1036.6143,361.09 L1028.8945,361.09 L1028.8945,348.6969 L1036.6143,348.6969 L1036.6143,350.8551 L1031.3433,350.8551 L1031.3433,353.528 L1036.1162,353.528 L1036.1162,355.6862 L1031.3433,355.6862 L1031.3433,358.9318 L1036.6143,358.9318 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="1047" y="359.881">StudentCourseStatus</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1019" x2="1193" y1="370.59" y2="370.59"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="1024" y="388.1252">PASS</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="1024" y="404.6134">FAIL</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1019" x2="1193" y1="411.5666" y2="411.5666"/>
+</g>
+<!--class StudentResult-->
+<g id="elem_StudentResult">
+<rect codeLine="38" fill="#F1F1F1" height="229.3711" id="StudentResult" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="739" x="736.5" y="7"/>
+<ellipse cx="1054.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1056.7231,29.1431 Q1056.1421,29.4419 1055.5029,29.5913 Q1054.8638,29.7407 1054.1582,29.7407 Q1051.6514,29.7407 1050.3315,28.0889 Q1049.0117,26.437 1049.0117,23.3159 Q1049.0117,20.1865 1050.3315,18.5347 Q1051.6514,16.8828 1054.1582,16.8828 Q1054.8638,16.8828 1055.5112,17.0322 Q1056.1587,17.1816 1056.7231,17.4805 L1056.7231,20.2031 Q1056.0923,19.6221 1055.4988,19.3523 Q1054.9053,19.0825 1054.2744,19.0825 Q1052.9297,19.0825 1052.2449,20.1492 Q1051.5601,21.2158 1051.5601,23.3159 Q1051.5601,25.4077 1052.2449,26.4744 Q1052.9297,27.541 1054.2744,27.541 Q1054.9053,27.541 1055.4988,27.2712 Q1056.0923,27.0015 1056.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1074.75" y="28.291">StudentResult</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="737.5" x2="1474.5" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="744.5" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="756.5" y="56.5352">firstName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="744.5" y="66.2324"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="756.5" y="73.0234">lastName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="744.5" y="82.7207"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="756.5" y="89.5117">points: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="744.5" y="99.209"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="756.5" y="106">rank: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="737.5" x2="1474.5" y1="112.9531" y2="112.9531"/>
+<ellipse cx="747.5" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="713" x="756.5" y="130.4883">StudentResult(firstName: String, lastName: String, points: double, rank: int, status: StudentCourseStatus)</text>
+<ellipse cx="747.5" cy="143.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="756.5" y="146.9766">getFirstName(): String</text>
+<ellipse cx="747.5" cy="159.6738" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="756.5" y="163.4648">getLastName(): String</text>
+<ellipse cx="747.5" cy="176.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="756.5" y="179.9531">getPoints(): double</text>
+<ellipse cx="747.5" cy="192.6504" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="756.5" y="196.4414">getRank(): int</text>
+<ellipse cx="747.5" cy="209.1387" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="756.5" y="212.9297">getStatus(): StudentCourseStatus</text>
+<ellipse cx="747.5" cy="225.627" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="756.5" y="229.418">toString(): String</text>
+</g>
+<!--reverse link ParseResultException to ParseResultCollectorException-->
+<g id="link_ParseResultException_ParseResultCollectorException">
+<path codeLine="13" d="M391.03,179.15 C359.44,218.82 317.12,271.96 284.23,313.26 " fill="none" id="ParseResultException-backto-ParseResultCollectorException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="385.4,174.98,403.34,163.69,396.35,183.7,385.4,174.98" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ParseResultException to ParseResultRowException-->
+<g id="link_ParseResultException_ParseResultRowException">
+<path codeLine="22" d="M489.87,177.83 C528.75,217.63 581.37,271.5 622.17,313.26 " fill="none" id="ParseResultException-backto-ParseResultRowException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="484.93,182.79,475.96,163.59,494.95,173.01,484.93,182.79" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ParseResultRowException to ParseResultCellException-->
+<g id="link_ParseResultRowException_ParseResultCellException">
+<path codeLine="31" d="M685,465.72 C685,478.7 685,491.9 685,504.33 " fill="none" id="ParseResultRowException-backto-ParseResultCellException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="678,465.77,685,445.77,692,465.77,678,465.77" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link StudentResult to StudentCourseStatus-->
+<g id="link_StudentResult_StudentCourseStatus">
+<path codeLine="51" d="M1106,236.71 C1106,270.59 1106,305.73 1106,332.45 " fill="none" id="StudentResult-to-StudentCourseStatus" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="1106,337.19,1110,328.19,1106,332.19,1102,328.19,1106,337.19" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="1107" y="279.9384">status</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1097.2875" y="327.7795">1</text>
+</g>
+<!--SRC=[bLFHRi8W57sMhxZngOtjmrw9CJ5c9ajqCVOBMCjCCmfDWRbbyzz7mRhIugQFNCuzvvvp8MT4IjYHHj8zbPgfnu-SrgeK7BxGP1QwYE9h5nMLaXmeXamr9J_4w8HGFXHO2SPehaJJLm986qgau1B3zdDJIZKFAInyvJ7LSBO0OZJaP4QAOc_LepeWYeFnn1ZUHLcOoMS7gboxZE9_nZ-XODJpxpJzEwD0a7jnz9QLDkA8eUJAZw0FYpf8V0CcWK1KhLTnR7qw8NFUEbHRSxXRNVPLGm-5CkORp0NJ5GzuzA0z0xs6-EwEQ_vN5d9F1DwcHhlkJu8GvReo9BgWt2Xf0yiKKLgs0UoMMOOcw-NJvlTddQ6EowRqMZPIFPFgChUf6UYmL0ipllbkXT0lZBRFX_2tpfF76eqO4nWI9k3p9N2XIq1Q1pXawvpfkbFeHMWlDYHStrcrjjhDRv-cqUmMupwcKt7T8t7Jf8HZzLRdPvgc2vW-J8DBmMTlFm00]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Imamo enum <code>StudentCourseStatus</code> koji može imati dvije vrijednosti <code>PASS</code> i <code>FAIL</code>.</p>
+<p>U klasi <code>StudentResult</code> imamo ime, prezime, broj bodova, rang i status studenta. Objekti ove klase su nepromjenjivi tj. nema <code>set</code> metode i nakon stvaranja objekta njegove članske varijable se ne mogu mijenjati.</p>
+<p>Potrebno je napraviti hijerarhiju iznimki kako je zadano na dijagramu. Klasa <code>ParseResultException</code> je neprovjeravana iznimka. Ona predstavlja sve iznimke koje se mogu dogoditi prilikom parsiranja u <code>StudentResult</code>. Klasa <code>ParseResultCollectorException</code> skuplja sve iznimke u listu. Metoda <code>addReason</code> dodaje razlog, a metoda <code>getReasons</code> vraća listu razloga. Klasa <code>ParseResultRowException</code> predstavlja iznimku koja predstavlja pogrešku kod obrade jednog reda, a klasa <code>ParseResultCellException</code> kod obrade jedne ćelije. Obratite pažnju na to što metoda <code>getMessage</code> treba vratiti u klasama <code>ParseResultException</code>, <code>ParseResultRowException</code> i <code>ParseResultCellException</code> (vidi primjer korištenja).</p>
+<p>U klasi <code>ParseResultCollectorException</code> treba dodati javnu metodu <code>collect</code> koja kao argument prima <code>MyList</code>. Lista je parametrizirana tako da se u nju mogu staviti bilo koje iznimke iz zadane hijerarhije. Ta metoda nije prikazana u UML dijagramu klasa. Funkcionalnost je takva da se u listu dodaju sve iznimke koje se nalaze u razlozima. Ako u razlogu postoji <code>ParseResultCollectorException</code> onda trebamo dodati njene razloge, a ne tu iznimku.</p>
+<p>Još je potrebno napraviti klasu <code>StudentsResultsParser</code> sa statičkom metodom <code>parse</code>. Ona ne vraća ništa, a prima:</p>
+<ul>
+<li>polje redaka <code>String[]</code> i</li>
+<li><code>MyList</code> koji je parametriziran tako da se u nju mogu stavljati <code>StudentResult</code></li>
+</ul>
+<p>Metoda <code>parse</code> uzima retke i pretvara ih u objekte <code>StudentResult</code> (postupak parsiranja) te ih doda u listu koju je primila preko argumenta. Ako je sve u redu normalno završava, a u listi imamo objekte. Ako postoji problem u parsiranju skuplja sve iznimke i baca <code>ParseResultCollectorException</code> u kojoj su skupljene sve iznimke. Redoslijed kolona je uvijek isti: ime, prezime, bodovi, rang i status. Ako ima više kolona nego je potrebno ostale se ignoriraju. Format redaka je prikazan u primjeru korištenja. U slučaju da imamo iznimke u listi koja je proslijeđena kao argument trebaju postojati rezultati studenata za koje se može provesti parsiranje bez iznimki (vidi primjer korištenja).</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">System.out.println(new ParseResultException(&quot;some error&quot;).getMessage());
+
+System.out.println(new ParseResultRowException(7, &quot;wrong number of columns&quot;).getMessage());
+System.out.println(new ParseResultRowException(8).getMessage());
+
+System.out.println(new ParseResultCellException(9, 3, &quot;can not parse status&quot;).getMessage());
+System.out.println(new ParseResultCellException(10, 4).getMessage());
+
+System.out.println(&quot;---&quot;);
+
+System.out.println(new StudentResult(&quot;John&quot;, &quot;Doe&quot;, 85.5, 1, StudentCourseStatus.PASS));
+System.out.println(&quot;---&quot;);
+
+String[] lines = {
+    &quot;John;Doe;85.5;2;pass&quot;,
+    &quot;Jane;Smith;45.3;4;fail;uh&quot;,
+    &quot;Alice;Johnson;70.1;3;pass&quot;,
+    &quot;Bob;Brown;x;y;z&quot;,
+    &quot;Charlie;Davis;90.4;1;pass&quot;
+};
+
+MyList&lt;Object&gt; results = new MyList&lt;&gt;();
+try {
+  StudentsResultsParser.parse(lines, results);
+} catch (ParseResultCollectorException e) {
+  System.out.println(&quot;Parse exceptions:&quot;);
+  MyList&lt;ParseResultException&gt; reasons = e.getReasons();
+  for (int i = 0; i &lt; reasons.size(); i++) {
+    ParseResultException reason = reasons.elementAt(i);
+    System.out.println(reason.getMessage());
+  }
+}
+
+System.out.println(&quot;---\nParsed results:&quot;);
+  for (int i = 0; i &lt; results.size(); i++) {
+    System.out.println(results.elementAt(i));
+  }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">some error
+wrong number of columns in row 7
+exception in row 8
+can not parse status in row 9 and column 3
+exception in row 10 and column 4
+---
+John Doe - 85.50 (1) - PASS
+---
+Parse exceptions:
+Invalid points format in row 4 and column 3
+Invalid rank format in row 4 and column 4
+Invalid status format in row 4 and column 5
+---
+Parsed results:
+John Doe - 85.50 (2) - PASS
+Jane Smith - 45.30 (4) - FAIL
+Alice Johnson - 70.10 (3) - PASS
+Charlie Davis - 90.40 (1) - PASS
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
