@@ -1,0 +1,381 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the exercise, you have to to implement a bank account with associated elements.</p>
+<p>The default class is <code>MyList</code>, which is similar to the list we did on the recapitulation. It works with objects (class <code>Object</code>) which should be parameterized with generics. When doing so, you might get a compiler warning like this:</p>
+<pre class="line-numbers"><code class="language-sh">Compile errors/warnings:
+hr.fer.oop.MyList:15: warning: [unchecked] unchecked cast
+</code></pre>
+<p>You can ignore this or you can add the following code before that line and that warning should disappear.</p>
+<pre class="line-numbers"><code class="language-java">@SuppressWarnings(&quot;unchecked&quot;)
+</code></pre>
+<p>You need to add a <code>getCopy</code> method to the list that returns a copy of the list.</p>
+<p>The UML class diagram shows the classes that need to be created (most of the classes are given to you, so the remaining classes are: <code>Transaction</code>, <code>BankAccount</code> and <code>BankException</code>). In addition, you need to modify the existing code of the <code>MyList</code> class and add the <code>getCopy</code> method, which returns a copy of the list. In all classes, you need to implement attributes (member variables), constructors and methods as shown in the diagram. You are free to add and implement additional methods, attributes and constructors.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="668px" preserveAspectRatio="none" style="width:1821px;height:668px;background:#FFFFFF;" version="1.1" viewBox="0 0 1821 668" width="1821px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class TransactionType-->
+<g id="elem_TransactionType">
+<rect codeLine="1" fill="#F1F1F1" height="97.4648" id="TransactionType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="530" y="563.91"/>
+<ellipse cx="545" cy="579.91" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M548.6143,586.41 L540.8945,586.41 L540.8945,574.0169 L548.6143,574.0169 L548.6143,576.1751 L543.3433,576.1751 L543.3433,578.848 L548.1162,578.848 L548.1162,581.0062 L543.3433,581.0062 L543.3433,584.2518 L548.6143,584.2518 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="559" y="585.201">TransactionType</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="531" x2="675" y1="595.91" y2="595.91"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="536" y="613.4452">DEPOSIT</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="536" y="629.9334">WITHDRAWAL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="536" y="646.4217">TRANSFER</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="531" x2="675" y1="653.3748" y2="653.3748"/>
+</g>
+<!--class IBAN-->
+<g id="elem_IBAN">
+<rect codeLine="7" fill="#F1F1F1" height="97.4648" id="IBAN" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="226" x="165" y="563.91"/>
+<ellipse cx="257.75" cy="579.91" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M260.2231,586.0531 Q259.6421,586.3519 259.0029,586.5013 Q258.3638,586.6507 257.6582,586.6507 Q255.1514,586.6507 253.8315,584.9989 Q252.5117,583.347 252.5117,580.2259 Q252.5117,577.0965 253.8315,575.4447 Q255.1514,573.7928 257.6582,573.7928 Q258.3638,573.7928 259.0112,573.9422 Q259.6587,574.0916 260.2231,574.3905 L260.2231,577.1131 Q259.5923,576.5321 258.9988,576.2623 Q258.4053,575.9925 257.7744,575.9925 Q256.4297,575.9925 255.7449,577.0592 Q255.0601,578.1258 255.0601,580.2259 Q255.0601,582.3177 255.7449,583.3844 Q256.4297,584.451 257.7744,584.451 Q258.4053,584.451 258.9988,584.1812 Q259.5923,583.9115 260.2231,583.3304 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="278.25" y="585.201">IBAN</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="166" x2="390" y1="595.91" y2="595.91"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="173" y="606.6541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="185" y="613.4452">accountNumber: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="166" x2="390" y1="620.3983" y2="620.3983"/>
+<ellipse cx="176" cy="634.1424" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="185" y="637.9334">IBAN(accountNumber: String)</text>
+<ellipse cx="176" cy="650.6307" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="185" y="654.4217">getAccountNumber(): String</text>
+</g>
+<!--class BankAccount-->
+<g id="elem_BankAccount">
+<rect codeLine="14" fill="#F1F1F1" height="179.9063" id="BankAccount" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="500" x="7" y="7"/>
+<ellipse cx="208.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M210.7231,29.1431 Q210.1421,29.4419 209.5029,29.5913 Q208.8638,29.7407 208.1582,29.7407 Q205.6514,29.7407 204.3315,28.0889 Q203.0117,26.437 203.0117,23.3159 Q203.0117,20.1865 204.3315,18.5347 Q205.6514,16.8828 208.1582,16.8828 Q208.8638,16.8828 209.5112,17.0322 Q210.1587,17.1816 210.7231,17.4805 L210.7231,20.2031 Q210.0923,19.6221 209.4988,19.3523 Q208.9053,19.0825 208.2744,19.0825 Q206.9297,19.0825 206.2449,20.1492 Q205.5601,21.2158 205.5601,23.3159 Q205.5601,25.4077 206.2449,26.4744 Q206.9297,27.541 208.2744,27.541 Q208.9053,27.541 209.4988,27.2712 Q210.0923,27.0015 210.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="228.75" y="28.291">BankAccount</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="506" y1="39" y2="39"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="506" y1="47" y2="47"/>
+<ellipse cx="18" cy="60.7441" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="27" y="64.5352">BankAccount(iban: IBAN)</text>
+<ellipse cx="18" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="320" x="27" y="81.0234">addTransaction(transaction: Transaction): void</text>
+<ellipse cx="18" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="27" y="97.5117">getBalanceInHundredths(): int</text>
+<ellipse cx="18" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="271" x="27" y="114">deposit(amountInHundredths: int): void</text>
+<ellipse cx="18" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="283" x="27" y="130.4883">withdraw(amountInHundredths: int): void</text>
+<ellipse cx="18" cy="143.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="474" x="27" y="146.9766">transferTo(amountInHundredths: int, destination: BankAccount): void</text>
+<ellipse cx="18" cy="159.6738" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="27" y="163.4648">getIban(): IBAN</text>
+<ellipse cx="18" cy="176.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="273" x="27" y="179.9531">getTransactions(): MyList&lt;Transaction&gt;</text>
+</g>
+<!--class Transaction-->
+<g id="elem_Transaction">
+<rect codeLine="27" fill="#F1F1F1" height="163.418" id="Transaction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="448" x="261" y="283.91"/>
+<ellipse cx="440.25" cy="299.91" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M442.7231,306.0531 Q442.1421,306.3519 441.5029,306.5013 Q440.8638,306.6507 440.1582,306.6507 Q437.6514,306.6507 436.3315,304.9989 Q435.0117,303.347 435.0117,300.2259 Q435.0117,297.0965 436.3315,295.4447 Q437.6514,293.7928 440.1582,293.7928 Q440.8638,293.7928 441.5112,293.9422 Q442.1587,294.0916 442.7231,294.3905 L442.7231,297.1131 Q442.0923,296.5321 441.4988,296.2623 Q440.9053,295.9925 440.2744,295.9925 Q438.9297,295.9925 438.2449,297.0592 Q437.5601,298.1258 437.5601,300.2259 Q437.5601,302.3177 438.2449,303.3844 Q438.9297,304.451 440.2744,304.451 Q440.9053,304.451 441.4988,304.1812 Q442.0923,303.9115 442.7231,303.3304 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="460.75" y="305.201">Transaction</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="262" x2="708" y1="315.91" y2="315.91"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="269" y="326.6541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="281" y="333.4452">amountInHundredths: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="262" x2="708" y1="340.3983" y2="340.3983"/>
+<ellipse cx="272" cy="362.3866" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="422" x="281" y="357.9334">Transaction(amountInHundredths: int, type: TransactionType,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="328" x="297" y="374.4217">sourceAccount: IBAN, destinationAccount: IBAN)</text>
+<ellipse cx="272" cy="387.119" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="281" y="390.91">getAmountInHundredths(): int</text>
+<ellipse cx="272" cy="403.6073" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="281" y="407.3983">getType(): TransactionType</text>
+<ellipse cx="272" cy="420.0955" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="281" y="423.8866">getSourceAccount(): IBAN</text>
+<ellipse cx="272" cy="436.5838" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="281" y="440.3748">getDestinationAccount(): IBAN</text>
+</g>
+<!--class BankException-->
+<g id="elem_BankException">
+<rect codeLine="39" fill="#F1F1F1" height="80.9766" id="BankException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="374" x="1167" y="56.47"/>
+<ellipse cx="1299.25" cy="72.47" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1301.7231,78.6131 Q1301.1421,78.9119 1300.5029,79.0613 Q1299.8638,79.2107 1299.1582,79.2107 Q1296.6514,79.2107 1295.3315,77.5589 Q1294.0117,75.907 1294.0117,72.7859 Q1294.0117,69.6565 1295.3315,68.0047 Q1296.6514,66.3528 1299.1582,66.3528 Q1299.8638,66.3528 1300.5112,66.5022 Q1301.1587,66.6516 1301.7231,66.9505 L1301.7231,69.6731 Q1301.0923,69.0921 1300.4988,68.8223 Q1299.9053,68.5525 1299.2744,68.5525 Q1297.9297,68.5525 1297.2449,69.6192 Q1296.5601,70.6858 1296.5601,72.7859 Q1296.5601,74.8777 1297.2449,75.9444 Q1297.9297,77.011 1299.2744,77.011 Q1299.9053,77.011 1300.4988,76.7412 Q1301.0923,76.4715 1301.7231,75.8904 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="1319.75" y="77.761">BankException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1168" x2="1540" y1="88.47" y2="88.47"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1168" x2="1540" y1="96.47" y2="96.47"/>
+<ellipse cx="1178" cy="110.2141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="1187" y="114.0052">BankException(message: String)</text>
+<ellipse cx="1178" cy="126.7024" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="348" x="1187" y="130.4934">BankException(message: String, cause: Throwable)</text>
+</g>
+<!--class BankAccountException-->
+<g id="elem_BankAccountException">
+<rect codeLine="44" fill="#F1F1F1" height="80.9766" id="BankAccountException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="430" x="768" y="324.92"/>
+<ellipse cx="900.25" cy="340.92" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M902.7231,347.0631 Q902.1421,347.3619 901.5029,347.5113 Q900.8638,347.6607 900.1582,347.6607 Q897.6514,347.6607 896.3315,346.0089 Q895.0117,344.357 895.0117,341.2359 Q895.0117,338.1065 896.3315,336.4547 Q897.6514,334.8028 900.1582,334.8028 Q900.8638,334.8028 901.5112,334.9522 Q902.1587,335.1016 902.7231,335.4005 L902.7231,338.1231 Q902.0923,337.5421 901.4988,337.2723 Q900.9053,337.0025 900.2744,337.0025 Q898.9297,337.0025 898.2449,338.0692 Q897.5601,339.1358 897.5601,341.2359 Q897.5601,343.3277 898.2449,344.3944 Q898.9297,345.461 900.2744,345.461 Q900.9053,345.461 901.4988,345.1912 Q902.0923,344.9215 902.7231,344.3404 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="920.75" y="346.211">BankAccountException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="769" x2="1197" y1="356.92" y2="356.92"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="769" x2="1197" y1="364.92" y2="364.92"/>
+<ellipse cx="779" cy="378.6641" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="404" x="788" y="382.4552">BankAccountException(message: String, cause: Throwable)</text>
+<ellipse cx="779" cy="395.1524" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="276" x="788" y="398.9434">BankAccountException(message: String)</text>
+</g>
+<!--class IbanException-->
+<g id="elem_IbanException">
+<rect codeLine="51" fill="#F1F1F1" height="64.4883" id="IbanException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="243" x="1232.5" y="333.17"/>
+<ellipse cx="1300.75" cy="349.17" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1303.2231,355.3131 Q1302.6421,355.6119 1302.0029,355.7613 Q1301.3638,355.9107 1300.6582,355.9107 Q1298.1514,355.9107 1296.8315,354.2589 Q1295.5117,352.607 1295.5117,349.4859 Q1295.5117,346.3565 1296.8315,344.7047 Q1298.1514,343.0528 1300.6582,343.0528 Q1301.3638,343.0528 1302.0112,343.2022 Q1302.6587,343.3516 1303.2231,343.6505 L1303.2231,346.3731 Q1302.5923,345.7921 1301.9988,345.5223 Q1301.4053,345.2525 1300.7744,345.2525 Q1299.4297,345.2525 1298.7449,346.3192 Q1298.0601,347.3858 1298.0601,349.4859 Q1298.0601,351.5777 1298.7449,352.6444 Q1299.4297,353.711 1300.7744,353.711 Q1301.4053,353.711 1301.9988,353.4412 Q1302.5923,353.1715 1303.2231,352.5904 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1321.25" y="354.461">IbanException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1233.5" x2="1474.5" y1="365.17" y2="365.17"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1233.5" x2="1474.5" y1="373.17" y2="373.17"/>
+<ellipse cx="1243.5" cy="386.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="1252.5" y="390.7052">IbanException(message: String)</text>
+</g>
+<!--class TransactionException-->
+<g id="elem_TransactionException">
+<rect codeLine="56" fill="#F1F1F1" height="64.4883" id="TransactionException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="294" x="1510" y="333.17"/>
+<ellipse cx="1578.25" cy="349.17" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1580.7231,355.3131 Q1580.1421,355.6119 1579.5029,355.7613 Q1578.8638,355.9107 1578.1582,355.9107 Q1575.6514,355.9107 1574.3315,354.2589 Q1573.0117,352.607 1573.0117,349.4859 Q1573.0117,346.3565 1574.3315,344.7047 Q1575.6514,343.0528 1578.1582,343.0528 Q1578.8638,343.0528 1579.5112,343.2022 Q1580.1587,343.3516 1580.7231,343.6505 L1580.7231,346.3731 Q1580.0923,345.7921 1579.4988,345.5223 Q1578.9053,345.2525 1578.2744,345.2525 Q1576.9297,345.2525 1576.2449,346.3192 Q1575.5601,347.3858 1575.5601,349.4859 Q1575.5601,351.5777 1576.2449,352.6444 Q1576.9297,353.711 1578.2744,353.711 Q1578.9053,353.711 1579.4988,353.4412 Q1580.0923,353.1715 1580.7231,352.5904 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="1598.75" y="354.461">TransactionException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1511" x2="1803" y1="365.17" y2="365.17"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1511" x2="1803" y1="373.17" y2="373.17"/>
+<ellipse cx="1521" cy="386.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="1530" y="390.7052">TransactionException(message: String)</text>
+</g>
+<!--class MyList_T_-->
+<g id="elem_MyList_T_">
+<rect codeLine="61" fill="#F1F1F1" height="146.9297" id="MyList_T_" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="234" x="1576" y="23.49"/>
+<ellipse cx="1661.75" cy="39.49" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1664.2231,45.6331 Q1663.6421,45.9319 1663.0029,46.0813 Q1662.3638,46.2307 1661.6582,46.2307 Q1659.1514,46.2307 1657.8315,44.5789 Q1656.5117,42.927 1656.5117,39.8059 Q1656.5117,36.6765 1657.8315,35.0247 Q1659.1514,33.3728 1661.6582,33.3728 Q1662.3638,33.3728 1663.0112,33.5222 Q1663.6587,33.6716 1664.2231,33.9705 L1664.2231,36.6931 Q1663.5923,36.1121 1662.9988,35.8423 Q1662.4053,35.5725 1661.7744,35.5725 Q1660.4297,35.5725 1659.7449,36.6392 Q1659.0601,37.7058 1659.0601,39.8059 Q1659.0601,41.8977 1659.7449,42.9644 Q1660.4297,44.031 1661.7744,44.031 Q1662.4053,44.031 1662.9988,43.7612 Q1663.5923,43.4915 1664.2231,42.9104 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="1682.25" y="44.781">MyList</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="1803" y="20.49"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="1804" y="33.0916">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1577" x2="1809" y1="55.49" y2="55.49"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1584" y="66.2341"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="1596" y="73.0252">numberOfElementsInArray: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1584" y="82.7224"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1596" y="89.5134">elements: T[]</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1577" x2="1809" y1="96.4666" y2="96.4666"/>
+<ellipse cx="1587" cy="110.2107" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="1596" y="114.0017">size(): int</text>
+<ellipse cx="1587" cy="126.699" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="1596" y="130.49">addLast(object: T): void</text>
+<ellipse cx="1587" cy="143.1873" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="1596" y="146.9783">elementAt(index: int): T</text>
+<ellipse cx="1587" cy="159.6755" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="1596" y="163.4666">getCopy(): MyList&lt;T&gt;</text>
+</g>
+<!--link BankAccount to IBAN-->
+<g id="link_BankAccount_IBAN">
+<path codeLine="24" d="M205.73,187.06 C194.32,211.23 183.87,237.92 178,263.91 C158.12,351.92 151.11,380.79 178,466.91 C188.49,500.49 209.82,533.14 230.09,558.88 " fill="none" id="BankAccount-to-IBAN" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="233.18,562.75,230.6685,553.2268,230.0513,558.8498,224.4282,558.2327,233.18,562.75" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="181" y="363.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="191" y="370.4784">iban</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="219.0991" y="553.265">1</text>
+</g>
+<!--link BankAccount to Transaction-->
+<g id="link_BankAccount_Transaction">
+<path codeLine="25" d="M333.24,187.05 C358.67,216.78 386.94,249.81 412.11,279.23 " fill="none" id="BankAccount-to-Transaction" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="415.14,282.77,412.3199,273.3335,411.886,278.9737,406.2459,278.5399,415.14,282.77" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="374" y="223.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="384" y="230.4784">transactions</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="403.5045" y="273.2796">*</text>
+</g>
+<!--link Transaction to TransactionType-->
+<g id="link_Transaction_TransactionType">
+<path codeLine="35" d="M537.31,446.72 C546.84,462.99 556.22,480.23 564,496.91 C573.05,516.31 581.07,538.42 587.46,558.01 " fill="none" id="Transaction-to-TransactionType" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="588.92,562.55,589.975,552.7578,587.3904,557.7897,582.3585,555.2051,588.92,562.55" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="573.61" y="503.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="583.61" y="510.4784">type</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="578.6935" y="552.9953">1</text>
+</g>
+<!--link Transaction to IBAN-->
+<g id="link_Transaction_IBAN">
+<path codeLine="36" d="M317.15,446.63 C300.37,461.09 285.64,477.78 275,496.91 C264.93,515.02 263.56,537.37 265.47,557.49 " fill="none" id="Transaction-to-IBAN" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="266.03,562.44,268.9998,553.0496,265.4716,557.4713,261.0498,553.9431,266.03,562.44" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="278" y="503.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="288" y="510.4784">sourceAccount</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="242.9981" y="553.2764">0,1</text>
+</g>
+<!--link Transaction to IBAN-->
+<g id="link_Transaction_IBAN">
+<path codeLine="37" d="M436.92,446.8 C422.02,469.37 404.81,493.34 387,513.91 C373.22,529.82 356.93,545.66 341.2,559.8 " fill="none" id="Transaction-to-IBAN-1" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="337.47,563.12,346.8477,560.1103,341.1999,559.7902,341.5201,554.1424,337.47,563.12" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="402.25" y="503.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="412.25" y="510.4784">destinationAccount</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="323.7421" y="553.1452">0,1</text>
+</g>
+<!--reverse link BankException to BankAccountException-->
+<g id="link_BankException_BankAccountException">
+<path codeLine="48" d="M1281.18,150.26 C1210.01,201.37 1103.22,278.07 1038.62,324.46 " fill="none" id="BankException-backto-BankAccountException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1276.9,144.71,1297.23,138.73,1285.07,156.08,1276.9,144.71" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link BankException to IbanException-->
+<g id="link_BankException_IbanException">
+<path codeLine="54" d="M1354,159.18 C1354,213.41 1354,290.41 1354,333.01 " fill="none" id="BankException-backto-IbanException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1347,159.36,1354,139.36,1361,159.36,1347,159.36" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link BankException to TransactionException-->
+<g id="link_BankException_TransactionException">
+<path codeLine="59" d="M1415.14,151.72 C1477.02,206.14 1570.58,288.42 1621.29,333.01 " fill="none" id="BankException-backto-TransactionException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1410.9,157.31,1400.5,138.85,1420.14,146.8,1410.9,157.31" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[ZLHDZzem43sJNs7bb7I9r5wZ5L8eL1k9iXL4saDRhKmo2sw9WsAdBDtkVryxSSZaWowSmioptymRpmDUf2JAAHSqbYpZqUa0vCKQpURVxjTXP8qUmkXkjWeUWeKrYbR1Slrblh9UBIlUKo58E0sM6kxHECuABfT5ke7S9skPCxwrHZSQu0mcNPNTWWnmpd7FHnM5uPXI_jkWDDKD-k-m3UL-MOM-ZYO9QiMHpRUFUrGaVpAMLFnJkgSyXf3V5Jp98P4xeQjWNAfy0eTCCEdGLBDXJ8beBZeokKjoUdmVMHRr17cKNSAEIG92Cawhmb6xzIs4wCf3rRikLNTlGgZ9ieklfmKJyXQ59qfOBAZdJOZzoQu6wHDF2ze7VB2nVXg7j1Nre33aHLNaNMXG5uldT547gHwZttsTun-Sg9_8YZm6KsKbGakuLiOr-WGzfdhMHZzrluvqA4rsZIaxoizwp6V0guM5gGNlxfpML5Fri1_7Q3ojhj_1ziN06pL_Zk5WHbNjr3dYf204tGBUrFy2nYIcXT2ZskNPaMxsu3OMWHvJdxERkERcwqwwvg4tdBV_F6-mchFJw8rgrzYAN4dHEZEm6ss6eSILH4D7QpwxNls9JQWmHl0OFPPcpKkplN-Qxo45BaN8Wpod9-Dw7fYmKltxJrMYO7-XyKHbiWigf9DjVa6izYjglCqS39GlymIUQ-UBAgVzd1rEs9IK5Rq1]-->
+</g>
+</svg>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<p>The validation rules listed below should throw an appropriate exception if not met. The <code>BankException</code> class is an unchecked exception. In validations, you don't need to write the exact text in exceptions because that text is not checked. Each class should throw an exception that is specific to that class, for example, the <code>BankAccount</code> class throws <code>BankAccountException</code> in validation code.</p>
+<p>The <code>IBAN</code> class represents a bank account number. The built-in validation rules are (this is a given):</p>
+<ul>
+<li>IBAN must not be <code>null</code></li>
+<li>IBAN must have exactly 34 characters</li>
+<li>IBAN must contain only letters and digits</li>
+</ul>
+<p>The <code>Transaction</code> class represents a single transaction. The transaction type is defined in the <code>TransactionType</code> enumeration. There are 3 transaction types: deposit - <code>deposit</code> to an account (e.g. cash deposit), withdrawal - <code>withdrawal</code> from an account (e.g. using an ATM), and transfer - <code>transfer</code> from one account to another. The rules for validating a transaction are:</p>
+<ul>
+<li><code>amountInHundredths</code> must be greater than zero. Example amount: 100.10 is stored as the value 10010. The exercise only use integer values, so no additional conversion is required.</li>
+<li><code>type</code> (transaction type) must not be <code>null</code>.</li>
+<li>At least one of <code>sourceAccount</code> or <code>destinationAccount</code> must not be <code>null</code>.</li>
+<li><code>sourceAccount</code> and <code>destinationAccount</code> must not be the same.</li>
+<li>For transaction types <code>WITHDRAWAL</code> or <code>TRANSFER</code>, <code>sourceAccount</code> must not be <code>null</code>.</li>
+<li>For transaction types <code>DEPOSIT</code> or <code>TRANSFER</code>, <code>destinationAccount</code> must not be <code>null</code>.</li>
+</ul>
+<p>In the <code>BankAccount</code> class, all transactions are stored in the list. The <code>getBalanceInHundredths</code> method should calculate the current balance by going through all transactions. The assumption is that at the beginning the state is 0. Using the <code>addTransaction</code> method, transactions are added to the list (pay attention to which transactions can be added). The <code>getTransactions</code> method returns a list that is a copy of the internal transactions. The <code>deposit</code>, <code>withdraw</code> and <code>transferTo</code> methods check the conditions and add the transaction to the list (they use the <code>addTransaction</code> method). The rules for validation are:</p>
+<ul>
+<li>IBAN must not be <code>null</code>.</li>
+<li>Transactions added to the account must not be <code>null</code>.</li>
+<li>Transactions to be added must include the IBAN of the account that is either the source or destination account.</li>
+<li>Deposit:
+<ul>
+<li>The deposit amount must be greater than zero.</li>
+</ul>
+</li>
+<li>Withdrawal:
+<ul>
+<li>The withdrawal amount must not exceed the account balance.</li>
+</ul>
+</li>
+<li>Transfer:
+<ul>
+<li>The transfer amount cannot exceed the account balance.</li>
+<li>The transfer transaction is added to both the source and destination accounts.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> all classes are in the <code>hr.fer.oop.bank</code> package and are public, only the <code>MyList</code> class is package private.</p>
+<p>Example of use:</p>
+<pre class="line-numbers"><code class="language-java">package hr.fer.oop.bank;
+
+public class Main {
+
+  public static void main(String[] args) {
+    // Create IBANs
+    IBAN iban1 = new IBAN(&quot;HR12345678901234567890123456789012&quot;);
+    IBAN iban2 = new IBAN(&quot;HR98765432109876543210987654321098&quot;);
+
+    // Create Bank Accounts
+    BankAccount account1 = new BankAccount(iban1);
+    BankAccount account2 = new BankAccount(iban2);
+
+    // Deposit money into account1
+    account1.deposit(10000); // Deposit 100.00 in hundredths
+    System.out.println(&quot;Account 1 balance after deposit: &quot; + account1.getBalanceInHundredths());
+
+    // Withdraw money from account1
+    account1.withdraw(5000); // Withdraw 50.00 in hundredths
+    System.out.println(&quot;Account 1 balance after withdrawal: &quot; + account1.getBalanceInHundredths());
+
+    // Transfer money from account1 to account2
+    account1.transferTo(3000, account2); // Transfer 30.00 in hundredths
+    System.out.println(&quot;Account 1 balance after transfer: &quot; + account1.getBalanceInHundredths());
+    System.out.println(&quot;Account 2 balance after receiving transfer: &quot; + account2.getBalanceInHundredths());
+
+    // Print transactions for account1
+    System.out.println(&quot;\nAccount 1 transactions:&quot;);
+    MyList&lt;Transaction&gt; transactions = account1.getTransactions();
+    for (int i = 0; i &lt; transactions.size(); i++) {
+      Transaction transaction = transactions.elementAt(i);
+      System.out.println(transaction.getType() + &quot; - &quot; + transaction.getAmountInHundredths());
+    }
+
+    // Print transactions for account2
+    System.out.println(&quot;\nAccount 2 transactions:&quot;);
+    transactions = account2.getTransactions();
+    for (int i = 0; i &lt; transactions.size(); i++) {
+      Transaction transaction = transactions.elementAt(i);
+      System.out.println(transaction.getType() + &quot; - &quot; + transaction.getAmountInHundredths());
+    }
+
+    // Some exceptional cases
+    System.out.println(&quot;\nTesting exceptional cases:&quot;);
+    System.out.println(&quot;Testing invalid IBAN:&quot;);
+    try {
+      new IBAN(&quot;INVALID_IBAN&quot;); // Less than 34 characters
+    } catch (IbanException e) {
+      System.out.println(&quot;Exception: &quot; + e);
+    }
+
+    System.out.println(&quot;Testing invalid transaction:&quot;);
+    try {
+      new Transaction(
+        10000,
+        TransactionType.DEPOSIT,
+        null,
+        null
+      );
+    } catch (TransactionException e) {
+      System.out.println(&quot;Exception: &quot; + e);
+    }
+
+    System.out.println(&quot;Testing withdrawal exceeding balance:&quot;);
+    try {
+      account1.withdraw(20000); // Attempt to withdraw more than the balance
+    } catch (BankAccountException e) {
+      System.out.println(&quot;Exception: &quot; + e);
+    }
+
+    System.out.println(&quot;Testing transfer exceeding balance:&quot;);
+    try {
+      account1.transferTo(20000, account2); // Attempt to transfer more than the balance
+    } catch (BankAccountException e) {
+      System.out.println(&quot;Exception: &quot; + e);
+    }
+  }
+}
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">Account 1 balance after deposit: 10000
+Account 1 balance after withdrawal: 5000
+Account 1 balance after transfer: 2000
+Account 2 balance after receiving transfer: 3000
+
+Account 1 transactions:
+DEPOSIT - 10000
+WITHDRAWAL - 5000
+TRANSFER - 3000
+
+Account 2 transactions:
+TRANSFER - 3000
+
+Testing exceptional cases:
+Testing invalid IBAN:
+Exception: hr.fer.oop.bank.IbanException: IBAN must be exactly 34 characters long.
+Testing invalid transaction:
+Exception: hr.fer.oop.bank.TransactionException: At least one account (source or destination) must not be null.
+Testing withdrawal exceeding balance:
+Exception: hr.fer.oop.bank.BankAccountException: Insufficient funds for withdrawal.
+Testing transfer exceeding balance:
+Exception: hr.fer.oop.bank.BankAccountException: Insufficient funds for transfer.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

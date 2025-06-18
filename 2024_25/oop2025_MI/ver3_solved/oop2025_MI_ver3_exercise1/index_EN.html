@@ -1,0 +1,326 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the assignment, you need to write the classes as indicated in the class diagram.</p>
+<p>All classes and interfaces have visibility set to <code>public</code> and are located in the <code>hr.fer.oop.library</code> package.</p>
+<p>In all classes, you also need to implement the methods as shown in the class diagram. The <code>DVD</code> and <code>OnlineArticle</code> classes are given. You are free to add and implement additional methods, attributes, and constructors.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1124px" preserveAspectRatio="none" style="width:1308px;height:1124px;background:#FFFFFF;" version="1.1" viewBox="0 0 1308 1124" width="1308px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Resource-->
+<g id="elem_Resource">
+<rect codeLine="2" fill="#F1F1F1" height="229.3711" id="Resource" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="284" x="507.5" y="263.91"/>
+<ellipse cx="613.75" cy="279.91" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M613.6133,275.2581 L612.4595,280.3299 L614.7754,280.3299 Z M612.1191,273.0169 L615.1157,273.0169 L618.4609,285.41 L616.0122,285.41 L615.2485,282.347 L611.9697,282.347 L611.2227,285.41 L608.7739,285.41 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="63" x="634.25" y="285.201">Resource</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="508.5" x2="790.5" y1="295.91" y2="295.91"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="515.5" y="306.6541"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="527.5" y="313.4452">id: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="515.5" y="323.1424"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="527.5" y="329.9334">title: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="515.5" y="339.6307"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="527.5" y="346.4217">author: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="515.5" y="356.119"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="527.5" y="362.91">publicationYear: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="508.5" x2="790.5" y1="369.8631" y2="369.8631"/>
+<ellipse cx="518.5" cy="391.8514" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="217" x="527.5" y="387.3983">Resource(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="543.5" y="403.8866">author: String, publicationYear: int)</text>
+<ellipse cx="518.5" cy="416.5838" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="527.5" y="420.3748">getId(): String</text>
+<ellipse cx="518.5" cy="433.0721" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="527.5" y="436.8631">getTitle(): String</text>
+<ellipse cx="518.5" cy="449.5604" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="527.5" y="453.3514">getAuthor(): String</text>
+<ellipse cx="518.5" cy="466.0487" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="527.5" y="469.8397">getPublicationYear(): int</text>
+<ellipse cx="518.5" cy="482.537" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="527.5" y="486.328">toString(): String</text>
+</g>
+<!--class PhysicalResource-->
+<g id="elem_PhysicalResource">
+<rect codeLine="15" fill="#F1F1F1" height="130.4414" id="PhysicalResource" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="388" x="266.5" y="570.77"/>
+<ellipse cx="397.75" cy="586.77" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M397.6133,582.1181 L396.4595,587.1899 L398.7754,587.1899 Z M396.1191,579.8769 L399.1157,579.8769 L402.4609,592.27 L400.0122,592.27 L399.2485,589.207 L395.9697,589.207 L395.2227,592.27 L392.7739,592.27 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="117" x="418.25" y="592.061">PhysicalResource</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="267.5" x2="653.5" y1="602.77" y2="602.77"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="274.5" y="613.5141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="286.5" y="620.3052">location: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="267.5" x2="653.5" y1="627.2583" y2="627.2583"/>
+<ellipse cx="277.5" cy="649.2466" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="271" x="286.5" y="644.7934">PhysicalResource(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="354" x="294.5" y="661.2817">author: String, publicationYear: int, location: String)</text>
+<ellipse cx="277.5" cy="673.979" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="286.5" y="677.77">getLocation(): String</text>
+<ellipse cx="277.5" cy="690.4673" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="286.5" y="694.2583">setLocation(location: String): void</text>
+</g>
+<!--class DigitalResource-->
+<g id="elem_DigitalResource">
+<rect codeLine="23" fill="#F1F1F1" height="163.418" id="DigitalResource" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="299" x="690" y="554.28"/>
+<ellipse cx="781.75" cy="570.28" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M781.6133,565.6281 L780.4595,570.6999 L782.7754,570.6999 Z M780.1191,563.3869 L783.1157,563.3869 L786.4609,575.78 L784.0122,575.78 L783.2485,572.717 L779.9697,572.717 L779.2227,575.78 L776.7739,575.78 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="107" x="802.25" y="575.571">DigitalResource</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="691" x2="988" y1="586.28" y2="586.28"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="698" y="597.0241"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="710" y="603.8152">fileFormat: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="698" y="613.5124"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="710" y="620.3034">fileSizeMB: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="691" x2="988" y1="627.2566" y2="627.2566"/>
+<ellipse cx="701" cy="657.489" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="261" x="710" y="644.7917">DigitalResource(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="726" y="661.28">author: String, publicationYear: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="726" y="677.7683">fileFormat: String, fileSizeMB: double)</text>
+<ellipse cx="701" cy="690.4655" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="710" y="694.2566">getFileFormat(): String</text>
+<ellipse cx="701" cy="706.9538" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="710" y="710.7448">getFileSizeMB(): double</text>
+</g>
+<!--class Book-->
+<g id="elem_Book">
+<rect codeLine="32" fill="#F1F1F1" height="64.4883" id="Book" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="157" x="405" y="1052.58"/>
+<ellipse cx="462.25" cy="1068.58" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M458.6777,1064.8451 L458.6777,1062.6869 L466.0571,1062.6869 L466.0571,1064.8451 L463.5918,1064.8451 L463.5918,1072.9218 L466.0571,1072.9218 L466.0571,1075.08 L458.6777,1075.08 L458.6777,1072.9218 L461.1431,1072.9218 L461.1431,1064.8451 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="34" x="482.75" y="1073.871">Book</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="406" x2="561" y1="1084.58" y2="1084.58"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="406" x2="561" y1="1092.58" y2="1092.58"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="411" y="1110.1152">getPublisher(): String</text>
+</g>
+<!--class PhysicalBook-->
+<g id="elem_PhysicalBook">
+<rect codeLine="37" fill="#F1F1F1" height="212.8828" id="PhysicalBook" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="283" x="7" y="778.7"/>
+<ellipse cx="100.25" cy="794.7" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M102.7231,800.8431 Q102.1421,801.1419 101.5029,801.2913 Q100.8638,801.4407 100.1582,801.4407 Q97.6514,801.4407 96.3315,799.7889 Q95.0117,798.137 95.0117,795.0159 Q95.0117,791.8865 96.3315,790.2347 Q97.6514,788.5828 100.1582,788.5828 Q100.8638,788.5828 101.5112,788.7322 Q102.1587,788.8816 102.7231,789.1805 L102.7231,791.9031 Q102.0923,791.3221 101.4988,791.0523 Q100.9053,790.7825 100.2744,790.7825 Q98.9297,790.7825 98.2449,791.8492 Q97.5601,792.9158 97.5601,795.0159 Q97.5601,797.1077 98.2449,798.1744 Q98.9297,799.241 100.2744,799.241 Q100.9053,799.241 101.4988,798.9712 Q102.0923,798.7015 102.7231,798.1204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="120.75" y="799.991">PhysicalBook</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="289" y1="810.7" y2="810.7"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="821.4441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="27" y="828.2352">pageCount: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="837.9324"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="27" y="844.7234">edition: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="854.4207"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="27" y="861.2117">publisher: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="289" y1="868.1648" y2="868.1648"/>
+<ellipse cx="18" cy="906.6414" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="27" y="885.7">PhysicalBook(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="43" y="902.1883">author: String, publicationYear: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="43" y="918.6766">location: String, pageCount: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="43" y="935.1648">edition: String, publisher: String)</text>
+<ellipse cx="18" cy="947.8621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="27" y="951.6531">getPageCount(): int</text>
+<ellipse cx="18" cy="964.3504" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="27" y="968.1414">getEdition(): String</text>
+<ellipse cx="18" cy="980.8387" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="27" y="984.6297">getPublisher(): String</text>
+</g>
+<!--class DVD-->
+<g id="elem_DVD">
+<rect codeLine="49" fill="#F1F1F1" height="130.4414" id="DVD" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="311" x="325" y="819.92"/>
+<ellipse cx="461.75" cy="835.92" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M464.2231,842.0631 Q463.6421,842.3619 463.0029,842.5113 Q462.3638,842.6607 461.6582,842.6607 Q459.1514,842.6607 457.8315,841.0089 Q456.5117,839.357 456.5117,836.2359 Q456.5117,833.1065 457.8315,831.4547 Q459.1514,829.8028 461.6582,829.8028 Q462.3638,829.8028 463.0112,829.9522 Q463.6587,830.1016 464.2231,830.4005 L464.2231,833.1231 Q463.5923,832.5421 462.9988,832.2723 Q462.4053,832.0025 461.7744,832.0025 Q460.4297,832.0025 459.7449,833.0692 Q459.0601,834.1358 459.0601,836.2359 Q459.0601,838.3277 459.7449,839.3944 Q460.4297,840.461 461.7744,840.461 Q462.4053,840.461 462.9988,840.1912 Q463.5923,839.9215 464.2231,839.3404 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="482.25" y="841.211">DVD</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="326" x2="635" y1="851.92" y2="851.92"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="333" y="862.6641"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="345" y="869.4552">durationInMinutes: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="326" x2="635" y1="876.4083" y2="876.4083"/>
+<ellipse cx="336" cy="906.6407" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="345" y="893.9434">DVD(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="361" y="910.4317">author: String, publicationYear: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="269" x="361" y="926.92">location: String, durationInMinutes: int)</text>
+<ellipse cx="336" cy="939.6173" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="345" y="943.4083">getDurationInMinutes(): int</text>
+</g>
+<!--class EBook-->
+<g id="elem_EBook">
+<rect codeLine="56" fill="#F1F1F1" height="146.9297" id="EBook" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="298" x="670.5" y="811.68"/>
+<ellipse cx="794.25" cy="827.68" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M796.7231,833.8231 Q796.1421,834.1219 795.5029,834.2713 Q794.8638,834.4207 794.1582,834.4207 Q791.6514,834.4207 790.3315,832.7689 Q789.0117,831.117 789.0117,827.9959 Q789.0117,824.8665 790.3315,823.2147 Q791.6514,821.5628 794.1582,821.5628 Q794.8638,821.5628 795.5112,821.7122 Q796.1587,821.8616 796.7231,822.1605 L796.7231,824.8831 Q796.0923,824.3021 795.4988,824.0323 Q794.9053,823.7625 794.2744,823.7625 Q792.9297,823.7625 792.2449,824.8292 Q791.5601,825.8958 791.5601,827.9959 Q791.5601,830.0877 792.2449,831.1544 Q792.9297,832.221 794.2744,832.221 Q794.9053,832.221 795.4988,831.9512 Q796.0923,831.6815 796.7231,831.1004 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="814.75" y="832.971">EBook</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="671.5" x2="967.5" y1="843.68" y2="843.68"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="678.5" y="854.4241"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="690.5" y="861.2152">publisher: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="671.5" x2="967.5" y1="868.1683" y2="868.1683"/>
+<ellipse cx="681.5" cy="906.6448" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="690.5" y="885.7034">EBook(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="706.5" y="902.1917">author: String, publicationYear: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="256" x="706.5" y="918.68">fileFormat: String, fileSizeMB: double,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="706.5" y="935.1683">publisher: String)</text>
+<ellipse cx="681.5" cy="947.8655" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="690.5" y="951.6566">getPublisher(): String</text>
+</g>
+<!--class OnlineArticle-->
+<g id="elem_OnlineArticle">
+<rect codeLine="64" fill="#F1F1F1" height="163.418" id="OnlineArticle" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="298" x="1003.5" y="803.43"/>
+<ellipse cx="1103.75" cy="819.43" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1106.2231,825.5731 Q1105.6421,825.8719 1105.0029,826.0213 Q1104.3638,826.1707 1103.6582,826.1707 Q1101.1514,826.1707 1099.8315,824.5189 Q1098.5117,822.867 1098.5117,819.7459 Q1098.5117,816.6165 1099.8315,814.9647 Q1101.1514,813.3128 1103.6582,813.3128 Q1104.3638,813.3128 1105.0112,813.4622 Q1105.6587,813.6116 1106.2231,813.9105 L1106.2231,816.6331 Q1105.5923,816.0521 1104.9988,815.7823 Q1104.4053,815.5125 1103.7744,815.5125 Q1102.4297,815.5125 1101.7449,816.5792 Q1101.0601,817.6458 1101.0601,819.7459 Q1101.0601,821.8377 1101.7449,822.9044 Q1102.4297,823.971 1103.7744,823.971 Q1104.4053,823.971 1104.9988,823.7012 Q1105.5923,823.4315 1106.2231,822.8504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1124.25" y="824.721">OnlineArticle</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1004.5" x2="1300.5" y1="835.43" y2="835.43"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1011.5" y="846.1741"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1023.5" y="852.9652">url: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1004.5" x2="1300.5" y1="859.9183" y2="859.9183"/>
+<ellipse cx="1014.5" cy="898.3948" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243" x="1023.5" y="877.4534">OnlineArticle(id: String, title: String,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="241" x="1039.5" y="893.9417">author: String, publicationYear: int,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="256" x="1039.5" y="910.43">fileFormat: String, fileSizeMB: double,</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1039.5" y="926.9183">url: String)</text>
+<ellipse cx="1014.5" cy="939.6155" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="1023.5" y="943.4066">OnlineArticle(url: String)</text>
+<ellipse cx="1014.5" cy="956.1038" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="1023.5" y="959.8948">getUrl(): String</text>
+</g>
+<!--class Library-->
+<g id="elem_Library">
+<rect codeLine="74" fill="#F1F1F1" height="179.9063" id="Library" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="293" x="503" y="7"/>
+<ellipse cx="621.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M624.2231,29.1431 Q623.6421,29.4419 623.0029,29.5913 Q622.3638,29.7407 621.6582,29.7407 Q619.1514,29.7407 617.8315,28.0889 Q616.5117,26.437 616.5117,23.3159 Q616.5117,20.1865 617.8315,18.5347 Q619.1514,16.8828 621.6582,16.8828 Q622.3638,16.8828 623.0112,17.0322 Q623.6587,17.1816 624.2231,17.4805 L624.2231,20.2031 Q623.5923,19.6221 622.9988,19.3523 Q622.4053,19.0825 621.7744,19.0825 Q620.4297,19.0825 619.7449,20.1492 Q619.0601,21.2158 619.0601,23.3159 Q619.0601,25.4077 619.7449,26.4744 Q620.4297,27.541 621.7744,27.541 Q622.4053,27.541 622.9988,27.2712 Q623.5923,27.0015 624.2231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="642.25" y="28.291">Library</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="504" x2="795" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="511" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="523" y="56.5352">name: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="504" x2="795" y1="63.4883" y2="63.4883"/>
+<ellipse cx="514" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="523" y="81.0234">Library(name: String, capacity: int)</text>
+<ellipse cx="514" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="523" y="97.5117">getName(): String</text>
+<ellipse cx="514" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="267" x="523" y="114">addResource(resource: Resource): void</text>
+<ellipse cx="514" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="523" y="130.4883">removeResource(id: String): void</text>
+<ellipse cx="514" cy="143.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="523" y="146.9766">findById(id: String): Resource</text>
+<ellipse cx="514" cy="159.6738" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="523" y="163.4648">findInBookTitle(text: String): Book[]</text>
+<ellipse cx="514" cy="176.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="523" y="179.9531">getAllResources(): Resource[]</text>
+</g>
+<!--reverse link Resource to PhysicalResource-->
+<g id="link_Resource_PhysicalResource">
+<path codeLine="21" d="M552.62,510.51 C537.24,531.3 521.94,551.96 508.36,570.31 " fill="none" id="Resource-backto-PhysicalResource" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="546.8,506.6,564.33,494.69,558.06,514.93,546.8,506.6" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Resource to DigitalResource-->
+<g id="link_Resource_DigitalResource">
+<path codeLine="30" d="M747.04,510.71 C757.98,525.41 768.87,540.05 779.14,553.85 " fill="none" id="Resource-backto-DigitalResource" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="741.45,514.91,735.12,494.69,752.68,506.56,741.45,514.91" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link PhysicalResource to PhysicalBook-->
+<g id="link_PhysicalResource_PhysicalBook">
+<path codeLine="46" d="M362.19,714.87 C336.78,734.99 308.99,757.01 282.11,778.3 " fill="none" id="PhysicalResource-backto-PhysicalBook" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="357.72,709.47,377.75,702.54,366.42,720.45,357.72,709.47" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link PhysicalBook to Book-->
+<g id="link_PhysicalBook_Book">
+<path codeLine="47" d="M290.2,981.15 C296.02,984.72 301.8,988.21 307.5,991.58 C337.34,1009.23 370.87,1027.24 400.6,1042.6 " fill="none" id="PhysicalBook-to-Book" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="403.55,1036.25,418.16,1051.6,397.17,1048.71,403.55,1036.25" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link PhysicalResource to DVD-->
+<g id="link_PhysicalResource_DVD">
+<path codeLine="54" d="M467.45,722.86 C470.02,754.57 472.88,789.95 475.27,819.48 " fill="none" id="PhysicalResource-backto-DVD" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="460.49,723.61,465.85,703.11,474.44,722.48,460.49,723.61" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link DigitalResource to EBook-->
+<g id="link_DigitalResource_EBook">
+<path codeLine="61" d="M831.22,739.26 C829.27,763.46 827.22,788.79 825.39,811.38 " fill="none" id="DigitalResource-backto-EBook" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="824.24,738.79,832.83,719.42,838.19,739.92,824.24,738.79" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link EBook to Book-->
+<g id="link_EBook_Book">
+<path codeLine="62" d="M707.19,958.94 C689.35,970.08 671.01,981.29 653.5,991.58 C624.31,1008.74 591.75,1026.69 562.99,1042.15 " fill="none" id="EBook-to-Book" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="566.52,1048.2,545.59,1051.45,559.93,1035.85,566.52,1048.2" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link DigitalResource to OnlineArticle-->
+<g id="link_DigitalResource_OnlineArticle">
+<path codeLine="70" d="M958.46,730.93 C988.54,754.68 1020.58,779.98 1049.78,803.03 " fill="none" id="DigitalResource-backto-OnlineArticle" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="954.53,736.74,943.18,718.85,963.21,725.75,954.53,736.74" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Library to Resource-->
+<g id="link_Library_Resource">
+<path codeLine="84" d="M649.5,187.2 C649.5,209.51 649.5,233.79 649.5,257.33 " fill="none" id="Library-to-Resource" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="649.5,262.1,653.5,253.1,649.5,257.1,645.5,253.1,649.5,262.1" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="652.5" y="223.0653"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="662.5" y="230.4784">resources</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="626.7953" y="253.3522">0..*</text>
+</g>
+<!--SRC=[nLPDRnen4BtxLrYv19fTr3Eg8eK04bBIegQDLBKzcDq1h1eRURrHQPF_NdlNNlonQJYaAZTcdfzdtZxRSuwdiAOSy4UeH2qBm5iAaiXYUq1aLIb92eKBHghgYFYDCCvfESPtIbA-CVyKLGpy0AdLLaW_igzNZ1P4KS6_0D4fofMENpZQmP4nmm5VXhznh7yXPuRx68U6SWDgKGw6tkuczCbm9j6hXZG9BqDkaxVrAj42lILFADPgkJrKUZaBDMEYPVJtYf5_aS6eS8e66OutSghSs7ZORkKbafLZ_21egLliMddtcET9Wua2KxgXAXPWJHdCXTmHvJl3HE_eBxYTZ74fT4DWgee8Nj3bH6LQQ5f6XjCYd6Zp3fsuPDujCYbRUonLr0X2kX2GQwBp4o5-DCeunrLRaA6npl6ru8K41LWwsaPXg53ejOuitvCDN8kQAsVQ74eQ6QyzZsQ_FZSQhjTKFBQL1WSrMbXKfgNqYtGVPUcMUoTJXsSjGVznJiHDJcbWRQC12iGTZHulcs-6hFJJ-schU5dBfhy5lwMyLb1rHMd8lnMoVskdqpJEEhsUwrxNwxgRUOxgCylijLroshcquEUjqVkju_keQRRf0CtwF-u7plJ3U2KLBPYzlsh9V042n7yJmYjgc5OLPxL0doLxMPg01Pbxo0uADtIbvuE3DoUqShbu8nGdEtySkB39WH_FS47sfA3g43ZslOQ4vvUKPVSAk3jmt8qZxeNIG0axyG0zBuQ7qJsKauCU3u9iTpbRn88R9xGJWuAVoeEQnDVlRdfWdMpDoN9_DE09EKNo_1AVlHsDtfmTPwWnpbqhrHy0]-->
+</g>
+</svg>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<p>The class <code>Resource</code> represents the basic resource in the library that has the identifier <code>id</code>, the title <code>title</code>, the author <code>author</code> and the year of publication <code>publicationYear</code>. Implementations of the <code>toString</code> method returns the identifier to which the string <code>&quot;: &quot;</code> is pasted and finally the title. Example: if the identifier is <code>&quot;45&quot;</code> and the title is <code>&quot;Title&quot;</code> then the method returns: <code>&quot;45: Title&quot;</code>.</p>
+<p>The <code>PhysicalResource</code> class represents a physical resource, e.g. book and has an additional location.</p>
+<p>The <code>DigitalResource</code> class represents a digital resource and has an additional format and size.</p>
+<p>Physical resources are <code>PhysicalBook</code> and <code>DVD</code>. Each has its own specifics as shown in the UML class diagram.</p>
+<p>Digital resources are: <code>EBook</code> and <code>OnlineArticle</code>. Each has its own specifics as shown in the UML class diagram.</p>
+<p>The <code>Book</code> interface has a method to retrieve the publisher. All books implement that interface.</p>
+<p>The <code>Library</code> class represents a library. In the constructor we have the library name and capacity. The capacity defines the maximum number of resources we can have in the library. Resources can be added and removed from the book (methods <code>addResource</code> and <code>removeResource</code>). The library also has methods for retrieving resources from library:</p>
+<ul>
+<li><code>findById</code> finds a resource by <code>id</code>. If there is no such resource, it returns the value <code>null</code>;</li>
+<li><code>findInBookTitle</code> finds books by the text in the title. For example, if the title is <code>&quot;Introduction to Java&quot;</code> and the text we send is <code>&quot;java&quot;</code>, then that resource should be returned. The method checks that the text we sent as an argument exists in the title, ignoring case. If there are no matching books, return an empty array;</li>
+<li><code>getAllResources</code> returns all resources. The array that is returned must not be an internal field, i.e. changing the array that is returned must not change the state of the library. Order is not important. In case there are no resources, return an empty array.</li>
+</ul>
+<p>Usage example:</p>
+<pre class="line-numbers"><code class="language-java">// Create a library with a capacity of 10 resources
+Library library = new Library(&quot;Computer Library&quot;, 10);
+
+// Create different types of resources related to the computer domain
+// Add resources to the library
+library.addResource(new PhysicalBook(
+    &quot;1&quot;, &quot;Clean Code&quot;, &quot;Robert C. Martin&quot;, 2008, &quot;Shelf A&quot;, 464, &quot;First Edition&quot;, &quot;Prentice Hall&quot;));
+library.addResource(new EBook(
+    &quot;2&quot;, &quot;Python for Data Analysis&quot;, &quot;Wes McKinney&quot;, 2017, &quot;PDF&quot;, 5.2, &quot;O'Reilly Media&quot;));
+library.addResource(new DVD(
+    &quot;3&quot;, &quot;Introduction to Algorithms&quot;, &quot;Thomas H. Cormen&quot;, 2020, &quot;Shelf B&quot;, 180));
+library.addResource(new OnlineArticle(
+    &quot;4&quot;, &quot;Quantum Computing Explained&quot;, &quot;John Doe&quot;, 2023, &quot;HTML&quot;, 0.8, &quot;https://example.com/quantum-computing&quot;));
+library.addResource(new OnlineArticle(
+    &quot;5&quot;, &quot;Namespaces in Python&quot;, &quot;Leodanis Pozo Ramos&quot;, 2025, &quot;HTML&quot;, 1.5,
+    &quot;https://realpython.com/python-namespace/&quot;));
+
+// Find a resource by ID
+System.out.println(library.findById(&quot;3&quot;));
+System.out.println(library.findById(&quot;10&quot;));
+
+// Search for books with text in the title
+Book[] books = library.findInBookTitle(&quot;Python&quot;);
+System.out.println(&quot;\nBooks containing 'Python' in the title:&quot;);
+for (Book book : books) {
+  System.out.println(&quot;- &quot; + book);
+}
+
+// Retrieve all resources in the library
+Resource[] allResources = library.getAllResources();
+System.out.println(&quot;\nAll resources in the library:&quot;);
+for (Resource resource : allResources) {
+  System.out.println(&quot;- &quot; + resource.getTitle() + &quot; by &quot; + resource.getAuthor());
+}
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">3: Introduction to Algorithms
+null
+
+Books containing 'Python' in the title:
+- 2: Python for Data Analysis
+
+All resources in the library:
+- Clean Code by Robert C. Martin
+- Python for Data Analysis by Wes McKinney
+- Introduction to Algorithms by Thomas H. Cormen
+- Quantum Computing Explained by John Doe
+- Namespaces in Python by Leodanis Pozo Ramos
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
