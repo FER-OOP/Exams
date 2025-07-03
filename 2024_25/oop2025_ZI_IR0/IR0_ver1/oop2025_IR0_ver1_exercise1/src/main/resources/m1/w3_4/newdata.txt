@@ -1,0 +1,21 @@
+Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+3	2024-08-31	Arsenal	2.1	1–1	1.7	Brighton	60,326	Emirates Stadium	Chris Kavanagh	Match Report	
+3	2024-08-31	Ipswich Town	0.4	1–1	0.9	Fulham	29,517	Portman Road Stadium	Lewis Smith	Match Report	
+3	2024-08-31	Nott'ham Forest	1.0	1–1	0.7	Wolves	29,918	The City Ground	Simon Hooper	Match Report	
+3	2024-08-31	Brentford	2.8	3–1	1.5	Southampton	16,955	Gtech Community Stadium	Joshua Smith	Match Report	
+3	2024-08-31	Leicester City	0.4	1–2	1.4	Aston Villa	31,725	King Power Stadium	David Coote	Match Report	
+3	2024-08-31	Everton	1.8	2–3	2.4	Bournemouth	38,805	Goodison Park	Stuart Attwell	Match Report	
+3	2024-08-31	West Ham	0.7	1–3	3.0	Manchester City	62,469	London Stadium	Michael Oliver	Match Report	
+3	2024-09-01	Newcastle Utd	1.8	2–1	1.2	Tottenham	52,211	St James' Park	Robert Jones	Match Report	
+3	2024-09-01	Chelsea	2.4	1–1	0.5	Crystal Palace	39,298	Stamford Bridge	Jarred Gillett	Match Report	
+3	2024-09-01	Manchester Utd	1.4	0–3	1.8	Liverpool	73,738	Old Trafford	Anthony Taylor	Match Report	
+4	2024-09-14	Southampton	1.1	0–3	2.6	Manchester Utd	31,144	St Mary's Stadium	Stuart Attwell	Match Report	
+4	2024-09-14	Manchester City	2.1	2–1	1.0	Brentford	52,148	Etihad Stadium	Darren Bond	Match Report	
+4	2024-09-14	Liverpool	0.9	0–1	0.4	Nott'ham Forest	60,344	Anfield	Michael Oliver	Match Report	
+4	2024-09-14	Crystal Palace	2.5	2–2	1.2	Leicester City	25,147	Selhurst Park	Tony Harrington	Match Report	
+4	2024-09-14	Fulham	1.5	1–1	0.8	West Ham	26,528	Craven Cottage	Tim Robinson	Match Report	
+4	2024-09-14	Brighton	1.6	0–0	0.3	Ipswich Town	41,573	The American Express Stadium	Samuel Barrott	Match Report	
+4	2024-09-14	Aston Villa	2.1	3–2	0.9	Everton	41,573	Villa Park	Craig Pawson	Match Report	
+4	2024-09-14	Bournemouth	1.7	0–1	0.8	Chelsea	11,235	Vitality Stadium	Anthony Taylor	Match Report	
+4	2024-09-15	Tottenham	0.7	0–1	0.7	Arsenal	61,645	Tottenham Hotspur Stadium	Jarred Gillett	Match Report	
+4	2024-09-15	Wolves	1.2	1–2	1.5	Newcastle Utd	30,255	Molineux Stadium	Chris Kavanagh	Match Report

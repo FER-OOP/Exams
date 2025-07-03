@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U stablu direktorija nalaze se datoteke koje sadrže podatke o utakmicama engleske Premier lige. Potrebno je obići stablo direktorija te sakupiti informacije o svim utakmicama iz datoteka koje se nalaze u zadanom direktoriju i svim njegovim poddirektorijima. Pri tome je potrebno odrediti utakmice na kojima je bio prisutan najveći i najmanji broj gledatelje kao i stadione na kojima su odigrane.</p>
+<p>Za spremanje podataka o utakmicama imate već gotovu klasu <code>GameInfo</code> koja ima sljedeće javne attribute i metode:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - redni broj tjedna u kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - domaća momčad</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - gostujuća momčad</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - broj golova koje je postigla domaća momčad</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - broj golova koje je postigla gostujuća momčad</p>
+</li>
+<li>
+<p>venue : <code>String</code> - stadion na kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - broj gledatelja</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - statička metoda koja na temelju retka iz datoteke s podacima kreira novi <code>GameInfo</code> objekt</p>
+</li>
+<li>
+<p><code>String toString()</code> - metoda koja <code>GameInfo</code> objekt pretvara u string</p>
+</li>
+</ul>
+<p>Datoteke s podacima u svakom retku imaju podatke o jednoj utakmici odvojene tabulatorom. <strong>Prvi redak sadrži nazive stupaca u datoteci te ga je potrebno preskočiti</strong>. Sve ostale retke potrebno je pročitati te na temelju njih kreirati <code>GameInfo</code> objekte koristeći statičku metodu <code>createFromString</code>. Datoteke s podacima možete čitati i sami, bez korištenja klase <code>GameInfo</code>, ali vodite računa da sadrže još neke dodatne podatke koje trebate zanemariti.</p>
+<p><strong>Primjer datoteke:</strong></p>
+<pre class="line-numbers"><code>Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+1	2024-08-16	Manchester Utd	2.4	1–0	0.4	Fulham	73,297	Old Trafford	Robert Jones	Match Report	
+1	2024-08-17	Ipswich Town	0.5	0–2	2.6	Liverpool	30,014	Portman Road Stadium	Tim Robinson	Match Report	
+1	2024-08-17	Newcastle Utd	0.3	1–0	1.8	Southampton	52,196	St James' Park	Craig Pawson	Match Report	
+1	2024-08-17	Everton	0.5	0–3	1.4	Brighton	39,217	Goodison Park	Simon Hooper	Match Report	
+1	2024-08-17	Nott'ham Forest	1.3	1–1	1.2	Bournemouth	29,763	The City Ground	Michael Oliver	Match Report	
+...
+</code></pre>
+<p>Za obilazak stabla direktorija potrebno je napisati Klasu <code>GameFileVisitor</code> koja (izravno ili neizravno) implementira sučelje <code>FileVisitor</code>.</p>
+<p>Klasa <code>GameFileVisitor</code> mora implementirati sljedeće javne metode:</p>
+<ul>
+<li><code>String getMaxAttVenue()</code> - vraća stadion na kojem je odigrana utakmica s najvećim brojem gledatelja</li>
+<li><code>int getMaxAttendance()</code> - vraća najveći broj gledatelja na nekoj od utakmica</li>
+<li><code>String getMinAttVenue()</code> - vraća stadion na kojem je odigrana utakmica s najmanjim brojem gledatelja</li>
+<li><code>int getMinAttendance()</code> - vraća najmanji broj gledatelja na nekoj od utakmica</li>
+</ul>
+<p>Potrebno je i dopuniti klasu <code>MainClass</code> koja je djelomično napisana. Potrebno je napisati statičku metodu</p>
+<p><code>void callVisitor(Path datafolder, FileVisitor&lt;Path&gt; visitor)</code></p>
+<p>u kojoj se pomoću visitora obilazi stablo direktorija i računaju tražene vrijednosti.</p>
+<p>Sve klase trebaju biti u paketu <code>hr.fer.oop</code>.</p>
+<p><strong>VAŽNO:</strong> Za rad s datotekama obavezno koristiti klasu <code>java.nio.file.Path</code> !</p>
+<p><strong>VAŽNO</strong>: Možete pretpostaviti da u podacima neće biti više od jedne utakmice s najvećim i najmanjim brojem gledatelja.</p>
+<p><strong>VAŽNO:</strong> U stablu direktorija potrebno je obići sve datoteke neovisno o ektenziji. Možete pretpostaviti da su datoteke ispravno formatirane te da neće doći do pogreške ili iznimke prilikom učitavanja podataka.</p>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">	Path datafolder = Path.of(&quot;src/main/resources/&quot;);
+	GameFileVisitor visitor = new GameFileVisitor();
+	
+	callVisitor(datafolder, visitor);
+	
+	System.out.println(&quot;Maximum attendance: &quot; + visitor.getMaxAttVenue() + &quot;: &quot; + visitor.getMaxAttendance());
+	System.out.println(&quot;Minimum attendance: &quot; + visitor.getMinAttVenue() + &quot;: &quot; + visitor.getMinAttendance());
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>Maximum attendance: Old Trafford: 73829
+Minimum attendance: Vitality Stadium: 11161
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

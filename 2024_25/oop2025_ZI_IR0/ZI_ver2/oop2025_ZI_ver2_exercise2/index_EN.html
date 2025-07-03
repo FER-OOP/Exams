@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The data about English Premier League matches is stored in objects of the <code>GameInfo</code> class, which has already been implemented and includes the following public attributes and methods:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - week in which the game was played</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - home team</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - away team</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - goals scored by the home team</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - goals scored by the away team</p>
+</li>
+<li>
+<p>venue : <code>String</code> - a stadium at which the game was played</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - number of spectators</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - static method that creates a new <code>GameInfo</code> object from a text line from one of the data files</p>
+</li>
+<li>
+<p><code>String toString()</code> - a method that returns a <code>String</code> representation of a <code>GameInfo</code> object</p>
+</li>
+</ul>
+<p>Using the static method <code>loadGInfData()</code> from the <code>LoadData</code> class (also already written), the data is loaded into a list.</p>
+<p>You need to complete the <code>MainClass</code> and write code for four static methods using Java Stream API (collection streams). You should implement the following methods:</p>
+<ul>
+<li>
+<p><code>List&lt;GameInfo&gt; exercise1(Stream&lt;GameInfo&gt; ginfStream)</code> : This method takes a stream of <code>GameInfo</code> objects and returns a list of matches in which the team <code>Arsenal</code> played (as home or away team), and which Arsenal won by 3 or more goals.</p>
+</li>
+<li>
+<p><code>Collection&lt;String&gt; exercise2(Stream&lt;GameInfo&gt; ginfStream)</code> : This method takes a stream of <code>GameInfo</code> objects and returns a Collection of all the teams taking part in the Premier League. The returned collection can not contain duplicates.</p>
+</li>
+<li>
+<p><code>Stream&lt;GameInfo&gt; exercise3(List&lt;GameInfo&gt; ginfList)</code> : This method takes a list of <code>GameInfo</code> objects and returns a stream of matches in which a total of 7 or more goals were scored, sorted using a custom comparator <code>GAME_COMPARATOR</code>. The <code>GAME_COMPARATOR</code> should be declared in the <code>MainClass</code> as a public static final variable implementing <code>Comparator&lt;GameInfo&gt;</code>. It should first sort matches ascending by the home team name, and then descending by the away team name.</p>
+</li>
+</ul>
+<p>You can implement GAME_COMPARATOR using a lambda expression or an anonymous class.</p>
+<ul>
+<li><code>int exercise4(Stream&lt;GameInfo&gt; ginfStream, String team)</code> : This method takes a stream of <code>GameInfo</code> objects and a team name and returns the total goal difference for a given team in all the games. The goal difference is calculated as: goals_scored - goals_conceded.</li>
+</ul>
+<p><strong>HINT</strong>: You can calculate the total goal difference as the summ of goal differences in individual matches.</p>
+<p><strong>Execution example:</strong></p>
+<pre class="line-numbers"><code class="language-java">	// Loading the data
+	List&lt;GameInfo&gt; ginfList = LoadData.loadGInfData();
+	
+	// A list of games that Arsenal won by 3 or more goals (home or away)
+	List&lt;GameInfo&gt; newList = exercise1(ginfList.stream());
+	newList.forEach(System.out::println);
+	
+	// A collection of all different teams competing in English premier league
+	// without duplicates
+	Collection&lt;String&gt; teamCollection = exercise2(ginfList.stream());
+	
+	System.out.println(&quot;\nTeams: &quot;);
+	teamCollection.forEach(team -&gt; System.out.print(team + &quot; &quot;));
+	System.out.println(&quot;\n&quot;);
+	
+	// Stream of Games that had 7 or more total goals scored sorted by GAME_COMPARATOR
+	Stream&lt;GameInfo&gt; ginfStream = exercise3(ginfList);
+	ginfStream.forEach(ginf -&gt; System.out.println(ginf));
+	
+	// Goal difference for a given team, just one number (goalsScored - goalsConceded)
+	int goalDiff = exercise4(ginfList.stream(), &quot;Liverpool&quot;);
+	System.out.println(&quot;\nGoal difference for Liverpool: &quot; + goalDiff);
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>(week 12) Arsenal - Nott'ham Forest : 3 - 0, Emirates Stadium (60298)
+(week 13) West Ham - Arsenal : 2 - 5, London Stadium (62475)
+(week 17) Crystal Palace - Arsenal : 1 - 5, Selhurst Park (25167)
+(week 24) Arsenal - Manchester City : 5 - 1, Emirates Stadium (60355)
+(week 33) Ipswich Town - Arsenal : 0 - 4, Portman Road Stadium (29549)
+
+Teams: 
+Manchester Utd Ipswich Town Newcastle Utd Everton Nott'ham Forest Arsenal West Ham Brentford Chelsea Leicester City Brighton Manchester City Southampton Tottenham Fulham Crystal Palace Aston Villa Wolves Bournemouth Liverpool 
+
+(week 07) Brentford - Wolves : 5 - 3, Gtech Community Stadium (16960)
+(week 35) Brentford - Manchester Utd : 4 - 3, Gtech Community Stadium (18915)
+(week 09) Brentford - Ipswich Town : 4 - 3, Gtech Community Stadium (17109)
+(week 32) Manchester City - Crystal Palace : 5 - 2, Etihad Stadium (52489)
+(week 26) Newcastle Utd - Nott'ham Forest : 4 - 3, St James' Park (52223)
+(week 24) Nott'ham Forest - Brighton : 7 - 0, The City Ground (30164)
+(week 17) Tottenham - Liverpool : 3 - 6, Tottenham Hotspur Stadium (61439)
+(week 15) Tottenham - Chelsea : 3 - 4, Tottenham Hotspur Stadium (61184)
+(week 13) West Ham - Arsenal : 2 - 5, London Stadium (62475)
+(week 02) Wolves - Chelsea : 2 - 6, Molineux Stadium (31235)
+
+Goal difference for Liverpool: 45
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

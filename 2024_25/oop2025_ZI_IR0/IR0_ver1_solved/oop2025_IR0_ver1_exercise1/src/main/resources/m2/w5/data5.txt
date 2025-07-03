@@ -1,0 +1,11 @@
+Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+5	2024-09-21	West Ham	0.9	0–3	2.2	Chelsea	62,473	London Stadium	Samuel Barrott	Match Report	
+5	2024-09-21	Tottenham	3.5	3–1	0.8	Brentford	61,246	Tottenham Hotspur Stadium	John Brooks	Match Report	
+5	2024-09-21	Aston Villa	1.7	3–1	0.5	Wolves	39,978	Villa Park	Tim Robinson	Match Report	
+5	2024-09-21	Fulham	2.2	3–1	1.5	Newcastle Utd	25,700	Craven Cottage	Peter Bankes	Match Report	
+5	2024-09-21	Southampton	2.4	1–1	1.6	Ipswich Town	31,117	St Mary's Stadium	Samuel Allison	Match Report	
+5	2024-09-21	Leicester City	0.7	1–1	1.1	Everton	31,765	King Power Stadium	Darren England	Match Report	
+5	2024-09-21	Liverpool	2.0	3–0	1.1	Bournemouth	60,347	Anfield	Tony Harrington	Match Report	
+5	2024-09-21	Crystal Palace	1.0	0–0	1.6	Manchester Utd	25,172	Selhurst Park	David Coote	Match Report	
+5	2024-09-22	Brighton	1.0	2–2	1.4	Nott'ham Forest	31,444	The American Express Stadium	Robert Jones	Match Report	
+5	2024-09-22	Manchester City	2.1	2–2	0.7	Arsenal	52,846	Etihad Stadium	Michael Oliver	Match Report	

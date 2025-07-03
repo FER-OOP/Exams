@@ -1,0 +1,15 @@
+Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+7	2024-10-05	Everton	0.7	0–0	2.1	Newcastle Utd	39,265	Goodison Park	Craig Pawson	Match Report	
+7	2024-10-06	Aston Villa	0.5	0–0	0.6	Manchester Utd	42,682	Villa Park	Robert Jones	Match Report	
+7	2024-10-06	Chelsea	2.3	1–1	0.9	Nott'ham Forest	39,501	Stamford Bridge	Chris Kavanagh	Match Report	
+7	2024-10-06	Brighton	1.8	3–2	1.3	Tottenham	31,487	The American Express Stadium	David Coote	Match Report	
+8	2024-10-19	Tottenham	1.9	4–1	0.8	West Ham	61,381	Tottenham Hotspur Stadium	Andy Madley	Match Report	
+8	2024-10-19	Fulham	1.8	1–3	1.6	Aston Villa	26,743	Craven Cottage	Darren England	Match Report	
+8	2024-10-19	Ipswich Town	1.3	0–2	1.7	Everton	29,862	Portman Road Stadium	Michael Oliver	Match Report	
+8	2024-10-19	Southampton	2.1	2–3	3.1	Leicester City	31,145	St Mary's Stadium	Anthony Taylor	Match Report	
+8	2024-10-19	Manchester Utd	1.3	2–1	0.9	Brentford	73,738	Old Trafford	Samuel Barrott	Match Report	
+8	2024-10-19	Newcastle Utd	2.0	0–1	1.1	Brighton	52,220	St James' Park	Peter Bankes	Match Report	
+8	2024-10-19	Bournemouth	1.8	2–0	0.7	Arsenal	11,235	Vitality Stadium	Robert Jones	Match Report	
+8	2024-10-20	Wolves	0.8	1–2	1.6	Manchester City	31,319	Molineux Stadium	Chris Kavanagh	Match Report	
+8	2024-10-20	Liverpool	1.9	2–1	1.0	Chelsea	60,277	Anfield	John Brooks	Match Report	
+8	2024-10-21	Nott'ham Forest	1.7	1–0	1.0	Crystal Palace	29,443	The City Ground	Tim Robinson	Match Report	

@@ -1,0 +1,269 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p>Sve klase i sučelja imaju vidljivost postavljenu na <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="601px" preserveAspectRatio="none" style="width:1214px;height:601px;background:#FFFFFF;" version="1.1" viewBox="0 0 1214 601" width="1214px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Task-->
+<g id="elem_Task">
+<rect codeLine="1" fill="#F1F1F1" height="179.9063" id="Task" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="264" x="145.47" y="254"/>
+<ellipse cx="257.22" cy="270" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M259.6931,276.1431 Q259.1121,276.4419 258.4729,276.5913 Q257.8338,276.7407 257.1282,276.7407 Q254.6214,276.7407 253.3015,275.0889 Q251.9817,273.437 251.9817,270.3159 Q251.9817,267.1865 253.3015,265.5347 Q254.6214,263.8828 257.1282,263.8828 Q257.8338,263.8828 258.4812,264.0322 Q259.1287,264.1816 259.6931,264.4805 L259.6931,267.2031 Q259.0623,266.6221 258.4688,266.3523 Q257.8753,266.0825 257.2444,266.0825 Q255.8997,266.0825 255.2149,267.1492 Q254.5301,268.2158 254.5301,270.3159 Q254.5301,272.4077 255.2149,273.4744 Q255.8997,274.541 257.2444,274.541 Q257.8753,274.541 258.4688,274.2712 Q259.0623,274.0015 259.6931,273.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="277.72" y="275.291">Task</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="146.47" x2="408.47" y1="286" y2="286"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="153.47" y="296.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="165.47" y="303.5352">id: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="153.47" y="313.2324"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="165.47" y="320.0234">description: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="153.47" y="329.7207"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="165.47" y="336.5117">done: boolean</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="146.47" x2="408.47" y1="343.4648" y2="343.4648"/>
+<ellipse cx="156.47" cy="357.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="165.47" y="361">Task(id: String, description: String)</text>
+<ellipse cx="156.47" cy="373.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="165.47" y="377.4883">markAsDone(): void</text>
+<ellipse cx="156.47" cy="390.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="165.47" y="393.9766">isDone(): boolean</text>
+<ellipse cx="156.47" cy="406.6738" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="165.47" y="410.4648">getId(): String</text>
+<ellipse cx="156.47" cy="423.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="165.47" y="426.9531">toString(): String</text>
+</g>
+<!--class TaskNotebook-->
+<g id="elem_TaskNotebook">
+<rect codeLine="13" fill="#F1F1F1" height="130.4414" id="TaskNotebook" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="245" x="284.97" y="7"/>
+<ellipse cx="353.72" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M356.1931,29.1431 Q355.6121,29.4419 354.9729,29.5913 Q354.3338,29.7407 353.6282,29.7407 Q351.1214,29.7407 349.8015,28.0889 Q348.4817,26.437 348.4817,23.3159 Q348.4817,20.1865 349.8015,18.5347 Q351.1214,16.8828 353.6282,16.8828 Q354.3338,16.8828 354.9812,17.0322 Q355.6287,17.1816 356.1931,17.4805 L356.1931,20.2031 Q355.5623,19.6221 354.9688,19.3523 Q354.3753,19.0825 353.7444,19.0825 Q352.3997,19.0825 351.7149,20.1492 Q351.0301,21.2158 351.0301,23.3159 Q351.0301,25.4077 351.7149,26.4744 Q352.3997,27.541 353.7444,27.541 Q354.3753,27.541 354.9688,27.2712 Q355.5623,27.0015 356.1931,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="374.22" y="28.291">TaskNotebook</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="285.97" x2="528.97" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="292.97" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="304.97" y="56.5352">tasks: Map&lt;String, Task&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="285.97" x2="528.97" y1="63.4883" y2="63.4883"/>
+<ellipse cx="295.97" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="304.97" y="81.0234">addTask(task: Task): void</text>
+<ellipse cx="295.97" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="304.97" y="97.5117">removeTask(id: String): void</text>
+<ellipse cx="295.97" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="204" x="304.97" y="114">completeTask(id: String): void</text>
+<ellipse cx="295.97" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="304.97" y="130.4883">printAllTasks(): void</text>
+</g>
+<!--class TaskException-->
+<g id="elem_TaskException">
+<rect codeLine="22" fill="#F1F1F1" height="64.4883" id="TaskException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="245" x="846.97" y="39.76"/>
+<ellipse cx="915.22" cy="55.76" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M917.6931,61.9031 Q917.1121,62.2019 916.4729,62.3513 Q915.8338,62.5007 915.1282,62.5007 Q912.6214,62.5007 911.3015,60.8489 Q909.9817,59.197 909.9817,56.0759 Q909.9817,52.9465 911.3015,51.2947 Q912.6214,49.6428 915.1282,49.6428 Q915.8338,49.6428 916.4812,49.7922 Q917.1287,49.9416 917.6931,50.2405 L917.6931,52.9631 Q917.0623,52.3821 916.4688,52.1123 Q915.8753,51.8425 915.2444,51.8425 Q913.8997,51.8425 913.2149,52.9092 Q912.5301,53.9758 912.5301,56.0759 Q912.5301,58.1677 913.2149,59.2344 Q913.8997,60.301 915.2444,60.301 Q915.8753,60.301 916.4688,60.0312 Q917.0623,59.7615 917.6931,59.1804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="935.72" y="61.051">TaskException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="847.97" x2="1090.97" y1="71.76" y2="71.76"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="847.97" x2="1090.97" y1="79.76" y2="79.76"/>
+<ellipse cx="857.97" cy="93.5041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="866.97" y="97.2952">TaskException(message: String)</text>
+</g>
+<!--class DuplicateTaskException-->
+<g id="elem_DuplicateTaskException">
+<rect codeLine="26" fill="#F1F1F1" height="64.4883" id="DuplicateTaskException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="309" x="468.97" y="311.26"/>
+<ellipse cx="537.22" cy="327.26" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M539.6931,333.4031 Q539.1121,333.7019 538.4729,333.8513 Q537.8338,334.0007 537.1282,334.0007 Q534.6214,334.0007 533.3015,332.3489 Q531.9817,330.697 531.9817,327.5759 Q531.9817,324.4465 533.3015,322.7947 Q534.6214,321.1428 537.1282,321.1428 Q537.8338,321.1428 538.4812,321.2922 Q539.1287,321.4416 539.6931,321.7405 L539.6931,324.4631 Q539.0623,323.8821 538.4688,323.6123 Q537.8753,323.3425 537.2444,323.3425 Q535.8997,323.3425 535.2149,324.4092 Q534.5301,325.4758 534.5301,327.5759 Q534.5301,329.6677 535.2149,330.7344 Q535.8997,331.801 537.2444,331.801 Q537.8753,331.801 538.4688,331.5312 Q539.0623,331.2615 539.6931,330.6804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="557.72" y="332.551">DuplicateTaskException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="469.97" x2="776.97" y1="343.26" y2="343.26"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="469.97" x2="776.97" y1="351.26" y2="351.26"/>
+<ellipse cx="479.97" cy="365.0041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="283" x="488.97" y="368.7952">DuplicateTaskException(message: String)</text>
+</g>
+<!--class TaskNotFoundException-->
+<g id="elem_TaskNotFoundException">
+<rect codeLine="30" fill="#F1F1F1" height="64.4883" id="TaskNotFoundException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="313" x="812.97" y="311.26"/>
+<ellipse cx="881.22" cy="327.26" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M883.6931,333.4031 Q883.1121,333.7019 882.4729,333.8513 Q881.8338,334.0007 881.1282,334.0007 Q878.6214,334.0007 877.3015,332.3489 Q875.9817,330.697 875.9817,327.5759 Q875.9817,324.4465 877.3015,322.7947 Q878.6214,321.1428 881.1282,321.1428 Q881.8338,321.1428 882.4812,321.2922 Q883.1287,321.4416 883.6931,321.7405 L883.6931,324.4631 Q883.0623,323.8821 882.4688,323.6123 Q881.8753,323.3425 881.2444,323.3425 Q879.8997,323.3425 879.2149,324.4092 Q878.5301,325.4758 878.5301,327.5759 Q878.5301,329.6677 879.2149,330.7344 Q879.8997,331.801 881.2444,331.801 Q881.8753,331.801 882.4688,331.5312 Q883.0623,331.2615 883.6931,330.6804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="901.72" y="332.551">TaskNotFoundException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="813.97" x2="1124.97" y1="343.26" y2="343.26"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="813.97" x2="1124.97" y1="351.26" y2="351.26"/>
+<ellipse cx="823.97" cy="365.0041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="287" x="832.97" y="368.7952">TaskNotFoundException(message: String)</text>
+</g>
+<!--class TaskAlreadyCompletedException-->
+<g id="elem_TaskAlreadyCompletedException">
+<rect codeLine="34" fill="#F1F1F1" height="64.4883" id="TaskAlreadyCompletedException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="372" x="91.47" y="530"/>
+<ellipse cx="159.72" cy="546" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M162.1931,552.1431 Q161.6121,552.4419 160.9729,552.5913 Q160.3338,552.7407 159.6282,552.7407 Q157.1214,552.7407 155.8015,551.0889 Q154.4817,549.437 154.4817,546.3159 Q154.4817,543.1865 155.8015,541.5347 Q157.1214,539.8828 159.6282,539.8828 Q160.3338,539.8828 160.9812,540.0322 Q161.6287,540.1816 162.1931,540.4805 L162.1931,543.2031 Q161.5623,542.6221 160.9688,542.3523 Q160.3753,542.0825 159.7444,542.0825 Q158.3997,542.0825 157.7149,543.1492 Q157.0301,544.2158 157.0301,546.3159 Q157.0301,548.4077 157.7149,549.4744 Q158.3997,550.541 159.7444,550.541 Q160.3753,550.541 160.9688,550.2712 Q161.5623,550.0015 162.1931,549.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="180.22" y="551.291">TaskAlreadyCompletedException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="92.47" x2="462.47" y1="562" y2="562"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="92.47" x2="462.47" y1="570" y2="570"/>
+<ellipse cx="102.47" cy="583.7441" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="346" x="111.47" y="587.5352">TaskAlreadyCompletedException(message: String)</text>
+</g>
+<!--reverse link TaskException to DuplicateTaskException-->
+<g id="link_TaskException_DuplicateTaskException">
+<path d="M912.02,117.75 C841.97,172.31 725.36,263.14 664.02,310.91 " fill="none" id="TaskException-backto-DuplicateTaskException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="907.49,112.41,927.57,105.64,916.09,123.45,907.49,112.41" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link TaskException to TaskNotFoundException-->
+<g id="link_TaskException_TaskNotFoundException">
+<path d="M969.47,125.98 C969.47,181.06 969.47,265.47 969.47,310.91 " fill="none" id="TaskException-backto-TaskNotFoundException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="962.47,126.22,969.47,106.22,976.47,126.22,962.47,126.22" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link TaskException to TaskAlreadyCompletedException-->
+<g id="link_TaskException_TaskAlreadyCompletedException">
+<path d="M1040.21,116.98 C1078.54,145.18 1122.29,185.55 1143.47,234 C1182.45,323.19 1207.89,380.03 1143.47,453 C1099.25,503.09 704.9,535.54 463.86,550.88 " fill="none" id="TaskException-backto-TaskAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1036.35,122.82,1024.04,105.58,1044.42,111.38,1036.35,122.82" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link TaskNotebook to Task-->
+<g id="link_TaskNotebook_Task">
+<path codeLine="38" d="M370.56,149.53 C354.84,182.11 336.4,220.33 320.11,254.11 " fill="none" id="TaskNotebook-backto-Task" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="376,138.23,369.787,141.8905,370.7764,149.0334,376.9893,145.3729,376,138.23" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="351.25" y="200.5684">manages</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="354.3009" y="158.0765">1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="317.5166" y="243.3263">*</text>
+</g>
+<!--link TaskNotebook to DuplicateTaskException-->
+<g id="link_TaskNotebook_DuplicateTaskException">
+<path codeLine="41" d="M458.66,136.87 C500.94,189.63 559.47,262.65 594.2,305.99 " fill="none" id="TaskNotebook-to-DuplicateTaskException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="597.16,309.68,594.6485,300.1568,594.0313,305.7798,588.4082,305.1627,597.16,309.68" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="509.99" y="200.5684">throws</text>
+</g>
+<!--link TaskNotebook to TaskNotFoundException-->
+<g id="link_TaskNotebook_TaskNotFoundException">
+<path codeLine="42" d="M529.95,117.87 C607.49,147.72 709.07,189.52 795.47,234 C838.13,255.97 884.11,284.88 918.08,307.34 " fill="none" id="TaskNotebook-to-TaskNotFoundException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="922.16,310.05,916.8574,301.7504,917.9888,307.293,912.4462,308.4244,922.16,310.05" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="734.77" y="200.5684">throws</text>
+</g>
+<!--link TaskNotebook to TaskAlreadyCompletedException-->
+<g id="link_TaskNotebook_TaskAlreadyCompletedException">
+<path codeLine="43" d="M285.01,94.65 C205.64,115.72 108.11,156.44 58.47,234 C6,315.98 7.11,370.32 58.47,453 C79.61,487.03 114.96,510.68 151.15,526.98 " fill="none" id="TaskNotebook-to-TaskAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="155.58,528.93,148.9486,521.6482,151.0022,526.9192,145.7312,528.9728,155.58,528.93" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="59.47" y="348.5684">throws</text>
+</g>
+<!--link Task to TaskAlreadyCompletedException-->
+<g id="link_Task_TaskAlreadyCompletedException">
+<path codeLine="44" d="M277.47,432.97 C277.47,464.46 277.47,498.26 277.47,523.26 " fill="none" id="Task-to-TaskAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="277.47,528.23,281.47,519.23,277.47,523.23,273.47,519.23,277.47,528.23" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="278.47" y="496.5684">throws</text>
+</g>
+<!--SRC=[bLFBRi8m4BpdArQv54Y3rAjL8Q7IIZsqb_O7N7iRB1mxYWq58VwzZXFog4me5qkPp6Ddup19ZO5FQZPmZ01I49p0Xos5ok3uBHIL9mzpDAmKXHLQXTzhXGI-j9P8LOMaxaYyyQIpl0_vJ3qpf-LcQLREPZ8biDE2UrYqKEUTG8RsbLTWxU0ng-k77doA8jRsUzSMdSUvftMG8V16YyVpR1LhqMzLTw2S-ngLWdXIVy0ISxt3Fptx1ARpGg8TenGEi4ifAuffwm-cVzupz5lpuoT3R9AZCJJ3RgEjThKjf62qZkzCS6zHyR1rM3AIqMptHMyL_rz4K74bOIbBfFpmrAppXgIBoc3YuAx43p7CqXJYMLp_9CHTLEKa9ehkO8M52qR53kuYeLrhDuHTK-kEKl-ukPeSCpITpnUNlWkffG51UCdZ_Cih6-XkuVy2]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Potrebno je implementirati sustav za vođenje evidencije zadataka. Sustav se sastoji od klase koja predstavlja pojedinačni zadatak i klase koja upravlja zbirkom svih zadataka, uz odgovarajuću obradu mogućih grešaka putem vlastitih iznimki.</p>
+<p>Klasa <code>Task</code> predstavlja jedan zadatak. Svaki zadatak ima <code>id</code> (jedinstveni tekstualni identifikator), <code>description</code> (opis zadatka) te <code>done</code> (logičku vrijednost koja označava je li zadatak izvršen). Metoda <code>markAsDone()</code> postavlja zadatak kao izvršen. U slučaju da je zadatak već bio izvršen, ova metoda baca iznimku <code>TaskAlreadyCompletedException</code>. Metoda <code>toString</code> formatirano ispisuje <code>done</code>, <code>id</code> i <code>description</code> zadatka. Pogledajte primjer ispisa u <code>Main</code> klasi i implementirajte <code>toString()</code> metodu u skladu s prikazanim formatom.</p>
+<p>Klasa <code>TaskNotebook</code> predstavlja bilježnicu koja upravlja svim zadacima. Unutar klase, zadaci se pohranjuju u mapi (<code>Map&lt;String, Task&gt;</code>) gdje je ključ identifikator zadatka (<code>id</code>), što osigurava da ne mogu postojati dva zadatka s istim identifikatorom. Klasa definira sljedeće metode:</p>
+<ul>
+<li><code>addTask(Task task)</code>: Dodaje novi zadatak u bilježnicu. Ako zadatak s istim id-em već postoji, metoda baca iznimku <code>DuplicateTaskException</code>.</li>
+<li><code>removeTask(String id)</code>: Uklanja zadatak s predanim <code>id</code>-em. Ako zadatak nije pronađen, baca se <code>TaskNotFoundException</code>.</li>
+<li><code>completeTask(String id)</code>: Označava zadatak s predanim <code>id</code>-em kao izvršen. Ova metoda također može baciti <code>TaskNotFoundException</code> (ako zadatak ne postoji) ili <code>TaskAlreadyCompletedException</code> (ako je zadatak već izvršen).</li>
+<li><code>printAllTasks()</code>: Ispisuje sve zadatke iz bilježnice.</li>
+</ul>
+<p>Za obradu grešaka, sustav definira hijerarhiju provjeravanih iznimki (<i>checked exceptions</i>):</p>
+<ul>
+<li><code>TaskException</code> - apstraktna bazna klasa za sve iznimke vezane uz rukovanje zadacima. Služi kako bi se omogućilo hvatanje svih specifičnih grešaka jednim <code>catch</code> blokom.</li>
+<li><code>DuplicateTaskException</code> - nasljeđuje <code>TaskException</code>, a baca se pri pokušaju dodavanja zadatka čiji <code>id</code> već postoji.</li>
+<li><code>TaskNotFoundException</code> - nasljeđuje <code>TaskException</code>, a baca se ako se pokuša pristupiti zadatku koji ne postoji u bilježnici.</li>
+<li><code>TaskAlreadyCompletedException</code> - nasljeđuje <code>TaskException</code>, a baca se pri pokušaju označavanja već izvršenog zadatka kao ponovno izvršenog.</li>
+</ul>
+<p>Sve metode koje mogu uzrokovati grešku (to su metode <code>addTask</code>, <code>removeTask</code>, <code>completeTask</code>) moraju u svom potpisu deklarirati da bacaju odgovarajuće ovdje navedene iznimke.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        TaskNotebook notebook = new TaskNotebook();
+        
+        System.out.println(&quot;--- Adding tasks ---&quot;);
+        try {
+            // Creating task instances with the new course names
+            notebook.addTask(new Task(&quot;ITP&quot;, &quot;Write the first homework for Introduction to Programming.&quot;));
+            notebook.addTask(new Task(&quot;MATANA2&quot;, &quot;Solve example problems for Mathematical Analysis 2.&quot;));
+            notebook.addTask(new Task(&quot;OOP&quot;, &quot;Prepare for the final Object-Oriented Programming exam.&quot;));
+        } catch (DuplicateTaskException e) {
+            System.err.println(&quot;Error while adding: &quot; + e.getMessage());
+        }
+
+        notebook.printAllTasks();
+
+        System.out.println(&quot;\n--- Attempting to add a duplicate task ---&quot;);
+        try {
+            // Attempting to add a task with the same ID
+            notebook.addTask(new Task(&quot;OOP&quot;, &quot;Review the course material for the exam.&quot;));
+        } catch (DuplicateTaskException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+        
+        System.out.println(&quot;\n--- Completing tasks ---&quot;);
+        try {
+            // Marking tasks as completed
+            notebook.completeTask(&quot;ITP&quot;);
+            notebook.completeTask(&quot;MATANA2&quot;);
+        } catch (TaskNotFoundException | TaskAlreadyCompletedException e) {
+            System.err.println(&quot;Error while completing: &quot; + e.getMessage());
+        }
+
+        notebook.printAllTasks();
+
+        System.out.println(&quot;\n--- Attempting to complete an already completed task ---&quot;);
+        try {
+            // Attempting to complete the same task again
+            notebook.completeTask(&quot;ITP&quot;);
+        } catch (TaskNotFoundException | TaskAlreadyCompletedException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;\n--- Removing a task ---&quot;);
+        try {
+            // Removing a task from the notebook
+            notebook.removeTask(&quot;OOP&quot;);
+            System.out.println(&quot;Task 'OOP' was successfully removed.&quot;);
+            
+            notebook.removeTask(&quot;MATANA3&quot;); // Attempting to remove a non-existing task
+            System.out.println(&quot;Task 'MATANA3' was successfully removed.&quot;); // This line will not execute
+        } catch (TaskNotFoundException e) {
+            System.err.println(&quot;Error while removing: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;\n--- Final state of the notebook ---&quot;);
+        notebook.printAllTasks();
+    }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">--- Adding tasks ---
+[ ] ITP: Write the first homework for Introduction to Programming.
+[ ] MATANA2: Solve example problems for Mathematical Analysis 2.
+[ ] OOP: Prepare for the final Object-Oriented Programming exam.
+
+--- Attempting to add a duplicate task ---
+
+--- Completing tasks ---
+Error: Task with identifier 'OOP' already exists.
+[X] ITP: Write the first homework for Introduction to Programming.
+[X] MATANA2: Solve example problems for Mathematical Analysis 2.
+[ ] OOP: Prepare for the final Object-Oriented Programming exam.
+
+--- Attempting to complete an already completed task ---
+Error: Task with identifier 'ITP' is already marked as done.
+
+--- Removing a task ---
+Task 'OOP' was successfully removed.
+Error while removing: Task with identifier 'MATANA3' does not exist.
+
+--- Final state of the notebook ---
+[X] ITP: Write the first homework for Introduction to Programming.
+[X] MATANA2: Solve example problems for Mathematical Analysis 2.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

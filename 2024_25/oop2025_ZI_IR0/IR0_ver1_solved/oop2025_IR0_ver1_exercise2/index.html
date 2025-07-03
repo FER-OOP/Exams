@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Podaci o utakmicama engleske Premier nogometne lige pohranjeni su u objektima klase <code>GameInfo</code> koja je već napisana i ima sljedeće javne atribute i metode:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - broj kola u kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - domaća momčad</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - gostujuća momčad</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - broj golova koje je postigla domaća momčad</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - broj golova koje je postigla gostujuća momčad</p>
+</li>
+<li>
+<p>venue : <code>String</code> - stadion na kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - broj gledatelja</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - statička metoda koja na temelju retka iz datoteke s podacima kreira novi <code>GameInfo</code> objekt</p>
+</li>
+<li>
+<p><code>String toString()</code> - metoda koja <code>GameInfo</code> objekt pretvara u string</p>
+</li>
+</ul>
+<p>Statičkom metodom <code>loadGInfData()</code> klase <code>LoadData</code> (također već napisano) podaci se učitavaju u listu.</p>
+<p>Potrebno je dopuniti klasu <code>MainClass</code> i napisati kod za četiri statičke metode <strong>pomoću Javinih kolekcijskih tokova</strong>. Potrebno je napisati sljedeće metode:</p>
+<ul>
+<li>
+<p><code>List&lt;GameInfo&gt; exercise1(Stream&lt;GameInfo&gt; ginfStream)</code> : Metoda prima tok objekata <code>GameInfo</code> i vraća listu utakmica koje je igrala momčad <code>Arsenal</code> (kao domaćin ili kao gost) u kojima je Arsenal postigao 3 ili više golova, dok protivnik u toj utakmici nije postigao niti jedan gol.</p>
+</li>
+<li>
+<p><code>long exercise2(Stream&lt;GameInfo&gt; ginfStream)</code> : Metoda prima tok objekata <code>GameInfo</code> i vraća najveći broj gledatelja na utakmicama odigranim na stadionu <code>Old Trafford</code>.</p>
+</li>
+<li>
+<p><code>Stream&lt;GameInfo&gt; exercise3(List&lt;GameInfo&gt; ginfList)</code> : Metoda prima listu objekata <code>GameInfo</code> i vraća tok objekata <code>GameInfo</code> koji sadrži utakmice koje je momčad <code>Tottenham</code> igrala kod kuće sortirane posebnim komparatorom <code>GOAL_COMPARATOR</code>. Pri tome je u klasi <code>MainClass</code> potrebno definirati konačnu i statičku javnu varijablu <code>GOAL_COMPARATOR</code> koja će implementirati sučelje <code>Comparator&lt;GameInfo&gt;</code> i uspoređivat će utakmice prvo prema ukupno postignutom broj golova na utakmici, a zatim prema broju golova koje je postigao domaćin.
+Npr. utakmica koja je završila 2:0 treba biti ispred utakmice koja je završila 2:2 (zbog ukupnog broja golova), ali nakon utakmice koja je završila 1:1 (zbog jednakog ukupnog broja golova, ali većeg broja golova koje je postigao domaćin). Detaljnije možete vidjeti u primjeru izvođenja.
+<code>GOAL_COMPARATOR</code> možete implementirati kao lambda izraz ili kao anonimnu klasu.</p>
+</li>
+<li>
+<p><code>int exercise4(Stream&lt;GameInfo&gt; ginfStream)</code> : Metoda prima tok objekata <code>GameInfo</code> i vraća ukupan broj bodova koje je momčad <code>Liverpool</code> ostvarila kao domaćin. Pri tome vodite računa da pobjeda nosi 3 boda, neriješeni rezultat nosi 1 bod, dok poraz nosi 0 bodova.</p>
+</li>
+</ul>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">	// Loading the data
+	List&lt;GameInfo&gt; ginfList = LoadData.loadGInfData();
+		
+	// A list of games played by Arsenal where opponent scored zero goals and Arsenal scored 3 or more 
+	List&lt;GameInfo&gt; newList = exercise1(ginfList.stream());
+	newList.forEach(System.out::println);
+	
+	// Maximum attendance at Old Trafford
+	long maxatt = exercise2(ginfList.stream());
+	
+	System.out.print(&quot;\nMax attendance at Old Trafford: &quot; + maxatt + &quot;\n\n&quot;);
+	
+	// Stream of Tottenham home Games sorted by GOAL_COMPARATOR
+	Stream&lt;GameInfo&gt; ginfStream = exercise3(ginfList);
+	ginfStream.limit(5).forEach(ginf -&gt; System.out.println(ginf));
+	
+	// How many points Liverpool won at home
+	int homePointsLiverpool = exercise4(ginfList.stream());
+	System.out.println(&quot;\nPoints Liverpool won at home: &quot; + homePointsLiverpool);
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>[(week 12) Arsenal - Nott'ham Forest : 3 - 0, Emirates Stadium (60298), (week 33) Ipswich Town - Arsenal : 0 - 4, Portman Road Stadium (29549)]
+
+Max attendance at Old Trafford: 73839
+
+(week 04) Tottenham - Arsenal : 0 - 1, Tottenham Hotspur Stadium (61645)
+(week 27) Tottenham - Manchester City : 0 - 1, Tottenham Hotspur Stadium (60820)
+(week 25) Tottenham - Manchester Utd : 1 - 0, Tottenham Hotspur Stadium (61383)
+(week 36) Tottenham - Crystal Palace : 0 - 2, Tottenham Hotspur Stadium (60254)
+(week 13) Tottenham - Fulham : 1 - 1, Tottenham Hotspur Stadium (61141)
+
+Points Liverpool won at home: 46
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

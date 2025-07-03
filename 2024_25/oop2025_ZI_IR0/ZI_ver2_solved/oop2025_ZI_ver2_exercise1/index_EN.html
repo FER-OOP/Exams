@@ -1,0 +1,98 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>A directory tree contains files with data on games in English Premier League. You need to traverse the directory tree and collect the data on all games to find out the largest attendance for each week.</p>
+<p>To store data on specific games, you can use an available class <code>GameInfo</code> with following public attributes and methods:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - week in which the game was played</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - home team</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - away team</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - goals scored by the home team</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - goals scored by the away team</p>
+</li>
+<li>
+<p>venue : <code>String</code> - a stadium at which the game was played</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - number of spectators</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - static method that creates a new <code>GameInfo</code> object from a text line from one of the data files</p>
+</li>
+<li>
+<p><code>String toString()</code> - a method that returns a <code>String</code> representation of a <code>GameInfo</code> object</p>
+</li>
+</ul>
+<p>Data files contain data for one game in each row, delimited with a tabulator. <strong>The first line contains column names and should be skipped</strong>. All other lines should be read and used to create <code>GameInfo</code> objects using the static method <code>createFromString</code>. You can read data files in your own way without using <code>GameInfo</code> class, but keep in mind that they contain additional data that needs to be ignored.</p>
+<p><strong>Data file example:</strong></p>
+<pre class="line-numbers"><code>Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+1	2024-08-16	Manchester Utd	2.4	1–0	0.4	Fulham	73,297	Old Trafford	Robert Jones	Match Report	
+1	2024-08-17	Ipswich Town	0.5	0–2	2.6	Liverpool	30,014	Portman Road Stadium	Tim Robinson	Match Report	
+1	2024-08-17	Newcastle Utd	0.3	1–0	1.8	Southampton	52,196	St James' Park	Craig Pawson	Match Report	
+1	2024-08-17	Everton	0.5	0–3	1.4	Brighton	39,217	Goodison Park	Simon Hooper	Match Report	
+1	2024-08-17	Nott'ham Forest	1.3	1–1	1.2	Bournemouth	29,763	The City Ground	Michael Oliver	Match Report	
+...
+</code></pre>
+<p>To traverse the directory tree you need to write a class <code>GameFileVisitor</code> that (directly or indirectly) implements the <code>FileVisitor</code> interface.</p>
+<p>Class <code>GameFileVisitor</code> needs to implement a public method <code>Map&lt;Integer, Integer&gt; getAttendanceMap()</code> that will return a map with the largest attendance for each week. Map key is a week of play, while the value us the largest attendance for that week.</p>
+<p>You also need to complete the class <code>MainClass</code> that is partially written. You need to write the code for the static method</p>
+<p><code>void callVisitor(Path datafolder, FileVisitor&lt;Path&gt; visitor)</code></p>
+<p>that uses the visitor to traverse the directory tree and to calculate the required values.</p>
+<p>All classes must be placed in the package <code>hr.fer.oop</code>.</p>
+<p><strong>IMPORTANT:</strong> When working with files use class <code>java.nio.file.Path</code> !</p>
+<p><strong>IMPORTANT:</strong> You need to read all the files in the directory tree, regardless of the extension. You can also assume that all the files are correctly formated and that loading the data will not cause unexpected errors or exceptions.</p>
+<p><strong>Execution example:</strong></p>
+<pre class="line-numbers"><code class="language-java">	Path datafolder = Path.of(&quot;src/main/resources/&quot;);
+	GameFileVisitor visitor = new GameFileVisitor();
+	
+	callVisitor(datafolder, visitor);
+	
+	Map&lt;Integer, Integer&gt; attendMap = visitor.getAttendanceMap();
+	
+	System.out.println(&quot;Maximum attendance for each week:&quot;);
+	for (Integer week : attendMap.keySet())  {
+		int maxAttend = attendMap.get(week);
+		System.out.println(&quot;Week &quot; + week + &quot;, maximum attendance: &quot; + maxAttend);
+	}
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>Maximum attendance for each week:
+Week 1, maximum attendance: 73297
+Week 2, maximum attendance: 61357
+Week 3, maximum attendance: 73738
+Week 4, maximum attendance: 61645
+Week 5, maximum attendance: 62473
+Week 6, maximum attendance: 73587
+Week 7, maximum attendance: 62467
+Week 8, maximum attendance: 73738
+Week 9, maximum attendance: 62474
+Week 10, maximum attendance: 73813
+Week 11, maximum attendance: 73829
+Week 12, maximum attendance: 60298
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

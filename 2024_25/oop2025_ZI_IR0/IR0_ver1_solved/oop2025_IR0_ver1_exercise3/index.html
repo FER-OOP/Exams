@@ -1,0 +1,185 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p>Sve klase i sučelja imaju vidljivost postavljenu na <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="559px" preserveAspectRatio="none" style="width:685px;height:559px;background:#FFFFFF;" version="1.1" viewBox="0 0 685 559" width="685px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Content-->
+<g id="elem_Content">
+<rect codeLine="1" fill="#F1F1F1" height="196.3945" id="Content" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="291" x="188.5" y="214.44"/>
+<ellipse cx="296.25" cy="230.44" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M296.1133,225.7881 L294.9595,230.8599 L297.2754,230.8599 Z M294.6191,223.5469 L297.6157,223.5469 L300.9609,235.94 L298.5122,235.94 L297.7485,232.877 L294.4697,232.877 L293.7227,235.94 L291.2739,235.94 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="55" x="316.75" y="235.731">Content</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="472.5" y="211.44"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="473.5" y="224.0416">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="189.5" x2="478.5" y1="246.44" y2="246.44"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="257.1841"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="208.5" y="263.9752">id : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="273.6724"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="208.5" y="280.4634">title : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="196.5" y="290.1607"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="208.5" y="296.9517">data : T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="189.5" x2="478.5" y1="303.9048" y2="303.9048"/>
+<ellipse cx="199.5" cy="317.649" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="265" x="208.5" y="321.44">Content(id: String, title: String, data: T)</text>
+<ellipse cx="199.5" cy="334.1373" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="208.5" y="337.9283">getId(): String</text>
+<ellipse cx="199.5" cy="350.6255" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="208.5" y="354.4166">getTitle(): String</text>
+<ellipse cx="199.5" cy="367.1138" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="208.5" y="370.9048">getData(): T</text>
+<ellipse cx="199.5" cy="383.6021" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="208.5" y="387.3931">getDescription(): String</text>
+<ellipse cx="199.5" cy="400.0904" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="172" x="208.5" y="403.8814">describeContent(): String</text>
+</g>
+<!--class Book-->
+<g id="elem_Book">
+<rect codeLine="13" fill="#F1F1F1" height="80.9766" id="Book" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="302" x="7" y="471.83"/>
+<ellipse cx="136.75" cy="487.83" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M139.2231,493.9731 Q138.6421,494.2719 138.0029,494.4213 Q137.3638,494.5707 136.6582,494.5707 Q134.1514,494.5707 132.8315,492.9189 Q131.5117,491.267 131.5117,488.1459 Q131.5117,485.0165 132.8315,483.3647 Q134.1514,481.7128 136.6582,481.7128 Q137.3638,481.7128 138.0112,481.8622 Q138.6587,482.0116 139.2231,482.3105 L139.2231,485.0331 Q138.5923,484.4521 137.9988,484.1823 Q137.4053,483.9125 136.7744,483.9125 Q135.4297,483.9125 134.7449,484.9792 Q134.0601,486.0458 134.0601,488.1459 Q134.0601,490.2377 134.7449,491.3044 Q135.4297,492.371 136.7744,492.371 Q137.4053,492.371 137.9988,492.1012 Q138.5923,491.8315 139.2231,491.2504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="157.25" y="493.121">Book</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="308" y1="503.83" y2="503.83"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="308" y1="511.83" y2="511.83"/>
+<ellipse cx="18" cy="525.5741" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="276" x="27" y="529.3652">Book(id: String, title: String, data: String)</text>
+<ellipse cx="18" cy="542.0624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="27" y="545.8534">describeContent(): String</text>
+</g>
+<!--class DVD-->
+<g id="elem_DVD">
+<rect codeLine="18" fill="#F1F1F1" height="80.9766" id="DVD" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="334" x="344" y="471.83"/>
+<ellipse cx="492.25" cy="487.83" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M494.7231,493.9731 Q494.1421,494.2719 493.5029,494.4213 Q492.8638,494.5707 492.1582,494.5707 Q489.6514,494.5707 488.3315,492.9189 Q487.0117,491.267 487.0117,488.1459 Q487.0117,485.0165 488.3315,483.3647 Q489.6514,481.7128 492.1582,481.7128 Q492.8638,481.7128 493.5112,481.8622 Q494.1587,482.0116 494.7231,482.3105 L494.7231,485.0331 Q494.0923,484.4521 493.4988,484.1823 Q492.9053,483.9125 492.2744,483.9125 Q490.9297,483.9125 490.2449,484.9792 Q489.5601,486.0458 489.5601,488.1459 Q489.5601,490.2377 490.2449,491.3044 Q490.9297,492.371 492.2744,492.371 Q492.9053,492.371 493.4988,492.1012 Q494.0923,491.8315 494.7231,491.2504 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="512.75" y="493.121">DVD</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="345" x2="677" y1="503.83" y2="503.83"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="345" x2="677" y1="511.83" y2="511.83"/>
+<ellipse cx="355" cy="525.5741" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="364" y="529.3652">DVD(id: String, title: String, duration: Integer)</text>
+<ellipse cx="355" cy="542.0624" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="364" y="545.8534">describeContent(): String</text>
+</g>
+<!--class Library-->
+<g id="elem_Library">
+<rect codeLine="23" fill="#F1F1F1" height="130.4414" id="Library" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="553" x="57.5" y="7"/>
+<ellipse cx="306.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M308.7231,29.1431 Q308.1421,29.4419 307.5029,29.5913 Q306.8638,29.7407 306.1582,29.7407 Q303.6514,29.7407 302.3315,28.0889 Q301.0117,26.437 301.0117,23.3159 Q301.0117,20.1865 302.3315,18.5347 Q303.6514,16.8828 306.1582,16.8828 Q306.8638,16.8828 307.5112,17.0322 Q308.1587,17.1816 308.7231,17.4805 L308.7231,20.2031 Q308.0923,19.6221 307.4988,19.3523 Q306.9053,19.0825 306.2744,19.0825 Q304.9297,19.0825 304.2449,20.1492 Q303.5601,21.2158 303.5601,23.3159 Q303.5601,25.4077 304.2449,26.4744 Q304.9297,27.541 306.2744,27.541 Q306.9053,27.541 307.4988,27.2712 Q308.0923,27.0015 308.7231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="326.75" y="28.291">Library</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="58.5" x2="609.5" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="65.5" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="77.5" y="56.5352">items : List&lt;Content&lt;?&gt;&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="58.5" x2="609.5" y1="63.4883" y2="63.4883"/>
+<ellipse cx="68.5" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="77.5" y="81.0234">addItem(item: Content&lt;?&gt;): void</text>
+<ellipse cx="68.5" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="77.5" y="97.5117">getAllItems(): List&lt;Content&lt;?&gt;&gt;</text>
+<ellipse cx="68.5" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="527" x="77.5" y="114">getItemsOfTheSameTypeAsObject&lt;T extends Content&lt;?&gt;&gt;(type: T): List&lt;T&gt;</text>
+<ellipse cx="68.5" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="77.5" y="130.4883">printAllDescriptions(): void</text>
+</g>
+<!--reverse link Content to Book-->
+<g id="link_Content_Book">
+<path d="M232.79,427.32 C218.64,443.21 204.96,458.58 193.25,471.73 " fill="none" id="Content-backto-Book" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="227.5,422.73,246.02,412.45,237.95,432.04,227.5,422.73" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Content to DVD-->
+<g id="link_Content_DVD">
+<path d="M435.79,427.32 C450.02,443.21 463.77,458.58 475.55,471.73 " fill="none" id="Content-backto-DVD" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="430.6,432.02,422.47,412.45,441.03,422.68,430.6,432.02" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Library to Content-->
+<g id="link_Library_Content">
+<path codeLine="31" d="M334,137.74 C334,159.39 334,184.1 334,207.98 " fill="none" id="Library-to-Content" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="334,212.84,338,203.84,334,207.84,330,203.84,334,212.84" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="337" y="173.5953"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="347" y="181.0084">items</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="327.7703" y="203.8309">*</text>
+</g>
+<!--SRC=[ZLBBReCm4Bpp5QkSI5D-04LKQRaWHSeXLky6RwbR0iZULesY_7lN9eOqVUMuixCpdbtBqfAH5K7LI6lXeMi9MrgA30uHG09QGGfRChgjVKsQ6lmAAKcI4S758WZ4MWNExJ0pbOxFzBddrqY5YkTdWXuJRkGxdFEeGyK8eAsCxabtxGNx84_9Zg0ygSJmjebuZA8XzttNlG9-S5kDI_0RMFZM_t66QiXqXL_-cFzYnvq_tTwCT6bJA7YgHdErvLgNHffzk2lXplBLrjhICbpzBikycbIgu7xiI2bCNLPzxxGAoryrZQDPv_QZZZkk8soUn3DkvGx5liULtPGlMF4Vkzo0cuk9AUvtd2J5eDHp5kTtTczlwv_34KEu9CbWTZCRTvf2ufD6dm00]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Potrebno je implementirati jednostavan sustav za upravljanje građom u knjižnici. Sustav mora podržavati različite vrste građe, kao što su knjige i DVD-ovi.</p>
+<p>Apstraktna generička klasa <code>Content&lt;T&gt;</code> predstavlja temeljnu jedinicu građe u knjižnici. Svaka jedinica građe ima jedinstveni <code>id</code>, <code>title</code> (naziv) i <code>data</code> (podatke) čiji je tip definiran generičkim parametrom <code>T</code>. Klasa također definira apstraktnu metodu <code>describeContent()</code> koju konkretne podklase moraju implementirati kako bi pružile specifičan opis svog sadržaja (npr. sažetak teksta, trajanje medija). Pored toga, implementira i konkretnu metodu <code>getDescription()</code> koja vraća formatirani ispis s ID-em, nazivom i specifičnim opisom.</p>
+<p>Postoje dvije konkretne vrste građe:</p>
+<ul>
+<li><code>Book</code> - predstavlja konkretnu knjigu. Nasljeđuje parametriziranu klasu <code>Content</code>. Podatak (<code>data</code>) je tipa <code>String</code>, a metoda <code>describeContent()</code> vraća prvih 30 znakova teksta. Ako je tekst duži od 30 znakova onda metoda uzima samo prvih 30 znakova teksta i na kraj dodaje tri točke &quot;...&quot;.</li>
+<li><code>DVD</code> - predstavlja konkretan DVD. Također nasljeđuje parametriziranu klasu <code>Content</code>. Podatak (<code>data</code>) je tipa <code>Integer</code> i označava trajanje u minutama, a metoda <code>describeContent()</code> vraća opis trajanja, npr. &quot;Duration: 178 minutes&quot;.</li>
+</ul>
+<p>Pogledati očekivani ispis za primjer uporabe ove dvije metode.</p>
+<p>Konačno, klasa <code>Library</code> predstavlja samu knjižnicu. Ona sadrži listu svih jedinica građe (<code>List&lt;Content&lt;?&gt;&gt;</code>). Korištenjem zamjenskog znaka (<i>wildcard</i>), knjižnica može istovremeno pohraniti različite vrste građe (<code>Book</code> i <code>DVD</code>). Klasa nudi metode za dodavanje nove građe (<code>addItem</code>), dohvaćanje građe po generičkom tipu (<code>getItemsOfTheSameTypeAsObject</code>, npr. <code>Book</code> ili <code>DVD</code>), ispisivanje opisa cjelokupne građe (<code>printAllDescriptions</code>), te metodu <code>getAllItems</code> za dohvaćanje liste svih jedinica građe. Osigurati da promjene na vraćenoj listi neće imati utjecaja na građu pohranjenu u knjižnici.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        // Create a Library instance
+        Library library = new Library();
+        
+        // Adding books to the library
+        Book book1 = new Book(&quot;B-001&quot;, &quot;The Hobbit&quot;, &quot;In a hole in the ground there lived a hobbit.&quot;);
+        Book book2 = new Book(&quot;B-002&quot;, &quot;A Brief History of Time&quot;, &quot;Popular-science book.&quot;);
+        
+        library.addItem(book1);
+        library.addItem(book2);
+        
+        // Adding DVDs to the library
+        DVD dvd1 = new DVD(&quot;D-001&quot;, &quot;The Lord of the Rings: The Fellowship of the Ring&quot;, 178);
+        DVD dvd2 = new DVD(&quot;D-002&quot;, &quot;The Lord of the Rings: The Two Towers&quot;, 179);
+        
+        library.addItem(dvd1);
+        library.addItem(dvd2);
+
+        // Print the descriptions of all items in the library
+        System.out.println(&quot;Description of all items in the library:&quot;);
+        library.printAllDescriptions();
+
+        // Retrieving and printing only the books
+        System.out.println(&quot;\nOnly books in the library:&quot;);        
+        for (Book b : library.getItemsOfTheSameTypeAsObject(book1)) { // Using book1 as a type reference
+            System.out.println(b.getDescription());
+        }
+
+        // Retrieving and printing only the DVDs
+        System.out.println(&quot;\nOnly DVDs in the library:&quot;);
+        for (DVD d : library.getItemsOfTheSameTypeAsObject(dvd1)) { // Using dvd1 as a type reference
+            System.out.println(d.getDescription());
+        }
+    }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Description of all items in the library:
+[B-001] The Hobbit: Content: In a hole in the ground there ...
+[B-002] A Brief History of Time: Content: Popular-science book.
+[D-001] The Lord of the Rings: The Fellowship of the Ring: Duration: 178 minutes
+[D-002] The Lord of the Rings: The Two Towers: Duration: 179 minutes
+
+Only books in the library:
+[B-001] The Hobbit: Content: In a hole in the ground there ...
+[B-002] A Brief History of Time: Content: Popular-science book.
+
+Only DVDs in the library:
+[D-001] The Lord of the Rings: The Fellowship of the Ring: Duration: 178 minutes
+[D-002] The Lord of the Rings: The Two Towers: Duration: 179 minutes
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

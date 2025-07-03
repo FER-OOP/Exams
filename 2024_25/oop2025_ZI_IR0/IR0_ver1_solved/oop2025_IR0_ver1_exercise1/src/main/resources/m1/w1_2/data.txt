@@ -1,0 +1,21 @@
+Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+1	2024-08-16	Manchester Utd	2.4	1–0	0.4	Fulham	73,297	Old Trafford	Robert Jones	Match Report	
+1	2024-08-17	Ipswich Town	0.5	0–2	2.6	Liverpool	30,014	Portman Road Stadium	Tim Robinson	Match Report	
+1	2024-08-17	Newcastle Utd	0.3	1–0	1.8	Southampton	52,196	St James' Park	Craig Pawson	Match Report	
+1	2024-08-17	Everton	0.5	0–3	1.4	Brighton	39,217	Goodison Park	Simon Hooper	Match Report	
+1	2024-08-17	Nott'ham Forest	1.3	1–1	1.2	Bournemouth	29,763	The City Ground	Michael Oliver	Match Report	
+1	2024-08-17	Arsenal	1.2	2–0	0.5	Wolves	60,261	Emirates Stadium	Jarred Gillett	Match Report	
+1	2024-08-17	West Ham	2.3	1–2	2.0	Aston Villa	62,463	London Stadium	Tony Harrington	Match Report	
+1	2024-08-18	Brentford	1.6	2–1	1.2	Crystal Palace	16,988	Gtech Community Stadium	Samuel Barrott	Match Report	
+1	2024-08-18	Chelsea	1.0	0–2	0.8	Manchester City	39,818	Stamford Bridge	Anthony Taylor	Match Report	
+1	2024-08-19	Leicester City	1.0	1–1	1.2	Tottenham	31,977	King Power Stadium	Chris Kavanagh	Match Report	
+2	2024-08-24	Brighton	2.1	2–1	1.4	Manchester Utd	31,537	The American Express Stadium	Craig Pawson	Match Report	
+2	2024-08-24	Manchester City	3.3	4–1	0.3	Ipswich Town	53,147	Etihad Stadium	Samuel Allison	Match Report	
+2	2024-08-24	Southampton	0.1	0–1	2.2	Nott'ham Forest	31,150	St Mary's Stadium	Samuel Barrott	Match Report	
+2	2024-08-24	Tottenham	2.4	4–0	1.0	Everton	61,357	Tottenham Hotspur Stadium	Anthony Taylor	Match Report	
+2	2024-08-24	Fulham	1.8	2–1	0.6	Leicester City	25,401	Craven Cottage	Darren Bond	Match Report	
+2	2024-08-24	Crystal Palace	1.3	0–2	1.4	West Ham	25,099	Selhurst Park	Robert Jones	Match Report	
+2	2024-08-24	Aston Villa	1.2	0–2	0.9	Arsenal	41,587	Villa Park	Michael Oliver	Match Report	
+2	2024-08-25	Wolves	1.9	2–6	1.6	Chelsea	31,235	Molineux Stadium	Darren England	Match Report	
+2	2024-08-25	Bournemouth	2.2	1–1	1.6	Newcastle Utd	11,161	Vitality Stadium	David Coote	Match Report	
+2	2024-08-25	Liverpool	2.5	2–0	0.5	Brentford	60,017	Anfield	Stuart Attwell	Match Report	

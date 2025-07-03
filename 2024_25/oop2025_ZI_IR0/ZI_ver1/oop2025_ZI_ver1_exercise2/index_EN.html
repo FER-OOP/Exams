@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The data about English Premier League matches is stored in objects of the <code>GameInfo</code> class, which has already been implemented and includes the following public attributes and methods:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - week in which the game was played</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - home team</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - away team</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - goals scored by the home team</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - goals scored by the away team</p>
+</li>
+<li>
+<p>venue : <code>String</code> - a stadium at which the game was played</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - numbed of spectators</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - static method that creates a new <code>GameInfo</code> object from a text line from one of the data files</p>
+</li>
+<li>
+<p><code>String toString()</code> - a method that return a <code>String</code> representation of a <code>GameInfo</code> object</p>
+</li>
+</ul>
+<p>Using the static method <code>loadGInfData()</code> from the <code>LoadData</code> class (also already written), the data is loaded into a list.</p>
+<p>You need to complete the <code>MainClass</code> and write code for four static methods using Java Stream API (collection streams). You should implement the following methods:</p>
+<ul>
+<li>
+<p><code>List&lt;GameInfo&gt; exercise1(Stream&lt;GameInfo&gt; ginfStream)</code> : This method takes a stream of <code>GameInfo</code> objects and returns a list of matches in which the team <code>Arsenal</code> played (as home or away team), where <code>Arsenal</code> scored 3 or more goals, and the opponent scored 0 goals.</p>
+</li>
+<li>
+<p><code>long exercise2(Stream&lt;GameInfo&gt; ginfStream)</code> : This method takes a stream of <code>GameInfo</code> objects and returns the maximum number of spectators for matches played at the stadium <code>Old Trafford</code>.</p>
+</li>
+<li>
+<p><code>Stream&lt;GameInfo&gt; exercise3(List&lt;GameInfo&gt; ginfList)</code> : This method takes a list of <code>GameInfo</code> objects and returns a stream of matches played by <code>Tottenham</code> as the home team, sorted using a custom comparator GOAL_COMPARATOR. The GOAL_COMPARATOR should be declared in the <code>MainClass</code> as a public static final variable implementing <code>Comparator&lt;GameInfo&gt;</code>. It should sort matches first, by total goals scored in the match (ascending), then, by goals scored by the home team (ascending).</p>
+</li>
+</ul>
+<p>Example:
+A match that ended 2–0 comes before 2–2 (fewer total goals), but after a 1–1 match (same total, but more home goals).</p>
+<p>You can implement GOAL_COMPARATOR using a lambda expression or an anonymous class.</p>
+<ul>
+<li><code>int exercise4(Stream&lt;GameInfo&gt; ginfStream)</code> : This method takes a stream of <code>GameInfo</code> objects and returns the total number of points won by Liverpool when playing at home. Wining a match equals 3 points, draw equals 1 point and a loss equals 0 points.</li>
+</ul>
+<p><strong>Execution example:</strong></p>
+<pre class="line-numbers"><code class="language-java">	// Loading the data
+	List&lt;GameInfo&gt; ginfList = LoadData.loadGInfData();
+		
+	// A list of games played by Arsenal where opponent scored zero goals and Arsenal scored 3 or more 
+	List&lt;GameInfo&gt; newList = exercise1(ginfList.stream());
+	newList.forEach(System.out::println);
+	
+	// Maximum attendance at Old Trafford
+	long maxatt = exercise2(ginfList.stream());
+	
+	System.out.print(&quot;\nMax attendance at Old Trafford: &quot; + maxatt + &quot;\n\n&quot;);
+	
+	// Stream of Tottenham home Games sorted by GOAL_COMPARATOR
+	Stream&lt;GameInfo&gt; ginfStream = exercise3(ginfList);
+	ginfStream.limit(5).forEach(ginf -&gt; System.out.println(ginf));
+	
+	// How many points Liverpool won at home
+	int homePointsLiverpool = exercise4(ginfList.stream());
+	System.out.println(&quot;\nPoints Liverpool won at home: &quot; + homePointsLiverpool);
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>[(week 12) Arsenal - Nott'ham Forest : 3 - 0, Emirates Stadium (60298), (week 33) Ipswich Town - Arsenal : 0 - 4, Portman Road Stadium (29549)]
+
+Max attendance at Old Trafford: 73839
+
+(week 04) Tottenham - Arsenal : 0 - 1, Tottenham Hotspur Stadium (61645)
+(week 27) Tottenham - Manchester City : 0 - 1, Tottenham Hotspur Stadium (60820)
+(week 25) Tottenham - Manchester Utd : 1 - 0, Tottenham Hotspur Stadium (61383)
+(week 36) Tottenham - Crystal Palace : 0 - 2, Tottenham Hotspur Stadium (60254)
+(week 13) Tottenham - Fulham : 1 - 1, Tottenham Hotspur Stadium (61141)
+
+Points Liverpool won at home: 46
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

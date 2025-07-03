@@ -1,0 +1,41 @@
+Wk	Date		Home	xG	Score	xG	Away	Attendance	Venue	Referee	Match Report	Notes
+9	2024-10-25	Leicester City	0.8	1–3	1.7	Nott'ham Forest	31,879	King Power Stadium	Craig Pawson	Match Report	
+9	2024-10-26	Brighton	1.3	2–2	1.3	Wolves	31,840	The American Express Stadium	Michael Oliver	Match Report	
+9	2024-10-26	Manchester City	2.9	1–0	0.2	Southampton	52,844	Etihad Stadium	Tony Harrington	Match Report	
+9	2024-10-26	Brentford	4.0	4–3	1.3	Ipswich Town	17,109	Gtech Community Stadium	Lewis Smith	Match Report	
+9	2024-10-26	Aston Villa	1.8	1–1	0.3	Bournemouth	42,165	Villa Park	Chris Kavanagh	Match Report	
+9	2024-10-26	Everton	0.8	1–1	1.2	Fulham	38,742	Goodison Park	John Brooks	Match Report	
+9	2024-10-27	West Ham	2.8	2–1	2.3	Manchester Utd	62,474	London Stadium	David Coote	Match Report	
+9	2024-10-27	Chelsea	1.6	2–1	1.8	Newcastle Utd	39,526	Stamford Bridge	Simon Hooper	Match Report	
+9	2024-10-27	Crystal Palace	0.8	1–0	0.7	Tottenham	25,108	Selhurst Park	Darren Bond	Match Report	
+9	2024-10-27	Arsenal	0.9	2–2	0.8	Liverpool	60,383	Emirates Stadium	Anthony Taylor	Match Report	
+10	2024-11-02	Newcastle Utd	0.5	1–0	1.1	Arsenal	52,249	St James' Park	John Brooks	Match Report	
+10	2024-11-02	Liverpool	1.6	2–1	1.0	Brighton	60,331	Anfield	Tony Harrington	Match Report	
+10	2024-11-02	Southampton	0.7	1–0	1.6	Everton	31,143	St Mary's Stadium	Andy Madley	Match Report	
+10	2024-11-02	Nott'ham Forest	2.2	3–0	0.1	West Ham	30,112	The City Ground	Peter Bankes	Match Report	
+10	2024-11-02	Ipswich Town	1.0	1–1	1.5	Leicester City	29,874	Portman Road Stadium	Tim Robinson	Match Report	
+10	2024-11-02	Bournemouth	2.0	2–1	1.6	Manchester City	11,231	Vitality Stadium	Michael Oliver	Match Report	
+10	2024-11-02	Wolves	1.5	2–2	2.4	Crystal Palace	31,124	Molineux Stadium	Anthony Taylor	Match Report	
+10	2024-11-03	Tottenham	2.4	4–1	1.8	Aston Villa	61,253	Tottenham Hotspur Stadium	Craig Pawson	Match Report	
+10	2024-11-03	Manchester Utd	2.0	1–1	1.1	Chelsea	73,813	Old Trafford	Robert Jones	Match Report	
+10	2024-11-04	Fulham	1.3	2–1	0.6	Brentford	24,931	Craven Cottage	Stuart Attwell	Match Report	
+11	2024-11-09	West Ham	0.8	0–0	1.1	Everton	62,463	London Stadium	Stuart Attwell	Match Report	
+11	2024-11-09	Crystal Palace	1.5	0–2	1.8	Fulham	25,142	Selhurst Park	Michael Salisbury	Match Report	
+11	2024-11-09	Wolves	1.3	2–0	0.6	Southampton	31,403	Molineux Stadium	Thomas Bramall	Match Report	
+11	2024-11-09	Brentford	1.5	3–2	2.6	Bournemouth	16,587	Gtech Community Stadium	Darren Bond	Match Report	
+11	2024-11-09	Brighton	2.3	2–1	2.1	Manchester City	31,715	The American Express Stadium	Samuel Barrott	Match Report	
+11	2024-11-09	Liverpool	2.0	2–0	1.2	Aston Villa	60,292	Anfield	David Coote	Match Report	
+11	2024-11-10	Tottenham	1.5	1–2	1.6	Ipswich Town	61,505	Tottenham Hotspur Stadium	Darren England	Match Report	
+11	2024-11-10	Nott'ham Forest	0.6	1–3	1.6	Newcastle Utd	30,145	The City Ground	Anthony Taylor	Match Report	
+11	2024-11-10	Manchester Utd	0.8	3–0	0.6	Leicester City	73,829	Old Trafford	Peter Bankes	Match Report	
+11	2024-11-10	Chelsea	1.5	1–1	1.5	Arsenal	39,780	Stamford Bridge	Michael Oliver	Match Report	
+12	2024-11-23	Leicester City	1.1	1–2	2.7	Chelsea	31,880	King Power Stadium	Andy Madley	Match Report	
+12	2024-11-23	Aston Villa	3.0	2–2	1.3	Crystal Palace	42,175	Villa Park	Tim Robinson	Match Report	
+12	2024-11-23	Fulham	1.0	1–4	1.3	Wolves	26,685	Craven Cottage	Robert Jones	Match Report	
+12	2024-11-23	Bournemouth	1.6	1–2	0.9	Brighton	11,196	Vitality Stadium	Stuart Attwell	Match Report	
+12	2024-11-23	Arsenal	1.2	3–0	0.3	Nott'ham Forest	60,298	Emirates Stadium	Simon Hooper	Match Report	
+12	2024-11-23	Everton	1.2	0–0	1.1	Brentford	38,915	Goodison Park	Chris Kavanagh	Match Report	
+12	2024-11-23	Manchester City	2.1	0–4	2.5	Tottenham	52,478	Etihad Stadium	John Brooks	Match Report	
+12	2024-11-24	Southampton	1.3	2–3	3.1	Liverpool	31,278	St Mary's Stadium	Samuel Barrott	Match Report	
+12	2024-11-24	Ipswich Town	1.6	1–1	0.8	Manchester Utd	30,017	Portman Road Stadium	Anthony Taylor	Match Report	
+12	2024-11-25	Newcastle Utd	1.6	0–2	0.9	West Ham	52,094	St James' Park	Craig Pawson	Match Report	

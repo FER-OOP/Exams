@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Podaci o utakmicama engleske Premier nogometne lige pohranjeni su u objektima klase <code>GameInfo</code> koja je već napisana i ima sljedeće javne atribute i metode:</p>
+<ul>
+<li>
+<p>week : <code>int</code> - broj kola u kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>homeTeam : <code>String</code> - domaća momčad</p>
+</li>
+<li>
+<p>awayTeam : <code>String</code> - gostujuća momčad</p>
+</li>
+<li>
+<p>homeGoals : <code>int</code> - broj golova koje je postigla domaća momčad</p>
+</li>
+<li>
+<p>awayGoals : <code>int</code> - broj golova koje je postigla gostujuća momčad</p>
+</li>
+<li>
+<p>venue : <code>String</code> - stadion na kojem je utakmica odigrana</p>
+</li>
+<li>
+<p>attendance : <code>int</code> - broj gledatelja</p>
+</li>
+<li>
+<p><code>GameInfo createFromString(String line)</code> - statička metoda koja na temelju retka iz datoteke s podacima kreira novi <code>GameInfo</code> objekt</p>
+</li>
+<li>
+<p><code>String toString()</code> - metoda koja <code>GameInfo</code> objekt pretvara u string</p>
+</li>
+</ul>
+<p>Statičkom metodom <code>loadGInfData()</code> klase <code>LoadData</code> (također već napisano) podaci se učitavaju u listu.</p>
+<p>Potrebno je dopuniti klasu <code>MainClass</code> i napisati kod za četiri statičke metode <strong>pomoću Javinih kolekcijskih tokova</strong>. Potrebno je napisati sljedeće metode:</p>
+<ul>
+<li>
+<p><code>List&lt;GameInfo&gt; exercise1(Stream&lt;GameInfo&gt; ginfStream)</code> : Metoda prima tok objekata <code>GameInfo</code> i vraća listu utakmica koje je igrala momčad <code>Arsenal</code> (kao domaćin ili kao gost) u kojima je Arsenal pobijedio s 3 ili više golova razlike.</p>
+</li>
+<li>
+<p><code>Collection&lt;String&gt; exercise2(Stream&lt;GameInfo&gt; ginfStream)</code> : Metoda prima tok objekata <code>GameInfo</code> i vraća kolekciju svih momčadi koje nastupaju u engleskoj Premier ligi. Vraćena kolekcija ne smije sadržavati duplikate.</p>
+</li>
+<li>
+<p><code>Stream&lt;GameInfo&gt; exercise3(List&lt;GameInfo&gt; ginfList)</code> : Metoda prima listu objekata <code>GameInfo</code> i vraća tok objekata <code>GameInfo</code> koji sadrži utakmice na kojima je ukupno postignuto 7 ili više golova sortirane posebnim komparatorom <code>GAME_COMPARATOR</code>. Pri tome je u klasi <code>MainClass</code> potrebno definirati konačnu i statičku javnu varijablu <code>GAME_COMPARATOR</code> koja će implementirati sučelje <code>Comparator&lt;GameInfo&gt;</code> i uspoređivati utakmice <strong>prvo uzlazno</strong> prema nazivu domaće momčadi, a <strong>zatim silazno</strong> prema nazivu gostujuće momčadi. Detaljnije možete vidjeti u primjeru izvođenja.
+<code>GAME_COMPARATOR</code> možete implementirati kao lambda izraz ili kao anonimnu klasu.</p>
+</li>
+<li>
+<p><code>int exercise4(Stream&lt;GameInfo&gt; ginfStream, String team)</code> : Metoda prima tok objekata <code>GameInfo</code> i naziv momčadi te vraća ukupnu gol razliku koju je ta momčad ostvarila u svim utakmicama. Gol razliku računate kao: broj_postignutih_golova - broj_primljenih_golova.</p>
+</li>
+</ul>
+<p><strong>NAPOMENA</strong>: Ukupnu gol razliku možete izračunati kao sumu gol razlika u pojedinim utakmicama.</p>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">	// Loading the data
+	List&lt;GameInfo&gt; ginfList = LoadData.loadGInfData();
+	
+	// A list of games that Arsenal won by 3 or more goals (home or away)
+	List&lt;GameInfo&gt; newList = exercise1(ginfList.stream());
+	newList.forEach(System.out::println);
+	
+	// A collection of all different teams competing in English premier league
+	// without duplicates
+	Collection&lt;String&gt; teamCollection = exercise2(ginfList.stream());
+	
+	System.out.println(&quot;\nTeams: &quot;);
+	teamCollection.forEach(team -&gt; System.out.print(team + &quot; &quot;));
+	System.out.println(&quot;\n&quot;);
+	
+	// Stream of Games that had 7 or more total goals scored sorted by GAME_COMPARATOR
+	Stream&lt;GameInfo&gt; ginfStream = exercise3(ginfList);
+	ginfStream.forEach(ginf -&gt; System.out.println(ginf));
+	
+	// Goal difference for a given team, just one number (goalsScored - goalsConceded)
+	int goalDiff = exercise4(ginfList.stream(), &quot;Liverpool&quot;);
+	System.out.println(&quot;\nGoal difference for Liverpool: &quot; + goalDiff);
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>(week 12) Arsenal - Nott'ham Forest : 3 - 0, Emirates Stadium (60298)
+(week 13) West Ham - Arsenal : 2 - 5, London Stadium (62475)
+(week 17) Crystal Palace - Arsenal : 1 - 5, Selhurst Park (25167)
+(week 24) Arsenal - Manchester City : 5 - 1, Emirates Stadium (60355)
+(week 33) Ipswich Town - Arsenal : 0 - 4, Portman Road Stadium (29549)
+
+Teams: 
+Manchester Utd Ipswich Town Newcastle Utd Everton Nott'ham Forest Arsenal West Ham Brentford Chelsea Leicester City Brighton Manchester City Southampton Tottenham Fulham Crystal Palace Aston Villa Wolves Bournemouth Liverpool 
+
+(week 07) Brentford - Wolves : 5 - 3, Gtech Community Stadium (16960)
+(week 35) Brentford - Manchester Utd : 4 - 3, Gtech Community Stadium (18915)
+(week 09) Brentford - Ipswich Town : 4 - 3, Gtech Community Stadium (17109)
+(week 32) Manchester City - Crystal Palace : 5 - 2, Etihad Stadium (52489)
+(week 26) Newcastle Utd - Nott'ham Forest : 4 - 3, St James' Park (52223)
+(week 24) Nott'ham Forest - Brighton : 7 - 0, The City Ground (30164)
+(week 17) Tottenham - Liverpool : 3 - 6, Tottenham Hotspur Stadium (61439)
+(week 15) Tottenham - Chelsea : 3 - 4, Tottenham Hotspur Stadium (61184)
+(week 13) West Ham - Arsenal : 2 - 5, London Stadium (62475)
+(week 02) Wolves - Chelsea : 2 - 6, Molineux Stadium (31235)
+
+Goal difference for Liverpool: 45
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
