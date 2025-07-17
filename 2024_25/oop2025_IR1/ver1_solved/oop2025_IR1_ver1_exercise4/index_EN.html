@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignment, you are required to complete the source code of the <code>WeatherRecord</code> and <code>Lambdas</code> classes.</p>
+<p>The <code>WeatherRecord</code> class models weather records consisting of five private attributes:</p>
+<ul>
+<li><code>String city</code> – represents the name of the city,</li>
+<li><code>LocalDate date</code> – represents the date of the record,</li>
+<li><code>double minTemperature</code> – represents the minimum temperature on that day,</li>
+<li><code>double maxTemperature</code> – represents the maximum temperature on that day, and</li>
+<li><code>long dailyRainfall</code> – represents the daily rainfall amount on that day.</li>
+</ul>
+<p>In this class, you need to complete the following three parts of the code, marked with the <code>//TODO</code> comment:</p>
+<ol>
+<li>complete the code for attribute comparators for the <code>minTemperature</code>, <code>maxTemperature</code>, and <code>dailyRainfall</code> attributes, which will be used to sort weather records,</li>
+<li>complete the implementation of the <code>equals</code> method, and</li>
+<li>complete the implementation of the <code>hashCode</code> method.</li>
+</ol>
+<p><strong>NOTE: When implementing the <code>equals</code> and <code>hashCode</code> methods, you must first determine which set of attributes defines the uniqueness of a weather record and use only those attribute values in your implementation.</strong></p>
+<p>In the <code>Lambdas</code> class, you need to complete the static attributes <code>getFilteredAndSortedFromCollection</code> and <code>getFilteredAndSortedFromMap</code>, as shown in the following code snippet:</p>
+<pre class="line-numbers"><code class="language-java">public static TriFunction&lt;Collection&lt;WeatherRecord&gt;, Predicate&lt;WeatherRecord&gt;, Comparator&lt;WeatherRecord&gt;, Collection&lt;WeatherRecord&gt;&gt; getFilteredAndSortedFromCollection = null; //TODO
+
+public static TriFunction&lt;Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt;, Predicate&lt;WeatherRecord&gt;, Comparator&lt;WeatherRecord&gt;, Collection&lt;WeatherRecord&gt;&gt; getFilteredAndSortedFromMap = null; //TODO
+</code></pre>
+<p><strong>NOTES: Both static attributes must be implemented as <strong>lambda expressions</strong> using the Java Stream API (i.e., collection streams). It is not necessary to catch or handle exceptions during implementation. The <code>Lambdas</code> class should be placed in the <code>hr.fer.oop</code> package, and both the class and its static attributes should have <code>public</code> visibility.</strong></p>
+<p>Both static attributes are of type <code>TriFunction</code>, i.e., a function that accepts three arguments and returns a result, and is therefore parameterized with four types, namely (from left to right) the three argument types and the result type. The <code>TriFunction</code> functional interface does not exist in the Java API; the code for this interface is provided in the assignment.</p>
+<h2>Static attribute <code>getFilteredAndSortedFromCollection</code></h2>
+<p>This <code>TriFunction</code>, given the input arguments 1) a collection of weather records, 2) a predicate on weather records, and 3) a comparator for weather records, should return an output collection of weather records consisting of the filtered and sorted version of the input collection. Filtering should be done such that only weather records satisfying the given <strong>predicate</strong> remain in the output collection. Sorting should be done using the given <strong>comparator</strong>.</p>
+<h2>Static attribute <code>getFilteredAndSortedFromMap</code></h2>
+<p>This <code>TriFunction</code>, given the input arguments 1) a map of weather records of type <code>Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt;</code>, 2) a predicate on weather records, and 3) a comparator for weather records, should return an output collection of weather records consisting of the filtered and sorted combination of all weather records from the input map. From the input map, which contains collections of weather records (values of type <code>Collection&lt;WeatherRecord&gt;</code>) indexed by year (keys of type <code>Integer</code>), you must create a unified collection stream of all weather records. This unified stream of weather records should then be filtered using the <strong>predicate</strong>, sorted using the <strong>comparator</strong>, and finally collected into the output collection of weather records.</p>
+<p><strong>NOTE: The input data is loaded into the <code>Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt;</code> from a CSV file using the static attribute <code>loadFromStream</code> from the <code>Lambdas</code> class, which you do not need to implement, as its code is provided in the assignment.</strong></p>
+<p>Here is an example usage of the <code>Lambdas</code> class and the static attributes <code>getFilteredAndSortedFromCollection</code> and <code>getFilteredAndSortedFromMap</code> that you need to implement:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt; map = new HashMap&lt;&gt;();
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+    startDir = System.getProperty(&quot;user.dir&quot;);
+}
+try {
+    Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;weather_data_small.csv&quot;);
+    Lambdas.loadFromStream.accept(Files.lines(path), map);
+    System.out.println(&quot;The loaded map: &quot; + map);
+    System.out.println(&quot;The number of unique records: &quot; + map.values().stream().mapToInt(collection -&gt; collection.size()).sum());
+
+    //no duplicates
+    Lambdas.loadFromStream.accept(Files.lines(path), map);
+    System.out.println(&quot;The number of unique records: &quot; + map.values().stream().mapToInt(collection -&gt; collection.size()).sum());
+
+    Predicate&lt;WeatherRecord&gt; predicate = record -&gt; record.getCity().equals(&quot;Zagreb&quot;);
+    System.out.println(&quot;\nThe records for Zagreb in 2023 sorted by max temperature: &quot; + Lambdas.getFilteredAndSortedFromCollection.apply(map.get(Integer.valueOf(&quot;2023&quot;)), predicate, WeatherRecord.BY_MAX_TEMP));
+
+    predicate = record -&gt; record.getCity().equals(&quot;Split&quot;);
+    System.out.println(&quot;\nThe records for Split sorted by daily rainfall: &quot; + Lambdas.getFilteredAndSortedFromMap.apply(map, predicate, WeatherRecord.BY_DAILY_RAIN));
+} catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+}
+</code></pre>
+<p>The expected output for the <code>weather_data_small.csv</code> file with weather records included in the assignment:</p>
+<pre class="line-numbers"><code class="language-txt">The loaded map: {2022=[(Split, 2022-04-18, 8.5, 20.1, 0), (Zagreb, 2022-01-15, -6.0, 3.8, 14), (Split, 2022-08-11, 21.0, 33.2, 0), (Osijek, 2022-10-21, 5.0, 16.8, 18), (Zagreb, 2022-03-12, -1.5, 10.2, 10), (Osijek, 2022-05-15, 10.3, 22.5, 15)], 2023=[(Zagreb, 2023-02-10, -4.2, 5.5, 20), (Split, 2023-09-08, 19.2, 31.0, 5), (Split, 2023-03-25, 7.0, 18.5, 2), (Zagreb, 2023-06-22, 12.5, 26.0, 7), (Osijek, 2023-01-30, -6.8, 2.5, 25), (Osijek, 2023-06-14, 14.8, 28.7, 8)]}
+
+The number of unique records: 12
+The number of unique records: 12
+
+The records for Zagreb in 2023 sorted by max temperature: [(Zagreb, 2023-02-10, -4.2, 5.5, 20), (Zagreb, 2023-06-22, 12.5, 26.0, 7)]
+
+The records for Split sorted by daily rainfall: [(Split, 2022-04-18, 8.5, 20.1, 0), (Split, 2022-08-11, 21.0, 33.2, 0), (Split, 2023-03-25, 7.0, 18.5, 2), (Split, 2023-09-08, 19.2, 31.0, 5)]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignment, you are required to complete the implementation of the classes <code>CompressingInputStream</code> and <code>DecompressingOutputStream</code>. The places where code needs to be added are marked with the comment <code>//TODO</code>.</p>
+<p>The <code>CompressingInputStream</code> class directly extends the abstract <code>InputStream</code> class and is used as a <strong>decorator</strong> for another object that also extends <code>InputStream</code>.<br />
+It compresses the bytes read so that each sequence of consecutive identical bytes from the decorated stream is replaced by exactly two bytes:</p>
+<ul>
+<li><strong>the first byte</strong> is the repeated value,</li>
+<li><strong>the second byte</strong> indicates the exact number of consecutive repetitions of that value.</li>
+</ul>
+<p>The <code>DecompressingOutputStream</code> class directly extends the abstract <code>OutputStream</code> class and is used as a <strong>decorator</strong> for another object that also extends <code>OutputStream</code>.<br />
+It decompresses bytes being written so that each pair of bytes written to it is interpreted as:</p>
+<ul>
+<li><strong>the first byte</strong> – the value to be repeated,</li>
+<li><strong>the second byte</strong> – the number of repetitions,</li>
+</ul>
+<p>and, based on these, writes a sequence of consecutive instances of the first byte to the underlying output stream, with a length corresponding to the second byte’s value.</p>
+<p><strong>NOTE: The <code>CompressingInputStream</code> and <code>DecompressingOutputStream</code> classes must not be declared as final; they must be inheritable to ensure correct grading of the solution.</strong></p>
+<p>An example usage of these classes is shown in the following snippet from the <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">//input stream demo
+byte[] data = new byte[]{0x10, 0x10, 0x10, 0x20, 0x20, 0x30, 0x30, 0x30, 0x30};
+        
+try (ByteArrayInputStream source = new ByteArrayInputStream(data); InputStream cis = new CompressingInputStream(source)) {
+    int b;
+    //prints 10 03 20 02 30 04
+    while ((b = cis.read()) != -1) {
+        //read each byte of the input stream and write it to the console
+        System.out.printf(&quot;%02X &quot;, b);
+    }
+    System.out.println(&quot;&quot;);
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+
+        
+//output stream demo
+byte[] compressedData = new byte[]{0x10, 0x03, 0x20, 0x02, 0x30, 0x04};
+
+try (ByteArrayOutputStream destination = new ByteArrayOutputStream(); OutputStream dos = new DecompressingOutputStream(destination)) {
+    for (byte b : compressedData) {
+        //write each byte of the output stream
+        dos.write(b);
+    }
+
+    //prints 10 10 10 20 20 30 30 30 30
+    for (byte rb : destination.toByteArray()) {
+        System.out.printf(&quot;%02X &quot;, rb);
+    }
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+</code></pre>
+<p>The expected correct output of the provided <code>main</code> method in the <code>Main</code> class is:</p>
+<pre class="line-numbers"><code class="language-sh">10 03 20 02 30 04 
+10 10 10 20 20 30 30 30 30 
+</code></pre>
+<p><strong>NOTE: All classes and interfaces should have <code>public</code> visibility and should be located in the <code>hr.fer.oop</code> package.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

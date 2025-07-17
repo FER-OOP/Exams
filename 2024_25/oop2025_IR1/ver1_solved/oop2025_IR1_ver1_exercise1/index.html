@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku su dane apstraktna klasa <code>Pet</code> i konkretna (neapstraktna) klasa <code>Cat</code>, kao i klasa <code>Main</code>, a potrebno je napisati konkretne klase <code>Dog</code>, <code>Parrot</code> i <code>Dolphin</code> te tipove <code>SwimmerPet</code> i <code>SmartPet</code> za koje je potrebno odlučiti trebaju li biti sučelja ili klase. Osim toga, potrebno je uspostaviti hijerarhiju klasa i implementirati odgovarajuća sučelja u klasama. Sve konkretne klase (<code>Cat</code>, <code>Dog</code>, <code>Parrot</code> i <code>Dolphin</code>) imaju klasu <code>Pet</code> kao nadklasu, ali ne nužno kao svoju direktnu nadklasu.</p>
+<p><strong>NAPOMENA: Klase <code>Pet</code> i <code>Cat</code> nije dozvoljeno mijenjati radi ispravnog bodovanja rješenja.</strong></p>
+<p>Objekti tipa <code>Pet</code> posjeduju sreću (<code>happiness</code>) tipa <code>int</code> koja se postavlja prilikom stvaranja objekta, može se <strong>povećati za 5 igranjem</strong> (tj. pozivanjem metode <code>void play()</code>). Trenutno stanje sreće može se dohvatiti pozivanjem gettera <code>int getHappiness()</code>, ali ne smije postojati <em>setter</em> za njeno postavljanje.</p>
+<p>Objekti tipa <code>Parrot</code> i <code>Dolphin</code> predstavljaju pametne ljubimce te su stoga tipa <code>SmartPet</code>. Objekti tipa <code>SmartPet</code> posjeduju broj naučenih trikova (<code>tricksLearned</code>) tipa <code>int</code> koji se postavlja prilikom stvaranja objekta, može se povećati učenjem trika, tj. pozivanjem metode <code>void learnTrick()</code>, a trenutno stanje naučenih trikova može se dohvatiti pozivanjem gettera <code>int getTricksLearned()</code>. Analogno sreći (<code>happiness</code>) ne smije postojati <em>setter</em> za broj naučenih trikova. Dodatno, kada se pametni ljubimci igraju (tj. pozovu <code>play()</code>), <strong>zaborave jedan trik</strong>, a prilikom učenja novih trikova njihova sreća se smanjuje što će biti objašnjeno kasnije. Broj naučenih trikova ne može postati negativan, već mu je najmanja vrijednost jednaka 0.</p>
+<p>Svaki objekt tipa <code>Dog</code> ili <code>Dolphin</code> je ljubimac plivač tipa <code>SwimmerPet</code>. Ljubimci plivači troše sreću plivanjem, tj. pozivanjem metode <code>void swim()</code>.</p>
+<p>Konkretne klase imaju jedan konstruktor, a primjer njihova pozivanja prikazan je u isječku dane metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">Cat cat = new Cat(&quot;Mittens&quot;, 50); // name, happiness
+Dog dog = new Dog(&quot;Buddy&quot;, 60); // name, happiness
+Parrot parrot = new Parrot(&quot;Polly&quot;, 70, 0); // name, happiness, tricksLearned
+Dolphin dolphin = new Dolphin(&quot;Flippy&quot;, 80, 2); // name, happiness, tricksLearned
+</code></pre>
+<p>Nad svakim objektom bilo kojeg od ovih 7 tipova (<code>Cat</code>, <code>Dog</code>, <code>Parrot</code>, <code>Dolphin</code>, <code>Pet</code>, <code>SwimmerPet</code> i <code>SmartPet</code>) se mogu pozvati sljedeće općenite metode:</p>
+<ul>
+<li><code>String getName()</code> – vraća ime postavljeno u konstruktoru</li>
+<li><code>int getHappiness()</code> – vraća trenutno stanje sreće</li>
+<li><code>void play()</code> – povećava sreću za objekte tipa <code>Pet</code>, a dodatno smanjuje broj trikova za objekte tipa <code>SmartPet</code> kako je prethodno opisano</li>
+</ul>
+<p>Sljedeće specifične metode mogu se pozvati na objektima tipa <code>Cat</code>:</p>
+<ul>
+<li><code>void chaseLaser()</code> – povećava sreću za 4</li>
+</ul>
+<p>Sljedeće specifične metode mogu se pozvati na objektima tipa <code>Dog</code>:</p>
+<ul>
+<li><code>void fetchBall()</code> – povećava sreću za 6</li>
+<li><code>void swim()</code> – smanjuje sreću za 3</li>
+</ul>
+<p>Sljedeće specifične metode mogu se pozvati na objektima tipa <code>Parrot</code>:</p>
+<ul>
+<li><code>int getTricksLearned()</code> – vraća trenutno stanje naučenih trikova</li>
+<li><code>void learnTrick()</code> – povećava broj trikova za 1 i smanjuje sreću za 2</li>
+<li><code>void sing()</code> – povećava sreću za 4</li>
+</ul>
+<p>Sljedeće specifične metode mogu se pozvati na objektima tipa <code>Dolphin</code>:</p>
+<ul>
+<li><code>int getTricksLearned()</code> – vraća trenutno stanje naučenih trikova</li>
+<li><code>void learnTrick()</code> – povećava broj trikova za 1 i smanjuje sreću za 4</li>
+<li><code>void swim()</code> – smanjuje sreću za 1</li>
+</ul>
+<p><strong>NAPOMENA: Sve klase i sučelja trebaju imati vidljivost postavljenu na <code>public</code> i nalaziti se u paketu <code>hr.fer.oop</code>.</strong></p>
+<p>Ispravan rezultat izvođenja dane metode <code>main</code> u klasi <code>Main</code> treba biti:</p>
+<pre class="line-numbers"><code class="language-sh">Mittens has 50 happiness upon creation
+Mittens has 54 happiness after chasing laser
+Mittens has 59 happiness after playing
+
+Buddy has 60 happiness upon creation
+Buddy has 66 happiness after fetching ball
+Buddy has 63 happiness after swimming
+Buddy has 68 happiness after playing
+
+Polly has 70 happiness and 0 tricks upon creation
+Polly has 68 happiness and 1 tricks after learning trick
+Polly has 72 happiness after singing
+Polly has 77 happiness and 0 tricks after playing
+
+Flippy has 80 happiness and 2 tricks upon creation
+Flippy has 79 happiness after swimming
+Flippy has 75 happiness and 3 tricks after learning trick
+Flippy has 80 happiness and 2 tricks after playing
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

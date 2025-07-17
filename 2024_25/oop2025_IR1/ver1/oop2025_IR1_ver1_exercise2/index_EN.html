@@ -1,0 +1,69 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this assignment, you need to complete the implementation of the <code>MyPriorityQueue</code> class, which models a sorted collection that <strong>can contain duplicates</strong>, but cannot contain <code>null</code> elements.</p>
+<p>The parameterized class <code>MyPriorityQueue&lt;E&gt;</code> extends the <code>TreeMap&lt;E, Integer&gt;</code> class and implements the given interface <code>hr.fer.oop.PriorityQueue&lt;E&gt;</code>. The backing map stores key–value pairs, where the key of type <code>E</code> represents an element added to the collection, and the value of type <code>Integer</code> indicates how many identical elements remain in the collection.</p>
+<p>Unlike the <code>java.util.PriorityQueue&lt;E&gt;</code> class from the Java API, the given interface <code>hr.fer.oop.PriorityQueue&lt;E&gt;</code> models a simpler collection with only four methods:</p>
+<ul>
+<li><code>void add(E e)</code> - adds element <code>e</code> to the collection or throws a <code>java.lang.NullPointerException</code> if the element is <code>null</code></li>
+<li><code>int size()</code> - returns the total number of elements stored in the collection</li>
+<li><code>E poll()</code> - retrieves the first (by sort order) element of the collection and removes it from the collection</li>
+<li><code>Iterator&lt;E&gt; iterator()</code> - returns an iterator over the collection</li>
+</ul>
+<p>To better understand how these methods work, see the usage example at the end of the assignment.</p>
+<p>In the <code>MyPriorityQueue&lt;E&gt;</code> class, you need to complete the implementation of two constructors and four methods from the <code>hr.fer.oop.PriorityQueue&lt;E&gt;</code> interface. The no-argument constructor <code>MyPriorityQueue()</code> is used when the collection elements should be sorted in their natural order, while the constructor <code>MyPriorityQueue(Comparator&lt;? super E&gt; comparator)</code> is used when the collection elements should be sorted using the comparator provided as an argument.</p>
+<p><strong>NOTE: For correct grading of the solution, in the <code>MyPriorityQueue&lt;E&gt;</code> class you must only modify the code marked with <code>//TODO</code> inside the previously mentioned two constructors and four methods. Any change to the class definition or adding additional attributes will result in 0 points for this assignment!!!</strong></p>
+<p>An example of using this class is shown in the following snippet from the given <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">PriorityQueue&lt;Integer&gt; pc = new MyPriorityQueue&lt;&gt;();
+        
+System.out.println(pc.size()); //prints 0
+pc.add(7);
+pc.add(7);
+pc.add(2);
+pc.add(2);
+System.out.println(pc.size()); //prints 4
+System.out.println(pc.poll()); //prints 2
+System.out.println(pc.size()); //prints 3
+pc.add(1);
+System.out.println(pc.size()); //prints 4
+System.out.println(pc.poll()); //prints 1
+//pc.add(null); //throws NullPointerException        
+pc.add(8);
+        
+//prints 2 7 7 8
+for (int n:pc) {
+    System.out.print(n + &quot; &quot;);
+}  
+System.out.println();
+        
+//prints {2=1, 7=2, 8=1}
+System.out.println(pc);
+</code></pre>
+<p>The correct output of the given <code>main</code> method in the <code>Main</code> class is:</p>
+<pre class="line-numbers"><code class="language-sh">0
+4
+2
+3
+4
+1
+2 7 7 8 
+{2=1, 7=2, 8=1}
+</code></pre>
+<p><strong>NOTE: All classes and interfaces have visibility set to <code>public</code> and are located in the <code>hr.fer.oop</code> package.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

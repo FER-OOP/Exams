@@ -1,0 +1,84 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno nadopuniti programski kod klasa <code>WeatherRecord</code> i <code>Lambdas</code>.</p>
+<p>Klasom <code>WeatherRecord</code> modeliramo meteorološke zapise koji se sastoje od 5 privatnih atributa:</p>
+<ul>
+<li><code>String city</code> - predstavlja naziv grada,</li>
+<li><code>LocalDate date</code> - predstavlja dan zapisa,</li>
+<li><code>double minTemperature</code> - predstavlja minimalnu temperaturu na taj dan,</li>
+<li><code>double maxTemperature</code> - predstavlja maksimalnu temperaturu na taj dan i</li>
+<li><code>private int dailyRainfall</code> - predstavlja količinu dnevnih padalina na taj dan.</li>
+</ul>
+<p>U ovoj klasi je potrebno dovršiti sljedeća 3 dijela programskog koda koji su označeni komentarom <code>//TODO</code>:</p>
+<ol>
+<li>dovršiti kod atributnih komparatora za atribute <code>minTemperature</code>, <code>maxTemperature</code> i <code>dailyRainfall</code> koji će se koristiti za sortiranje meteoroloških zapisa,</li>
+<li>dovršiti programski kod metode <code>equals</code> i</li>
+<li>dovršiti programski kod metode <code>hashCode</code>.</li>
+</ol>
+<p><strong>NAPOMENA: Prilikom implementacije metoda <code>equals</code> i <code>hashCode</code> potrebno je najprije utvrditi koji skup atributa određuje jedinstvenost meteorološkog zapisa te koristiti isključivo vrijednosti tih atributa u implementaciji.</strong></p>
+<p>U klasi <code>Lambdas</code> je potrebno dovršiti statičke atribute <code>getFilteredAndSortedFromCollection</code> i <code>getFilteredAndSortedFromMap</code> prikazane u sljedećem isječku programskog koda:</p>
+<pre class="line-numbers"><code class="language-java">public static TriFunction&lt;Collection&lt;WeatherRecord&gt;, Predicate&lt;WeatherRecord&gt;, Comparator&lt;WeatherRecord&gt;, Collection&lt;WeatherRecord&gt;&gt; getFilteredAndSortedFromCollection = null; //TODO
+    
+public static TriFunction&lt;Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt;, Predicate&lt;WeatherRecord&gt;, Comparator&lt;WeatherRecord&gt;, Collection&lt;WeatherRecord&gt;&gt; getFilteredAndSortedFromMap = null; //TODO
+</code></pre>
+<p><strong>NAPOMENE: Oba statička atributa treba implementirati kao <strong>lambda izraz</strong> koristeći Java Stream API (tj. kolekcijske tokove). Pri implementaciji nije potrebno hvatati niti obrađivati iznimke. Klasa <code>Lambdas</code> se treba nalaziti u paketu <code>hr.fer.oop</code>, a ona i njeni statički atributi trebaju imati vidljivost postavljenu na <code>public</code>.</strong></p>
+<p>Oba statička atributa su tipa <code>TriFunction</code> tj, funkcije koja prima tri argumenta i vraća rezultat te je stoga parametrizirana sa 4 tipa, a to su (redoslijedom s lijeva na desno) 3 tipa argumenata te tip rezultata. Funkcijsko sučelje <code>TriFunction</code> ne postoji u Javinom API-ju, već je programski kod ovog sučelja priložen u zadatku.</p>
+<h2>Statički atribut <code>getFilteredAndSortedFromCollection</code></h2>
+<p>Ovaj <code>TriFunction</code> za ulazne argumente 1) kolekcija meteoroloških zapisa, 2) predikat meteorološkog zapisa i 3) komparator meteoroloških zapisa treba vratiti izlaznu kolekciju meteoroloških zapisa koja je filtrirana i sortirana ulazna kolekcija meteoroloških zapisa. Filtriranje ulazne kolekcije treba napraviti na način da u izlaznoj kolekciju preostanu samo meteorološki zapisi koji zadovoljavaju predani <strong>predikat</strong>. Sortiranje izlazne kolekcije treba ostvariti predanim <strong>komparatorom</strong>.</p>
+<h2>Statički atribut <code>getFilteredAndSortedFromMap</code></h2>
+<p>Ovaj <code>TriFunction</code> za ulazne argumente 1) mapa meteoroloških zapisa tipa <code>Map&lt;Integer, Collection&lt;WeatherRecord&gt;</code>, 2) predikat meteorološkog zapisa i 3) komparator meteoroloških zapisa treba vratiti izlaznu kolekciju meteoroloških zapisa koja je filtrirana i sortirana kolekcija svih meteoroloških zapisa iz ulazne mape. Iz ulazne mape koja sadrži kolekcije meteoroloških zapisa (vrijednost tipa <code>Collection&lt;WeatherRecord&gt;</code>) indeksirane po godini (ključ tipa <code>Integer</code>) je potrebno stvoriti zajednički kolekcijski tok svih meteoroloških zapisa. Nakon toga je taj zajednički kolekcijski tok meteoroloških zapisa potrebno filtrirati <strong>predikatom</strong>, sortirati <strong>komparatorom</strong> te na kraju prikupiti u izlaznu kolekciju meteoroloških zapisa.</p>
+<p><strong>NAPOMENA: Ulazni podaci se u mapu tipa <code>Map&lt;Integer, Collection&lt;WeatherRecord&gt;</code> učitavaju iz CSV datoteke pomoću statičkog atributa <code>loadFromStream</code> iz klase <code>Lambdas</code> kojeg ne treba implementirati jer je taj programski kod dan u zadatku.</strong></p>
+<p>Primjer korištenja klase <code>Lambdas</code> i statičkih atributa <code>getFilteredAndSortedFromCollection</code> i <code>getFilteredAndSortedFromMap</code> koje treba implementirati:</p>
+<pre class="line-numbers"><code class="language-java">Map&lt;Integer, Collection&lt;WeatherRecord&gt;&gt; map = new HashMap&lt;&gt;();
+//just to correctly find the project dir
+String startDir = System.getProperty(&quot;project.dir&quot;);
+if (startDir == null) {
+    startDir = System.getProperty(&quot;user.dir&quot;);
+}
+try {
+    Path path = Path.of(startDir, &quot;src&quot;, &quot;main&quot;, &quot;resources&quot;, &quot;weather_data_small.csv&quot;);
+    Lambdas.loadFromStream.accept(Files.lines(path), map);
+    System.out.println(&quot;The loaded map: &quot; + map);
+    System.out.println(&quot;The number of unique records: &quot; + map.values().stream().mapToInt(collection -&gt; collection.size()).sum());
+              
+    //no duplicates
+    Lambdas.loadFromStream.accept(Files.lines(path), map);
+    System.out.println(&quot;The number of unique records: &quot; + map.values().stream().mapToInt(collection -&gt; collection.size()).sum());
+              
+    Predicate&lt;WeatherRecord&gt; predicate = record -&gt; record.getCity().equals(&quot;Zagreb&quot;);
+    System.out.println(&quot;\nThe records for Zagreb in 2023 sorted by max temperature: &quot; + Lambdas.getFilteredAndSortedFromCollection.apply( map.get(Integer.valueOf(&quot;2023&quot;)), predicate, WeatherRecord.BY_MAX_TEMP));
+              
+    predicate = record -&gt; record.getCity().equals(&quot;Split&quot;);
+    System.out.println(&quot;\nThe records for Split sorted by daily rainfall: &quot; + Lambdas.getFilteredAndSortedFromMap.apply(map, predicate, WeatherRecord.BY_DAILY_RAIN));
+} catch (IOException ex) {
+    System.out.println(&quot;The path does not exist: &quot; + ex);
+}
+</code></pre>
+<p>Očekivani ispis za CSV datotaku <code>weather_data_small.csv</code> s meteorološkim zapisima koja je priložena u zadatku:</p>
+<pre class="line-numbers"><code class="language-txt">The loaded map: {2022=[(Split, 2022-04-18, 8.5, 20.1, 0), (Zagreb, 2022-01-15, -6.0, 3.8, 14), (Split, 2022-08-11, 21.0, 33.2, 0), (Osijek, 2022-10-21, 5.0, 16.8, 18), (Zagreb, 2022-03-12, -1.5, 10.2, 10), (Osijek, 2022-05-15, 10.3, 22.5, 15)], 2023=[(Zagreb, 2023-02-10, -4.2, 5.5, 20), (Split, 2023-09-08, 19.2, 31.0, 5), (Split, 2023-03-25, 7.0, 18.5, 2), (Zagreb, 2023-06-22, 12.5, 26.0, 7), (Osijek, 2023-01-30, -6.8, 2.5, 25), (Osijek, 2023-06-14, 14.8, 28.7, 8)]}
+
+The number of unique records: 12
+The number of unique records: 12
+
+The records for Zagreb in 2023 sorted by max temperature: [(Zagreb, 2023-02-10, -4.2, 5.5, 20), (Zagreb, 2023-06-22, 12.5, 26.0, 7)]
+
+The records for Split sorted by daily rainfall: [(Split, 2022-04-18, 8.5, 20.1, 0), (Split, 2022-08-11, 21.0, 33.2, 0), (Split, 2023-03-25, 7.0, 18.5, 2), (Split, 2023-09-08, 19.2, 31.0, 5)]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

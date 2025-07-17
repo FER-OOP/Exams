@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the assignment, an abstract class <code>Pet</code> and a concrete (non-abstract) class <code>Cat</code>, as well as a class <code>Main</code>, are given. The goal is to write concrete classes <code>Dog</code>, <code>Parrot</code>, and <code>Dolphin</code>, as well as the types <code>SwimmerPet</code> and <code>SmartPet</code> for which it is necessary to decide whether they should be interfaces or classes. Additionally, it is necessary to establish a class hierarchy and implement appropriate interfaces in the classes. All concrete classes (<code>Cat</code>, <code>Dog</code>, <code>Parrot</code>, and <code>Dolphin</code>) have the class <code>Pet</code> as a superclass, but not necessarily as their direct superclass.</p>
+<p><strong>NOTE: Classes <code>Pet</code> and <code>Cat</code> must not be changed for correct scoring of the solution.</strong></p>
+<p>Objects of type <code>Pet</code> possess happiness (<code>happiness</code>) of type <code>int</code> which is set when the object is created, can be increased by 5 by playing (i.e., calling the method <code>void play()</code>), and the current happiness state can be retrieved by calling the getter <code>int getHappiness()</code>. There must not be a setter for happiness.</p>
+<p>Objects of type <code>Parrot</code> and <code>Dolphin</code> are smart pets and therefore also of type <code>SmartPet</code>. Objects of type <code>SmartPet</code> possess tricks learned (<code>tricksLearned</code>) of type <code>int</code> which is set when the object is created, can be increased by learning a trick, i.e., calling the method <code>void learnTrick()</code>, and the current number of learned tricks can be retrieved by calling the getter <code>int getTricksLearned()</code>. There must not be a setter for tricks learned. Additionally, when smart pets play (i.e., call <code>play()</code>) they <strong>forget one trick</strong>, and while they are learning new tricks their happiness decreases. The number of learned tricks cannot become negative, and its minimum value is 0.</p>
+<p>Every object of type <code>Dog</code> or <code>Dolphin</code> is a swimmer pet of type <code>SwimmerPet</code>. Swimmer pets spend happiness by swimming, i.e., calling the method <code>void swim()</code>.</p>
+<p>Concrete classes have a single constructor, and an example of their invocation is shown in the snippet of the given <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">Cat cat = new Cat(&quot;Mittens&quot;, 50); // name, happiness
+Dog dog = new Dog(&quot;Buddy&quot;, 60); // name, happiness
+Parrot parrot = new Parrot(&quot;Polly&quot;, 70, 0); // name, happiness, tricksLearned
+Dolphin dolphin = new Dolphin(&quot;Flippy&quot;, 80, 2); // name, happiness, tricksLearned
+</code></pre>
+<p>The following general methods can be called on any object of these 7 types (<code>Cat</code>, <code>Dog</code>, <code>Parrot</code>, <code>Dolphin</code>, <code>Pet</code>, <code>SwimmerPet</code>, and <code>SmartPet</code>):</p>
+<ul>
+<li><code>String getName()</code> - returns the name which is set in the constructor</li>
+<li><code>int getHappiness()</code> - returns the current happiness state</li>
+<li><code>void play()</code> - increases happiness for objects of type <code>Pet</code>and additionaly decreases tricks learned for objects of type <code>SmartPet</code> as previously mentioned</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Cat</code>:</p>
+<ul>
+<li><code>void chaseLaser()</code> - increases happiness by 4</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Dog</code>:</p>
+<ul>
+<li><code>void fetchBall()</code> - increases happiness by 6</li>
+<li><code>void swim()</code> - decreases happiness by 3</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Parrot</code>:</p>
+<ul>
+<li><code>int getTricksLearned()</code> - returns the current number of tricks learned</li>
+<li><code>void learnTrick()</code> - increases tricks learned by 1 and decreases happiness by 2</li>
+<li><code>void sing()</code> - increases happiness by 4</li>
+</ul>
+<p>The following specific methods can also be called on objects of type <code>Dolphin</code>:</p>
+<ul>
+<li><code>int getTricksLearned()</code> - returns the current number of tricks learned</li>
+<li><code>void learnTrick()</code> - increases tricks learned by 1 and decreases happiness by 4</li>
+<li><code>void swim()</code> - decreases happiness by 1</li>
+</ul>
+<p><strong>NOTE: All classes and interfaces should have their visibility set to <code>public</code> and belong to the <code>hr.fer.oop</code> package.</strong></p>
+<p>The correct output of the given <code>main</code> method in the <code>Main</code> class should be:</p>
+<pre class="line-numbers"><code>Mittens has 50 happiness upon creation
+Mittens has 54 happiness after chasing laser
+Mittens has 59 happiness after playing
+
+Buddy has 60 happiness upon creation
+Buddy has 66 happiness after fetching ball
+Buddy has 63 happiness after swimming
+Buddy has 68 happiness after playing
+
+Polly has 70 happiness and 0 tricks upon creation
+Polly has 68 happiness and 1 tricks after learning trick
+Polly has 72 happiness after singing
+Polly has 77 happiness and 0 tricks after playing
+
+Flippy has 80 happiness and 2 tricks upon creation
+Flippy has 79 happiness after swimming
+Flippy has 75 happiness and 3 tricks after learning trick
+Flippy has 80 happiness and 2 tricks after playing
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

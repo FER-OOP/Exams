@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno nadopuniti programski kod klasa <code>CompressingInputStream</code> i <code>DecompressingOutputStream</code>. Na mjestima na kojima je potrebno dodati programski kod se nalazi komentar <code>//TODO</code>.</p>
+<p>Klasa <code>CompressingInputStream</code> direktno nasljeđuje apstraktnu klasu <code>InputStream</code> i koristi se kao <strong>dekorator</strong> nad drugim objektom koji također nasljeđuje <code>InputStream</code>.<br />
+Služi za komprimiranje pročitanih bajtova tako da svaki niz uzastopnih istih bajtova iz dekoriranog toka zamjenjuje s točno dva bajta:</p>
+<ul>
+<li><strong>prvi bajt</strong> je vrijednost koja se ponavlja,</li>
+<li><strong>drugi bajt</strong> označava broj uzastopnih ponavljanja te vrijednosti.</li>
+</ul>
+<p>Klasa <code>DecompressingOutputStream</code> direktno nasljeđuje apstraktnu klasu <code>OutputStream</code> i koristi se kao <strong>dekorator</strong> nad drugim objektom koji također nasljeđuje <code>OutputStream</code>.<br />
+Služi za dekomprimiranje bajtova koji se zapisuju tako da svaki zapisani par bajtova interpretira kao:</p>
+<ul>
+<li><strong>prvi bajt</strong> – vrijednost koja se treba ponavljati,</li>
+<li><strong>drugi bajt</strong> – broj ponavljanja,</li>
+</ul>
+<p>i na temelju njih upisuje niz uzastopnih instanci prvog bajta u izlazni tok, u dužini koja odgovara vrijednosti drugog bajta.</p>
+<p><strong>NAPOMENA: Klase <code>CompressingInputStream</code> i <code>DecompressingOutputStream</code> ne smiju biti finalne tj. moraju se moći naslijediti radi ispravnog bodovanja rješenja.</strong></p>
+<p>Primjer korištenja ovih klasa prikazan je u sljedećem isječku dane metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">//input stream demo
+byte[] data = new byte[]{0x10, 0x10, 0x10, 0x20, 0x20, 0x30, 0x30, 0x30, 0x30};
+        
+try (ByteArrayInputStream source = new ByteArrayInputStream(data); InputStream cis = new CompressingInputStream(source)) {
+    int b;
+    //prints 10 03 20 02 30 04
+    while ((b = cis.read()) != -1) {
+        //read each byte of the input stream and write it to the console
+        System.out.printf(&quot;%02X &quot;, b);
+    }
+    System.out.println(&quot;&quot;);
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+
+        
+//output stream demo
+byte[] compressedData = new byte[]{0x10, 0x03, 0x20, 0x02, 0x30, 0x04};
+
+try (ByteArrayOutputStream destination = new ByteArrayOutputStream(); OutputStream dos = new DecompressingOutputStream(destination)) {
+    for (byte b : compressedData) {
+        //write each byte of the output stream
+        dos.write(b);
+    }
+
+    //prints 10 10 10 20 20 30 30 30 30
+    for (byte rb : destination.toByteArray()) {
+        System.out.printf(&quot;%02X &quot;, rb);
+    }
+} catch (IOException ex) {
+    ex.printStackTrace();
+}
+</code></pre>
+<p>Ispravan rezultat izvođenja dane metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-sh">10 03 20 02 30 04 
+10 10 10 20 20 30 30 30 30 
+</code></pre>
+<p><strong>NAPOMENA: Sve klase i sučelja imaju vidljivost postavljenu na
+<code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
