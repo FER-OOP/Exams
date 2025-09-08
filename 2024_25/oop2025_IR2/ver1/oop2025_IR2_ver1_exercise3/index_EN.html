@@ -1,0 +1,74 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In the directory tree, there are zip files containing learning materials for different courses. All materials for a course are stored in <strong>a
+single zip archive file</strong> (for example, the file <code>oop.zip</code> contains several PDFs with practice exercises, TXT files with tips, PPT lecture presentations,
+screenshots of Eclipse errors in JPG format, etc.).</p>
+<p>It is necessary to traverse the directory tree and collect information about all available materials from all courses, so that after the
+traversal it is possible to retrieve the data requested later in the task.</p>
+<p>For traversing the directory tree, you need to write a class <code>MaterialsFileVisitor</code> which (directly or indirectly) implements the <code>FileVisitor</code> interface.</p>
+<p>The <code>MaterialsFileVisitor</code> class must implement the following public methods:</p>
+<ul>
+<li>
+<p><code>int getTotalMaterialCount()</code> - returns the total number of materials (files) in all zip archives</p>
+</li>
+<li>
+<p><code>String getBiggestFileName()</code> - returns the name of the largest file among all materials (the largest file is the one that, when uncompressed, occupies the most bytes)</p>
+</li>
+<li>
+<p><code>int getPdfCount(String zipFileName)</code> - returns the total number of PDF files found in the zip archive of a specific course</p>
+</li>
+<li>
+<p><code>int getCourseMaterialUncompressedSize(String zipFileName)</code> - returns the sum of uncompressed sizes of all files of the given course (i.e., inside a given zip archive file)</p>
+</li>
+<li>
+<p><code>int getCourseMaterialCompressedSize(String zipFileName)</code> - returns the sum of compressed sizes of all files of the given course (i.e., inside a given zip archive file)</p>
+</li>
+</ul>
+<p>All classes must be in the package <code>hr.fer.oop</code>.</p>
+<p><strong>IMPORTANT:</strong> When working with files, you must use the class <code>java.nio.file.Path</code>!</p>
+<p>You may use the provided class <code>Material</code> for help, but you don't have to. Each instance of this class represents a single learning material, i.e., a file. For example, “01-Uvod.pdf” is one material and is located—together with several other materials — in the “asp.zip” archive.</p>
+<p>For working with zip files, you can use the classes <code>ZipFile</code> and <code>ZipFileEntry</code>, and for the traversal of all files (&quot;ZipFileEntries&quot;) within a single zip archive the easiest way is using the Stream API methods, e.g. &quot;<code>zipFile.stream().forEach(entry -&gt; {...}</code>&quot;.</p>
+<p><strong>Example of execution:</strong></p>
+<pre class="line-numbers"><code class="language-java">    Path folder = Path.of(&quot;src/main/resources/&quot;);
+    MaterialsFileVisitor visitor = new MaterialsFileVisitor();
+    
+    try {
+        Files.walkFileTree(folder, visitor);
+    } catch (IOException e)             
+        e.printStackTrace();
+    }
+    
+    System.out.println(&quot;Total material count: &quot; + visitor.getTotalMaterialCount());
+    System.out.println(&quot;The biggest file: &quot; + visitor.getBiggestFileName());
+    System.out.println(&quot;PDF count for OOP.zip: &quot; + visitor.getPdfCount(&quot;OOP.zip&quot;));
+    System.out.println(&quot;Size of the uncompressed zip file: &quot; + visitor.getCourseMaterialUncompressedSize(&quot;OOP.zip&quot;));
+    System.out.println(&quot;Size of the compressed zip file: &quot; + visitor.getCourseMaterialCompressedSize(&quot;OOP.zip&quot;));
+</code></pre>
+<p><strong>Expected output for the test example:</strong><br />
+(It is possible that on your computer the values in the last two lines
+will differ from the example, but this will not affect the correctness
+check of your solution)</p>
+<pre class="line-numbers"><code>    Total material count: 12
+    The biggest file: 01-Uvod.pdf
+    PDF count for OOP.zip: 2
+    Size of the uncompressed OOP.zip file: 786692
+    Size of the compressed OOP.zip file: 690407
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

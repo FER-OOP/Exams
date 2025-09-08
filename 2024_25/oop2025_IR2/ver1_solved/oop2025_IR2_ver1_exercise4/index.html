@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U datoteci <code>match_results.csv</code> nalaze se podaci o igračima koji su sudjelovali na online turnirima u jednoj poznatoj računalnoj igri.</p>
+<p>Svaki redak datoteke sadrži sljedeće podatke:</p>
+<pre class="line-numbers"><code>godina; ime igrača; bodovi; broj pobjeda; mapa
+</code></pre>
+<p>npr. izrezak iz datoteke</p>
+<pre class="line-numbers"><code>2025;WittyOstrich;12;2;Tilted
+2025;Vioxid;17;3;Gun game
+2025;Dr0nai;2;0;Gun game
+</code></pre>
+<p>kaže kako je WittyOstrich na mapi &quot;Tilted&quot; u 2025. godini skupio 12 bodova, uz 2 pobjede, dok su u istoj godini na mapi &quot;Gun game&quot; Vioxid i Dr0nai osvojili, 17, odnosno 2 boda.</p>
+<p>Radi jednostavnosti, podaci su pohranjeni u kolekciju objekata tipa <code>PlayerResult</code> koja sadrži informacije o igraču (<code>int godina</code>, <code>String playerName</code>, <code>int points</code>, <code>int wins</code>, <code>String mapName</code>).</p>
+<p>Vaš zadatak je, koristeći Java Stream API, implementirati sljedeće metode:</p>
+<ul>
+<li>
+<p><code>long getNumberOfMapsInAYear(Stream&lt;PlayerResult&gt; s, int year)</code> - vraća broj različitih mapa koje su igrane u nekoj godini</p>
+</li>
+<li>
+<p><code>int getWinsInAYear(Stream&lt;PlayerResult&gt; s, int year, String playerName)</code> - za nekog igrača i godinu, vraća ukupni broj pobjeda tog igrača u zadanoj godini</p>
+</li>
+<li>
+<p><code>int getMostPointsInAYear(Stream&lt;PlayerResult&gt; s, int year)</code> - vraća najviše bodova koje je neki (bilo koji) igrač skupio u zadanoj godini. Zadatak možete riješiti pomoću <strong>Collectors.groupingBy</strong> ili npr. koristeći nekoliko naredbi, pomoćnu mapu i metodu merge za punjenje pomoćne mape s podacima.</p>
+</li>
+<li>
+<p><code>List&lt;String&gt; getPlayerWithMaxWins(Collection&lt;PlayerResult&gt; c, int year, String mapName)</code> - vraća listu koja sadrži ime jednog ili više igrača koji su skupili najviše pobjeda u nekoj godini, na nekoj mapi.</p>
+</li>
+</ul>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">	System.out.println(&quot;Number of different maps played in a 2024: &quot; + getNumberOfMapsInAYear(list.stream(), 2024));
+	System.out.println(&quot;Number of wins for WittyOstrich in a 2025: &quot; + getWinsInAYear(list.stream(), 2025, &quot;WittyOstrich&quot;));
+	System.out.println(&quot;Most points in a 2022: &quot; + getMostPointsInAYear(list.stream(), 2022));
+	System.out.println(&quot;Players with most wins in 2024: &quot; + getPlayerWithMaxWins(list, 2025, &quot;Zone wars&quot;));
+</code></pre>
+<p><strong>Očekivani izlaz za testni primjer:</strong></p>
+<pre class="line-numbers"><code>Number of different maps played in a 2024: 3
+Number of wins for WittyOstrich in a 2025: 4
+Most points in a 2022: 28
+Players with most wins in 2024: [Vioxid, WittyOstrich]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U stablu direktorija nalaze se zip datoteke koje sadrže materijale za učenje različitih predmeta. Svi materijali iz nekog predmeta su spremljeni u <strong>jednu zip arhivu</strong> (tako npr. datoteka <code>oop.zip</code> sadrži nekoliko materijala - pdf-ove sa zadacima za vježbu, txt datoteke sa savjetima, ppt prezentacije s predavanja, screenshotove pogrešaka u Eclipse u jpg formatu i sl.)</p>
+<p>Potrebno je obići stablo direktorija te sakupiti informacije o svim dostupnim materijalima iz svih predmeta, i to tako da je nakon obilaska stabla moguće dobiti podatke koji se traže niže u zadatku.</p>
+<p>Za obilazak stabla direktorija potrebno je napisati Klasu <code>MaterialsFileVisitor</code> koja (izravno ili neizravno) implementira sučelje <code>FileVisitor</code>.
+Klasa <code>MaterialsFileVisitor</code> mora implementirati sljedeće javne metode:</p>
+<ul>
+<li>
+<p><code>int getTotalMaterialCount()</code> - vraća ukupni broj materijala (datoteka) u svim zip arhivama zajedno</p>
+</li>
+<li>
+<p><code>String getBiggestFileName()</code> - vraća naziv najveće datoteke materijala (najveća datoteka je ona koja nekompresirana zauzima najviše okteta, tj. &quot;byteova&quot;)</p>
+</li>
+<li>
+<p><code>int getPdfCount(String zipFileName)</code> - vraća ukupni broj PDF datoteka pronađenih u materijalima nekog predmeta</p>
+</li>
+<li>
+<p><code>int getCourseMaterialUncompressedSize(String zipFileName)</code> - vraća sumu nekompresiranih veličina svih datoteka zadanog predmeta (tj. unutar neke zip arhive)</p>
+</li>
+<li>
+<p><code>int getCourseMaterialCompressedSize(String zipFileName)</code> - vraća sumu kompresiranih veličina svih datoteka zadanog predmeta (tj. unutar neke zip arhive)</p>
+</li>
+</ul>
+<p>Sve klase trebaju biti u paketu <code>hr.fer.oop</code>.</p>
+<p><strong>VAŽNO:</strong> Za rad s datotekama obavezno koristiti klasu <code>java.nio.file.Path</code> !</p>
+<p>Kao pomoć možete koristiti priloženu klasu <code>Material</code>, ali i ne morate. Svaka instanca ove klase predstavlja jedan materijal za učenje, tj. datoteku, npr. &quot;01-Uvod.pdf&quot; je jedan materijal, nalazi se (zajedno s još nekoliko drugih materijala) u zip arhivi &quot;asp.zip&quot;.</p>
+<p>Za rad sa zip arhivama možete koristiti klase <code>ZipFile</code> i <code>ZipFileEntry</code>, a obilazak svih datoteka(&quot;ZipFileEntries&quot;) unutar jedne zip arhive najlakše je obaviti koristeći metode Stream API-ja, npr. &quot;<code>zipFile.stream().forEach(entry -&gt; {...}</code>&quot;</p>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code class="language-java">	Path folder = Path.of(&quot;src/main/resources/&quot;);
+	MaterialsFileVisitor visitor = new MaterialsFileVisitor();
+	
+	try {
+		Files.walkFileTree(folder, visitor);
+	} catch (IOException e) {			
+		e.printStackTrace();
+	}
+
+	System.out.println(&quot;Total material count: &quot; + visitor.getTotalMaterialCount();
+	System.out.println(&quot;The biggest file: &quot; + visitor.getBiggestFileName();
+	System.out.println(&quot;PDF count for OOP.zip: &quot; + visitor.getPdfCount(&quot;OOP.zip&quot;);
+	System.out.println(&quot;Size of the uncompressed zip file: &quot; + visitor.getCourseMaterialUncompressedSize(&quot;OOP.zip&quot;);
+	System.out.println(&quot;Size of the compressed zip file: &quot; + visitor.getCourseMaterialCompresedSize(&quot;OOP.zip&quot;);
+
+</code></pre>
+<p><strong>Očekivani izlaz za testni primjer:</strong>
+(Moguće je da će se na vašem računalu vrijednosti u posljednje dvije linije razlikovati od primjera, no to neće utjecati na provjeru ispravnosti vašeg rješenja)</p>
+<pre class="line-numbers"><code>Total material count: 12
+The biggest file: 01-Uvod.pdf
+PDF count for OOP.zip: 2
+Size of the uncompressed OOP.zip file: 786692
+Size of the compressed OOP.zip file: 690407
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

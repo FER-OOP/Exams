@@ -1,0 +1,266 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p>Sve klase i sučelja imaju vidljivost postavljenu na <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="634px" preserveAspectRatio="none" style="width:1449px;height:634px;background:#FFFFFF;" version="1.1" viewBox="0 0 1449 634" width="1449px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class ProjectPriority-->
+<g id="elem_ProjectPriority">
+<rect codeLine="1" fill="#F1F1F1" height="97.4648" id="ProjectPriority" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="277.1" y="23.27"/>
+<ellipse cx="292.1" cy="39.27" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M295.7143,45.77 L287.9945,45.77 L287.9945,33.3769 L295.7143,33.3769 L295.7143,35.5351 L290.4433,35.5351 L290.4433,38.208 L295.2162,38.208 L295.2162,40.3662 L290.4433,40.3662 L290.4433,43.6118 L295.7143,43.6118 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="306.1" y="44.561">ProjectPriority</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="278.1" x2="404.1" y1="55.27" y2="55.27"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="283.1" y="72.8052">LOW</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="283.1" y="89.2934">NORMAL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="283.1" y="105.7817">HIGH</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="278.1" x2="404.1" y1="112.7348" y2="112.7348"/>
+</g>
+<!--class Project-->
+<g id="elem_Project">
+<rect codeLine="7" fill="#F1F1F1" height="212.8828" id="Project" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="441" x="162.6" y="254"/>
+<ellipse cx="355.35" cy="270" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M357.8231,276.1431 Q357.2421,276.4419 356.6029,276.5913 Q355.9638,276.7407 355.2582,276.7407 Q352.7514,276.7407 351.4315,275.0889 Q350.1117,273.437 350.1117,270.3159 Q350.1117,267.1865 351.4315,265.5347 Q352.7514,263.8828 355.2582,263.8828 Q355.9638,263.8828 356.6112,264.0322 Q357.2587,264.1816 357.8231,264.4805 L357.8231,267.2031 Q357.1923,266.6221 356.5988,266.3523 Q356.0053,266.0825 355.3744,266.0825 Q354.0297,266.0825 353.3449,267.1492 Q352.6601,268.2158 352.6601,270.3159 Q352.6601,272.4077 353.3449,273.4744 Q354.0297,274.541 355.3744,274.541 Q356.0053,274.541 356.5988,274.2712 Q357.1923,274.0015 357.8231,273.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="375.85" y="275.291">Project</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="163.6" x2="602.6" y1="286" y2="286"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="170.6" y="296.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="182.6" y="303.5352">id: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="170.6" y="313.2324"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="182.6" y="320.0234">description: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="170.6" y="329.7207"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="182.6" y="336.5117">priority: ProjectPriority {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="170.6" y="346.209"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="182.6" y="353">done: boolean</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="163.6" x2="602.6" y1="359.9531" y2="359.9531"/>
+<ellipse cx="173.6" cy="373.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="415" x="182.6" y="377.4883">Project(id: String, description: String, priority: ProjectPriority)</text>
+<ellipse cx="173.6" cy="390.1855" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="182.6" y="393.9766">markAsDone(): void</text>
+<ellipse cx="173.6" cy="406.6738" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="182.6" y="410.4648">isDone(): boolean</text>
+<ellipse cx="173.6" cy="423.1621" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="182.6" y="426.9531">getId(): String</text>
+<ellipse cx="173.6" cy="439.6504" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="182.6" y="443.4414">getPriority(): ProjectPriority</text>
+<ellipse cx="173.6" cy="456.1387" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="182.6" y="459.9297">toString(): String</text>
+</g>
+<!--class ProjectManager-->
+<g id="elem_ProjectManager">
+<rect codeLine="21" fill="#F1F1F1" height="130.4414" id="ProjectManager" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="280" x="464.1" y="7"/>
+<ellipse cx="546.35" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M548.8231,29.1431 Q548.2421,29.4419 547.6029,29.5913 Q546.9638,29.7407 546.2582,29.7407 Q543.7514,29.7407 542.4315,28.0889 Q541.1117,26.437 541.1117,23.3159 Q541.1117,20.1865 542.4315,18.5347 Q543.7514,16.8828 546.2582,16.8828 Q546.9638,16.8828 547.6112,17.0322 Q548.2587,17.1816 548.8231,17.4805 L548.8231,20.2031 Q548.1923,19.6221 547.5988,19.3523 Q547.0053,19.0825 546.3744,19.0825 Q545.0297,19.0825 544.3449,20.1492 Q543.6601,21.2158 543.6601,23.3159 Q543.6601,25.4077 544.3449,26.4744 Q545.0297,27.541 546.3744,27.541 Q547.0053,27.541 547.5988,27.2712 Q548.1923,27.0015 548.8231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="566.85" y="28.291">ProjectManager</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="465.1" x2="743.1" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="472.1" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254" x="484.1" y="56.5352">projects: Map&lt;String, Project&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="465.1" x2="743.1" y1="63.4883" y2="63.4883"/>
+<ellipse cx="475.1" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="484.1" y="81.0234">addProject(project: Project): void</text>
+<ellipse cx="475.1" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="484.1" y="97.5117">removeProject(id: String): void</text>
+<ellipse cx="475.1" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="484.1" y="114">completeProject(id: String): void</text>
+<ellipse cx="475.1" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="484.1" y="130.4883">printAllProjects(): void</text>
+</g>
+<!--class ProjectException-->
+<g id="elem_ProjectException">
+<rect codeLine="30" fill="#F1F1F1" height="64.4883" id="ProjectException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="260" x="1056.1" y="39.76"/>
+<ellipse cx="1124.35" cy="55.76" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1126.8231,61.9031 Q1126.2421,62.2019 1125.6029,62.3513 Q1124.9638,62.5007 1124.2582,62.5007 Q1121.7514,62.5007 1120.4315,60.8489 Q1119.1117,59.197 1119.1117,56.0759 Q1119.1117,52.9465 1120.4315,51.2947 Q1121.7514,49.6428 1124.2582,49.6428 Q1124.9638,49.6428 1125.6112,49.7922 Q1126.2587,49.9416 1126.8231,50.2405 L1126.8231,52.9631 Q1126.1923,52.3821 1125.5988,52.1123 Q1125.0053,51.8425 1124.3744,51.8425 Q1123.0297,51.8425 1122.3449,52.9092 Q1121.6601,53.9758 1121.6601,56.0759 Q1121.6601,58.1677 1122.3449,59.2344 Q1123.0297,60.301 1124.3744,60.301 Q1125.0053,60.301 1125.5988,60.0312 Q1126.1923,59.7615 1126.8231,59.1804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="1144.85" y="61.051">ProjectException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1057.1" x2="1315.1" y1="71.76" y2="71.76"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1057.1" x2="1315.1" y1="79.76" y2="79.76"/>
+<ellipse cx="1067.1" cy="93.5041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="234" x="1076.1" y="97.2952">ProjectException(message: String)</text>
+</g>
+<!--class DuplicateProjectException-->
+<g id="elem_DuplicateProjectException">
+<rect codeLine="34" fill="#F1F1F1" height="64.4883" id="DuplicateProjectException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="324" x="663.1" y="327.76"/>
+<ellipse cx="731.35" cy="343.76" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M733.8231,349.9031 Q733.2421,350.2019 732.6029,350.3513 Q731.9638,350.5007 731.2582,350.5007 Q728.7514,350.5007 727.4315,348.8489 Q726.1117,347.197 726.1117,344.0759 Q726.1117,340.9465 727.4315,339.2947 Q728.7514,337.6428 731.2582,337.6428 Q731.9638,337.6428 732.6112,337.7922 Q733.2587,337.9416 733.8231,338.2405 L733.8231,340.9631 Q733.1923,340.3821 732.5988,340.1123 Q732.0053,339.8425 731.3744,339.8425 Q730.0297,339.8425 729.3449,340.9092 Q728.6601,341.9758 728.6601,344.0759 Q728.6601,346.1677 729.3449,347.2344 Q730.0297,348.301 731.3744,348.301 Q732.0053,348.301 732.5988,348.0312 Q733.1923,347.7615 733.8231,347.1804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="751.85" y="349.051">DuplicateProjectException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="664.1" x2="986.1" y1="359.76" y2="359.76"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="664.1" x2="986.1" y1="367.76" y2="367.76"/>
+<ellipse cx="674.1" cy="381.5041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="298" x="683.1" y="385.2952">DuplicateProjectException(message: String)</text>
+</g>
+<!--class ProjectNotFoundException-->
+<g id="elem_ProjectNotFoundException">
+<rect codeLine="38" fill="#F1F1F1" height="64.4883" id="ProjectNotFoundException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="328" x="1022.1" y="327.76"/>
+<ellipse cx="1090.35" cy="343.76" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1092.8231,349.9031 Q1092.2421,350.2019 1091.6029,350.3513 Q1090.9638,350.5007 1090.2582,350.5007 Q1087.7514,350.5007 1086.4315,348.8489 Q1085.1117,347.197 1085.1117,344.0759 Q1085.1117,340.9465 1086.4315,339.2947 Q1087.7514,337.6428 1090.2582,337.6428 Q1090.9638,337.6428 1091.6112,337.7922 Q1092.2587,337.9416 1092.8231,338.2405 L1092.8231,340.9631 Q1092.1923,340.3821 1091.5988,340.1123 Q1091.0053,339.8425 1090.3744,339.8425 Q1089.0297,339.8425 1088.3449,340.9092 Q1087.6601,341.9758 1087.6601,344.0759 Q1087.6601,346.1677 1088.3449,347.2344 Q1089.0297,348.301 1090.3744,348.301 Q1091.0053,348.301 1091.5988,348.0312 Q1092.1923,347.7615 1092.8231,347.1804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="1110.85" y="349.051">ProjectNotFoundException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1023.1" x2="1349.1" y1="359.76" y2="359.76"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1023.1" x2="1349.1" y1="367.76" y2="367.76"/>
+<ellipse cx="1033.1" cy="381.5041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="302" x="1042.1" y="385.2952">ProjectNotFoundException(message: String)</text>
+</g>
+<!--class ProjectAlreadyCompletedException-->
+<g id="elem_ProjectAlreadyCompletedException">
+<rect codeLine="42" fill="#F1F1F1" height="64.4883" id="ProjectAlreadyCompletedException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="387" x="189.6" y="563"/>
+<ellipse cx="257.85" cy="579" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M260.3231,585.1431 Q259.7421,585.4419 259.1029,585.5913 Q258.4638,585.7407 257.7582,585.7407 Q255.2514,585.7407 253.9315,584.0889 Q252.6117,582.437 252.6117,579.3159 Q252.6117,576.1865 253.9315,574.5347 Q255.2514,572.8828 257.7582,572.8828 Q258.4638,572.8828 259.1112,573.0322 Q259.7587,573.1816 260.3231,573.4805 L260.3231,576.2031 Q259.6923,575.6221 259.0988,575.3523 Q258.5053,575.0825 257.8744,575.0825 Q256.5297,575.0825 255.8449,576.1492 Q255.1601,577.2158 255.1601,579.3159 Q255.1601,581.4077 255.8449,582.4744 Q256.5297,583.541 257.8744,583.541 Q258.5053,583.541 259.0988,583.2712 Q259.6923,583.0015 260.3231,582.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="278.35" y="584.291">ProjectAlreadyCompletedException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="190.6" x2="575.6" y1="595" y2="595"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="190.6" x2="575.6" y1="603" y2="603"/>
+<ellipse cx="200.6" cy="616.7441" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="361" x="209.6" y="620.5352">ProjectAlreadyCompletedException(message: String)</text>
+</g>
+<!--reverse link ProjectException to DuplicateProjectException-->
+<g id="link_ProjectException_DuplicateProjectException">
+<path d="M1129.47,117.86 C1055.9,176.15 929.28,276.47 865.01,327.38 " fill="none" id="ProjectException-backto-DuplicateProjectException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1124.88,112.57,1144.9,105.64,1133.57,123.55,1124.88,112.57" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ProjectException to ProjectNotFoundException-->
+<g id="link_ProjectException_ProjectNotFoundException">
+<path d="M1186.1,125.88 C1186.1,185.06 1186.1,279.01 1186.1,327.6 " fill="none" id="ProjectException-backto-ProjectNotFoundException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1179.1,126.22,1186.1,106.21,1193.1,126.21,1179.1,126.22" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ProjectException to ProjectAlreadyCompletedException-->
+<g id="link_ProjectException_ProjectAlreadyCompletedException">
+<path d="M1260.55,116.64 C1300.48,144.58 1345.93,184.8 1368.1,234 C1414.1,336.12 1442.84,402.59 1368.1,486 C1316.34,543.76 848.83,573.85 576.91,586.6 " fill="none" id="ProjectException-backto-ProjectAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1256.67,122.46,1243.95,105.52,1264.46,110.83,1256.67,122.46" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ProjectManager to Project-->
+<g id="link_ProjectManager_Project">
+<path codeLine="46" d="M546.12,148.03 C521.08,180.44 491.34,218.93 464.16,254.1 " fill="none" id="ProjectManager-backto-Project" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="553.85,138.03,547.0149,140.3281,546.5074,147.5214,553.3425,145.2232,553.85,138.03" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="514.39" y="200.5684">manages</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="524.7855" y="158.02">1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="463.8925" y="243.3195">*</text>
+</g>
+<!--link ProjectManager to DuplicateProjectException-->
+<g id="link_ProjectManager_DuplicateProjectException">
+<path codeLine="48" d="M653.42,136.83 C697.61,194.01 760.85,275.86 796.96,322.59 " fill="none" id="ProjectManager-to-DuplicateProjectException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="799.87,326.36,797.5331,316.7924,796.8132,322.4033,791.2023,321.6833,799.87,326.36" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="702.37" y="200.5684">throws</text>
+</g>
+<!--link ProjectManager to ProjectNotFoundException-->
+<g id="link_ProjectManager_ProjectNotFoundException">
+<path codeLine="49" d="M743.95,120.43 C822.61,149.24 921.5,189.08 1005.1,234 C1053.83,260.19 1105.38,296.77 1140.94,323.59 " fill="none" id="ProjectManager-to-ProjectNotFoundException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="1144.86,326.56,1140.0945,317.9409,1140.872,323.544,1135.2689,324.3216,1144.86,326.56" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="943" y="200.5684">throws</text>
+</g>
+<!--link ProjectManager to ProjectAlreadyCompletedException-->
+<g id="link_ProjectManager_ProjectAlreadyCompletedException">
+<path codeLine="50" d="M475.47,136.8 C458.1,144.2 440.32,151.17 423.1,157 C273.47,207.66 174.96,110.79 76.1,234 C6,321.36 11.39,394.58 76.1,486 C101.98,522.57 141.27,546.87 183.18,562.99 " fill="none" id="ProjectManager-to-ProjectAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="187.69,564.68,180.6675,557.7746,183.0084,562.9244,177.8585,565.2652,187.69,564.68" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="77.1" y="365.0684">throws</text>
+</g>
+<!--link Project to ProjectAlreadyCompletedException-->
+<g id="link_Project_ProjectAlreadyCompletedException">
+<path codeLine="51" d="M383.1,465.68 C383.1,497.92 383.1,531.39 383.1,556.1 " fill="none" id="Project-to-ProjectAlreadyCompletedException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="383.1,560.99,387.1,551.99,383.1,555.99,379.1,551.99,383.1,560.99" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="384.1" y="529.5684">throws</text>
+</g>
+<!--SRC=[bPD9QyCm48Nl_XN2fsmEz6fAm3Hj4yX6U-XPjQQfMbaoaf8cXFptohknhImNOKRlpQTvie3l8hIHuWT2lP5KIAgFwEGWj5X_c7MrVbi62_Cncx_EdBFZX0mhLHXIeOSeyT6xbfHlqUcBSipEQPc02YMDDHMySp_ESNwRN-yYEFZeKmW6c2SLpop3mjAhsACkuCXEwQTz8Yn_0pKra5xVHtj1ILgcPQaY3z4Mz9manQnvKIiw9ZiDI2hH8jFNdCqabvZZBSWyq3WhAXyjSVnOJ99B9_LuiZ0m8KKUkRKyI7qe2P7OGpkvkYOKKSn0Nr6PKBaE6CjLgiokETVp8OJqGjB9XgroBmAbpEGbfEemtSMCXhWyIjKA3XeuiJAinWkmNBeI-aNiEBcPPVDTHmLC0YR7fpplkv5MVoUwyPkv3ouQU1vo1sxvbdtp5f9TrLAFnvCBj-4Z_It5d-foMMEzmMGFg6c-q_KF]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Potrebno je implementirati sustav za upravljanje portfeljem projekata. Sustav se sastoji od klase koja predstavlja pojedinačni projekt i klase koja upravlja zbirkom svih projekata, uz odgovarajuću obradu mogućih grešaka putem hijerarhije vlastitih iznimki.</p>
+<p>Klasa <code>Project</code> predstavlja jedan projekt. Svaki projekt ima <code>id</code> (jedinstveni tekstualni identifikator), <code>description</code> (opis projekta), 'priority' (prioritet projekta, vrijednost enumeracije 'ProjectPriority') te <code>done</code> (logičku vrijednost koja označava je li projekt dovršen). Metoda <code>markAsDone()</code> postavlja projekt kao dovršen. U slučaju da je projekt već bio dovršen, ova metoda baca iznimku <code>ProjectAlreadyCompletedException</code>.</p>
+<p>Enumeracija 'ProjectPriority' definira tri diskretne vrijednosti: LOW, NORMAL, HIGH.</p>
+<p>Klasa <code>ProjectManager</code> predstavlja upravitelja koji rukuje svim projektima u portfelju. Unutar klase, projekti se pohranjuju u mapi (<code>Map&lt;String, Project&gt;</code>) gdje je ključ identifikator projekta (<code>id</code>), što osigurava da ne mogu postojati dva projekta s istim identifikatorom. Klasa definira sljedeće metode:</p>
+<ul>
+<li><code>addProject(Project project)</code>: Dodaje novi projekt u portfelj. Ako projekt s istim id-em već postoji, metoda baca iznimku <code>DuplicateProjectException</code>.</li>
+<li><code>removeProject(String id)</code>: Uklanja projekt s predanim <code>id</code>-em. Ako projekt nije pronađen, baca se <code>ProjectNotFoundException</code>.</li>
+<li><code>completeProject(String id)</code>: Označava projekt s predanim <code>id</code>-em kao dovršen. Ova metoda također može baciti <code>ProjectNotFoundException</code> (ako projekt ne postoji) ili <code>ProjectAlreadyCompletedException</code> (ako je projekt već dovršen).</li>
+<li><code>printAllProjects()</code>: Ispisuje sve projekte iz portfelja.</li>
+</ul>
+<p>Za obradu grešaka, sustav definira hijerarhiju provjeravanih iznimki (<i>checked exceptions</i>):</p>
+<ul>
+<li><code>ProjectException</code> - bazna klasa za sve iznimke vezane uz rukovanje projektima. Služi kako bi se omogućilo hvatanje svih specifičnih grešaka jednim catch blokom.</li>
+<li><code>DuplicateProjectException</code> - nasljeđuje <code>ProjectException</code>, a baca se pri pokušaju dodavanja projekta čiji id već postoji.</li>
+<li><code>ProjectNotFoundException</code> - nasljeđuje <code>ProjectException</code>, a baca se ako se pokuša pristupiti projektu koji ne postoji u portfelju.</li>
+<li><code>ProjectAlreadyCompletedException</code> - nasljeđuje <code>ProjectException</code>, a baca se pri pokušaju označavanja već dovršenog projekta kao ponovno dovršenog.</li>
+</ul>
+<p>Sve metode koje mogu uzrokovati grešku (<code>addProject</code>, <code>removeProject</code>, <code>completeProject</code>) moraju u svom potpisu deklarirati da bacaju odgovarajuće ovdje navedene iznimke.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        ProjectManager manager = new ProjectManager();
+
+        System.out.println(&quot;--- 1. Adding initial projects ---&quot;);
+        try {
+			manager.addProject(new Project(&quot;WEB-APP&quot;, &quot;Development of a new web application for a client.&quot;, ProjectPriority.NORMAL));
+            manager.addProject(new Project(&quot;MOBILE-GAME&quot;, &quot;Creation of a mobile game for Android and iOS.&quot;, ProjectPriority.LOW));
+            manager.addProject(new Project(&quot;AI-RESEARCH&quot;, &quot;Researching new AI models for language processing.&quot;, ProjectPriority.HIGH));
+        } catch (ProjectException e) {
+            System.err.println(&quot;Error during initialization: &quot; + e.getMessage());
+        }
+        manager.printAllProjects();
+
+        System.out.println(&quot;\n--- 2. Attempting to add a project with a duplicate ID ---&quot;);
+        try {
+            manager.addProject(new Project(&quot;WEB-APP&quot;, &quot;Upgrading the existing web application.&quot;, ProjectPriority.NORMAL));
+        } catch (ProjectException e) {
+            System.err.println(&quot;Expected error: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;\n--- 3. Marking a project as complete ---&quot;);
+        try {
+            manager.completeProject(&quot;MOBILE-GAME&quot;);
+        } catch (ProjectException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+        System.out.println(&quot;State after completing a project:&quot;);
+        manager.printAllProjects();
+
+        System.out.println(&quot;\n--- 4. Attempting to remove a non-existent project ---&quot;);
+        try {
+            manager.removeProject(&quot;DATA-ANALYSIS&quot;);
+        } catch (ProjectException e) {
+            System.err.println(&quot;Expected error: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;\n--- 5. Final state of the project portfolio ---&quot;);
+        manager.printAllProjects();
+    }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">--- 1. Adding initial projects ---
+[ ] (HIGH) AI-RESEARCH: Researching new AI models for language processing.
+[ ] (LOW) MOBILE-GAME: Creation of a mobile game for Android and iOS.
+[ ] (NORMAL) WEB-APP: Development of a new web application for a client.
+
+--- 2. Attempting to add a project with a duplicate ID ---
+Expected error: Project with id 'WEB-APP' already exists.
+
+--- 3. Marking a project as complete ---
+State after completing a project:
+[ ] (HIGH) AI-RESEARCH: Researching new AI models for language processing.
+[X] (LOW) MOBILE-GAME: Creation of a mobile game for Android and iOS.
+[ ] (NORMAL) WEB-APP: Development of a new web application for a client.
+
+--- 4. Attempting to remove a non-existent project ---
+Expected error: Project with id 'DATA-ANALYSIS' does not exist.
+
+--- 5. Final state of the project portfolio ---
+[ ] (HIGH) AI-RESEARCH: Researching new AI models for language processing.
+[X] (LOW) MOBILE-GAME: Creation of a mobile game for Android and iOS.
+[ ] (NORMAL) WEB-APP: Development of a new web application for a client.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

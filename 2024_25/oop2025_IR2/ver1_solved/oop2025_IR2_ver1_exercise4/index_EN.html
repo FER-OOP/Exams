@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The file <code>match_results.csv</code> contains data about players who participated in online tournaments in a popular computer game.</p>
+<p>Each row of the file contains the following data:</p>
+<pre class="line-numbers"><code>year; player name; points; number of wins; map
+</code></pre>
+<p>e.g., a snippet from the file</p>
+<pre class="line-numbers"><code>2025;WittyOstrich;12;2;Tilted
+2025;Vioxid;17;3;Gun game
+2025;Dr0nai;2;0;Gun game
+</code></pre>
+<p>says that WittyOstrich on the “Tilted” map in 2025 collected 12 points with 2 wins, while in the same year on the “Gun game” map Vioxid and Dr0nai scored 17 and 2 points, respectively.</p>
+<p>For simplicity, the data are stored in a collection of <code>PlayerResult</code> objects that contain information about the player (<code>int year</code>, <code>String playerName</code>, <code>int points</code>, <code>int wins</code>, <code>String mapName</code>).</p>
+<p>Your task is, using the Java Stream API, to implement the following methods:</p>
+<ul>
+<li>
+<p><code>long getNumberOfMapsInAYear(Stream&lt;PlayerResult&gt; s, int year)</code> – returns the number of distinct maps that were played in a given year</p>
+</li>
+<li>
+<p><code>int getWinsInAYear(Stream&lt;PlayerResult&gt; s, int year, String playerName)</code> – for a given player and year, returns that player’s total number of wins in the specified year</p>
+</li>
+<li>
+<p><code>int getMostPointsInAYear(Stream&lt;PlayerResult&gt; s, int year)</code> – returns the highest number of points that any player accumulated in the given year. You can solve this using <strong>Collectors.groupingBy</strong> or, for example, by using a few statements, an auxiliary map, and the <code>merge</code> method to populate the auxiliary map with data.</p>
+</li>
+<li>
+<p><code>List&lt;String&gt; getPlayerWithMaxWins(Collection&lt;PlayerResult&gt; c, int year, String mapName)</code> – returns a list containing the name(s) of the player(s) who collected the most wins in a given year on a given map.</p>
+</li>
+</ul>
+<p><strong>Example run:</strong></p>
+<pre class="line-numbers"><code class="language-java">	System.out.println(&quot;Number of different maps played in a 2024: &quot; + getNumberOfMapsInAYear(list.stream(), 2024));
+	System.out.println(&quot;Number of wins for WittyOstrich in a 2025: &quot; + getWinsInAYear(list.stream(), 2025, &quot;WittyOstrich&quot;));
+	System.out.println(&quot;Most points in a 2022: &quot; + getMostPointsInAYear(list.stream(), 2022));
+	System.out.println(&quot;Players with most wins in 2024: &quot; + getPlayerWithMaxWins(list, 2025, &quot;Zone wars&quot;));
+</code></pre>
+<p><strong>Expected output for the sample test:</strong></p>
+<pre class="line-numbers"><code>Number of different maps played in a 2024: 3
+Number of wins for WittyOstrich in a 2025: 4
+Most points in a 2022: 28
+Players with most wins in 2024: [Vioxid, WittyOstrich]
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

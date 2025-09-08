@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa.</p>
+<p>U svim klasama je potrebno i implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p>Sve klase i sučelja imaju vidljivost postavljenu na <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="800px" preserveAspectRatio="none" style="width:882px;height:800px;background:#FFFFFF;" version="1.1" viewBox="0 0 882 800" width="882px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Content-->
+<g id="elem_Content">
+<rect codeLine="1" fill="#F1F1F1" height="196.3945" id="Content" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="291" x="216.5" y="214.44"/>
+<ellipse cx="324.25" cy="230.44" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M324.1133,225.7881 L322.9595,230.8599 L325.2754,230.8599 Z M322.6191,223.5469 L325.6157,223.5469 L328.9609,235.94 L326.5122,235.94 L325.7485,232.877 L322.4697,232.877 L321.7227,235.94 L319.2739,235.94 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="55" x="344.75" y="235.731">Content</text>
+<rect fill="#FFFFFF" height="16.1328" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="10" x="500.5" y="211.44"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="8" x="501.5" y="224.0416">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="217.5" x2="506.5" y1="246.44" y2="246.44"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="224.5" y="257.1841"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="236.5" y="263.9752">id : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="224.5" y="273.6724"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="236.5" y="280.4634">title : String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="224.5" y="290.1607"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="236.5" y="296.9517">data : T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="217.5" x2="506.5" y1="303.9048" y2="303.9048"/>
+<ellipse cx="227.5" cy="317.649" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="265" x="236.5" y="321.44">Content(id: String, title: String, data: T)</text>
+<ellipse cx="227.5" cy="334.1373" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="236.5" y="337.9283">getId(): String</text>
+<ellipse cx="227.5" cy="350.6255" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="236.5" y="354.4166">getTitle(): String</text>
+<ellipse cx="227.5" cy="367.1138" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="236.5" y="370.9048">getData(): T</text>
+<ellipse cx="227.5" cy="383.6021" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="236.5" y="387.3931">getDescription(): String</text>
+<ellipse cx="227.5" cy="400.0904" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="172" x="236.5" y="403.8814">describeContent(): String</text>
+</g>
+<!--class Book-->
+<g id="elem_Book">
+<rect codeLine="13" fill="#F1F1F1" height="80.9766" id="Book" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="302" x="7" y="513.06"/>
+<ellipse cx="136.75" cy="529.06" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M139.2231,535.2031 Q138.6421,535.5019 138.0029,535.6513 Q137.3638,535.8007 136.6582,535.8007 Q134.1514,535.8007 132.8315,534.1489 Q131.5117,532.497 131.5117,529.3759 Q131.5117,526.2465 132.8315,524.5947 Q134.1514,522.9428 136.6582,522.9428 Q137.3638,522.9428 138.0112,523.0922 Q138.6587,523.2416 139.2231,523.5405 L139.2231,526.2631 Q138.5923,525.6821 137.9988,525.4123 Q137.4053,525.1425 136.7744,525.1425 Q135.4297,525.1425 134.7449,526.2092 Q134.0601,527.2758 134.0601,529.3759 Q134.0601,531.4677 134.7449,532.5344 Q135.4297,533.601 136.7744,533.601 Q137.4053,533.601 137.9988,533.3312 Q138.5923,533.0615 139.2231,532.4804 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="157.25" y="534.351">Book</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="308" y1="545.06" y2="545.06"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="308" y1="553.06" y2="553.06"/>
+<ellipse cx="18" cy="566.8041" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="276" x="27" y="570.5952">Book(id: String, title: String, data: String)</text>
+<ellipse cx="18" cy="583.2924" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="27" y="587.0834">describeContent(): String</text>
+</g>
+<!--class DVD-->
+<g id="elem_DVD">
+<rect codeLine="18" fill="#F1F1F1" height="80.9766" id="DVD" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="334" x="224" y="712.25"/>
+<ellipse cx="372.25" cy="728.25" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M374.7231,734.3931 Q374.1421,734.6919 373.5029,734.8413 Q372.8638,734.9907 372.1582,734.9907 Q369.6514,734.9907 368.3315,733.3389 Q367.0117,731.687 367.0117,728.5659 Q367.0117,725.4365 368.3315,723.7847 Q369.6514,722.1328 372.1582,722.1328 Q372.8638,722.1328 373.5112,722.2822 Q374.1587,722.4316 374.7231,722.7305 L374.7231,725.4531 Q374.0923,724.8721 373.4988,724.6023 Q372.9053,724.3325 372.2744,724.3325 Q370.9297,724.3325 370.2449,725.3992 Q369.5601,726.4658 369.5601,728.5659 Q369.5601,730.6577 370.2449,731.7244 Q370.9297,732.791 372.2744,732.791 Q372.9053,732.791 373.4988,732.5212 Q374.0923,732.2515 374.7231,731.6704 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="392.75" y="733.541">DVD</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="225" x2="557" y1="744.25" y2="744.25"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="225" x2="557" y1="752.25" y2="752.25"/>
+<ellipse cx="235" cy="765.9941" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="244" y="769.7852">DVD(id: String, title: String, duration: Integer)</text>
+<ellipse cx="235" cy="782.4824" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="244" y="786.2734">describeContent(): String</text>
+</g>
+<!--class Magazine-->
+<g id="elem_Magazine">
+<rect codeLine="23" fill="#F1F1F1" height="163.418" id="Magazine" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="460" x="415" y="471.84"/>
+<ellipse cx="607.75" cy="487.84" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M610.2231,493.9831 Q609.6421,494.2819 609.0029,494.4313 Q608.3638,494.5807 607.6582,494.5807 Q605.1514,494.5807 603.8315,492.9289 Q602.5117,491.277 602.5117,488.1559 Q602.5117,485.0265 603.8315,483.3747 Q605.1514,481.7228 607.6582,481.7228 Q608.3638,481.7228 609.0112,481.8722 Q609.6587,482.0216 610.2231,482.3205 L610.2231,485.0431 Q609.5923,484.4621 608.9988,484.1923 Q608.4053,483.9225 607.7744,483.9225 Q606.4297,483.9225 605.7449,484.9892 Q605.0601,486.0558 605.0601,488.1559 Q605.0601,490.2477 605.7449,491.3144 Q606.4297,492.381 607.7744,492.381 Q608.4053,492.381 608.9988,492.1112 Q609.5923,491.8415 610.2231,491.2604 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="628.25" y="493.131">Magazine</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="416" x2="874" y1="503.84" y2="503.84"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="423" y="514.5841"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="435" y="521.3752">supplementDVD : DVD</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="416" x2="874" y1="528.3283" y2="528.3283"/>
+<ellipse cx="426" cy="542.0724" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="435" y="545.8634">Magazine(id: String, title: String, data: String)</text>
+<ellipse cx="426" cy="558.5607" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="434" x="435" y="562.3517">Magazine(id: String, title: String, data: String, supplement: DVD)</text>
+<ellipse cx="426" cy="575.049" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="435" y="578.84">getSupplementDVD(): DVD</text>
+<ellipse cx="426" cy="591.5373" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="325" x="435" y="595.3283">setSupplementDVD(supplementDVD: DVD): void</text>
+<ellipse cx="426" cy="608.0255" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="435" y="611.8166">describeContent(): String</text>
+<ellipse cx="426" cy="624.5138" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="435" y="628.3048">getDescription(): String</text>
+</g>
+<!--class MediaCollection-->
+<g id="elem_MediaCollection">
+<rect codeLine="33" fill="#F1F1F1" height="130.4414" id="MediaCollection" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="376" x="174" y="7"/>
+<ellipse cx="302.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M305.2231,29.1431 Q304.6421,29.4419 304.0029,29.5913 Q303.3638,29.7407 302.6582,29.7407 Q300.1514,29.7407 298.8315,28.0889 Q297.5117,26.437 297.5117,23.3159 Q297.5117,20.1865 298.8315,18.5347 Q300.1514,16.8828 302.6582,16.8828 Q303.3638,16.8828 304.0112,17.0322 Q304.6587,17.1816 305.2231,17.4805 L305.2231,20.2031 Q304.5923,19.6221 303.9988,19.3523 Q303.4053,19.0825 302.7744,19.0825 Q301.4297,19.0825 300.7449,20.1492 Q300.0601,21.2158 300.0601,23.3159 Q300.0601,25.4077 300.7449,26.4744 Q301.4297,27.541 302.7744,27.541 Q303.4053,27.541 303.9988,27.2712 Q304.5923,27.0015 305.2231,26.4204 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="323.25" y="28.291">MediaCollection</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="175" x2="549" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="182" y="49.7441"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="194" y="56.5352">items: List&lt;Content&lt;?&gt;&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="175" x2="549" y1="63.4883" y2="63.4883"/>
+<ellipse cx="185" cy="77.2324" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="194" y="81.0234">addItem(item: Content&lt;?&gt;): void</text>
+<ellipse cx="185" cy="93.7207" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="227" x="194" y="97.5117">getAllItems() : List&lt;Content&lt;?&gt;&gt;</text>
+<ellipse cx="185" cy="110.209" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="350" x="194" y="114">getItemsOfTheSameTypeAsObject(type: T): List&lt;T&gt;</text>
+<ellipse cx="185" cy="126.6973" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="194" y="130.4883">printAllDescriptions(): void</text>
+</g>
+<!--reverse link Content to Book-->
+<g id="link_Content_Book">
+<path d="M265.08,427.15 C238.81,457.9 212.1,489.19 191.92,512.82 " fill="none" id="Content-backto-Book" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="259.44,422.97,277.75,412.31,270.08,432.06,259.44,422.97" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Content to DVD-->
+<g id="link_Content_DVD">
+<path d="M369.87,432.58 C376.03,525.64 384.23,649.4 388.37,711.94 " fill="none" id="Content-backto-DVD" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="362.89,433.07,368.55,412.65,376.86,432.14,362.89,433.07" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Content to Magazine-->
+<g id="link_Content_Magazine">
+<path d="M493.74,424.85 C512.3,440.52 531.09,456.39 548.82,471.35 " fill="none" id="Content-backto-Magazine" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="489.44,430.38,478.67,412.13,498.47,419.68,489.44,430.38" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link MediaCollection to Content-->
+<g id="link_MediaCollection_Content">
+<path codeLine="41" d="M362,137.74 C362,159.39 362,184.11 362,207.98 " fill="none" id="MediaCollection-to-Content" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="362,212.84,366,203.84,362,207.84,358,203.84,362,212.84" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="365" y="173.5953"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="375" y="181.0084">items</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="6" x="355.7703" y="203.8417">*</text>
+</g>
+<!--link Magazine to DVD-->
+<g id="link_Magazine_DVD">
+<path codeLine="42" d="M540.59,635.61 C508.64,660.41 474.73,686.74 447.28,708.05 " fill="none" id="Magazine-to-DVD" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="443.43,711.04,452.9935,708.6864,447.3814,707.9762,448.0915,702.3641,443.43,711.04" style="stroke:#181818;stroke-width:1.0;"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="498.25" y="671.4053"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="508.25" y="678.8184">supplementDVD</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="424.7275" y="701.5696">0..1</text>
+</g>
+<!--SRC=[bLDDRy8m3BttLrYSoaRHTerG9mONf4qSY7OFZTTb2stLX6aRuhyl7wGjR7mTRJ_xlMVPRAbqpJ8DcMHAmQGiD1PwH5FOH00920u45heMHUvYBRJ4_HHdcfaCDS5j610B7Z03tzE65c_WVOVFKSzutEyCT3bgM_wcfwRLPccJG9NLejAYB0xG6xPpjWNkG4iCsbhWDegyxyUo_03yCcNUBC5juDQLpjlnaVTq0T_qPNg4pbHEigrhPjqIc9ck7EkBAPzPpdv4WV_o9g3MLILnPH9M6x4wtEJGTjqAhkqQTFWTTtCTYwukwoi8KuUrFGT-287FKl0p6pfvIktwa0isAQN4p4B2UsXSAG9FGkbH-9s7D7Kp6USpKuujXa1RxQeol6CfBKp5VJWooFw8HSnVwHiks0hfTuLZDL- -6osnDe5zfrqpzJsLKMz7TrofE30RKuTsaYI5taslEGe2YVCMDMVZ47V3uNqF_8KaUmkFVW40]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Potrebno je implementirati jednostavan sustav za upravljanje kolekcijom multimedijskih zapisa u knjižnici. Sustav mora podržavati različite vrste građe, kao što su knjige, časopisi i DVD-ovi.</p>
+<p>Apstraktna generička klasa <code>Content&lt;T&gt;</code> predstavlja temeljnu jedinicu građe u knjižnici. Svaka jedinica građe ima jedinstveni <code>id</code>, <code>title</code> (naziv) i <code>data</code> (podatke) čiji je tip definiran generičkim parametrom <code>T</code>. Klasa također definira apstraktnu metodu <code>describeContent()</code> koju konkretne podklase moraju implementirati kako bi pružile specifičan opis svog sadržaja (npr. sažetak teksta, trajanje medija). Pored toga, implementira i konkretnu metodu <code>getDescription()</code> koja vraća formatirani ispis s ID-em, nazivom i specifičnim opisom.</p>
+<p>Postoje tri konkretne vrste građe:</p>
+<ul>
+<li><code>Book</code> - predstavlja konkretnu knjigu. Nasljeđuje parametriziranu klasu <code>Content</code>. Podatak (<code>data</code>) je tipa <code>String</code>, a metoda <code>describeContent()</code> vraća prvih 30 znakova teksta. Ako je tekst duži od 30 znakova onda metoda uzima samo prvih 30 znakova teksta i na kraj dodaje tri točke &quot;...&quot;. U slučaju da je tekst prazan, metoda <code>describeContent()</code> vraća prazan niz znakova.</li>
+<li><code>DVD</code> - predstavlja konkretan DVD. Također nasljeđuje parametriziranu klasu <code>Content</code>. Podatak (<code>data</code>) je tipa <code>Integer</code> i označava trajanje u minutama, a metoda <code>describeContent()</code> vraća opis trajanja, npr. &quot;Duration: 55 minutes&quot;.</li>
+<li><code>Magazine</code> - predstavlja časopis. Isto kao <code>Book</code> nasljeđuje parametriziranu klasu <code>Content</code>. Također, isto kao u <code>Book</code> podatak (<code>data</code>) je tipa <code>String</code>, a metoda <code>describeContent()</code> vraća prvih 30 znakova teksta. Ako je tekst duži od 30 znakova onda metoda uzima samo prvih 30 znakova teksta i na kraj dodaje tri točke &quot;...&quot;. U slučaju da je tekst prazan, metoda <code>describeContent()</code> vraća prazan niz znakova. Ali, za razliku od <code>Book</code>, <code>Magazine</code> opcionalno može sadržavati DVD kao dodatni prilog (podatak <code>supplementDVD</code>). Ako ne sadržava, onda je vrijednost ovog podatka <code>null</code>. Ako <code>Magazine</code> sadrži dodatni <code>DVD</code>, tada <code>getDescription()</code> u <code>Magazine</code> kao izlaz vraća opis nadklase, dodaje niz &quot;\n + Includes: &quot; i dodaje opis podataka <code>supplementDVD</code>.</li>
+</ul>
+<p>Pogledati očekivani ispis za primjer uporabe ove dvije metode.</p>
+<p>Konačno, klasa <code>MediaCollection</code> predstavlja samu kolekciju svih medija. Ona sadrži listu svih jedinica građe (<code>List&lt;Content&lt;?&gt;&gt;</code>). Korištenjem zamjenskog znaka (<i>wildcard</i>), knjižnica može istovremeno pohraniti različite vrste građe (<code>Book</code>, <code>DVD</code> i <code>Magazine</code>). Klasa nudi nekoliko javnih metoda: metodu za dodavanje nove građe (<code>addItem</code>), metodu za dohvaćanje građe po generičkom tipu (<code>getItemsOfTheSameTypeAsObject</code>, npr. <code>Book</code>, <code>DVD</code> ili <code>Magazine</code>), metodu za dohvaćanje cijele kolekcije svih medija (<code>getAllItems</code>), te metodu za ispisivanje opisa cjelokupne građe (<code>printAllDescriptions</code>). Osigurati da promjene na vraćenoj listi neće imati utjecaja na građu pohranjenu u kolekciji svih medija.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">public class Main {
+    public static void main(String[] args) {
+        // Create a MediaCollection instance
+        MediaCollection collection = new MediaCollection();
+        
+		// Adding books to the collection
+        Book book1 = new Book(&quot;B-001&quot;, &quot;The Hobbit&quot;, &quot;In a hole in the ground there lived a hobbit.&quot;);
+        Book book2 = new Book(&quot;B-002&quot;, &quot;A Brief History of Time&quot;, &quot;Popular-science book.&quot;);
+        collection.addItem(book1);
+        collection.addItem(book2);
+        
+        // Adding DVDs to the collection
+        DVD dvd1 = new DVD(&quot;D-001&quot;, &quot;The Lord of the Rings: The Fellowship of the Ring&quot;, 178);
+        DVD dvd2 = new DVD(&quot;D-002&quot;, &quot;The Lord of the Rings: The Two Towers&quot;, 179);
+        collection.addItem(dvd1);
+        collection.addItem(dvd2);
+        
+        // Adding magazines to the collection
+        Magazine magazine1 = new Magazine(&quot;M-001&quot;, &quot;National Geographic - May 2024&quot;, &quot;A Journey to Mars.&quot;);
+        collection.addItem(magazine1);
+        
+        // Adding a DVD supplement to the magazine
+        DVD supplement = new DVD(&quot;S-001&quot;, &quot;Documentary: Volcanoes&quot;, 55);
+        collection.addItem(new Magazine(&quot;M-002&quot;, &quot;PC Gamer - June 2025&quot;, &quot;Exclusive previews, reviews of latest hardware for gaming.&quot;, supplement));
+
+        // Print the descriptions of all items in the collection
+        System.out.println(&quot;Description of all items in the collection:&quot;);
+        collection.printAllDescriptions();
+
+        // Retrieving and printing only the books
+        System.out.println(&quot;\nOnly books in the collection:&quot;);        
+        for (Book b : collection.getItemsOfTheSameTypeAsObject(book1)) { // Using book1 as a type reference
+            System.out.println(b.getDescription());
+        }
+
+        // Retrieving and printing only the magazines
+        System.out.println(&quot;\nOnly magazines in the collection:&quot;);
+        for (Magazine m : collection.getItemsOfTheSameTypeAsObject(magazine1)) { // Using magazine1 as a type reference
+            System.out.println(m.getDescription());
+        }
+    }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Description of all items in the collection:
+[B-001] The Hobbit: Content: In a hole in the ground there ...
+[B-002] A Brief History of Time: Content: Popular-science book.
+[D-001] The Lord of the Rings: The Fellowship of the Ring: Duration: 178 minutes
+[D-002] The Lord of the Rings: The Two Towers: Duration: 179 minutes
+[M-001] National Geographic - May 2024: Content: A Journey to Mars.
+[M-002] PC Gamer - June 2025: Content: Exclusive previews, reviews of...
+ + Includes: [S-001] Documentary: Volcanoes: Duration: 55 minutes
+
+Only books in the collection:
+[B-001] The Hobbit: Content: In a hole in the ground there ...
+[B-002] A Brief History of Time: Content: Popular-science book.
+
+Only magazines in the collection:
+[M-001] National Geographic - May 2024: Content: A Journey to Mars.
+[M-002] PC Gamer - June 2025: Content: Exclusive previews, reviews of...
+ + Includes: [S-001] Documentary: Volcanoes: Duration: 55 minutes
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
