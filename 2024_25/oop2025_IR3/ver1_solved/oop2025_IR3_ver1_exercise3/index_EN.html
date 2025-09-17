@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to finish implementation of the class <code>SongsVisitor</code> in such way that the method <code>visitFile</code> reads and stores the first line of each .txt file in the requested subtree  (.txt can be in any case).</p>
+<p>The method  <code>getFirstLines()</code> should return set of all first lines, but in such way that if we iterate that set, strings would be order by the length, and in the case of same length, natural order would be used. For example, if first lines in 5 files are Bob, Jack, Bill, Cecilia, and Dave the tree printout would be</p>
+<pre class="line-numbers"><code class="language-txt">Bob
+Bill
+Dave
+Jack
+Cecilia
+</code></pre>
+<p>The method <code>getFiles()</code> returns how may txt files were in the subtree. For example, if the subtree is like in figure below, the result would be 12.</p>
+<p><img src="res/tree.png" alt="tree" /></p>
+<p>You may assume that txt files are not empty (i.e. they contain at least one line).</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

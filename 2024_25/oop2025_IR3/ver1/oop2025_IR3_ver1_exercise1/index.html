@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U mapi tipa <code>Map&lt;String, Set&lt;String&gt;&gt;</code> ključevi su nazivi rodova biljnih vrsta, a svakom ključu pridružen je skup vrsta koje pripadaju tom rodu. Primjerice, kad bi ispisivali sadržaj mape tako da ispišemo ključ i vrijednost odvojene dvotočkom, onda bi ispis bio nalik sljedećem.</p>
+<pre class="line-numbers"><code>Abies : [alba]
+Abutilon : [theophrasti]
+Acalypha : [australis, rhomboidea, virginica]
+Acanthus : [balcanicus, mollis, spinosissimus]
+Acer : [campestre, monspessulanum, negundo, obtusatum, opalus, platanoides, pseudoplatanus, saccharinum, tataricum]
+Aceras : [anthropophorum]
+Achillea : [abrotanoides, ageratum, aspleniifolia, clavennae, coarctata, collina, crithmifolia, distans, ligustica, millefolium, nobilis, odorata, pannonica, pratensis, ptarmica, setacea, tomentosa, virescens]
+...
+</code></pre>
+<p>Nad ovom mapom, može se npr. stvoriti tok vrijednosti tipa <code>Stream&lt;Set&lt;String&gt;&gt;</code> ili tok zapisa ključ-vrijednost tipa <code>Stream&lt;Map.Entry&lt;String,Set&lt;String&gt;&gt;&gt;</code></p>
+<p>Vaš zadatak je dovršiti tri metode u klasi <code>Task</code></p>
+<ol>
+<li>Metoda</li>
+</ol>
+<pre class="line-numbers"><code class="language-java"> int count(Stream&lt;Set&lt;String&gt;&gt; taxa)
+</code></pre>
+<p>koja će dobiti tok vrijednosti iz gore opisane mape, a zatim vratiti koliko ukupno ima elemenata (tj. vrsta) u svim skupovima.
+Primjerice, prvi zapis u kolekcijskom toku je skup <code>[alba]</code>, pa zatim <code>[theophrasti]</code>, nakon njega <code>[australis, rhomboidea, virginica]</code>, ... Kad bi postojala samo ova tri navedena, rezultat bi bio 5.</p>
+<ol start="2">
+<li>Metoda</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">  Stream&lt;Pair&lt;String, Integer&gt;&gt; genera(Stream&lt;Entry&lt;String, Set&lt;String&gt;&gt;&gt; taxa)
+</code></pre>
+<p>mora vratiti tok parova (<code>Pair</code> je već definiran kao record) gdje je prvi element para naziv roda, a drugi element broj vrsta tog roda. U priloženom primjeru Abutilon ima 1 vrstu, a Acalypha 3.</p>
+<ol start="3">
+<li>Metoda</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">  Stream&lt;String&gt; species(Stream&lt;Entry&lt;String, Set&lt;String&gt;&gt;&gt; entries)
+</code></pre>
+<p>mora vratiti tok stringova koji sadrži sve vrste tako da su ime roda i ime vrste odvojeni razmakom.
+U oglednom primjeru takav tok bi imao stringove <em>Abies alba, Abutilon theophrasti, Acalypha australis, Acalypha rhomboidea, ...</em></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

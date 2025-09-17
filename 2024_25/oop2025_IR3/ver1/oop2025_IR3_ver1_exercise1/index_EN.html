@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The map of type <code>Map&lt;String, Set&lt;String&gt;&gt;</code> has botanical genera names as keys, and each key is paired with set of species names. For example, if we print the map content (by printing key and value separated by :), obtained from the sample file, the output would be like the following one.</p>
+<pre class="line-numbers"><code>Abies : [alba]
+Abutilon : [theophrasti]
+Acalypha : [australis, rhomboidea, virginica]
+Acanthus : [balcanicus, mollis, spinosissimus]
+Acer : [campestre, monspessulanum, negundo, obtusatum, opalus, platanoides, pseudoplatanus, saccharinum, tataricum]
+Aceras : [anthropophorum]
+Achillea : [abrotanoides, ageratum, aspleniifolia, clavennae, coarctata, collina, crithmifolia, distans, ligustica, millefolium, nobilis, odorata, pannonica, pratensis, ptarmica, setacea, tomentosa, virescens]
+...
+</code></pre>
+<p>Different streams can be created from the map, e.g., stream of values (of type <code>Stream&lt;Set&lt;String&gt;&gt;</code>) or stream of map entries (type is <code>Stream&lt;Map.Entry&lt;String,Set&lt;String&gt;&gt;&gt;</code>)</p>
+<p>Your task is to implement three methods in class <code>Task</code></p>
+<ol>
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java"> int count(Stream&lt;Set&lt;String&gt;&gt; taxa)
+</code></pre>
+<p>The method has stream of the map values, and should retun how many different species exist in the map. For example, the first entry in the stream is the set <code>[alba]</code>, then the set <code>[theophrasti]</code>, followed by the sat <code>[australis, rhomboidea, virginica]</code>, ... If these three sets were the only values in the map, the resulst would be 5.</p>
+<ol start="2">
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">  Stream&lt;Pair&lt;String, Integer&gt;&gt; genera(Stream&lt;Entry&lt;String, Set&lt;String&gt;&gt;&gt; taxa)
+</code></pre>
+<p>The method should return stream of pairs (<code>Pair</code> is already defined as a records) in which the first element of the pair is genus name, a the seconda is number of species belonging to the genus. In the provided sample Abutilon has 1, and Acalypha 3 species.</p>
+<ol start="3">
+<li></li>
+</ol>
+<pre class="line-numbers"><code class="language-java">  Stream&lt;String&gt; species(Stream&lt;Entry&lt;String, Set&lt;String&gt;&gt;&gt; entries)
+</code></pre>
+<p>The method should should retuen stream of string with full taxon names (i.e., genus name and species name separated by space).
+For the provided sample data, such stream will contain the following strings <em>Abies alba, Abutilon theophrasti, Acalypha australis, Acalypha rhomboidea, ...</em></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

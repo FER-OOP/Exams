@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p><code>Watch</code>, and various bags (<code>Bag</code>) are <code>Wearable</code> things. Weight, volume, and unique identifier of a thing are available using following methods:</p>
+<ul>
+<li><code>int getVolume()</code></li>
+<li><code>int getWeight()</code></li>
+<li><code>String getId()</code></li>
+</ul>
+<p>Bags are further defined on backpacks (<code>Backpack</code>) and purses (<code>Purse</code>). Beside what is defined with <code>Wearable</code>, bags additionaly have dominant material (<code>material:MaterialType</code>) where <code>MaterialType</code> is limited on: <code>Leather</code>, <code>Wood</code>, <code>Plastic</code>, <code>Metal</code>, <code>Gold</code>, <code>Silver</code>, <code>Glass</code>, <code>Cotton</code>, <code>Wool</code>, <code>Rubber</code>, <code>Paper</code>, and <code>Fabric</code>, but bags cannot be made of metal, gold, silver, or glass, and any attempt to create an instance of such back would yield to <code>IllegalArgumentException</code>. Backpack additionally have maximum screen size of a laptop, if it is possible to a laptop inside (<code>laptopSize:OptionalInt</code>).</p>
+<p>The order of the arguments in constructor is always such that first arguments are identifier, volume, and weight, followed by other things, e.g. laptop size should be the last argument.</p>
+<p>Wearable thigs are stored inside a <code>Storage</code>. Storages are divided on <code>FixedStorage</code> and <code>WearableStorage</code>, and creation of a storage that is not neither fixed nor wearable is not possible. <code>Bag</code> is a wearable storage. Storages have their material (<code>material:MaterialType</code>) and (<code>capacity:int</code>) (i.e. volume od wearable things that be stored in the storage). The order in constructor is material, and then capacity. Wearable things in <code>Storage</code> should be stored in a variable defined as <code>private final List&lt;Wearable&gt; list = new LinkedList&lt;&gt;();</code></p>
+<p>For the sake of the simplicity, capacity of the bag is same as its volume.</p>
+<p><code>Storage</code> should have the following methods:</p>
+<ul>
+<li><code>boolean addWearable(Wearable thing)</code> - returns true if the thing is added. It should be added if there is enough capacity and if such id does not alredy exists.</li>
+<li><code>boolean removeWearable(String wearableId)</code> - returns true if wearable with that id exists, and it removes it from the storage</li>
+<li><code>List&lt;Wearable&gt; wearables()</code> - return lists of wearables inside the storage. The returned list must be unmodifiable</li>
+<li><code>int getWeight()</code> //returns total weight of things in the storage</li>
+</ul>
+<p>It is not allowed to put a backpack in a purse even if capacity is large enough. Attempt to do that should throw <code>IllegalArgumentException</code>.</p>
+<p><strong>All atributes should be marked as final, and initialized in constructors. Their values should be accessible using getters using standard naming for getters</strong></p>
+<p>All classes, interfaces, and enumerations are defined in package <code>hr.fer.oop.wearables</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

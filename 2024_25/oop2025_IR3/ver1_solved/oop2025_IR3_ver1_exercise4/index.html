@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Sat (<code>Watch</code>) i razne torbe (<code>Bag</code>) spadaju u stvari koje su nosive (<code>Wearable</code>) te su im masa, volumen i jedinstveni identifikator dostupni s pomoću metoda:</p>
+<ul>
+<li><code>int getVolume()</code></li>
+<li><code>int getWeight()</code></li>
+<li><code>String getId()</code></li>
+</ul>
+<p>Torbe se mogu podijeliti na ruksake (<code>Backpack</code>) i torbice (<code>Purse</code>). Osim onoga što je određeno s <code>Wearable</code> torbe dodatno imaju dominantni materijal (<code>material:MaterialType</code>) gdje je <code>MaterialType</code> ograničen na sljedeće moguće vrijednosti: <code>Leather</code>, <code>Wood</code>, <code>Plastic</code>, <code>Metal</code>, <code>Gold</code>, <code>Silver</code>, <code>Glass</code>, <code>Cotton</code>, <code>Wool</code>, <code>Rubber</code>, <code>Paper</code>, <code>Fabric</code>, ali torbe ne mogu biti od metala, zlata, srebra, ili stakla te pokušaj stvaranja torbe s tim materijalom treba baciti <code>IllegalArgumentException</code>. Ruksak dodatno ima podatak o maksimalnoj veličini laptopa koji se (ako je ruksak za laptop) može u njega pohraniti (<code>laptopSize:OptionalInt</code>).</p>
+<p>Redoslijed u konstruktoru je takav da su uvijek na početku id, volumen i masa, a onda idu ostale stvari. Veličina laptopa je zadnja po redu tamo gdje se koristi.</p>
+<p>Nosive stvari se spremaju u spremišta (<code>Storage</code>) koja se dijele na fiksna (<code>FixedStorage</code>) i prenosiva (<code>WearableStorage</code>) u koje spada <code>Bag</code>. Ne može postojati spremište koje ne spada u neku od tih kategorija. Spremišta su određena materijalom (<code>material:MaterialType</code>) te volumenom (<code>capacity:int</code>) nosivih stvari koje se mogu staviti u njih. Redoslijed u konstruktoru je tim redom. Nosive stvari treba čuvati u varijabli koja je definirana s <code>private final List&lt;Wearable&gt; list = new LinkedList&lt;&gt;();</code></p>
+<p>Jednostavnosti radi, kapacitet torbe jednak je njenom volumenu.</p>
+<p>Spremišta imaju definirane metode:</p>
+<ul>
+<li><code>boolean addWearable(Wearable thing)</code> - vraća true ako je predmet dodan, što ovisi o ograničenjima kapaciteta spremišta, odnosno tome je li već predmet s istim id-om bio ranije dodan, pa se neće dodati dvaput.</li>
+<li><code>boolean removeWearable(String wearableId)</code> - vraća true ako je predmet bio u spremištu i ovom metodom je uklonjen</li>
+<li><code>List&lt;Wearable&gt; wearables()</code> - vraća listu predmeta koji se nalaze u spremištu pri čemu vraćena lista mora biti nepromijenjiva - njen sadržaj se ne može mijenjati.</li>
+<li><code>int getWeight()</code> - vraća masu stvari u spremištu</li>
+</ul>
+<p>U torbicu nije dopušteno pospremiti ruksak čak i kad bi to po kapacitetu bilo moguće. U tom slučaju addWearable treba baciti iznimku tipa <code>IllegalArgumentException</code>.</p>
+<p><strong>U svim klasama svi se atributi inicijaliziraju u konstruktoru i ne mogu se kasnije mijenjati, tj. moraju se označiti kao nepromijenjivi, a dostupni su kroz <em>gettere</em> s uobičajenim imenovanjem.</strong></p>
+<p>Sve klase, sučelja i enumeracije su dio paketa <code>hr.fer.oop.wearables</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

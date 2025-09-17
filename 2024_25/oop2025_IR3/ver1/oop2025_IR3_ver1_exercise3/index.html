@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Dovršite implementaciju klase  <code>SongsVisitor</code> tako da metoda <code>visitFile</code> pohrani prvi redak dohvaćene .txt datoteke (neovisno je li .txt malim ili velikim slovima).</p>
+<p>Metoda <code>getFirstLines()</code> treba vratiti skup s pročitanim prvi retcima, ali skup mora biti takav da iteriranje po njemu uzima stringove redom po duljini stringa, a u slučaju iste duljine poredak je određen prirodnim poretkom stringova.
+Primjerice, ako su prvi retci u 5 datoteka redom Bob, Jack, Bill, Cecilia i Dave, tada će ispis skupa biti sljedeći</p>
+<pre class="line-numbers"><code class="language-txt">Bob
+Bill
+Dave
+Jack
+Cecilia
+</code></pre>
+<p>Metoda <code>getFiles()</code> vraća koliko je postojalo datoteka iz kojih je trebalo pročitati prvi redak. Primjerice za situaciju kao na donjoj slici metoda mora vratiti broj 12.</p>
+<p><img src="res/tree.png" alt="stablo" /></p>
+<p>Možete pretpostaviti da svaka od txt datoteka nije prazna, tj. ima barem jedan redak.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

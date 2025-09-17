@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to finish implementation of the class <code>IterableString</code> by correctly implementing <code>Iterable&lt;Pair&lt;Character, Integer&gt;&gt;</code> interface. The idea of the interface implementaion is to be able to iterate string characters in such way that each <code>Character</code> is paired with an <code>Integer</code>.</p>
+<p>Which number will be used in pairing with a character depends on the state of an <code>Iterator&lt;Integer&gt;</code> instance, sent as the second argument in the constructor of <code>IterableString</code>. If the iterator instance has no more elements then the last used number should be used. This behaviour can be seen in the following example.</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Integer&gt; ids = List.of(1, 2, 3);
+IterableString s = new IterableString(&quot;ABCDE&quot;, ids.iterator());
+for(Pair&lt;Character, Integer&gt; p : s) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second());
+} //output should be (in each line) A -&gt; 1, B -&gt; 2, C -&gt; 3, D -&gt; 3, E -&gt; 3
+System.out.println();
+</code></pre>
+<p>Iterator created from the list [1, 2, 3] has been &quot;used&quot; for A, B, and C respectivelly. Therefore D and E are paired with the last used number (3).</p>
+<p>A number from the iterator should be taken only when new pair is created. For example, in the next excerpt, iterating through s2 stops after the first element, which means that number 3 is not consumed, and has been paired with N from s3.</p>
+<pre class="line-numbers"><code class="language-java">Iterator&lt;Integer&gt; it = List.of(1, 2, 3, 4).iterator();
+IterableString s1 = new IterableString(&quot;K&quot;, it);
+IterableString s2 = new IterableString(&quot;LM&quot;, it);
+IterableString s3 = new IterableString(&quot;NOP&quot;, it);	
+for(Pair&lt;Character, Integer&gt; p : s1) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // K -&gt; 1			
+}
+for(Pair&lt;Character, Integer&gt; p : s2) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // L -&gt; 2
+  break; //after the first character!
+}
+for(Pair&lt;Character, Integer&gt; p : s3) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // N -&gt; 3, O -&gt; 4, P -&gt; 4			
+}
+</code></pre>
+<p>If the iterator is empty or already consumed before the first character has been paired then &quot;number&quot; in the pair should be <code>null</code>, because there is no previously used number.</p>
+<pre class="line-numbers"><code class="language-java">IterableString s4 = new IterableString(&quot;R&quot;, it);
+for(Pair&lt;Character, Integer&gt; p : s4) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // R -&gt; null			
+}	
+</code></pre>
+<p>Iterator is set in the constructor. Therefore, if we iterate same <code>IterableString</code> twice or more times, same iterator is used, and it may happen that it would be &quot;consumed&quot;, as demonstrated in the next example.</p>
+<pre class="line-numbers"><code class="language-java">IterableString s5 = new IterableString(&quot;ABC&quot;, List.of(1, 2, 3, 4, 5).iterator());
+for(Pair&lt;Character, Integer&gt; p : s5) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // A -&gt; 1, B -&gt; 2, C -&gt; 3			
+}
+for(Pair&lt;Character, Integer&gt; p : s5) {
+  System.out.println(p.first() + &quot; -&gt; &quot; + p.second()); // A -&gt; 4, B -&gt; 5, C -&gt; 5			
+}
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
