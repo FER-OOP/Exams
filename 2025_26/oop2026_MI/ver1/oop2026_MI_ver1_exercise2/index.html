@@ -1,0 +1,352 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno implementirati interpreter jednostavnog programskog jezika zasnovanog na stogu naziva <strong>StackLang</strong>.</p>
+<p>Zadana je klasa <code>Stack</code> koja radi s objektima (klasa <code>Object</code>) — potrebno ju je parametrizirati s generičkim tipom. Osim toga, potrebno je implementirati hijerarhiju iznimki te logiku interpretera <code>StackLangInterpreter</code>.</p>
+<p>Stog radi po principu <strong>LIFO</strong> (<em>Last In, First Out</em>) — zadnji ugurani element prvi se uzima.
+To ostvaruje pomoću dvije metode:</p>
+<ul>
+<li><code>push</code> - Postavlja vrijednost na vrh stoga</li>
+<li><code>pop</code> - Uklanja element s vrha stoga i vraća ga kao rezultat.</li>
+</ul>
+<p>Primjer:</p>
+<pre class="line-numbers"><code>  push(10)     push(20)     push(30)      pop()        pop()
+                                        vraća: 30    vraća: 20
+ ┌────────┐   ┌────────┐   ┌────────┐   ┌────────┐   ┌────────┐
+ │        │   │        │   │   30   │   │        │   │        │
+ │        │   │   20   │   │   20   │   │   20   │   │        │
+ │   10   │   │   10   │   │   10   │   │   10   │   │   10   │
+ └────────┘   └────────┘   └────────┘   └────────┘   └────────┘
+</code></pre>
+<p>Jezik na stog postavlja brojeve, koje možemo zbrajati i množiti. Primjer jednog <code>StackLang</code> programa (komentari su informativni, nisu dio samog jezika):</p>
+<pre class="line-numbers"><code>PUSH 10   // Stavi 10 na vrh stoga - stanje: [10]
+PUSH 30   // Stavi 30 na vrh stoga - stanje: [10, 30]
+MUL  3    // Pomnoži vrh sa 3      - stanje: [10, 90]
+ADD       // Zbroji dva elementa na vrhu stoga - [10, 90] =&gt; stanje: [100]
+PRINT     // Ispisuje stanje na stogu, ne mijenja stanje -&gt; [100]
+</code></pre>
+<p>U UML dijagramu klasa prikazane su klase koje je potrebno implementirati. U svim klasama je potrebno implementirati atribute, konstruktore i metode kako su prikazane na dijagramu.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="522px" preserveAspectRatio="none" style="width:2020px;height:522px;background:#FFFFFF;" version="1.1" viewBox="0 0 2020 522" width="2020px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Stack-->
+<g id="elem_Stack">
+<rect codeLine="2" fill="#F1F1F1" height="162.0781" id="Stack" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="220" x="697" y="180"/>
+<ellipse cx="778.25" cy="196" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M781.2188,201.6406 Q780.6406,201.9375 780,202.0781 Q779.3594,202.2344 778.6563,202.2344 Q776.1563,202.2344 774.8281,200.5938 Q773.5156,198.9375 773.5156,195.8125 Q773.5156,192.6875 774.8281,191.0313 Q776.1563,189.375 778.6563,189.375 Q779.3594,189.375 780,189.5313 Q780.6563,189.6875 781.2188,189.9844 L781.2188,192.7031 Q780.5938,192.125 780,191.8594 Q779.4063,191.5781 778.7813,191.5781 Q777.4375,191.5781 776.75,192.6563 Q776.0625,193.7188 776.0625,195.8125 Q776.0625,197.9063 776.75,198.9844 Q777.4375,200.0469 778.7813,200.0469 Q779.4063,200.0469 780,199.7813 Q780.5938,199.5 781.2188,198.9219 L781.2188,201.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="798.75" y="200.8467">Stack</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="911" y="177"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="912" y="189.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="698" x2="916" y1="212" y2="212"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="705" y="222.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="717" y="228.9951">numberOfElements: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="705" y="238.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="717" y="245.292">stack: Object[]</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="698" x2="916" y1="252.5938" y2="252.5938"/>
+<ellipse cx="708" cy="266.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="717" y="269.5889">Stack&lt;T&gt;(capacity: int)</text>
+<ellipse cx="708" cy="282.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="717" y="285.8857">push(value: T): void</text>
+<ellipse cx="708" cy="298.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="717" y="302.1826">pop(): T</text>
+<ellipse cx="708" cy="315.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="717" y="318.4795">getNumberOfElements(): int</text>
+<ellipse cx="708" cy="331.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="717" y="334.7764">toString(): String</text>
+</g>
+<!--class CapacityException-->
+<g id="elem_CapacityException">
+<rect codeLine="12" fill="#F1F1F1" height="96.8906" id="CapacityException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="244" x="199" y="15"/>
+<ellipse cx="253.75" cy="31" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M256.7188,36.6406 Q256.1406,36.9375 255.5,37.0781 Q254.8594,37.2344 254.1563,37.2344 Q251.6563,37.2344 250.3281,35.5938 Q249.0156,33.9375 249.0156,30.8125 Q249.0156,27.6875 250.3281,26.0313 Q251.6563,24.375 254.1563,24.375 Q254.8594,24.375 255.5,24.5313 Q256.1563,24.6875 256.7188,24.9844 L256.7188,27.7031 Q256.0938,27.125 255.5,26.8594 Q254.9063,26.5781 254.2813,26.5781 Q252.9375,26.5781 252.25,27.6563 Q251.5625,28.7188 251.5625,30.8125 Q251.5625,32.9063 252.25,33.9844 Q252.9375,35.0469 254.2813,35.0469 Q254.9063,35.0469 255.5,34.7813 Q256.0938,34.5 256.7188,33.9219 L256.7188,36.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="274.25" y="35.8467">CapacityException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="200" x2="442" y1="47" y2="47"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="207" y="57.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="219" y="63.9951">capacity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="200" x2="442" y1="71.2969" y2="71.2969"/>
+<ellipse cx="210" cy="84.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="219" y="88.292">CapacityException(capacity: int)</text>
+<ellipse cx="210" cy="101.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="219" y="104.5889">getCapacity(): int</text>
+</g>
+<!--class EmptyException-->
+<g id="elem_EmptyException">
+<rect codeLine="18" fill="#F1F1F1" height="48" id="EmptyException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="143" x="478.5" y="39.5"/>
+<ellipse cx="493.5" cy="55.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M496.4688,61.1406 Q495.8906,61.4375 495.25,61.5781 Q494.6094,61.7344 493.9063,61.7344 Q491.4063,61.7344 490.0781,60.0938 Q488.7656,58.4375 488.7656,55.3125 Q488.7656,52.1875 490.0781,50.5313 Q491.4063,48.875 493.9063,48.875 Q494.6094,48.875 495.25,49.0313 Q495.9063,49.1875 496.4688,49.4844 L496.4688,52.2031 Q495.8438,51.625 495.25,51.3594 Q494.6563,51.0781 494.0313,51.0781 Q492.6875,51.0781 492,52.1563 Q491.3125,53.2188 491.3125,55.3125 Q491.3125,57.4063 492,58.4844 Q492.6875,59.5469 494.0313,59.5469 Q494.6563,59.5469 495.25,59.2813 Q495.8438,59 496.4688,58.4219 L496.4688,61.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="507.5" y="60.3467">EmptyException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="479.5" x2="620.5" y1="71.5" y2="71.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="479.5" x2="620.5" y1="79.5" y2="79.5"/>
+</g>
+<!--class StackLangCommand-->
+<g id="elem_StackLangCommand">
+<rect codeLine="22" fill="#F1F1F1" height="113.1875" id="StackLangCommand" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="174" x="1157" y="402"/>
+<ellipse cx="1172" cy="418" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1176.1094,424 L1168.3906,424 L1168.3906,411.6094 L1176.1094,411.6094 L1176.1094,413.7656 L1170.8438,413.7656 L1170.8438,416.4375 L1175.6094,416.4375 L1175.6094,418.5938 L1170.8438,418.5938 L1170.8438,421.8438 L1176.1094,421.8438 L1176.1094,424 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="1186" y="422.8467">StackLangCommand</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1158" x2="1330" y1="434" y2="434"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1163" y="450.9951">ADD</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="1163" y="467.292">MUL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1163" y="483.5889">PRINT</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1163" y="499.8857">PUSH</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1158" x2="1330" y1="507.1875" y2="507.1875"/>
+</g>
+<!--class StackLangInterpreter-->
+<g id="elem_StackLangInterpreter">
+<rect codeLine="29" fill="#F1F1F1" height="96.8906" id="StackLangInterpreter" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="301" x="656.5" y="15"/>
+<ellipse cx="730.75" cy="31" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M733.7188,36.6406 Q733.1406,36.9375 732.5,37.0781 Q731.8594,37.2344 731.1563,37.2344 Q728.6563,37.2344 727.3281,35.5938 Q726.0156,33.9375 726.0156,30.8125 Q726.0156,27.6875 727.3281,26.0313 Q728.6563,24.375 731.1563,24.375 Q731.8594,24.375 732.5,24.5313 Q733.1563,24.6875 733.7188,24.9844 L733.7188,27.7031 Q733.0938,27.125 732.5,26.8594 Q731.9063,26.5781 731.2813,26.5781 Q729.9375,26.5781 729.25,27.6563 Q728.5625,28.7188 728.5625,30.8125 Q728.5625,32.9063 729.25,33.9844 Q729.9375,35.0469 731.2813,35.0469 Q731.9063,35.0469 732.5,34.7813 Q733.0938,34.5 733.7188,33.9219 L733.7188,36.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="751.25" y="35.8467">StackLangInterpreter</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="657.5" x2="956.5" y1="47" y2="47"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="664.5" y="57.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="676.5" y="63.9951">stack: Stack&lt;Integer&gt;</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="657.5" x2="956.5" y1="71.2969" y2="71.2969"/>
+<ellipse cx="667.5" cy="84.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="246" x="676.5" y="88.292">StackLangInterpreter(stackSize: int)</text>
+<ellipse cx="667.5" cy="101.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="275" x="676.5" y="104.5889">runProgram(programString: String): void</text>
+</g>
+<!--class StackLangException-->
+<g id="elem_StackLangException">
+<rect codeLine="36" fill="#F1F1F1" height="113.1875" id="StackLangException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="356" x="1340" y="7"/>
+<ellipse cx="1444.25" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1444.3594,18.3438 L1443.2031,23.4219 L1445.5313,23.4219 L1444.3594,18.3438 Z M1442.875,16.1094 L1445.8594,16.1094 L1449.2188,28.5 L1446.7656,28.5 L1446,25.4375 L1442.7188,25.4375 L1441.9688,28.5 L1439.5313,28.5 L1442.875,16.1094 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="139" x="1464.75" y="27.8467">StackLangException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1341" x2="1695" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1348" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="1360" y="55.9951">line: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1341" x2="1695" y1="63.2969" y2="63.2969"/>
+<ellipse cx="1351" cy="76.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="1360" y="80.292">StackLangException(line: int)</text>
+<ellipse cx="1351" cy="93.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="330" x="1360" y="96.5889">StackLangException(cause: Throwable, line: int)</text>
+<ellipse cx="1351" cy="109.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="1360" y="112.8857">getLine(): int</text>
+</g>
+<!--class CommandException-->
+<g id="elem_CommandException">
+<rect codeLine="43" fill="#F1F1F1" height="96.8906" id="CommandException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="584" x="952" y="212.5"/>
+<ellipse cx="1170.25" cy="228.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1173.2188,234.1406 Q1172.6406,234.4375 1172,234.5781 Q1171.3594,234.7344 1170.6563,234.7344 Q1168.1563,234.7344 1166.8281,233.0938 Q1165.5156,231.4375 1165.5156,228.3125 Q1165.5156,225.1875 1166.8281,223.5313 Q1168.1563,221.875 1170.6563,221.875 Q1171.3594,221.875 1172,222.0313 Q1172.6563,222.1875 1173.2188,222.4844 L1173.2188,225.2031 Q1172.5938,224.625 1172,224.3594 Q1171.4063,224.0781 1170.7813,224.0781 Q1169.4375,224.0781 1168.75,225.1563 Q1168.0625,226.2188 1168.0625,228.3125 Q1168.0625,230.4063 1168.75,231.4844 Q1169.4375,232.5469 1170.7813,232.5469 Q1171.4063,232.5469 1172,232.2813 Q1172.5938,232 1173.2188,231.4219 L1173.2188,234.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="1190.75" y="233.3467">CommandException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="953" x2="1535" y1="244.5" y2="244.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="960" y="255.1484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="972" y="261.4951">command: StackLangCommand</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="953" x2="1535" y1="268.7969" y2="268.7969"/>
+<ellipse cx="963" cy="282.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="558" x="972" y="285.792">CommandException(cause: Throwable, line: int, command: StackLangCommand)</text>
+<ellipse cx="963" cy="298.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="255" x="972" y="302.0889">getCommand(): StackLangCommand</text>
+</g>
+<!--class UnsupportedCommandException-->
+<g id="elem_UnsupportedCommandException">
+<rect codeLine="49" fill="#F1F1F1" height="96.8906" id="UnsupportedCommandException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="442" x="1571" y="212.5"/>
+<ellipse cx="1672.75" cy="228.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1675.7188,234.1406 Q1675.1406,234.4375 1674.5,234.5781 Q1673.8594,234.7344 1673.1563,234.7344 Q1670.6563,234.7344 1669.3281,233.0938 Q1668.0156,231.4375 1668.0156,228.3125 Q1668.0156,225.1875 1669.3281,223.5313 Q1670.6563,221.875 1673.1563,221.875 Q1673.8594,221.875 1674.5,222.0313 Q1675.1563,222.1875 1675.7188,222.4844 L1675.7188,225.2031 Q1675.0938,224.625 1674.5,224.3594 Q1673.9063,224.0781 1673.2813,224.0781 Q1671.9375,224.0781 1671.25,225.1563 Q1670.5625,226.2188 1670.5625,228.3125 Q1670.5625,230.4063 1671.25,231.4844 Q1671.9375,232.5469 1673.2813,232.5469 Q1673.9063,232.5469 1674.5,232.2813 Q1675.0938,232 1675.7188,231.4219 L1675.7188,234.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="230" x="1693.25" y="233.3467">UnsupportedCommandException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1572" x2="2012" y1="244.5" y2="244.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1579" y="255.1484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="1591" y="261.4951">unsupportedCommand: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1572" x2="2012" y1="268.7969" y2="268.7969"/>
+<ellipse cx="1582" cy="282.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="416" x="1591" y="285.792">UnsupportedCommandException(line: int, command: String)</text>
+<ellipse cx="1582" cy="298.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244" x="1591" y="302.0889">getUnsupportedCommand(): String</text>
+</g>
+<!--class NotEnoughArgumentsException-->
+<g id="elem_NotEnoughArgumentsException">
+<rect codeLine="55" fill="#F1F1F1" height="145.7813" id="NotEnoughArgumentsException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="628" x="7" y="188"/>
+<ellipse cx="205.75" cy="204" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M208.7188,209.6406 Q208.1406,209.9375 207.5,210.0781 Q206.8594,210.2344 206.1563,210.2344 Q203.6563,210.2344 202.3281,208.5938 Q201.0156,206.9375 201.0156,203.8125 Q201.0156,200.6875 202.3281,199.0313 Q203.6563,197.375 206.1563,197.375 Q206.8594,197.375 207.5,197.5313 Q208.1563,197.6875 208.7188,197.9844 L208.7188,200.7031 Q208.0938,200.125 207.5,199.8594 Q206.9063,199.5781 206.2813,199.5781 Q204.9375,199.5781 204.25,200.6563 Q203.5625,201.7188 203.5625,203.8125 Q203.5625,205.9063 204.25,206.9844 Q204.9375,208.0469 206.2813,208.0469 Q206.9063,208.0469 207.5,207.7813 Q208.0938,207.5 208.7188,206.9219 L208.7188,209.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="226.25" y="208.8467">NotEnoughArgumentsException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="634" y1="220" y2="220"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="230.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="148" x="27" y="236.9951">numOfArguments: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="246.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="214" x="27" y="253.292">expectedNumOfArguments: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="634" y1="260.5938" y2="260.5938"/>
+<ellipse cx="18" cy="274.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="602" x="27" y="277.5889">NotEnoughArgumentsException(numOfArguments: int, expectedNumOfArguments: int)</text>
+<ellipse cx="18" cy="290.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="446" x="27" y="293.8857">NotEnoughArgumentsException(expectedNumOfArguments: int)</text>
+<ellipse cx="18" cy="306.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="182" x="27" y="310.1826">getNumOfArguments(): int</text>
+<ellipse cx="18" cy="323.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="247" x="27" y="326.4795">getExpectedNumOfArguments(): int</text>
+</g>
+<!--reverse link StackLangException to CommandException-->
+<g id="link_StackLangException_CommandException">
+<path codeLine="65" d="M1423.43,131.98 C1386.29,158.48 1344.53,188.27 1310.65,212.45 " fill="none" id="StackLangException-backto-CommandException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1419.5,126.18,1439.85,120.26,1427.63,137.58,1419.5,126.18" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link StackLangException to UnsupportedCommandException-->
+<g id="link_StackLangException_UnsupportedCommandException">
+<path codeLine="66" d="M1612.57,131.98 C1649.71,158.48 1691.47,188.27 1725.35,212.45 " fill="none" id="StackLangException-backto-UnsupportedCommandException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1608.37,137.58,1596.15,120.26,1616.5,126.18,1608.37,137.58" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link StackLangInterpreter to Stack-->
+<g id="link_StackLangInterpreter_Stack">
+<path codeLine="68" d="M807,112.07 C807,130.91 807,153.15 807,174.59 " fill="none" id="StackLangInterpreter-to-Stack" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="807,179.73,811,170.73,807,174.73,803,170.73,807,179.73" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link CommandException to StackLangCommand-->
+<g id="link_CommandException_StackLangCommand">
+<path codeLine="69" d="M1244,309.57 C1244,335.75 1244,368.51 1244,396.54 " fill="none" id="CommandException-to-StackLangCommand" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="1244,401.72,1248,392.72,1244,396.72,1240,392.72,1244,401.72" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[XLJBZe8m5Dtp5LrYb1yWniGeoPWuQaPTJMPHwnMPWROfhUEy_drQAXK1SLEWvpvEJy-5f3ZFqLfYyZ7SZD2FXr10LRO3iJn4AMH0PHwYX4e3v2OiHClTEn3v-gQt-cMcJp37995VHN3FG5pbH_-4KmKXslH2T6B9ljXdtDUV6_CUWrpKkXdCzkjBjfOYeR7Pic_Ud-UHWlBaqYyw4-0oOTHolw5XQZJYMfXg5cLOsTtrYJ9-sqGZ7cY9h6XpJEC9op9CzmM1yNIgr-VjNA-hbzd2d7ArNJzT2xgq6PKWk02zMkuNUQsa1er1Z9p8jHI_Y5udtt0zXr1q9LWiSEPp-xIgbUgLbs2EW7Uv59X8L6DLqpDDA3Wjcq6-mtjt0WXMkJ70KR1Fl4jXW6vJjFPplT7G_I9g_NhjRjWGlxZgMafNxm6wMyfPmdvQyzMwEPfRcYlEcP2mRsUi6W7EoxfDHxhVphMunml3PdRRf2oOZ2XJyN4iObMCM8sYDlFou40txN3cUinXlsY5-nrb_PQA0zHHh_UeuADS-n-fG9M_YCQYrlIAvxmM_mz_Ww1Xmxk17JTPgLwT-I0OMMDv3USugEgvVm00]-->
+</g>
+</svg>
+<p>Vidljivost u dijagramima klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<h2>Klasa <code>Stack</code> (paket <em>hr.fer.oop.stack</em>)</h2>
+<p>Klasa <code>Stack</code> implementira stog fiksnog kapaciteta, ali koristi <code>Object</code> umjesto generičkog tipa. Potrebno je promijeniti metode <code>push</code> i <code>pop</code> tako da vraćaju tip dan kao parametar:</p>
+<blockquote>
+<p><strong>Napomena:</strong> Java ne dopušta polja generičnih tipova, stoga polje <code>stack</code> mora ostati <code>Object[]</code>. Upozorenje o nekontroliranom castu možete potisnuti s <code>@SuppressWarnings(&quot;unchecked&quot;)</code>.</p>
+</blockquote>
+<p>Metoda <code>push(T value)</code> baca <code>CapacityException(capacity)</code> ako je stog pun, gdje je <code>capacity</code> maksimalni kapacitet stoga.</p>
+<p>Metoda <code>pop()</code> baca <code>EmptyException()</code> ako je stog prazan.</p>
+<p>Obje iznimke stoga <code>CapacityException</code> i <code>EmptyException</code> su neprovjeravane. Morate ih baciti kod prikladnih rubnih slučajeva u metodama <code>push</code> i/ili <code>pop</code>.
+<strong>Metode <code>push</code> i <code>pop</code> moraju <em>u svojoj deklaraciji</em> (potpisu metode) naznačiti pozivatelju da se odgovarajuća iznimka može dogoditi - CapacityException i/ili EmptyException.</strong></p>
+<h2>Hijerarhija iznimki interpretera</h2>
+<p>Sve iznimke vezane uz <strong>StackLang</strong> interpreter nalaze se u paketu <code>hr.fer.oop.stacklang.exception</code>.</p>
+<p>Klasa <code>StackLangException</code> je <strong>provjeravana iznimka</strong> koja se <strong>ne može instancirati</strong>. Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>StackLangException(int line)</code> koji pamti broj retka</li>
+<li>konstruktor <code>StackLangException(Throwable cause, int line)</code> koji pamti uzrok i broj retka</li>
+<li>metodu <code>getLine()</code> koja vraća pohranjeni broj retka (<strong>redovi su numerirani od <code>1</code>, uključujući i prazne retke</strong>)</li>
+</ul>
+<p>Klasa <code>CommandException</code> nasljeđuje <code>StackLangException</code>. Baca se kada izvršavanje poznate naredbe ne uspije zbog nekog uzroka <code>cause</code>. Prema tome, kod bilo kakve pogreške u učitavanja ili izvršavajnu naredbe, <code>CommandException</code> omotat će tu pogrešku i javit o kojoj naredbi je bilo riječ. Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>CommandException(Throwable cause, int line, StackLangCommand command)</code> koji pamti naredbu, uzročnu pogrešku i liniju na kojoj se dogodila pogreška.</li>
+<li>metodu <code>getCommand()</code> koja vraća pohranjenu naredbu</li>
+</ul>
+<p>Klasa <code>UnsupportedCommandException</code> nasljeđuje <code>StackLangException</code>. Baca se kada se naiđe na nepoznatu naredbu. Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>UnsupportedCommandException(int line, String command)</code> koji pamti naziv naredbe</li>
+<li>metodu <code>getUnsupportedCommand()</code> koja vraća pohranjeni naziv naredbe</li>
+</ul>
+<h2>Klasa <code>NotEnoughArgumentsException</code> (paket <em>hr.fer.oop.stacklang.exception</em>)</h2>
+<p>Neprovjeravana iznimka koja se baca kada naredba dobije premalo argumenata. Nije direktan dio hierarhije (<strong>ne nasljeđuje</strong> <code>StackLangException</code>). Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>NotEnoughArgumentsException(int numOfArguments, int expectedNumOfArguments)</code> koji pamti oba broja</li>
+<li>konstruktor <code>NotEnoughArgumentsException(int expectedNumOfArguments)</code> koji postavlja <code>numOfArguments</code> na <code>0</code></li>
+<li>metodu <code>getNumOfArguments()</code> koja vraća stvarni broj primljenih argumenata</li>
+<li>metodu <code>getExpectedNumOfArguments()</code> koja vraća očekivani broj argumenata</li>
+</ul>
+<h3>Višak argumenata</h3>
+<p>U slučaju kada interpreter primi komandu sa viškom argumenata, taj se višak ignorira. Npr. za primljenu liniju <code>PUSH 1 2 3</code>, uzima se u obzir samo <code>PUSH 1</code>, a ostali argumenti se ignoriraju, program regularno izvrši naredbu i nastavlja. Ovo vrijedi za sve podržane naredbe.</p>
+<h2>Klasa <code>StackLangInterpreter</code> (paket <em>hr.fer.oop.stacklang</em>)</h2>
+<p>Interpreter prima StackLang program kao <code>String</code> s više redaka. Svaki redak je jedna naredba. Praznine na početku i kraju retka se ignoriraju. <strong>Redovi se broje od <code>1</code>. Prazni redovi se ne smatraju greškom, samo nemaju nikakav efekt, tj. za praznu liniju se ne izvrši nijedna komanda.</strong></p>
+<p>Podržane naredbe:</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Naredba</th>
+      <th>Opis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PUSH v</code></td>
+      <td>Parsira <code>v</code> kao cijeli broj i stavlja ga na stog</td>
+    </tr>
+    <tr>
+      <td><code>PRINT</code></td>
+      <td>Ispisuje trenutno stanje stoga na standardni izlaz koristeći već implementiranu `toString()` metodu u klasi `Stack`</td>
+    </tr>
+    <tr>
+      <td><code>ADD</code></td>
+      <td>Skida dva broja s vrha stoga i stavlja njihov zbroj</td>
+    </tr>
+    <tr>
+      <td><code>MUL n</code></td>
+      <td>Skida broj s vrha stoga, množi ga sa skalarom <code>n</code> i stavlja rezultat</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ako bilo koja naredba ne uspije, baca se <code>CommandException</code> gdje:</p>
+<ul>
+<li><code>cause</code> je iznimka zbog koje naredba nije uspijela. Uzrok problema zbog kojeg se naredba nije uspiješno izvršila.</li>
+<li><code>line</code> je broj retka naredbe koja se nije uspijela izvršit.</li>
+<li><code>command</code> je naredba koja se nije uspijela izvršit.</li>
+</ul>
+<p>Ako se naiđe na nepoznatu naredbu, baca se <code>UnsupportedCommandException(line, commandName)</code>.</p>
+<hr />
+<h3>Primjer korištenja</h3>
+<pre class="line-numbers"><code class="language-java">StackLangInterpreter interpreter = new StackLangInterpreter(1024);
+interpreter.runProgram(&quot;&quot;&quot;
+        PUSH 10
+        PUSH 20
+        PUSH 30
+        PUSH 40
+        PRINT
+        ADD
+        ADD
+        MUL 3
+        PRINT
+        &quot;&quot;&quot;);
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code>SL Program Stack:
+    10
+    20
+    30
+    40
+SL Program Stack:
+    10
+    270
+</code></pre>
+<p>Primjeri s greškom:</p>
+<pre class="line-numbers"><code class="language-java">  try {
+   new StackLangInterpreter(10).runProgram(&quot;ADD&quot;);
+  } catch (StackLangException e) {
+   System.out.println(&quot;Greška u naredbi na retku &quot; + e.getLine() + &quot;, &quot; + e);
+   System.out.println(&quot;Uzrok: &quot; + e.getCause());
+  }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code>
+Greška u naredbi na retku 1, hr.fer.oop.stacklang.exception.CommandException: hr.fer.oop.stack.EmptyException
+Uzrok: hr.fer.oop.stack.EmptyException
+</code></pre>
+<pre class="line-numbers"><code class="language-java">   try {
+      new StackLangInterpreter(10).runProgram(&quot;&quot;&quot;
+          PUSH 3
+          MUL 3 4 5
+
+          PRINT
+          PUSH
+          PRINT
+          &quot;&quot;&quot;);
+    } catch (StackLangException e) {
+      System.out.println(&quot;Greška u naredbi na retku &quot; + e.getLine() + &quot;, &quot; + e);
+      System.out.println(&quot;Uzrok: &quot; + e.getCause());
+    }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code>SL Program Stack:
+9
+Greška u naredbi na retku 5, hr.fer.oop.stacklang.exception.CommandException: hr.fer.oop.stacklang.exception.NotEnoughArgumentsException
+Uzrok: hr.fer.oop.stacklang.exception.NotEnoughArgumentsException
+</code></pre>
+<p><strong>Objašnjenje</strong> - U retku 1, naredba <code>PUSH</code> izvrši se regularno. U drugom retku ignoriramo dodatne argumente <code>4 5</code> koji su nepotrebni i množimo <code>3*3</code>. Redak 3 je prazan i ne izvršava se ništa. Zatim, u retku 4 ispisujemo stanje stoga i u retku <strong>5</strong> nismo dali potreban argument metodi <code>PUSH</code>, zbog čega se dogodio <code>NotEnoughArgumentsException</code> i uzrokovao <code>CommandException</code> koji ga je omotao.</p>
+<hr />
+<p><strong>Napomena:</strong> Sve klase i iznimke su <code>public</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

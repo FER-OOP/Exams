@@ -1,0 +1,324 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa.</p>
+<p>U svim klasama je potrebno implementirati metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju javnu vidljivost i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="620px" preserveAspectRatio="none" style="width:1640px;height:620px;background:#FFFFFF;" version="1.1" viewBox="0 0 1640 620" width="1640px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class MembershipStatus-->
+<g id="elem_MembershipStatus">
+<rect codeLine="2" fill="#F1F1F1" height="96.8906" id="MembershipStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="162" x="434" y="56"/>
+<ellipse cx="449" cy="72" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M453.1094,78 L445.3906,78 L445.3906,65.6094 L453.1094,65.6094 L453.1094,67.7656 L447.8438,67.7656 L447.8438,70.4375 L452.6094,70.4375 L452.6094,72.5938 L447.8438,72.5938 L447.8438,75.8438 L453.1094,75.8438 L453.1094,78 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="463" y="76.8467">MembershipStatus</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="435" x2="595" y1="88" y2="88"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="440" y="104.9951">ACTIVE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="440" y="121.292">EXPIRED</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="440" y="137.5889">SUSPENDED</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="435" x2="595" y1="144.8906" y2="144.8906"/>
+</g>
+<!--class Renewable-->
+<g id="elem_Renewable">
+<rect codeLine="8" fill="#F1F1F1" height="80.5938" id="Renewable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="218" x="7" y="302.5"/>
+<ellipse cx="73.25" cy="318.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M69.1719,314.2656 L69.1719,312.1094 L76.5625,312.1094 L76.5625,314.2656 L74.0938,314.2656 L74.0938,322.3438 L76.5625,322.3438 L76.5625,324.5 L69.1719,324.5 L69.1719,322.3438 L71.6406,322.3438 L71.6406,314.2656 L69.1719,314.2656 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="77" x="93.75" y="323.3467">Renewable</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="224" y1="334.5" y2="334.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="224" y1="342.5" y2="342.5"/>
+<ellipse cx="18" cy="356.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="27" y="359.4951">renew(int months): boolean</text>
+<ellipse cx="18" cy="372.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="27" y="375.792">getRemainingMonths(): int</text>
+</g>
+<!--class Membership-->
+<g id="elem_Membership">
+<rect codeLine="13" fill="#F1F1F1" height="194.6719" id="Membership" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="522" x="631" y="7"/>
+<ellipse cx="844.75" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M844.8594,18.3438 L843.7031,23.4219 L846.0313,23.4219 L844.8594,18.3438 Z M843.375,16.1094 L846.3594,16.1094 L849.7188,28.5 L847.2656,28.5 L846.5,25.4375 L843.2188,25.4375 L842.4688,28.5 L840.0313,28.5 L843.375,16.1094 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="86" x="865.25" y="27.8467">Membership</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="632" x2="1152" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="639" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="651" y="55.9951">memberName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="639" y="65.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="651" y="72.292">price: double</text>
+<polygon fill="none" points="642,80.2422,646,84.2422,642,88.2422,638,84.2422" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="651" y="88.5889">remainingMonths: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="632" x2="1152" y1="95.8906" y2="95.8906"/>
+<ellipse cx="642" cy="109.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="496" x="651" y="112.8857">Membership(memberName: String, price: double, remainingMonths: int)</text>
+<ellipse cx="642" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="651" y="129.1826">getMemberName(): String</text>
+<ellipse cx="642" cy="142.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="651" y="145.4795">getPrice(): double</text>
+<ellipse cx="642" cy="158.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="651" y="161.7764">getRemainingMonths(): int</text>
+<polygon fill="#FFFF44" points="642,169.7266,646,173.7266,642,177.7266,638,173.7266" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="651" y="178.0732">isActive(): boolean</text>
+<ellipse cx="642" cy="191.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="216" x="651" y="194.3701">getStatus(): MembershipStatus</text>
+</g>
+<!--class BasicMembership-->
+<g id="elem_BasicMembership">
+<rect codeLine="25" fill="#F1F1F1" height="80.5938" id="BasicMembership" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="559" x="260.5" y="302.5"/>
+<ellipse cx="474.25" cy="318.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M477.2188,324.1406 Q476.6406,324.4375 476,324.5781 Q475.3594,324.7344 474.6563,324.7344 Q472.1563,324.7344 470.8281,323.0938 Q469.5156,321.4375 469.5156,318.3125 Q469.5156,315.1875 470.8281,313.5313 Q472.1563,311.875 474.6563,311.875 Q475.3594,311.875 476,312.0313 Q476.6563,312.1875 477.2188,312.4844 L477.2188,315.2031 Q476.5938,314.625 476,314.3594 Q475.4063,314.0781 474.7813,314.0781 Q473.4375,314.0781 472.75,315.1563 Q472.0625,316.2188 472.0625,318.3125 Q472.0625,320.4063 472.75,321.4844 Q473.4375,322.5469 474.7813,322.5469 Q475.4063,322.5469 476,322.2813 Q476.5938,322 477.2188,321.4219 L477.2188,324.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="494.75" y="323.3467">BasicMembership</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="261.5" x2="818.5" y1="334.5" y2="334.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="261.5" x2="818.5" y1="342.5" y2="342.5"/>
+<ellipse cx="271.5" cy="356.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="533" x="280.5" y="359.4951">BasicMembership(memberName: String, price: double, remainingMonths: int)</text>
+<ellipse cx="271.5" cy="372.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="280.5" y="375.792">getStatus(): MembershipStatus</text>
+</g>
+<!--class FamilyMembership-->
+<g id="elem_FamilyMembership">
+<rect codeLine="31" fill="#F1F1F1" height="162.0781" id="FamilyMembership" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="779" x="854.5" y="262"/>
+<ellipse cx="1175.75" cy="278" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1178.7188,283.6406 Q1178.1406,283.9375 1177.5,284.0781 Q1176.8594,284.2344 1176.1563,284.2344 Q1173.6563,284.2344 1172.3281,282.5938 Q1171.0156,280.9375 1171.0156,277.8125 Q1171.0156,274.6875 1172.3281,273.0313 Q1173.6563,271.375 1176.1563,271.375 Q1176.8594,271.375 1177.5,271.5313 Q1178.1563,271.6875 1178.7188,271.9844 L1178.7188,274.7031 Q1178.0938,274.125 1177.5,273.8594 Q1176.9063,273.5781 1176.2813,273.5781 Q1174.9375,273.5781 1174.25,274.6563 Q1173.5625,275.7188 1173.5625,277.8125 Q1173.5625,279.9063 1174.25,280.9844 Q1174.9375,282.0469 1176.2813,282.0469 Q1176.9063,282.0469 1177.5,281.7813 Q1178.0938,281.5 1178.7188,280.9219 L1178.7188,283.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="1196.25" y="282.8467">FamilyMembership</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="855.5" x2="1632.5" y1="294" y2="294"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="862.5" y="304.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="874.5" y="310.9951">additionalMembers: String[]</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="855.5" x2="1632.5" y1="318.2969" y2="318.2969"/>
+<ellipse cx="865.5" cy="331.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="753" x="874.5" y="335.292">FamilyMembership(memberName: String, price: double, remainingMonths: int, additionalMemberCapacity: int)</text>
+<ellipse cx="865.5" cy="348.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="246" x="874.5" y="351.5889">addMember(name: String): boolean</text>
+<polygon fill="#FFFF44" points="865.5,359.5391,869.5,363.5391,865.5,367.5391,861.5,363.5391" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="224" x="874.5" y="367.8857">getAdditionalMembers(): String[]</text>
+<ellipse cx="865.5" cy="380.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="874.5" y="384.1826">countMembers(): int</text>
+<ellipse cx="865.5" cy="397.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="874.5" y="400.4795">getPrice(): double</text>
+<ellipse cx="865.5" cy="413.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="874.5" y="416.7764">getStatus(): MembershipStatus</text>
+</g>
+<!--class PremiumFamilyMembership-->
+<g id="elem_PremiumFamilyMembership">
+<rect codeLine="41" fill="#F1F1F1" height="129.4844" id="PremiumFamilyMembership" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="992" x="184" y="484"/>
+<ellipse cx="581.25" cy="500" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M584.2188,505.6406 Q583.6406,505.9375 583,506.0781 Q582.3594,506.2344 581.6563,506.2344 Q579.1563,506.2344 577.8281,504.5938 Q576.5156,502.9375 576.5156,499.8125 Q576.5156,496.6875 577.8281,495.0313 Q579.1563,493.375 581.6563,493.375 Q582.3594,493.375 583,493.5313 Q583.6563,493.6875 584.2188,493.9844 L584.2188,496.7031 Q583.5938,496.125 583,495.8594 Q582.4063,495.5781 581.7813,495.5781 Q580.4375,495.5781 579.75,496.6563 Q579.0625,497.7188 579.0625,499.8125 Q579.0625,501.9063 579.75,502.9844 Q580.4375,504.0469 581.7813,504.0469 Q582.4063,504.0469 583,503.7813 Q583.5938,503.5 584.2188,502.9219 L584.2188,505.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="601.75" y="504.8467">PremiumFamilyMembership</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="185" x2="1175" y1="516" y2="516"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="192" y="526.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="204" y="532.9951">autoRenew: boolean</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="185" x2="1175" y1="540.2969" y2="540.2969"/>
+<ellipse cx="195" cy="553.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="966" x="204" y="557.292">PremiumFamilyMembership(memberName: String, price: double, remainingMonths: int, additionalMemberCapacity: int, autoRenew: boolean)</text>
+<ellipse cx="195" cy="570.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="204" y="573.5889">renew(int months): boolean</text>
+<ellipse cx="195" cy="586.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="204" y="589.8857">isAutoRenew(): boolean</text>
+<ellipse cx="195" cy="602.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="204" y="606.1826">getStatus(): MembershipStatus</text>
+</g>
+<!--reverse link Membership to BasicMembership-->
+<g id="link_Membership_BasicMembership">
+<path codeLine="49" d="M731.67,213.22 C684.36,245.01 635.52,277.82 598.98,302.37 " fill="none" id="Membership-backto-BasicMembership" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="727.82,207.38,748.32,202.03,735.62,219,727.82,207.38" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Membership to FamilyMembership-->
+<g id="link_Membership_FamilyMembership">
+<path codeLine="50" d="M1052.47,213.32 C1076.85,229.7 1101.63,246.35 1124.92,262 " fill="none" id="Membership-backto-FamilyMembership" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1048.38,219,1035.68,202.03,1056.18,207.38,1048.38,219" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link FamilyMembership to PremiumFamilyMembership-->
+<g id="link_FamilyMembership_PremiumFamilyMembership">
+<path codeLine="52" d="M1002.77,431.04 C953.54,448.8 902.61,467.18 856.17,483.93 " fill="none" id="FamilyMembership-backto-PremiumFamilyMembership" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1000.71,424.34,1021.9,424.14,1005.46,437.51,1000.71,424.34" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Renewable to PremiumFamilyMembership-->
+<g id="link_Renewable_PremiumFamilyMembership">
+<path codeLine="54" d="M188.41,394.58 C205.77,405.29 224.62,415.82 243,424 C295.22,447.24 352.91,467.23 408.79,483.93 " fill="none" id="Renewable-backto-PremiumFamilyMembership" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="184.38,400.32,171.28,383.67,191.91,388.51,184.38,400.32" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[jLJBRi8m4BpdAonn2UBn0OWBXLJY08f8MrMgUjWO5op53egTLWZuz_gHG718XAZAAUpEpixEsYOyPsX1M4moiQMxI8BC1JfuIFqcqvVvMs0-W_TmlWfcvZjwZS9WELF_Jfv7kIJP5s22LeIJ7uWJKbJtCXtm5G2nbCkjw8vGdAO90Mxp6o9NX07bb6yM1k4hYC9hNeY5p01BX1CGegAmO1ym4ra28oCKoKnnsFWkerY5rcckf9XG9xlkOdiO2HTQlyxNHrTSVNIBftkUPN4cq6DK9Ebag9bqlAAhnG0Zcue9blJRb5qPToZDEI55OLUcGUuQjO_MlYSG5DSyx3dXltlGhgKGymoC9llwHc6zffAc798YLuhu-BGDtC97zVQHsseAEy1KxglZA8nD-hpImDb5HmqzSNLVzbygnsdEPILxFe0jH-EUlOPgF9gpHaTpcPfhwHoWXh9_ybEbQpgwzpqHwWgKfVwDvwFTeeeVu-DWu5w2Mjwrm_DglXfSWtkUTta1nyVXi17t2m00]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>Sustav modelira različite vrste digitalnih članarina.</p>
+<p>Svaka članarina ima:</p>
+<ul>
+<li>ime korisnika</li>
+<li>cijenu</li>
+<li>preostali broj mjeseci trajanja (smatrajte da vrijednost nikada neće biti negativna)</li>
+</ul>
+<p>Metoda <code>isActive()</code> u klasi <code>Membership</code> provjerava je li članarina još uvijek važeća. Vraća <code>true</code> ako je preostali broj mjeseci trajanja (<code>remainingMonths</code>) <strong>strogo veći od 0</strong>, inače vraća <code>false</code>.</p>
+<p>Status članarine definiran je enumeracijom <code>MembershipStatus</code> i može biti:</p>
+<ul>
+<li><code>ACTIVE</code> (aktivna)</li>
+<li><code>EXPIRED</code> (istekla)</li>
+<li><code>SUSPENDED</code> (suspendirana)</li>
+</ul>
+<p><strong>Status članarine</strong></p>
+<p>Status članarine određuje se na temelju trajanja i dodatnih svojstava, prema sljedećim pravilima:</p>
+<ol>
+<li>Ako je članarina aktivna:</li>
+</ol>
+<ul>
+<li>status je <code>ACTIVE</code></li>
+<li>dodatno u slučaju <strong>obiteljske članarine</strong>: ako nema nijednog dodatnog člana → status je <code>SUSPENDED</code></li>
+</ul>
+<ol start="2">
+<li>Ako članarina nije aktivna:</li>
+</ol>
+<ul>
+<li>status je istekao (<code>EXPIRED</code>)</li>
+<li>dodatno u slučaju <strong>članarine s automatskom obnovom</strong>: ako je uključena automatska obnova → status je <code>SUSPENDED</code></li>
+</ul>
+<p><strong>Obnavljanje članarine</strong></p>
+<p>Metoda <code>renew(int months)</code>: vraća <code>false</code> ako je <code>months &lt;= 0</code>, inače povećava trajanje članarine i vraća <code>true</code></p>
+<p><strong>Obiteljska članarina</strong></p>
+<ul>
+<li>
+<p>može sadržavati dodatne članove (osim glavnog korisnika)</p>
+</li>
+<li>
+<p>dodatni članovi se spremaju u polje</p>
+</li>
+<li>
+<p>konstruktor prima broj <code>additionalMemberCapacity</code> koji predstavlja kapacitet polja za dodatne članove. Možete pretpostaviti da je vrijednost nenegativna. Ako je 0, članarina nema mjesta za dodatne članove.</p>
+</li>
+<li>
+<p>Metoda <code>addMember(String name)</code> dodaje člana ako su zadovoljeni svi sljedeći uvjeti:</p>
+<ul>
+<li>članarina je aktivna</li>
+<li>ime nije <code>null</code> i nije prazan niz znakova ili sastavljen samo od praznina</li>
+<li>postoji slobodno mjesto u polju dodatnih članova. <br>
+Ako bilo koji uvjet nije zadovoljen, metoda ne mijenja stanje objekta i vraća <code>false</code>.</li>
+</ul>
+</li>
+<li>
+<p>Metoda <code>getAdditionalMembers()</code> vraća novo polje (novu instancu) koje sadrži sve trenutno dodane dodatne članove. Vraćeno polje:</p>
+<ul>
+<li>ne smije biti isto polje koje se koristi unutar klase,</li>
+<li>ne smije sadržavati <code>null</code> vrijednosti,</li>
+<li>mora sadržavati članove u istom redoslijedu kao u originalnom polju</li>
+</ul>
+</li>
+<li>
+<p>Računanje cijene (kod obiteljskih članarina): metoda <code>getPrice</code> vraća osnovnu cijenu uvećanu za 10 za svakog dodatnog člana</p>
+</li>
+<li>
+<p>Metoda <code>countMembers</code> vraća ukupan broj članova u članarini (uključujući glavnog korisnika i sve dodatne članove).</p>
+</li>
+</ul>
+<p><strong>Napomena:</strong> Sve ostale detalje (nasljeđivanje, sučelja, modifikatore vidljivosti i metode) potrebno je implementirati prema UML dijagramu.</p>
+<p><strong>Primjer korištenja</strong></p>
+<pre class="line-numbers"><code class="language-java">        // BASIC MEMBERSHIP
+      
+        BasicMembership basic = new BasicMembership(&quot;Ana&quot;, 25.0, 3);
+
+        System.out.println(&quot;Member: &quot; + basic.getMemberName());
+        System.out.println(&quot;Price: &quot; + basic.getPrice());
+        System.out.println(&quot;Remaining months: &quot; + basic.getRemainingMonths());
+        System.out.println(&quot;Status: &quot; + basic.getStatus());
+        System.out.println();
+
+        // FAMILY MEMBERSHIP
+
+        FamilyMembership family = new FamilyMembership(&quot;Ivana&quot;, 40.0, 5, 3);
+
+        System.out.println(&quot;Main member: &quot; + family.getMemberName());
+        System.out.println(&quot;Initial price: &quot; + family.getPrice());
+        System.out.println(&quot;Remaining months: &quot; + family.getRemainingMonths());
+        System.out.println(&quot;Status before adding members: &quot; + family.getStatus());
+        // Adding members 
+        System.out.println(&quot;Adding member Luka: &quot; + family.addMember(&quot;Luka&quot;));
+        System.out.println(&quot;Adding member Mia: &quot; + family.addMember(&quot;Mia&quot;));
+        System.out.println(&quot;Adding member Ema: &quot; + family.addMember(&quot;Ema&quot;));
+        System.out.println(&quot;Adding member with empty name: &quot; + family.addMember(&quot;&quot;));
+        System.out.println(&quot;Adding member Ivan (capacity exceeded): &quot; + family.addMember(&quot;Ivan&quot;));
+        System.out.println(&quot;Total members: &quot; + family.countMembers());
+        System.out.println(&quot;Price after adding members: &quot; + family.getPrice());
+        System.out.println(&quot;Status after adding members: &quot; + family.getStatus());
+
+   	    // PREMIUM FAMILY MEMBERSHIP
+   
+     	PremiumFamilyMembership premium = new PremiumFamilyMembership(&quot;Petar&quot;, 50.0, 0, 5, true);
+
+     	System.out.println(&quot;Main member: &quot; + premium.getMemberName());
+     	System.out.println(&quot;Initial price: &quot; + premium.getPrice());
+     	System.out.println(&quot;Remaining months: &quot; + premium.getRemainingMonths());
+     	System.out.println(&quot;Auto-renew enabled: &quot; + premium.isAutoRenew());
+     	System.out.println(&quot;Status: &quot; + premium.getStatus());
+
+     	// Attempt to add members while membership is NOT active
+    	System.out.println(&quot;Adding member Sara: &quot; + premium.addMember(&quot;Sara&quot;));
+     	System.out.println(&quot;Adding member Nika: &quot; + premium.addMember(&quot;Nika&quot;));
+     	System.out.println(&quot;Total members: &quot; + premium.countMembers());
+
+     	//Activate membership 
+     	System.out.println(&quot;Renewal for 12 months: &quot; + premium.renew(12));
+     	System.out.println(&quot;Remaining months after renewal: &quot; + premium.getRemainingMonths());
+     	System.out.println(&quot;Adding member Sara: &quot; + premium.addMember(&quot;Sara&quot;));
+     	System.out.println(&quot;Adding member Nika: &quot; + premium.addMember(&quot;Nika&quot;));
+     	System.out.println(&quot;Total members: &quot; + premium.countMembers());
+     	System.out.println(&quot;Price after adding members: &quot; + premium.getPrice());
+     	System.out.println(&quot;Status: &quot; + premium.getStatus());
+    }
+}
+</code></pre>
+<p><strong>Očekivani ispis:</strong></p>
+<pre class="line-numbers"><code class="language-sh">// BASIC MEMBERSHIP
+Member: Ana
+Price: 25.0
+Remaining months: 3
+Status: ACTIVE
+
+// FAMILY MEMBERSHIP 
+Main member: Ivana
+Initial price: 40.0
+Remaining months: 5
+Status before adding members: SUSPENDED
+
+Adding member Luka: true
+Adding member Mia: true
+Adding member Ema: true
+Adding member with empty name: false
+Adding member Ivan (capacity exceeded): false
+Total members: 4
+Price after adding members: 70.0
+Status after adding members: ACTIVE
+
+// PREMIUM FAMILY MEMBERSHIP
+Main member: Petar
+Initial price: 50.0
+Remaining months: 0
+Auto-renew enabled: true
+
+--- BEFORE RENEWAL ---
+Status: SUSPENDED
+Adding member Sara: false
+Adding member Nika: false
+Total members: 1
+
+--- RENEWAL ---
+Renewal for 12 months: true
+Remaining months after renewal: 12
+Adding member Sara: true
+Adding member Nika: true
+Total members: 3
+Price after adding members: 70.0
+Status: ACTIVE
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

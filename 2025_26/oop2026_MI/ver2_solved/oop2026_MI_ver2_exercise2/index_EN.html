@@ -1,0 +1,511 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>In this exercise you need to implement a robot that navigates a warehouse grid by executing a simple command language.
+The warehouse is a grid (<code>width × height</code>), and the robot explores it by moving, rotating, and scanning. <strong>Valid positions are <code>[0, width)</code> on the X axis and <code>[0, height)</code> on the Y axis.</strong> The supported robot commands are:</p>
+<ul>
+<li><code>MOVE &lt;steps&gt;</code> — Move <code>steps</code> steps in the current direction.</li>
+<li><code>ROTATE &lt;direction&gt;</code> — Rotate to the given <code>direction</code>. Valid values correspond to the <code>Direction</code> enum.</li>
+<li><code>SCAN</code> — Scan the current location and print robot state along with the scanned value. The scanned value is a random integer from <code>[0, width * height)</code>, where <code>width</code> and <code>height</code> are the grid dimensions.</li>
+</ul>
+<p>Example robot program (comments are informational only, your code does not need to handle them):</p>
+<pre class="line-numbers"><code>MOVE 1        // Move 1 step in the current direction (north)
+ROTATE WEST   // Rotate to face west
+MOVE 3        // Move 3 steps west
+SCAN          // Scan current location and print
+ROTATE EAST   // Rotate to face east
+MOVE 5        // Move 5 steps east
+SCAN          // Scan current location and print
+</code></pre>
+<p><code>DeployedRobot</code> receives programs as multi-line strings and executes each line as a command. On an error in one line, the robot continues executing the remaining lines. The required methods are shown in the UML diagram.</p>
+<p>The <code>Robot</code> class is already fully implemented, while the <code>Warehouse</code> and <code>DeployedRobot</code> classes are partially complete. In <code>Warehouse</code> you need to implement the methods <code>scanAt(int x, int y)</code> and <code>move(DeployedRobot robot, int x, int y)</code>. In <code>DeployedRobot</code> you need to implement <code>executeProgram(String program)</code> - the method which actually executes the commands. <strong>The details of those methods are given further in the text</strong>.</p>
+<p>In all classes you need to implement the attributes, constructors, and methods shown in the diagram.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="577px" preserveAspectRatio="none" style="width:3181px;height:577px;background:#FFFFFF;" version="1.1" viewBox="0 0 3181 577" width="3181px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Direction-->
+<g id="elem_Direction">
+<rect codeLine="2" fill="#98FB98" height="121.4531" id="Direction" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="7" y="409"/>
+<ellipse cx="22" cy="429.1328" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M26.1094,435.1328 L18.3906,435.1328 L18.3906,422.7422 L26.1094,422.7422 L26.1094,424.8984 L20.8438,424.8984 L20.8438,427.5703 L25.6094,427.5703 L25.6094,429.7266 L20.8438,429.7266 L20.8438,432.9766 L26.1094,432.9766 L26.1094,435.1328 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="34" y="425.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="50.5" y="440.9639">Direction</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="129" y1="449.2656" y2="449.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="13" y="466.2607">NORTH</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="13" y="482.5576">EAST</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="13" y="498.8545">SOUTH</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="13" y="515.1514">WEST</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="129" y1="522.4531" y2="522.4531"/>
+</g>
+<!--class Warehouse-->
+<g id="elem_Warehouse">
+<rect codeLine="9" fill="#FFF2CC" height="202.9375" id="Warehouse" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="427" x="165" y="368"/>
+<ellipse cx="334.75" cy="388.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M337.7188,393.7734 Q337.1406,394.0703 336.5,394.2109 Q335.8594,394.3672 335.1563,394.3672 Q332.6563,394.3672 331.3281,392.7266 Q330.0156,391.0703 330.0156,387.9453 Q330.0156,384.8203 331.3281,383.1641 Q332.6563,381.5078 335.1563,381.5078 Q335.8594,381.5078 336.5,381.6641 Q337.1563,381.8203 337.7188,382.1172 L337.7188,384.8359 Q337.0938,384.2578 336.5,383.9922 Q335.9063,383.7109 335.2813,383.7109 Q333.9375,383.7109 333.25,384.7891 Q332.5625,385.8516 332.5625,387.9453 Q332.5625,390.0391 333.25,391.1172 Q333.9375,392.1797 335.2813,392.1797 Q335.9063,392.1797 336.5,391.9141 Q337.0938,391.6328 337.7188,391.0547 L337.7188,393.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="367.75" y="384.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="355.25" y="399.9639">Warehouse</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="166" x2="591" y1="408.2656" y2="408.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="173" y="418.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="185" y="425.2607">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="173" y="435.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="185" y="441.5576">width: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="173" y="451.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="185" y="457.8545">height: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="166" x2="591" y1="465.1563" y2="465.1563"/>
+<ellipse cx="176" cy="478.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="326" x="185" y="482.1514">Warehouse(name: String, width: int, height: int)</text>
+<ellipse cx="176" cy="495.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="185" y="498.4482">getName(): String</text>
+<ellipse cx="176" cy="511.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="185" y="514.7451">getWidth(): int</text>
+<ellipse cx="176" cy="527.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="185" y="531.042">getHeight(): int</text>
+<ellipse cx="176" cy="543.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="401" x="185" y="547.3389">move(robot: DeployedRobot, moveX: int, moveY: int): void</text>
+<ellipse cx="176" cy="560.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="185" y="563.6357">scanAt(x: int, y: int): int</text>
+</g>
+<!--class Robot-->
+<g id="elem_Robot">
+<rect codeLine="21" fill="#98FB98" height="186.6406" id="Robot" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="693" x="627" y="376"/>
+<ellipse cx="923.75" cy="396.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M926.7188,401.7734 Q926.1406,402.0703 925.5,402.2109 Q924.8594,402.3672 924.1563,402.3672 Q921.6563,402.3672 920.3281,400.7266 Q919.0156,399.0703 919.0156,395.9453 Q919.0156,392.8203 920.3281,391.1641 Q921.6563,389.5078 924.1563,389.5078 Q924.8594,389.5078 925.5,389.6641 Q926.1563,389.8203 926.7188,390.1172 L926.7188,392.8359 Q926.0938,392.2578 925.5,391.9922 Q924.9063,391.7109 924.2813,391.7109 Q922.9375,391.7109 922.25,392.7891 Q921.5625,393.8516 921.5625,395.9453 Q921.5625,398.0391 922.25,399.1172 Q922.9375,400.1797 924.2813,400.1797 Q924.9063,400.1797 925.5,399.9141 Q926.0938,399.6328 926.7188,399.0547 L926.7188,401.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="942.25" y="392.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="968.75" y="407.9639">Robot</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="628" x2="1319" y1="416.2656" y2="416.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635" y="426.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="647" y="433.2607">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635" y="443.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="647" y="449.5576">batteryCapacity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="628" x2="1319" y1="456.8594" y2="456.8594"/>
+<ellipse cx="638" cy="470.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="280" x="647" y="473.8545">Robot(name: String, batteryCapacity: int)</text>
+<ellipse cx="638" cy="486.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="647" y="490.1514">getName(): String</text>
+<ellipse cx="638" cy="503.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="647" y="506.4482">getBatteryCapacity(): int</text>
+<ellipse cx="638" cy="519.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="352" x="647" y="522.7451">deployAt(warehouse: Warehouse): DeployedRobot</text>
+<ellipse cx="638" cy="535.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="500" x="647" y="539.042">deployAt(warehouse: Warehouse, startX: int, startY: int): DeployedRobot</text>
+<ellipse cx="638" cy="551.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="667" x="647" y="555.3389">deployAt(warehouse: Warehouse, startX: int, startY: int, Direction startDirection): DeployedRobot</text>
+</g>
+<!--class DeployedRobot-->
+<g id="elem_DeployedRobot">
+<rect codeLine="32" fill="#FFF2CC" height="300.7188" id="DeployedRobot" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="715" x="21" y="7"/>
+<ellipse cx="320.25" cy="27.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M323.2188,32.7734 Q322.6406,33.0703 322,33.2109 Q321.3594,33.3672 320.6563,33.3672 Q318.1563,33.3672 316.8281,31.7266 Q315.5156,30.0703 315.5156,26.9453 Q315.5156,23.8203 316.8281,22.1641 Q318.1563,20.5078 320.6563,20.5078 Q321.3594,20.5078 322,20.6641 Q322.6563,20.8203 323.2188,21.1172 L323.2188,23.8359 Q322.5938,23.2578 322,22.9922 Q321.4063,22.7109 320.7813,22.7109 Q319.4375,22.7109 318.75,23.7891 Q318.0625,24.8516 318.0625,26.9453 Q318.0625,29.0391 318.75,30.1172 Q319.4375,31.1797 320.7813,31.1797 Q321.4063,31.1797 322,30.9141 Q322.5938,30.6328 323.2188,30.0547 L323.2188,32.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="367.75" y="23.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="340.75" y="38.9639">DeployedRobot</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="22" x2="735" y1="47.2656" y2="47.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="57.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="41" y="64.2607">warehouse: Warehouse</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="74.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="41" y="80.5576">robot: Robot</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="90.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="41" y="96.8545">posX: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="106.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="41" y="113.1514">posY: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="123.1016"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="41" y="129.4482">batteryLevel: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29" y="139.3984"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="41" y="145.7451">direction: Direction</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="22" x2="735" y1="153.0469" y2="153.0469"/>
+<ellipse cx="32" cy="166.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="689" x="41" y="170.042">DeployedRobot(warehouse: Warehouse, robot: Robot, posX: int, posY: int, startDirection: Direction)</text>
+<ellipse cx="32" cy="182.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="41" y="186.3389">getPosX(): int</text>
+<ellipse cx="32" cy="199.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="41" y="202.6357">getPosY(): int</text>
+<ellipse cx="32" cy="215.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="41" y="218.9326">getBatteryLevel(): int</text>
+<ellipse cx="32" cy="231.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="41" y="235.2295">getCurrentDirection(): Direction</text>
+<ellipse cx="32" cy="248.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="41" y="251.5264">getWarehouse(): Warehouse</text>
+<ellipse cx="32" cy="264.4766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="41" y="267.8232">setPosX(x: int): void</text>
+<ellipse cx="32" cy="280.7734" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="41" y="284.1201">setPosY(y: int): void</text>
+<ellipse cx="32" cy="297.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="41" y="300.417">executeProgram(program: String): void</text>
+</g>
+<!--class RobotException-->
+<g id="elem_RobotException">
+<rect codeLine="50" fill="#F1F1F1" height="64.2969" id="RobotException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="259" x="2126" y="125.5"/>
+<ellipse cx="2196.25" cy="141.5" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M2196.3594,136.8438 L2195.2031,141.9219 L2197.5313,141.9219 L2196.3594,136.8438 Z M2194.875,134.6094 L2197.8594,134.6094 L2201.2188,147 L2198.7656,147 L2198,143.9375 L2194.7188,143.9375 L2193.9688,147 L2191.5313,147 L2194.875,134.6094 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="110" x="2216.75" y="146.3467">RobotException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2127" x2="2384" y1="157.5" y2="157.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2127" x2="2384" y1="165.5" y2="165.5"/>
+<ellipse cx="2137" cy="179.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="2146" y="182.4951">RobotException(message: String)</text>
+</g>
+<!--class CompositeRobotException-->
+<g id="elem_CompositeRobotException">
+<rect codeLine="54" fill="#F1F1F1" height="96.8906" id="CompositeRobotException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="391" x="1355" y="421"/>
+<ellipse cx="1453.75" cy="437" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1456.7188,442.6406 Q1456.1406,442.9375 1455.5,443.0781 Q1454.8594,443.2344 1454.1563,443.2344 Q1451.6563,443.2344 1450.3281,441.5938 Q1449.0156,439.9375 1449.0156,436.8125 Q1449.0156,433.6875 1450.3281,432.0313 Q1451.6563,430.375 1454.1563,430.375 Q1454.8594,430.375 1455.5,430.5313 Q1456.1563,430.6875 1456.7188,430.9844 L1456.7188,433.7031 Q1456.0938,433.125 1455.5,432.8594 Q1454.9063,432.5781 1454.2813,432.5781 Q1452.9375,432.5781 1452.25,433.6563 Q1451.5625,434.7188 1451.5625,436.8125 Q1451.5625,438.9063 1452.25,439.9844 Q1452.9375,441.0469 1454.2813,441.0469 Q1454.9063,441.0469 1455.5,440.7813 Q1456.0938,440.5 1456.7188,439.9219 L1456.7188,442.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="1474.25" y="441.8467">CompositeRobotException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1356" x2="1745" y1="453" y2="453"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1363" y="463.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="1375" y="469.9951">errors: RobotException[]</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1356" x2="1745" y1="477.2969" y2="477.2969"/>
+<ellipse cx="1366" cy="490.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="365" x="1375" y="494.292">CompositeRobotException(errors: RobotException[])</text>
+<ellipse cx="1366" cy="507.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="1375" y="510.5889">getErrors(): RobotException[]</text>
+</g>
+<!--class OutOfBoundsException-->
+<g id="elem_OutOfBoundsException">
+<rect codeLine="60" fill="#F1F1F1" height="194.6719" id="OutOfBoundsException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="421" x="1781" y="372"/>
+<ellipse cx="1906.25" cy="388" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1909.2188,393.6406 Q1908.6406,393.9375 1908,394.0781 Q1907.3594,394.2344 1906.6563,394.2344 Q1904.1563,394.2344 1902.8281,392.5938 Q1901.5156,390.9375 1901.5156,387.8125 Q1901.5156,384.6875 1902.8281,383.0313 Q1904.1563,381.375 1906.6563,381.375 Q1907.3594,381.375 1908,381.5313 Q1908.6563,381.6875 1909.2188,381.9844 L1909.2188,384.7031 Q1908.5938,384.125 1908,383.8594 Q1907.4063,383.5781 1906.7813,383.5781 Q1905.4375,383.5781 1904.75,384.6563 Q1904.0625,385.7188 1904.0625,387.8125 Q1904.0625,389.9063 1904.75,390.9844 Q1905.4375,392.0469 1906.7813,392.0469 Q1907.4063,392.0469 1908,391.7813 Q1908.5938,391.5 1909.2188,390.9219 L1909.2188,393.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="1926.75" y="392.8467">OutOfBoundsException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1782" x2="2201" y1="404" y2="404"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1789" y="414.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="1801" y="420.9951">width: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1789" y="430.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="1801" y="437.292">height: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1789" y="447.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1801" y="453.5889">newX: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1789" y="463.5391"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="1801" y="469.8857">newY: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1782" x2="2201" y1="477.1875" y2="477.1875"/>
+<ellipse cx="1792" cy="490.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="395" x="1801" y="494.1826">OutOfBoundsException(width: int, height: int, x: int, y: int)</text>
+<ellipse cx="1792" cy="507.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1801" y="510.4795">getWidth(): int</text>
+<ellipse cx="1792" cy="523.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="1801" y="526.7764">getHeight(): int</text>
+<ellipse cx="1792" cy="539.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1801" y="543.0732">getNewX(): int</text>
+<ellipse cx="1792" cy="556.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="1801" y="559.3701">getNewY(): int</text>
+</g>
+<!--class OutOfEnergyException-->
+<g id="elem_OutOfEnergyException">
+<rect codeLine="72" fill="#F1F1F1" height="162.0781" id="OutOfEnergyException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="567" x="2237" y="388.5"/>
+<ellipse cx="2438.25" cy="404.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M2441.2188,410.1406 Q2440.6406,410.4375 2440,410.5781 Q2439.3594,410.7344 2438.6563,410.7344 Q2436.1563,410.7344 2434.8281,409.0938 Q2433.5156,407.4375 2433.5156,404.3125 Q2433.5156,401.1875 2434.8281,399.5313 Q2436.1563,397.875 2438.6563,397.875 Q2439.3594,397.875 2440,398.0313 Q2440.6563,398.1875 2441.2188,398.4844 L2441.2188,401.2031 Q2440.5938,400.625 2440,400.3594 Q2439.4063,400.0781 2438.7813,400.0781 Q2437.4375,400.0781 2436.75,401.1563 Q2436.0625,402.2188 2436.0625,404.3125 Q2436.0625,406.4063 2436.75,407.4844 Q2437.4375,408.5469 2438.7813,408.5469 Q2439.4063,408.5469 2440,408.2813 Q2440.5938,408 2441.2188,407.4219 L2441.2188,410.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="2458.75" y="409.3467">OutOfEnergyException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2238" x2="2803" y1="420.5" y2="420.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2245" y="431.1484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="2257" y="437.4951">command: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2245" y="447.4453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="2257" y="453.792">batteryLevel: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2245" y="463.7422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="2257" y="470.0889">requiredEnergy: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2238" x2="2803" y1="477.3906" y2="477.3906"/>
+<ellipse cx="2248" cy="491.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="541" x="2257" y="494.3857">OutOfEnergyException(command: String, batteryLevel: int, requiredEnergy: int)</text>
+<ellipse cx="2248" cy="507.3359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="2257" y="510.6826">getCommand(): String</text>
+<ellipse cx="2248" cy="523.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="2257" y="526.9795">getBatteryLevel(): int</text>
+<ellipse cx="2248" cy="539.9297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="2257" y="543.2764">getRequiredEnergy(): int</text>
+</g>
+<!--class InvalidCommandException-->
+<g id="elem_InvalidCommandException">
+<rect codeLine="82" fill="#F1F1F1" height="96.8906" id="InvalidCommandException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="335" x="2839" y="421"/>
+<ellipse cx="2911.75" cy="437" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M2914.7188,442.6406 Q2914.1406,442.9375 2913.5,443.0781 Q2912.8594,443.2344 2912.1563,443.2344 Q2909.6563,443.2344 2908.3281,441.5938 Q2907.0156,439.9375 2907.0156,436.8125 Q2907.0156,433.6875 2908.3281,432.0313 Q2909.6563,430.375 2912.1563,430.375 Q2912.8594,430.375 2913.5,430.5313 Q2914.1563,430.6875 2914.7188,430.9844 L2914.7188,433.7031 Q2914.0938,433.125 2913.5,432.8594 Q2912.9063,432.5781 2912.2813,432.5781 Q2910.9375,432.5781 2910.25,433.6563 Q2909.5625,434.7188 2909.5625,436.8125 Q2909.5625,438.9063 2910.25,439.9844 Q2910.9375,441.0469 2912.2813,441.0469 Q2912.9063,441.0469 2913.5,440.7813 Q2914.0938,440.5 2914.7188,439.9219 L2914.7188,442.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="2932.25" y="441.8467">InvalidCommandException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2840" x2="3173" y1="453" y2="453"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2847" y="463.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="2859" y="469.9951">command: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="2840" x2="3173" y1="477.2969" y2="477.2969"/>
+<ellipse cx="2850" cy="490.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="309" x="2859" y="494.292">InvalidCommandException(command: String)</text>
+<ellipse cx="2850" cy="507.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="2859" y="510.5889">getCommand(): String</text>
+</g>
+<!--reverse link RobotException to CompositeRobotException-->
+<g id="link_RobotException_CompositeRobotException">
+<path codeLine="88" d="M2161.37,197.32 C2062,238.6 1901.02,306.3 1763.5,368 C1726.01,384.82 1685.12,403.92 1649.29,420.92 " fill="none" id="RobotException-backto-CompositeRobotException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="2158.94,190.75,2180.09,189.55,2164.3,203.68,2158.94,190.75" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link RobotException to OutOfBoundsException-->
+<g id="link_RobotException_OutOfBoundsException">
+<path codeLine="89" d="M2215.92,204.98 C2178.52,248.9 2121.25,316.14 2073.93,371.71 " fill="none" id="RobotException-backto-OutOfBoundsException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="2210.68,200.33,2228.98,189.64,2221.34,209.41,2210.68,200.33" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link RobotException to OutOfEnergyException-->
+<g id="link_RobotException_OutOfEnergyException">
+<path codeLine="90" d="M2295.17,204.9 C2336.54,253.31 2402.2,330.11 2451.99,388.36 " fill="none" id="RobotException-backto-OutOfEnergyException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="2289.8,209.39,2282.12,189.64,2300.44,200.3,2289.8,209.39" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link RobotException to InvalidCommandException-->
+<g id="link_RobotException_InvalidCommandException">
+<path codeLine="91" d="M2371.12,195.87 C2486.9,234.55 2669.25,298.9 2821.5,368 C2856.11,383.71 2893.14,403.24 2924.9,420.9 " fill="none" id="RobotException-backto-InvalidCommandException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="2368.84,202.49,2352.07,189.54,2373.26,189.2,2368.84,202.49" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link DeployedRobot to Warehouse-->
+<g id="link_DeployedRobot_Warehouse">
+<path codeLine="93" d="M378.5,308.05 C378.5,326.43 378.5,344.92 378.5,362.47 " fill="none" id="DeployedRobot-to-Warehouse" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="378.5,367.88,382.5,358.88,378.5,362.88,374.5,358.88,378.5,367.88" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link DeployedRobot to Robot-->
+<g id="link_DeployedRobot_Robot">
+<path codeLine="94" d="M665.54,308.05 C708.23,330.29 751.21,352.69 790.96,373.39 " fill="none" id="DeployedRobot-to-Robot" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="795.79,375.91,789.6465,368.2121,791.3527,373.6055,785.9593,375.3117,795.79,375.91" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link DeployedRobot to Direction-->
+<g id="link_DeployedRobot_Direction">
+<path codeLine="95" d="M206.96,308.09 C186.42,327.74 166.14,348 147.5,368 C136.83,379.45 126.04,392.22 116.01,404.71 " fill="none" id="DeployedRobot-to-Direction" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="112.64,408.94,121.3736,404.3876,115.753,405.0273,115.1133,399.4067,112.64,408.94" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[hLJ1Zfim4BtdAoprGXIuz8YYI1kIQ2jLcrMoLH9LFJWm9PR0fiOaGTl-Usq23ZQmKQMUOCQUDpFFRmPeaQ85uH0AmYYQJacQ9P025H3DPkXJXXE8EG15xoE4NjQRjsVvNJvjt-Hdk_vMcRkbDF-CHc62ynpjC8SJAtAGQ1dcWk148QrMgyz1KC5u5AVWewtWXCRAlf18d7n4g53M2KXy4eqvqNXEEyn5zo0NjKB6AYO6yI8lE-DM5kNSgHZbhR6bwxaARVbITWQ7ioEJU0l84bP2j56cYzJHlawf_W-tZ3uwCnAfs3p4z4aur_fEsPmhQ4rG1VQ8wWv7Hom4y3B06Gw9A7Mv5Pf5JT_T3tcPcm4jDgAA0TdJfNa6__x2OukXXm4koeMKHCDXPMWI_nUKsn9qvTPc9ub-4yCzBDo-GfI_bajJkPUnVA_rB8s3Dkgd-GfdIBGpQWhqxwKh0eog1bXeftQHJbpz7jhaB7gIDA9ubM7cM4ZFmVJCMvMR9q71kPInHbMdHXzgylGKZqtk9dcT_jePfhgAqZw0AuI5W5VEOevJ9xjz6qat5-NRucCkE0u5QWtUyXf2LcdZNO-FzZafv3cEzIYDxme9M2eP9G9wK3pWdF7Sjp9y_w4o30GwGp7DcoohSqLN1rKNjIx4-kUS5JJAhOe-MgaUXSk-RMXvJle0dO5Dwo9hp_t3abMBI1RHyMZDcIqkAV2uj5eCMPfY6lKiINEwEFmgf1gZ6uZPgWNiM9XwbTuHvSHryPhMWrluq7xjcPsD0TRf_WizuuH4DUv30YO3z-s-XkkLcIs1Jtzxtf3wU-_sQMZuelK2lHS7kXgDpBNjURFMQkcUtTPprwztrLy0]-->
+</g>
+</svg>
+<p>Access modifiers in class diagrams:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<hr />
+<h3>Class <code>Warehouse</code> (provided, partially)</h3>
+<p>A warehouse is a rectangular grid of size <code>width × height</code>. Coordinates are <strong>0-based</strong>: valid positions are <code>[0, width)</code> on the X axis and <code>[0, height)</code> on the Y axis.
+You must complete the <code>move</code> and <code>scanAt</code> methods.</p>
+<p>You need to implement:</p>
+<ul>
+<li>Method <code>move(DeployedRobot robot, int moveX, int moveY)</code>:
+<ul>
+<li>Computes the new robot position for the given X and Y offsets.</li>
+<li>Throws <code>OutOfBoundsException(width, height, x, y)</code> if the new position is out of bounds.</li>
+<li>Otherwise updates the robot's position.</li>
+</ul>
+</li>
+<li>Method <code>scanAt(int x, int y)</code>:
+<ul>
+<li>Throws <code>OutOfBoundsException(width, height, x, y)</code> if the position is out of bounds.</li>
+<li>Otherwise returns a random integer from <code>[0, width * height)</code>.</li>
+</ul>
+</li>
+</ul>
+<h3>Class <code>Robot</code> (provided, fully)</h3>
+<p><code>Robot</code> holds only robot identity (name and battery capacity). The <code>deployAt</code> method creates a <code>DeployedRobot</code> that holds state and executes commands.</p>
+<ul>
+<li>Method <code>deployAt(Warehouse warehouse, int startX, int startY, Direction startDirection)</code>:
+<ul>
+<li>Throws <code>IllegalArgumentException</code> if <code>warehouse</code> is null.</li>
+<li>Returns a new <code>DeployedRobot</code> with starting position <code>(startX, startY)</code>, direction <code>startDirection</code>, and battery at full capacity.</li>
+</ul>
+</li>
+<li>Methods <code>deployAt(Warehouse warehouse)</code> and <code>deployAt(Warehouse warehouse, int startX, int startY)</code>:
+<ul>
+<li>Same as above, but set default values.</li>
+</ul>
+</li>
+</ul>
+<h3>Class <code>DeployedRobot</code> (provided, partially)</h3>
+<p><code>DeployedRobot</code> represents a single robot <em>walk</em> through the warehouse. It holds all robot state (warehouse, position, battery, direction) and implements the command interpreter. The class skeleton (constructor, getters, setters) is provided — you implement <code>executeProgram</code>.</p>
+<p><strong><code>executeProgram(String program)</code></strong> — executes a multi-line program:</p>
+<ul>
+<li>Splits on newline characters. <strong>Before executing a line, strips the whitespaces at the start and end. Blank lines are part of the robot's program, but do not trigger a command.</strong></li>
+<li><strong>IMPORTANT</strong>: Each line may throw a <code>RobotException</code>; the robot continues executing subsequent lines. These exceptions are stored in a <code>CompositeRobotException</code> such that the position in the <code>errors</code> array equals the line index (0-based) where the exception occurred. Successfully executed lines have <code>null</code> at their index. After all lines execute, if any errors occurred, a <code>CompositeRobotException</code> is thrown. <strong>The empty lines are also included in the <code>errors</code> array, at appropriate indices, but with null values.</strong></li>
+</ul>
+<p><strong>Supported commands:</strong></p>
+<table style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Command</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Battery cost</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>MOVE [n]</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>n</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        Move <code>n</code> steps (default 1) in the current direction.
+        On success, decrements <code>batteryLevel</code> by <code>n</code>.
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>ROTATE &lt;direction&gt;</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>1 + |ANGLE|/90&deg;</code> (see table below)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        Change direction to <code>NORTH</code>, <code>EAST</code>, <code>SOUTH</code>, or <code>WEST</code>.
+        Energy cost depends on the rotation type (see table below). Possible angles are <code>[0&deg;, -90&deg;, 90&deg;, 180&deg;]</code>.
+        On success, sets the new direction and decrements <code>batteryLevel</code> by the cost.
+      </td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>SCAN</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>1</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        Prints robot state and scanned value via <code>warehouse.scanAt(posX, posY)</code>:
+        <code>"Robot &lt;name&gt; at (&lt;x&gt;,&lt;y&gt;) facing &lt;direction&gt; in &lt;warehouseName&gt; scanned: &lt;value&gt;"</code>.
+        Decrements <code>batteryLevel</code> by 1.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Rotation cost:</strong></p>
+<table style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Rotation type</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Example</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">Same direction</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>NORTH &harr; NORTH</code>, <code>SOUTH &harr; SOUTH</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">1</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">Adjacent direction (&#xB1;90&deg;)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>NORTH &harr; EAST</code>, <code>SOUTH &harr; EAST</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">2</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">Opposite direction (180&deg;)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>NORTH &harr; SOUTH</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+    </tr>
+  </tbody>
+</table>
+<p><strong>Movement directions:</strong> NORTH→+Y, SOUTH→−Y, EAST→+X, WEST→−X.</p>
+<p><strong>Grid bounds:</strong> Valid positions are <code>[0, width)</code> on the X axis and <code>[0, height)</code> on the Y axis.</p>
+<h3>Exceptions</h3>
+<p><strong>All task-related exceptions are in the package <code>hr.fer.oop.warehouse.exception</code>.</strong></p>
+<ul>
+<li><strong><code>RobotException</code> is a checked exception and cannot be instantiated directly.</strong></li>
+<li><strong>Every unrecognized command or invalid command argument throws <code>InvalidCommandException</code>.</strong></li>
+<li><strong>Before executing a command and draining the battery, <code>OutOfEnergyException(command, batteryLevel, requiredEnergy)</code> may be thrown if there is not enough energy, i.e. if <code>batteryLevel</code> &lt; <code>requiredEnergy</code>. The robot's battery cannot drop below <code>0</code>. The robot state (battery level, position and direction) change only if the command executes successfully.</strong></li>
+<li><strong>The <code>MOVE</code> command may throw <code>OutOfBoundsException</code></strong> — for a given offset that leads outside the warehouse grid boundaries.</li>
+</ul>
+<pre class="line-numbers"><code>RobotException  (cannot be instantiated directly)
+  ├── CompositeRobotException  (stores: RobotException[] errors)
+  ├── OutOfBoundsException     (stores: width, height, newX, newY)
+  ├── OutOfEnergyException     (stores: command, batteryLevel, requiredEnergy)
+  └── InvalidCommandException  (stores: command)
+</code></pre>
+<p>Objects of the <code>RobotException</code> class cannot be instantiated directly. It has a single constructor: <code>RobotException(String message)</code>.</p>
+<p><strong><code>CompositeRobotException</code></strong> holds the per-line error array from <code>executeProgram</code>. Slots for successfully executed lines are <code>null</code>.</p>
+<hr />
+<h3>Usage example</h3>
+<pre class="line-numbers"><code class="language-java">Robot roby = new Robot(&quot;Roby&quot;, 100);
+Warehouse warehouseB = new Warehouse(&quot;Skladiste B&quot;, 50, 50);
+DeployedRobot dr = roby.deployAt(warehouseB);
+dr.executeProgram(&quot;&quot;&quot;
+    MOVE 3
+    ROTATE EAST
+    MOVE 3
+    ROTATE SOUTH
+    MOVE 2
+    SCAN
+    &quot;&quot;&quot;);
+</code></pre>
+<p>Step-by-step robot state (starting at (0,0) facing NORTH, battery=100):</p>
+<table style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Command</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Position</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Direction</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f5f5f5; text-align: left;">Battery</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">(initial)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(0,0)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">NORTH</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">100</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>MOVE 3</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(0,3)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">NORTH</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">97 (&minus;3)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>ROTATE EAST</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(0,3)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">EAST</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">95 (&minus;2, adjacent)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>MOVE 3</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(3,3)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">EAST</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">92 (&minus;3)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>ROTATE SOUTH</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(3,3)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">SOUTH</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">90 (&minus;2, adjacent)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>MOVE 2</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(3,1)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">SOUTH</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">88 (&minus;2)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;"><code>SCAN</code></td>
+      <td style="border: 1px solid #ccc; padding: 8px;">(3,1)</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">SOUTH</td>
+      <td style="border: 1px solid #ccc; padding: 8px;">87 (&minus;1)</td>
+    </tr>
+  </tbody>
+</table>
+<p>Expected SCAN output (scanned value is random and may vary):</p>
+<pre class="line-numbers"><code>Robot Roby at (3,1) facing SOUTH in Skladiste B scanned: 42
+</code></pre>
+<hr />
+<p>Example program with errors:</p>
+<pre class="line-numbers"><code class="language-java">Robot roby = new Robot(&quot;Roby&quot;, 100);
+DeployedRobot walk = roby.deployAt(new Warehouse(&quot;W&quot;, 5, 5));
+try {
+  walk.executeProgram(&quot;&quot;&quot;
+      MOVE 3
+
+      ROTATE RIGHT
+      LAUNCH
+      MOVE 10
+      SCAN
+      &quot;&quot;&quot;);
+} catch (CompositeRobotException e) {
+  System.out.println(&quot;Program finished with errors:&quot;);
+  RobotException[] errors = e.getErrors();
+  for (int i = 0; i &lt; errors.length; i++) {
+    if (errors[i] != null) {
+      System.out.println(&quot;  Line &quot; + (i + 1) + &quot;: &quot; + errors[i]);
+    }
+  }
+}
+</code></pre>
+<p>Expected output (scanned value varies - it is random):</p>
+<pre class="line-numbers"><code>Robot Roby at (0,3) facing NORTH in W scanned: 10
+Program finished with errors:
+  Line 3: hr.fer.oop.warehouse.exception.InvalidCommandException
+  Line 4: hr.fer.oop.warehouse.exception.InvalidCommandException
+  Line 5: hr.fer.oop.warehouse.exception.OutOfBoundsException
+</code></pre>
+<p><strong>EXPLANATION</strong> - We create the <code>walk</code> with the <code>deployAt(Warehouse warehouse)</code> method, meaning its starting position is <code>(0, 0)</code>, facing <code>NORTH</code>. The command on line 1 (<code>MOVE 3</code>) moves the robot 3 steps north to <code>(0, 3)</code> and decreases its batter level by 3. Line 2 is empty so nothing gets executed. On line 3, the <code>ROTATE RIGHT</code> is not valid because <code>RIGHT</code> is not a valid direction. We store the error. On line 4 <code>LAUNCH</code> is not a valid command - stored. On line 5 we move outside of the grid (which is <code>5x5</code>) and get an <code>OutOfBoundsException</code> - stored. And lastly, since only the first <code>MOVE</code> went through we are still at <code>(0, 3)</code>, facing <code>NORTH</code>, and scanned a random number <code>10</code>; decrease the robots battery level by 1 (because of the <code>SCAN</code>).</p>
+<hr />
+<p><strong>Note:</strong> All classes have <code>public</code> visibility.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

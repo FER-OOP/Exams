@@ -1,0 +1,396 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Implement the object model for a food delivery system according to the given UML diagram.</p>
+<p>The system supports different types of orders and different types of delivery persons. Each order has its own status, base price, delivery distance, and rules for calculating the total price and the estimated delivery time.</p>
+<p>In all classes and interfaces, implement the attributes, constructors, and methods exactly as shown in the UML diagram. You may freely add helper methods, but you must not change the given method names, parameter lists, or return types.</p>
+<p><strong>NOTE: All classes, interfaces, and enumerations must have public visibility and must be placed in the package hr.fer.oop.</strong></p>
+<p>The following components are already provided:</p>
+<ul>
+<li>enumerations <code>OrderStatus</code> and <code>VehicleType</code></li>
+<li>interfaces <code>Trackable</code> and <code>Cancellable</code></li>
+<li>the abstract class <code>DeliveryPerson</code> with an implemented constructor and getter methods</li>
+</ul>
+<p>These components should not be modified or reimplemented. The remaining classes must be implemented according to the UML diagram and the functionality description.</p>
+<p>The following classes need to be implemented:</p>
+<ul>
+<li><code>CarCourier</code></li>
+<li><code>BikeCourier</code></li>
+<li><code>FoodOrder</code></li>
+<li><code>PickupOrder</code></li>
+<li><code>Order</code> (this class is provided as a partial template and must be completed according to the specification)</li>
+</ul>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="996px" preserveAspectRatio="none" style="width:2180px;height:996px;background:#FFFFFF;" version="1.1" viewBox="0 0 2180 996" width="2180px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class OrderStatus-->
+<g id="elem_OrderStatus">
+<rect codeLine="3" fill="#98FB98" height="121.4531" id="OrderStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="582.5" y="7"/>
+<ellipse cx="597.5" cy="27.1328" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M601.6094,33.1328 L593.8906,33.1328 L593.8906,20.7422 L601.6094,20.7422 L601.6094,22.8984 L596.3438,22.8984 L596.3438,25.5703 L601.1094,25.5703 L601.1094,27.7266 L596.3438,27.7266 L596.3438,30.9766 L601.6094,30.9766 L601.6094,33.1328 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="609.5" y="23.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="615.5" y="38.9639">OrderStatus</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="583.5" x2="704.5" y1="47.2656" y2="47.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="588.5" y="64.2607">CREATED</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="588.5" y="80.5576">CONFIRMED</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="588.5" y="96.8545">IN_DELIVERY</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="588.5" y="113.1514">CANCELLED</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="583.5" x2="704.5" y1="120.4531" y2="120.4531"/>
+</g>
+<!--class VehicleType-->
+<g id="elem_VehicleType">
+<rect codeLine="10" fill="#98FB98" height="88.8594" id="VehicleType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="123" x="740.5" y="23"/>
+<ellipse cx="755.5" cy="43.1328" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M759.6094,49.1328 L751.8906,49.1328 L751.8906,36.7422 L759.6094,36.7422 L759.6094,38.8984 L754.3438,38.8984 L754.3438,41.5703 L759.1094,41.5703 L759.1094,43.7266 L754.3438,43.7266 L754.3438,46.9766 L759.6094,46.9766 L759.6094,49.1328 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="767.5" y="39.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="773" y="54.9639">VehicleType</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="741.5" x2="862.5" y1="63.2656" y2="63.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="746.5" y="80.2607">BICYCLE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="746.5" y="96.5576">CAR</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="741.5" x2="862.5" y1="103.8594" y2="103.8594"/>
+</g>
+<!--class Trackable-->
+<g id="elem_Trackable">
+<rect codeLine="15" fill="#98FB98" height="88.8594" id="Trackable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="242" x="899" y="23"/>
+<ellipse cx="970.25" cy="43.1328" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M966.1719,38.8984 L966.1719,36.7422 L973.5625,36.7422 L973.5625,38.8984 L971.0938,38.8984 L971.0938,46.9766 L973.5625,46.9766 L973.5625,49.1328 L966.1719,49.1328 L966.1719,46.9766 L968.6406,46.9766 L968.6406,38.8984 L966.1719,38.8984 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="988.75" y="39.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="67" x="1002.75" y="54.9639">Trackable</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="900" x2="1140" y1="63.2656" y2="63.2656"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="900" x2="1140" y1="71.2656" y2="71.2656"/>
+<ellipse cx="910" cy="84.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="919" y="88.2607">getEstimatedDeliveryTime(): int</text>
+<ellipse cx="910" cy="101.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="919" y="104.5576">getOrderInfo(): String</text>
+</g>
+<!--class Cancellable-->
+<g id="elem_Cancellable">
+<rect codeLine="20" fill="#98FB98" height="72.5625" id="Cancellable" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="1176" y="31"/>
+<ellipse cx="1201.35" cy="51.1328" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1197.2719,46.8984 L1197.2719,44.7422 L1204.6625,44.7422 L1204.6625,46.8984 L1202.1938,46.8984 L1202.1938,54.9766 L1204.6625,54.9766 L1204.6625,57.1328 L1197.2719,57.1328 L1197.2719,54.9766 L1199.7406,54.9766 L1199.7406,46.8984 L1197.2719,46.8984 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="1215.65" y="47.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="79" x="1223.65" y="62.9639">Cancellable</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1177" x2="1321" y1="71.2656" y2="71.2656"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1177" x2="1321" y1="79.2656" y2="79.2656"/>
+<ellipse cx="1187" cy="92.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="1196" y="96.2607">cancel(): boolean</text>
+</g>
+<!--class DeliveryPerson-->
+<g id="elem_DeliveryPerson">
+<rect codeLine="24" fill="#98FB98" height="202.9375" id="DeliveryPerson" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="550" x="121" y="630"/>
+<ellipse cx="340.25" cy="650.1328" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M340.3594,645.4766 L339.2031,650.5547 L341.5313,650.5547 L340.3594,645.4766 Z M338.875,643.2422 L341.8594,643.2422 L345.2188,655.6328 L342.7656,655.6328 L342,652.5703 L338.7188,652.5703 L337.9688,655.6328 L335.5313,655.6328 L338.875,643.2422 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="95" x="364.75" y="646.1387">&#171;implemented&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="103" x="360.75" y="661.9639">DeliveryPerson</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="122" x2="670" y1="670.2656" y2="670.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="129" y="680.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="141" y="687.2607">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="129" y="697.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="141" y="703.5576">vehicleType: VehicleType</text>
+<polygon fill="none" points="132,711.5078,136,715.5078,132,719.5078,128,715.5078" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="141" y="719.8545">speedKmh: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="122" x2="670" y1="727.1563" y2="727.1563"/>
+<ellipse cx="132" cy="740.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="524" x="141" y="744.1514">DeliveryPerson(name: String, vehicleType: VehicleType, speedKmh: double)</text>
+<ellipse cx="132" cy="757.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="141" y="760.4482">getName(): String</text>
+<ellipse cx="132" cy="773.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="141" y="776.7451">getVehicleType(): VehicleType</text>
+<ellipse cx="132" cy="789.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="141" y="793.042">getSpeedKmh(): double</text>
+<ellipse cx="132" cy="805.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="346" x="141" y="809.3389">canDeliverDistance(distanceKm: double): boolean</text>
+<ellipse cx="132" cy="822.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="308" x="141" y="825.6357">getDeliveryFee(distanceKm: double): double</text>
+</g>
+<!--class BikeCourier-->
+<g id="elem_BikeCourier">
+<rect codeLine="36" fill="#F1F1F1" height="96.8906" id="BikeCourier" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="372" x="7" y="893"/>
+<ellipse cx="148.75" cy="909" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M151.7188,914.6406 Q151.1406,914.9375 150.5,915.0781 Q149.8594,915.2344 149.1563,915.2344 Q146.6563,915.2344 145.3281,913.5938 Q144.0156,911.9375 144.0156,908.8125 Q144.0156,905.6875 145.3281,904.0313 Q146.6563,902.375 149.1563,902.375 Q149.8594,902.375 150.5,902.5313 Q151.1563,902.6875 151.7188,902.9844 L151.7188,905.7031 Q151.0938,905.125 150.5,904.8594 Q149.9063,904.5781 149.2813,904.5781 Q147.9375,904.5781 147.25,905.6563 Q146.5625,906.7188 146.5625,908.8125 Q146.5625,910.9063 147.25,911.9844 Q147.9375,913.0469 149.2813,913.0469 Q149.9063,913.0469 150.5,912.7813 Q151.0938,912.5 151.7188,911.9219 L151.7188,914.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="169.25" y="913.8467">BikeCourier</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="378" y1="925" y2="925"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="378" y1="933" y2="933"/>
+<ellipse cx="18" cy="946.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="27" y="949.9951">BikeCourier(name: String)</text>
+<ellipse cx="18" cy="962.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="346" x="27" y="966.292">canDeliverDistance(distanceKm: double): boolean</text>
+<ellipse cx="18" cy="979.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="27" y="982.5889">getDeliveryFee(distanceKm: double): double</text>
+</g>
+<!--class CarCourier-->
+<g id="elem_CarCourier">
+<rect codeLine="42" fill="#F1F1F1" height="96.8906" id="CarCourier" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="372" x="414" y="893"/>
+<ellipse cx="559.25" cy="909" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M562.2188,914.6406 Q561.6406,914.9375 561,915.0781 Q560.3594,915.2344 559.6563,915.2344 Q557.1563,915.2344 555.8281,913.5938 Q554.5156,911.9375 554.5156,908.8125 Q554.5156,905.6875 555.8281,904.0313 Q557.1563,902.375 559.6563,902.375 Q560.3594,902.375 561,902.5313 Q561.6563,902.6875 562.2188,902.9844 L562.2188,905.7031 Q561.5938,905.125 561,904.8594 Q560.4063,904.5781 559.7813,904.5781 Q558.4375,904.5781 557.75,905.6563 Q557.0625,906.7188 557.0625,908.8125 Q557.0625,910.9063 557.75,911.9844 Q558.4375,913.0469 559.7813,913.0469 Q560.4063,913.0469 561,912.7813 Q561.5938,912.5 562.2188,911.9219 L562.2188,914.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="579.75" y="913.8467">CarCourier</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="415" x2="785" y1="925" y2="925"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="415" x2="785" y1="933" y2="933"/>
+<ellipse cx="425" cy="946.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="434" y="949.9951">CarCourier(name: String)</text>
+<ellipse cx="425" cy="962.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="346" x="434" y="966.292">canDeliverDistance(distanceKm: double): boolean</text>
+<ellipse cx="425" cy="979.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="308" x="434" y="982.5889">getDeliveryFee(distanceKm: double): double</text>
+</g>
+<!--class Order-->
+<g id="elem_Order">
+<rect codeLine="48" fill="#FFF2CC" height="382.2031" id="Order" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="677" x="795.5" y="188"/>
+<ellipse cx="1104.75" cy="208.1328" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1104.8594,203.4766 L1103.7031,208.5547 L1106.0313,208.5547 L1104.8594,203.4766 Z M1103.375,201.2422 L1106.3594,201.2422 L1109.7188,213.6328 L1107.2656,213.6328 L1106.5,210.5703 L1103.2188,210.5703 L1102.4688,213.6328 L1100.0313,213.6328 L1103.375,201.2422 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="1123.25" y="204.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="39" x="1130.75" y="219.9639">Order</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="796.5" x2="1471.5" y1="228.2656" y2="228.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="238.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="815.5" y="245.2607">customerName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="255.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="815.5" y="261.5576">restaurantName: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="271.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="815.5" y="277.8545">basePrice: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="287.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="815.5" y="294.1514">distanceKm: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="304.1016"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="815.5" y="310.4482">status: OrderStatus</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="803.5" y="320.3984"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="815.5" y="326.7451">deliveryPerson: DeliveryPerson</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="796.5" x2="1471.5" y1="334.0469" y2="334.0469"/>
+<ellipse cx="806.5" cy="347.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="651" x="815.5" y="351.042">Order(customerName: String, restaurantName: String, basePrice: double, distanceKm: double)</text>
+<ellipse cx="806.5" cy="363.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="815.5" y="367.3389">getCustomerName(): String</text>
+<ellipse cx="806.5" cy="380.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="198" x="815.5" y="383.6357">getRestaurantName(): String</text>
+<ellipse cx="806.5" cy="396.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="159" x="815.5" y="399.9326">getBasePrice(): double</text>
+<ellipse cx="806.5" cy="412.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="815.5" y="416.2295">getDistanceKm(): double</text>
+<ellipse cx="806.5" cy="429.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="169" x="815.5" y="432.5264">getStatus(): OrderStatus</text>
+<ellipse cx="806.5" cy="445.4766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="248" x="815.5" y="448.8232">getDeliveryPerson(): DeliveryPerson</text>
+<ellipse cx="806.5" cy="461.7734" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="436" x="815.5" y="465.1201">assignDeliveryPerson(deliveryPerson: DeliveryPerson): boolean</text>
+<ellipse cx="806.5" cy="478.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="815.5" y="481.417">confirm(): boolean</text>
+<ellipse cx="806.5" cy="494.3672" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="815.5" y="497.7139">startDelivery(): boolean</text>
+<ellipse cx="806.5" cy="510.6641" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="815.5" y="514.0107">cancel(): boolean</text>
+<ellipse cx="806.5" cy="526.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="815.5" y="530.3076">getEstimatedDeliveryTime(): int</text>
+<ellipse cx="806.5" cy="543.2578" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="815.5" y="546.6045">getOrderInfo(): String</text>
+<ellipse cx="806.5" cy="559.5547" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="158" x="815.5" y="562.9014">getTotalPrice(): double</text>
+</g>
+<!--class FoodOrder-->
+<g id="elem_FoodOrder">
+<rect codeLine="71" fill="#F1F1F1" height="113.1875" id="FoodOrder" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="855" x="706.5" y="675"/>
+<ellipse cx="1092.75" cy="691" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1095.7188,696.6406 Q1095.1406,696.9375 1094.5,697.0781 Q1093.8594,697.2344 1093.1563,697.2344 Q1090.6563,697.2344 1089.3281,695.5938 Q1088.0156,693.9375 1088.0156,690.8125 Q1088.0156,687.6875 1089.3281,686.0313 Q1090.6563,684.375 1093.1563,684.375 Q1093.8594,684.375 1094.5,684.5313 Q1095.1563,684.6875 1095.7188,684.9844 L1095.7188,687.7031 Q1095.0938,687.125 1094.5,686.8594 Q1093.9063,686.5781 1093.2813,686.5781 Q1091.9375,686.5781 1091.25,687.6563 Q1090.5625,688.7188 1090.5625,690.8125 Q1090.5625,692.9063 1091.25,693.9844 Q1091.9375,695.0469 1093.2813,695.0469 Q1093.9063,695.0469 1094.5,694.7813 Q1095.0938,694.5 1095.7188,693.9219 L1095.7188,696.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1113.25" y="695.8467">FoodOrder</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="707.5" x2="1560.5" y1="707" y2="707"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="714.5" y="717.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="726.5" y="723.9951">numberOfMeals: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="707.5" x2="1560.5" y1="731.2969" y2="731.2969"/>
+<ellipse cx="717.5" cy="744.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="829" x="726.5" y="748.292">FoodOrder(customerName: String, restaurantName: String, basePrice: double, distanceKm: double, numberOfMeals: int)</text>
+<ellipse cx="717.5" cy="761.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="726.5" y="764.5889">getTotalPrice(): double</text>
+<ellipse cx="717.5" cy="777.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="726.5" y="780.8857">getOrderInfo(): String</text>
+</g>
+<!--class PickupOrder-->
+<g id="elem_PickupOrder">
+<rect codeLine="78" fill="#F1F1F1" height="129.4844" id="PickupOrder" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="577" x="1596.5" y="667"/>
+<ellipse cx="1838.25" cy="683" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1841.2188,688.6406 Q1840.6406,688.9375 1840,689.0781 Q1839.3594,689.2344 1838.6563,689.2344 Q1836.1563,689.2344 1834.8281,687.5938 Q1833.5156,685.9375 1833.5156,682.8125 Q1833.5156,679.6875 1834.8281,678.0313 Q1836.1563,676.375 1838.6563,676.375 Q1839.3594,676.375 1840,676.5313 Q1840.6563,676.6875 1841.2188,676.9844 L1841.2188,679.7031 Q1840.5938,679.125 1840,678.8594 Q1839.4063,678.5781 1838.7813,678.5781 Q1837.4375,678.5781 1836.75,679.6563 Q1836.0625,680.7188 1836.0625,682.8125 Q1836.0625,684.9063 1836.75,685.9844 Q1837.4375,687.0469 1838.7813,687.0469 Q1839.4063,687.0469 1840,686.7813 Q1840.5938,686.5 1841.2188,685.9219 L1841.2188,688.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="1858.75" y="687.8467">PickupOrder</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1597.5" x2="2172.5" y1="699" y2="699"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1597.5" x2="2172.5" y1="707" y2="707"/>
+<ellipse cx="1607.5" cy="720.6484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="551" x="1616.5" y="723.9951">PickupOrder(customerName: String, restaurantName: String, basePrice: double)</text>
+<ellipse cx="1607.5" cy="736.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="436" x="1616.5" y="740.292">assignDeliveryPerson(deliveryPerson: DeliveryPerson): boolean</text>
+<ellipse cx="1607.5" cy="753.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="1616.5" y="756.5889">getTotalPrice(): double</text>
+<ellipse cx="1607.5" cy="769.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="1616.5" y="772.8857">getEstimatedDeliveryTime(): int</text>
+<ellipse cx="1607.5" cy="785.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="1616.5" y="789.1826">getOrderInfo(): String</text>
+</g>
+<!--reverse link DeliveryPerson to BikeCourier-->
+<g id="link_DeliveryPerson_BikeCourier">
+<path codeLine="86" d="M283.48,847.79 C267.98,863.67 252.83,879.2 239.49,892.86 " fill="none" id="DeliveryPerson-backto-BikeCourier" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="278.79,842.57,297.77,833.15,288.81,852.35,278.79,842.57" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link DeliveryPerson to CarCourier-->
+<g id="link_DeliveryPerson_CarCourier">
+<path codeLine="87" d="M509.07,847.79 C524.65,863.67 539.88,879.2 553.28,892.86 " fill="none" id="DeliveryPerson-backto-CarCourier" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="503.72,852.33,494.71,833.15,513.72,842.53,503.72,852.33" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Order to FoodOrder-->
+<g id="link_Order_FoodOrder">
+<path codeLine="89" d="M1134,590.19 C1134,621.3 1134,650.87 1134,674.78 " fill="none" id="Order-backto-FoodOrder" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1127,590.12,1134,570.12,1141,590.12,1127,590.12" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Order to PickupOrder-->
+<g id="link_Order_PickupOrder">
+<path codeLine="90" d="M1491.04,546.63 C1582.88,589.5 1676.19,633.05 1748.93,667 " fill="none" id="Order-backto-PickupOrder" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1487.86,552.88,1472.7,538.07,1493.78,540.19,1487.86,552.88" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Trackable to Order-->
+<g id="link_Trackable_Order">
+<path codeLine="92" d="M1043.03,131.02 C1049.3,148.05 1056.44,167.44 1063.9,187.68 " fill="none" id="Trackable-backto-Order" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="1036.44,133.37,1036.09,112.19,1049.57,128.54,1036.44,133.37" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Cancellable to Order-->
+<g id="link_Cancellable_Order">
+<path codeLine="93" d="M1228.75,122.99 C1221.74,141.85 1213.44,164.21 1204.7,187.71 " fill="none" id="Cancellable-backto-Order" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="1222.28,120.31,1235.81,104,1235.4,125.19,1222.28,120.31" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Order to DeliveryPerson-->
+<g id="link_Order_DeliveryPerson">
+<path codeLine="95" d="M795.24,540.89 C733.14,570.38 669.88,600.42 612.58,627.64 " fill="none" id="Order-to-DeliveryPerson" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="607.76,629.93,617.6058,629.6841,612.2769,627.7859,614.1752,622.457,607.76,629.93" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="779.2066" y="541.5746">1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="598.4299" y="618.9942">0..1</text>
+</g>
+<!--SRC=[nLRVRzem47xFNs7H5r0JjEqH8QGI4WcL0W9KgK-LIGvgaJYHurIgklxli_F3E4uwjh5fF8MxyttVVNU-16WUenKBWMqvvdas7fCuZI06oY6SJD1DYYCuCW2AtYqaVkx6kzjvi_9vjVJdcuVgttpvFFCMyqTlyrHwxvQkjrW8xuTbWSHvX1SIHB1xI-4YpdJkFhaBhygqaJc8Y6K7703QCHoSy3wwdERs2DpBE8cn29X1H5w1lUr83Ft128c4AgZGO4uFYNHiEIFqsCHqCGqWYduDDIY2PQfzaaI0gSo5znaNn3aA8fnbg6Qp1fObz69EX-8O5BN2ydhMSwIBMtXliXGWl8zVHYXCSi6wPDP4xUj9RVHPGXkPoGPAk2KknTI8IRDsMdfDTZ9aM-MKVftYUotK1n8wLeHd9EDIr7vOFTp7YijPPVEyGAaBzk6JinMqQ53PboavWPlaZ02hswcP6eeDLBT_d-MVK7CnCvYTBV-9c37KnJL2ut6A6ISuaeFi-_utrwsdECWpdiJ0bgrfPY20SeOfR_lsE8Cr8m4q9iLfSoljMR7BHlfYgmuqfdzatC6o_k9GlukdZRevsgZ5pqOTkYbzNIrvnztPD50w0gOrd7brPEyKReUpr48wJ6dqjbUxOT2jZsWpEL8ZzkV2cYCM9FH0MDmtxO8vKonQtlPIlNh3T-oBNS9nP8ghRg2V964vu_LMpkCziDNX0N2KQO0gy5zCaetQiEVfwgpWmdkkh6vDWbEUwlNTQgPhAndyjVcvLEGrR_mcCXf_TnpzbT3fFszXowese3Ih6T2Dcg2MfJvaX6yuB2-bfNrfwEOgIUzh3pdE1FM-38VYqRYXFm00]-->
+</g>
+</svg>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p><strong>Functionality description:</strong></p>
+<p>The enumeration <code>OrderStatus</code> represents the status of an order, while the enumeration <code>VehicleType</code> represents the type of vehicle used by a delivery person.
+The interface <code>Trackable</code> defines methods for tracking an order:</p>
+<ul>
+<li><code>getEstimatedDeliveryTime()</code> which returns the estimated delivery time in minutes</li>
+<li><code>getOrderInfo()</code> which returns a textual description of the order</li>
+</ul>
+<p>The interface <code>Cancellable</code> defines the ability to cancel an order.</p>
+<p>The abstract class <code>DeliveryPerson</code> represents a delivery person and contains basic information about the delivery person’s <code>name</code>, delivery speed (<code>speedKmh</code>), and <code>vehicleType</code>.</p>
+<p><strong>Delivery persons</strong></p>
+<p>Different types of delivery persons differ in:</p>
+<ul>
+<li>the maximum distance they can deliver</li>
+<li>the way the delivery fee is calculated</li>
+</ul>
+<p>The following rules apply to individual types of delivery persons:</p>
+<ul>
+<li>A <code>BikeCourier</code> can deliver orders up to a maximum distance of <strong>5 km</strong>. The delivery speed is <strong>15 km/h</strong>, and the delivery fee is calculated as <strong>0.8 * distance</strong>.</li>
+<li>A <code>CarCourier</code> can deliver to any non-negative distance. The delivery speed is <strong>50 km/h</strong>, and the delivery fee is calculated as <strong>1.8 * distance + 2</strong>.</li>
+</ul>
+<p><strong>Orders</strong></p>
+<p>The class <code>Order</code> represents a general order. An order may have an assigned delivery person, may change its status throughout its lifecycle, and supports price calculation and delivery time estimation. When an order is created:</p>
+<ul>
+<li>the status is set to <code>CREATED</code></li>
+<li>no delivery person is assigned (<code>null</code>)</li>
+</ul>
+<p>The method <code>assignDeliveryPerson(deliveryPerson: DeliveryPerson)</code> assigns a delivery person to the order. Assignment is possible only if:</p>
+<ul>
+<li>the delivery person is not <code>null</code></li>
+<li>the order is not in status <code>CANCELLED</code></li>
+<li>the delivery person can deliver the given distance</li>
+</ul>
+<p><em>Order statuses:</em></p>
+<p>Allowed status transitions:</p>
+<ul>
+<li><code>CREATED</code> → <code>CONFIRMED</code></li>
+<li><code>CONFIRMED</code> → <code>IN_DELIVERY</code> (only if a delivery person is assigned)</li>
+</ul>
+<p>The method <code>confirm()</code> confirms the order:</p>
+<ul>
+<li>The order can be confirmed only from status <code>CREATED</code>. In that case, the status changes and the method returns <code>true</code>. Otherwise, it returns <code>false</code>.</li>
+</ul>
+<p>The method <code>startDelivery()</code> starts the delivery.</p>
+<ul>
+<li>Starting delivery is successful only if the status is <code>CONFIRMED</code> and a delivery person has been assigned.</li>
+<li>If successful, the status changes and the method returns <code>true</code>; otherwise, it returns <code>false</code>.</li>
+</ul>
+<p>The method <code>completeDelivery()</code> completes the delivery.</p>
+<ul>
+<li>It is successful only if the status is <code>IN_DELIVERY</code>.</li>
+<li>If successful, the status changes and the method returns <code>true</code>; otherwise, it returns <code>false</code>.</li>
+</ul>
+<p>The method <code>cancel()</code> cancels the order.</p>
+<ul>
+<li>Cancellation is possible in all states except <code>DELIVERED</code> and <code>CANCELLED</code></li>
+<li>If cancellation is possible, the status changes and the method returns <code>true</code>; otherwise, it returns <code>false</code>.</li>
+</ul>
+<p>The method <code>getEstimatedDeliveryTime()</code> for regular delivery orders:</p>
+<ul>
+<li>If no delivery person is assigned, the estimated delivery time is <code>-1</code></li>
+<li>Otherwise, the time is calculated as the ratio between the distance (<code>distanceKm</code>) and the delivery person’s speed (<code>speedKmh</code>), <strong>be careful to convert from hours to minutes</strong></li>
+<li>the resulting value is <strong>rounded up to the next integer</strong></li>
+</ul>
+<p>The method <code>getOrderInfo()</code> returns a textual description of the order that includes: the customer name (<code>customerName</code>), restaurant name (<code>restaurantName</code>) and the current order status (<code>status</code>). Subclasses may extend this description with additional information specific to the order type. <em>The exact output format is not strictly defined, but the description must contain all relevant information. See the execution example for expected content.</em></p>
+<p><strong>FoodOrder</strong></p>
+<p>The class <code>FoodOrder</code> represents a standard delivery order.</p>
+<p>The total price is calculated as: <strong>base price</strong> (<code>basePrice</code>) + <strong>delivery fee</strong> (if a delivery person exists) (<code>deliveryFee</code>) + <strong>an additional charge</strong> equal to <strong>2 * numberOfMeals</strong></p>
+<p>Override <code>getOrderInfo()</code> to include delivery person name (or <code>NONE</code>) and number of meals.</p>
+<p><strong>PickupOrder</strong></p>
+<p>The class <code>PickupOrder</code> represents an order picked up by the customer (no delivery). Rules:</p>
+<ul>
+<li><code>assignDeliveryPerson(...)</code> always returns <code>false</code></li>
+<li><code>getEstimatedDeliveryTime()</code> returns <code>0</code></li>
+<li>total price = <code>basePrice</code></li>
+<li>override <code>getOrderInfo()</code> so it always shows that no delivery person is assigned (<code>NONE</code>), regardless of state</li>
+</ul>
+<p><strong>Example usage:</strong></p>
+<pre class="line-numbers"><code class="language-java">// Creating orders
+Order o1 = new FoodOrder(&quot;Ana&quot;, &quot;Pizza House&quot;, 18.0, 4.5, 3);
+Order o2 = new PickupOrder(&quot;Iva&quot;, &quot;Burger Bar&quot;, 12.0);
+
+// Creating couriers
+DeliveryPerson bike = new BikeCourier(&quot;Filip&quot;);
+DeliveryPerson car = new CarCourier(&quot;Petra&quot;);
+
+// Assigning couriers
+System.out.println(o1.assignDeliveryPerson(bike)); 
+System.out.println(o2.assignDeliveryPerson(car)); 
+
+// Changing status and starting delivery
+o1.confirm();
+o1.startDelivery();
+
+// Order info
+System.out.println(o1.getOrderInfo()); 		 
+System.out.println(&quot;Estimated time: &quot; + o1.getEstimatedDeliveryTime()); 
+System.out.println(&quot;Total price: &quot; + o1.getTotalPrice());  
+
+System.out.println();
+
+// Pickup order
+System.out.println(o2.getOrderInfo());
+System.out.println(&quot;Estimated time: &quot; + o2.getEstimatedDeliveryTime());  
+System.out.println(&quot;Total price: &quot; + o2.getTotalPrice());
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code class="language-sh">true
+false
+Order for Ana from Pizza House is IN_DELIVERY, courier: Filip, meals: 3
+Estimated time: 18
+Total price: 27.6
+
+Order for Iva from Burger Bar is CREATED, courier: NONE (pickup)
+Estimated time: 0
+Total price: 12.0
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
