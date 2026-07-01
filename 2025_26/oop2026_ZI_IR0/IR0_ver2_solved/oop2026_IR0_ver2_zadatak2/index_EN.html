@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The directory tree contains numerous log files (<code>.log</code>) that record the activity of some system. You need to traverse the directory tree and analyze all <code>.log</code> files to determine which ones contain recorded errors.</p>
+<p>Each line of a log file begins with a log level (<code>INFO</code>, <code>WARN</code>, or <code>ERROR</code>), and a line that begins with <code>ERROR</code> represents a recorded error. For each log file (i.e., a file with the exact <code>.log</code> extension), you need to count how many lines begin with <code>ERROR</code>.
+<strong>A file is considered critical if its total number of errors exceeds 5</strong>.</p>
+<p>To traverse the directory tree, you need to write a class <code>LogVisitor</code> that (directly or indirectly) implements the <code>FileVisitor</code> interface.</p>
+<p>The <code>LogVisitor</code> class must implement the following public methods:</p>
+<ul>
+<li>
+<p><code>int getTotalErrors()</code> — returns the total number of error lines (<code>ERROR</code>) across all examined log files (see the last IMPORTANT warning),</p>
+</li>
+<li>
+<p><code>String getWorstFile()</code> — returns the full path to the file with the highest number of errors (see the output and note at the end),</p>
+</li>
+<li>
+<p><code>Collection&lt;String&gt; getCriticalFiles()</code> — returns the <strong>alphabetically sorted</strong> names of the files considered <strong>critical</strong>.</p>
+</li>
+</ul>
+<p>You also need to complete the <code>Main</code> class, which is partially written. You need to implement the static method</p>
+<p><code>void callVisitor(Path startDir, FileVisitor&lt;Path&gt; visitor)</code></p>
+<p>in which the visitor traverses the directory tree and computes the required values. If an exception occurs while invoking the visitor, the <code>printStackTrace()</code> method of the corresponding exception class should be called.</p>
+<p>The classes should be in the package <code>hr.fer.oop</code>.</p>
+<p><strong>IMPORTANT:</strong> For working with files, you must use the <code>java.nio.file.Path</code> class!</p>
+<p><strong>IMPORTANT:</strong> Take into account <strong>only files with the <code>.log</code> extension</strong>. All other files must be ignored.</p>
+<p><strong>IMPORTANT:</strong> A line counts as an error only if it <strong>begins</strong> with <code>ERROR</code>.</p>
+<p><strong>IMPORTANT:</strong> You may assume that no two files will have the same (highest) number of errors.</p>
+<p><strong>IMPORTANT:</strong> You may assume that all files are correctly formatted and that no errors or exceptions will occur while traversing the directory tree.</p>
+<p><strong>Example <code>.log</code> file:</strong></p>
+<pre class="line-numbers"><code>WARN	Switching to backup database
+ERROR	Backup database unavailable
+INFO	Activating offline mode
+</code></pre>
+<p><strong>Example run:</strong></p>
+<pre class="line-numbers"><code>Example of subdirectories inside src/main/resources/:
+-- logs_10_3
+------ connection.log		// 7 ERRORS
+-- logs_11_3
+------ A_Server
+---------- access.log		// 6 ERRORS
+---------- permissions.log	// 0 ERRORS
+------ queries.log		// 5 ERRORS
+</code></pre>
+<pre class="line-numbers"><code class="language-java">	Path startDir = Path.of(&quot;src/main/resources/&quot;);
+	LogVisitor visitor = new LogVisitor();
+	callVisitor(startDir, visitor);
+	System.out.println(&quot;Total errors: &quot; + visitor.getTotalErrors());
+	System.out.println(&quot;Worst file: &quot; + visitor.getWorstFile());
+	System.out.println(&quot;Critical files: &quot;);
+	for (String path : visitor.getCriticalFiles()) {
+		System.out.println(path);
+	}
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="line-numbers"><code>Total errors: 18
+Worst file: src/main/resources/logs_10_3/connection.log (or src\main\resources\logs_10_3\connection.log) 
+Critical files:
+access.log
+connection.log
+</code></pre>
+<p>NOTE: The path separator depends on the OS — on Windows, <code>Worst file</code> will be printed as <code>src\main\resources\logs_10_3\connection.log</code>.
+(The path output in your solution must be <strong>independent of the operating system</strong>, i.e. it must work correctly on any platform.)</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

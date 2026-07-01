@@ -1,0 +1,280 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>It is necessary to implement a simplified warehouse management system for a store.</p>
+<p>In this task, you need to implement the classes <code>Warehouse</code> and <code>WarehouseException</code> according to the provided class diagram. The classes <code>Customer</code> and <code>OrderItem</code> are partially implemented and must be completed. The remaining classes (<code>Product</code>, <code>Carpet</code>, <code>Accessory</code>) <strong>are provided with the assignment</strong> and must not be modified.</p>
+<p>All classes are <code>public</code> and belong to the package <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="493px" preserveAspectRatio="none" style="width:1388px;height:493px;background:#FFFFFF;" version="1.1" viewBox="0 0 1388 493" width="1388px" zoomAndPan="magnify">
+<defs>
+<filter height="1" id="b1hxb7zrkq92nt0" width="1" x="0" y="0">
+<feFlood flood-color="#FFCDD2" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+<filter height="1" id="b1hxb7zrkq92nt1" width="1" x="0" y="0">
+<feFlood flood-color="#FFE0B2" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+<filter height="1" id="b1hxb7zrkq92nt2" width="1" x="0" y="0">
+<feFlood flood-color="#C8E6C9" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+</defs>
+<g>
+<!--class Product-->
+<g id="elem_Product">
+<rect codeLine="14" fill="#C8E6C9" height="170.3438" id="Product" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="126" y="15.5"/>
+<ellipse cx="177.75" cy="35.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M180.7188,41.2734 Q180.1406,41.5703 179.5,41.7109 Q178.8594,41.8672 178.1563,41.8672 Q175.6563,41.8672 174.3281,40.2266 Q173.0156,38.5703 173.0156,35.4453 Q173.0156,32.3203 174.3281,30.6641 Q175.6563,29.0078 178.1563,29.0078 Q178.8594,29.0078 179.5,29.1641 Q180.1563,29.3203 180.7188,29.6172 L180.7188,32.3359 Q180.0938,31.7578 179.5,31.4922 Q178.9063,31.2109 178.2813,31.2109 Q176.9375,31.2109 176.25,32.2891 Q175.5625,33.3516 175.5625,35.4453 Q175.5625,37.5391 176.25,38.6172 Q176.9375,39.6797 178.2813,39.6797 Q178.9063,39.6797 179.5,39.4141 Q180.0938,39.1328 180.7188,38.5547 L180.7188,41.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="202.25" y="31.6387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="198.25" y="47.4639">Product</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="127" x2="291" y1="55.7656" y2="55.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="134" y="66.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="146" y="72.7607">id: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="134" y="82.7109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="146" y="89.0576">name: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="134" y="99.0078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="146" y="105.3545">price: double {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="127" x2="291" y1="112.6563" y2="112.6563"/>
+<ellipse cx="137" cy="126.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="146" y="129.6514">getId(): String</text>
+<ellipse cx="137" cy="142.6016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="146" y="145.9482">getName(): String</text>
+<ellipse cx="137" cy="158.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="146" y="162.2451">getPrice(): double</text>
+<ellipse cx="137" cy="175.1953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="146" y="178.542">toString(): String</text>
+</g>
+<!--class Carpet-->
+<g id="elem_Carpet">
+<rect codeLine="25" fill="#C8E6C9" height="121.4531" id="Carpet" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="178" x="7" y="271"/>
+<ellipse cx="68.75" cy="291.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M71.7188,296.7734 Q71.1406,297.0703 70.5,297.2109 Q69.8594,297.3672 69.1563,297.3672 Q66.6563,297.3672 65.3281,295.7266 Q64.0156,294.0703 64.0156,290.9453 Q64.0156,287.8203 65.3281,286.1641 Q66.6563,284.5078 69.1563,284.5078 Q69.8594,284.5078 70.5,284.6641 Q71.1563,284.8203 71.7188,285.1172 L71.7188,287.8359 Q71.0938,287.2578 70.5,286.9922 Q69.9063,286.7109 69.2813,286.7109 Q67.9375,286.7109 67.25,287.7891 Q66.5625,288.8516 66.5625,290.9453 Q66.5625,293.0391 67.25,294.1172 Q67.9375,295.1797 69.2813,295.1797 Q69.9063,295.1797 70.5,294.9141 Q71.0938,294.6328 71.7188,294.0547 L71.7188,296.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="89.25" y="287.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="89.25" y="302.9639">Carpet</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="184" y1="311.2656" y2="311.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="321.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="27" y="328.2607">material: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="338.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="27" y="344.5576">area: double {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="8" x2="184" y1="351.8594" y2="351.8594"/>
+<ellipse cx="18" cy="365.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="27" y="368.8545">getArea(): double</text>
+<ellipse cx="18" cy="381.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="27" y="385.1514">toString(): String</text>
+</g>
+<!--class Accessory-->
+<g id="elem_Accessory">
+<rect codeLine="33" fill="#C8E6C9" height="105.1563" id="Accessory" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="205" x="219.5" y="279"/>
+<ellipse cx="282.25" cy="299.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M285.2188,304.7734 Q284.6406,305.0703 284,305.2109 Q283.3594,305.3672 282.6563,305.3672 Q280.1563,305.3672 278.8281,303.7266 Q277.5156,302.0703 277.5156,298.9453 Q277.5156,295.8203 278.8281,294.1641 Q280.1563,292.5078 282.6563,292.5078 Q283.3594,292.5078 284,292.6641 Q284.6563,292.8203 285.2188,293.1172 L285.2188,295.8359 Q284.5938,295.2578 284,294.9922 Q283.4063,294.7109 282.7813,294.7109 Q281.4375,294.7109 280.75,295.7891 Q280.0625,296.8516 280.0625,298.9453 Q280.0625,301.0391 280.75,302.1172 Q281.4375,303.1797 282.7813,303.1797 Q283.4063,303.1797 284,302.9141 Q284.5938,302.6328 285.2188,302.0547 L285.2188,304.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="315.25" y="295.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="302.75" y="310.9639">Accessory</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="220.5" x2="423.5" y1="319.2656" y2="319.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="227.5" y="329.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="239.5" y="336.2607">washable: boolean {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="220.5" x2="423.5" y1="343.5625" y2="343.5625"/>
+<ellipse cx="230.5" cy="357.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="239.5" y="360.5576">isWashable(): boolean</text>
+<ellipse cx="230.5" cy="373.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="239.5" y="376.8545">toString(): String</text>
+</g>
+<!--class Customer-->
+<g id="elem_Customer">
+<rect codeLine="40" fill="#FFE0B2" height="154.0469" id="Customer" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="210" x="327" y="23.5"/>
+<ellipse cx="393.75" cy="43.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M396.7188,49.2734 Q396.1406,49.5703 395.5,49.7109 Q394.8594,49.8672 394.1563,49.8672 Q391.6563,49.8672 390.3281,48.2266 Q389.0156,46.5703 389.0156,43.4453 Q389.0156,40.3203 390.3281,38.6641 Q391.6563,37.0078 394.1563,37.0078 Q394.8594,37.0078 395.5,37.1641 Q396.1563,37.3203 396.7188,37.6172 L396.7188,40.3359 Q396.0938,39.7578 395.5,39.4922 Q394.9063,39.2109 394.2813,39.2109 Q392.9375,39.2109 392.25,40.2891 Q391.5625,41.3516 391.5625,43.4453 Q391.5625,45.5391 392.25,46.6172 Q392.9375,47.6797 394.2813,47.6797 Q394.9063,47.6797 395.5,47.4141 Q396.0938,47.1328 396.7188,46.5547 L396.7188,49.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="421.25" y="39.6387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="414.25" y="55.4639">Customer</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="328" x2="536" y1="63.7656" y2="63.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="335" y="74.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="347" y="80.7607">name: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="335" y="90.7109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="347" y="97.0576">email: String {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="328" x2="536" y1="104.3594" y2="104.3594"/>
+<ellipse cx="338" cy="118.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="347" y="121.3545">getName(): String</text>
+<ellipse cx="338" cy="134.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="347" y="137.6514">getEmail(): String</text>
+<ellipse cx="338" cy="150.6016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="184" x="347" y="153.9482">equals(o: Object): boolean</text>
+<ellipse cx="338" cy="166.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="347" y="170.2451">hashCode(): int</text>
+</g>
+<!--class OrderItem-->
+<g id="elem_OrderItem">
+<rect codeLine="50" fill="#FFE0B2" height="186.6406" id="OrderItem" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="311" x="572.5" y="7"/>
+<ellipse cx="689.25" cy="27.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M692.2188,32.7734 Q691.6406,33.0703 691,33.2109 Q690.3594,33.3672 689.6563,33.3672 Q687.1563,33.3672 685.8281,31.7266 Q684.5156,30.0703 684.5156,26.9453 Q684.5156,23.8203 685.8281,22.1641 Q687.1563,20.5078 689.6563,20.5078 Q690.3594,20.5078 691,20.6641 Q691.6563,20.8203 692.2188,21.1172 L692.2188,23.8359 Q691.5938,23.2578 691,22.9922 Q690.4063,22.7109 689.7813,22.7109 Q688.4375,22.7109 687.75,23.7891 Q687.0625,24.8516 687.0625,26.9453 Q687.0625,29.0391 687.75,30.1172 Q688.4375,31.1797 689.7813,31.1797 Q690.4063,31.1797 691,30.9141 Q691.5938,30.6328 692.2188,30.0547 L692.2188,32.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="717.25" y="23.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="709.75" y="38.9639">OrderItem</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="573.5" x2="882.5" y1="47.2656" y2="47.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="580.5" y="57.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="592.5" y="64.2607">product: Product {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="580.5" y="74.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="592.5" y="80.5576">quantity: int</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="573.5" x2="882.5" y1="87.8594" y2="87.8594"/>
+<ellipse cx="583.5" cy="101.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="285" x="592.5" y="104.8545">OrderItem(product: Product, quantity: int)</text>
+<ellipse cx="583.5" cy="117.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="592.5" y="121.1514">getProduct()</text>
+<ellipse cx="583.5" cy="134.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="592.5" y="137.4482">getQuantity(): int</text>
+<ellipse cx="583.5" cy="150.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="592.5" y="153.7451">increaseQuantity(amount: int): void</text>
+<ellipse cx="583.5" cy="166.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="592.5" y="170.042">getTotalPrice(): double</text>
+<ellipse cx="583.5" cy="182.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="592.5" y="186.3389">toString(): String</text>
+</g>
+<!--class WarehouseException-->
+<g id="elem_WarehouseException">
+<rect codeLine="62" fill="#FFCDD2" height="72.5625" id="WarehouseException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="296" x="1002" y="295"/>
+<ellipse cx="1072.25" cy="315.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1075.2188,320.7734 Q1074.6406,321.0703 1074,321.2109 Q1073.3594,321.3672 1072.6563,321.3672 Q1070.1563,321.3672 1068.8281,319.7266 Q1067.5156,318.0703 1067.5156,314.9453 Q1067.5156,311.8203 1068.8281,310.1641 Q1070.1563,308.5078 1072.6563,308.5078 Q1073.3594,308.5078 1074,308.6641 Q1074.6563,308.8203 1075.2188,309.1172 L1075.2188,311.8359 Q1074.5938,311.2578 1074,310.9922 Q1073.4063,310.7109 1072.7813,310.7109 Q1071.4375,310.7109 1070.75,311.7891 Q1070.0625,312.8516 1070.0625,314.9453 Q1070.0625,317.0391 1070.75,318.1172 Q1071.4375,319.1797 1072.7813,319.1797 Q1073.4063,319.1797 1074,318.9141 Q1074.5938,318.6328 1075.2188,318.0547 L1075.2188,320.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="43" x="1144.75" y="311.1387">&#171;todo&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="1092.75" y="326.9639">WarehouseException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1003" x2="1297" y1="335.2656" y2="335.2656"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1003" x2="1297" y1="343.2656" y2="343.2656"/>
+<ellipse cx="1013" cy="356.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="270" x="1022" y="360.2607">WarehouseException(message: String)</text>
+</g>
+<!--class Warehouse-->
+<g id="elem_Warehouse">
+<rect codeLine="66" fill="#FFCDD2" height="170.3438" id="Warehouse" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="462" x="919" y="15.5"/>
+<ellipse cx="1106.25" cy="35.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1109.2188,41.2734 Q1108.6406,41.5703 1108,41.7109 Q1107.3594,41.8672 1106.6563,41.8672 Q1104.1563,41.8672 1102.8281,40.2266 Q1101.5156,38.5703 1101.5156,35.4453 Q1101.5156,32.3203 1102.8281,30.6641 Q1104.1563,29.0078 1106.6563,29.0078 Q1107.3594,29.0078 1108,29.1641 Q1108.6563,29.3203 1109.2188,29.6172 L1109.2188,32.3359 Q1108.5938,31.7578 1108,31.4922 Q1107.4063,31.2109 1106.7813,31.2109 Q1105.4375,31.2109 1104.75,32.2891 Q1104.0625,33.3516 1104.0625,35.4453 Q1104.0625,37.5391 1104.75,38.6172 Q1105.4375,39.6797 1106.7813,39.6797 Q1107.4063,39.6797 1108,39.4141 Q1108.5938,39.1328 1109.2188,38.5547 L1109.2188,41.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="43" x="1144.75" y="31.6387">&#171;todo&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="1126.75" y="47.4639">Warehouse</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="920" x2="1380" y1="55.7656" y2="55.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="927" y="66.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="939" y="72.7607">products: Map&lt;String, Product&gt;</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="927" y="82.7109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="299" x="939" y="89.0576">orders: Map&lt;Customer, List&lt;OrderItem&gt;&gt;</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="920" x2="1380" y1="96.3594" y2="96.3594"/>
+<ellipse cx="930" cy="110.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="939" y="113.3545">addProduct(p: Product): void</text>
+<ellipse cx="930" cy="126.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="381" x="939" y="129.6514">order(c: Customer, productId: String, quantity: int): void</text>
+<ellipse cx="930" cy="142.6016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="436" x="939" y="145.9482">getCustomersWhoOrdered(productId: String): List&lt;Customer&gt;</text>
+<ellipse cx="930" cy="158.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="259" x="939" y="162.2451">getProducts(): Map&lt;String, Product&gt;</text>
+<ellipse cx="930" cy="175.1953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="334" x="939" y="178.542">getOrders(): Map&lt;Customer, List&lt;OrderItem&gt;&gt;</text>
+</g>
+<!--reverse link Product to Carpet-->
+<g id="link_Product_Carpet">
+<path codeLine="78" d="M158.47,203.91 C147.19,226.76 135.59,250.26 125.5,270.72 " fill="none" id="Product-backto-Carpet" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="152.28,200.63,167.4,185.8,164.83,206.83,152.28,200.63" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Product to Accessory-->
+<g id="link_Product_Accessory">
+<path codeLine="79" d="M259.59,204.02 C272.4,229.98 285.62,256.77 296.58,278.98 " fill="none" id="Product-backto-Accessory" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="253.17,206.83,250.6,185.8,265.72,200.63,253.17,206.83" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Warehouse to WarehouseException-->
+<g id="link_Warehouse_WarehouseException">
+<path codeLine="82" d="M1150,185.8 C1150,221.21 1150,260.78 1150,289.58 " fill="none" id="Warehouse-to-WarehouseException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="1150,294.83,1154,285.83,1150,289.83,1146,285.83,1150,294.83" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="1151" y="237.0669">throws</text>
+</g>
+<rect fill="#DDDDDD" height="62.8906" id="_legend" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1.0;" width="522" x="12" y="410.4531"/>
+<text fill="#000000" filter="url(#b1hxb7zrkq92nt0)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="430.4482">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="343" x="33" y="430.4482">&#171;todo&#187; Classes you must implement from scratch</text>
+<text fill="#000000" filter="url(#b1hxb7zrkq92nt1)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="446.7451">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="492" x="33" y="446.7451">&#171;partial&#187; Partially implemented class (available in the provided template)</text>
+<text fill="#000000" filter="url(#b1hxb7zrkq92nt2)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="463.042">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="333" x="33" y="463.042">&#171;done&#187; Predefined class (must not be modified)</text>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="529" y1="417.4531" y2="417.4531"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="529" y1="433.75" y2="433.75"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="529" y1="450.0469" y2="450.0469"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="529" y1="466.3438" y2="466.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="17" y1="417.4531" y2="466.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="29" x2="29" y1="417.4531" y2="466.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="529" x2="529" y1="417.4531" y2="466.3438"/>
+<!--SRC=[bLNRRjD047ttLup40uve2k81WHLPQjrKgWHj44XztdWdoRRsZjbTfuIa7y4_yM7ihc-9OuBw4bapPywUEJEQw4SX2wPO3cd6j8Pj0739qiUbebBoX39IauaXJd4ChwwlawkhzqC8Is44oohGzDtb88YJH8T8Fau_99-2vo38S8cIGuOB4-mcSriGrO_4031vwoBn3be5YTE86ZPKGbvg0o8lCinH6bWeoa6dYfbq1RizDgUcnzQfdLLVsQPZGbvR4R8r4ncRPmX2WbaX58hMWbk0GOjc1aTxBrLTzLwgMvufvBWGikFswYKPc2FanCL287TirexAb22ea3D5l4nDn-KcD0R18_Xcb91Bs5fYbZtxi6Gv3YOA9LARuLIwVlOoO_lp1fPeRdWuQagRsAsbEuxE79SBLsm-RAZ2xA6VcnOIfWeywY2t_Ydh_Q1Sff2TL7jX0I-GS96cg3MfJL_54zChD-88vaGPCddycj3tDSWnrx3_Dsq7J3cgWtNRdXuIvdRXXZBZqmEPkhfU67-KBDCXHN0tVy3KzAIlR4i9SKycfEbqtocEwiOk-83mejh5g5tAVV7sFMc4sLHyhUYMB-nNdnsMZBhrykcm3NojOOrMFnIPsWtGsEPORY-DgPWYM9FWJVbtCYnxwSxUsmrSKQbn-ZF5mWYItHNQ-kfZH9ZR7MFBThQZ0Rf3bjPI7S4NLaogkhF6eTX3o3bO0vgjEeFFGfj9QsuSTuuppXiBYzRiVKyyOPX6qB7LCcxQgz8Vpg6bJQ6-Nv7NW3myeh0rNcG3Zdi3rixtVtJjSPwvHPretThysdO_XbkcimVyyrkicNn05mhQ-xcp-UeI7SRQqz2GtAs5bcJFCu7u9KMU2a_KZV3yF1xQZyZ-HoXwqi5V]-->
+</g>
+</svg>
+<p><strong>Provided classes (do not modify):</strong></p>
+<ul>
+<li><code>Product</code> — base class for all products (<code>id</code>, <code>name</code>, <code>price</code>).</li>
+<li><code>Carpet</code> and <code>Accessory</code> — subclasses of <code>Product</code> (Carpet has <code>material</code> and <code>area</code>, Accessory has <code>washable</code>).</li>
+</ul>
+<p><strong>Class <code>Customer</code> (to be implemented):</strong> represents a customer with a name (<code>name</code>) and an email address (<code>email</code>). Two customers are considered equal if they have the same <code>email</code> address.</p>
+<p><strong>Class <code>OrderItem</code> (to be implemented):</strong> represents an order item consisting of a product and a quantity (always a positive number). The warehouse stores products of various types (carpets, accessories, and potentially others). The method <code>getTotalPrice()</code> returns the total price of the item (product price multiplied by quantity), while <code>increaseQuantity(int)</code> increases the quantity.</p>
+<p><strong>Class <code>WarehouseException</code> (to be implemented):</strong> a checked exception thrown by the warehouse when a product that does not exist is ordered.</p>
+<p><strong>Class <code>Warehouse</code> (to be implemented):</strong> manages the warehouse.</p>
+<ul>
+<li>Products are stored in a map where the key is the product <code>id</code>.</li>
+<li>Orders are stored in a map that associates each customer (<code>Customer</code>) with a list of their order items.</li>
+<li><code>addProduct(Product p)</code> — adds a product to the product map. If a product with the same <code>id</code> already exists, the new product replaces the existing one.</li>
+<li><code>order(Customer c, String productId, int quantity)</code> — adds an order for the specified customer. If a product with the given <code>productId</code> does not exist, a <code>WarehouseException</code> is thrown with a descriptive message (the exact wording of the message is not specified, but a message must be provided). If the customer already has an order item for that product, it is increased by the given quantity. Otherwise, a new order item is added.</li>
+<li><code>getCustomersWhoOrdered(String productId)</code> - returns a list of customers (without duplicates) who ordered the specified product. If no customer has ordered the specified product, return an empty list.</li>
+<li><code>getProducts()</code> - (getter) returns all products.</li>
+<li><code>getOrders()</code> - (getter) returns all orders.</li>
+</ul>
+<p><strong>IMPORTANT:</strong> Customers are used as keys in the orders map. Orders belonging to the same customer (i.e., having the same <code>email</code> address) must be grouped together, even if they are submitted through different <code>Customer</code> objects.</p>
+<p>Example:</p>
+<pre class="line-numbers"><code class="language-java">Warehouse warehouse = new Warehouse();
+
+        warehouse.addProduct(new Carpet(&quot;C1&quot;, &quot;Persian rug&quot;, 200.0, &quot;wool&quot;, 6.0));
+        warehouse.addProduct(new Carpet(&quot;C2&quot;, &quot;Kilim&quot;, 90.0, &quot;cotton&quot;, 4.0));
+        warehouse.addProduct(new Accessory(&quot;A1&quot;, &quot;Carpet cleaner&quot;, 15.0, true));
+
+        Customer ivo = new Customer(&quot;Ivo&quot;, &quot;ivo@fer.hr&quot;);
+        Customer ana = new Customer(&quot;Ana&quot;, &quot;ana@fer.hr&quot;);
+
+        System.out.println(&quot;--- Ordering ---&quot;);
+        try {
+            warehouse.order(ivo, &quot;C1&quot;, 1);
+            warehouse.order(ivo, &quot;C2&quot;, 1);
+            warehouse.order(ana, &quot;C1&quot;, 2);
+            warehouse.order(ana, &quot;A1&quot;, 3);
+            warehouse.order(new Customer(&quot;Ana&quot;, &quot;ana@fer.hr&quot;), &quot;C1&quot;, 1);	// Customer EXISTS -&gt; Quantity of product C1 is now 3
+            warehouse.order(ana, &quot;X9&quot;, 1);	// ERROR
+        } catch (WarehouseException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;\n--- Customers that order C1 (Persian rug) ---&quot;);
+        for (Customer customer : warehouse.getCustomersWhoOrdered(&quot;C1&quot;)) {
+            System.out.println(customer.getName());
+        }
+        
+        System.out.println(&quot;\n--- Products of customer Ana ---&quot;);  
+        List&lt;OrderItem&gt; anasProducts = warehouse.getOrders().get(ana);
+        for (OrderItem orderItem : anasProducts) {
+            System.out.println(orderItem.getProduct());
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">--- Ordering ---
+Error: Product not found: X9
+
+--- Customers that order C1 (Persian rug) ---
+Ivo
+Ana
+
+--- Products of customer Ana ---
+Carpet{id=C1, name=Persian rug, price=200.0, material=wool, area=6.0}
+Accessory{id=A1, name=Carpet cleaner, price=15.0, washable=true}
+
+</code></pre>
+<p>Visibility legend in class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

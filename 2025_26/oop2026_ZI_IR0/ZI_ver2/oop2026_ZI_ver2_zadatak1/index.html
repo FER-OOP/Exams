@@ -1,0 +1,75 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U stablu direktorija nalaze se brojne log datoteke (<code>.log</code>) koje bilježe rad nekog sustava. Potrebno je obići stablo direktorija i analizirati sve <code>.log</code> datoteke kako bi se utvrdilo u kojima su zabilježene greške.</p>
+<p>Svaki redak log datoteke započinje razinom zapisa (<code>INFO</code>, <code>WARN</code> ili <code>ERROR</code>), a redak koji započinje s <code>ERROR</code> predstavlja zabilježenu grešku. Za svaku log datoteku (tj. datoteku čija je ekstenzija isključivo <code>.log</code>) potrebno je prebrojati koliko redaka započinje s <code>ERROR</code>.
+<strong>Datoteku smatramo kritičnom ako ukupan broj grešaka prelazi 5</strong>.</p>
+<p>Za obilazak stabla direktorija potrebno je napisati klasu <code>LogVisitor</code> koja (izravno ili neizravno) implementira sučelje <code>FileVisitor</code>.</p>
+<p>Klasa <code>LogVisitor</code> mora implementirati sljedeće javne metode:</p>
+<ul>
+<li><code>int getTotalErrors()</code> - vraća ukupan broj redaka s greškom (<code>ERROR</code>) u svim pregledanim log datotekama,</li>
+<li><code>String getWorstFile()</code> - vraća punu putanju do datoteke s najvećim brojem grešaka (pogledati primjer i napomenu na dnu),</li>
+<li><code>Collection&lt;String&gt; getCriticalFiles()</code> - vraća <strong>abecedno sortirane</strong> nazive datoteka koje se smatraju <strong>kritičnima</strong>.</li>
+</ul>
+<p>Potrebno je i dopuniti klasu <code>Main</code> koja je djelomično napisana. Potrebno je napisati statičku metodu</p>
+<p><code>void callVisitor(Path startDir, FileVisitor&lt;Path&gt; visitor)</code></p>
+<p>u kojoj se pomoću visitora obilazi stablo direktorija i računaju tražene vrijednosti. Ako prilikom poziva visitora dođe do iznimke, potrebno je pozvati metodu <code>printStackTrace()</code> odgovarajuće klase iznimke.</p>
+<p>Klasa treba biti u paketu <code>hr.fer.oop</code>.</p>
+<p><strong>VAŽNO:</strong> Za rad s datotekama obavezno koristiti klasu <code>java.nio.file.Path</code> !</p>
+<p><strong>VAŽNO:</strong> U obzir uzeti <strong>samo datoteke s ekstenzijom <code>.log</code></strong>. Sve ostale datoteke potrebno je zanemariti.</p>
+<p><strong>VAŽNO:</strong> Redak predstavlja grešku samo ako <strong>započinje</strong> s <code>ERROR</code>.</p>
+<p><strong>VAŽNO:</strong> Možete pretpostaviti da neće biti dvije datoteke s istim (najvećim) brojem grešaka.</p>
+<p><strong>VAŽNO:</strong> Možete pretpostaviti da su sve datoteke ispravno formatirane te da neće doći do pogreške ili iznimke prilikom obilaska stabla direktorija.</p>
+<p><strong>Primjer .log datoteke:</strong></p>
+<pre class="line-numbers"><code>WARN	Switching to backup database
+ERROR	Backup database unavailable
+INFO	Activating offline mode
+</code></pre>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code>Primjer poddirektorija u src/main/resources/:
+-- logs_10_3			
+------ connection.log		// 7 ERRORS
+-- logs_11_3	
+------ A_Server
+---------- access.log		// 6 ERRORS
+---------- permissions.log	// 0 ERRORS
+------ queries.log		// 5 ERRORS
+</code></pre>
+<pre class="line-numbers"><code class="language-java">	Path startDir = Path.of(&quot;src/main/resources/&quot;);
+	LogVisitor visitor = new LogVisitor();
+
+	callVisitor(startDir, visitor);
+
+	System.out.println(&quot;Total errors: &quot; + visitor.getTotalErrors());
+	System.out.println(&quot;Worst file: &quot; + visitor.getWorstFile());
+	System.out.println(&quot;Critical files: &quot;);
+	for (String path : visitor.getCriticalFiles()) {
+		System.out.println(path);
+	}
+</code></pre>
+<p><strong>Očekivani izlaz:</strong></p>
+<pre class="line-numbers"><code>Total errors: 18
+Worst file: src/main/resources/logs_10_3/connection.log
+Critical files: 
+access.log
+connection.log
+</code></pre>
+<p>NAPOMENA: Razdjelnik putanje ovisi o operacijskom sustavu — na Windowsu će se <code>Worst file</code> ispisati kao <code>src\main\resources\logs_10_3\connection.log</code>.
+(Ispis putanja u vašem rješenju mora biti <strong>neovisan o operacijskom sustavu</strong> tj. ispravno raditi na bilo kojoj platformi.)</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to model a program that represents a movie tracking service. You need to complete the code of the classes <code>MovieRecord</code> and <code>MovieLambdas</code>. The <code>MovieRecord</code> class contains records about watched movies and consists of 8 attributes with minimum visibility:</p>
+<ul>
+<li><code>String title</code> - represents the title of the movie,</li>
+<li><code>String director</code> - represents the director of the movie,</li>
+<li><code>List&lt;String&gt; actors</code> - represents the list of main actors in the movie,</li>
+<li><code>String genre</code> - represents the genre of the movie,</li>
+<li><code>int runtimeMinutes</code> - represents the runtime of the movie expressed in minutes,</li>
+<li><code>double rating</code> - represents the user rating of the movie,</li>
+<li><code>int rewatchCount</code> - represents the number of times the movie has been rewatched, and</li>
+<li><code>LocalDate watchDate</code> - represents the date the movie was watched.</li>
+</ul>
+<p>You need to complete three parts of the code marked with the comment <code>//TODO</code>:</p>
+<ol>
+<li>implement the <code>equals</code> and <code>hashCode</code> methods which depend on the movie title, director and watch date in the <code>MovieRecord</code> class, and</li>
+<li>complete the <code>MovieRecord</code> class code related to the comparators used by the <code>MovieLambdas</code> class, referring to movie rating, movie runtime and rewatch count, in ascending order, marked with the comment <code>//TODO</code>,</li>
+<li>implement the code of the <code>MovieLambdas</code> class using the static methods listed below, marked with the comment <code>//TODO</code>:</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">    public static Collection&lt;MovieRecord&gt; filterAndSortMovies(Collection&lt;MovieRecord&gt; records, Predicate&lt;MovieRecord&gt; predicate, Comparator&lt;MovieRecord&gt; comparator) {
+        return null; //TODO
+    }
+
+    public static Stream&lt;MovieRecord&gt; moviesThisYear(Stream&lt;MovieRecord&gt; movies) {
+        return null; //TODO
+    }
+	
+	public static Stream&lt;String&gt; directorMovieTitles(Collection&lt;MovieRecord&gt; movies) {
+	    return null; //TODO
+	}
+	
+	public static Stream&lt;String&gt; topThreeDirectors(Collection&lt;MovieRecord&gt; movies) {
+   		return null; //TODO
+	}
+</code></pre>
+<p><strong>NOTES: All static methods must be implemented as lambda expressions using the Java Stream API (i.e. collection streams). No exceptions need to be caught or handled. The <code>MovieLambdas</code> class must be in the package hr.fer.oop, and it and all its static methods must have maximum visibility.</strong></p>
+<h2>Static method <code>filterAndSortMovies</code></h2>
+<p>The input arguments are: 1) a collection of movie records, 2) a predicate of movie records and 3) a comparator of movie records. The method should return an output collection of movie records representing the filtered and sorted input collection. Filtering should be done so that only movie records satisfying the given predicate remain in the output collection. Sorting should be done using the given comparator, and the top 5 movie records should be returned.</p>
+<h2>Static method <code>moviesThisYear</code></h2>
+<p>This method takes a stream of movie records and returns a <code>Stream&lt;MovieRecord&gt;</code> containing only movies that were watched in the current calendar year. Use <code>LocalDate.now()</code> to determine the current year.</p>
+<h2>Static method <code>directorMovieTitles</code></h2>
+<p>This method takes a collection of movie records and returns a stream of strings in the format <code>&quot;Director: Movie Title&quot;</code> for each movie in the collection. Each director appears as many times as they have movies in the collection.</p>
+<h2>Static method <code>topThreeDirectors</code></h2>
+<p>This method takes a collection of movie records and returns a stream of the names of the top 3 directors with the highest average movie rating in descending order.</p>
+<p>An example of using the <code>MovieLambdas</code> class and the static methods <code>filterAndSortMovies</code>, <code>moviesThisYear</code>, <code>topThreeDirectors</code> and <code>directorMovieTitles</code> is shown in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">// Filtering and sorting the collection
+Predicate&lt;MovieRecord&gt; predicate =
+    movie -&gt; movie.getGenre().equals(&quot;Sci-Fi&quot;);
+    
+System.out.println(
+    &quot;\nTop 5 Sci-Fi movies sorted by rating: &quot; +
+    MovieLambdas.filterAndSortMovies(
+        movies,
+        predicate,
+        MovieRecord.BY_RATING.reversed()
+    )
+);
+
+// Printing out the movies that were watched this year
+System.out.println(&quot;\nMovies watched this year:&quot;);
+MovieLambdas.moviesThisYear(movies.stream()).forEach(System.out::println);
+ 
+// All directors with their movie titles
+System.out.println(&quot;\nAll directors with their movies:&quot;);
+MovieLambdas.directorMovieTitles(movies).forEach(System.out::println);
+
+// Top three directors by average rating
+System.out.println(&quot;\nTop 3 directors by average rating:&quot;);
+MovieLambdas.topThreeDirectors(movies).forEach(System.out::println);
+...
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-txt">	Top 5 Sci-Fi movies sorted by rating: [(Interstellar, Christopher Nolan, [Matthew McConaughey, Anne Hathaway], Sci-Fi, 169, 5.0, 3, 2026-01-05), (Blade Runner 2049, Denis Villeneuve, [Ryan Gosling, Ana de Armas], Sci-Fi, 164, 4.9, 2, 2025-03-11), (Everything Everywhere All At Once, Daniels, [Michelle Yeoh, Ke Huy Quan], Sci-Fi, 139, 4.9, 2, 2026-01-31), (Dune, Denis Villeneuve, [Timothée Chalamet, Zendaya], Sci-Fi, 155, 4.7, 2, 2026-02-25), (Arrival, Denis Villeneuve, [Amy Adams, Jeremy Renner], Sci-Fi, 116, 4.6, 1, 2024-07-29)]
+
+	Movies watched this year:
+	(Interstellar, Christopher Nolan, [Matthew McConaughey, Anne Hathaway], Sci-Fi, 169, 5.0, 3, 2026-01-05)
+	(Fight Club, David Fincher, [Brad Pitt, Edward Norton], Drama, 139, 4.8, 3, 2026-02-03)
+	(Dune, Denis Villeneuve, [Timothée Chalamet, Zendaya], Sci-Fi, 155, 4.7, 2, 2026-02-25)
+	(Everything Everywhere All At Once, Daniels, [Michelle Yeoh, Ke Huy Quan], Sci-Fi, 139, 4.9, 2, 2026-01-31)
+	(Glass Onion, Rian Johnson, [Daniel Craig, Janelle Monáe], Mystery, 139, 4.0, 1, 2026-09-14)
+	
+	All directors with their movies:
+	Christopher Nolan: Interstellar
+	Christopher Nolan: Oppenheimer
+	Damien Chazelle: La La Land
+	Damien Chazelle: Whiplash
+	Matt Reeves: The Batman
+	Bong Joon-ho: Parasite
+	Wes Anderson: The Grand Budapest Hotel
+	Wes Anderson: The French Dispatch
+	Wes Anderson: Asteroid City
+	Spike Jonze: Her
+	David Fincher: Fight Club
+	David Fincher: Gone Girl
+	David Fincher: The Social Network
+	Denis Villeneuve: Blade Runner 2049
+	Denis Villeneuve: Arrival
+	Denis Villeneuve: Dune
+	Greta Gerwig: Barbie
+	Greta Gerwig: Lady Bird
+	Greta Gerwig: Little Women
+	Quentin Tarantino: Pulp Fiction
+	Quentin Tarantino: Kill Bill
+	Quentin Tarantino: Inglourious Basterds
+	Ari Aster: Midsommar
+	Ari Aster: Hereditary
+	Yorgos Lanthimos: Poor Things
+	Yorgos Lanthimos: The Favourite
+	Jordan Peele: Get Out
+	Jordan Peele: Nope
+	Jordan Peele: Us
+	Robert Eggers: The Lighthouse
+	Robert Eggers: The Northman
+	Daniels: Everything Everywhere All At Once
+	Celine Song: Past Lives
+	Luca Guadagnino: Call Me By Your Name
+	Luca Guadagnino: Challengers
+	Mark Mylod: The Menu
+	Rian Johnson: Knives Out
+	Rian Johnson: Glass Onion
+	George Miller: Mad Max: Fury Road
+	Peter Weir: The Truman Show
+	
+	Top 3 directors by average rating:
+	Bong Joon-ho
+	Daniels
+	Christopher Nolan
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+INFO	Attempting database connection
+ERROR	Unable to connect to database
+INFO	Retrying in 5 seconds
+ERROR	Connection failed
+WARN	Switching to backup database
+ERROR	Backup database unavailable
+INFO	Activating offline mode
+ERROR	Synchronization not possible
+ERROR	Connection failed
+WARN	Switching to backup database
+ERROR	Backup database unavailable
+INFO	Activating offline mode
+ERROR	Synchronization not possible

@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Vaš zadatak je implementirati likove iz video igre, gdje glavni igrač pokušava preživjeti u svijetu prepunom zaraženih neprijatelja. U zadatku su dane konkretne klase <code>Character</code>, koja predstavlja sve likove u igri, i <code>Enemy</code>, koja predstavlja sve zaražene neprijatelje, kao i klasa <code>Main</code> koju je potrebno pročitati kako bi se vidjelo na koji način se koriste svi dolje opisani tipovi.
+Potrebno je nadopuniti konkretne klase <code>Runner</code>, <code>Stalker</code> i <code>MainCharacter</code> u danim predlošcima te napisati tipove <code>CombatUnit</code> i <code>StealthUnit</code> za koje je potrebno odlučiti trebaju li biti sučelja ili apstraktne klase. Sve konkretne klase imaju klase <code>Character</code> ili <code>Enemy</code> kao nadklase, ali ne nužno kao svoje direktne nadklase.</p>
+<p><strong>NAPOMENA: Klase <code>Character</code> i <code>Enemy</code> nije dozvoljeno mijenjati radi ispravnog bodovanja rješenja.</strong></p>
+<p>Objekti tipa <code>Character</code> predstavljaju sve likove u igri. Svaki lik posjeduje ime (name) i zdravlje (health) tipa <code>int</code> koji se postavljaju prilikom stvaranja objekta. Trenutno zdravlje može se dohvatiti pozivanjem metode <code>getHealth()</code>, a ime pozivanjem metode <code>getName()</code>. Zdravlje lika ne može postati negativno, a smanjuje se za zadani iznos pozivanjem metode <code>void loseHealth(int amount)</code>.</p>
+<p>Objekti tipa <code>Enemy</code> predstavljaju zaražene neprijatelje te su stoga tipa <code>Character</code>, zaraženi su nekad bili ljudi. Svaki neprijatelj posjeduje naziv (type). Svaki neprijatelj može ugristi napadnutog lika pozivom metode <code>void bite(Character character)</code>, a ugriz povećava brojač (bittenTurns) na napadnutom liku za 1.</p>
+<p>Tip <code>CombatUnit</code> predstavlja sve jedinice koje mogu aktivno sudjelovati u borbi. Objekti ovog tipa imaju sljedeću metodu:</p>
+<ul>
+<li><code>void fight(Character character)</code> – opisuje na koji način se lik bori protiv svog protivnika</li>
+</ul>
+<p>Tip <code>StealthUnit</code> predstavlja neprijatelje koji se oslanjaju na prikrivanje. Objekti ovog tipa imaju sljedeće metode:</p>
+<ul>
+<li><code>int getStealthLevel()</code> – vraća trenutnu razinu potajnosti</li>
+<li><code>boolean isStealthy()</code> – vraća je li jedinica trenutno u prikrivanju</li>
+<li><code>void hide()</code> – određuje način skrivanja koji je jedinstven za svaku instancu ovog tipa</li>
+<li><code>void toggleStealth()</code> – mijenja stanje prikrivanja; ako je <code>true</code> postaje <code>false</code> i obrnuto</li>
+</ul>
+<p>Objekti tipa <code>MainCharacter</code> predstavljaju glavnog igrača. Glavni igrač može izrađivati lijekove i napadati neprijatelje.</p>
+<ul>
+<li><code>int getBittenTurns()</code> – vraća trenutni broj ugriza</li>
+<li><code>void increaseBittenTurns(int amount)</code> – povećava broj ugriza na zadani iznos</li>
+<li><code>void craftMedkit()</code> – ako je <code>bittenTurns &gt; 0</code>, smanjuje <code>bittenTurns</code> za 1 i ne uspjeva se izliječiti; inače povećava zdravlje za 15</li>
+<li><code>void fight(Character character)</code> – smanjuje vlastito zdravlje za 2 zbog umora; ako napada <code>Runner-a</code>, smanjuje mu zdravlje za 20; ako napada <code>Stalker-a</code>, smanjuje mu zdravlje za 10; u drugim slučajevima smanjuje za 5</li>
+</ul>
+<p>Objekti tipa <code>Stalker</code> predstavljaju zaražene koji love iz sjene, i imaju razinu potajnosti (stealthLevel). Što je veća razina potajnosti, to je napad razorniji. Grize svog protivnika samo ako se prikriva.</p>
+<ul>
+<li><code>int getStealthLevel()</code> – vraća trenutnu razinu potajnosti koju <code>Stalker</code> interno čuva kao atribut</li>
+<li><code>void hide()</code> – povećava razinu potajnosti za 1</li>
+<li><code>void fight(Character character)</code> – ako se Stalker prikriva (<code>isStealthy() == true</code>), zdravlje napadnutog lika smanjuje se za <code>stealthLevel * 10</code> te Stalker grize protivnika i povećava broj ugriza za jedan; inače se samo zdravlje napadnutog lika smanjuje za 10; nakon napada se ili skrije ili razotkrije pozivanjem <code>toggleStealth()</code></li>
+<li><code>void loseHealth(int amount)</code> – ako se Stalker prikriva, ne gubi ništa jer ga štiti prikrivanje; inače gubi zadani iznos</li>
+</ul>
+<p>Objekti tipa <code>Runner</code> predstavljaju agresivne zaražene koji jure prema žrtvi. Runner uvijek napada tako da grize svog protivnika, a može ući i u stanje bijesa pozivanjem metode <code>rage()</code>, nakon čega su njegovi napadi razorniji.</p>
+<ul>
+<li><code>void rage()</code> – postavlja Runnera u stanje bijesa</li>
+<li><code>void bite(Character character)</code> – povećava <code>bittenTurns</code> na napadnutom liku za 2 ako je u stanju bijesa; u suprotnom nema razlike od svoje nadklase</li>
+<li><code>void fight(Character character)</code> – bori se na način da grize svog protivnika; smanjuje vlastito zdravlje za 2 zbog iscrpljenosti, a zdravlje napadnutog lika za 10; u stanju bijesa smanjuje vlastito zdravlje za 4, a zdravlje napadnutog lika za 20</li>
+</ul>
+<p>Konkretne klase imaju jedan konstruktor, a primjer njihova pozivanja prikazan je u isječku dane metode main u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">Runner runner       = new Runner(&quot;Runner&quot;, 40);        // type, health
+Stalker stalker     = new Stalker(&quot;Stalker&quot;, 50, 2);   // type, health, stealthLevel
+MainCharacter ellie = new MainCharacter(&quot;Ellie&quot;, 100); // name, health
+</code></pre>
+<p><strong>NAPOMENA: Sve klase i sučelja trebaju imati vidljivost postavljenu na public i nalaziti se u paketu <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

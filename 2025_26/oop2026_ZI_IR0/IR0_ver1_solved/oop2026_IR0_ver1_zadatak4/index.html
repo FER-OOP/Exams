@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Vaš je zadatak modelirati program koji predstavlja servis za slušanje glazbe, potrebno je nadopuniti programski kod klasa <code>MusicRecord</code> i <code>MusicLambdas</code>. Klasa <code>MusicRecord</code> sadrži zapise o slušanju pjesama, a sastoji se od 6 atributa minimalne vidljivosti:</p>
+<ul>
+<li><code>String songName</code> - predstavlja naziv pjesme,</li>
+<li><code>String artistName</code> - predstavlja naziv izvođača,</li>
+<li><code>String genre</code> - predstavlja glazbeni žanr pjesme,</li>
+<li><code>int durationSeconds</code> - predstavlja trajanje pjesme izraženo u sekundama,</li>
+<li><code>int listenCount</code> - predstavlja broj slušanja pjesme i</li>
+<li><code>LocalDate lastPlayed</code> - predstavlja datum posljednjeg slušanja pjesme.</li>
+</ul>
+<p>Potrebno je dovršiti tri dijela programskog koda:</p>
+<ol>
+<li>implementirati kod metoda <code>equals</code> i <code>hashCode</code> koji ovisi o imenu pjesme i izvođača u klasi <code>MusicRecord</code> i</li>
+<li>dovršiti kod klase <code>MusicRecord</code> koji se odnosi na komparatore koje koristi klasa <code>MusicLambdas</code>, a odnose se na trajanje pjesama, broj slušanja pojedine pjesme i žanrove, uzlazno, označene komentarom <code>//TODO</code>,</li>
+<li>implementirati kod klase <code>MusicLambdas</code> koji koristi dolje navedene statičke metode označene komentarom <code>//TODO</code>:</li>
+</ol>
+<pre class="line-numbers"><code class="language-java">	public static Collection&lt;MusicRecord&gt; filterAndSortCollection(Collection&lt;MusicRecord&gt; records, Predicate&lt;MusicRecord&gt; predicate, Comparator&lt;MusicRecord&gt; comparator) {
+	    return null; //TODO
+	}
+ 
+	public static long totalListeningTimeMinutes(Stream&lt;MusicRecord&gt; records) {
+	    return 0; //TODO
+	}
+	 
+	public static Stream&lt;String&gt; songsByGenre(Collection&lt;MusicRecord&gt; records) {
+	    return null; //TODO
+	}
+	
+	public static Stream&lt;String&gt; topFiveArtists(Collection&lt;MusicRecord&gt; records) {
+	    return null; //TODO
+	}
+</code></pre>
+<p><strong>NAPOMENE: Sve statičke metode potrebno je implementirati kao lambda izraze koristeći Java Stream API (tj. kolekcijske tokove). Pri implementaciji nije potrebno hvatati niti obrađivati iznimke. Klasa <code>MusicLambdas</code> treba se nalaziti u paketu hr.fer.oop, a ona i sve statičke metode trebaju imati maksimalnu vidljivost.</strong></p>
+<h2>Statička metoda <code>filterAndSortCollection</code></h2>
+<p>Ulazni argumenti su: 1) kolekcija glazbenih zapisa, 2) predikat glazbenog zapisa i 3) komparator glazbenog zapisa. Potrebno je vratiti izlaznu kolekciju glazbenih zapisa koja predstavlja filtriranu i sortiranu ulaznu kolekciju glazbenih zapisa. Filtriranje ulazne kolekcije potrebno je napraviti na način da u izlaznoj kolekciji preostanu samo glazbeni zapisi koji zadovoljavaju predani predikat. Sortiranje izlazne kolekcije potrebno je ostvariti predanim komparatorom te vratiti prvih 5 glazbenih zapisa.</p>
+<h2>Statička metoda <code>totalListeningTimeMinutes</code></h2>
+<p>Ova metoda prima tok glazbenih zapisa i vraća ukupno vrijeme slušanja svih pjesama izraženo <strong>u minutama</strong> kao vrijednost tipa <code>long</code>. Ukupno vrijeme slušanja pojedine pjesme računa se formulom trajanje pojedine pjesme pomnoženo s brojem slušanja.</p>
+<h2>Statička metoda <code>songsByGenre</code></h2>
+<p>Ova metoda prima kolekciju glazbenih zapisa i vraća tok nizova znakova oblika <code>&quot;Žanr: Naziv pjesme&quot;</code> za svaki zapis u kolekciji. Žanrovi su sortirani uzlazno, a za svaki žanr se ispisuje onoliko redova koliko ima njegovih pjesama.</p>
+<h2>Statička metoda <code>topFiveArtists</code></h2>
+<p>Ova metoda prima kolekciju glazbenih zapisa i vraća tok imena 5 izvođača s najvećim ukupnim brojem slušanja, sortirano silazno prema broju slušanja.</p>
+<p>Primjer korištenja klase <code>MusicLambdas</code> i statičkih atributa <code>filterAndSortCollection</code>, <code>totalListeningTimeMinutes</code>, <code>topFiveArtists</code> i <code>songsByGenre</code> koje treba implementirati su prikazani u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">...
+     // Filtering and sorting the collection and printing out the five most listened pop songs
+        Predicate&lt;MusicRecord&gt; predicate = record -&gt; record.getGenre().equals(&quot;Pop&quot;);
+
+        System.out.println(
+        	    &quot;\nTop 5 pop songs sorted by listen count: &quot; +
+        	    MusicLambdas.filterAndSortCollection(
+        	        records,
+        	        predicate,
+        	        MusicRecord.BY_LISTENS.reversed()
+        	    )
+        	);
+
+        // Total listening time in minutes across all records
+        System.out.println(
+        	    &quot;\nTotal listening time (minutes): &quot; +
+        	    MusicLambdas.totalListeningTimeMinutes(records.stream())
+        	);
+		 
+		// All songs grouped by genre
+		System.out.println(&quot;\nSongs by genre:&quot;);
+		MusicLambdas.songsByGenre(records).forEach(System.out::println);
+		
+		// Top five artists and their songs by total listen count
+		System.out.println(&quot;\nTop 5 artists with songs:&quot;);
+		MusicLambdas.topFiveArtistsByListenCount(records).forEach(System.out::println);
+...
+</code></pre>
+<p>Očekivani ispis je:</p>
+<pre class="line-numbers"><code class="language-txt">
+Top 5 pop songs sorted by listen count: [(Blinding Lights, The Weeknd, Pop, 200, 53, 2025-01-12), (As It Was, Harry Styles, Pop, 167, 45, 2025-02-08), (Starboy, The Weeknd, Pop, 230, 41, 2024-11-20), (Watermelon Sugar, Harry Styles, Pop, 174, 40, 2024-05-08), (After Hours, The Weeknd, Pop, 240, 38, 2025-01-19)]
+
+Total listening time (minutes): 4088
+
+Songs by genre:
+Alternative: Somebody Else
+Alternative: Feel Good Inc
+Alternative: Heat Waves
+Alternative: Electric Feel
+Classic Rock: Vienna
+Electronic: Around The World
+Funk: Redbone
+Hip-Hop: N95
+Hip-Hop: Money Trees
+Hip-Hop: HUMBLE.
+Indie: 505
+Indie: Sweater Weather
+Indie: Fluorescent Adolescent
+Indie: Some Nights
+Pop: Blinding Lights
+Pop: Starboy
+Pop: As It Was
+Pop: After Hours
+Pop: Watermelon Sugar
+Pop: Golden
+Psychedelic: The Less I Know The Better
+Psychedelic: Borderline
+R&amp;B: Pink + White
+R&amp;B: Self Control
+R&amp;B: Passionfruit
+R&amp;B: Lost
+R&amp;B: Bad Habit
+R&amp;B: Ivy
+Rap: One Dance
+Rap: God's Plan
+Rap: No Role Modelz
+Rock: Do I Wanna Know?
+Rock: Take Me Out
+Rock: Mr. Brightside
+Rock: R U Mine?
+Rock: Bohemian Rhapsody
+Rock: Dreams
+Synthpop: Take On Me
+
+Top 5 artists with songs:
+The Weeknd
+Arctic Monkeys
+Harry Styles
+Kendrick Lamar
+Drake
+
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

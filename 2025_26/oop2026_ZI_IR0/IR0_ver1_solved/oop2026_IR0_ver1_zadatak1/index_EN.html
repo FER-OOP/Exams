@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to implement characters from a video game, where the main player tries to survive in a world full of infected enemies. Concrete classes <code>Character</code>, which represents all characters in the game, and <code>Enemy</code>, which represents all infected enemies, are provided along with a <code>Main</code> class which should be read to understand how all of the types described below are used.
+You need to complete the code in the concrete classes <code>Runner</code>, <code>Stalker</code> and <code>MainCharacter</code>, as well as write the types <code>CombatUnit</code> and <code>StealthUnit</code>, for which you need to decide whether they should be interfaces or abstract classes. All concrete classes have either <code>Character</code> or <code>Enemy</code> as a superclass, but not necessarily as their direct superclass.</p>
+<p><strong>NOTE: The classes <code>Character</code> and <code>Enemy</code> must not be modified for correct grading of the solution.</strong></p>
+<p>Objects of type <code>Character</code> represent all characters in the game. Each character possesses a name (name) and health (health) of type <code>int</code> which are set when the object is created. The current health can be retrieved by calling <code>getHealth()</code>, and the name by calling <code>getName()</code>. Health cannot become negative and is decreased by the given amount by calling <code>void loseHealth(int amount)</code>.</p>
+<p>Objects of type <code>Enemy</code> represent infected enemies and are therefore of type <code>Character</code> — the infected were once human. Each enemy has a name (type). Each enemy can bite the attacked character by calling <code>void bite(Character character)</code> — a bite increases the bite counter (bittenTurns) on the attacked character by 1.</p>
+<p>The type <code>CombatUnit</code> represents all units that can actively participate in combat. Objects of this type have the following method:</p>
+<ul>
+<li><code>void fight(Character character)</code> – describes how the character of this type fights with their opponents</li>
+</ul>
+<p>The type <code>StealthUnit</code> represents enemies that rely on stealth. Objects of this type have the following methods:</p>
+<ul>
+<li><code>int getStealthLevel()</code> – returns the current stealth level</li>
+<li><code>boolean isStealthy()</code> – returns whether the unit is currently in stealth</li>
+<li><code>void hide()</code> – defines the hiding behavior which is unique to each instance of this type</li>
+<li><code>void toggleStealth()</code> – toggles the stealth state; if <code>true</code> it becomes <code>false</code> and vice versa</li>
+</ul>
+<p>Objects of type <code>MainCharacter</code> represent the main player. The main player can craft medicine and attack enemies.</p>
+<ul>
+<li><code>int getBittenTurns()</code> – returns the current bite counter</li>
+<li><code>void increaseBittenTurns(int amount)</code> – increases the bite counter to the given amount</li>
+<li><code>void craftMedkit()</code> – if <code>bittenTurns &gt; 0</code>, decreases <code>bittenTurns</code> by 1 and fails to heal; otherwise increases health by 15</li>
+<li><code>void fight(Character character)</code> – decreases own health by 2 due to fatigue; if attacking a <code>Runner</code>, decreases its health by 20; if attacking a <code>Stalker</code>, decreases its health by 10; otherwise decreases the target's health by 5</li>
+</ul>
+<p>Objects of type <code>Stalker</code> represent infected that hunt from the shadows and have a stealth level (stealthLevel). The higher the stealth level, the more destructive the attack. It bites its opponent only if its in hiding.</p>
+<ul>
+<li><code>int getStealthLevel()</code> – returns the current stealth level which the <code>Stalker</code> stores internally as a field</li>
+<li><code>void hide()</code> – increases the stealth level by 1</li>
+<li><code>void fight(Character character)</code> – if the Stalker is stealthy (<code>isStealthy() == true</code>), the attacked character's health is decreased by <code>stealthLevel * 10</code> and the Stalker bites its opponent, increasing the number of bites on the attacked by one; otherwise the attacked character's health is decreased by 10; after the attack <code>toggleStealth()</code> is called, either hiding or revealing the Stalker</li>
+<li><code>void loseHealth(int amount)</code> – if the Stalker is stealthy, it takes no damage as is protected by stealth; otherwise it loses the given amount</li>
+</ul>
+<p>Objects of type <code>Runner</code> represent aggressive infected that charge toward their victim. A Runner always attacks its opponent by biting it and can enter a rage state by calling <code>rage()</code>, after which its attacks are more destructive.</p>
+<ul>
+<li><code>void rage()</code> – puts the Runner into a rage state</li>
+<li><code>void bite(Character character)</code> – increases <code>bittenTurns</code> on the attacked character by 2 if in a rage state; otherwise behaves the same as the parent class</li>
+<li><code>void fight(Character character)</code> – attacks by biting its opponent; decreases own health by 2 due to exhaustion and the attacked character's health by 10; in a rage state decreases its own health by 4 and the attacked character's health by 20</li>
+</ul>
+<p>The concrete classes have one constructor each, and an example of how they are instantiated is shown in the provided <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">Runner runner       = new Runner(&quot;Runner&quot;, 40);        // type, health
+Stalker stalker     = new Stalker(&quot;Stalker&quot;, 50, 2);   // type, health, stealthLevel
+MainCharacter ellie = new MainCharacter(&quot;Ellie&quot;, 100); // name, health
+</code></pre>
+<p><strong>NOTE: All classes and interfaces must have their visibility set to public and be located in the package <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

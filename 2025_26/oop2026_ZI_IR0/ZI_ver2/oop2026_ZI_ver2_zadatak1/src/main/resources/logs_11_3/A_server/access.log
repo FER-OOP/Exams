@@ -1,0 +1,15 @@
+INFO	Server started on port 8080
+INFO	Loading configuration
+INFO	Ready to accept requests
+WARN	High latency on endpoint /api/users
+INFO	Request processed in 250ms
+ERROR	Unable to serve static content
+WARN	High latency on endpoint /api/users
+ERROR	Unable to serve static content
+ERROR	Unable to serve static content
+WARN	High latency on endpoint /api/users
+ERROR	Unable to serve static content
+ERROR	Unable to serve static content
+WARN	High latency on endpoint /api/users
+ERROR	Unable to serve static content
+INFO	Server continues running

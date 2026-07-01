@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Vaš zadatak je isprogramirati tijek društvene igre gdje igrači pokušavaju osvajati teritorije i preuzeti svijet. U zadatku su dane konkretne klase <code>GameObject</code>, koja predstavlja sve entitete u igri, i <code>Player</code>, koja predstavlja sve igrače u društvenoj igri, kao i klasa <code>Main</code> koju je potrebno pročitati kako bi se vidjelo na koji način se koriste sve od dolje objašnjenih tipova.
+Potrebno je nadopuniti konkretne klase <code>Territory</code>, <code>Soldier</code> i <code>Tank</code> te napisati tipove <code>AttackUnit</code> i <code>MovableUnit</code> za koje je potrebno odlučiti trebaju li biti sučelja ili apstraktne klase. Sve konkretne klase imaju klasu <code>GameObject</code> kao nadklasu, ali ne nužno kao svoju direktnu nadklasu.</p>
+<p><strong>NAPOMENA: Klase <code>GameObject</code> i <code>Player</code> nije dozvoljeno mijenjati radi ispravnog bodovanja rješenja.</strong></p>
+<p>Objekti tipa <code>GameObject</code> imaju naziv (name) i razinu obrane (defenseLevel) tipa <code>int</code> koji se postavljaju prilikom stvaranja objekta. Trenutna razina obrane može se dohvatiti pozivanjem metode <code>getDefenseLevel()</code>, dok se razina obrane može smanjiti pozivanjem metode <code>weaken(int amount)</code>. Razina obrane objekta ne može postati negativna.</p>
+<p>Objekti tipa <code>Player</code> predstavljaju igrače u strateškoj igri te su stoga tipa <code>GameObject</code>. Svaki igrač prati broj osvojenih teritorija (territoriesOwned) koji na početku iznosi 0. Broj osvojenih teritorija tipa <code>int</code> može se povećati osvajanjem novih teritorija pozivanjem metode <code>void conquerTerritory()</code>, dok se trenutno stanje može dohvatiti pozivanjem metode <code>getTerritoriesOwned()</code>.</p>
+<p>Tip <code>AttackUnit</code> predstavlja sve jedinice koje mogu sudjelovati u borbi. Sve konkretne klase <code>Territory</code>, <code>Soldier</code> i <code>Tank</code> su ovog tipa i imaju sljedeće metode:</p>
+<ul>
+<li><code>void attack(Territory territory, int territoryRoll)</code> - opisuje na koji način se bori s protivnicima i</li>
+<li><code>void defend()</code> - opisuje na koji način se brani od svojih protivnika.</li>
+</ul>
+<p>Tip <code>MovableUnit</code> predstavlja sve igrače jedinice koje se mogu kretati po ploči. Po ploči se mogu kretati entiteti tipa <code>Soldier</code> i <code>Tank</code>. Objekti ovog tipa imaju sljedeće metode:</p>
+<ul>
+<li><code>int getFieldsMoved()</code> - mogu saznati broj prijeđenih polja,</li>
+<li><code>void addFields(int fields)</code> - dodaje željeni broj polja,</li>
+<li><code>boolean canMove()</code> - vraća je li jedinici dopušteno kretanje na temelju osvojenih teritorija,</li>
+<li><code>void move(int fields)</code> - pomiče jedinicu ukoliko je uvjet iz <code>canMove()</code> ispunjen.</li>
+</ul>
+<p>Objekti tipa <code>Soldier</code> predstavljaju pješačke jedinice. Vojnik se može kretati tek kada je dovoljno jak, tj. kada kontrolira dovoljno teritorija.</p>
+<ul>
+<li><code>boolean canMove()</code> – vraća <code>true</code> ako vojnik kontrolira barem 2 teritorija</li>
+<li><code>void move(int fields)</code> – pomiče vojnika za zadani broj polja ako je <code>canMove()</code> istinit,</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – baca kockicu jednom (1–12) koristeći metodu za nasumično biranje broja; ako je rezultat veći od <code>territoryRoll</code>, teritorij se oslabljuje za 5 i <strong>vojnik osvaja teritorij</strong>; ako je rezultat jednak, gleda se koji od dva entiteta ima veći <code>defenseLevel</code> i slabiji se oslabljuje za 5; u suprotnom se vojnik oslabljuje za 5</li>
+<li><code>void defend()</code> – povećava razinu obrane za 3</li>
+</ul>
+<p>Objekti tipa <code>Tank</code> predstavljaju oklopne jedinice koji su također igrači. Tenk je moćnija jedinica od vojnika te se može kretati već s jednim osvojenim teritorijem, ali njegovo kretanje troši obranu zbog težine vozila.</p>
+<ul>
+<li><code>boolean canMove()</code> – vraća <code>true</code> ako tenk kontrolira barem 1 teritorij</li>
+<li><code>void move(int fields)</code> – ako se može pomaknuti, provjerava se pozivom metode <code>canMove()</code>, pomiče se za <code>fields + 2</code> polja zbog snage motora i smanjuje vlastitu razinu obrane za 2 zbog težine vozila</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – baca kockicu jednom (1–12) koristeći metodu za nasumično biranje broja, s bonusom +3 (maksimalni broj koji može imati je 12); ako je rezultat veći ili jednak <code>territoryRoll</code>, teritorij se oslabljuje za 15 i <strong>tenk osvaja teritorij</strong>; u suprotnom se tenk oslabljuje za 1</li>
+<li><code>void defend()</code> – povećava razinu obrane za 8 jer su tenkovi jako oklopljeni</li>
+</ul>
+<p>Objekti tipa <code>Territory</code> predstavljaju teritorije na ploči, oni su nepomični dijelovi ploče koji mogu napadati i braniti se. Zamislite ih kao bazne stanice za obranu pojedinog teritorija. Svaki teritorij može jednom zatvoriti bedeme pozivom metode <code>defend()</code>, nakon čega je zaštićen od sljedećeg napada. Nakon što je zaštita iskorištena, bedemi se otvaraju i teritorij je ponovno ranjiv.</p>
+<ul>
+<li><code>boolean isReinforced()</code> – vraća je li teritorij trenutno zaštićen zatvorenim bedemima</li>
+<li><code>void weaken(int amount)</code> – ako je teritorij zaštićen (<code>isReinforced() == true</code>), napad se zanemaruje i bedemi se otvaraju (zaštita se troši); u suprotnom se razina obrane smanjuje za zadani iznos</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – baca kockicu jednom (1–12) koristeći metodu za nasumično biranje broja; ako je rezultat veći od <code>territoryRoll</code>, ciljni teritorij se oslabljuje za 5; ako je rezultat jednak, gleda se koji od dva entiteta ima veći <code>defenseLevel</code> i slabiji se oslabljuje za 5; u suprotnom se ovaj teritorij oslabljuje za 3</li>
+<li><code>void defend()</code> – povećava razinu obrane za 5 i zatvara bedeme (postavlja zaštitu na <code>true</code>)</li>
+</ul>
+<p>Konkretne klase imaju jedan konstruktor, a primjer njihova pozivanja prikazan je u isječku dane metode main u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">Territory england = new Territory(&quot;England&quot;, 100);  // name, defenseLevel
+Territory france  = new Territory(&quot;France&quot;, 80);
+Soldier s         = new Soldier(&quot;Infantry&quot;, 40, 0); // name, defenseLevel, fieldsMoved
+Tank tank         = new Tank(&quot;Heavy Tank&quot;, 80, 0);  // name, defenseLevel, fieldsMoved
+</code></pre>
+<p><strong>NAPOMENA: Sve klase i sučelja trebaju imati vidljivost postavljenu na public i nalaziti se u paketu <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

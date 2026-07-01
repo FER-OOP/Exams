@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U stablu direktorija nalaze se brojne datoteke različitih tipova organizirane u poddirektorije. Potrebno je obići stablo direktorija te prikupiti informacije <strong>isključivo o tekstualnim datotekama (datotekama s ekstenzijom <code>.txt</code>)</strong>. Pri tome je potrebno pretražiti samo one <strong>direktorije čiji naziv sadrži niz <code>txt</code></strong>, dok <strong>ostale direktorije (zajedno s njihovim poddirektorijima) treba u potpunosti preskočiti.</strong></p>
+<p>Za svaku tekstualnu datoteku koja se nalazi u odgovarajućem direktoriju potrebno je prebrojati ukupan broj takvih datoteka, izračunati njihovu ukupnu veličinu (u bajtovima) te zabilježiti nazive direktorija u kojima su pronađene tekstualne datoteke.</p>
+<p>Za obilazak stabla direktorija potrebno je napisati klasu <code>TxtSearchVisitor</code> koja (izravno ili neizravno) implementira sučelje <code>FileVisitor</code>.</p>
+<p>Klasa <code>TxtSearchVisitor</code> mora implementirati sljedeće javne metode:</p>
+<ul>
+<li><code>int getTotalTxtFiles()</code> - vraća ukupan broj pronađenih tekstualnih datoteka (datoteka s ekstenzijom <code>.txt</code>),</li>
+<li><code>long getTotalSize()</code> - vraća ukupnu veličinu svih pronađenih tekstualnih datoteka izraženu u bajtovima,</li>
+<li><code>Collection&lt;String&gt; getDirectories()</code> - vraća nazive direktorija u kojima su pronađene tekstualne datoteke. <strong>Nazivi direktorija moraju biti jedinstveni</strong>, svaki naziv smije se pojaviti samo jednom. Redoslijed naziva nije bitan. Pogledati primjer.</li>
+</ul>
+<p>Unutar dozvoljenih direktorija potrebno je u obzir uzeti <strong>samo one dokumente koje završavaju ekstenzijom <code>.txt</code></strong>.</p>
+<p>Potrebno je i dopuniti klasu <code>Main</code> koja je djelomično napisana. Potrebno je napisati statičku metodu</p>
+<p><code>void callVisitor(Path startDir, FileVisitor&lt;Path&gt; visitor)</code></p>
+<p>u kojoj se pomoću visitora obilazi stablo direktorija i računaju tražene vrijednosti. Ako prilikom poziva visitora dođe do iznimke, potrebno je pozvati metodu <code>printStackTrace()</code> odgovarajuće klase iznimke.</p>
+<p>Sve klase trebaju biti u paketu <code>hr.fer.oop</code>.</p>
+<p><strong>VAŽNO:</strong> Za rad s datotekama obavezno koristiti klasu <code>java.nio.file.Path</code> !</p>
+<p><strong>VAŽNO:</strong> Startni (prvi) direktorij u nazivu sadrži niz <code>txt</code> te njega nije potrebno dodatno provjeravati. Potrebno je promatrati poddirektorije koji se nalaze u njemu. Pogledati primjer (startni direktorij je &quot;src/main/resources/txtExercise/&quot;).</p>
+<p><strong>VAŽNO:</strong> Prilikom obilaska stabla direktorija potrebno je obraditi <strong>samo one direktorije čiji naziv sadrži niz <code>txt</code></strong>. Ako naziv direktorija ne sadrži niz <code>txt</code>, taj direktorij i sve njegove poddirektorije potrebno je preskočiti vraćanjem odgovarajuće vrijednost iz enumeracije koja kontrolira tijek obilaska datotečnog sustava.</p>
+<p><strong>VAŽNO:</strong> Možete pretpostaviti da su sve datoteke ispravno formatirane te da neće doći do pogreške ili iznimke prilikom obilaska stabla direktorija.</p>
+<p><strong>Primjer pokretanja:</strong></p>
+<pre class="line-numbers"><code>Primjer poddirektorija u src/main/resources/txtExercise/:
+-- Diroop		// Ne sadrži u nazivu `txt`
+-- txtDIR1		// POHRANITI NAZIV
+------ 1.txt
+------ txtDIR1		// POHRANITI NAZIV
+---------- 2.txt
+------ txtPodDIR1	// Ne posjeduje `.txt` datoteke
+---------- txtdir1	// POHRANITI NAZIV
+------------ 3.txt
+-- txtDIR2		// Ne posjeduje `.txt` datoteke
+</code></pre>
+<pre class="line-numbers"><code class="language-java">	Path startDir = Path.of(&quot;src/main/resources/txtExercise/&quot;);
+    	TxtSearchVisitor visitor = new TxtSearchVisitor();
+    	
+    	callVisitor(startDir, visitor);
+    	
+    	System.out.println(&quot;Total .txt files: &quot; + visitor.getTotalTxtFiles());
+    	System.out.println(&quot;Total size (bytes): &quot; + visitor.getTotalSize());
+    	
+    	System.out.println(&quot;Directories: &quot;);
+    	Collection&lt;String&gt; directories = visitor.getDirectories();
+    	for (String dir : directories) {
+    		System.out.println(dir);
+    	}
+</code></pre>
+<p><strong>Očekivani izlaz (redoslijed direktorija se može razlikovati ovisno o OS-u):</strong></p>
+<pre class="line-numbers"><code>Total .txt files: 3
+Total size (bytes): 78
+Directories: 
+txtDIR1
+txtdir1
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

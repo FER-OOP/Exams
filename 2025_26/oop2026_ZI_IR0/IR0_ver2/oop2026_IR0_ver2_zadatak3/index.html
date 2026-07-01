@@ -1,0 +1,244 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je implementirati sustav za vođenje osobne kolekcije vinil ploča. Ploče se ne čuvaju izravno, već se slažu u <strong>kutije</strong>.</p>
+<p>U zadatku je potrebno napisati klase koje opisuju skladište (<code>Storage</code>) i iznimku (<code>StorageException</code>) prema priloženom dijagramu klasa. Klasa kutija (<code>Box</code>) je djelomično implementirana i potrebno je ispravno parametrizirati. Ostale klase (<code>Vinyl</code>, <code>Album</code> i <code>Single</code>) <strong>priložene su uz zadatak</strong> i ne mijenjate ih.</p>
+<p>Sve klase su <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="427px" preserveAspectRatio="none" style="width:871px;height:427px;background:#FFFFFF;" version="1.1" viewBox="0 0 871 427" width="871px" zoomAndPan="magnify">
+<defs>
+<filter height="1" id="bs1a18un8h2k50" width="1" x="0" y="0">
+<feFlood flood-color="#FFCDD2" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+<filter height="1" id="bs1a18un8h2k51" width="1" x="0" y="0">
+<feFlood flood-color="#FFE0B2" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+<filter height="1" id="bs1a18un8h2k52" width="1" x="0" y="0">
+<feFlood flood-color="#C8E6C9" result="flood"/>
+<feComposite in="SourceGraphic" in2="flood" operator="over"/>
+</filter>
+</defs>
+<g>
+<!--class Vinyl-->
+<g id="elem_Vinyl">
+<rect codeLine="14" fill="#C8E6C9" height="170.3438" id="Vinyl" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="166" x="114.5" y="7"/>
+<ellipse cx="172.25" cy="27.1328" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M172.3594,22.4766 L171.2031,27.5547 L173.5313,27.5547 L172.3594,22.4766 Z M170.875,20.2422 L173.8594,20.2422 L177.2188,32.6328 L174.7656,32.6328 L174,29.5703 L170.7188,29.5703 L169.9688,32.6328 L167.5313,32.6328 L170.875,20.2422 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="190.75" y="23.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="31" x="198.25" y="38.9639">Vinyl</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="115.5" x2="279.5" y1="47.2656" y2="47.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="122.5" y="57.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="134.5" y="64.2607">artist: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="122.5" y="74.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="134.5" y="80.5576">title: String {final}</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="122.5" y="90.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="134.5" y="96.8545">price: double {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="115.5" x2="279.5" y1="104.1563" y2="104.1563"/>
+<ellipse cx="125.5" cy="117.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="134.5" y="121.1514">getArtist(): String</text>
+<ellipse cx="125.5" cy="134.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="134.5" y="137.4482">getTitle(): String</text>
+<ellipse cx="125.5" cy="150.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="134.5" y="153.7451">getPrice(): double</text>
+<ellipse cx="125.5" cy="166.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="134.5" y="170.042">toString(): String</text>
+</g>
+<!--class Album-->
+<g id="elem_Album">
+<rect codeLine="25" fill="#C8E6C9" height="72.5625" id="Album" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="177" x="7" y="254"/>
+<ellipse cx="69.75" cy="274.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M72.7188,279.7734 Q72.1406,280.0703 71.5,280.2109 Q70.8594,280.3672 70.1563,280.3672 Q67.6563,280.3672 66.3281,278.7266 Q65.0156,277.0703 65.0156,273.9453 Q65.0156,270.8203 66.3281,269.1641 Q67.6563,267.5078 70.1563,267.5078 Q70.8594,267.5078 71.5,267.6641 Q72.1563,267.8203 72.7188,268.1172 L72.7188,270.8359 Q72.0938,270.2578 71.5,269.9922 Q70.9063,269.7109 70.2813,269.7109 Q68.9375,269.7109 68.25,270.7891 Q67.5625,271.8516 67.5625,273.9453 Q67.5625,276.0391 68.25,277.1172 Q68.9375,278.1797 70.2813,278.1797 Q70.9063,278.1797 71.5,277.9141 Q72.0938,277.6328 72.7188,277.0547 L72.7188,279.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="88.75" y="270.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="90.25" y="285.9639">Album</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="183" y1="294.2656" y2="294.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="304.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="27" y="311.2607">trackCount: int {final}</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="183" y1="318.5625" y2="318.5625"/>
+</g>
+<!--class Single-->
+<g id="elem_Single">
+<rect codeLine="29" fill="#C8E6C9" height="72.5625" id="Single" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="163" x="219" y="254"/>
+<ellipse cx="275.25" cy="274.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M278.2188,279.7734 Q277.6406,280.0703 277,280.2109 Q276.3594,280.3672 275.6563,280.3672 Q273.1563,280.3672 271.8281,278.7266 Q270.5156,277.0703 270.5156,273.9453 Q270.5156,270.8203 271.8281,269.1641 Q273.1563,267.5078 275.6563,267.5078 Q276.3594,267.5078 277,267.6641 Q277.6563,267.8203 278.2188,268.1172 L278.2188,270.8359 Q277.5938,270.2578 277,269.9922 Q276.4063,269.7109 275.7813,269.7109 Q274.4375,269.7109 273.75,270.7891 Q273.0625,271.8516 273.0625,273.9453 Q273.0625,276.0391 273.75,277.1172 Q274.4375,278.1797 275.7813,278.1797 Q276.4063,278.1797 277,277.9141 Q277.5938,277.6328 278.2188,277.0547 L278.2188,279.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="293.75" y="270.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="295.75" y="285.9639">Single</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="220" x2="381" y1="294.2656" y2="294.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="227" y="304.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="239" y="311.2607">bSide: String {final}</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="220" x2="381" y1="318.5625" y2="318.5625"/>
+</g>
+<!--class Box-->
+<g id="elem_Box">
+<rect codeLine="33" fill="#FFE0B2" height="137.75" id="Box" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="178" x="315.5" y="23"/>
+<ellipse cx="369.75" cy="43.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M372.7188,48.7734 Q372.1406,49.0703 371.5,49.2109 Q370.8594,49.3672 370.1563,49.3672 Q367.6563,49.3672 366.3281,47.7266 Q365.0156,46.0703 365.0156,42.9453 Q365.0156,39.8203 366.3281,38.1641 Q367.6563,36.5078 370.1563,36.5078 Q370.8594,36.5078 371.5,36.6641 Q372.1563,36.8203 372.7188,37.1172 L372.7188,39.8359 Q372.0938,39.2578 371.5,38.9922 Q370.9063,38.7109 370.2813,38.7109 Q368.9375,38.7109 368.25,39.7891 Q367.5625,40.8516 367.5625,42.9453 Q367.5625,45.0391 368.25,46.1172 Q368.9375,47.1797 370.2813,47.1797 Q370.9063,47.1797 371.5,46.9141 Q372.0938,46.6328 372.7188,46.0547 L372.7188,48.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="388.25" y="39.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="26" x="402.25" y="54.9639">Box</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="487.5" y="20"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="488.5" y="32.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="316.5" x2="492.5" y1="63.2656" y2="63.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="323.5" y="73.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="335.5" y="80.2607">items: List&lt;T&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="316.5" x2="492.5" y1="87.5625" y2="87.5625"/>
+<ellipse cx="326.5" cy="101.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="335.5" y="104.5576">add(T vinyl): void</text>
+<ellipse cx="326.5" cy="117.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="335.5" y="120.8545">getItems(): List&lt;T&gt;</text>
+<ellipse cx="326.5" cy="133.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="335.5" y="137.1514">size(): int</text>
+<ellipse cx="326.5" cy="150.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="335.5" y="153.4482">totalValue(): double</text>
+</g>
+<!--class StorageException-->
+<g id="elem_StorageException">
+<rect codeLine="42" fill="#FFCDD2" height="72.5625" id="StorageException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="271" x="561" y="254"/>
+<ellipse cx="631.25" cy="274.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M634.2188,279.7734 Q633.6406,280.0703 633,280.2109 Q632.3594,280.3672 631.6563,280.3672 Q629.1563,280.3672 627.8281,278.7266 Q626.5156,277.0703 626.5156,273.9453 Q626.5156,270.8203 627.8281,269.1641 Q629.1563,267.5078 631.6563,267.5078 Q632.3594,267.5078 633,267.6641 Q633.6563,267.8203 634.2188,268.1172 L634.2188,270.8359 Q633.5938,270.2578 633,269.9922 Q632.4063,269.7109 631.7813,269.7109 Q630.4375,269.7109 629.75,270.7891 Q629.0625,271.8516 629.0625,273.9453 Q629.0625,276.0391 629.75,277.1172 Q630.4375,278.1797 631.7813,278.1797 Q632.4063,278.1797 633,277.9141 Q633.5938,277.6328 634.2188,277.0547 L634.2188,279.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="43" x="691.25" y="270.1387">&#171;todo&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="651.75" y="285.9639">StorageException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="562" x2="831" y1="294.2656" y2="294.2656"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="562" x2="831" y1="302.2656" y2="302.2656"/>
+<ellipse cx="572" cy="315.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="245" x="581" y="319.2607">StorageException(message: String)</text>
+</g>
+<!--class Storage-->
+<g id="elem_Storage">
+<rect codeLine="46" fill="#FFCDD2" height="154.0469" id="Storage" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="336" x="528.5" y="15"/>
+<ellipse cx="665.25" cy="35.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M668.2188,40.7734 Q667.6406,41.0703 667,41.2109 Q666.3594,41.3672 665.6563,41.3672 Q663.1563,41.3672 661.8281,39.7266 Q660.5156,38.0703 660.5156,34.9453 Q660.5156,31.8203 661.8281,30.1641 Q663.1563,28.5078 665.6563,28.5078 Q666.3594,28.5078 667,28.6641 Q667.6563,28.8203 668.2188,29.1172 L668.2188,31.8359 Q667.5938,31.2578 667,30.9922 Q666.4063,30.7109 665.7813,30.7109 Q664.4375,30.7109 663.75,31.7891 Q663.0625,32.8516 663.0625,34.9453 Q663.0625,37.0391 663.75,38.1172 Q664.4375,39.1797 665.7813,39.1797 Q666.4063,39.1797 667,38.9141 Q667.5938,38.6328 668.2188,38.0547 L668.2188,40.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="43" x="691.25" y="31.1387">&#171;todo&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="685.75" y="46.9639">Storage</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="529.5" x2="863.5" y1="55.2656" y2="55.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="536.5" y="65.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="282" x="548.5" y="72.2607">boxes: Map&lt;String, Box&lt;Vinyl&gt;&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="529.5" x2="863.5" y1="79.5625" y2="79.5625"/>
+<ellipse cx="539.5" cy="93.2109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="310" x="548.5" y="96.5576">addBox(name: String, box: Box&lt;Vinyl&gt;): void</text>
+<ellipse cx="539.5" cy="109.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="274" x="548.5" y="112.8545">store(boxName: String, vinyl: Vinyl): void</text>
+<ellipse cx="539.5" cy="125.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252" x="548.5" y="129.1514">getMostExpensiveBoxName(): String</text>
+<ellipse cx="539.5" cy="142.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="548.5" y="145.4482">findByArtist(artist: String): List&lt;Vinyl&gt;</text>
+<ellipse cx="539.5" cy="158.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="305" x="548.5" y="161.7451">getAllVinylTitlesAlphabetically(): List&lt;String&gt;</text>
+</g>
+<!--reverse link Vinyl to Album-->
+<g id="link_Vinyl_Album">
+<path codeLine="57" d="M144.58,194.94 C133.59,216.12 122.72,237.07 114.01,253.85 " fill="none" id="Vinyl-backto-Album" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="138.37,191.71,153.8,177.19,150.8,198.16,138.37,191.71" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Vinyl to Single-->
+<g id="link_Vinyl_Single">
+<path codeLine="58" d="M250.94,194.94 C262.04,216.12 273.02,237.07 281.81,253.85 " fill="none" id="Vinyl-backto-Single" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="244.71,198.15,241.63,177.19,257.11,191.65,244.71,198.15" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Storage to StorageException-->
+<g id="link_Storage_StorageException">
+<path codeLine="61" d="M696.5,169.25 C696.5,196.33 696.5,225.76 696.5,248.73 " fill="none" id="Storage-to-StorageException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="696.5,253.83,700.5,244.83,696.5,248.83,692.5,244.83,696.5,253.83" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="697.5" y="220.0669">throws</text>
+</g>
+<rect fill="#DDDDDD" height="62.8906" id="_legend" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1.0;" width="431" x="12" y="344.5625"/>
+<text fill="#000000" filter="url(#bs1a18un8h2k50)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="364.5576">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="303" x="33" y="364.5576">&#171;todo&#187; Klase koje trebate napisati u cijelosti</text>
+<text fill="#000000" filter="url(#bs1a18un8h2k51)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="380.8545">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="401" x="33" y="380.8545">&#171;partial&#187; Djelomi&#269;no napisana klasa (prilo&#382;ena uz zadatak)</text>
+<text fill="#000000" filter="url(#bs1a18un8h2k52)" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="12" x="17" y="397.1514">&#160;&#160;&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="304" x="33" y="397.1514">&#171;done&#187; Ve&#263; prilo&#382;ena klasa (ne mijenjate je)</text>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="438" y1="351.5625" y2="351.5625"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="438" y1="367.8594" y2="367.8594"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="438" y1="384.1563" y2="384.1563"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="438" y1="400.4531" y2="400.4531"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="17" y1="351.5625" y2="400.4531"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="29" x2="29" y1="351.5625" y2="400.4531"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="438" x2="438" y1="351.5625" y2="400.4531"/>
+<!--SRC=[RLHDRzf04BtxLupKGucQf5KFLOkGfV0HgMgJLYBAVMnFoC9wr_8kb11opgc7_g6UwF_gxAvjZE62qCoyj- -z6J0BeGeiCOTKeZ7m704CCLtCIhrKsKXBNGu6LcSwZk7DzVLeFFvuQe8fh40PXYOVXYU7Cgt8JOm-JpwDlaGlKIHfHYe3IGyssWuI1lIhHs806BntbNWBZO9lh95WeUS4jgG4BO72GXYq0fQGYZb9RVZxjiNcr7JOzch73f6BtM-bAoQ5iE1N47f5AQJ-zvUuijp01ZEqk3XhSGSV7UxAv3tjNg75K74gWfnLghcJFYV7nW646A884sDBJ6srYtkXdkIUqgtc0fnqO_imjQLGCtX-40hbYszPOIMTxB2Gb3kPNYQIsfqB_dW7Cx9NdhPtLiFh-ftZF2x_T8Ik72XzsUemqvhc5GShLp9PvbqhpkjYn0V2TeIoZQu6DMKErjk19LEH7TjiG4Ez7jp51riEE64fDttupZxTm54Ac6MzErYvqDd1IekiTllL8Psj2klhHcny0goyiczHtgDSjdFPMx6wn1bDrYaLLcYrl-bdZ-xsUpaPmuNQvzaHrI43nwBNnFPki1W4oBcFmXzHVDekztiAy-QHSqVIRy7QEHX-bdeyS7k0y7drmwrsOhlXt-9aNP0oOaN30EoS4elAXa_LyHsUTXrtKDBSgPI-uE_INCdY4HEo8aKfdveD1OBOHVQMxLx0BHevfzqViKB5_nrSYgeVrvQx_ZZRXN1tDVZ7IXZ5La23s2YHfy8Jr6kul8oFjzi7-rZgNoRw3m00]-->
+</g>
+</svg>
+<p><strong>Priložene klase (ne mijenjate ih):</strong></p>
+<ul>
+<li><code>Vinyl</code> — osnovna klasa za ploče (<code>artist</code>, <code>title</code>, <code>price</code>).</li>
+<li><code>Album</code> i <code>Single</code> — nasljeđuju <code>Vinyl</code>.</li>
+</ul>
+<p><strong>Klasa <code>Box</code> (djelomično napisana):</strong> kutija u koju se slažu ploče. Klasa vam je dana gotova, ali <strong>bez parametrizacije</strong>. Klasa treba biti parametrizirana tako da kutija može sadržavati ploče (<code>Vinyl</code>) ili njihove specijalizirane oblike (npr. <code>Album</code> i <code>Single</code>), pri čemu svaka kutija u jednom trenutku sadrži samo jedan tip elemenata. Metoda <code>totalValue()</code> vraća zbroj cijena svih ploča u kutiji.</p>
+<p><strong>Klasa <code>StorageException</code> (pišete je):</strong> provjeravana iznimka koju baca skladište u slučaju pokušaja dodavanja kutije s već postojećim nazivom ili dodavanja ploče u nepostojeću kutiju (detaljnije opisano u klasi <code>Storage</code>).</p>
+<p><strong>Klasa <code>Storage</code> (pišete je):</strong> upravlja kolekcijom kutija.</p>
+<ul>
+<li>kutije koje pohranjuju ploče (<code>Vinyl</code>) se čuvaju u mapi gdje je ključ naziv kutije.</li>
+<li><code>addBox(String name, Box&lt;Vinyl&gt; box)</code> — registrira kutiju pod zadanim nazivom. Ako kutija s istim nazivom već postoji, baca <code>StorageException</code> s opisnom porukom. Točan tekst poruke nije propisan, ali poruka ne smije biti izostavljena.</li>
+<li><code>store(String boxName, Vinyl vinyl)</code> — stavlja ploču u kutiju zadanog naziva. Ako kutija ne postoji, baca <code>StorageException</code>.</li>
+<li><code>getMostExpensiveBoxName()</code> — vraća naziv kutije s najvećom ukupnom vrijednošću (<code>totalValue()</code>). Možete pretpostaviti da skladište nije prazno i da postoji samo jedna takva kutija.</li>
+<li><code>findByArtist(String artist)</code> — vraća sve ploče zadanog izvođača iz svih kutija, u protivnom praznu listu.</li>
+<li><code>getAllVinylTitlesAlphabetically()</code> — vraća naslove ploče iz svih kutija, sortirane <strong>abecedno</strong>, u protivnom praznu listu.</li>
+</ul>
+<p><strong>Napomena:</strong> Povratne vrijednosti metoda, kao i ostali detalji, dostupni su na priloženom UML dijagramu. <strong>Obratite pozornost na UML dijagram!</strong></p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">Storage storage = new Storage();
+
+        Box&lt;Vinyl&gt; rockBox = new Box&lt;&gt;();
+        Box&lt;Vinyl&gt; jazzBox = new Box&lt;&gt;();
+
+        try {
+        	storage.addBox(&quot;rock&quot;, rockBox);
+            storage.addBox(&quot;jazz&quot;, jazzBox);
+            storage.addBox(&quot;jazz&quot;, jazzBox);	// ERROR (already exists Key)
+        } catch (StorageException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+        
+        try {
+        	storage.store(&quot;rock&quot;, new Album(&quot;Beatles&quot;, &quot;Abbey Road&quot;, 25.0, 17));
+            storage.store(&quot;rock&quot;, new Single(&quot;Beatles&quot;, &quot;Hey Jude&quot;, 10.0, &quot;Revolution&quot;));
+            storage.store(&quot;jazz&quot;, new Album(&quot;Miles Davis&quot;, &quot;Kind of Blue&quot;, 30.0, 5));
+            storage.store(&quot;jazz&quot;, new Album(&quot;John Coltrane&quot;, &quot;A Love Supreme&quot;, 28.0, 4));
+            storage.store(&quot;pop&quot;, new Single(&quot;ABBA&quot;, &quot;Waterloo&quot;, 5.0, &quot;Watch Out&quot;)); // ERROR (NOT found Key)
+        } catch (StorageException e) {
+            System.err.println(&quot;Error: &quot; + e.getMessage());
+        }
+
+        System.out.println(&quot;Most expensive box: &quot; + storage.getMostExpensiveBoxName()); 
+
+        System.out.println(&quot;\n--- The Beatles vinyls ---&quot;);
+        for (Vinyl v : storage.findByArtist(&quot;Beatles&quot;)) {
+            System.out.println(v);
+        }
+
+        System.out.println(&quot;\n--- All vinyl titles alphabetically ---&quot;);
+        for (String v : storage.getAllVinylTitlesAlphabetically()) {
+            System.out.println(v);
+        }
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Error: Box already exists: jazz
+Error: Box not found: pop
+Most expensive box: jazz
+
+--- The Beatles vinyls ---
+Album{artist=Beatles, title=Abbey Road, price=25.0, tracks=17}
+Single{artist=Beatles, title=Hey Jude, price=10.0, bSide=Revolution}
+
+--- All vinyl titles alphabetically ---
+A Love Supreme
+Abbey Road
+Hey Jude
+Kind of Blue
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

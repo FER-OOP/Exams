@@ -1,0 +1,5 @@
+INFO	Checking permissions for user admin
+INFO	Admin has all permissions
+INFO	Access granted
+WARN	Permission write_all expires in 7 days
+INFO	Notification sent

@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Your task is to program the flow of a game inspired by the board game Risk, where players attempt to conquer territories and take over the world. A concrete class <code>GameObject</code>, which represents all entities in the game, and a concrete class <code>Player</code>, which represents all players in the board game, are provided along with a <code>Main</code> class which should be read to understand how all of the types described below are used.
+You need to complete the code of the concrete classes <code>Territory</code>, <code>Soldier</code> and <code>Tank</code>, as well as write the types <code>AttackUnit</code> and <code>MovableUnit</code>, for which you need to decide whether they should be interfaces or abstract classes. All concrete classes have <code>GameObject</code> as a superclass, but not necessarily as their direct superclass.</p>
+<p><strong>NOTE: The classes <code>GameObject</code> and <code>Player</code> must not be modified for correct grading of the solution.</strong></p>
+<p>Objects of type <code>GameObject</code> have a name (name) and a defense level (defenseLevel) of type <code>int</code> which are set when the object is created. The current defense level can be retrieved by calling <code>getDefenseLevel()</code>, while the defense level can be decreased by calling <code>weaken(int amount)</code>. The defense level cannot become negative.</p>
+<p>Objects of type <code>Player</code> represent players in the strategy game and extend <code>GameObject</code>. Each player tracks the number of conquered territories (territoriesOwned) which starts at 0. The number of conquered territories can be increased by calling <code>void conquerTerritory()</code>, while the current value can be retrieved by calling <code>getTerritoriesOwned()</code>.</p>
+<p>The type <code>AttackUnit</code> represents all units that can participate in combat. All concrete classes <code>Territory</code>, <code>Soldier</code> and <code>Tank</code> are of this type and implement methods:</p>
+<ul>
+<li><code>void attack(Territory territory, int territoryRoll)</code> - describes the way they attack their enemies, and</li>
+<li><code>void defend()</code> - describes the way they defend from their enemied.</li>
+</ul>
+<p>The type <code>MovableUnit</code> represents all player units that can move around the board. Only <code>Soldier</code> and <code>Tank</code> can move. Objects of this type implement the following methods:</p>
+<ul>
+<li><code>int getFieldsMoved()</code> - retrieves the number of fields moved,</li>
+<li><code>void addFields(int fields)</code> - adds the desired number of fields upon moving,</li>
+<li><code>boolean canMove()</code> - returns whether the unit is allowed to move based on conquered territories,</li>
+<li><code>void move(int fields)</code> - moves the unit if the condition <code>canMove()</code> is met.</li>
+</ul>
+<p>Objects of type <code>Soldier</code> represent infantry units. A soldier can only move when strong enough, i.e. when controlling enough territories.</p>
+<ul>
+<li><code>boolean canMove()</code> – returns <code>true</code> if the soldier controls at least 2 territories</li>
+<li><code>void move(int fields)</code> – moves the soldier by the given number of fields if <code>canMove()</code> is true,</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – rolls once (1–12) using a random number method; if the result is greater than <code>territoryRoll</code>, the territory is weakened by 5 and <strong>the soldier conquers it</strong>; if the result is equal, the one with the lower <code>defenseLevel</code> is weakened by 5; otherwise the soldier is weakened by 5</li>
+<li><code>void defend()</code> – increases defense level by 3</li>
+</ul>
+<p>Objects of type <code>Tank</code> represent armored units, another type of player in the game. A tank is more powerful than a soldier and can move with just one conquered territory, but its movement costs defense due to the vehicle's weight.</p>
+<ul>
+<li><code>boolean canMove()</code> – returns <code>true</code> if the tank controls at least 1 territory</li>
+<li><code>void move(int fields)</code> – if it can move, it moves the tank by <code>fields + 2</code> due to engine power and decreases own defense by 2 due to the vehicle's weight</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – rolls once (1–12) using a random number method with a +3 bonus (maximum 12); if the result is greater than or equal to <code>territoryRoll</code>, the territory is weakened by 15 and <strong>the tank conquers it</strong>; otherwise the tank is weakened by 1</li>
+<li><code>void defend()</code> – increases defense level by 8 as tanks are heavily armored</li>
+</ul>
+<p>Objects of type <code>Territory</code> represent territories on the board — they are fixed parts of the board that can attack and defend. Think of them as base stations defending a region. Each territory can raise its walls once by calling <code>defend()</code>, after which it is protected from the next attack. Once the protection is used, the walls come down and the territory is vulnerable again.</p>
+<ul>
+<li><code>boolean isReinforced()</code> – returns whether the territory is currently protected by raised walls</li>
+<li><code>void weaken(int amount)</code> – if the territory is reinforced (<code>isReinforced() == true</code>), the attack is ignored and the walls come down (protection is consumed); otherwise the defense level is decreased by the given amount</li>
+<li><code>void attack(Territory territory, int territoryRoll)</code> – rolls once (1–12) using a random number method; if the result is greater than <code>territoryRoll</code>, the target territory is weakened by 5; if the result is equal, the one with the lower <code>defenseLevel</code> is weakened by 5; otherwise this territory is weakened by 3</li>
+<li><code>void defend()</code> – increases defense level by 5 and raises the walls (sets reinforced to <code>true</code>)</li>
+</ul>
+<p>The concrete classes have one constructor each, and an example of how they are instantiated is shown in the provided <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">Territory england = new Territory(&quot;England&quot;, 100);  // name, defenseLevel
+Territory france  = new Territory(&quot;France&quot;, 80);
+Soldier s         = new Soldier(&quot;Infantry&quot;, 40, 0); // name, defenseLevel, fieldsMoved
+Tank tank         = new Tank(&quot;Heavy Tank&quot;, 80, 0);  // name, defenseLevel, fieldsMoved
+</code></pre>
+<p><strong>NOTE: All classes and interfaces must have their visibility set to public and be located in the package <code>hr.fer.oop</code>.</strong></p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

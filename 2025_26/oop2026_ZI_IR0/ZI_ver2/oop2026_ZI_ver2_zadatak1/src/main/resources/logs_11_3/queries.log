@@ -1,0 +1,11 @@
+INFO	Executing query SELECT * FROM users
+WARN	Query takes longer than 2 seconds
+INFO	Query completed
+ERROR	Failed to execute query UPDATE orders
+INFO	Attempting transaction rollback
+ERROR	Rollback failed
+WARN	Transaction left open
+ERROR	Forcing connection close
+ERROR	Rollback failed
+WARN	Transaction left open
+ERROR	Forcing connection close
