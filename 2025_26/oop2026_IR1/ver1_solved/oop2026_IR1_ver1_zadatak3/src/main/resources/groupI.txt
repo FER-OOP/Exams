@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+I	2026-06-16	France	2-0	Senegal	SoFi Stadium
+I	2026-06-16	Iraq	1-0	Norway	BC Place
+I	2026-06-22	France	1-1	Iraq	MetLife Stadium
+I	2026-06-22	Norway	1-0	Senegal	Levi's Stadium
+I	2026-06-26	Norway	0-2	France	Hard Rock Stadium
+I	2026-06-26	Senegal	1-0	Iraq	BC Place

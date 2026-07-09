@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+A	2026-06-11	Mexico	2-0	South Africa	Estadio Azteca
+A	2026-06-11	South Korea	2-1	Czechia	Estadio Guadalajara
+A	2026-06-18	Mexico	1-1	South Korea	Estadio Azteca
+A	2026-06-18	Czechia	3-0	South Africa	BC Place
+A	2026-06-24	Czechia	0-1	Mexico	MetLife Stadium
+A	2026-06-24	South Africa	1-0	South Korea	Levi's Stadium

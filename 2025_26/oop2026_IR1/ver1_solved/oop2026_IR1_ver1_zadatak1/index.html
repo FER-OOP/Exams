@@ -1,0 +1,207 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Vaš je zadatak implementirati dio sustava kontrole pristupa stadionu tijekom Svjetskog nogometnog prvenstva 2026. Sustav radi s običnim navijačima, predstavnicima medija i članovima osoblja koji mogu ulaziti u različite dijelove stadiona.</p>
+<p>U zadatku su dane klase <code>Main</code>, <code>StadiumPerson</code> i <code>StadiumGate</code>. Potrebno ih je pročitati kako bi se vidjelo na koji se način koriste ostali tipovi. Dane klase <strong>nije dozvoljeno mijenjati</strong>.</p>
+<p>Potrebno je implementirati sljedeće tipove u paketu <code>hr.fer.oop</code>:</p>
+<ul>
+<li><code>StadiumArea</code></li>
+<li><code>AccreditedPerson</code></li>
+<li><code>RegularFan</code></li>
+<li><code>PressMember</code></li>
+<li><code>StaffMember</code></li>
+</ul>
+<p>Za tip <code>AccreditedPerson</code> potrebno je odabrati odgovarajuću vrstu tipa na temelju načina na koji se koristi u danom programu i opisu u nastavku.</p>
+<blockquote>
+<p><strong>Napomena:</strong> Svi tipovi, konstruktori i navedene metode moraju imati vidljivost <code>public</code>. Svi atributi koje implementirate moraju imati vidljivost <code>private</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Preporuka:</strong> Atribute čija se vrijednost nakon konstrukcije ne mijenja preporučuje se označiti ključnom riječi <code>final</code>. Korištenje ključne riječi <code>final</code> neće se posebno bodovati.</p>
+</blockquote>
+<h2><code>StadiumArea</code></h2>
+<p>Tip <code>StadiumArea</code> predstavlja dijelove stadiona koje kontroliraju ulazi. Moguće vrijednosti su:</p>
+<pre class="line-numbers"><code class="language-text">STANDS
+PRESS_AREA
+STAFF_AREA
+</code></pre>
+<p>Tip <code>StadiumArea</code> sadrži samo navedene vrijednosti i nema dodatna polja, konstruktore ni metode.</p>
+<h2>Zadana klasa <code>StadiumPerson</code></h2>
+<p>Klasa <code>StadiumPerson</code> predstavlja osobu na stadionu. Svaka osoba ima ime (<code>name</code>) i identifikacijsku oznaku (<code>idCode</code>) tipa <code>String</code>.</p>
+<p>Klasa već sadrži:</p>
+<ul>
+<li>konstruktor <code>StadiumPerson(String name, String idCode)</code></li>
+<li>metodu <code>String getName()</code></li>
+<li>metodu <code>String getIdCode()</code></li>
+<li>apstraktnu metodu <code>boolean canEnter(StadiumArea area)</code></li>
+<li>implementaciju standardne metode <code>toString()</code></li>
+</ul>
+<p>Metoda <code>toString()</code> vraća ime i identifikacijsku oznaku u obliku:</p>
+<pre class="line-numbers"><code class="language-text">Ana (F101)
+</code></pre>
+<p>Svaka konkretna podklasa mora implementirati metodu <code>canEnter</code>, kojom određuje smije li osoba ući u zadani dio stadiona.</p>
+<h2><code>AccreditedPerson</code></h2>
+<p>Objekti tipa <code>AccreditedPerson</code> predstavljaju osobe koje imaju službenu akreditaciju. Tip mora sadržavati sljedeće dvije metode:</p>
+<ul>
+<li><code>Set&lt;StadiumArea&gt; getAccreditedAreas()</code> — vraća skup dijelova stadiona za koje osoba ima akreditaciju</li>
+<li><code>boolean hasAccreditationFor(StadiumArea area)</code> — vraća <code>true</code> ako osoba ima akreditaciju za zadani dio stadiona, inače vraća <code>false</code></li>
+</ul>
+<p>Za korištenje skupa potrebno je uvesti tip <code>java.util.Set</code>.</p>
+<p><code>PressMember</code> i <code>StaffMember</code> moraju biti objekti tipa <code>AccreditedPerson</code>. <code>RegularFan</code> nema akreditaciju.</p>
+<h2><code>RegularFan</code></h2>
+<p>Klasa <code>RegularFan</code> predstavlja običnog navijača. Ona nasljeđuje klasu <code>StadiumPerson</code>.</p>
+<p>Klasa ima atribut:</p>
+<pre class="line-numbers"><code class="language-java">private String seatNumber;
+</code></pre>
+<p>Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>RegularFan(String name, String idCode, String seatNumber)</code></li>
+<li>metodu <code>String getSeatNumber()</code></li>
+<li>metodu <code>boolean canEnter(StadiumArea area)</code></li>
+</ul>
+<p>Obični navijač smije ući samo u područje <code>STANDS</code>.</p>
+<h2><code>PressMember</code></h2>
+<p>Klasa <code>PressMember</code> predstavlja akreditiranog predstavnika medija. Ona nasljeđuje klasu <code>StadiumPerson</code> i mora se moći koristiti kao <code>AccreditedPerson</code>.</p>
+<p>Klasa ima atribut:</p>
+<pre class="line-numbers"><code class="language-java">private Set&lt;StadiumArea&gt; accreditedAreas;
+</code></pre>
+<p>Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>PressMember(String name, String idCode, Set&lt;StadiumArea&gt; accreditedAreas)</code></li>
+<li>metodu <code>Set&lt;StadiumArea&gt; getAccreditedAreas()</code></li>
+<li>metodu <code>boolean hasAccreditationFor(StadiumArea area)</code></li>
+<li>metodu <code>boolean canEnter(StadiumArea area)</code></li>
+</ul>
+<p>Konstruktor mora osigurati da naknadne promjene nad predanim skupom ne utječu na interno stanje objekta. Može se pretpostaviti da predani skup nije <code>null</code>.</p>
+<p>Metoda <code>getAccreditedAreas()</code> mora vratiti skup preko kojeg nije moguće promijeniti interno stanje objekta. To se može postići vraćanjem kopije skupa ili vraćanjem nepromjenjivog skupa.</p>
+<p>Metoda <code>hasAccreditationFor(area)</code> vraća <code>true</code> ako se zadano područje nalazi u skupu <code>accreditedAreas</code>.</p>
+<p>Predstavnik medija smije ući:</p>
+<ul>
+<li>u područje <code>STANDS</code></li>
+<li>u svako područje za koje ima akreditaciju</li>
+</ul>
+<h2><code>StaffMember</code></h2>
+<p>Klasa <code>StaffMember</code> predstavlja akreditiranog člana osoblja. Ona nasljeđuje klasu <code>StadiumPerson</code> i mora se moći koristiti kao <code>AccreditedPerson</code>.</p>
+<p>Klasa ima atribute:</p>
+<pre class="line-numbers"><code class="language-java">private StadiumArea assignedArea;
+private boolean onDuty;
+</code></pre>
+<p>Atribut <code>assignedArea</code> predstavlja područje stadiona kojem je član osoblja dodijeljen, a <code>onDuty</code> označava je li trenutačno na dužnosti.</p>
+<p>Potrebno je implementirati:</p>
+<ul>
+<li>konstruktor <code>StaffMember(String name, String idCode, StadiumArea assignedArea, boolean onDuty)</code></li>
+<li>metodu <code>StadiumArea getAssignedArea()</code></li>
+<li>metodu <code>boolean isOnDuty()</code></li>
+<li>metodu <code>void setOnDuty(boolean onDuty)</code></li>
+<li>metodu <code>Set&lt;StadiumArea&gt; getAccreditedAreas()</code></li>
+<li>metodu <code>boolean hasAccreditationFor(StadiumArea area)</code></li>
+<li>metodu <code>boolean canEnter(StadiumArea area)</code></li>
+</ul>
+<p>Metoda <code>getAccreditedAreas()</code> vraća skup koji sadrži samo vrijednost <code>assignedArea</code>.</p>
+<p>Metoda <code>hasAccreditationFor(area)</code> vraća <code>true</code> samo ako je zadano područje jednako području <code>assignedArea</code>.</p>
+<p>Član osoblja smije ući samo ako je na dužnosti (<code>onDuty == true</code>). Kada je na dužnosti, smije ući:</p>
+<ul>
+<li>u područje <code>STANDS</code></li>
+<li>u područje kojem je dodijeljen</li>
+</ul>
+<p>Ako nije na dužnosti, metoda <code>canEnter</code> mora vratiti <code>false</code> za sva područja.</p>
+<h2>Zadana klasa <code>StadiumGate</code></h2>
+<p>Klasa <code>StadiumGate</code> predstavlja ulaz na stadion. Svaki ulaz ima naziv i kontrolira jedno područje stadiona.</p>
+<p>Metoda:</p>
+<pre class="line-numbers"><code class="language-java">String scanPerson(StadiumPerson person)
+</code></pre>
+<p>poziva metodu <code>canEnter</code> nad predanom osobom i vraća poruku o dopuštenom ili odbijenom ulasku.</p>
+<h2>Zadana klasa <code>Main</code></h2>
+<p>Konkretne klase imaju po jedan konstruktor. Primjeri njihove uporabe prikazani su u zadanoj klasi <code>Main</code>. Komentar ispod svakog ispisa prikazuje očekivani rezultat tog ispisa.</p>
+<pre class="line-numbers"><code class="language-java">package hr.fer.oop;
+
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        StadiumPerson ana = new RegularFan(&quot;Ana&quot;, &quot;F101&quot;, &quot;A12&quot;);
+
+        StadiumPerson clara = new PressMember(
+                &quot;Clara&quot;,
+                &quot;P303&quot;,
+                Set.of(StadiumArea.PRESS_AREA, StadiumArea.STAFF_AREA)
+        );
+
+        StadiumPerson diego = new StaffMember(
+                &quot;Diego&quot;,
+                &quot;S404&quot;,
+                StadiumArea.STAFF_AREA,
+                true
+        );
+
+        StadiumGate standsGate =
+                new StadiumGate(&quot;STANDS-1&quot;, StadiumArea.STANDS);
+        StadiumGate pressGate =
+                new StadiumGate(&quot;PRESS-1&quot;, StadiumArea.PRESS_AREA);
+        StadiumGate staffGate =
+                new StadiumGate(&quot;STAFF-1&quot;, StadiumArea.STAFF_AREA);
+
+        System.out.println(ana);
+        // Ana (F101)
+        System.out.println(standsGate.scanPerson(ana));
+        // Gate STANDS-1: Ana allowed to enter STANDS
+        System.out.println(pressGate.scanPerson(ana));
+        // Gate PRESS-1: Ana denied access to PRESS_AREA
+
+        System.out.println();
+
+        System.out.println(clara);
+        // Clara (P303)
+        AccreditedPerson pressAccreditation = (AccreditedPerson) clara;
+        System.out.println(pressAccreditation.getAccreditedAreas().size());
+        // 2
+        System.out.println(
+                pressAccreditation.hasAccreditationFor(StadiumArea.PRESS_AREA));
+        // true
+        System.out.println(pressGate.scanPerson(clara));
+        // Gate PRESS-1: Clara allowed to enter PRESS_AREA
+        System.out.println(staffGate.scanPerson(clara));
+        // Gate STAFF-1: Clara allowed to enter STAFF_AREA
+
+        System.out.println();
+
+        StaffMember staff = (StaffMember) diego;
+        AccreditedPerson staffAccreditation = staff;
+
+        System.out.println(diego);
+        // Diego (S404)
+        System.out.println(staffAccreditation.getAccreditedAreas().size());
+        // 1
+        System.out.println(
+                staffAccreditation.hasAccreditationFor(StadiumArea.STAFF_AREA));
+        // true
+        System.out.println(staffGate.scanPerson(diego));
+        // Gate STAFF-1: Diego allowed to enter STAFF_AREA
+
+        staff.setOnDuty(false);
+
+        System.out.println(staff.isOnDuty());
+        // false
+        System.out.println(staffGate.scanPerson(diego));
+        // Gate STAFF-1: Diego denied access to STAFF_AREA
+        System.out.println(standsGate.scanPerson(diego));
+        // Gate STANDS-1: Diego denied access to STANDS
+    }
+}
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

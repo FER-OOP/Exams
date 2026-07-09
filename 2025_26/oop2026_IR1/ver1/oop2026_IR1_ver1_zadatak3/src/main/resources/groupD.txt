@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+D	2026-06-12	United States	3-0	Paraguay	SoFi Stadium
+D	2026-06-14	Australia	2-0	Turkey	AT&T Stadium
+D	2026-06-19	United States	1-0	Australia	SoFi Stadium
+D	2026-06-19	Turkey	2-1	Paraguay	AT&T Stadium
+D	2026-06-25	Australia	1-0	Paraguay	BC Place
+D	2026-06-25	Turkey	0-2	United States	MetLife Stadium

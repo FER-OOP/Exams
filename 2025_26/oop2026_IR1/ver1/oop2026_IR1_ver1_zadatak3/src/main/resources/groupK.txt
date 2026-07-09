@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+K	2026-06-17	Portugal	2-0	DR Congo	SoFi Stadium
+K	2026-06-17	Uzbekistan	1-0	Colombia	BC Place
+K	2026-06-23	Portugal	1-1	Uzbekistan	MetLife Stadium
+K	2026-06-23	Colombia	3-0	DR Congo	Hard Rock Stadium
+K	2026-06-27	Colombia	0-1	Portugal	Levi's Stadium
+K	2026-06-27	DR Congo	1-0	Uzbekistan	BC Place

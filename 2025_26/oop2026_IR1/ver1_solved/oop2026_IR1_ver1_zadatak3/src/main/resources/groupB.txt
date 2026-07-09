@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+B	2026-06-12	Canada	2-0	Bosnia and Herzegovina	BMO Field
+B	2026-06-12	Qatar	1-0	Switzerland	BC Place
+B	2026-06-18	Canada	1-1	Qatar	BMO Field
+B	2026-06-18	Switzerland	2-1	Bosnia and Herzegovina	BC Place
+B	2026-06-24	Bosnia and Herzegovina	1-0	Qatar	MetLife Stadium
+B	2026-06-24	Switzerland	0-1	Canada	Levi's Stadium

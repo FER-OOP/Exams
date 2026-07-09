@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+F	2026-06-14	Netherlands	2-0	Japan	Lumen Field
+F	2026-06-14	Sweden	3-1	Tunisia	Levi's Stadium
+F	2026-06-20	Netherlands	1-1	Sweden	Lumen Field
+F	2026-06-20	Tunisia	2-1	Japan	Levi's Stadium
+F	2026-06-25	Japan	1-0	Sweden	BC Place
+F	2026-06-25	Tunisia	0-2	Netherlands	MetLife Stadium

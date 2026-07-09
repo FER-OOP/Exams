@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+J	2026-06-16	Argentina	3-0	Algeria	MetLife Stadium
+J	2026-06-17	Austria	1-0	Jordan	BC Place
+J	2026-06-22	Argentina	2-1	Austria	Hard Rock Stadium
+J	2026-06-22	Jordan	2-0	Algeria	Levi's Stadium
+J	2026-06-27	Jordan	0-1	Argentina	MetLife Stadium
+J	2026-06-27	Algeria	1-0	Austria	BC Place

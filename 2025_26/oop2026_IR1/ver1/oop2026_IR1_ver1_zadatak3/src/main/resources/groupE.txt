@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+E	2026-06-14	Germany	4-0	Curacao	Mercedes-Benz Stadium
+E	2026-06-14	Ivory Coast	1-0	Ecuador	NRG Stadium
+E	2026-06-20	Germany	2-1	Ivory Coast	Mercedes-Benz Stadium
+E	2026-06-20	Ecuador	3-1	Curacao	NRG Stadium
+E	2026-06-25	Ecuador	0-2	Germany	BC Place
+E	2026-06-25	Curacao	1-0	Ivory Coast	Levi's Stadium

@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+G	2026-06-15	Belgium	2-0	Egypt	Rose Bowl
+G	2026-06-15	Iran	1-0	New Zealand	BC Place
+G	2026-06-21	Belgium	1-1	Iran	Rose Bowl
+G	2026-06-21	New Zealand	2-0	Egypt	BC Place
+G	2026-06-26	New Zealand	0-1	Belgium	MetLife Stadium
+G	2026-06-26	Egypt	1-0	Iran	Levi's Stadium

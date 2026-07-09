@@ -1,0 +1,311 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je implementirati pojednostavljeni sustav za upravljanje igraonicom s arkadnim automatima. Automati se ne pohranjuju izravno u igraonicu, već su raspoređeni u prostorije.</p>
+<p>Klase <code>GameRoom</code> i <code>Arcade</code> djelomično su implementirane i potrebno ih je dovršiti. Klasa <code>DuplicateException</code> nije implementirana i potrebno ju je napisati prema priloženom dijagramu klasa. Klase <code>ArcadeMachine</code>, <code>RacingMachine</code>, <code>RhythmMachine</code> i <code>Main</code> priložene su uz zadatak i ne mijenjate ih.</p>
+<p>Sve klase su <code>public</code> i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<p><strong>VAŽNO:</strong> U djelomično implementiranim klasama dopušteno je i prema potrebi potrebno mijenjati deklaracije klasa i metoda, uključujući generičke parametre i <code>throws</code> deklaracije.</p>
+<h2>Dijagram klasa</h2>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="988px" preserveAspectRatio="none" style="width:1171px;height:988px;background:#FFFFFF;" version="1.1" viewBox="0 0 1171 988" width="1171px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class ArcadeMachine-->
+<g id="elem_ArcadeMachine">
+<rect codeLine="11" fill="#C8E6C9" height="202.9375" id="ArcadeMachine" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="450" x="358" y="502"/>
+<ellipse cx="525.75" cy="522.1328" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M525.8594,517.4766 L524.7031,522.5547 L527.0313,522.5547 L525.8594,517.4766 Z M524.375,515.2422 L527.3594,515.2422 L530.7188,527.6328 L528.2656,527.6328 L527.5,524.5703 L524.2188,524.5703 L523.4688,527.6328 L521.0313,527.6328 L524.375,515.2422 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="576.25" y="518.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="106" x="546.25" y="533.9639">ArcadeMachine</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="359" x2="807" y1="542.2656" y2="542.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="364" y="559.2607">-code: String {final}</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="364" y="575.5576">-title: String {final}</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="364" y="591.8545">-requiredTokens: int {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="359" x2="807" y1="599.1563" y2="599.1563"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="438" x="364" y="616.1514">+ArcadeMachine(code: String, title: String, requiredTokens: int)</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="364" y="632.4482">+getCode(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="364" y="648.7451">+getTitle(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="364" y="665.042">+getRequiredTokens(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="186" x="364" y="681.3389">+getMachineType(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="364" y="697.6357">+toString(): String</text>
+</g>
+<!--class RacingMachine-->
+<g id="elem_RacingMachine">
+<rect codeLine="24" fill="#C8E6C9" height="121.4531" id="RacingMachine" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="556" x="7" y="766"/>
+<ellipse cx="228.25" cy="786.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M231.2188,791.7734 Q230.6406,792.0703 230,792.2109 Q229.3594,792.3672 228.6563,792.3672 Q226.1563,792.3672 224.8281,790.7266 Q223.5156,789.0703 223.5156,785.9453 Q223.5156,782.8203 224.8281,781.1641 Q226.1563,779.5078 228.6563,779.5078 Q229.3594,779.5078 230,779.6641 Q230.6563,779.8203 231.2188,780.1172 L231.2188,782.8359 Q230.5938,782.2578 230,781.9922 Q229.4063,781.7109 228.7813,781.7109 Q227.4375,781.7109 226.75,782.7891 Q226.0625,783.8516 226.0625,785.9453 Q226.0625,788.0391 226.75,789.1172 Q227.4375,790.1797 228.7813,790.1797 Q229.4063,790.1797 230,789.9141 Q230.5938,789.6328 231.2188,789.0547 L231.2188,791.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="278.25" y="782.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="105" x="248.75" y="797.9639">RacingMachine</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="562" y1="806.2656" y2="806.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="13" y="823.2607">-maxSpeed: int {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="8" x2="562" y1="830.5625" y2="830.5625"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="544" x="13" y="847.5576">+RacingMachine(code: String, title: String, requiredTokens: int, maxSpeed: int)</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="143" x="13" y="863.8545">+getMaxSpeed(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="13" y="880.1514">+getMachineType(): String</text>
+</g>
+<!--class RhythmMachine-->
+<g id="elem_RhythmMachine">
+<rect codeLine="32" fill="#C8E6C9" height="121.4531" id="RhythmMachine" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="566" x="598" y="766"/>
+<ellipse cx="821.25" cy="786.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M824.2188,791.7734 Q823.6406,792.0703 823,792.2109 Q822.3594,792.3672 821.6563,792.3672 Q819.1563,792.3672 817.8281,790.7266 Q816.5156,789.0703 816.5156,785.9453 Q816.5156,782.8203 817.8281,781.1641 Q819.1563,779.5078 821.6563,779.5078 Q822.3594,779.5078 823,779.6641 Q823.6563,779.8203 824.2188,780.1172 L824.2188,782.8359 Q823.5938,782.2578 823,781.9922 Q822.4063,781.7109 821.7813,781.7109 Q820.4375,781.7109 819.75,782.7891 Q819.0625,783.8516 819.0625,785.9453 Q819.0625,788.0391 819.75,789.1172 Q820.4375,790.1797 821.7813,790.1797 Q822.4063,790.1797 823,789.9141 Q823.5938,789.6328 824.2188,789.0547 L824.2188,791.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="46" x="874.25" y="782.1387">&#171;done&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="841.75" y="797.9639">RhythmMachine</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="599" x2="1163" y1="806.2656" y2="806.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="604" y="823.2607">-songCount: int {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="1163" y1="830.5625" y2="830.5625"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="554" x="604" y="847.5576">+RhythmMachine(code: String, title: String, requiredTokens: int, songCount: int)</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="604" y="863.8545">+getSongCount(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="604" y="880.1514">+getMachineType(): String</text>
+</g>
+<!--class GameRoom-->
+<g id="elem_GameRoom">
+<rect codeLine="40" fill="#FFE0B2" height="202.9375" id="GameRoom" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="376" x="472" y="222"/>
+<ellipse cx="609.25" cy="242.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M612.2188,247.7734 Q611.6406,248.0703 611,248.2109 Q610.3594,248.3672 609.6563,248.3672 Q607.1563,248.3672 605.8281,246.7266 Q604.5156,245.0703 604.5156,241.9453 Q604.5156,238.8203 605.8281,237.1641 Q607.1563,235.5078 609.6563,235.5078 Q610.3594,235.5078 611,235.6641 Q611.6563,235.8203 612.2188,236.1172 L612.2188,238.8359 Q611.5938,238.2578 611,237.9922 Q610.4063,237.7109 609.7813,237.7109 Q608.4375,237.7109 607.75,238.7891 Q607.0625,239.8516 607.0625,241.9453 Q607.0625,244.0391 607.75,245.1172 Q608.4375,246.1797 609.7813,246.1797 Q610.4063,246.1797 611,245.9141 Q611.5938,245.6328 612.2188,245.0547 L612.2188,247.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="643.75" y="238.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="629.75" y="253.9639">GameRoom</text>
+<rect fill="#FFFFFF" height="15.9688" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" width="9" x="842" y="219"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="7" x="843" y="231.1387">T</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="473" x2="847" y1="262.2656" y2="262.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="478" y="279.2607">-name: String {final}</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="478" y="295.5576">-machines: List&lt;T&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="473" x2="847" y1="302.8594" y2="302.8594"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="478" y="319.8545">+GameRoom(name: String)</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="478" y="336.1514">+getName(): String</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="478" y="352.4482">+addMachine(machine: T): void</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="478" y="368.7451">+getMachines(): List&lt;T&gt;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="478" y="385.042">+findMachine(code: String): T</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="364" x="478" y="401.3389">+getMachinesRequiringAtMost(tokens: int): List&lt;T&gt;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="478" y="417.6357">+toString(): String</text>
+</g>
+<!--class Arcade-->
+<g id="elem_Arcade">
+<rect codeLine="53" fill="#FFE0B2" height="137.75" id="Arcade" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="503" x="537.5" y="7"/>
+<ellipse cx="759.75" cy="27.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M762.7188,32.7734 Q762.1406,33.0703 761.5,33.2109 Q760.8594,33.3672 760.1563,33.3672 Q757.6563,33.3672 756.3281,31.7266 Q755.0156,30.0703 755.0156,26.9453 Q755.0156,23.8203 756.3281,22.1641 Q757.6563,20.5078 760.1563,20.5078 Q760.8594,20.5078 761.5,20.6641 Q762.1563,20.8203 762.7188,21.1172 L762.7188,23.8359 Q762.0938,23.2578 761.5,22.9922 Q760.9063,22.7109 760.2813,22.7109 Q758.9375,22.7109 758.25,23.7891 Q757.5625,24.8516 757.5625,26.9453 Q757.5625,29.0391 758.25,30.1172 Q758.9375,31.1797 760.2813,31.1797 Q760.9063,31.1797 761.5,30.9141 Q762.0938,30.6328 762.7188,30.0547 L762.7188,32.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="54" x="778.25" y="23.1387">&#171;partial&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="781.25" y="38.9639">Arcade</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="538.5" x2="1039.5" y1="47.2656" y2="47.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="491" x="543.5" y="64.2607">-rooms: Map&lt;String, GameRoom&lt;? extends ArcadeMachine&gt;&gt; {final}</text>
+<line style="stroke:#181818;stroke-width:1.0;" x1="538.5" x2="1039.5" y1="71.5625" y2="71.5625"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="454" x="543.5" y="88.5576">+addRoom(room: GameRoom&lt;? extends ArcadeMachine&gt;): void</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="468" x="543.5" y="104.8545">+findRoom(name: String): GameRoom&lt;? extends ArcadeMachine&gt;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="543.5" y="121.1514">+getTotalMachineCount(): int</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="304" x="543.5" y="137.4482">+findMachine(code: String): ArcadeMachine</text>
+</g>
+<!--class DuplicateException-->
+<g id="elem_DuplicateException">
+<rect codeLine="62" fill="#FFCDD2" height="72.5625" id="DuplicateException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="280" x="843" y="567"/>
+<ellipse cx="912.25" cy="587.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M915.2188,592.7734 Q914.6406,593.0703 914,593.2109 Q913.3594,593.3672 912.6563,593.3672 Q910.1563,593.3672 908.8281,591.7266 Q907.5156,590.0703 907.5156,586.9453 Q907.5156,583.8203 908.8281,582.1641 Q910.1563,580.5078 912.6563,580.5078 Q913.3594,580.5078 914,580.6641 Q914.6563,580.8203 915.2188,581.1172 L915.2188,583.8359 Q914.5938,583.2578 914,582.9922 Q913.4063,582.7109 912.7813,582.7109 Q911.4375,582.7109 910.75,583.7891 Q910.0625,584.8516 910.0625,586.9453 Q910.0625,589.0391 910.75,590.1172 Q911.4375,591.1797 912.7813,591.1797 Q913.4063,591.1797 914,590.9141 Q914.5938,590.6328 915.2188,590.0547 L915.2188,592.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="43" x="977.75" y="583.1387">&#171;todo&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="932.75" y="598.9639">DuplicateException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="844" x2="1122" y1="607.2656" y2="607.2656"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="844" x2="1122" y1="615.2656" y2="615.2656"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="268" x="849" y="632.2607">+DuplicateException(message: String)</text>
+</g>
+<!--class Exception-->
+<g id="elem_Exception">
+<rect fill="#F1F1F1" height="48" id="Exception" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="997" y="299.5"/>
+<ellipse cx="1012" cy="315.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1014.9688,321.1406 Q1014.3906,321.4375 1013.75,321.5781 Q1013.1094,321.7344 1012.4063,321.7344 Q1009.9063,321.7344 1008.5781,320.0938 Q1007.2656,318.4375 1007.2656,315.3125 Q1007.2656,312.1875 1008.5781,310.5313 Q1009.9063,308.875 1012.4063,308.875 Q1013.1094,308.875 1013.75,309.0313 Q1014.4063,309.1875 1014.9688,309.4844 L1014.9688,312.2031 Q1014.3438,311.625 1013.75,311.3594 Q1013.1563,311.0781 1012.5313,311.0781 Q1011.1875,311.0781 1010.5,312.1563 Q1009.8125,313.2188 1009.8125,315.3125 Q1009.8125,317.4063 1010.5,318.4844 Q1011.1875,319.5469 1012.5313,319.5469 Q1013.1563,319.5469 1013.75,319.2813 Q1014.3438,319 1014.9688,318.4219 L1014.9688,321.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1026" y="320.3467">Exception</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="998" x2="1096" y1="331.5" y2="331.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="998" x2="1096" y1="339.5" y2="339.5"/>
+</g>
+<!--reverse link Exception to DuplicateException-->
+<g id="link_Exception_DuplicateException">
+<path codeLine="66" d="M1037.16,367.23 C1024.58,421.89 1003.02,515.55 991.25,566.66 " fill="none" id="Exception-backto-DuplicateException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1030.34,365.64,1041.65,347.72,1043.99,368.78,1030.34,365.64" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ArcadeMachine to RacingMachine-->
+<g id="link_ArcadeMachine_RacingMachine">
+<path codeLine="67" d="M431,717.23 C408.33,734.03 385.76,750.77 365.38,765.89 " fill="none" id="ArcadeMachine-backto-RacingMachine" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="426.85,711.59,447.08,705.3,435.19,722.84,426.85,711.59" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link ArcadeMachine to RhythmMachine-->
+<g id="link_ArcadeMachine_RhythmMachine">
+<path codeLine="68" d="M735,717.23 C757.67,734.03 780.24,750.77 800.62,765.89 " fill="none" id="ArcadeMachine-backto-RhythmMachine" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="730.81,722.84,718.92,705.3,739.15,711.59,730.81,722.84" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link GameRoom to ArcadeMachine-->
+<g id="link_GameRoom_ArcadeMachine">
+<path codeLine="70" d="M628.59,437.92 C622.74,459.02 616.67,480.93 610.94,501.62 " fill="none" id="GameRoom-backto-ArcadeMachine" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="632.09,425.26,626.6331,429.9741,628.8858,436.8243,634.3426,432.1102,632.09,425.26" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="625" y="468.0669">contains</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="621.8463" y="445.0161">1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="605.6584" y="491.003">*</text>
+</g>
+<!--reverse link Arcade to GameRoom-->
+<g id="link_Arcade_GameRoom">
+<path codeLine="71" d="M747.13,156.69 C736.24,177.41 724.37,200 712.99,221.66 " fill="none" id="Arcade-backto-GameRoom" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="753.24,145.06,746.9099,148.514,747.6635,155.6856,753.9936,152.2316,753.24,145.06" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41" x="738" y="188.0669">rooms</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="741.1398" y="165.0419">1</text>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="709.4698" y="211.0458">*</text>
+</g>
+<!--link GameRoom to DuplicateException-->
+<g id="link_GameRoom_DuplicateException">
+<path codeLine="73" d="M777.07,425.26 C832.69,473.13 895.93,527.56 937.48,563.32 " fill="none" id="GameRoom-to-DuplicateException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="941.44,566.73,937.2457,557.8189,937.6568,563.4608,932.015,563.8719,941.44,566.73" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="833" y="468.0669">throws</text>
+</g>
+<!--link Arcade to DuplicateException-->
+<g id="link_Arcade_DuplicateException">
+<path codeLine="74" d="M828.56,145.04 C841.5,168.9 855.3,196.2 866,222 C892.16,285.06 947.63,477.41 971.58,561.93 " fill="none" id="Arcade-to-DuplicateException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="972.98,566.85,974.3613,557.0985,971.6102,562.0413,966.6673,559.2902,972.98,566.85" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="42" x="931" y="328.0669">throws</text>
+</g>
+<rect fill="#DDDDDD" height="62.8906" id="_legend" rx="7.5" ry="7.5" style="stroke:#000000;stroke-width:1.0;" width="251" x="12" y="905.4531"/>
+<rect fill="#C8E6C9" height="16.2969" style="stroke:none;stroke-width:1.0;" width="4" x="17" y="912.4531"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="17" y="925.4482">&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="25" y="925.4482">&#171;done&#187; - provided, do not modify</text>
+<rect fill="#FFE0B2" height="16.2969" style="stroke:none;stroke-width:1.0;" width="4" x="17" y="928.75"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="17" y="941.7451">&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="25" y="941.7451">&#171;partial&#187; - partially implemented</text>
+<rect fill="#FFCDD2" height="16.2969" style="stroke:none;stroke-width:1.0;" width="4" x="17" y="945.0469"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="17" y="958.042">&#160;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="25" y="958.042">&#171;todo&#187; - must be implemented</text>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="258" y1="912.4531" y2="912.4531"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="258" y1="928.75" y2="928.75"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="258" y1="945.0469" y2="945.0469"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="258" y1="961.3438" y2="961.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="17" x2="17" y1="912.4531" y2="961.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="21" x2="21" y1="912.4531" y2="961.3438"/>
+<line style="stroke:#000000;stroke-width:1.0;" x1="258" x2="258" y1="912.4531" y2="961.3438"/>
+<!--SRC=[dLN1Sjem4BtxAtReXQIGINFej1w6Ja98fpEbXy0F26i1JMp9jPO42ldthh5iP32aAHSZxTktkq-xadrIEXMPI22AXRMtH9cQBWb_H4QFrH-4wy1M4BiGqhmeFOUPY2q6dcdd3Pi0-7SdegTvPfPQ3aniibvF6etzFdmOV1b-7dnjnZ0DAH7di8U7uVNTJJECZ3G5Pd1_VnEy1e6OMif4H2w5somI4aSYMYYDKCKkCkj2P2I6CEOgkOhDJ6aHlpeJAOfFsJBylLGPoebvGcr3K9hgYExkyx4Ulkr7wzG3T9euBnpB76d0hksB4htVd-GaJOR76bsEO49dtfGYlUP8bzradHuJaIcMde4rBgHz516lJqgRYDKuHPHdrAanl5kTJZs49zR8xTUhFbdglgB5cXR9oOgiqVC1Dn-TAycd-8-IwZ6yciQbuRr5jRwB11-DINgJVWk4XN8D_fILDMesdcZwf8Z3cVvKbfYjMO6IlkrJUONyuksZFXDIbfgvC25C6FHib3ogTDVDBWTdv4Haa-WCd1px5xF1vbiQ6KjjyaRkaFdS11JJtQXZnWemuqYalVAygtFu1hWYrFBWTkgV49IrsUcPKuPlizHLouKvFer_eF6k64CYTjiD7NX6-XhZNhRxPHghI10ELn6cf8o6wYRVEDPZJ3j1QyNSQoacz1YstMw3Lt3m0EIeshNJ2F27E0YgWMbzQi4bsrkNhOE79UINH9DGsZg-6hOY28k-y2YlhlfDUeH0YyoyL6nlmO8Ovto8C3L4p1hZh3YURS-ziltj_ZxhGfgPPoLHTa0Qq8OWCLBDrh0jdOetT-UqxstsA_x7Qr196cE2cb3wNlahlFDonyctnj8IJF70WNCjCWx-0W00]-->
+</g>
+</svg>
+<p><code>ArcadeMachine</code> je apstraktna klasa koja opisuje zajednička svojstva svih arkadnih automata. Konkretne vrste automata predstavljene su klasama <code>RacingMachine</code> i <code>RhythmMachine</code>.</p>
+<p>Klasa <code>GameRoom</code> predstavlja prostoriju koja može sadržavati automate samo jedne konkretne vrste. Klasa mora biti parametrizirana tako da je dopušteno koristiti samo tipove izvedene iz klase <code>ArcadeMachine</code>.</p>
+<p>Metoda <code>addMachine</code> dodaje automat u prostoriju. Unutar iste prostorije ne smiju postojati dva automata s jednakom oznakom <code>code</code>. Ako automat s jednakom oznakom već postoji, metoda baca provjeravanu iznimku <code>DuplicateException</code>.</p>
+<p>Metoda <code>getMachines</code> vraća nepromjenjivu listu automata koji se trenutačno nalaze u prostoriji. Vraćena lista ne smije omogućiti promjenu interne liste prostorije.</p>
+<p>Metoda <code>findMachine</code> vraća automat sa zadanom oznakom. Ako takav automat ne postoji, metoda vraća <code>null</code>.</p>
+<p>Metoda <code>getMachinesRequiringAtMost</code> vraća novu listu automata koji zahtijevaju najviše zadani broj žetona. Redoslijed automata u vraćenoj listi mora odgovarati redoslijedu njihova dodavanja u prostoriju.</p>
+<p>Nadjačajte metodu <code>toString()</code> klase <code>GameRoom</code> tako da vraća naziv prostorije i broj automata u formatu prikazanom u primjeru ispisa, primjerice:</p>
+<pre class="line-numbers"><code class="language-text">Racing room (2 machine(s))
+</code></pre>
+<p>Klasa <code>Arcade</code> predstavlja igraonicu koja se sastoji od više prostorija, pri čemu svaka prostorija sadrži automate jedne konkretne vrste. Različite prostorije mogu sadržavati različite vrste automata.</p>
+<p>Prostorije su spremljene u mapi <code>rooms</code>. Ključ mape je naziv prostorije, a vrijednost je odgovarajući objekt tipa <code>GameRoom</code>. Potpuna generička deklaracija atributa <code>rooms</code> priložena je u početnom kodu.</p>
+<p>Metoda <code>addRoom</code> dodaje prostoriju u igraonicu. Ako prostorija s jednakim nazivom već postoji, metoda baca provjeravanu iznimku <code>DuplicateException</code>.</p>
+<p>Metoda <code>findRoom</code> vraća prostoriju sa zadanim nazivom. Ako takva prostorija ne postoji, metoda vraća <code>null</code>.</p>
+<p>Metoda <code>getTotalMachineCount</code> vraća ukupan broj automata u svim prostorijama igraonice.</p>
+<p>Metoda <code>findMachine</code> pretražuje sve prostorije i vraća automat sa zadanom oznakom. Ako takav automat ne postoji ni u jednoj prostoriji, metoda vraća <code>null</code>.</p>
+<p><strong>VAŽNO:</strong> Tekst poruke iznimke nije propisan i neće se bodovati. Važno je baciti odgovarajuću vrstu iznimke u propisanoj situaciji.</p>
+<p>Možete pretpostaviti da argumenti predani konstruktorima i metodama neće biti <code>null</code>. Također možete pretpostaviti da automati smješteni u različitim prostorijama neće imati jednake oznake.</p>
+<h2>Primjer pokretanja</h2>
+<pre class="line-numbers"><code class="language-java">package hr.fer.oop;
+
+public class Main {
+    public static void main(String[] args) {
+        GameRoom&lt;RacingMachine&gt; racingRoom =
+                new GameRoom&lt;&gt;(&quot;Racing room&quot;);
+        GameRoom&lt;RhythmMachine&gt; rhythmRoom =
+                new GameRoom&lt;&gt;(&quot;Rhythm room&quot;);
+
+        try {
+            racingRoom.addMachine(
+                    new RacingMachine(&quot;R-001&quot;, &quot;Turbo Drift&quot;, 3, 220));
+            racingRoom.addMachine(
+                    new RacingMachine(&quot;R-002&quot;, &quot;Night Racers&quot;, 4, 260));
+            rhythmRoom.addMachine(
+                    new RhythmMachine(&quot;M-001&quot;, &quot;Beat Master&quot;, 2, 40));
+            rhythmRoom.addMachine(
+                    new RhythmMachine(&quot;M-002&quot;, &quot;Dance Floor&quot;, 1, 25));
+        } catch (DuplicateException e) {
+            System.out.println(&quot;A duplicate machine was detected.&quot;);
+        }
+
+        Arcade arcade = new Arcade();
+
+        try {
+            arcade.addRoom(racingRoom);
+            arcade.addRoom(rhythmRoom);
+        } catch (DuplicateException e) {
+            System.out.println(&quot;A duplicate room was detected.&quot;);
+        }
+
+        System.out.println(racingRoom);
+        System.out.println(rhythmRoom);
+        System.out.println(&quot;Total machines: &quot;
+                + arcade.getTotalMachineCount());
+
+        System.out.println(&quot;\nRacing machines:&quot;);
+        for (RacingMachine machine : racingRoom.getMachines()) {
+            System.out.println(machine);
+        }
+
+        System.out.println(
+                &quot;\nRhythm machines requiring at most 2 tokens:&quot;);
+        for (RhythmMachine machine
+                : rhythmRoom.getMachinesRequiringAtMost(2)) {
+            System.out.println(machine);
+        }
+
+        System.out.println(&quot;\nFound machine: &quot;
+                + arcade.findMachine(&quot;M-001&quot;));
+        System.out.println(&quot;Missing machine: &quot;
+                + arcade.findMachine(&quot;X-404&quot;));
+        System.out.println(&quot;Missing room: &quot;
+                + arcade.findRoom(&quot;Unknown room&quot;));
+
+        try {
+            racingRoom.addMachine(
+                    new RacingMachine(&quot;R-001&quot;, &quot;Speed Challenge&quot;, 2, 200));
+        } catch (DuplicateException e) {
+            System.out.println(&quot;Duplicate machine detected.&quot;);
+        }
+
+        try {
+            arcade.addRoom(
+                    new GameRoom&lt;RacingMachine&gt;(&quot;Racing room&quot;));
+        } catch (DuplicateException e) {
+            System.out.println(&quot;Duplicate room detected.&quot;);
+        }
+
+        try {
+            racingRoom.getMachines().add(
+                    new RacingMachine(&quot;R-003&quot;, &quot;Road King&quot;, 2, 180));
+        } catch (UnsupportedOperationException e) {
+            System.out.println(
+                    &quot;The returned machine list is unmodifiable.&quot;);
+        }
+    }
+}
+</code></pre>
+<h2>Očekivani izlaz</h2>
+<pre class="line-numbers"><code class="language-text">Racing room (2 machine(s))
+Rhythm room (2 machine(s))
+Total machines: 4
+
+Racing machines:
+[R-001] Turbo Drift (Racing) - 3 token(s)
+[R-002] Night Racers (Racing) - 4 token(s)
+
+Rhythm machines requiring at most 2 tokens:
+[M-001] Beat Master (Rhythm) - 2 token(s)
+[M-002] Dance Floor (Rhythm) - 1 token(s)
+
+Found machine: [M-001] Beat Master (Rhythm) - 2 token(s)
+Missing machine: null
+Missing room: null
+Duplicate machine detected.
+Duplicate room detected.
+The returned machine list is unmodifiable.
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

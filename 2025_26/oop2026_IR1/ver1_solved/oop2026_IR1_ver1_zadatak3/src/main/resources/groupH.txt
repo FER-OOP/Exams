@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+H	2026-06-15	Spain	3-0	Cape Verde	MetLife Stadium
+H	2026-06-15	Saudi Arabia	1-0	Uruguay	Hard Rock Stadium
+H	2026-06-21	Spain	2-1	Saudi Arabia	MetLife Stadium
+H	2026-06-21	Uruguay	2-0	Cape Verde	Hard Rock Stadium
+H	2026-06-26	Uruguay	1-1	Spain	BC Place
+H	2026-06-26	Cape Verde	1-0	Saudi Arabia	Levi's Stadium

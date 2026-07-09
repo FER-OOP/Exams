@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+C	2026-06-13	Brazil	1-0	Morocco	MetLife Stadium
+C	2026-06-13	Haiti	0-1	Scotland	Hard Rock Stadium
+C	2026-06-19	Brazil	2-2	Haiti	MetLife Stadium
+C	2026-06-19	Scotland	2-1	Morocco	Hard Rock Stadium
+C	2026-06-24	Morocco	2-0	Haiti	BC Place
+C	2026-06-24	Scotland	0-2	Brazil	Levi's Stadium

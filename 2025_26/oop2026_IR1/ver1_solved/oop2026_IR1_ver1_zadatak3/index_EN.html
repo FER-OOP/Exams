@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Files containing FIFA World Cup match data are located in a directory tree. It is necessary to traverse the given directory and all of its subdirectories and process all .txt files contained within them.</p>
+<p>Each file contains match data. The first line of each file contains column names and should be skipped. Every subsequent line represents a single match.</p>
+<p>The data in each line is separated by tab characters and has the following format:</p>
+<pre class="line-numbers"><code class="language-java">Group	Date	Home	Score	Away	Stadium
+A	2026-06-11	Mexico	2-0	South Africa	Estadio Azteca
+</code></pre>
+<p>A provided class <code>WorldCupGameInfo</code> is used to store match information.</p>
+<p>The class contains the following public attributes:</p>
+<pre class="line-numbers"><code class="language-java">String group
+String date
+String homeTeam
+String awayTeam
+int homeGoals
+int awayGoals
+String stadium
+</code></pre>
+<p>and the following static method:</p>
+<pre class="line-numbers"><code class="language-java">static WorldCupGameInfo createFromString(String line)
+</code></pre>
+<p>which creates a <code>WorldCupGameInfo</code> object from a single line of the file.</p>
+<p>You need to implement the class <code>WorldCupFileVisitor</code>, which extends <code>SimpleFileVisitor&lt;Path&gt;</code>.</p>
+<p>The class should traverse all .txt files, regardless of their extension, and identify all national teams that did not suffer a single defeat in any of the processed matches.</p>
+<p>The class must implement the following method:</p>
+<pre class="line-numbers"><code class="language-java">Set&lt;String&gt; getUnbeatenTeams()
+</code></pre>
+<p>The method returns a set of national teams that have not lost a single match.</p>
+<p>The set must be sorted:</p>
+<p>by the length of the team name in ascending order,
+if two team names have the same length, by the natural ordering of strings in alphabetical order.</p>
+<p>It is also necessary to complete the <code>MainClass</code> class. You need to implement the static method</p>
+<pre class="line-numbers"><code class="language-java">static void callVisitor(Path datafolder, FileVisitor&lt;Path&gt; visitor)
+</code></pre>
+<p>which traverses the directory tree using the provided visitor.</p>
+<p>All classes should be placed in the package <code>hr.fer.oop</code>.</p>
+<p>IMPORTANT: You must use the <code>java.nio.file.Path</code> when working with files.</p>
+<p>You may assume that all .txt files are correctly formatted.</p>
+<p>Example file:</p>
+<pre class="line-numbers"><code class="language-java">Group	Date	Home	Score	Away	Stadium
+A	2026-06-11	Mexico	2-0	South Africa	Estadio Azteca
+A	2026-06-11	South Korea	2-1	Czechia	Estadio Guadalajara
+A	2026-06-18	Mexico	1-1	South Korea	Estadio Azteca
+A	2026-06-18	Czechia	3-0	South Africa	BC Place
+A	2026-06-24	Czechia	0-1	Mexico	MetLife Stadium
+A	2026-06-24	South Africa	0-2	South Korea	Levi's Stadium
+</code></pre>
+<p>The unbeaten teams are:</p>
+<pre class="line-numbers"><code class="language-java">Mexico
+South Korea
+</code></pre>
+<p>Example file 2:</p>
+<pre class="line-numbers"><code class="language-java">Group	Date	Home	Score	Away	Stadium
+B	2026-06-12	Canada	2-0	Bosnia and Herzegovina	BMO Field
+B	2026-06-12	Qatar	1-0	Switzerland	BC Place
+B	2026-06-18	Canada	1-1	Qatar	BMO Field
+B	2026-06-18	Switzerland	2-1	Bosnia and Herzegovina	BC Place
+B	2026-06-24	Bosnia and Herzegovina	1-0	Qatar	MetLife Stadium
+B	2026-06-24	Switzerland	0-1	Canada	Levi's Stadium
+</code></pre>
+<p>The unbeaten team is:</p>
+<pre class="line-numbers"><code class="language-java">Canada
+</code></pre>
+<p>...</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

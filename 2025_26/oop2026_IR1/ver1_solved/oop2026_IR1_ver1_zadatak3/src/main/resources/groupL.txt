@@ -1,0 +1,7 @@
+Group	Date	Home	Score	Away	Stadium
+L	2026-06-17	England	1-1	Croatia	MetLife Stadium
+L	2026-06-17	Ghana	1-0	Panama	BC Place
+L	2026-06-23	England	2-0	Ghana	Hard Rock Stadium
+L	2026-06-23	Panama	1-2	Croatia	Levi's Stadium
+L	2026-06-27	Panama	1-0	England	SoFi Stadium
+L	2026-06-27	Croatia	2-0	Ghana	BC Place
