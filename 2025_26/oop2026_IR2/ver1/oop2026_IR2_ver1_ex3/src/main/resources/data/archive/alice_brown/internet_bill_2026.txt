@@ -1,0 +1,3 @@
+Internet bill - 30 EUR
+Due date: 20 August 2026
+This additional line must be ignored.

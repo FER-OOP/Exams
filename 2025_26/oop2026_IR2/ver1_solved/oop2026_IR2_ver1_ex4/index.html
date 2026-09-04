@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Potrebno je dovršiti klasu <code>PaymentOverview</code> koja predstavlja pregled plaćanja računa jedne osobe. Objekt te klase sadrži listu računa, uređuje ih prema datumu dospijeća prve rate te omogućuje iteriranje po svim plaćanjima koja iz tih računa proizlaze.</p>
+<p>Na raspolaganju su vam potpuno implementirane klase <code>Bill</code> i <code>Payment</code>, koje nije potrebno mijenjati, te klasa <code>MainClass</code> koja služi za testiranje programskog koda. Sve navedene klase nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<p>Klasa <code>Bill</code> predstavlja račun i sadrži njegov opis (<code>description</code>), iznos pojedine rate (<code>installmentAmount</code>), ukupan broj rata (<code>installmentCount</code>) i datum dospijeća prve rate (<code>firstDueDate</code>). Za sve navedene atribute dostupne su odgovarajuće metode za dohvat vrijednosti.</p>
+<p>Klasa <code>Payment</code> predstavlja plaćanje jedne rate nekog računa te sadrži atribut <code>Bill bill</code>, koji predstavlja račun kojem rata pripada, i atribut <code>LocalDate dueDate</code>, koji predstavlja datum dospijeća te rate. Za sve navedene atribute dostupne su odgovarajuće metode za dohvat vrijednosti.
+Za račun koji se plaća u <code>n</code> rata postojat će <code>n</code> objekata tipa <code>Payment</code>. Datum dospijeća prvog plaćanja jednak je datumu <code>firstDueDate</code> pripadajućeg računa, dok se datum svakog sljedećeg plaćanja povećava za jedan mjesec. Sve rate pojedinog računa imaju jednak iznos.</p>
+<p>Primjerice, za račun:</p>
+<pre class="line-numbers"><code class="language-java">Bill bill = new Bill(
+        &quot;Electricity bill&quot;, 40.0, 3,
+        LocalDate.of(2026, 11, 10)
+);
+</code></pre>
+<p>Postoje sljedeća tri plaćanja:</p>
+<pre class="line-numbers"><code class="language-java">new Payment(bill, LocalDate.of(2026, 11, 10));
+new Payment(bill, LocalDate.of(2026, 12, 10));
+new Payment(bill, LocalDate.of(2027, 1, 10));
+</code></pre>
+<p>Možete pretpostaviti da je broj rata svakog računa veći od nule te da ne postoje dva računa s jednakim datumom dospijeća prve rate.</p>
+<h2>Klasa <code>PaymentOverview</code></h2>
+<p>Klasa <code>PaymentOverview</code> sadrži listu računa za koje se izrađuje pregled plaćanja. U predlošku je zadan konstruktor:</p>
+<pre class="line-numbers"><code class="language-java">public PaymentOverview(List&lt;Bill&gt; bills)
+</code></pre>
+<p>Konstruktor stvara kopiju predane liste i uređuje je uzlazno prema datumu dospijeća prve rate.</p>
+<h3>Komparator računa</h3>
+<p>Potrebno je implementirati komparator:</p>
+<pre class="line-numbers"><code class="language-java">public static final Comparator&lt;Bill&gt; BY_FIRST_DUE_DATE
+</code></pre>
+<p>Komparator uspoređuje račune uzlazno prema datumu dospijeća njihove prve rate (<code>firstDueDate</code>).</p>
+<h3>Lambda-izraz za stvaranje plaćanja</h3>
+<p>Potrebno je implementirati lambda-izraz:</p>
+<pre class="line-numbers"><code class="language-java">public static final Function&lt;Bill, List&lt;Payment&gt;&gt; PAYMENTS_FOR_BILL
+</code></pre>
+<p>Lambda-izraz prima jedan račun i vraća listu njegovih plaćanja. Za povećavanje datuma dospijeća za određeni broj mjeseci možete koristiti metodu <code>plusMonths(long monthsToAdd)</code> klase <code>LocalDate</code>.
+Vraćena lista mora biti <strong>promjenjiva</strong>.</p>
+<h3>Iteriranje po plaćanjima</h3>
+<p>Klasa <code>PaymentOverview</code> mora omogućiti iteriranje po objektima tipa <code>Payment</code>.</p>
+<p>Implementaciju iteratora potrebno je izvesti koristeći privatnu ugniježđenu statičku klasu <code>PaymentIterator</code> sa sljedećom deklaracijom:</p>
+<pre class="line-numbers"><code class="language-java">private static class PaymentIterator implements Iterator&lt;Payment&gt;
+</code></pre>
+<p><strong>Podsjetnik:</strong> <code>Iterable&lt;T&gt;</code> je sučelje koje sadrži metodu <code>Iterator&lt;T&gt; iterator()</code> koja vraća implementaciju sučelja <code>Iterator&lt;T&gt;</code>. Metoda <code>next()</code> iz sučelja <code>Iterator&lt;T&gt;</code> mora baciti <code>NoSuchElementException</code> ako se pozove nakon što je došlo do kraja iteracije.</p>
+<p>Iterator obilazi pojedinačne objekte tipa <code>Payment</code> prema redoslijedu računa u listi <code>bills</code> objekta <code>PaymentOverview</code>. Budući da su računi u toj listi uređeni prema datumu dospijeća prve rate, iterator najprije vraća sva plaćanja računa s najranijim datumom dospijeća prve rate, zatim sva plaćanja sljedećeg računa i tako redom.</p>
+<p>Lista plaćanja trenutačnog računa može se stvoriti primjenom prethodno implementiranog lambda-izraza <code>PAYMENTS_FOR_BILL</code>. Plaćanja iz dobivene liste vraćaju se jedno po jedno, a tek nakon što su vraćena sva plaćanja tog računa prelazi se na plaćanja sljedećeg računa.</p>
+<p><strong>Element iteracije je pojedinačni objekt tipa <code>Payment</code>, pa iterator mora biti tipa <code>Iterator&lt;Payment&gt;</code>, a ne <code>Iterator&lt;List&lt;Payment&gt;&gt;</code>.</strong></p>
+<h3>Primjer korištenja</h3>
+<p>Zadan je sljedeći kod u klasi <code>MainClass</code>:</p>
+<pre class="line-numbers"><code class="language-java">public static void main(String[] args) {
+    List&lt;Bill&gt; bills = List.of(
+            new Bill(&quot;Internet bill&quot;, 30.0, 2,
+                    LocalDate.of(2026, 12, 5)),
+            new Bill(&quot;Water bill&quot;, 15.0, 1,
+                    LocalDate.of(2027, 1, 20)),
+            new Bill(&quot;Electricity bill&quot;, 40.0, 3,
+                    LocalDate.of(2026, 11, 10)));
+
+    PaymentOverview overview = new PaymentOverview(bills);
+
+    System.out.println(&quot;Payment overview:&quot;);
+    for (Payment payment : overview) {
+        Bill bill = payment.getBill();
+
+        System.out.printf(
+                Locale.US,
+                &quot;%s | %.2f EUR | due %s%n&quot;,
+                bill.getDescription(),
+                bill.getInstallmentAmount(),
+                payment.getDueDate());
+    }
+}
+</code></pre>
+<h3>Očekivani izlaz</h3>
+<pre class="line-numbers"><code class="language-text">Payment overview:
+Electricity bill | 40.00 EUR | due 2026-11-10
+Electricity bill | 40.00 EUR | due 2026-12-10
+Electricity bill | 40.00 EUR | due 2027-01-10
+Internet bill | 30.00 EUR | due 2026-12-05
+Internet bill | 30.00 EUR | due 2027-01-05
+Water bill | 15.00 EUR | due 2027-01-20
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Complete the <code>PaymentOverview</code> class, which represents an overview of one person’s bill payments. An object of this class contains a list of bills, sorts them according to the due date of their first installment, and enables iteration over all payments resulting from those bills.</p>
+<p>The fully implemented classes <code>Bill</code> and <code>Payment</code> are provided and must not be modified. The <code>MainClass</code> class, which can be used to test the program code, is also provided. All these classes are located in the <code>hr.fer.oop</code> package.</p>
+<p>The <code>Bill</code> class represents a bill and contains its description (<code>description</code>), the amount of each installment (<code>installmentAmount</code>), the total number of installments (<code>installmentCount</code>), and the due date of the first installment (<code>firstDueDate</code>). Appropriate getter methods are provided for all these attributes.</p>
+<p>The <code>Payment</code> class represents the payment of one installment of a bill. It contains the <code>Bill bill</code> attribute, which represents the bill to which the installment belongs, and the <code>LocalDate dueDate</code> attribute, which represents the due date of that installment. Appropriate getter methods are provided for all these attributes.
+For a bill paid in <code>n</code> installments, there will be <code>n</code> objects of type <code>Payment</code>. The due date of the first payment is equal to the <code>firstDueDate</code> of the corresponding bill, while the due date of each subsequent payment is increased by one month. All installments of a particular bill have the same amount.</p>
+<p>For example, for the following bill:</p>
+<pre class="line-numbers"><code class="language-java">Bill bill = new Bill(
+        &quot;Electricity bill&quot;, 40.0, 3,
+        LocalDate.of(2026, 11, 10)
+);
+</code></pre>
+<p>the following three payments exist:</p>
+<pre class="line-numbers"><code class="language-java">new Payment(bill, LocalDate.of(2026, 11, 10));
+new Payment(bill, LocalDate.of(2026, 12, 10));
+new Payment(bill, LocalDate.of(2027, 1, 10));
+</code></pre>
+<p>You may assume that the number of installments of every bill is greater than zero and that no two bills have the same due date for their first installment.</p>
+<h2>The <code>PaymentOverview</code> class</h2>
+<p>The <code>PaymentOverview</code> class contains a list of bills for which the payment overview is created. The following constructor is provided in the template:</p>
+<pre class="line-numbers"><code class="language-java">public PaymentOverview(List&lt;Bill&gt; bills)
+</code></pre>
+<p>The constructor creates a copy of the provided list and sorts it in ascending order according to the due date of the first installment.</p>
+<h3>Bill comparator</h3>
+<p>Implement the following comparator:</p>
+<pre class="line-numbers"><code class="language-java">public static final Comparator&lt;Bill&gt; BY_FIRST_DUE_DATE
+</code></pre>
+<p>The comparator compares bills in ascending order according to the due date of their first installment (<code>firstDueDate</code>).</p>
+<h3>Lambda expression for creating payments</h3>
+<p>Implement the following lambda expression:</p>
+<pre class="line-numbers"><code class="language-java">public static final Function&lt;Bill, List&lt;Payment&gt;&gt; PAYMENTS_FOR_BILL
+</code></pre>
+<p>The lambda expression receives one bill and returns a list of its payments. To increase a due date by a specified number of months, you may use the <code>plusMonths(long monthsToAdd)</code> method of the <code>LocalDate</code> class.</p>
+<p>The returned list must be <strong>mutable</strong>.</p>
+<h3>Iterating over payments</h3>
+<p>The <code>PaymentOverview</code> class must support iteration over objects of type <code>Payment</code>.</p>
+<p>The iterator must be implemented using a private static nested class named <code>PaymentIterator</code> with the following declaration:</p>
+<pre class="line-numbers"><code class="language-java">private static class PaymentIterator implements Iterator&lt;Payment&gt;
+</code></pre>
+<p><strong>Reminder:</strong> <code>Iterable&lt;T&gt;</code> is an interface containing the <code>Iterator&lt;T&gt; iterator()</code> method, which returns an implementation of the <code>Iterator&lt;T&gt;</code> interface. The <code>next()</code> method from the <code>Iterator&lt;T&gt;</code> interface must throw a <code>NoSuchElementException</code> if it is called after the end of the iteration has been reached.</p>
+<p>The iterator traverses individual objects of type <code>Payment</code> according to the order of bills in the <code>bills</code> list of the <code>PaymentOverview</code> object. Since the bills in this list are sorted according to the due date of their first installment, the iterator first returns all payments of the bill with the earliest first installment due date, followed by all payments of the next bill, and so on.</p>
+<p>The list of payments for the current bill can be created by applying the previously implemented <code>PAYMENTS_FOR_BILL</code> lambda expression. Payments from the resulting list are returned one at a time. The iterator proceeds to the payments of the next bill only after all payments of the current bill have been returned.</p>
+<p><strong>Each element of the iteration is an individual object of type <code>Payment</code>. Therefore, the iterator must be of type <code>Iterator&lt;Payment&gt;</code>, not <code>Iterator&lt;List&lt;Payment&gt;&gt;</code>.</strong></p>
+<h3>Usage example</h3>
+<p>The following code is provided in the <code>MainClass</code> class:</p>
+<pre class="line-numbers"><code class="language-java">public static void main(String[] args) {
+    List&lt;Bill&gt; bills = List.of(
+            new Bill(&quot;Internet bill&quot;, 30.0, 2,
+                    LocalDate.of(2026, 12, 5)),
+            new Bill(&quot;Water bill&quot;, 15.0, 1,
+                    LocalDate.of(2027, 1, 20)),
+            new Bill(&quot;Electricity bill&quot;, 40.0, 3,
+                    LocalDate.of(2026, 11, 10)));
+
+    PaymentOverview overview = new PaymentOverview(bills);
+
+    System.out.println(&quot;Payment overview:&quot;);
+    for (Payment payment : overview) {
+        Bill bill = payment.getBill();
+
+        System.out.printf(
+                Locale.US,
+                &quot;%s | %.2f EUR | due %s%n&quot;,
+                bill.getDescription(),
+                bill.getInstallmentAmount(),
+                payment.getDueDate());
+    }
+}
+</code></pre>
+<h3>Expected output</h3>
+<pre class="line-numbers"><code class="language-text">Payment overview:
+Electricity bill | 40.00 EUR | due 2026-11-10
+Electricity bill | 40.00 EUR | due 2026-12-10
+Electricity bill | 40.00 EUR | due 2027-01-10
+Internet bill | 30.00 EUR | due 2026-12-05
+Internet bill | 30.00 EUR | due 2027-01-05
+Water bill | 15.00 EUR | due 2027-01-20
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

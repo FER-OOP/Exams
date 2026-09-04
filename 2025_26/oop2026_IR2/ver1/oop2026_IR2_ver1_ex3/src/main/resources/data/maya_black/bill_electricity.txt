@@ -1,0 +1,3 @@
+Electricity bill - 120 EUR
+Consumption period: July 2026
+This additional line must be ignored.

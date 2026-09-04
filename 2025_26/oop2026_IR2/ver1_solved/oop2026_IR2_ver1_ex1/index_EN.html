@@ -1,0 +1,320 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>You need to write the classes as shown in the class diagram. In all classes you need to implement the fields, constructors and methods shown in the class diagram. You are free to add and implement additional methods, fields and constructors.</p>
+<p><strong>Note:</strong> All classes and interfaces have public visibility and are located in the package <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="686px" preserveAspectRatio="none" style="width:2888px;height:686px;background:#FFFFFF;" version="1.1" viewBox="0 0 2888 686" width="2888px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class VesselStatus-->
+<a href="java:hr.fer.oop.VesselStatus" target="_top" title="java:hr.fer.oop.VesselStatus" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.VesselStatus" xlink:show="new" xlink:title="java:hr.fer.oop.VesselStatus" xlink:type="simple">
+<g id="elem_VesselStatus">
+<rect codeLine="1" fill="#F1F1F1" height="96.8906" id="VesselStatus" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="169" x="7" y="351.5"/>
+<ellipse cx="43.15" cy="367.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M47.2594,373.5 L39.5406,373.5 L39.5406,361.1094 L47.2594,361.1094 L47.2594,363.2656 L41.9938,363.2656 L41.9938,365.9375 L46.7594,365.9375 L46.7594,368.0938 L41.9938,368.0938 L41.9938,371.3438 L47.2594,371.3438 L47.2594,373.5 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="61.85" y="372.3467">VesselStatus</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="175" y1="383.5" y2="383.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="13" y="400.4951">DOCKED</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="13" y="416.792">AT_SEA</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="13" y="433.0889">UNDER_MAINTENANCE</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="175" y1="440.3906" y2="440.3906"/>
+</g>
+</a>
+<!--class SeaWorthy-->
+<a href="java:hr.fer.oop.SeaWorthy" target="_top" title="java:hr.fer.oop.SeaWorthy" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.SeaWorthy" xlink:show="new" xlink:title="java:hr.fer.oop.SeaWorthy" xlink:type="simple">
+<g id="elem_SeaWorthy">
+<rect codeLine="7" fill="#F1F1F1" height="64.2969" id="SeaWorthy" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="149" x="1447" y="88.5"/>
+<ellipse cx="1481.35" cy="104.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1477.2719,100.2656 L1477.2719,98.1094 L1484.6625,98.1094 L1484.6625,100.2656 L1482.1938,100.2656 L1482.1938,108.3438 L1484.6625,108.3438 L1484.6625,110.5 L1477.2719,110.5 L1477.2719,108.3438 L1479.7406,108.3438 L1479.7406,100.2656 L1477.2719,100.2656 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="74" x="1499.65" y="109.3467">SeaWorthy</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1448" x2="1595" y1="120.5" y2="120.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1448" x2="1595" y1="128.5" y2="128.5"/>
+<ellipse cx="1458" cy="142.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="1467" y="145.4951">canSail(): boolean</text>
+</g>
+</a>
+<!--class Vessel-->
+<a href="java:hr.fer.oop.Vessel" target="_top" title="java:hr.fer.oop.Vessel" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.Vessel" xlink:show="new" xlink:title="java:hr.fer.oop.Vessel" xlink:type="simple">
+<g id="elem_Vessel">
+<rect codeLine="11" fill="#F1F1F1" height="227.2656" id="Vessel" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="643" x="550" y="7"/>
+<ellipse cx="844.25" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M844.3594,18.3438 L843.2031,23.4219 L845.5313,23.4219 L844.3594,18.3438 Z M842.875,16.1094 L845.8594,16.1094 L849.2188,28.5 L846.7656,28.5 L846,25.4375 L842.7188,25.4375 L841.9688,28.5 L839.5313,28.5 L842.875,16.1094 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="46" x="864.75" y="27.8467">Vessel</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="551" x2="1192" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="558" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="570" y="55.9951">name: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="558" y="65.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="570" y="72.292">registrationCode: String</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="558" y="82.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="570" y="88.5889">lengthMeters: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="558" y="98.5391"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="570" y="104.8857">fuelPercent: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="551" x2="1192" y1="112.1875" y2="112.1875"/>
+<ellipse cx="561" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="617" x="570" y="129.1826">Vessel(name: String, registrationCode: String, lengthMeters: double, fuelPercent: double)</text>
+<ellipse cx="561" cy="142.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="570" y="145.4795">getName(): String</text>
+<ellipse cx="561" cy="158.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="570" y="161.7764">getRegistrationCode(): String</text>
+<ellipse cx="561" cy="174.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="570" y="178.0732">getLengthMeters(): double</text>
+<ellipse cx="561" cy="191.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="570" y="194.3701">getFuelPercent(): double</text>
+<polygon fill="#FFFF44" points="561,202.3203,565,206.3203,561,210.3203,557,206.3203" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="570" y="210.667">hasFuel(): boolean</text>
+<ellipse cx="561" cy="223.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="570" y="226.9639">getStatus(): VesselStatus</text>
+</g>
+</a>
+<!--class SailingBoat-->
+<a href="java:hr.fer.oop.SailingBoat" target="_top" title="java:hr.fer.oop.SailingBoat" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.SailingBoat" xlink:show="new" xlink:title="java:hr.fer.oop.SailingBoat" xlink:type="simple">
+<g id="elem_SailingBoat">
+<rect codeLine="25" fill="#F1F1F1" height="113.1875" id="SailingBoat" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="798" x="1122.5" y="343.5"/>
+<ellipse cx="1479.25" cy="359.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1482.2188,365.1406 Q1481.6406,365.4375 1481,365.5781 Q1480.3594,365.7344 1479.6563,365.7344 Q1477.1563,365.7344 1475.8281,364.0938 Q1474.5156,362.4375 1474.5156,359.3125 Q1474.5156,356.1875 1475.8281,354.5313 Q1477.1563,352.875 1479.6563,352.875 Q1480.3594,352.875 1481,353.0313 Q1481.6563,353.1875 1482.2188,353.4844 L1482.2188,356.2031 Q1481.5938,355.625 1481,355.3594 Q1480.4063,355.0781 1479.7813,355.0781 Q1478.4375,355.0781 1477.75,356.1563 Q1477.0625,357.2188 1477.0625,359.3125 Q1477.0625,361.4063 1477.75,362.4844 Q1478.4375,363.5469 1479.7813,363.5469 Q1480.4063,363.5469 1481,363.2813 Q1481.5938,363 1482.2188,362.4219 L1482.2188,365.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1499.75" y="364.3467">SailingBoat</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1123.5" x2="1919.5" y1="375.5" y2="375.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1130.5" y="386.1484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1142.5" y="392.4951">crewCapacity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1123.5" x2="1919.5" y1="399.7969" y2="399.7969"/>
+<ellipse cx="1133.5" cy="413.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="772" x="1142.5" y="416.792">SailingBoat(name: String, registrationCode: String, lengthMeters: double, fuelPercent: double, crewCapacity: int)</text>
+<ellipse cx="1133.5" cy="429.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1142.5" y="433.0889">getCrewCapacity(): int</text>
+<ellipse cx="1133.5" cy="446.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="1142.5" y="449.3857">canSail(): boolean</text>
+</g>
+</a>
+<!--class FishingTrawler-->
+<a href="java:hr.fer.oop.FishingTrawler" target="_top" title="java:hr.fer.oop.FishingTrawler" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.FishingTrawler" xlink:show="new" xlink:title="java:hr.fer.oop.FishingTrawler" xlink:type="simple">
+<g id="elem_FishingTrawler">
+<rect codeLine="32" fill="#F1F1F1" height="178.375" id="FishingTrawler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="876" x="211.5" y="311"/>
+<ellipse cx="595.75" cy="327" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M598.7188,332.6406 Q598.1406,332.9375 597.5,333.0781 Q596.8594,333.2344 596.1563,333.2344 Q593.6563,333.2344 592.3281,331.5938 Q591.0156,329.9375 591.0156,326.8125 Q591.0156,323.6875 592.3281,322.0313 Q593.6563,320.375 596.1563,320.375 Q596.8594,320.375 597.5,320.5313 Q598.1563,320.6875 598.7188,320.9844 L598.7188,323.7031 Q598.0938,323.125 597.5,322.8594 Q596.9063,322.5781 596.2813,322.5781 Q594.9375,322.5781 594.25,323.6563 Q593.5625,324.7188 593.5625,326.8125 Q593.5625,328.9063 594.25,329.9844 Q594.9375,331.0469 596.2813,331.0469 Q596.9063,331.0469 597.5,330.7813 Q598.0938,330.5 598.7188,329.9219 L598.7188,332.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="616.25" y="331.8467">FishingTrawler</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="212.5" x2="1086.5" y1="343" y2="343"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="219.5" y="353.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="231.5" y="359.9951">cargoCapacityKg: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="219.5" y="369.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="231.5" y="376.292">currentCatchKg: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="212.5" x2="1086.5" y1="383.5938" y2="383.5938"/>
+<ellipse cx="222.5" cy="397.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="850" x="231.5" y="400.5889">FishingTrawler(name: String, registrationCode: String, lengthMeters: double, fuelPercent: double, cargoCapacityKg: double)</text>
+<ellipse cx="222.5" cy="413.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="231.5" y="416.8857">getCargoCapacityKg(): double</text>
+<ellipse cx="222.5" cy="429.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="231.5" y="433.1826">getCurrentCatchKg(): double</text>
+<ellipse cx="222.5" cy="446.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="231.5" y="449.4795">addCatch(kg: double): boolean</text>
+<ellipse cx="222.5" cy="462.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="231.5" y="465.7764">canSail(): boolean</text>
+<ellipse cx="222.5" cy="478.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="231.5" y="482.0732">getStatus(): VesselStatus</text>
+</g>
+</a>
+<!--class IndustrialTrawler-->
+<a href="java:hr.fer.oop.IndustrialTrawler" target="_top" title="java:hr.fer.oop.IndustrialTrawler" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.IndustrialTrawler" xlink:show="new" xlink:title="java:hr.fer.oop.IndustrialTrawler" xlink:type="simple">
+<g id="elem_IndustrialTrawler">
+<rect codeLine="43" fill="#F1F1F1" height="129.4844" id="IndustrialTrawler" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="985" x="157" y="550"/>
+<ellipse cx="589.25" cy="566" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M592.2188,571.6406 Q591.6406,571.9375 591,572.0781 Q590.3594,572.2344 589.6563,572.2344 Q587.1563,572.2344 585.8281,570.5938 Q584.5156,568.9375 584.5156,565.8125 Q584.5156,562.6875 585.8281,561.0313 Q587.1563,559.375 589.6563,559.375 Q590.3594,559.375 591,559.5313 Q591.6563,559.6875 592.2188,559.9844 L592.2188,562.7031 Q591.5938,562.125 591,561.8594 Q590.4063,561.5781 589.7813,561.5781 Q588.4375,561.5781 587.75,562.6563 Q587.0625,563.7188 587.0625,565.8125 Q587.0625,567.9063 587.75,568.9844 Q588.4375,570.0469 589.7813,570.0469 Q590.4063,570.0469 591,569.7813 Q591.5938,569.5 592.2188,568.9219 L592.2188,571.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="609.75" y="570.8467">IndustrialTrawler</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="158" x2="1141" y1="582" y2="582"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="165" y="592.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="177" y="598.9951">crewSize: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="158" x2="1141" y1="606.2969" y2="606.2969"/>
+<ellipse cx="168" cy="619.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="959" x="177" y="623.292">IndustrialTrawler(name: String, registrationCode: String, lengthMeters: double, fuelPercent: double, cargoCapacityKg: double, crewSize: int)</text>
+<ellipse cx="168" cy="636.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="177" y="639.5889">getCrewSize(): int</text>
+<ellipse cx="168" cy="652.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="177" y="655.8857">canSail(): boolean</text>
+<ellipse cx="168" cy="668.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="177" y="672.1826">getStatus(): VesselStatus</text>
+</g>
+</a>
+<!--class ResearchVessel-->
+<a href="java:hr.fer.oop.ResearchVessel" target="_top" title="java:hr.fer.oop.ResearchVessel" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.ResearchVessel" xlink:show="new" xlink:title="java:hr.fer.oop.ResearchVessel" xlink:type="simple">
+<g id="elem_ResearchVessel">
+<rect codeLine="51" fill="#F1F1F1" height="162.0781" id="ResearchVessel" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="926" x="1955.5" y="319"/>
+<ellipse cx="2358.25" cy="335" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M2361.2188,340.6406 Q2360.6406,340.9375 2360,341.0781 Q2359.3594,341.2344 2358.6563,341.2344 Q2356.1563,341.2344 2354.8281,339.5938 Q2353.5156,337.9375 2353.5156,334.8125 Q2353.5156,331.6875 2354.8281,330.0313 Q2356.1563,328.375 2358.6563,328.375 Q2359.3594,328.375 2360,328.5313 Q2360.6563,328.6875 2361.2188,328.9844 L2361.2188,331.7031 Q2360.5938,331.125 2360,330.8594 Q2359.4063,330.5781 2358.7813,330.5781 Q2357.4375,330.5781 2356.75,331.6563 Q2356.0625,332.7188 2356.0625,334.8125 Q2356.0625,336.9063 2356.75,337.9844 Q2357.4375,339.0469 2358.7813,339.0469 Q2359.4063,339.0469 2360,338.7813 Q2360.5938,338.5 2361.2188,337.9219 L2361.2188,340.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="2378.75" y="339.8467">ResearchVessel</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1956.5" x2="2880.5" y1="351" y2="351"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1963.5" y="361.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="209" x="1975.5" y="367.9951">calibrationInProgress: boolean</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1956.5" x2="2880.5" y1="375.2969" y2="375.2969"/>
+<ellipse cx="1966.5" cy="388.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="900" x="1975.5" y="392.292">ResearchVessel(name: String, registrationCode: String, lengthMeters: double, fuelPercent: double, calibrationInProgress: boolean)</text>
+<ellipse cx="1966.5" cy="405.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232" x="1975.5" y="408.5889">isCalibrationInProgress(): boolean</text>
+<ellipse cx="1966.5" cy="421.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1975.5" y="424.8857">startCalibration(): void</text>
+<ellipse cx="1966.5" cy="437.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150" x="1975.5" y="441.1826">stopCalibration(): void</text>
+<ellipse cx="1966.5" cy="454.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="1975.5" y="457.4795">canSail(): boolean</text>
+<ellipse cx="1966.5" cy="470.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="1975.5" y="473.7764">getStatus(): VesselStatus</text>
+</g>
+</a>
+<!--reverse link Vessel to SailingBoat-->
+<g id="link_Vessel_SailingBoat">
+<path codeLine="61" d="M1153.82,242.03 C1236.49,277.32 1322.91,314.22 1391.18,343.36 " fill="none" id="Vessel-backto-SailingBoat" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1151.06,248.46,1135.41,234.17,1156.55,235.58,1151.06,248.46" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Vessel to FishingTrawler-->
+<g id="link_Vessel_FishingTrawler">
+<path codeLine="62" d="M768.67,250.03 C752.19,270.63 735.47,291.54 719.97,310.91 " fill="none" id="Vessel-backto-FishingTrawler" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="763.24,245.61,781.2,234.37,774.18,254.36,763.24,245.61" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link Vessel to ResearchVessel-->
+<g id="link_Vessel_ResearchVessel">
+<path codeLine="63" d="M1213.37,193.15 C1284.67,207.33 1359.45,221.64 1429.5,234 C1654.38,273.69 1712.27,273.34 1937.5,311 C1952.89,313.57 1968.54,316.23 1984.35,318.95 " fill="none" id="Vessel-backto-ResearchVessel" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1211.6,199.94,1193.36,189.16,1214.34,186.21,1211.6,199.94" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link FishingTrawler to IndustrialTrawler-->
+<g id="link_FishingTrawler_IndustrialTrawler">
+<path codeLine="64" d="M649.5,509.44 C649.5,523.25 649.5,537.01 649.5,549.79 " fill="none" id="FishingTrawler-backto-IndustrialTrawler" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="642.5,509.27,649.5,489.27,656.5,509.27,642.5,509.27" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link SeaWorthy to SailingBoat-->
+<g id="link_SeaWorthy_SailingBoat">
+<path codeLine="65" d="M1521.5,172.58 C1521.5,220.97 1521.5,293.45 1521.5,343.3 " fill="none" id="SeaWorthy-backto-SailingBoat" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="1514.5,172.53,1521.5,152.53,1528.5,172.52,1514.5,172.53" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link SeaWorthy to FishingTrawler-->
+<g id="link_SeaWorthy_FishingTrawler">
+<path codeLine="66" d="M1428.07,156.98 C1366.58,179.92 1284.14,209.88 1210.5,234 C1130.18,260.31 1042.78,286.96 961.39,310.94 " fill="none" id="SeaWorthy-backto-FishingTrawler" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="1425.66,150.41,1446.85,149.95,1430.57,163.52,1425.66,150.41" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link SeaWorthy to ResearchVessel-->
+<g id="link_SeaWorthy_ResearchVessel">
+<path codeLine="67" d="M1615.25,150.5 C1743.05,190.04 1976.91,262.39 2159.46,318.86 " fill="none" id="SeaWorthy-backto-ResearchVessel" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="none" points="1613.09,157.16,1596.05,144.56,1617.23,143.79,1613.09,157.16" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link Vessel to VesselStatus-->
+<g id="link_Vessel_VesselStatus">
+<path codeLine="68" d="M549.91,180.77 C433.32,210.04 303.37,252.09 193.5,311 C175.26,320.78 157.44,334.32 141.93,347.84 " fill="none" id="Vessel-to-VesselStatus" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="138.04,351.28,147.4361,348.3283,141.7904,347.9733,142.1454,342.3276,138.04,351.28" style="stroke:#181818;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="280.5" y="277.0669">uses</text>
+</g>
+<!--SRC=[lLP1Rjim4Bph5GHwSM1R3n220gwi04OQDx3SzX04mLfQIsmLqY2f16dJ5_K9lULb8IrP8YKv28gcDtbdDRES7TD6LjwIBoWb5h42LKfoTVKDxY38XRz5uNE-ystu-fhyz0YPVmhFexb-cArlucYc7pulvz7gvcAsMAwZvMmPHjulpwDCeTX2WYH6-Cg5oXy6-1ki9Xydm6AWnUWa81lE2mHco60ZbO14aQG0AUkXZuvRSqqPt690OYKeoyndWHarF8fo5lBKmGfacSelK0yj0vBoSbEWgMzBB2vH9CYKLHvNGYDROKAEyK_84Fk4372V6F8CrL8J6m-Q0KrnrU7lDNoqP0pOpgl1irRDmTxb80rcMrwzKQtTrEqOc7rKQp2Bqk8VEAYXrRReOI69mFiGTf1GzH0GdH0ZPFNzUpydfATvi3Yq07F6UfpX05O7FgCor_fh0VS5Ye4pkmtDiK5a_21rdjdnIaeXzBWXg2HtaB5BzIRE38_L-EF2lJo5pkWk36cwhu- -jxHEkWPSVbtc5YmjzSaf5CUtqEknynVJ7zWikzVv7tskejcCOyVI55-EvElCMg5444b-zBvq6zgy5dHJ7Nh1BWNFX8OTRVUzjp7jfHdsPb4P3ZLrR98AXB8Q3Np7QLfXV7S4-WlFQvTF7wTJ-sfqwkwtse5SJxtENRDlwSNLQtzRJnzztv7jG1tb3jeHh-Vo_VVk7uI0FFqk9SgdFyy0]-->
+</g>
+</svg>
+<p>Visibility legend in the class diagram:</p>
+<p><img src="res/vidljivost.png" alt="Visibility legend" /></p>
+<p>The system models a fleet of vessels docking in a small marina. Every vessel (<code>Vessel</code>) has:</p>
+<ul>
+<li>a name (<code>name</code>)</li>
+<li>a registration code (<code>registrationCode</code>)</li>
+<li>a length in meters (<code>lengthMeters</code>)</li>
+<li>a fuel level as a percentage, from 0 to 100 (<code>fuelPercent</code>)</li>
+</ul>
+<p>The state of a vessel is represented by <code>VesselStatus</code> and can be:</p>
+<ul>
+<li><code>DOCKED</code> (docked in the harbor)</li>
+<li><code>AT_SEA</code> (at sea)</li>
+<li><code>UNDER_MAINTENANCE</code> (under maintenance)</li>
+</ul>
+<h3>Basic status determination rule</h3>
+<p>The method <code>getStatus()</code> in the class <code>Vessel</code> determines the vessel's status based on the fuel level:</p>
+<ul>
+<li>if the fuel level is 0 or less → the status is <code>UNDER_MAINTENANCE</code></li>
+<li>otherwise, if the fuel level is less than 15 → the status is <code>DOCKED</code></li>
+<li>otherwise → the status is <code>AT_SEA</code></li>
+</ul>
+<p>The class <code>Vessel</code> also contains a helper method <code>hasFuel(): boolean</code> which returns <code>true</code> if and only if the vessel has fuel (the fuel level is greater than 0). This method is not part of the public API (it does not appear in the external interface for users of the class), but is used exclusively within the class hierarchy - it is used by <code>getStatus()</code> in the class <code>Vessel</code>, and it is recommended to use it in subclasses as well whenever they need to check whether the vessel has fuel.</p>
+<h3>The SeaWorthy interface</h3>
+<p>The interface <code>SeaWorthy</code> declares the method <code>canSail(): boolean</code> which checks whether the vessel can currently sail. Each concrete subclass implements this method in its own way (see the subclass descriptions below).</p>
+<h3>SailingBoat</h3>
+<ul>
+<li>additionally has a crew capacity <code>crewCapacity</code> (the number of crew members required to sail)</li>
+<li>the method <code>canSail()</code> returns <code>true</code> if and only if the vessel has at least one crew member (a sailing boat does not need fuel because it sails on the wind, but it needs a crew)</li>
+</ul>
+<h3>FishingTrawler</h3>
+<ul>
+<li>additionally has a cargo hold capacity for the catch <code>cargoCapacityKg</code> and a current catch amount <code>currentCatchKg</code> (initially 0)</li>
+<li>the method <code>addCatch(double kg)</code> adds to the catch in the hold if the given amount is greater than 0 and if the sum of the current catch and that amount does not exceed the hold capacity. If either of those two conditions is not satisfied, the method does not change the state of the object and returns <code>false</code>. Otherwise it increases the current catch by the given amount and returns <code>true</code>.</li>
+<li>the method <code>canSail()</code> returns <code>true</code> if and only if the hold is not full (the current catch is less than the capacity) and the vessel has fuel</li>
+<li>the method <code>getStatus()</code>: first the basic status is determined according to the rule of the class <code>Vessel</code>. If that status is <code>AT_SEA</code>, and the hold is nearly full (the current catch is at least 90% of the capacity), the trawler must return to harbor, so the method returns <code>DOCKED</code>. In all other cases, that basic status is returned.</li>
+</ul>
+<h3>IndustrialTrawler</h3>
+<p><code>IndustrialTrawler</code> inherits from <code>FishingTrawler</code> (not directly from <code>Vessel</code>).</p>
+<ul>
+<li>additionally has a crew size <code>crewSize</code></li>
+<li>the method <code>canSail()</code> returns <code>true</code> if and only if the conditions inherited from the class <code>FishingTrawler</code> are satisfied and the crew has at least 3 members (a safety regulation: an industrial trawler must not sail with too small a crew)</li>
+<li>the method <code>getStatus()</code>: if the crew has fewer than 3 members, the method returns <code>UNDER_MAINTENANCE</code> regardless of fuel or hold occupancy (the vessel is kept in harbor until the crew is complete). Otherwise it returns the status that would be returned by the inherited method from the class <code>FishingTrawler</code>.</li>
+</ul>
+<h3>ResearchVessel</h3>
+<ul>
+<li>additionally has a flag indicating whether calibration of scientific equipment is currently in progress <code>calibrationInProgress</code></li>
+<li>the methods <code>startCalibration()</code> and <code>stopCalibration()</code> set <code>calibrationInProgress</code> to <code>true</code> and <code>false</code>, respectively</li>
+<li>the method <code>canSail()</code> returns <code>true</code> if and only if calibration is not currently in progress and the vessel has fuel</li>
+<li>the method <code>getStatus()</code>: if calibration is currently in progress, the method returns <code>UNDER_MAINTENANCE</code> regardless of the fuel level. Otherwise it returns the basic status according to the rule of the class <code>Vessel</code>.</li>
+</ul>
+<p><strong>Note:</strong> All other details (inheritance, interfaces, visibility modifiers and methods) need to be implemented according to the UML diagram.</p>
+<p>Usage example:</p>
+<pre class="line-numbers"><code class="language-java">// SAILING BOAT
+SailingBoat boat = new SailingBoat(&quot;Adriana&quot;, &quot;ST-101&quot;, 8.5, 60.0, 2);
+System.out.println(&quot;Can sail: &quot; + boat.canSail());          // true (crewCapacity &gt;= 1)
+System.out.println(&quot;Status: &quot; + boat.getStatus());          // AT_SEA (fuelPercent &gt;= 15)
+
+// FISHING TRAWLER
+FishingTrawler trawler = new FishingTrawler(&quot;Neptun&quot;, &quot;FT-207&quot;, 14.0, 80.0, 500.0);
+System.out.println(&quot;Adding 200kg: &quot; + trawler.addCatch(200.0));   // true
+System.out.println(&quot;Adding 250kg: &quot; + trawler.addCatch(250.0));   // true (currentCatch = 450kg, &gt;= 90% of 500kg)
+System.out.println(&quot;Status: &quot; + trawler.getStatus());             // DOCKED (hold nearly full)
+System.out.println(&quot;Can sail: &quot; + trawler.canSail());             // true (450kg &lt; 500kg capacity)
+
+// RESEARCH VESSEL
+ResearchVessel vessel = new ResearchVessel(&quot;Argus&quot;, &quot;RV-303&quot;, 22.0, 90.0, false);
+System.out.println(&quot;Status before calibration: &quot; + vessel.getStatus());  // AT_SEA
+vessel.startCalibration();
+System.out.println(&quot;Status during calibration: &quot; + vessel.getStatus()); // UNDER_MAINTENANCE
+System.out.println(&quot;Can sail during calibration: &quot; + vessel.canSail()); // false
+
+// INDUSTRIAL TRAWLER
+IndustrialTrawler small = new IndustrialTrawler(&quot;Titan&quot;, &quot;IT-501&quot;, 20.0, 70.0, 1000.0, 2);
+System.out.println(&quot;Can sail (crewSize=2): &quot; + small.canSail());   // false (crewSize &lt; 3)
+System.out.println(&quot;Status (crewSize=2): &quot; + small.getStatus());   // UNDER_MAINTENANCE
+
+IndustrialTrawler full = new IndustrialTrawler(&quot;Titan&quot;, &quot;IT-501&quot;, 20.0, 70.0, 1000.0, 5);
+System.out.println(&quot;Can sail (crewSize=5): &quot; + full.canSail());          // true
+System.out.println(&quot;Status before big catch: &quot; + full.getStatus());     // AT_SEA
+full.addCatch(950.0);
+System.out.println(&quot;Status after 950kg catch: &quot; + full.getStatus());    // DOCKED (storage &gt;= 90%)
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">Can sail: true
+Status: AT_SEA
+Adding 200kg: true
+Adding 250kg: true
+Status: DOCKED
+Can sail: true
+Status before calibration: AT_SEA
+Status during calibration: UNDER_MAINTENANCE
+Can sail during calibration: false
+Can sail (crewSize=2): false
+Status (crewSize=2): UNDER_MAINTENANCE
+Can sail (crewSize=5): true
+Status before big catch: AT_SEA
+Status after 950kg catch: DOCKED
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+Phone bill - 25 EUR
+Billing period: July 2026
+This additional line must be ignored.

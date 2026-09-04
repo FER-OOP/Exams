@@ -1,0 +1,256 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno napisati klase kako je navedeno dijagramom klasa. U svim klasama je potrebno implementirati atribute, konstruktore i metode kako su prikazane na dijagramu klasa. Slobodno možete dodati i implementirati dodatne metode, atribute i konstruktore.</p>
+<p><strong>Napomena:</strong> Sve klase i sučelja imaju javnu vidljivost i nalaze se u paketu <code>hr.fer.oop</code>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="430px" preserveAspectRatio="none" style="width:1630px;height:430px;background:#FFFFFF;" version="1.1" viewBox="0 0 1630 430" width="1630px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class FishSpecies-->
+<a href="java:hr.fer.oop.FishSpecies" target="_top" title="java:hr.fer.oop.FishSpecies" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.FishSpecies" xlink:show="new" xlink:title="java:hr.fer.oop.FishSpecies" xlink:type="simple">
+<g id="elem_FishSpecies">
+<rect codeLine="1" fill="#F1F1F1" height="113.1875" id="FishSpecies" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="115" x="63.5" y="31.5"/>
+<ellipse cx="78.5" cy="47.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M82.6094,53.5 L74.8906,53.5 L74.8906,41.1094 L82.6094,41.1094 L82.6094,43.2656 L77.3438,43.2656 L77.3438,45.9375 L82.1094,45.9375 L82.1094,48.0938 L77.3438,48.0938 L77.3438,51.3438 L82.6094,51.3438 L82.6094,53.5 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="92.5" y="52.3467">FishSpecies</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="64.5" x2="177.5" y1="63.5" y2="63.5"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="69.5" y="80.4951">TUNA</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="69.5" y="96.792">SARDINE</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="69.5" y="113.0889">MACKEREL</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="69.5" y="129.3857">SEABASS</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="64.5" x2="177.5" y1="136.6875" y2="136.6875"/>
+</g>
+</a>
+<!--class CatchRecord-->
+<a href="java:hr.fer.oop.CatchRecord" target="_top" title="java:hr.fer.oop.CatchRecord" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.CatchRecord" xlink:show="new" xlink:title="java:hr.fer.oop.CatchRecord" xlink:type="simple">
+<g id="elem_CatchRecord">
+<rect codeLine="8" fill="#F1F1F1" height="162.0781" id="CatchRecord" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="512" x="214" y="7"/>
+<ellipse cx="420.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M423.7188,28.6406 Q423.1406,28.9375 422.5,29.0781 Q421.8594,29.2344 421.1563,29.2344 Q418.6563,29.2344 417.3281,27.5938 Q416.0156,25.9375 416.0156,22.8125 Q416.0156,19.6875 417.3281,18.0313 Q418.6563,16.375 421.1563,16.375 Q421.8594,16.375 422.5,16.5313 Q423.1563,16.6875 423.7188,16.9844 L423.7188,19.7031 Q423.0938,19.125 422.5,18.8594 Q421.9063,18.5781 421.2813,18.5781 Q419.9375,18.5781 419.25,19.6563 Q418.5625,20.7188 418.5625,22.8125 Q418.5625,24.9063 419.25,25.9844 Q419.9375,27.0469 421.2813,27.0469 Q421.9063,27.0469 422.5,26.7813 Q423.0938,26.5 423.7188,25.9219 L423.7188,28.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="441.25" y="27.8467">CatchRecord</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="215" x2="725" y1="39" y2="39"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="222" y="49.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="234" y="55.9951">species: FishSpecies</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="222" y="65.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="234" y="72.292">weightKg: double</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="222" y="82.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="234" y="88.5889">location: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="215" x2="725" y1="95.8906" y2="95.8906"/>
+<ellipse cx="225" cy="109.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="486" x="234" y="112.8857">CatchRecord(species: FishSpecies, weightKg: double, location: String)</text>
+<ellipse cx="225" cy="125.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="234" y="129.1826">getSpecies(): FishSpecies</text>
+<ellipse cx="225" cy="142.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="234" y="145.4795">getWeightKg(): double</text>
+<ellipse cx="225" cy="158.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="234" y="161.7764">getLocation(): String</text>
+</g>
+</a>
+<!--class CatchLogParser-->
+<a href="java:hr.fer.oop.CatchLogParser" target="_top" title="java:hr.fer.oop.CatchLogParser" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.CatchLogParser" xlink:show="new" xlink:title="java:hr.fer.oop.CatchLogParser" xlink:type="simple">
+<g id="elem_CatchLogParser">
+<rect codeLine="18" fill="#F1F1F1" height="194.6719" id="CatchLogParser" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="228" x="7" y="229"/>
+<ellipse cx="62.25" cy="245" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M65.2188,250.6406 Q64.6406,250.9375 64,251.0781 Q63.3594,251.2344 62.6563,251.2344 Q60.1563,251.2344 58.8281,249.5938 Q57.5156,247.9375 57.5156,244.8125 Q57.5156,241.6875 58.8281,240.0313 Q60.1563,238.375 62.6563,238.375 Q63.3594,238.375 64,238.5313 Q64.6563,238.6875 65.2188,238.9844 L65.2188,241.7031 Q64.5938,241.125 64,240.8594 Q63.4063,240.5781 62.7813,240.5781 Q61.4375,240.5781 60.75,241.6563 Q60.0625,242.7188 60.0625,244.8125 Q60.0625,246.9063 60.75,247.9844 Q61.4375,249.0469 62.7813,249.0469 Q63.4063,249.0469 64,248.7813 Q64.5938,248.5 65.2188,247.9219 L65.2188,250.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="82.75" y="249.8467">CatchLogParser</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="234" y1="261" y2="261"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="271.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="27" y="277.9951">records: CatchRecord[]</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="287.9453"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="27" y="294.292">count: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="304.2422"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="27" y="310.5889">errorCount: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="234" y1="317.8906" y2="317.8906"/>
+<ellipse cx="18" cy="331.5391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="27" y="334.8857">CatchLogParser(capacity: int)</text>
+<ellipse cx="18" cy="347.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="27" y="351.1826">parseLog(lines: String[]): void</text>
+<ellipse cx="18" cy="364.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="27" y="367.4795">getRecords(): CatchRecord[]</text>
+<ellipse cx="18" cy="380.4297" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="27" y="383.7764">getRecordCount(): int</text>
+<ellipse cx="18" cy="396.7266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="27" y="400.0732">getErrorCount(): int</text>
+<ellipse cx="18" cy="413.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="27" y="416.3701">getTotalWeightKg(): double</text>
+</g>
+</a>
+<!--class CatchLogException-->
+<a href="java:hr.fer.oop.CatchLogException" target="_top" title="java:hr.fer.oop.CatchLogException" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.CatchLogException" xlink:show="new" xlink:title="java:hr.fer.oop.CatchLogException" xlink:type="simple">
+<g id="elem_CatchLogException">
+<rect codeLine="30" fill="#F1F1F1" height="113.1875" id="CatchLogException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="341" x="840.5" y="31.5"/>
+<ellipse cx="940.25" cy="47.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M943.2188,53.1406 Q942.6406,53.4375 942,53.5781 Q941.3594,53.7344 940.6563,53.7344 Q938.1563,53.7344 936.8281,52.0938 Q935.5156,50.4375 935.5156,47.3125 Q935.5156,44.1875 936.8281,42.5313 Q938.1563,40.875 940.6563,40.875 Q941.3594,40.875 942,41.0313 Q942.6563,41.1875 943.2188,41.4844 L943.2188,44.2031 Q942.5938,43.625 942,43.3594 Q941.4063,43.0781 940.7813,43.0781 Q939.4375,43.0781 938.75,44.1563 Q938.0625,45.2188 938.0625,47.3125 Q938.0625,49.4063 938.75,50.4844 Q939.4375,51.5469 940.7813,51.5469 Q941.4063,51.5469 942,51.2813 Q942.5938,51 943.2188,50.4219 L943.2188,53.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="960.75" y="52.3467">CatchLogException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="841.5" x2="1180.5" y1="63.5" y2="63.5"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="848.5" y="74.1484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="860.5" y="80.4951">row: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="841.5" x2="1180.5" y1="87.7969" y2="87.7969"/>
+<ellipse cx="851.5" cy="101.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="860.5" y="104.792">CatchLogException(row: int)</text>
+<ellipse cx="851.5" cy="117.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="315" x="860.5" y="121.0889">CatchLogException(row: int, message: String)</text>
+<ellipse cx="851.5" cy="134.0391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="860.5" y="137.3857">getRow(): int</text>
+</g>
+</a>
+<!--class RowFormatException-->
+<a href="java:hr.fer.oop.RowFormatException" target="_top" title="java:hr.fer.oop.RowFormatException" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.RowFormatException" xlink:show="new" xlink:title="java:hr.fer.oop.RowFormatException" xlink:type="simple">
+<g id="elem_RowFormatException">
+<rect codeLine="37" fill="#F1F1F1" height="64.2969" id="RowFormatException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="233" x="539.5" y="294.5"/>
+<ellipse cx="579.25" cy="310.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M582.2188,316.1406 Q581.6406,316.4375 581,316.5781 Q580.3594,316.7344 579.6563,316.7344 Q577.1563,316.7344 575.8281,315.0938 Q574.5156,313.4375 574.5156,310.3125 Q574.5156,307.1875 575.8281,305.5313 Q577.1563,303.875 579.6563,303.875 Q580.3594,303.875 581,304.0313 Q581.6563,304.1875 582.2188,304.4844 L582.2188,307.2031 Q581.5938,306.625 581,306.3594 Q580.4063,306.0781 579.7813,306.0781 Q578.4375,306.0781 577.75,307.1563 Q577.0625,308.2188 577.0625,310.3125 Q577.0625,312.4063 577.75,313.4844 Q578.4375,314.5469 579.7813,314.5469 Q580.4063,314.5469 581,314.2813 Q581.5938,314 582.2188,313.4219 L582.2188,316.1406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="598.75" y="315.3467">RowFormatException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="540.5" x2="771.5" y1="326.5" y2="326.5"/>
+<line style="stroke:#181818;stroke-width:0.5;" x1="540.5" x2="771.5" y1="334.5" y2="334.5"/>
+<ellipse cx="550.5" cy="348.1484" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="559.5" y="351.4951">RowFormatException(row: int)</text>
+</g>
+</a>
+<!--class InvalidSpeciesException-->
+<a href="java:hr.fer.oop.InvalidSpeciesException" target="_top" title="java:hr.fer.oop.InvalidSpeciesException" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.InvalidSpeciesException" xlink:show="new" xlink:title="java:hr.fer.oop.InvalidSpeciesException" xlink:type="simple">
+<g id="elem_InvalidSpeciesException">
+<rect codeLine="41" fill="#F1F1F1" height="96.8906" id="InvalidSpeciesException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="406" x="808" y="278"/>
+<ellipse cx="924.25" cy="294" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M927.2188,299.6406 Q926.6406,299.9375 926,300.0781 Q925.3594,300.2344 924.6563,300.2344 Q922.1563,300.2344 920.8281,298.5938 Q919.5156,296.9375 919.5156,293.8125 Q919.5156,290.6875 920.8281,289.0313 Q922.1563,287.375 924.6563,287.375 Q925.3594,287.375 926,287.5313 Q926.6563,287.6875 927.2188,287.9844 L927.2188,290.7031 Q926.5938,290.125 926,289.8594 Q925.4063,289.5781 924.7813,289.5781 Q923.4375,289.5781 922.75,290.6563 Q922.0625,291.7188 922.0625,293.8125 Q922.0625,295.9063 922.75,296.9844 Q923.4375,298.0469 924.7813,298.0469 Q925.4063,298.0469 926,297.7813 Q926.5938,297.5 927.2188,296.9219 L927.2188,299.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="944.75" y="298.8467">InvalidSpeciesException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="809" x2="1213" y1="310" y2="310"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="816" y="320.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="828" y="326.9951">invalidSpecies: String</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="809" x2="1213" y1="334.2969" y2="334.2969"/>
+<ellipse cx="819" cy="347.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="380" x="828" y="351.292">InvalidSpeciesException(row: int, invalidSpecies: String)</text>
+<ellipse cx="819" cy="364.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="828" y="367.5889">getInvalidSpecies(): String</text>
+</g>
+</a>
+<!--class InvalidWeightException-->
+<a href="java:hr.fer.oop.InvalidWeightException" target="_top" title="java:hr.fer.oop.InvalidWeightException" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.InvalidWeightException" xlink:show="new" xlink:title="java:hr.fer.oop.InvalidWeightException" xlink:type="simple">
+<g id="elem_InvalidWeightException">
+<rect codeLine="47" fill="#F1F1F1" height="96.8906" id="InvalidWeightException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="374" x="1249" y="278"/>
+<ellipse cx="1352.75" cy="294" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1355.7188,299.6406 Q1355.1406,299.9375 1354.5,300.0781 Q1353.8594,300.2344 1353.1563,300.2344 Q1350.6563,300.2344 1349.3281,298.5938 Q1348.0156,296.9375 1348.0156,293.8125 Q1348.0156,290.6875 1349.3281,289.0313 Q1350.6563,287.375 1353.1563,287.375 Q1353.8594,287.375 1354.5,287.5313 Q1355.1563,287.6875 1355.7188,287.9844 L1355.7188,290.7031 Q1355.0938,290.125 1354.5,289.8594 Q1353.9063,289.5781 1353.2813,289.5781 Q1351.9375,289.5781 1351.25,290.6563 Q1350.5625,291.7188 1350.5625,293.8125 Q1350.5625,295.9063 1351.25,296.9844 Q1351.9375,298.0469 1353.2813,298.0469 Q1353.9063,298.0469 1354.5,297.7813 Q1355.0938,297.5 1355.7188,296.9219 L1355.7188,299.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="1373.25" y="298.8467">InvalidWeightException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1250" x2="1622" y1="310" y2="310"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1257" y="320.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="121" x="1269" y="326.9951">weightKg: double</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="1250" x2="1622" y1="334.2969" y2="334.2969"/>
+<ellipse cx="1260" cy="347.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="348" x="1269" y="351.292">InvalidWeightException(row: int, weightKg: double)</text>
+<ellipse cx="1260" cy="364.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="1269" y="367.5889">getWeightKg(): double</text>
+</g>
+</a>
+<!--class LogFullException-->
+<a href="java:hr.fer.oop.LogFullException" target="_top" title="java:hr.fer.oop.LogFullException" xlink:actuate="onRequest" xlink:href="java:hr.fer.oop.LogFullException" xlink:show="new" xlink:title="java:hr.fer.oop.LogFullException" xlink:type="simple">
+<g id="elem_LogFullException">
+<rect codeLine="53" fill="#F1F1F1" height="96.8906" id="LogFullException" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="234" x="270" y="278"/>
+<ellipse cx="324.75" cy="294" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M327.7188,299.6406 Q327.1406,299.9375 326.5,300.0781 Q325.8594,300.2344 325.1563,300.2344 Q322.6563,300.2344 321.3281,298.5938 Q320.0156,296.9375 320.0156,293.8125 Q320.0156,290.6875 321.3281,289.0313 Q322.6563,287.375 325.1563,287.375 Q325.8594,287.375 326.5,287.5313 Q327.1563,287.6875 327.7188,287.9844 L327.7188,290.7031 Q327.0938,290.125 326.5,289.8594 Q325.9063,289.5781 325.2813,289.5781 Q323.9375,289.5781 323.25,290.6563 Q322.5625,291.7188 322.5625,293.8125 Q322.5625,295.9063 323.25,296.9844 Q323.9375,298.0469 325.2813,298.0469 Q325.9063,298.0469 326.5,297.7813 Q327.0938,297.5 327.7188,296.9219 L327.7188,299.6406 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="345.25" y="298.8467">LogFullException</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="271" x2="503" y1="310" y2="310"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="278" y="320.6484"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="290" y="326.9951">capacity: int</text>
+<line style="stroke:#181818;stroke-width:0.5;" x1="271" x2="503" y1="334.2969" y2="334.2969"/>
+<ellipse cx="281" cy="347.9453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="290" y="351.292">LogFullException(capacity: int)</text>
+<ellipse cx="281" cy="364.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="290" y="367.5889">getCapacity(): int</text>
+</g>
+</a>
+<!--reverse link CatchLogException to RowFormatException-->
+<g id="link_CatchLogException_RowFormatException">
+<path codeLine="59" d="M903.83,155.58 C867.71,178.44 827.36,204.46 791,229 C759.48,250.27 724.57,275.26 698.15,294.48 " fill="none" id="CatchLogException-backto-RowFormatException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="900.53,149.38,921.18,144.63,908,161.22,900.53,149.38" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link CatchLogException to InvalidSpeciesException-->
+<g id="link_CatchLogException_InvalidSpeciesException">
+<path codeLine="60" d="M1011,164.84 C1011,201.89 1011,245.35 1011,277.72 " fill="none" id="CatchLogException-backto-InvalidSpeciesException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1004,164.75,1011,144.75,1018,164.75,1004,164.75" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--reverse link CatchLogException to InvalidWeightException-->
+<g id="link_CatchLogException_InvalidWeightException">
+<path codeLine="61" d="M1128.39,154.33 C1198.73,193.47 1286.58,242.35 1350.37,277.85 " fill="none" id="CatchLogException-backto-InvalidWeightException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1124.98,160.44,1110.91,144.6,1131.79,148.21,1124.98,160.44" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[ZLJBReCm4Bpp5JuIvV41g1TAYHGbZQhGgWV4mNLSuefWP9oaLTj_hqsCQuoXFH5sPdTdXztWydG4Ir8VaWeZWckGfc_m38C3MxnYjg2qMXXebe5F3u37fsqe7acukrjjO_7hFepMyIxUo60SteP9udrx7YfWNOC8SdJOOKJPtb7SG5NnUNtj5PYoPFo2INxWwpm0UtfwAR2C5HH1JcWPW8GpKkOYDZLA-gvQCs1NcW6xpaGMoZ5NAVx4LYF1PrL6ebgI13QgcWIKhguT6ve_G5PZDkI89hIci6OUCOWnNPf91D5JoGD0IYxVC6EKHMPesYte8rX1HFX7WpTpLX8G1ByWfVJgAZdDXFep9NirrBLdOuMjuHTkEakAwYs0M2lgnXyfXuN3mfvJyJl2bRHpn2pDqNxHIyy0JV9RT38Epy0HrpNCiRqMEtffXz5oHMn9sH7oCRrzaX8yxIE6IjraLPvXGVPg3ySw3J1RVqW7Dizd8D4mnPtRUjFDTvs0Obo__Jzci8Zj28x_Wwaxmz1k9qs6Rrdh5RknF1N5c5ARqchi79jiPHCTvoZKH2feB5d_6cw-vdF7rWqn1xxh7tJBoHy0]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<p>U zadatku je potrebno implementirati obradu brodskog dnevnika ulova (catch log) ribarskog broda. Dnevnik stiže kao niz redaka teksta (<code>String[]</code>), a potrebno ga je pretvoriti u zapise o ulovu te implementirati odgovarajuću hijerarhiju vlastitih iznimki.</p>
+<p>Svaki redak dnevnika opisuje jedan ulov u formatu:</p>
+<pre class="line-numbers"><code>VRSTA,TEZINA,LOKACIJA
+</code></pre>
+<p>gdje su polja odvojena zarezom, npr. <code>TUNA,42.5,Adriatic Sea</code>. Prilikom obrade svakog polja potrebno je zanemariti moguće razmake prije i iza vrijednosti. Redci se broje od 1 (prvi element polja <code>lines</code> je redak 1).</p>
+<p>Vrsta ribe predstavljena je pomoću <code>FishSpecies</code> i može biti: <code>TUNA</code>, <code>SARDINE</code>, <code>MACKEREL</code>, <code>SEABASS</code>.</p>
+<p>Klasa <code>CatchRecord</code> predstavlja jedan uspješno pročitan zapis o ulovu: vrstu, težinu u kilogramima i lokaciju ulova.</p>
+<h3>Iznimke</h3>
+<p>Klasa <code>CatchLogException</code> je provjeravana iznimka koja pamti redni broj retka u kojem je došlo do pogreške (<code>getRow()</code>).</p>
+<p>Klasa <code>RowFormatException</code> baca se kada redak nema točno tri polja odvojena zarezom, ili kada se polje s težinom ne može pretvoriti u broj.</p>
+<p>Klasa <code>InvalidSpeciesException</code> baca se kada naziv vrste (nakon uklanjanja praznina i pretvorbe u velika slova) ne odgovara nijednoj vrijednosti <code>FishSpecies</code>; pamti pročitani, neispravni naziv (<code>getInvalidSpecies()</code>).</p>
+<p>Klasa <code>InvalidWeightException</code> baca se kada je vrijednost težine uspješno pretvorena u broj, ali nije veća od 0 (<code>getWeightKg()</code>).</p>
+<p>Klasa <code>LogFullException</code> je neprovjeravana iznimka koja pamti kapacitet dnevnika (<code>getCapacity()</code>).</p>
+<h3>CatchLogParser</h3>
+<p>Klasa <code>CatchLogParser</code> u konstruktoru prima kapacitet dnevnika (<code>capacity</code>) - najveći broj zapisa koje polje <code>records</code> može sadržavati. Možete pretpostaviti da je kapacitet uvijek strogo pozitivan.</p>
+<p>Metoda <code>parseLog(String[] lines)</code> obrađuje redom svaki redak ulaznog polja:</p>
+<ul>
+<li>redak se rastavlja po zarezu; ako broj dobivenih polja nije točno tri, ili se polje s težinom ne može pretvoriti u broj, dogodit će se <code>RowFormatException</code>;</li>
+<li>ako naziv vrste ne odgovara nijednoj vrijednosti <code>FishSpecies</code>, dogodit će se <code>InvalidSpeciesException</code>;</li>
+<li>ako pretvorena težina nije veća od 0, dogodit će se <code>InvalidWeightException</code>;</li>
+<li>inače se stvara novi <code>CatchRecord</code> i dodaje u polje <code>records</code>.</li>
+</ul>
+<p>Sve tri iznimke iz prethodna tri koraka metoda <code>parseLog</code> obrađuje interno, za svaki redak zasebno: redak se preskače, brojač <code>errorCount</code> se poveća za 1, a obrada nastavlja sa sljedećim retkom. Ako u trenutku dodavanja novog zapisa polje <code>records</code> nema više slobodnog mjesta (broj već pohranjenih zapisa jednak je <code>capacity</code>), dogodit će se <code>LogFullException</code>. Nju metoda <code>parseLog</code> ne obrađuje interno - ona izlazi van metode i obrada dnevnika se odmah prekida, bez obzire koliko je redaka ulaznog polja ostalo neobrađeno.</p>
+<p>Metoda <code>getRecords()</code> vraća novo polje (novu instancu) koje sadrži sve trenutno pohranjene zapise, točne duljine, bez praznih mjesta na kraju i u izvornom redoslijedu unosa. Vraćeno polje ne smije biti isto polje koje se koristi unutar klase.</p>
+<p>Metoda <code>getTotalWeightKg()</code> vraća zbroj težina svih trenutno pohranjenih zapisa (0 ako nema zapisa).</p>
+<p><strong>Napomena:</strong> Sve ostale detalje (nasljeđivanje, modifikatore vidljivosti i metode) potrebno je implementirati prema UML dijagramu.</p>
+<p>Primjer korištenja:</p>
+<pre class="line-numbers"><code class="language-java">String[] lines = {
+    &quot;TUNA,42.5,Adriatic Sea&quot;,
+    &quot;sardine, 3.2 ,Kvarner&quot;,          // ok - species and numbers are trimmed
+    &quot;MACKEREL,-5,Adriatic Sea&quot;,       // InvalidWeightException (line 3)
+    &quot;SEABASS,12.0&quot;,                   // RowFormatException - too few fields (line 4)
+    &quot;SHARK,10.0,Adriatic Sea&quot;,        // InvalidSpeciesException (line 5)
+    &quot;TUNA,abc,Adriatic Sea&quot;           // RowFormatException - weight is not a number (line 6)
+};
+
+CatchLogParser parser = new CatchLogParser(10);
+parser.parseLog(lines);
+
+System.out.println(&quot;Successfully read records: &quot; + parser.getRecordCount());  // 2
+System.out.println(&quot;Number of errors: &quot; + parser.getErrorCount());            // 4
+System.out.println(&quot;Total catch weight: &quot; + parser.getTotalWeightKg());       // 45.7
+
+try {
+    CatchLogParser small = new CatchLogParser(1);
+    small.parseLog(new String[] {
+        &quot;TUNA,10.0,Adriatic Sea&quot;,
+        &quot;SARDINE,5.0,Kvarner&quot;   // log is full -&gt; LogFullException
+    });
+} catch (LogFullException e) {
+    System.out.println(&quot;Log is full, capacity: &quot; + e.getCapacity());
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">Successfully read records: 2
+Number of errors: 4
+Total catch weight: 45.7
+Log is full, capacity: 1
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

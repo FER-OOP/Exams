@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Write the <code>BillFileVisitor</code> class, which traverses a given directory tree, finds files containing bills, and groups their descriptions according to the persons to whom they belong.</p>
+<p>A bill is any file whose name contains the character sequence <code>bill</code>. You may assume that <code>bill</code> is always written in lowercase in the names of all bill files and that every such file is a text file containing at least one line. The bill description is located in the first line of the file. The file extension and the remaining parts of the filename do not need to be checked.</p>
+<p>All other files, including other text files, must be ignored.</p>
+<p>The person’s name is determined from the name of the directory in which the bill file is directly located (its parent directory). A person’s directory may be located at any depth within the directory tree.</p>
+<p>For example, for the following file:</p>
+<pre class="line-numbers"><code class="language-text">data/archive/alice_brown/internet_bill_2026.txt
+</code></pre>
+<p>the person’s name is:</p>
+<pre class="line-numbers"><code class="language-text">alice_brown
+</code></pre>
+<p>The <code>BillFileVisitor</code> class must be placed in the <code>hr.fer.oop</code> package.</p>
+<p>The class must either implement the <code>FileVisitor&lt;Path&gt;</code> interface or extend the <code>SimpleFileVisitor&lt;Path&gt;</code> class.</p>
+<p>The following public constructor and method must be implemented:</p>
+<ul>
+<li><code>BillFileVisitor()</code> - a no-argument constructor that initializes an empty map for storing bills</li>
+<li><code>Map&lt;String, List&lt;String&gt;&gt; getBills()</code> - a method that returns the map of the discovered bills</li>
+</ul>
+<p>Each map key represents a person’s name, while the corresponding value is a list containing the first lines of all bill files belonging to that person. The map must keep its keys ordered according to the <strong>natural ordering of the person directory names</strong>. The order of elements within each individual list is not specified.</p>
+<p>If no file whose name contains <code>bill</code> is found for a particular person, that person must not be added to the map. If no bill files are found during the traversal, the <code>getBills()</code> method must return an empty map.</p>
+<p><strong>IMPORTANT:</strong> From a <code>Path</code> object representing the file currently being visited, you can obtain the path of its parent directory.</p>
+<p><strong>IMPORTANT:</strong> The first line of a file can be read by creating an input stream using the following method:</p>
+<pre class="line-numbers"><code class="language-java">Files.newInputStream(file)
+</code></pre>
+<p>The resulting <code>InputStream</code> object must be additionally “decorated” to enable text reading.</p>
+<h3>Usage example</h3>
+<p>Consider the following directory tree:</p>
+<pre class="line-numbers"><code class="language-text">data
+├── zoe_young
+│   ├── water_bill.txt
+│   └── portrait.jpg
+├── archive
+│   ├── archive_logo.png
+│   └── alice_brown
+│       ├── internet_bill_2026.txt
+│       └── reminders.txt
+├── maya_black
+│   ├── bill_electricity.txt
+│   ├── phone_bill_july.txt
+└── miscellaneous
+    └── readme.txt
+</code></pre>
+<p>The first lines of the bill files are:</p>
+<pre class="line-numbers"><code class="language-text">water_bill.txt:
+Water bill - 45 EUR
+
+internet_bill_2026.txt:
+Internet bill - 30 EUR
+
+bill_electricity.txt:
+Electricity bill - 120 EUR
+
+phone_bill_july.txt:
+Phone bill - 25 EUR
+</code></pre>
+<p>The following code is provided in the <code>MainClass</code> class:</p>
+<pre class="line-numbers"><code class="language-java">public static void main(String[] args) {
+
+    BillFileVisitor visitor = new BillFileVisitor();
+
+    try {
+        Files.walkFileTree(path, visitor);
+
+        for (Map.Entry&lt;String, List&lt;String&gt;&gt; entry
+                : visitor.getBills().entrySet()) {
+
+            System.out.println(entry.getKey() + &quot;:&quot;);
+
+            List&lt;String&gt; sortedBills =
+                    new ArrayList&lt;&gt;(entry.getValue());
+            Collections.sort(sortedBills);
+
+            for (String bill : sortedBills) {
+                System.out.println(&quot;  &quot; + bill);
+            }
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+<h3>Expected output</h3>
+<pre class="line-numbers"><code class="language-text">alice_brown:
+  Internet bill - 30 EUR
+maya_black:
+  Electricity bill - 120 EUR
+  Phone bill - 25 EUR
+zoe_young:
+  Water bill - 45 EUR
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>
