@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The City of Zagreb operates the <em>Bajs</em> public bicycle system. In this task, data about rides between Bajs stations are analyzed.</p>
+<p>An individual ride is represented by an object of the <code>Ride</code> class. The class contains information about the <strong>name of the start station</strong>, the <strong>name of the end station</strong>, and the <strong>ride duration in minutes</strong>.</p>
+<p>You need to complete the static methods in the <code>Task</code> class using the <strong>Stream API</strong>.</p>
+<h3>1. Filtering rides by destination</h3>
+<p>Complete the method</p>
+<pre class="line-numbers"><code class="language-java">public static List&lt;Ride&gt; getRidesToStation(Stream&lt;Ride&gt; rides, String station)
+</code></pre>
+<p>which takes a stream of rides <code>rides</code> and the name of an end station <code>station</code>. The method must return a list of all rides from the given stream whose end station is equal to the specified <code>station</code>. The rides in the result must be sorted <strong>in ascending order by ride duration</strong>.</p>
+<p>If no ride satisfies the condition, the method should return an empty list.</p>
+<h3>2. Determining frequent stations</h3>
+<p>Complete the method</p>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; frequentStations(Stream&lt;Ride&gt; rides, int minRides, int minDuration)
+</code></pre>
+<p>wwhich takes a stream of rides <code>rides</code>. The method must return a stream containing the names of <strong>starting stations</strong> that have at least <code>minRides</code> rides with a duration of at least <code>minDuration minutes</code>. For example, if <code>minRides</code> is equal to <code>2</code> and <code>minDuration</code> is equal to <code>10</code>, the method returns the names of stations from which at least two rides with a duration of at least 10 minutes started.
+Given the following data:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Ride&gt; rides = List.of(
+   new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 12), 
+   new Ride(&quot;MLADOST&quot;, &quot;CENTAR&quot;, 15), 
+   new Ride(&quot;MLADOST&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 5),
+   
+   new Ride(&quot;TRŽNICA JARUN&quot;, &quot;MLADOST&quot;, 20),
+   new Ride(&quot;TRŽNICA JARUN&quot;, &quot;CENTAR&quot;, 25),
+    
+   new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;CENTAR&quot;, 7),
+   new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;MLADOST&quot;, 8)
+);
+</code></pre>
+<p>the call</p>
+<pre class="line-numbers"><code class="language-java">frequentStations(rides.stream(), 2, 10)
+</code></pre>
+<p>returns a stream containing the following elements, regardless of their order:</p>
+<pre class="line-numbers"><code class="language-text">MLADOST
+TRŽNICA JARUN
+</code></pre>
+<p>The station MLADOST satisfies the condition because two of its three rides have a duration of at least 10 minutes. The station TRŽNICA JARUN also satisfies the condition because both of its rides have a duration of at least 10 minutes. The station AUTOBUSNI KOLODVOR does not satisfy the condition.</p>
+<p>The result must contain the specified elements, but their order is not defined.</p>
+<h3>3. Three most frequent routes</h3>
+<p>Complete the method</p>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; getTop3Routes(Stream&lt;Ride&gt; rides)
+</code></pre>
+<p>which determines the most frequently used routes. A route is defined by its <strong>start and end station</strong>, and the direction of the ride is significant. For example, the route</p>
+<pre class="line-numbers"><code class="language-text">MLADOST -&gt; TRŽNICA JARUN
+</code></pre>
+<p>and the route</p>
+<pre class="line-numbers"><code class="language-text">TRŽNICA JARUN -&gt; MLADOST
+</code></pre>
+<p>are considered different routes.
+The textual representation of a route consists of the name of the start station, the string <code>&quot; -&gt; &quot;</code>, and the name of the end station. The method should return a stream containing <strong>at most the three most frequently used routes</strong>. The routes must be sorted according to the following criteria:</p>
+<p><strong>1. in descending order by the number of rides on each route,</strong></p>
+<p><strong>2. if two or more routes have the same number of rides, alphabetically by their textual representation.</strong></p>
+<p>If there are fewer than three different routes, all existing routes are returned. If the input stream is empty, aan empty stream should be returned.</p>
+<p>Example input data:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Ride&gt; rides = List.of(
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 12),
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 14),
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 11),
+    new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;TRG KRALJA TOMISLAVA&quot;, 9),
+    new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;TRG KRALJA TOMISLAVA&quot;, 10),
+    new Ride(&quot;NACIONALNA I SVEUČILIŠNA KNJIŽNICA&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 8),
+    new Ride(&quot;NACIONALNA I SVEUČILIŠNA KNJIŽNICA&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 7),
+    new Ride(&quot;TRŽNICA JARUN&quot;, &quot;MLADOST&quot;, 13),
+    new Ride(&quot;TRG KRALJA TOMISLAVA&quot;, &quot;S.D. STJEPAN RADIĆ&quot;, 24)
+);
+</code></pre>
+<p>For the given data, the call</p>
+<pre class="line-numbers"><code class="language-java">Task.getTop3Routes(rides.stream())
+</code></pre>
+<p>returns:</p>
+<pre class="line-numbers"><code class="language-text">MLADOST -&gt; TRŽNICA JARUN 
+AUTOBUSNI KOLODVOR -&gt; TRG KRALJA TOMISLAVA 
+NACIONALNA I SVEUČILIŠNA KNJIŽNICA -&gt; AUTOBUSNI KOLODVOR
+</code></pre>
+<p><strong>NOTE:</strong> All methods must be implemented using the Stream API. The signatures of the given methods and the <code>Ride</code> class must not be modified.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

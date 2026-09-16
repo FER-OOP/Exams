@@ -1,0 +1,100 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Grad Zagreb raspolaže sustavom javnih bicikala <em>Bajs</em>. U ovom zadatku analiziraju se podaci o vožnjama.</p>
+<p>Pojedinačna vožnja predstavljena je objektom klase <code>Ride</code>. Klasa sadrži podatke o <strong>nazivu početne stanice, nazivu završne stanice</strong> i <strong>trajanju vožnje u minutama</strong>.</p>
+<p>Potrebno je dovršiti statičke metode u klasi <code>Task</code> koristeći <strong>Stream API</strong>.</p>
+<h3>1. Filtriranje vožnji prema odredištu</h3>
+<p>Dovršite metodu</p>
+<pre class="line-numbers"><code class="language-java">public static List&lt;Ride&gt; getRidesToStation(Stream&lt;Ride&gt; rides, String station)
+</code></pre>
+<p>koja prima tok vožnji <code>rides</code> i naziv završne stanice <code>station</code>. Metoda mora vratiti listu svih vožnji iz predanog toka čija je završna stanica jednaka zadanoj stanici <code>station</code>.  Vožnje u rezultatu potrebno je poredati <strong>uzlazno prema trajanju vožnje</strong>.</p>
+<p>Ako nijedna vožnja ne zadovoljava uvjet, metoda treba vratiti praznu listu.</p>
+<h3>2. Određivanje frekventnih stanica</h3>
+<p>Dovršite metodu</p>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; frequentStations(Stream&lt;Ride&gt; rides, int minRides, int minDuration)
+</code></pre>
+<p>koja prima tok vožnji <code>rides</code>. Metoda mora vratiti tok naziva <strong>početnih stanica</strong> stanica s kojih je započelo barem <code>minRides</code> vožnji čije je trajanje barem <code>minDuration</code> minuta.</p>
+<p>Primjerice, za <code>minRides</code> jednak <code>2</code> i <code>minDuration</code> jednak <code>10</code>, metoda vraća nazive stanica s kojih su započele barem dvije vožnje u trajanju od najmanje 10 minuta.</p>
+<p>Ako su zadani sljedeći podaci:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Ride&gt; rides = List.of(
+   new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 12), 
+   new Ride(&quot;MLADOST&quot;, &quot;CENTAR&quot;, 15), 
+   new Ride(&quot;MLADOST&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 5),
+   
+   new Ride(&quot;TRŽNICA JARUN&quot;, &quot;MLADOST&quot;, 20),
+   new Ride(&quot;TRŽNICA JARUN&quot;, &quot;CENTAR&quot;, 25),
+    
+   new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;CENTAR&quot;, 7),
+   new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;MLADOST&quot;, 8)
+);
+</code></pre>
+<p>poziv</p>
+<pre class="line-numbers"><code class="language-java">frequentStations(rides.stream(), 2, 10)
+</code></pre>
+<p>vraća tok koji, neovisno o redoslijedu, sadrži:</p>
+<pre class="line-numbers"><code class="language-text">MLADOST
+TRŽNICA JARUN
+</code></pre>
+<p>Stanica MLADOST zadovoljava uvjet jer dvije od njezine tri vožnje traju barem 10 minuta. Stanica TRŽNICA JARUN također zadovoljava uvjet jer obje vožnje traju barem 10 minuta. Stanica AUTOBUSNI KOLODVOR ne zadovoljava uvjet.</p>
+<p>Rezultat mora sadržavati navedene elemente, ali njihov redoslijed nije određen.</p>
+<h3>3. Tri najčešće rute</h3>
+<p>Dovršite metodu</p>
+<pre class="line-numbers"><code class="language-java">public static Stream&lt;String&gt; getTop3Routes(Stream&lt;Ride&gt; rides)
+</code></pre>
+<p>koja određuje najčešće korištene rute. Ruta je određena <strong>početnom i završnom stanicom</strong>, pri čemu je smjer vožnje važan. Primjerice, ruta</p>
+<pre class="line-numbers"><code class="language-text">MLADOST -&gt; TRŽNICA JARUN
+</code></pre>
+<p>i ruta</p>
+<pre class="line-numbers"><code class="language-text">TRŽNICA JARUN -&gt; MLADOST
+</code></pre>
+<p>smatraju se različitim rutama.</p>
+<p>Tekstualni prikaz rute sastoji se od naziva početne stanice, znaka <code>&quot; -&gt; &quot;</code> i naziva završne stanice. Metoda treba vratiti tok koji sadrži <strong>najviše tri najčešće korištene rute</strong>. Rute je potrebno poredati prema sljedećim kriterijima:</p>
+<ol>
+<li>
+<p><strong>silazno prema broju vožnji na pojedinoj ruti,</strong></p>
+</li>
+<li>
+<p><strong>ako dvije ili više ruta imaju jednak broj vožnji, abecedno prema tekstualnom prikazu rute</strong></p>
+</li>
+</ol>
+<p>Ako postoje manje od tri različite rute, vraćaju se sve postojeće rute. Ako je ulazni tok prazan, vraća se prazan tok.</p>
+<p>Primjer ulaznih podataka:</p>
+<pre class="line-numbers"><code class="language-java">List&lt;Ride&gt; rides = List.of(
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 12),
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 14),
+    new Ride(&quot;MLADOST&quot;, &quot;TRŽNICA JARUN&quot;, 11),
+    new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;TRG KRALJA TOMISLAVA&quot;, 9),
+    new Ride(&quot;AUTOBUSNI KOLODVOR&quot;, &quot;TRG KRALJA TOMISLAVA&quot;, 10),
+    new Ride(&quot;NACIONALNA I SVEUČILIŠNA KNJIŽNICA&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 8),
+    new Ride(&quot;NACIONALNA I SVEUČILIŠNA KNJIŽNICA&quot;, &quot;AUTOBUSNI KOLODVOR&quot;, 7),
+    new Ride(&quot;TRŽNICA JARUN&quot;, &quot;MLADOST&quot;, 13),
+    new Ride(&quot;TRG KRALJA TOMISLAVA&quot;, &quot;S.D. STJEPAN RADIĆ&quot;, 24)
+);
+</code></pre>
+<p>Za navedene podatke poziv</p>
+<pre class="line-numbers"><code class="language-java">Task.getTop3Routes(rides.stream())
+</code></pre>
+<p>vraća tok koji sadrži sljedeće elemente navedenim redoslijedom:</p>
+<pre class="line-numbers"><code class="language-text">MLADOST -&gt; TRŽNICA JARUN 
+AUTOBUSNI KOLODVOR -&gt; TRG KRALJA TOMISLAVA 
+NACIONALNA I SVEUČILIŠNA KNJIŽNICA -&gt; AUTOBUSNI KOLODVOR
+</code></pre>
+<p><strong>NAPOMENA:</strong> Sve metode potrebno je implementirati korištenjem Stream API-ja. Nije dozvoljeno mijenjati potpise zadanih metoda ni klasu <code>Ride</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

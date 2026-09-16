@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>The wellness center offers various facilities that users can use. Each wellness facility (<code>WellnessFacility</code>) has a <strong>name</strong> (<code>name</code>) and a <strong>number of uses</strong> (<code>numberOfUses</code>), which represents how many times the facility has been used. Each time a facility is used, its number of uses is increased by 1.</p>
+<p>The abstract class <code>WellnessFacility</code>, the non-abstract class <code>RelaxationRoom</code>, and the class <code>Main</code> are provided. You are required to implement the non-abstract classes <code>HotTub</code>, <code>Sauna</code>, and <code>OutdoorPool</code>, as well as the types <code>WaterFacility</code> and <code>HeatedFacility</code>. Based on the description below, you must determine whether the types <code>WaterFacility</code> and <code>HeatedFacility</code> should be classes or interfaces and establish the appropriate inheritance and interface implementation hierarchy. In addition to implementing the individual types of wellness facilities, you are also required to complete the <code>WellnessUtils</code> class, which provides operations on a collection of wellness facilities.</p>
+<p>All non-abstract classes (<code>OutdoorPool</code>, <code>HotTub</code>, <code>Sauna</code>, and <code>RelaxationRoom</code>) have <code>WellnessFacility</code> as a superclass, although not necessarily as their direct superclass.</p>
+<p><strong>NOTE: The classes WellnessFacility and RelaxationRoom must not be modified to ensure correct grading of the solution.</strong></p>
+<p>Objects of types <code>OutdoorPool</code> and <code>HotTub</code> represent different types of water facilities (<code>WaterFacility</code>). In addition to the properties inherited from the <code>WellnessFacility</code> class, water facilities share common data about water temperature and capacity. The water temperature (<code>waterTemperature</code>) is of type <code>double</code>, while the capacity (<code>capacity</code>) is of type <code>int</code>. Both values are set when an object is created.</p>
+<p>The <code>WaterFacility</code> type provides access to the water temperature through the <code>double getWaterTemperature()</code> method and to the capacity through the <code>int getCapacity()</code> method. To modify the water temperature, an appropriate <em>setter</em> must be implemented. The setter must be accessible to classes derived from the <code>WaterFacility</code> type, but it must not be publicly accessible.</p>
+<p>Some wellness facilities, regardless of their type, have the additional capability of using a heating system. Such facilities are described by the <code>HeatedFacility</code> type. In this task, <code>HotTub</code> and <code>Sauna</code> have this capability. Facilities with heating capability may belong to different types of wellness facilities, but they all share the methods <code>void turnHeatingOn()</code>, <code>void turnHeatingOff()</code>, and <code>boolean isHeatingOn()</code>. When such an object is created, the heating is initially turned off. The <code>turnHeatingOn()</code> method turns the heating on, the <code>turnHeatingOff()</code> method turns it off, and the <code>isHeatingOn()</code> method returns whether the heating is currently on.</p>
+<p>The behavior of individual wellness facilities is defined as follows:</p>
+<ul>
+<li><code>OutdoorPool</code> represents an outdoor pool. It is a water facility but does not have a heating system.</li>
+<li><code>HotTub</code> represents a jacuzzi. It is a water facility that also has a heating system. It can be used regardless of whether the heating is on. Additionally, the <code>void heatWater(double amount)</code> method increases the current water temperature by the value of <code>amount</code>, but only if the heating is on. If the heating is off, the water temperature remains unchanged. The <code>amount</code> parameter will always be a positive number.</li>
+<li><code>Sauna</code> represents a sauna. It has a heating system but is not a water facility. A call to the <code>use()</code> method increases the number of uses by 1 only if the heating is on. If the heating is off, the state of the object remains unchanged.</li>
+<li><code>RelaxationRoom</code> represents a relaxation room.</li>
+</ul>
+<p>Each non-abstract class has exactly one constructor, and examples of constructor calls are shown in the provided <code>main</code> method in the <code>Main</code> class:</p>
+<pre class="line-numbers"><code class="language-java">RelaxationRoom room = new RelaxationRoom(&quot;Quiet Room&quot;);
+OutdoorPool pool = new OutdoorPool(&quot;Outdoor Pool&quot;, 24.5, 40);
+HotTub hotTub = new HotTub(&quot;Jacuzzi&quot;, 34.0, 6);
+Sauna sauna = new Sauna(&quot;Finnish Sauna&quot;);
+</code></pre>
+<p>All non-abstract wellness facility classes (<code>OutdoorPool</code>, <code>HotTub</code>, <code>Sauna</code>, and <code>RelaxationRoom</code>) inherit the following methods through their hierarchy:</p>
+<ul>
+<li><code>String getName()</code> – returns the name of the facility set in the constructor</li>
+<li><code>int getNumberOfUses()</code> – returns the number of times the facility has been used</li>
+<li><code>void use()</code> – uses the wellness facility according to the rules of its concrete type</li>
+</ul>
+<p>Water facilities additionally provide:</p>
+<ul>
+<li><code>double getWaterTemperature()</code> – returns the water temperature</li>
+<li><code>int getCapacity()</code> – returns the maximum number of people who can use the facility at the same time</li>
+</ul>
+<p>Facilities with heating capability additionally provide:</p>
+<ul>
+<li><code>void turnHeatingOn()</code> – turns the heating on</li>
+<li><code>void turnHeatingOff()</code> – turns the heating off</li>
+<li><code>boolean isHeatingOn()</code> – returns whether the heating is on</li>
+</ul>
+<p>An object of type <code>HotTub</code> additionally provides:</p>
+<ul>
+<li><code>void heatWater(double amount)</code> – increases the water temperature by the specified amount if the heating is on</li>
+</ul>
+<p><strong>Class WellnessUtils</strong></p>
+<p>You need to to complete the <code>WellnessUtils</code> class, which contains the following public static method:</p>
+<ul>
+<li><code>void turnOnAllHeatedFacilities(List&lt;WellnessFacility&gt; facilities)</code> – turns the heating on for all facilities in the given list that have heating capability. All other facilities remain unchanged.</li>
+</ul>
+<p><strong>NOTE: All classes and interfaces must have public visibility and must be located in the hr.fer.oop package.</strong></p>
+<p>The correct output of the provided <code>main</code> method in the <code>Main</code> class should be:</p>
+<pre class="line-numbers"><code class="language-sh">Quiet Room: uses = 0
+Quiet Room: uses = 1 after using the facility.
+Outdoor Pool: temperature = 24.5, capacity = 40, uses = 0
+Outdoor Pool: uses = 1
+Jacuzzi: temperature = 34.0, capacity = 6, heating = false, uses = 0
+Jacuzzi: uses = 1 after using the facility.
+Jacuzzi: temperature = 34.0 while heating is off.
+Jacuzzi: heating = true, temperature = 37.0
+Finnish Sauna: heating = false, uses = 0
+Finnish Sauna: uses = 0 while heating is off.
+Finnish Sauna: heating = true, uses = 1
+After turnOnAllHeatedFacilities:
+Jacuzzi: heating = true
+Finnish Sauna: heating = true
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

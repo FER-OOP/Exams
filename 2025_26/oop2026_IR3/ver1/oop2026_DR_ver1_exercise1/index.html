@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Wellness centar nudi različite sadržaje koje korisnici mogu koristiti. Svaki wellness sadržaj (<code>WellnessFacility</code>) ima <strong>naziv</strong> (<code>name</code>) i <strong>broj korištenja</strong> (<code>numberOfUses</code>) koji predstavlja koliko je puta sadržaj korišten. Svakim korištenjem sadržaja broj korištenja povećava se za 1.</p>
+<p>U zadatku su dane apstraktna klasa <code>WellnessFacility</code> i konkretna (neapstraktna) klasa <code>RelaxationRoom</code>, kao i klasa <code>Main</code>, a potrebno je napisati konkretne klase <code>HotTub</code>, <code>Sauna</code> i <code>OutdoorPool</code> te tipove <code>WaterFacility</code> i <code>HeatedFacility</code>. Za tipove <code>WaterFacility</code> i <code>HeatedFacility</code> potrebno je na temelju opisa u nastavku odlučiti trebaju li biti klase ili sučelja te uspostaviti odgovarajuću hijerarhiju nasljeđivanja i implementacije sučelja. Osim implementacije pojedinih vrsta wellness sadržaja, potrebno je dovršiti i klasu <code>WellnessUtils</code> koja omogućuje izvođenje određenih operacija nad kolekcijom wellness sadržaja.</p>
+<p>Sve konkretne klase (<code>OutdoorPool</code>, <code>HotTub</code>, <code>Sauna</code> i <code>RelaxationRoom</code>) imaju klasu <code>WellnessFacility</code> kao nadklasu, ali ne nužno kao svoju direktnu nadklasu.</p>
+<p><strong>NAPOMENA: Klase WellnessFacility i RelaxationRoom nije dozvoljeno mijenjati radi ispravnog bodovanja rješenja.</strong></p>
+<p>Objekti tipa <code>OutdoorPool</code> i <code>HotTub</code> predstavljaju različite vrste vodenih sadržaja (<code>WaterFacility</code>). Vodeni sadržaji su wellness sadržaji koji, osim svojstava naslijeđenih od klase <code>WellnessFacility</code>, imaju i zajedničke podatke o temperaturi vode i kapacitetu. Temperatura vode (<code>waterTemperature</code>) tipa je <code>double</code>, a kapacitet (<code>capacity</code>) tipa je <code>int</code>. Obje vrijednosti postavljaju se prilikom stvaranja objekta.</p>
+<p>Tip <code>WaterFacility</code> omogućuje dohvat temperature vode metodom <code>double getWaterTemperature()</code> i kapaciteta metodom <code>int getCapacity()</code>. Za promjenu temperature vode potrebno je implementirati odgovarajući <em>setter</em> koji mora biti dostupan klasama izvedenim iz tipa <code>WaterFacility</code>, ali ne smije biti javno dostupan.</p>
+<p>Neki wellness sadržaji, neovisno o svojoj vrsti, imaju dodatnu mogućnost korištenja sustava grijanja. Takve sadržaje opisuje tip <code>HeatedFacility</code>. U ovom zadatku tu mogućnost imaju <code>HotTub</code> i <code>Sauna</code>. Sadržaji koji imaju mogućnost grijanja mogu pripadati različitim vrstama wellness sadržaja, ali svima su zajedničke metode <code>void turnHeatingOn()</code>, <code>void turnHeatingOff()</code> i <code>boolean isHeatingOn()</code>. Grijanje je prilikom stvaranja svakog takvog objekta početno isključeno. Metoda <code>turnHeatingOn()</code> uključuje grijanje, metoda <code>turnHeatingOff()</code> ga isključuje, a metoda <code>isHeatingOn()</code> vraća informaciju je li grijanje trenutačno uključeno.</p>
+<p>Ponašanje pojedinih wellness sadržaja definirano je na sljedeći način:</p>
+<ul>
+<li><code>OutdoorPool</code> predstavlja vanjski bazen. On je vodeni sadržaj, ali nema mogućnost korištenja sustava grijanja.</li>
+<li><code>HotTub</code> predstavlja jacuzzi. On je vodeni sadržaj koji ujedno ima mogućnost korištenja sustava grijanja. Može se koristiti neovisno o tome je li grijanje uključeno. Dodatno, metoda <code>void heatWater(double amount)</code> povećava trenutačnu temperaturu vode za vrijednost <code>amount</code>, ali samo ako je grijanje uključeno. Ako je grijanje isključeno, temperatura ostaje nepromijenjena. Parametar <code>amount</code> uvijek će biti pozitivan.</li>
+<li><code>Sauna</code> predstavlja saunu. Ona ima mogućnost korištenja sustava grijanja, ali nije vodeni sadržaj. Poziv metode <code>use()</code> povećava broj korištenja za 1 samo ako je grijanje uključeno. Ako je grijanje isključeno, stanje objekta ostaje nepromijenjeno.</li>
+<li><code>RelaxationRoom</code> predstavlja prostoriju za odmor. Klasa <code>RelaxationRoom</code> zadana je i nije je dozvoljeno mijenjati.</li>
+</ul>
+<p>Konkretne klase imaju jedan konstruktor, a primjer njihova pozivanja prikazan je u isječku metode <code>main</code> u klasi <code>Main</code>:</p>
+<pre class="line-numbers"><code class="language-java">RelaxationRoom room = new RelaxationRoom(&quot;Quiet Room&quot;); 
+OutdoorPool pool = new OutdoorPool(&quot;Outdoor Pool&quot;, 24.5, 40); 
+HotTub hotTub = new HotTub(&quot;Jacuzzi&quot;, 34.0, 6); 
+Sauna sauna = new Sauna(&quot;Finnish Sauna&quot;);
+</code></pre>
+<p>Sve konkretne klase wellness sadržaja (<code>OutdoorPool</code>, <code>HotTub</code>, <code>Sauna</code> i <code>RelaxationRoom</code>) nasljeđuju sljedeće metode iz svoje hijerarhije:</p>
+<ul>
+<li><code>String getName()</code> – vraća naziv sadržaja postavljen u konstruktoru</li>
+<li><code>int getNumberOfUses()</code> – vraća broj korištenja sadržaja</li>
+<li><code>void use()</code> – koristi wellness sadržaj u skladu s pravilima njegove konkretne vrste</li>
+</ul>
+<p>Vodeni sadržaji dodatno omogućuju:</p>
+<ul>
+<li><code>double getWaterTemperature()</code> – vraća temperaturu vode</li>
+<li><code>int getCapacity()</code> – vraća najveći broj osoba koje istodobno mogu koristiti sadržaj</li>
+</ul>
+<p>Sadržaji s mogućnošću grijanja dodatno omogućuju:</p>
+<ul>
+<li><code>void turnHeatingOn()</code> – uključuje grijanje</li>
+<li><code>void turnHeatingOff()</code> – isključuje grijanje</li>
+<li><code>boolean isHeatingOn()</code> – vraća informaciju je li grijanje uključeno</li>
+</ul>
+<p>Objekt tipa <code>HotTub</code> dodatno omogućuje:</p>
+<ul>
+<li><code>void heatWater(double amount)</code> – povećava temperaturu vode za zadanu vrijednost ako je grijanje uključeno</li>
+</ul>
+<p><strong>Klasa WellnessUtils</strong></p>
+<p>Potrebno  je dovršiti klasu <code>WellnessUtils</code> koja sadrži sljedeću javnu statičku metodu:</p>
+<ul>
+<li><code>void turnOnAllHeatedFacilities(List&lt;WellnessFacility&gt; facilities)</code> – uključuje grijanje svim sadržajima iz predane liste koji imaju mogućnost korištenja sustava grijanja. Ostali sadržaji ostaju nepromijenjeni.</li>
+</ul>
+<p><strong>NAPOMENA: Sve klase i sučelja trebaju imati vidljivost postavljenu na public i nalaziti se u paketu hr.fer.oop.</strong></p>
+<p>Ispravan rezultat izvođenja dane metode <code>main</code> u klasi <code>Main</code> treba biti:</p>
+<pre class="line-numbers"><code class="language-sh">Quiet Room: uses = 0
+Quiet Room: uses = 1 after using the facility.
+Outdoor Pool: temperature = 24.5, capacity = 40, uses = 0
+Outdoor Pool: uses = 1
+Jacuzzi: temperature = 34.0, capacity = 6, heating = false, uses = 0
+Jacuzzi: uses = 1 after using the facility.
+Jacuzzi: temperature = 34.0 while heating is off.
+Jacuzzi: heating = true, temperature = 37.0
+Finnish Sauna: heating = false, uses = 0
+Finnish Sauna: uses = 0 while heating is off.
+Finnish Sauna: heating = true, uses = 1
+After turnOnAllHeatedFacilities:
+Jacuzzi: heating = true
+Finnish Sauna: heating = true
+</code></pre>
+  <script src="res/prism.js"></script>
+</body>
+</html>

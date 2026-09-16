@@ -1,0 +1,223 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>Implement spreadsheet <strong>tables</strong> of numbers (<code>Sheet</code>). A rectangular part of a table is a
+<strong>block</strong> (<code>Block</code>).</p>
+<p>Implement the yellow classes from the diagram using exactly the attributes, constructors and
+methods shown. The <code>Sheet</code> class comes started in the template, where you fill in the
+method bodies; the <code>Cell</code> and <code>Block</code> classes you write yourselves. Methods of your own are
+allowed.</p>
+<blockquote>
+<p><strong><code>Cell</code> and <code>Block</code> must hold exactly the attributes shown in the UML diagram and no
+others.</strong>
+<strong>Adding any further attribute to a class costs 70% of the exercise.</strong></p>
+</blockquote>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="496px" preserveAspectRatio="none" style="width:758px;height:496px;background:#FFFFFF;" version="1.1" viewBox="0 0 758 496" width="758px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Sheet-->
+<g id="elem_Sheet">
+<rect codeLine="10" fill="#FFFFE0" height="235.5313" id="Sheet" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="512" x="7" y="7"/>
+<ellipse cx="221.25" cy="27.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M224.2188,32.7734 Q223.6406,33.0703 223,33.2109 Q222.3594,33.3672 221.6563,33.3672 Q219.1563,33.3672 217.8281,31.7266 Q216.5156,30.0703 216.5156,26.9453 Q216.5156,23.8203 217.8281,22.1641 Q219.1563,20.5078 221.6563,20.5078 Q222.3594,20.5078 223,20.6641 Q223.6563,20.8203 224.2188,21.1172 L224.2188,23.8359 Q223.5938,23.2578 223,22.9922 Q222.4063,22.7109 221.7813,22.7109 Q220.4375,22.7109 219.75,23.7891 Q219.0625,24.8516 219.0625,26.9453 Q219.0625,29.0391 219.75,30.1172 Q220.4375,31.1797 221.7813,31.1797 Q222.4063,31.1797 223,30.9141 Q223.5938,30.6328 224.2188,30.0547 L224.2188,32.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="239.75" y="23.1387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="258.75" y="38.9639">Sheet</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="8" x2="518" y1="47.2656" y2="47.2656"/>
+<ellipse cx="18" cy="60.9141" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="132" x="27" y="64.2607">MAX_COLUMNS: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="74.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="27" y="80.5576">rowCount: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="90.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="27" y="96.8545">columnCount: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="106.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="27" y="113.1514">values: double[]</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="8" x2="518" y1="120.4531" y2="120.4531"/>
+<ellipse cx="18" cy="134.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="271" x="27" y="137.4482">Sheet(rowCount: int, columnCount: int)</text>
+<ellipse cx="18" cy="150.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="27" y="153.7451">getRowCount(): int</text>
+<ellipse cx="18" cy="166.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="27" y="170.042">getColumnCount(): int</text>
+<ellipse cx="18" cy="182.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="27" y="186.3389">get(row: int, column: int): double</text>
+<ellipse cx="18" cy="199.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="306" x="27" y="202.6357">set(row: int, column: int, value: double): void</text>
+<ellipse cx="18" cy="215.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="486" x="27" y="218.9326">block(firstRow: int, firstColumn: int, lastRow: int, lastColumn: int): Block</text>
+<ellipse cx="18" cy="231.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="27" y="235.2295">all(): Block</text>
+</g>
+<!--class Cell-->
+<g id="elem_Cell">
+<rect codeLine="24" fill="#FFFFE0" height="186.6406" id="Cell" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="197" x="554.5" y="31.5"/>
+<ellipse cx="611.25" cy="51.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M614.2188,57.2734 Q613.6406,57.5703 613,57.7109 Q612.3594,57.8672 611.6563,57.8672 Q609.1563,57.8672 607.8281,56.2266 Q606.5156,54.5703 606.5156,51.4453 Q606.5156,48.3203 607.8281,46.6641 Q609.1563,45.0078 611.6563,45.0078 Q612.3594,45.0078 613,45.1641 Q613.6563,45.3203 614.2188,45.6172 L614.2188,48.3359 Q613.5938,47.7578 613,47.4922 Q612.4063,47.2109 611.7813,47.2109 Q610.4375,47.2109 609.75,48.2891 Q609.0625,49.3516 609.0625,51.4453 Q609.0625,53.5391 609.75,54.6172 Q610.4375,55.6797 611.7813,55.6797 Q612.4063,55.6797 613,55.4141 Q613.5938,55.1328 614.2188,54.5547 L614.2188,57.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="629.75" y="47.6387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="656.75" y="63.4639">Cell</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="555.5" x2="750.5" y1="71.7656" y2="71.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="562.5" y="82.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="574.5" y="88.7607">row: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="562.5" y="98.7109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="574.5" y="105.0576">column: int</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="555.5" x2="750.5" y1="112.3594" y2="112.3594"/>
+<polygon fill="#4177AF" points="565.5,122.0078,561.5,128.0078,569.5,128.0078" style="stroke:#1963A0;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="574.5" y="129.3545">Cell(row: int, column: int)</text>
+<ellipse cx="565.5" cy="142.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="574.5" y="145.6514">getRow(): int</text>
+<ellipse cx="565.5" cy="158.6016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="574.5" y="161.9482">getColumn(): int</text>
+<ellipse cx="565.5" cy="174.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="90" x="574.5" y="178.2451">get(): double</text>
+<ellipse cx="565.5" cy="191.1953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="574.5" y="194.542">set(value: double): void</text>
+<ellipse cx="565.5" cy="207.4922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="574.5" y="210.8389">getLabel(): String</text>
+</g>
+<!--class Block-->
+<g id="elem_Block">
+<rect codeLine="35" fill="#FFFFE0" height="186.6406" id="Block" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="427" x="49.5" y="303"/>
+<ellipse cx="221.25" cy="323.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M224.2188,328.7734 Q223.6406,329.0703 223,329.2109 Q222.3594,329.3672 221.6563,329.3672 Q219.1563,329.3672 217.8281,327.7266 Q216.5156,326.0703 216.5156,322.9453 Q216.5156,319.8203 217.8281,318.1641 Q219.1563,316.5078 221.6563,316.5078 Q222.3594,316.5078 223,316.6641 Q223.6563,316.8203 224.2188,317.1172 L224.2188,319.8359 Q223.5938,319.2578 223,318.9922 Q222.4063,318.7109 221.7813,318.7109 Q220.4375,318.7109 219.75,319.7891 Q219.0625,320.8516 219.0625,322.9453 Q219.0625,325.0391 219.75,326.1172 Q220.4375,327.1797 221.7813,327.1797 Q222.4063,327.1797 223,326.9141 Q223.5938,326.6328 224.2188,326.0547 L224.2188,328.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="239.75" y="319.1387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="260.25" y="334.9639">Block</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="50.5" x2="475.5" y1="343.2656" y2="343.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="57.5" y="353.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="69.5" y="360.2607">firstRow: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="57.5" y="370.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="69.5" y="376.5576">firstColumn: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="57.5" y="386.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="69.5" y="392.8545">rows: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="57.5" y="402.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="69.5" y="409.1514">columns: int</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="50.5" x2="475.5" y1="416.4531" y2="416.4531"/>
+<polygon fill="#4177AF" points="60.5,426.1016,56.5,432.1016,64.5,432.1016" style="stroke:#1963A0;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="401" x="69.5" y="433.4482">Block(firstRow: int, firstColumn: int, rows: int, columns: int)</text>
+<ellipse cx="60.5" cy="446.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="69.5" y="449.7451">size(): int</text>
+<ellipse cx="60.5" cy="462.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="69.5" y="466.042">rowMajor()</text>
+<ellipse cx="60.5" cy="478.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="69.5" y="482.3389">columnMajor()</text>
+</g>
+<!--SRC=[ZL7HJi8m57tVL_HnHFm1GaXSZRw09XAZnXXJjkkewrhITX0byEts3hgj0n8VxptddfvpQWekLqopagI26KEs4I49IujSgqfcL0cbn-EShq5E9kHboIqWGUaCT0-yr-p7ONTAsXvootHnH4-aURaIK8AqZZVb-TA-WH1gqt-aIqk44ubsKNHmF5y2M19ICCNLrbXcUReZivlNJ_euVPuzp4U4I-l0QwqsrDcmpI9LeYfbk5ipKO4PaKnL2m7l7wXQFnS7vqFIFnuWCmVxTAJ50w-9MzgoGm1b0yM3c3U0B7E9DIIrMyzrHsl5CpnP29KMyHVN1lqSoVL8k-Ukp0wE4mqy92Y3Uao8k9cRRw3ktyxymhKtstRinpsUN8ZSzdUkkbvh9mLTQiAHfsm1jVsvrLpchVywpha0GN7DWWPHCANfnMpcVVA_3sWqV1McxSBmN-YaTjGP-rOwhi43sozsqHy0]-->
+</g>
+</svg>
+<p>Access modifiers in class diagrams:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<h3>Class <code>Sheet</code></h3>
+<p>A table of <code>rowCount</code> rows and <code>columnCount</code> columns, in which every cell starts out
+holding <code>0.0</code>. The size is set when the sheet is made and <strong>never changes</strong>. Rows and
+columns are counted <strong>from 0</strong>, so <code>get(0, 0)</code> is the top left cell, and a column is named
+with a single letter, so a sheet has at most <code>MAX_COLUMNS</code> = <strong>26</strong> columns. A sheet with
+no rows or no columns is allowed.</p>
+<ul>
+<li><code>get(row, column)</code>, <code>set(row, column, value)</code> — read and write one cell;</li>
+<li><code>block(firstRow, firstColumn, lastRow, lastColumn)</code> — the rectangle between the two given
+cells, <strong>both included</strong>;</li>
+<li><code>all()</code> — the whole sheet as one block, <strong>empty</strong> if the sheet has no cells. Its
+implementation is given to you, but it relies on a correct implementation of <code>block</code>.</li>
+</ul>
+<blockquote>
+<p><strong>You may assume every value given to you is legal</strong> — sizes, rows and columns are always
+within bounds, so you do not have to check them.</p>
+</blockquote>
+<h3>Class <code>Cell</code></h3>
+<p>One cell of <strong>a particular sheet (<code>Sheet</code>)</strong>:</p>
+<ul>
+<li><code>row</code>, <code>column</code> — its position in the sheet;</li>
+<li><code>get()</code>, <code>set(value)</code> — read and write at the cell's position <strong>in the sheet</strong>, so that a
+later <code>sheet.get(row, column)</code> reads back what <code>set</code> wrote;</li>
+<li><code>getLabel()</code> — the name of the cell: columns are letters starting from <code>A</code>, rows are
+numbers starting from <code>1</code>, so row 1, column 1 is called <code>B2</code>.</li>
+</ul>
+<h3>Class <code>Block</code></h3>
+<p>A rectangular part of <strong>one particular sheet</strong>, which keeps no numbers of its own but reads
+straight from the sheet:</p>
+<ul>
+<li><code>firstRow</code>, <code>firstColumn</code> — the <strong>top left cell</strong> the rectangle starts at;</li>
+<li><code>rows</code>, <code>columns</code> — the <strong>number</strong> of rows and columns the rectangle spans;</li>
+<li><code>size()</code> — how many cells it covers in total;</li>
+<li><code>rowMajor()</code>, <code>columnMajor()</code> — return <strong>an object that can be iterated over with a
+<em>for-each</em> loop</strong>; iterating gives the cells of the block <strong>row by row</strong> (left to right,
+rows top to bottom) and <strong>column by column</strong> (top to bottom, columns left to right).</li>
+</ul>
+<p><strong>Every new iteration starts from the beginning and is independent of the others</strong>. The
+same block may be iterated over several times and at once, in both orders. An iteration
+that has run out throws <code>NoSuchElementException</code>. Writing with <code>set</code> <strong>is allowed</strong> while
+an iteration is in progress.</p>
+<h4><strong>IMPORTANT:</strong></h4>
+<blockquote>
+<p><strong>Several sheets may exist at the same time.</strong> Every cell and every block reads and
+writes exactly the sheet it was taken from, so two sheets never share their numbers.
+<strong>A solution that does not keep to this costs 50% of the whole exercise.</strong></p>
+</blockquote>
+<blockquote>
+<p>A block may cover a very large part of a sheet, so an iteration must hand out its cells
+<strong>one at a time</strong>, rather than making them all in advance. For that reason <code>rowMajor()</code>
+and <code>columnMajor()</code> must <strong>NOT</strong> return a collection (<code>Collection</code>) of any kind, and must
+<strong>NOT</strong> return a ready-made iteration taken from the standard library — <strong>the iteration
+has to be your own.</strong>
+<strong>A solution that does not keep to this costs 20% of the whole exercise.</strong></p>
+</blockquote>
+<hr />
+<h3>Usage example</h3>
+<pre class="line-numbers"><code class="language-java">// numbers() makes a 3x4 sheet holding 1 to 12; number(v) is String.format(&quot;%.2f&quot;, v)
+Sheet sheet = numbers();
+
+// rows 1 to 2, columns 1 to 2 - both corners included
+var middle = sheet.block(1, 1, 2, 2);
+System.out.println(&quot;BLOCK SIZE: &quot; + middle.size());
+
+// writing into a cell writes into the sheet the cell was taken from
+for (var cell : middle.rowMajor()) {
+  cell.set(cell.get() + 100.0);
+}
+System.out.println(&quot;INSIDE:  &quot; + number(sheet.get(1, 1)) + &quot; &quot; + number(sheet.get(2, 2)));
+System.out.println(&quot;OUTSIDE: &quot; + number(sheet.get(0, 0)) + &quot; &quot; + number(sheet.get(1, 0)));
+
+// the same four cells, given out two ways
+var corner = sheet.block(0, 0, 1, 1);
+List&lt;String&gt; byRows = new ArrayList&lt;&gt;();
+for (var cell : corner.rowMajor()) {
+  byRows.add(cell.getLabel());
+}
+List&lt;String&gt; byColumns = new ArrayList&lt;&gt;();
+for (var cell : corner.columnMajor()) {
+  byColumns.add(cell.getLabel());
+}
+System.out.println(&quot;ROW MAJOR:    &quot; + String.join(&quot; &quot;, byRows));
+System.out.println(&quot;COLUMN MAJOR: &quot; + String.join(&quot; &quot;, byColumns));
+
+// a cell of another sheet, alive at the same time, keeps to its own numbers
+Sheet other = new Sheet(1, 1);
+other.all().rowMajor().iterator().next().set(7.0);
+System.out.println(&quot;SHEETS: &quot; + number(sheet.get(0, 0)) + &quot; &quot; + number(other.get(0, 0)));
+</code></pre>
+<p>Expected output:</p>
+<pre class="line-numbers"><code class="language-sh">BLOCK SIZE: 4
+INSIDE:  106.00 111.00
+OUTSIDE: 1.00 5.00
+ROW MAJOR:    A1 B1 A2 B2
+COLUMN MAJOR: A1 A2 B1 B2
+SHEETS: 1.00 7.00
+</code></pre>
+<hr />
+<p><strong>Attention:</strong> all classes have visibility set to <em>public</em> and are in the
+<code>hr.fer.oop.sheet</code> package.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>

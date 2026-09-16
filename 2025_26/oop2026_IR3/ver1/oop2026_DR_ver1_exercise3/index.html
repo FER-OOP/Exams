@@ -1,0 +1,394 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <meta charset="UTF-8">
+  <link href="res/prism.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+    code {
+      font-size: 16px;
+      font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+  </style>
+</head>
+<body>
+<p>U zadatku je potrebno dovršiti <strong>čitanje ASCII slika iz binarnih datoteka</strong>.</p>
+<p>Klase <code>Span</code> i <code>Picture</code> <strong>su zadane i ne smijete ih mijenjati</strong>. Vi pišete
+<strong>čitač</strong> i <strong>iznimke</strong> koje on baca.</p>
+<h4>VAŽNO</h4>
+<p><strong>Klase iznimaka smiju sadržavati točno one atribute koji su prikazani na dijagramu i
+nijedan drugi</strong>, a svaka se gradi prikazanim konstruktorom i nijednim drugim. <strong>Bilo
+koji dodatni atribut u klasi iznimke stoji 20% bodova na cijelom zadatku.</strong></p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="791px" preserveAspectRatio="none" style="width:2000px;height:791px;background:#FFFFFF;" version="1.1" viewBox="0 0 2000 791" width="2000px" zoomAndPan="magnify">
+<defs/>
+<g>
+<!--class Picture-->
+<g id="elem_Picture">
+<rect codeLine="10" fill="#FFFFFF" height="268.125" id="Picture" rx="2.5" ry="2.5" style="stroke:#808080;stroke-width:0.5;" width="309" x="7" y="237"/>
+<ellipse cx="133.25" cy="257.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M136.2188,262.7734 Q135.6406,263.0703 135,263.2109 Q134.3594,263.3672 133.6563,263.3672 Q131.1563,263.3672 129.8281,261.7266 Q128.5156,260.0703 128.5156,256.9453 Q128.5156,253.8203 129.8281,252.1641 Q131.1563,250.5078 133.6563,250.5078 Q134.3594,250.5078 135,250.6641 Q135.6563,250.8203 136.2188,251.1172 L136.2188,253.8359 Q135.5938,253.2578 135,252.9922 Q134.4063,252.7109 133.7813,252.7109 Q132.4375,252.7109 131.75,253.7891 Q131.0625,254.8516 131.0625,256.9453 Q131.0625,259.0391 131.75,260.1172 Q132.4375,261.1797 133.7813,261.1797 Q134.4063,261.1797 135,260.9141 Q135.5938,260.6328 136.2188,260.0547 L136.2188,262.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="154.25" y="253.1387">&#171;given&#187;</text>
+<text fill="#A9A9A9" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="153.75" y="268.9639">Picture</text>
+<line style="stroke:#808080;stroke-width:0.5;" x1="8" x2="315" y1="277.2656" y2="277.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="287.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="27" y="294.2607">width: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="304.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="27" y="310.5576">height: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="320.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="27" y="326.8545">blank: char</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="336.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="27" y="343.1514">entries: List&lt;Span&gt;</text>
+<line style="stroke:#808080;stroke-width:0.5;" x1="8" x2="315" y1="350.4531" y2="350.4531"/>
+<ellipse cx="18" cy="364.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="283" x="27" y="367.4482">Picture(width: int, height: int, blank: char)</text>
+<ellipse cx="18" cy="380.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="27" y="383.7451">getWidth(): int</text>
+<ellipse cx="18" cy="396.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="27" y="400.042">getHeight(): int</text>
+<ellipse cx="18" cy="412.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="27" y="416.3389">getBlank(): char</text>
+<ellipse cx="18" cy="429.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="249" x="27" y="432.6357">holds(row: int, column: int): boolean</text>
+<ellipse cx="18" cy="445.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="27" y="448.9326">add(entry: Span): void</text>
+<ellipse cx="18" cy="461.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="27" y="465.2295">getEntries(): List&lt;Span&gt;</text>
+<ellipse cx="18" cy="478.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="27" y="481.5264">get(row: int, column: int): char</text>
+<ellipse cx="18" cy="494.4766" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="27" y="497.8232">toString(): String</text>
+</g>
+<!--class Span-->
+<g id="elem_Span">
+<rect codeLine="26" fill="#FFFFFF" height="219.2344" id="Span" rx="2.5" ry="2.5" style="stroke:#808080;stroke-width:0.5;" width="397" x="66" y="565"/>
+<ellipse cx="238.75" cy="585.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M241.7188,590.7734 Q241.1406,591.0703 240.5,591.2109 Q239.8594,591.3672 239.1563,591.3672 Q236.6563,591.3672 235.3281,589.7266 Q234.0156,588.0703 234.0156,584.9453 Q234.0156,581.8203 235.3281,580.1641 Q236.6563,578.5078 239.1563,578.5078 Q239.8594,578.5078 240.5,578.6641 Q241.1563,578.8203 241.7188,579.1172 L241.7188,581.8359 Q241.0938,581.2578 240.5,580.9922 Q239.9063,580.7109 239.2813,580.7109 Q237.9375,580.7109 237.25,581.7891 Q236.5625,582.8516 236.5625,584.9453 Q236.5625,587.0391 237.25,588.1172 Q237.9375,589.1797 239.2813,589.1797 Q239.9063,589.1797 240.5,588.9141 Q241.0938,588.6328 241.7188,588.0547 L241.7188,590.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="257.25" y="581.1387">&#171;given&#187;</text>
+<text fill="#A9A9A9" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="263.25" y="596.9639">Span</text>
+<line style="stroke:#808080;stroke-width:0.5;" x1="67" x2="462" y1="605.2656" y2="605.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="74" y="615.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="86" y="622.2607">row: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="74" y="632.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="86" y="638.5576">column: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="74" y="648.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="86" y="654.8545">length: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="74" y="664.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="86" y="671.1514">character: char</text>
+<line style="stroke:#808080;stroke-width:0.5;" x1="67" x2="462" y1="678.4531" y2="678.4531"/>
+<ellipse cx="77" cy="692.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="371" x="86" y="695.4482">Span(row: int, column: int, length: int, character: char)</text>
+<ellipse cx="77" cy="708.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="86" y="711.7451">getRow(): int</text>
+<ellipse cx="77" cy="724.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="86" y="728.042">getColumn(): int</text>
+<ellipse cx="77" cy="740.9922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="86" y="744.3389">getLength(): int</text>
+<ellipse cx="77" cy="757.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="86" y="760.6357">getCharacter(): char</text>
+<ellipse cx="77" cy="773.5859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="257" x="86" y="776.9326">covers(row: int, column: int): boolean</text>
+</g>
+<!--class PictureReader-->
+<g id="elem_PictureReader">
+<rect codeLine="39" fill="#FFFFE0" height="154.0469" id="PictureReader" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="379" x="75" y="15"/>
+<ellipse cx="211.25" cy="35.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M214.2188,40.7734 Q213.6406,41.0703 213,41.2109 Q212.3594,41.3672 211.6563,41.3672 Q209.1563,41.3672 207.8281,39.7266 Q206.5156,38.0703 206.5156,34.9453 Q206.5156,31.8203 207.8281,30.1641 Q209.1563,28.5078 211.6563,28.5078 Q212.3594,28.5078 213,28.6641 Q213.6563,28.8203 214.2188,29.1172 L214.2188,31.8359 Q213.5938,31.2578 213,30.9922 Q212.4063,30.7109 211.7813,30.7109 Q210.4375,30.7109 209.75,31.7891 Q209.0625,32.8516 209.0625,34.9453 Q209.0625,37.0391 209.75,38.1172 Q210.4375,39.1797 211.7813,39.1797 Q212.4063,39.1797 213,38.9141 Q213.5938,38.6328 214.2188,38.0547 L214.2188,40.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="241.25" y="31.1387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="231.75" y="46.9639">PictureReader</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="76" x2="453" y1="55.2656" y2="55.2656"/>
+<ellipse cx="86" cy="68.9141" fill="none" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="128" x="95" y="72.2607">EXTENSION: String</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="76" x2="453" y1="79.5625" y2="79.5625"/>
+<rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="83" y="90.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="339" x="95" y="96.5576">readByte(in: InputStream, file: Path, entry: int): int</text>
+<rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="83" y="106.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="345" x="95" y="112.8545">readShort(in: InputStream, file: Path, entry: int): int</text>
+<rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="83" y="122.8047"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="353" x="95" y="129.1514">readChar(in: InputStream, file: Path, entry: int): char</text>
+<ellipse cx="86" cy="142.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="157" x="95" y="145.4482">read(file: Path): Picture</text>
+<ellipse cx="86" cy="158.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="260" x="95" y="161.7451">readAll(directory: Path): List&lt;Picture&gt;</text>
+</g>
+<!--class PictureException-->
+<g id="elem_PictureException">
+<rect codeLine="48" fill="#FFFFE0" height="121.4531" id="PictureException" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="342" x="765.5" y="310.5"/>
+<ellipse cx="874.25" cy="330.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M877.2188,336.2734 Q876.6406,336.5703 876,336.7109 Q875.3594,336.8672 874.6563,336.8672 Q872.1563,336.8672 870.8281,335.2266 Q869.5156,333.5703 869.5156,330.4453 Q869.5156,327.3203 870.8281,325.6641 Q872.1563,324.0078 874.6563,324.0078 Q875.3594,324.0078 876,324.1641 Q876.6563,324.3203 877.2188,324.6172 L877.2188,327.3359 Q876.5938,326.7578 876,326.4922 Q875.4063,326.2109 874.7813,326.2109 Q873.4375,326.2109 872.75,327.2891 Q872.0625,328.3516 872.0625,330.4453 Q872.0625,332.5391 872.75,333.6172 Q873.4375,334.6797 874.7813,334.6797 Q875.4063,334.6797 876,334.4141 Q876.5938,334.1328 877.2188,333.5547 L877.2188,336.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="913.25" y="326.6387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="894.75" y="342.4639">PictureException</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="766.5" x2="1106.5" y1="350.7656" y2="350.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="773.5" y="361.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="785.5" y="367.7607">file: Path</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="766.5" x2="1106.5" y1="375.0625" y2="375.0625"/>
+<polygon fill="#FFFF44" points="776.5,383.7109,780.5,387.7109,776.5,391.7109,772.5,387.7109" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="785.5" y="392.0576">PictureException(file: Path)</text>
+<polygon fill="#FFFF44" points="776.5,400.0078,780.5,404.0078,776.5,408.0078,772.5,404.0078" style="stroke:#B38D22;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="316" x="785.5" y="408.3545">PictureException(file: Path, cause: Throwable)</text>
+<ellipse cx="776.5" cy="421.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="785.5" y="424.6514">getFile(): Path</text>
+</g>
+<!--class ExtraDataException-->
+<g id="elem_ExtraDataException">
+<rect codeLine="55" fill="#FFFFE0" height="72.5625" id="ExtraDataException" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="229" x="489" y="55.5"/>
+<ellipse cx="532.35" cy="75.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M535.3188,81.2734 Q534.7406,81.5703 534.1,81.7109 Q533.4594,81.8672 532.7563,81.8672 Q530.2563,81.8672 528.9281,80.2266 Q527.6156,78.5703 527.6156,75.4453 Q527.6156,72.3203 528.9281,70.6641 Q530.2563,69.0078 532.7563,69.0078 Q533.4594,69.0078 534.1,69.1641 Q534.7563,69.3203 535.3188,69.6172 L535.3188,72.3359 Q534.6938,71.7578 534.1,71.4922 Q533.5063,71.2109 532.8813,71.2109 Q531.5375,71.2109 530.85,72.2891 Q530.1625,73.3516 530.1625,75.4453 Q530.1625,77.5391 530.85,78.6172 Q531.5375,79.6797 532.8813,79.6797 Q533.5063,79.6797 534.1,79.4141 Q534.6938,79.1328 535.3188,78.5547 L535.3188,81.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="580.15" y="71.6387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="552.65" y="87.4639">ExtraDataException</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="490" x2="717" y1="95.7656" y2="95.7656"/>
+<line style="stroke:#000000;stroke-width:0.5;" x1="490" x2="717" y1="103.7656" y2="103.7656"/>
+<ellipse cx="500" cy="117.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="203" x="509" y="120.7607">ExtraDataException(file: Path)</text>
+</g>
+<!--class PictureIOException-->
+<g id="elem_PictureIOException">
+<rect codeLine="59" fill="#FFFFE0" height="72.5625" id="PictureIOException" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="366" x="753.5" y="55.5"/>
+<ellipse cx="867.25" cy="75.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M870.2188,81.2734 Q869.6406,81.5703 869,81.7109 Q868.3594,81.8672 867.6563,81.8672 Q865.1563,81.8672 863.8281,80.2266 Q862.5156,78.5703 862.5156,75.4453 Q862.5156,72.3203 863.8281,70.6641 Q865.1563,69.0078 867.6563,69.0078 Q868.3594,69.0078 869,69.1641 Q869.6563,69.3203 870.2188,69.6172 L870.2188,72.3359 Q869.5938,71.7578 869,71.4922 Q868.4063,71.2109 867.7813,71.2109 Q866.4375,71.2109 865.75,72.2891 Q865.0625,73.3516 865.0625,75.4453 Q865.0625,77.5391 865.75,78.6172 Q866.4375,79.6797 867.7813,79.6797 Q868.4063,79.6797 869,79.4141 Q869.5938,79.1328 870.2188,78.5547 L870.2188,81.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="913.25" y="71.6387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="887.75" y="87.4639">PictureIOException</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="754.5" x2="1118.5" y1="95.7656" y2="95.7656"/>
+<line style="stroke:#000000;stroke-width:0.5;" x1="754.5" x2="1118.5" y1="103.7656" y2="103.7656"/>
+<ellipse cx="764.5" cy="117.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="340" x="773.5" y="120.7607">PictureIOException(file: Path, cause: IOException)</text>
+</g>
+<!--class OutsidePictureException-->
+<g id="elem_OutsidePictureException">
+<rect codeLine="63" fill="#FFFFE0" height="170.3438" id="OutsidePictureException" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="478" x="1154.5" y="7"/>
+<ellipse cx="1304.25" cy="27.1328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1307.2188,32.7734 Q1306.6406,33.0703 1306,33.2109 Q1305.3594,33.3672 1304.6563,33.3672 Q1302.1563,33.3672 1300.8281,31.7266 Q1299.5156,30.0703 1299.5156,26.9453 Q1299.5156,23.8203 1300.8281,22.1641 Q1302.1563,20.5078 1304.6563,20.5078 Q1305.3594,20.5078 1306,20.6641 Q1306.6563,20.8203 1307.2188,21.1172 L1307.2188,23.8359 Q1306.5938,23.2578 1306,22.9922 Q1305.4063,22.7109 1304.7813,22.7109 Q1303.4375,22.7109 1302.75,23.7891 Q1302.0625,24.8516 1302.0625,26.9453 Q1302.0625,29.0391 1302.75,30.1172 Q1303.4375,31.1797 1304.7813,31.1797 Q1305.4063,31.1797 1306,30.9141 Q1306.5938,30.6328 1307.2188,30.0547 L1307.2188,32.7734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="1370.25" y="23.1387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="1324.75" y="38.9639">OutsidePictureException</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="1155.5" x2="1631.5" y1="47.2656" y2="47.2656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1162.5" y="57.9141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="1174.5" y="64.2607">row: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1162.5" y="74.2109"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="1174.5" y="80.5576">column: int</text>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1162.5" y="90.5078"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="1174.5" y="96.8545">entry: int</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="1155.5" x2="1631.5" y1="104.1563" y2="104.1563"/>
+<ellipse cx="1165.5" cy="117.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="452" x="1174.5" y="121.1514">OutsidePictureException(file: Path, row: int, column: int, entry: int)</text>
+<ellipse cx="1165.5" cy="134.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1174.5" y="137.4482">getRow(): int</text>
+<ellipse cx="1165.5" cy="150.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="1174.5" y="153.7451">getColumn(): int</text>
+<ellipse cx="1165.5" cy="166.6953" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="1174.5" y="170.042">getEntry(): int</text>
+</g>
+<!--class TruncatedFileException-->
+<g id="elem_TruncatedFileException">
+<rect codeLine="73" fill="#FFFFE0" height="105.1563" id="TruncatedFileException" rx="2.5" ry="2.5" style="stroke:#000000;stroke-width:0.5;" width="326" x="1667.5" y="39.5"/>
+<ellipse cx="1745.25" cy="59.6328" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/>
+<path d="M1748.2188,65.2734 Q1747.6406,65.5703 1747,65.7109 Q1746.3594,65.8672 1745.6563,65.8672 Q1743.1563,65.8672 1741.8281,64.2266 Q1740.5156,62.5703 1740.5156,59.4453 Q1740.5156,56.3203 1741.8281,54.6641 Q1743.1563,53.0078 1745.6563,53.0078 Q1746.3594,53.0078 1747,53.1641 Q1747.6563,53.3203 1748.2188,53.6172 L1748.2188,56.3359 Q1747.5938,55.7578 1747,55.4922 Q1746.4063,55.2109 1745.7813,55.2109 Q1744.4375,55.2109 1743.75,56.2891 Q1743.0625,57.3516 1743.0625,59.4453 Q1743.0625,61.5391 1743.75,62.6172 Q1744.4375,63.6797 1745.7813,63.6797 Q1746.4063,63.6797 1747,63.4141 Q1747.5938,63.1328 1748.2188,62.5547 L1748.2188,65.2734 Z " fill="#000000"/>
+<text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="79" x="1807.25" y="55.6387">&#171;implement&#187;</text>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="1765.75" y="71.4639">TruncatedFileException</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="1668.5" x2="1992.5" y1="79.7656" y2="79.7656"/>
+<rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1675.5" y="90.4141"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="1687.5" y="96.7607">entry: int</text>
+<line style="stroke:#000000;stroke-width:0.5;" x1="1668.5" x2="1992.5" y1="104.0625" y2="104.0625"/>
+<ellipse cx="1678.5" cy="117.7109" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="300" x="1687.5" y="121.0576">TruncatedFileException(file: Path, entry: int)</text>
+<ellipse cx="1678.5" cy="134.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+<text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="1687.5" y="137.3545">getEntry(): int</text>
+</g>
+<!--link Picture to Span-->
+<g id="link_Picture_Span">
+<path codeLine="79" d="M211.29,517.74 C215.2,529.2 219.13,540.7 222.98,551.97 " fill="none" id="Picture-Span" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="206.98,505.12,205.131,512.09,210.8537,516.4776,212.7027,509.5076,206.98,505.12" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="#181818" points="227.29,564.58,228.1671,554.7703,225.6743,559.8483,220.5963,557.3554,227.29,564.58" style="stroke:#181818;stroke-width:1.0;"/>
+<line style="stroke:#181818;stroke-width:1.0;" x1="225.6743" x2="223.085" y1="559.8483" y2="552.28"/>
+</g>
+<!--link PictureReader to Picture-->
+<g id="link_PictureReader_Picture">
+<path codeLine="80" d="M236.22,169.06 C228.94,188.64 220.87,210.32 212.82,231.99 " fill="none" id="PictureReader-to-Picture" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="210.99,236.91,217.8766,229.8691,212.7331,232.2237,210.3785,227.0801,210.99,236.91" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link PictureReader to Span-->
+<g id="link_PictureReader_Span">
+<path codeLine="81" d="M308.74,169.16 C318.92,190.43 328.28,214.02 333.5,237 C359.89,353.15 356.5,388.13 333.5,505 C329.93,523.14 324.39,541.8 317.96,559.77 " fill="none" id="PictureReader-to-Span" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="316.13,564.83,322.9527,557.7272,317.8307,560.1281,315.4297,555.0061,316.13,564.83" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link ExtraDataException to PictureException-->
+<g id="link_ExtraDataException_PictureException">
+<path codeLine="82" d="M646.35,128.65 C697.39,171.1 783.94,243.09 849.26,297.43 " fill="none" id="ExtraDataException-to-PictureException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="854.05,292.31,864.95,310.48,845.1,303.07,854.05,292.31" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link PictureIOException to PictureException-->
+<g id="link_PictureIOException_PictureException">
+<path codeLine="83" d="M936.5,128.65 C936.5,169.3 936.5,237.06 936.5,290.44 " fill="none" id="PictureIOException-to-PictureException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="943.5,290.48,936.5,310.48,929.5,290.48,943.5,290.48" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link OutsidePictureException to PictureException-->
+<g id="link_OutsidePictureException_PictureException">
+<path codeLine="84" d="M1254.83,177.05 C1190.03,216.33 1113.76,262.56 1052.12,299.92 " fill="none" id="OutsidePictureException-to-PictureException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1055.47,306.07,1034.74,310.46,1048.21,294.1,1055.47,306.07" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link TruncatedFileException to PictureException-->
+<g id="link_TruncatedFileException_PictureException">
+<path codeLine="85" d="M1728.04,144.53 C1703.03,156.07 1676.09,167.65 1650.5,177 C1476.96,240.41 1272.94,293.51 1127.53,327.86 " fill="none" id="TruncatedFileException-to-PictureException" style="stroke:#181818;stroke-width:1.0;"/>
+<polygon fill="none" points="1128.93,334.72,1107.86,332.47,1125.73,321.09,1128.93,334.72" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--link PictureReader to PictureException-->
+<g id="link_PictureReader_PictureException">
+<path codeLine="86" d="M449.02,169.06 C555.44,212.93 687.51,267.37 787.33,308.51 " fill="none" id="PictureReader-to-PictureException" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+<polygon fill="#181818" points="792.06,310.46,785.2609,303.3345,787.4366,308.5563,782.2149,310.732,792.06,310.46" style="stroke:#181818;stroke-width:1.0;"/>
+</g>
+<!--SRC=[fLNRRjim37ttLmZOYulO_O0WCB2qwHQWQ8gcGBT7nUPi8OeKo7JIeEk_JtHylwGjzXQAXuU7HvIJReNQSyDtB9GyJTcRmzYSXzlOw4n5DrfgCvl5uW0g2DXB8X08e4q4ffFyOVZ9vkwqmaxcbfjjaUrHYzrUmWuKMjozY1Fy3LBgOxT94pQNbiHvTvopuaSHOcQ0rVre1lye8aocJ2YaA07YhiADv6exPM723OMMrmX8frP1YhFrdgl07ayAPhUcybY3o6CDcYigY05V2EjUbPtew6TUqZwRKoKT5H8cYPPHwXfzBAX3BREToWEBscWjWIi2yYXoIUzfoaYeJHwqY0hQnNaG8cwFOdEZvAK4r6jRhMAgFl-gJIQYhiCb7_rkC58eGSKDzwa33n5CtOm8XnLvh57jiKvjwVEJFhOTlSaPscVtEL47L_8rtG_r0Sp7zdTtxWcuNL7MNa_oPlAM8aSHlhF5h-V5mtgvUgWyjNvKMMC9vYS4LzXUIxNFq8A0xppsHqYOiaUEYSUAwpvhAInjKQmJRV0_ESYNBr2KphKut1fk8OL9FTHtATr860XH4r-1plUrA0bwJYzUGzYZq6h0RB_kQgDltOgcg0_ozjvvbjhWER6hm3SIodMxinXQcBn99MxnYeRVSkINv4twg9QaxgZBrKMsFcfeW4QwqM6LOIeY-8od5nvtlGUaPuIp9MhadJSMwYklcZvof_AecktPP2ha215TrSNHslg7wzoHnH-HKFu7QTyFyc-bq_v2N5y7rNFeP_A2WLto_Rz1xm4u0sio31oxxM7qY7yNDVIdgo7_0000]-->
+</g>
+</svg>
+<p>Legenda vidljivosti u dijagramu klasa:</p>
+<p><img src="res/vidljivost.png" alt="Legenda vidljivosti" /></p>
+<h3>Format datoteke</h3>
+<p>Svaka datoteka sadrži jednu sliku.</p>
+<p>Počinje sa zaglavljem od 7 bajtova:</p>
+<table border="1">
+  <thead>
+    <tr><th>veličina</th><th>polje</th><th>značenje</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2 bajta</td><td>width</td><td>koliko stupaca slika ima</td></tr>
+    <tr><td>2 bajta</td><td>height</td><td>koliko redaka slika ima</td></tr>
+    <tr><td>1 bajt</td><td>blank</td><td>znak koji puni "prazna" polja</td></tr>
+    <tr><td>2 bajta</td><td>count</td><td>koliko raspona dolazi iza zaglavlja</td></tr>
+  </tbody>
+</table>
+<p>Zatim dolazi točno <code>count</code> <strong>raspona</strong>, jedan za drugim. Svaki raspon je <strong>sedam
+bajtova</strong>, redom:</p>
+<table border="1">
+  <thead>
+    <tr><th>veličina</th><th>polje</th><th>značenje</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2 bajta</td><td>row</td><td>redak u kojem je raspon</td></tr>
+    <tr><td>2 bajta</td><td>column</td><td>stupac u kojem počinje</td></tr>
+    <tr><td>2 bajta</td><td>length</td><td>koliko znakova crta</td></tr>
+    <tr><td>1 bajt</td><td>character</td><td>znak koji crta</td></tr>
+  </tbody>
+</table>
+<p>Dvobajtni brojevi zapisani su s <strong>višim bajtom prvim</strong>.</p>
+<p>Raspon uvijek ide <strong>udesno</strong>, počevši od vlastitog stupca i ostajući u vlastitom retku.</p>
+<h3>Iznimke</h3>
+<p>Sve iznimke su provjeravane. <code>PictureException</code> <strong>ne može se izravno
+instancirati</strong>. Nosi put do <strong>datoteke</strong> (<code>Path</code>) u kojoj je nastao problem.</p>
+<ul>
+<li><code>TruncatedFileException</code> — datoteka prestaje prije nego što je dala sve što je
+obećala. Nosi (<code>entry</code>) redni broj raspona (broji se od 1) usred kojeg je stala, ili 0 za zaglavlje;</li>
+<li><code>ExtraDataException</code> — u datoteci ima više nego što je zaglavlje obećalo, to jest,
+iza posljednjeg raspona još nešto preostane;</li>
+<li><code>OutsidePictureException</code> — raspon (<code>Span</code>) rednog broja <code>entry</code> ispada izvan slike; Raspon mora cijeli stati unutar slike, i prvi i zadnji znak. Broji se od 1.</li>
+<li><code>PictureIOException</code> — datoteka ili direktorij uopće se nisu mogli pročitati. Dogodio
+se <code>IOException</code>, koji je <strong>uzrok</strong> (<code>cause</code>) <code>PictureIOException</code>-a.</li>
+</ul>
+<h3>Klasa <code>PictureReader</code></h3>
+<p>Konstanta <code>EXTENSION</code> i metode <code>readShort</code> i <code>readChar</code> već su zadane.</p>
+<ul>
+<li><code>readShort</code> je pomoćna metoda koja koristi vašu implementaciju <code>readByte</code> da pročita dva uzastopna bajta u jedan broj.</li>
+<li><code>readChar</code> je pomoćna metoda koja koristi vašu implementaciju <code>readByte</code> da pročita jedan ASCII znak.</li>
+</ul>
+<p>Potrebno je implementirati</p>
+<h3><code>readByte</code></h3>
+<pre class="line-numbers"><code class="language-java">private static int readByte(InputStream in, Path file, int entry)
+    throws IOException, TruncatedFileException
+</code></pre>
+<p>Čita jedan bajt. Ako je dosegnut kraj datoteke, baca <code>TruncatedFileException</code>.</p>
+<h3><code>read</code></h3>
+<p>Metoda treba pročitati zaglavlje i učitati točno <code>count</code> raspona u <code>Picture</code> koji vraća. Uz to treba baciti odgovarajuću iznimku u slučaju greške.</p>
+<p>Kako bi provjerili postoji li položaj na slici možete koristiti:</p>
+<pre class="line-numbers"><code class="language-java">picture.holds(row, column)
+</code></pre>
+<h3><code>readAll</code></h3>
+<p>Učitava sve <code>.pic</code> datoteke koje se nalaze <strong>neposredno u zadanom direktoriju</strong> i vraća njihove slike.</p>
+<p><strong>Poddirektorije ne obilazi.</strong></p>
+<p>Ako se direktorij ne može pročitati, baca se <code>PictureIOException</code>. Ako <code>read</code> baci neku drugu <code>PictureException</code>, ona se prosljeđuje pozivatelju.</p>
+<hr />
+<h3>Cijela datoteka, bajt po bajt</h3>
+<p>Datoteka <code>src/main/resources/fileset0/03-dot.pic</code> je slika široka 5 i visoka 3, prazna posvuda osim jedne
+zvjezdice <code>*</code>. Svih 14 njezinih bajtova:</p>
+<table border="1">
+  <thead>
+    <tr><th>bajtovi</th><th>značenje</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>00 05</code></td><td>širina 5 stupaca</td></tr>
+    <tr><td><code>00 03</code></td><td>visina 3 retka</td></tr>
+    <tr><td><code>2e</code></td><td>prazni znak je <code>.</code></td></tr>
+    <tr><td><code>00 01</code></td><td>slijedi jedan raspon</td></tr>
+    <tr><td><code>00 01 00 02 00 01 2a</code></td><td>raspon 1: redak 1, stupac 2, duljina 1, znak <code>*</code> (<code>0x2a</code>)</td></tr>
+  </tbody>
+</table>
+<p>što je slika</p>
+<pre class="line-numbers"><code class="language-sh">.....
+..*..
+.....
+</code></pre>
+<h3>Primjer uporabe</h3>
+<pre class="line-numbers"><code class="language-java">// FILESET je src/main/resources/fileset0
+// svaka .pic datoteka neposredno u direktoriju, dakle ništa iz broken/
+List&lt;Picture&gt; pictures = PictureReader.readAll(FILESET);
+
+System.out.println(&quot;READ: &quot; + pictures.size());
+for (Picture picture : pictures) {
+  System.out.println(&quot;SIZE: &quot; + picture.getWidth() + &quot;x&quot; + picture.getHeight());
+  System.out.println(picture);
+}
+
+// datoteke u broken/ ne mogu se pročitati, svaka iz svog razloga
+Path broken = FILESET.resolve(&quot;broken&quot;);
+for (String name : new String[] { &quot;extra.pic&quot;, &quot;outside.pic&quot;, &quot;short.pic&quot; }) {
+  try {
+    PictureReader.read(broken.resolve(name));
+  } catch (OutsidePictureException failure) {
+    System.out.println(&quot;OUTSIDE:   &quot; + name + &quot; entry &quot; + failure.getEntry()
+        + &quot; reaches row &quot; + failure.getRow() + &quot; column &quot; + failure.getColumn());
+  } catch (TruncatedFileException failure) {
+    System.out.println(&quot;TRUNCATED: &quot; + name + &quot; entry &quot; + failure.getEntry());
+  } catch (PictureException failure) {
+    System.out.println(&quot;REFUSED:   &quot; + name);
+  }
+}
+</code></pre>
+<p>Očekivani ispis:</p>
+<pre class="line-numbers"><code class="language-sh">READ: 3
+SIZE: 32x8
+################################
+#####  ###    ###  ##  ###    ##
+#####  ##  ##  ##  ##  ##  ##  #
+#####  ##  ##  ##  ##  ##  ##  #
+#####  ##      ##  ##  ##      #
+#  ##  ##  ##  ###    ###  ##  #
+##    ###  ##  ####  ####  ##  #
+################################
+SIZE: 16x12
++--------------+
+|   (   (      |
+|    )   )     |
+| #########    |
+| #~-~-~-~#    |
+| #       #### |
+| #       #  # |
+| #       #  # |
+| #       #### |
+| #########    |
+|  #######     |
++--------------+
+SIZE: 5x3
+.....
+..*..
+.....
+REFUSED:   extra.pic
+OUTSIDE:   outside.pic entry 2 reaches row 1 column 6
+TRUNCATED: short.pic entry 2
+</code></pre>
+<p><strong>Napomena:</strong> Redoslijed kojim <code>readAll</code> vraća slike nije propisan, pa ispravno rješenje
+smije ispisati slike i drugim redom. Sam direktorij <code>broken</code> nikada se ne čita, jer
+<code>readAll</code> gleda samo <code>.pic</code> datoteke koje leže neposredno u zadanom direktoriju.</p>
+<hr />
+<p><strong>Napomena:</strong> sve klase imaju vidljivost postavljenu na <em>public</em> i nalaze se u paketu
+<code>hr.fer.oop.picture</code>.</p>
+  <script src="res/prism.js"></script>
+</body>
+</html>
